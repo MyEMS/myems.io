@@ -42,6 +42,7 @@ Verwendung von Open Source, um die Ziele der CO2-Peak-Kohlenstoffneutralität zu
 
 ### Kontaktieren Sie uns
 
-- Tel & WeChat 13011132526
-- E-Mail 13011132526@163.com
+- Name: Nengyuan Zhang
+- Tel & WeChat: 13011132526
+- E-Mail: 13011132526@163.com
 
