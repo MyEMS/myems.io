@@ -8,7 +8,7 @@ sidebar_position: 4
 
 ## 前提
 - 主机上已安装docker、npm。
-- 已安装MySQL服务器，用户名为“root”，密码为“！MyEMS1’。
+- 已安装MySQL服务器，用户名为“root”，密码为“!MyEMS1”。
 - MySQL数据库可以从Docker Engine运行的主机连接。
 
 ## 第1步 数据库
@@ -17,7 +17,7 @@ sidebar_position: 4
 
 ## 第2步 myems-api
 
-在本节中，您将在Docker上安装myemsapi。
+在本节中，您将在Docker上安装myems-api。
 
 * 将源代码复制到根目录
 
@@ -44,7 +44,7 @@ cp example.env .env
 docker build -t myems/myems-api .
 ```
 
-为多个平台构建，而不仅仅是为调用构建的用户恰好运行的体系结构和操作系统构建。
+为多个平台构建，而不仅仅是为当前用户运行的体系结构和操作系统构建。
 您可以使用buildx并设置--platform标志来指定构建输出的目标平台（例如，linux/amd64、linux/arm64或darwin/amd64）。
 ```bash
 docker buildx build --platform=linux/amd64 -t myems/myems-api .
@@ -52,7 +52,7 @@ docker buildx build --platform=linux/amd64 -t myems/myems-api .
 
 * 运行Docker容器
 
-在主机上，将位于/myemsupload的共享上传文件夹绑定到容器，并将.env绑定到容器：
+在主机上，将位于/myems-upload的共享上传文件夹绑定到容器，并将.env绑定到容器：
 ```bash
 docker run -d -p 8000:8000 -v /myems-upload:/var/www/myems-admin/upload -v /myems-api/.env:/code/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-api myems/myems-api
 ```
@@ -100,7 +100,7 @@ cd /myems-admin
 
 :::caution
 
-手动将nginx.conf中的~~127.00.1:8000~~替换为实际的**HOST**ip和myemsapi端口
+手动将nginx.conf中的~~127.00.1:8000~~替换为实际的**HOST**ip和myems-api端口
 
 :::
 
@@ -118,7 +118,7 @@ nano nginx.conf
 docker build -t myems/myems-admin .
 ```
 
-为多个平台构建，而不仅仅是为调用构建的用户恰好运行的体系结构和操作系统构建。
+为多个平台构建，而不仅仅是为当前用户运行的体系结构和操作系统构建。
 您可以使用buildx并设置--platform标志来指定构建输出的目标平台（例如，linux/amd64、linux/arm64或darwin/amd64）。
 ```bash
 docker buildx build --platform=linux/amd64 -t myems/myems-admin .
@@ -126,7 +126,7 @@ docker buildx build --platform=linux/amd64 -t myems/myems-admin .
 
 * 运行Docker容器
 
-在主机上，绑定挂载位于/myemsupload的共享上载文件文件夹到容器，并绑定挂载nginx.conf
+在主机上，绑定挂载位于/myems-upload的共享上载文件文件夹到容器，并绑定挂载nginx.conf
 ```bash
 docker run -d -p 8001:8001 -v /myems-upload:/var/www/myems-admin/upload -v /myems-admin/nginx.conf:/etc/nginx/nginx.conf:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-admin myems/myems-admin
 ```
@@ -188,14 +188,14 @@ cp example.env .env
 docker build -t myems/myems-modbus-tcp .
 ```
 
-为多个平台构建，而不仅仅是为调用构建的用户恰好运行的体系结构和操作系统构建。
+为多个平台构建，而不仅仅是为当前用户运行的体系结构和操作系统构建。
 您可以使用buildx并设置--platform标志来指定构建输出的目标平台（例如，linux/amd64、linux/arm64或darwin/amd64）。
 ```bash
 docker buildx build --platform=linux/amd64 -t myems/myems-modbus-tcp .
 ```
 
 
-* 运行Docker容器 (run as superuser)
+* 运行Docker容器 (以超级用户运行)
 ```bash
 docker run -d -v /myems-modbus-tcp/.env:/code/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-modbus-tcp myems/myems-modbus-tcp
 ```
@@ -260,13 +260,13 @@ cp example.env .env
 docker build -t myems/myems-cleaning .
 ```
 
-为多个平台构建，而不仅仅是为调用构建的用户恰好运行的体系结构和操作系统构建。
+为多个平台构建，而不仅仅是为当前用户运行的体系结构和操作系统构建。
 您可以使用buildx并设置--platform标志来指定构建输出的目标平台（例如，linux/amd64、linux/arm64或darwin/amd64）。
 ```bash
 docker buildx build --platform=linux/amd64 -t myems/myems-cleaning .
 ```
 
-* 运行Docker容器 (run as superuser)
+* 运行Docker容器 (以超级用户运行)
 ```bash
 docker run -d -v /myems-cleaning/.env:/code/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-cleaning myems/myems-cleaning
 ```
@@ -331,13 +331,13 @@ cp example.env .env
 docker build -t myems/myems-normalization .
 ```
 
-为多个平台构建，而不仅仅是为调用构建的用户恰好运行的体系结构和操作系统构建。
+为多个平台构建，而不仅仅是为当前用户运行的体系结构和操作系统构建。
 您可以使用buildx并设置--platform标志来指定构建输出的目标平台（例如，linux/amd64、linux/arm64或darwin/amd64）。
 ```bash
 docker buildx build --platform=linux/amd64 -t myems/myems-normalization .
 ```
 
-* 运行Docker容器 (run as superuser)
+* 运行Docker容器 (以超级用户运行)
 ```bash
 docker run -d -v /myems-normalization/.env:/code/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-normalization myems/myems-normalization
 ```
@@ -403,13 +403,13 @@ cp example.env .env
 docker build -t myems/myems-aggregation .
 ```
 
-为多个平台构建，而不仅仅是为调用构建的用户恰好运行的体系结构和操作系统构建。
+为多个平台构建，而不仅仅是为当前用户运行的体系结构和操作系统构建。
 您可以使用buildx并设置--platform标志来指定构建输出的目标平台（例如，linux/amd64、linux/arm64或darwin/amd64）。
 ```bash
 docker buildx build --platform=linux/amd64 -t myems/myems-aggregation .
 ```
 
-* 运行Docker容器 (run as superuser)
+* 运行Docker容器 (以超级用户运行)
 ```bash
 docker run -d -v /myems-aggregation/.env:/code/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-aggregation myems/myems-aggregation
 ```
@@ -485,7 +485,7 @@ cd /myems-web
 docker build -t myems/myems-web .
 ```
 
-为多个平台构建，而不仅仅是为调用构建的用户恰好运行的体系结构和操作系统构建。
+为多个平台构建，而不仅仅是为当前用户运行的体系结构和操作系统构建。
 您可以使用buildx并设置--platform标志来指定构建输出的目标平台（例如，linux/amd64、linux/arm64或darwin/amd64）。
 ```bash
 docker buildx build --platform=linux/amd64 -t myems/myems-web .
