@@ -13,8 +13,8 @@ Verwendung von Open Source, um die Ziele der CO2-Peak-Kohlenstoffneutralität zu
 
 ## Potenzielle Partner
 
-1. Hardwareprodukte, einschließlich, aber nicht beschränkt auf Zähler, Sensoren, Durchflussmesser, Datensammler, Protokollumwandlungsgateways, Netzwerkkommunikationsgateways, Controller, Firewalls usw.
-2. Softwareprodukte, einschließlich, aber nicht beschränkt auf Datenerfassungssoftware, industrielle Steuerungssoftware, Gebäudesteuerungssoftware, Internet der Dinge Software, industrielle Kommunikationsprotokollsoftware, etc.
+1. Hardwareprodukte Hersteller, einschließlich, aber nicht beschränkt auf Zähler, Sensoren, Durchflussmesser, Datensammler, Protokollumwandlungsgateways, Netzwerkkommunikationsgateways, Controller, Firewalls usw.
+2. Softwareprodukte Entwickler, einschließlich, aber nicht beschränkt auf Datenerfassungssoftware, industrielle Steuerungssoftware, Gebäudesteuerungssoftware, Internet der Dinge Software, industrielle Kommunikationsprotokollsoftware, etc.
 
 ## Gebühr
 
@@ -44,6 +44,6 @@ Verwendung von Open Source, um die Ziele der CO2-Peak-Kohlenstoffneutralität zu
 
 - Name: Nengyuan Zhang
 - Tel & WeChat: 13011132526
-![Tel & WeChat: 13011132526](/img/wechat_nengyuanzhang.jpeg)
+![Tel & WeChat: 13011132526](/img/wechat_nengyuanzhang.png)
 - E-Mail: 13011132526@163.com
 

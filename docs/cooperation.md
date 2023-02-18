@@ -14,8 +14,8 @@ Using open source to help achieve carbon peak carbon neutrality goals.
 
 ## Potential Partners
 
-1. Hardware products, including but not limited to meters, sensors, flow meters, data collectors, protocol conversion gateways, network communication gateways, controllers, firewalls, etc
-2. Software products, including but not limited to data acquisition software, industrial control software, building control software, Internet of Things software, industrial communication protocol software, etc
+1. Hardware products manufacturer, including but not limited to meters, sensors, flow meters, data collectors, protocol conversion gateways, network communication gateways, controllers, firewalls, etc
+2. Software products developers, including but not limited to data acquisition software, industrial control software, building control software, Internet of Things software, industrial communication protocol software, etc
 
 ## Fee
 
@@ -45,6 +45,6 @@ Using open source to help achieve carbon peak carbon neutrality goals.
 
 - Name: Nengyuan Zhang
 - Tel & WeChat: 13011132526
-![Tel & WeChat: 13011132526](/img/wechat_nengyuanzhang.jpeg)
+![Tel & WeChat: 13011132526](/img/wechat_nengyuanzhang.png)
 - Email: 13011132526@163.com
 
