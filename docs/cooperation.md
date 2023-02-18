@@ -45,6 +45,6 @@ Using open source to help achieve carbon peak carbon neutrality goals.
 
 - Name: Nengyuan Zhang
 - Tel & WeChat: 13011132526
-![Tel & WeChat: 13011132526](/img/wechat_nengyuanzhang.png)
+![Tel & WeChat: 13011132526](/img/wechat_nengyuanzhang.jpeg)
 - Email: 13011132526@163.com
 
