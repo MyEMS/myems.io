@@ -134,12 +134,12 @@ Nutzer der Community Edition müssen das entsprechende Urheberrecht und LOGO von
 
 ## <a id="myems-downloads" />MyEMS Downloads (Community Edition)
 
-[1]. [Github](https://github.com/MyEMS/myems) https://github.com/myems/myems
+[1]. [https://github.com/myems/myems](https://github.com/myems/myems)
 
-[2]. [Gitee](https://gitee.com/myems/myems) https://gitee.com/myems/myems
+[2]. [https://gitee.com/myems/myems](https://gitee.com/myems/myems) 
 
-[3]. [Bitbucket](https://bitbucket.org/myems/myems) https://bitbucket.org/myems/myems
+[3]. [https://bitbucket.org/myems/myems](https://bitbucket.org/myems/myems) 
 
-[4]. [Gitlab](https://gitlab.com/myems/myems) https://gitlab.com/myems/myems
+[4]. [https://gitlab.com/myems/myems](https://gitlab.com/myems/myems)
 
-[5]. [GitCode](https://gitcode.net/myems/myems) https://gitcode.net/myems/myems
+[5]. [https://gitcode.net/myems/myems](https://gitcode.net/myems/myems) 
