@@ -10,6 +10,11 @@ sidebar_position: 2
 
 本指南介绍如何在Debian 10 Buster/Debian 11 Bullseye/Debian 12 Bookworm/Ubuntu 18.04 LTS/Ubuntu 20.04 LTS/Ubuntu 22.04 LTS上安装MyEMS。硬件需求取决于所选数据库和连接到系统的设备数量。要在一台机器上运行MyEMS和MySQL，您至少需要4GB的RAM。
 
+克隆源代码：
+```
+cd ~
+git clone https://gitee.com/myems/myems
+```
 ## 第1步 数据库
 
 参考 [Database](./database.md)
@@ -18,13 +23,13 @@ sidebar_position: 2
 
 * 将源代码复制到Ubuntu服务器，然后安装工具
 ```bash
-cd myems/myems-api
+cd ~/myems/myems-api
 sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 ```
 
 * 安装 myems-api 服务:
 ```bash
-sudo cp -r myems/myems-api /myems-api
+sudo cp -r ~/myems/myems-api /myems-api
 ```
 根据example.env创建.env文件，并根据需要编辑.env：
 ```bash
@@ -115,7 +120,7 @@ http{
   如果服务器无法连接到internet，请压缩myems/myems-admin文件夹并将其上传到服务器，然后将其解压缩到~/myems/myems-admin
 ```bash
 sudo mkdir /var/www
-sudo cp -r myems/myems-admin  /var/www/myems-admin
+sudo cp -r ~/myems/myems-admin  /var/www/myems-admin
 sudo chmod 0755 -R /var/www/myems-admin
 ```
 检查配置文件，必要时进行更改：
@@ -137,31 +142,31 @@ sudo nano /var/www/myems-admin/app/api.js
 在此步骤中，您将安装myems-modbus-tcp服务。
 
 ```bash
-cp -r myems/myems-modbus-tcp /myems-modbus-tcp
+sudo cp -r ~/myems/myems-modbus-tcp /myems-modbus-tcp
 cd /myems-modbus-tcp
-pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 ```
 
 将exmaple.ev文件复制到.env并修改.env文件：
 ```bash
-cp /myems-modbus-tcp/example.env /myems-modbus-tcp/.env
-nano /myems-modbus-tcp/.env
+sudo cp /myems-modbus-tcp/example.env /myems-modbus-tcp/.env
+sudo nano /myems-modbus-tcp/.env
 ```
 安装 systemd 服务:
 ```bash
-cp myems-modbus-tcp.service /lib/systemd/system/
+sudo cp myems-modbus-tcp.service /lib/systemd/system/
 ```
 启用服务:
 ```bash
-systemctl enable myems-modbus-tcp.service
+sudo systemctl enable myems-modbus-tcp.service
 ```
 启动服务:
 ```bash
-systemctl start myems-modbus-tcp.service
+sudo systemctl start myems-modbus-tcp.service
 ```
 监控服务:
 ```bash
-systemctl status myems-modbus-tcp.service
+sudo systemctl status myems-modbus-tcp.service
 ```
 查看日志:
 ```bash
@@ -173,31 +178,31 @@ cat /myems-modbus-tcp.log
 在此步骤中，您将安装myems-cleaning服务。
 
 ```bash
-cp -r myems-cleaning /myems-cleaning
-cd /myems/myems-cleaning
-pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+sudo cp -r ~/myems/myems-cleaning /myems-cleaning
+cd myems-cleaning
+sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 ```
 
 将exmaple.ev文件复制到.env并修改.env文件：
 ```bash
-cp /myems-cleaning/example.env /myems-cleaning/.env
-nano /myems-cleaning/.env
+sudo cp /myems-cleaning/example.env /myems-cleaning/.env
+sudo nano /myems-cleaning/.env
 ```
 安装systemd服务：
 ```bash
-cp myems-cleaning.service /lib/systemd/system/
+sudo cp /myems-cleaning/myems-cleaning.service /lib/systemd/system/
 ```
 启用服务：
 ```bash
-systemctl enable myems-cleaning.service
+sudo systemctl enable myems-cleaning.service
 ```
 启动服务：
 ```bash
-systemctl start myems-cleaning.service
+sudo systemctl start myems-cleaning.service
 ```
 监控服务：
 ```bash
-systemctl status myems-cleaning.service
+sudo systemctl status myems-cleaning.service
 ```
 查看日志：
 ```bash
@@ -209,31 +214,31 @@ cat /myems-cleaning.log
 在此步骤中，您将安装myems-normalization服务。
 
 ```bash
-cp -r myems/myems-normalization /myems-normalization
+sudo cp -r ~/myems/myems-normalization /myems-normalization
 cd /myems-normalization
-pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 ```
 
 将exmaple.ev文件复制到.env并修改.env文件：
 ```bash
-cp /myems-normalization/example.env /myems-normalization/.env
-nano /myems-normalization/.env
+sudo cp /myems-normalization/example.env /myems-normalization/.env
+sudo nano /myems-normalization/.env
 ```
 安装systemd服务
 ```bash
-cp myems-normalization.service /lib/systemd/system/
+sudo cp myems-normalization.service /lib/systemd/system/
 ```
 启用服务：
 ```bash
-systemctl enable myems-normalization.service
+sudo systemctl enable myems-normalization.service
 ```
 启动服务：
 ```bash
-systemctl start myems-normalization.service
+sudo systemctl start myems-normalization.service
 ```
 监控服务：
 ```bash
-systemctl status myems-normalization.service
+sudo systemctl status myems-normalization.service
 ```
 查看日志：
 ```bash
@@ -245,30 +250,30 @@ cat /myems-normalization.log
 在此步骤中，您将安装myems-aggregation服务。
 
 ```bash
-cp -r myems/myems-aggregation /myems-aggregation
+sudo cp -r ~/myems/myems-aggregation /myems-aggregation
 cd /myems-aggregation
-pip install -r requirements.txt
+sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 ```
 将exmaple.ev文件复制到.env并修改.env文件：
 ```bash
-cp /myems-aggregation/example.env /myems-aggregation/.env
-nano /myems-aggregation/.env
+sudo cp /myems-aggregation/example.env /myems-aggregation/.env
+sudo nano /myems-aggregation/.env
 ```
 安装systemd服务
 ```bash
-cp myems-aggregation.service /lib/systemd/system/
+sudo cp /myems-aggregation/myems-aggregation.service /lib/systemd/system/
 ```
 启用服务：
 ```bash
-systemctl enable myems-aggregation.service
+sudo systemctl enable myems-aggregation.service
 ```
 启动服务：
 ```bash
-systemctl start myems-aggregation.service
+sudo systemctl start myems-aggregation.service
 ```
 监控服务：
 ```bash
-systemctl status myems-aggregation.service
+sudo systemctl status myems-aggregation.service
 ```
 查看日志：
 ```bash
@@ -331,6 +336,14 @@ sudo systemctl restart nginx
 
 * 安装 MyEMS Web UI:
 
+
+安装NodeJS:
+```
+sudo su
+curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
+```
+
 如有必要，检查并更改配置文件：
 ```bash
 cd myems/myems-web
@@ -339,6 +352,7 @@ sudo nano src/config.js
 
 编译和压缩：
 ```bash
+sudo npm i --unsafe-perm=true --allow-root --legacy-peer-deps
 sudo npm run build
 tar czvf myems-web.tar.gz build
 ```

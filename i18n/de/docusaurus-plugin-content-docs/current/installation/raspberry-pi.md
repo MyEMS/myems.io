@@ -1,31 +1,63 @@
 ---
-sidebar_position: 2
+sidebar_position: 7
 ---
 
-# Debian/Ubuntu
+# Raspberry Pi
 
-In this guide, you will deploy MyEMS onto Debian or Ubuntu server with physical or virtual machines.
+In this guide, you will deploy MyEMS onto Raspberry Pi.
 
 ## Prerequisites
 
-This guide describes how to install MyEMS on Debian 10 Buster / Debian 11 Bullseye / Debian 12 Bookworm / Ubuntu 18.04 LTS / Ubuntu 20.04 LTS / Ubuntu 22.04 LTS. Hardware requirements depend on chosen database and amount of devices connected to the system. To run MyEMS and MySQL on a single machine you will need at least 4GB of RAM.
+* Raspberry Pi 4 Model B (4GB RAM)
+* Raspberry Pi OS Lite (64 bit)
 
-Clone source code:
+## Clone Source Code
+
 ```
+sudo apt install git
+sudo apt install pip
+sudo apt install ufw
 cd ~
 git clone https://github.com/myems/myems
 ```
 
 ## Step 1 Database
 
+* Setup MySQL Server
+
+```
+sudo apt update
+sudo apt upgrade
+sudo apt install mariadb-server
+```
+By default, MySQL is installed without any password set up meaning you can access the MySQL server without any authentication.
+Run the following command to begin the MySQL securing process.
+
+```
+sudo mysql_secure_installation
+```
+Enter current password for root (enter for none): [Enter key or return key]
+Switch to unix_socket authentication [Y/n] Y
+Change the root password? [Y/n] Y
+New password: !MyEMS1
+Re-enter new password: !MyEMS1
+Remove anonymous users? [Y/n] Y
+Disallow root login remotely? [Y/n] n
+Remove test database and access to it? [Y/n] Y
+Reload privilege tables now? [Y/n] Y
+
+* Install database schema and scripts for MyEMS.
+
 See [Database](./database.md)
+
+
 
 ## Step 2 myems-api
 
-* Copy source code to a production Ubuntu Server and then install requirements
+* Copy source code to a production Ubuntu Server and then install tools
 ```bash
 cd ~/myems/myems-api
-sudo pip install -r requirements.txt
+sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 ```
 
 * Install myems-api service:
@@ -75,7 +107,22 @@ sudo systemctl start myems-api.service
 
 * Install NGINX Server
 
-refer to http://nginx.org/en/docs/install.html
+refer to http://nginx.org/en/linux_packages.html#Debian
+```
+sudo apt install curl gnupg2 ca-certificates lsb-release debian-archive-keyring
+
+curl https://nginx.org/keys/nginx_signing.key | gpg --dearmor | sudo tee /usr/share/keyrings/nginx-archive-keyring.gpg >/dev/null
+
+gpg --dry-run --quiet --no-keyring --import --import-options import-show /usr/share/keyrings/nginx-archive-keyring.gpg
+
+echo "deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] http://nginx.org/packages/debian `lsb_release -cs` nginx" | sudo tee /etc/apt/sources.list.d/nginx.list
+
+echo -e "Package: *\nPin: origin nginx.org\nPin: release o=nginx\nPin-Priority: 900\n" | sudo tee /etc/apt/preferences.d/99nginx
+
+sudo apt update
+sudo apt install nginx
+
+```
 
 * Configure NGINX
 ```bash
@@ -83,7 +130,7 @@ sudo nano /etc/nginx/nginx.conf
 ```
 In the 'http' section, add some directives:
 ```
-http{
+http {
     client_header_timeout 600;
     client_max_body_size 512M;
     gzip on;
@@ -118,7 +165,7 @@ Add a new 'server' section with directives as below:
 ```
 
 * Install myems-admin :
-  If the server can not connect to the internet, please compress the myems/myems-admin folder and upload it to the server and extract it to ~/myems/myems-admin
+
 ```bash
 sudo mkdir /var/www
 sudo cp -r ~/myems/myems-admin  /var/www/myems-admin
@@ -145,7 +192,7 @@ In this step, you will install myems-modbus-tcp service.
 ```bash
 sudo cp -r ~/myems/myems-modbus-tcp /myems-modbus-tcp
 cd /myems-modbus-tcp
-sudo pip install -r requirements.txt
+sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 ```
 
 Copy exmaple.env file to .env and modify the .env file:
@@ -181,13 +228,13 @@ In this step, you will install myems-cleaning service.
 ```bash
 sudo cp -r ~/myems/myems-cleaning /myems-cleaning
 cd /myems-cleaning
-sudo pip install -r requirements.txt
+sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 ```
 
 Copy exmaple.env file to .env and modify the .env file:
 ```bash
 sudo cp /myems-cleaning/example.env /myems-cleaning/.env
-sudo nano /myems-cleaning/.env
+nano /myems-cleaning/.env
 ```
 Setup systemd service:
 ```bash
@@ -217,13 +264,13 @@ In this step, you will install myems-normalization service.
 ```bash
 sudo cp -r ~/myems/myems-normalization /myems-normalization
 cd /myems-normalization
-sudo pip install -r requirements.txt
+sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 ```
 
 Copy exmaple.env file to .env and modify the .env file:
 ```bash
 sudo cp /myems-normalization/example.env /myems-normalization/.env
-sudo nano /myems-normalization/.env
+nano /myems-normalization/.env
 ```
 Setup systemd service:
 ```bash
@@ -253,12 +300,12 @@ In this step, you will install myems-aggregation service.
 ```bash
 sudo cp -r ~/myems/myems-aggregation /myems-aggregation
 cd /myems-aggregation
-pip install -r requirements.txt
+sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 ```
 Copy exmaple.env file to .env and modify the .env file:
 ```bash
 sudo cp /myems-aggregation/example.env /myems-aggregation/.env
-nano /myems-aggregation/.env
+sudo nano /myems-aggregation/.env
 ```
 Setup systemd service:
 ```bash
@@ -295,7 +342,7 @@ sudo nano /etc/nginx/nginx.conf
 ```
 In the 'http' section, add some directives:
 ```
-http{
+http {
     client_header_timeout 600;
     client_max_body_size 512M;
     gzip on;
@@ -309,7 +356,7 @@ http{
 }
 ```
 
-Add a new 'server' section with directives as below:
+Delete the default 'server' section in /etc/nginx/nginx.conf or in /etc/nginx/conf.d/default.conf and add a new 'server' section with directives as below:
 ```
   server {
       listen                 80;
@@ -321,7 +368,8 @@ Add a new 'server' section with directives as below:
           try_files $uri  /index.html;
       }
       ## To avoid CORS issue, use Nginx to proxy myems-api to path /api 
-      ## Add another location /api in 'server' and replace demo address http://127.0.0.1:8000/ with actual url
+      ## Add another location /api in 'server'
+      ## NOTE: replace dafulat address http://127.0.0.1:8000/ with actual IP or URL
       location /api {
           proxy_pass http://127.0.0.1:8000/;
           proxy_connect_timeout 75;
@@ -337,16 +385,15 @@ sudo systemctl restart nginx
 
 * Install MyEMS Web UI:
 
-Setup NodeJS:
+Install NodeJS
 ```
 sudo su
-curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
-sudo apt-get install -y nodejs
+curl -fsSL https://deb.nodesource.com/setup_19.x | bash - && sudo apt install -y nodejs
 ```
 
 Check and change the config file if necessary:
 ```bash
-cd myems/myems-web
+cd ~/myems/myems-web
 sudo nano src/config.js
 ```
 
@@ -354,15 +401,10 @@ Build and Compress
 ```bash
 sudo npm i --unsafe-perm=true --allow-root --legacy-peer-deps
 sudo npm run build
-tar czvf myems-web.tar.gz build
 ```
 
 Install
-Upload the file myems-web.tar.gz to you web server. 
-Note that the following path should be same as that was configured in nginx.conf.
 ```bash
-tar xzf myems-web.tar.gz
-sudo rm -r /var/www/myems-web
 sudo mv build  /var/www/myems-web
 ```
 
