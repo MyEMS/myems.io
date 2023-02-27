@@ -9,6 +9,13 @@ In dieser Anleitung werden Sie MyEMS auf Debian- oder Ubuntu-Server mit physisch
 ## Prerequisites
 
 Diese Anleitung beschreibt, wie MyEMS auf Debian 10 Buster Debian 11 Bullseye oder Debian 12 Bookworm installiert wird. Die Hardwareanforderungen hängen von der gewählten Datenbank und der Anzahl der an das System angeschlossenen Geräte ab. Um MyEMS und MySQL auf einem einzigen Rechner laufen zu lassen, benötigen Sie mindestens 4GB RAM.
+
+Quellcode klonen:
+```
+cd ~
+git clone https://github.com/myems/myems
+```
+
 ## Schritt 1 Database
 
 Siehe [Database](./database.md)
@@ -17,13 +24,13 @@ Siehe [Database](./database.md)
 
 * Kopieren Sie Quellcode auf einen Ubuntu Server und installieren Sie dann Tools
 ```bash
-cd myems/myems-api
-sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+cd ~/myems/myems-api
+sudo pip install -r requirements.txt
 ```
 
 * myems-api-Dienst installieren:
 ```bash
-sudo cp -r myems/myems-api /myems-api
+sudo cp -r ~/myems/myems-api /myems-api
 ```
 Erstellen Sie eine .env basierend auf example.env und bearbeiten Sie die .env bei Bedarf:
 ```bash
@@ -114,7 +121,7 @@ Fügen Sie einen neuen Abschnitt "server" mit Direktiven wie folgt hinzu:
   Wenn der Server keine Verbindung zum Internet herstellen kann, komprimieren Sie bitte den Ordner myems/myems-admin und laden Sie ihn auf den Server hoch und extrahieren Sie ihn in ~/myems/myems-admin
 ```bash
 sudo mkdir /var/www
-sudo cp -r myems/myems-admin  /var/www/myems-admin
+sudo cp -r ~/myems/myems-admin  /var/www/myems-admin
 sudo chmod 0755 -R /var/www/myems-admin
 ```
   Überprüfen Sie die Konfigurationsdatei und ändern Sie sie bei Bedarf:
@@ -136,31 +143,31 @@ Der Ordner "upload" ist für vom Benutzer hochgeladene Dateien. Löschen/verschi
 In diesem Schritt installieren Sie den Dienst myems-modbus-tcp.
 
 ```bash
-cp -r myems/myems-modbus-tcp /myems-modbus-tcp
+sudo cp -r ~/myems/myems-modbus-tcp /myems-modbus-tcp
 cd /myems-modbus-tcp
-pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+sudo pip install -r requirements.txt 
 ```
 
 Kopieren Sie die Datei exmaple.env in .env und ändern Sie die Datei .env:
 ```bash
-cp /myems-modbus-tcp/example.env /myems-modbus-tcp/.env
-nano /myems-modbus-tcp/.env
+sudo cp /myems-modbus-tcp/example.env /myems-modbus-tcp/.env
+sudo nano /myems-modbus-tcp/.env
 ```
 systemd Dienst einrichten:
 ```bash
-cp myems-modbus-tcp.service /lib/systemd/system/
+sudo cp myems-modbus-tcp.service /lib/systemd/system/
 ```
 Den Dienst aktivieren:
 ```bash
-systemctl enable myems-modbus-tcp.service
+sudo systemctl enable myems-modbus-tcp.service
 ```
 Starten Sie den Dienst:
 ```bash
-systemctl start myems-modbus-tcp.service
+sudo systemctl start myems-modbus-tcp.service
 ```
 Überwachen Sie den Dienst:
 ```bash
-systemctl status myems-modbus-tcp.service
+sudo systemctl status myems-modbus-tcp.service
 ```
 Logbuch anzeigen:
 ```bash
@@ -172,31 +179,31 @@ cat /myems-modbus-tcp.log
 In diesem Schritt installieren Sie den myems-cleaning Service.
 
 ```bash
-cp -r myems-cleaning /myems-cleaning
-cd /myems/myems-cleaning
-pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+sudo cp -r ~/myems/myems-cleaning /myems-cleaning
+cd /myems-cleaning
+sudo pip install -r requirements.txt 
 ```
 
 Kopieren Sie die Datei exmaple.env in .env und ändern Sie die Datei .env:
 ```bash
-cp /myems-cleaning/example.env /myems-cleaning/.env
-nano /myems-cleaning/.env
+sudo cp /myems-cleaning/example.env /myems-cleaning/.env
+sudo nano /myems-cleaning/.env
 ```
 systemd Dienst einrichten:
 ```bash
-cp myems-cleaning.service /lib/systemd/system/
+sudo cp myems-cleaning.service /lib/systemd/system/
 ```
 Den Dienst aktivieren:
 ```bash
-systemctl enable myems-cleaning.service
+sudo systemctl enable myems-cleaning.service
 ```
 Starten Sie den Dienst:
 ```bash
-systemctl start myems-cleaning.service
+sudo systemctl start myems-cleaning.service
 ```
 Überwachen Sie den Dienst:
 ```bash
-systemctl status myems-cleaning.service
+sudo systemctl status myems-cleaning.service
 ```
 Logbuch anzeigen:
 ```bash
@@ -208,31 +215,31 @@ cat /myems-cleaning.log
 In diesem Schritt installieren Sie den myems-normalization service.
 
 ```bash
-cp -r myems/myems-normalization /myems-normalization
+sudo cp -r ~/myems/myems-normalization /myems-normalization
 cd /myems-normalization
-pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+sudo pip install -r requirements.txt 
 ```
 
 Kopieren Sie die Datei exmaple.env in .env und ändern Sie die Datei .env:
 ```bash
-cp /myems-normalization/example.env /myems-normalization/.env
-nano /myems-normalization/.env
+sudo cp /myems-normalization/example.env /myems-normalization/.env
+sudo nano /myems-normalization/.env
 ```
 systemd Dienst einrichten:
 ```bash
-cp myems-normalization.service /lib/systemd/system/
+sudo cp /myems-normalization/myems-normalization.service /lib/systemd/system/
 ```
 Den Dienst aktivieren:
 ```bash
-systemctl enable myems-normalization.service
+sudo systemctl enable myems-normalization.service
 ```
 Starten Sie den Dienst:
 ```bash
-systemctl start myems-normalization.service
+sudo systemctl start myems-normalization.service
 ```
 Überwachen Sie den Dienst:
 ```bash
-systemctl status myems-normalization.service
+sudo systemctl status myems-normalization.service
 ```
 Logbuch anzeigen:
 ```bash
@@ -244,30 +251,30 @@ cat /myems-normalization.log
 In diesem Schritt installieren Sie den myems-aggregation service.
 
 ```bash
-cp -r myems/myems-aggregation /myems-aggregation
+sudo cp -r ~/myems/myems-aggregation /myems-aggregation
 cd /myems-aggregation
-pip install -r requirements.txt
+sudo pip install -r requirements.txt
 ```
 Kopieren Sie die Datei exmaple.env in .env und ändern Sie die Datei .env:
 ```bash
-cp /myems-aggregation/example.env /myems-aggregation/.env
-nano /myems-aggregation/.env
+sudo cp /myems-aggregation/example.env /myems-aggregation/.env
+sudo nano /myems-aggregation/.env
 ```
 systemd Dienst einrichten:
 ```bash
-cp myems-aggregation.service /lib/systemd/system/
+sudo cp /myems-aggregation/myems-aggregation.service /lib/systemd/system/
 ```
 Den Dienst aktivieren:
 ```bash
-systemctl enable myems-aggregation.service
+sudo systemctl enable myems-aggregation.service
 ```
 Starten Sie den Dienst:
 ```bash
-systemctl start myems-aggregation.service
+sudo systemctl start myems-aggregation.service
 ```
 Überwachen Sie den Dienst:
 ```bash
-systemctl status myems-aggregation.service
+sudo systemctl status myems-aggregation.service
 ```
 Logbuch anzeigen:
 ```bash
@@ -330,6 +337,13 @@ sudo systemctl restart nginx
 
 * MyEMS Web UI installieren:
 
+NodeJS einrichten:
+```
+sudo su
+curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
+```
+
 Überprüfen und ändern Sie gegebenenfalls die Konfigurationsdatei:
 ```bash
 cd myems/myems-web
@@ -338,6 +352,7 @@ sudo nano src/config.js
 
 Erstellen und komprimieren:
 ```bash
+sudo npm i --unsafe-perm=true --allow-root --legacy-peer-deps
 sudo npm run build
 tar czvf myems-web.tar.gz build
 ```
