@@ -22,15 +22,11 @@ Siehe [Database](./database.md)
 
 ## Schritt 2 myems-api
 
-* Kopieren Sie Quellcode auf einen Ubuntu Server und installieren Sie dann Tools
-```bash
-cd ~/myems/myems-api
-sudo pip install -r requirements.txt
-```
-
-* myems-api-Dienst installieren:
+* myems-api Dienst installieren:
 ```bash
 sudo cp -r ~/myems/myems-api /myems-api
+cd /myems-api
+sudo pip install -r requirements.txt -i
 ```
 Erstellen Sie eine .env basierend auf example.env und bearbeiten Sie die .env bei Bedarf:
 ```bash
@@ -339,7 +335,6 @@ sudo systemctl restart nginx
 
 NodeJS einrichten:
 ```
-sudo su
 curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
 sudo apt-get install -y nodejs
 ```

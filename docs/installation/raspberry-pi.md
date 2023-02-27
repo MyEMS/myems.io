@@ -54,15 +54,11 @@ See [Database](./database.md)
 
 ## Step 2 myems-api
 
-* Copy source code to a production Ubuntu Server and then install tools
-```bash
-cd ~/myems/myems-api
-sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
-```
-
 * Install myems-api service:
 ```bash
 sudo cp -r ~/myems/myems-api /myems-api
+cd /myems-api
+sudo pip install -r requirements.txt 
 ```
 Create .env file based on example.env and edit the .env file if needed:
 ```bash
@@ -192,7 +188,7 @@ In this step, you will install myems-modbus-tcp service.
 ```bash
 sudo cp -r ~/myems/myems-modbus-tcp /myems-modbus-tcp
 cd /myems-modbus-tcp
-sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+sudo pip install -r requirements.txt 
 ```
 
 Copy exmaple.env file to .env and modify the .env file:
@@ -228,7 +224,7 @@ In this step, you will install myems-cleaning service.
 ```bash
 sudo cp -r ~/myems/myems-cleaning /myems-cleaning
 cd /myems-cleaning
-sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+sudo pip install -r requirements.txt 
 ```
 
 Copy exmaple.env file to .env and modify the .env file:
@@ -264,7 +260,7 @@ In this step, you will install myems-normalization service.
 ```bash
 sudo cp -r ~/myems/myems-normalization /myems-normalization
 cd /myems-normalization
-sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+sudo pip install -r requirements.txt 
 ```
 
 Copy exmaple.env file to .env and modify the .env file:
@@ -300,7 +296,7 @@ In this step, you will install myems-aggregation service.
 ```bash
 sudo cp -r ~/myems/myems-aggregation /myems-aggregation
 cd /myems-aggregation
-sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+sudo pip install -r requirements.txt 
 ```
 Copy exmaple.env file to .env and modify the .env file:
 ```bash
@@ -378,17 +374,17 @@ Delete the default 'server' section in /etc/nginx/nginx.conf or in /etc/nginx/co
       }
   }
 ```
-Restart NGINX
+Restart NGINX:
 ```bash
 sudo systemctl restart nginx
 ```
 
 * Install MyEMS Web UI:
 
-Install NodeJS
+Install NodeJS:
 ```
-sudo su
-curl -fsSL https://deb.nodesource.com/setup_19.x | bash - && sudo apt install -y nodejs
+curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
 ```
 
 Check and change the config file if necessary:
@@ -397,7 +393,7 @@ cd ~/myems/myems-web
 sudo nano src/config.js
 ```
 
-Build and Compress
+Build and Compress:
 ```bash
 sudo npm i --unsafe-perm=true --allow-root --legacy-peer-deps
 sudo npm run build
