@@ -36,6 +36,7 @@ sudo apt install mariadb-server
 ```
 sudo mysql_secure_installation
 ```
+```
 Enter current password for root (enter for none): [Enter key or return key]
 Switch to unix_socket authentication [Y/n] Y
 Change the root password? [Y/n] Y
@@ -45,6 +46,7 @@ Remove anonymous users? [Y/n] Y
 Disallow root login remotely? [Y/n] n
 Remove test database and access to it? [Y/n] Y
 Reload privilege tables now? [Y/n] Y
+```
 
 * 为 MyEMS 安装数据库架构和脚本。
 
