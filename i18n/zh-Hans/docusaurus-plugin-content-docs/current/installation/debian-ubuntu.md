@@ -133,6 +133,11 @@ sudo nano /var/www/myems-admin/app/api.js
 
 :::
 
+将端口添加到防火墙：
+```bash
+sudo ufw allow 8001
+```
+
 ## 第4步 myems-modbus-tcp
 
 在此步骤中，您将安装myems-modbus-tcp服务。
@@ -353,13 +358,18 @@ sudo npm run build
 tar czvf myems-web.tar.gz build
 ```
 
-安装
+安装:
 将myems-web.tar.gz文件上传到web服务器。
 注意，以下路径应该与nginx.conf中配置的路径相同。
 ```bash
 tar xzf myems-web.tar.gz
 sudo rm -r /var/www/myems-web
 sudo mv build  /var/www/myems-web
+```
+
+将端口添加到防火墙：
+```bash
+sudo ufw allow 80
 ```
 
 ## 安装后

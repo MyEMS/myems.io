@@ -182,6 +182,11 @@ Der Ordner „Upload“ ist für vom Benutzer hochgeladene Dateien. Löschen/ver
 
 :::
 
+Port zur Firewall hinzufügen:
+```bash
+sudo ufw allow 8001
+```
+
 ## Schritt 4 myems-modbus-tcp
 
 In diesem Schritt installieren Sie den Dienst myems-modbus-tcp.
@@ -403,6 +408,11 @@ sudo npm run build
 Installieren:
 ```bash
 sudo mv build /var/www/myems-web
+```
+
+Port zur Firewall hinzufügen:
+```bash
+sudo ufw allow 80
 ```
 
 ## Nach der Installation

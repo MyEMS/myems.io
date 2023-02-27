@@ -134,6 +134,11 @@ Der Ordner "upload" ist für vom Benutzer hochgeladene Dateien. Löschen/verschi
 
 :::
 
+Port zur Firewall hinzufügen:
+```bash
+sudo ufw allow 8001
+```
+
 ## Schritt 4 myems-modbus-tcp
 
 In diesem Schritt installieren Sie den Dienst myems-modbus-tcp.
@@ -359,6 +364,11 @@ Beachten Sie, dass der folgende Pfad mit dem in nginx.conf konfigurierten identi
 tar xzf myems-web.tar.gz
 sudo rm -r /var/www/myems-web
 sudo mv build  /var/www/myems-web
+```
+
+Port zur Firewall hinzufügen:
+```bash
+sudo ufw allow 80
 ```
 
 ## Nach der Installation

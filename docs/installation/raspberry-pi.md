@@ -181,6 +181,11 @@ The 'upload' folder is for user uploaded files. DO NOT delete/move/overwrite the
 
 :::
 
+Add port to firewall:
+```bash
+sudo ufw allow 8001
+```
+
 ## Step 4 myems-modbus-tcp
 
 In this step, you will install myems-modbus-tcp service.
@@ -402,6 +407,11 @@ sudo npm run build
 Install
 ```bash
 sudo mv build  /var/www/myems-web
+```
+
+Add port to firewall:
+```bash
+sudo ufw allow 80
 ```
 
 ## Post-installation
