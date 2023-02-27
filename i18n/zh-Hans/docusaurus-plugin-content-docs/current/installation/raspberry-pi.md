@@ -182,6 +182,11 @@ sudo nano /var/www/myems-admin/app/api.js
 
 :::
 
+将端口添加到防火墙：
+```bash
+sudo ufw allow 8001
+```
+
 ## 第4步 myems-modbus-tcp
 
 在此步骤中，您将安装myems-modbus-tcp服务。
@@ -403,6 +408,11 @@ sudo npm run build
 安装
 ```bash
 sudo mv build  /var/www/myems-web
+```
+
+将端口添加到防火墙：
+```bash
+sudo ufw allow 80
 ```
 
 ## 安装后
