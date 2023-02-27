@@ -22,15 +22,11 @@ See [Database](./database.md)
 
 ## Step 2 myems-api
 
-* Copy source code to a production Ubuntu Server and then install requirements
-```bash
-cd ~/myems/myems-api
-sudo pip install -r requirements.txt
-```
-
 * Install myems-api service:
 ```bash
 sudo cp -r ~/myems/myems-api /myems-api
+cd /myems-api
+sudo pip install -r requirements.txt -i
 ```
 Create .env file based on example.env and edit the .env file if needed:
 ```bash

@@ -21,15 +21,11 @@ git clone https://gitee.com/myems/myems
 
 ## 第2步 myems-api
 
-* 将源代码复制到Ubuntu服务器，然后安装工具
-```bash
-cd ~/myems/myems-api
-sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
-```
-
 * 安装 myems-api 服务:
 ```bash
 sudo cp -r ~/myems/myems-api /myems-api
+cd /myems-api
+sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 ```
 根据example.env创建.env文件，并根据需要编辑.env：
 ```bash
@@ -82,7 +78,7 @@ sudo nano /etc/nginx/nginx.conf
 ```
 In the 'http' section, add some directives:
 ```
-http{
+http {
     client_header_timeout 600;
     client_max_body_size 512M;
     gzip on;
@@ -179,7 +175,7 @@ cat /myems-modbus-tcp.log
 
 ```bash
 sudo cp -r ~/myems/myems-cleaning /myems-cleaning
-cd myems-cleaning
+cd /myems-cleaning
 sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 ```
 
@@ -226,7 +222,7 @@ sudo nano /myems-normalization/.env
 ```
 安装systemd服务
 ```bash
-sudo cp myems-normalization.service /lib/systemd/system/
+sudo cp /myems-normalization/myems-normalization.service /lib/systemd/system/
 ```
 启用服务：
 ```bash
@@ -294,7 +290,7 @@ sudo nano /etc/nginx/nginx.conf
 ```
 In the 'http' section, add some directives:
 ```
-http{
+http {
     client_header_timeout 600;
     client_max_body_size 512M;
     gzip on;
@@ -320,7 +316,8 @@ http{
           try_files $uri  /index.html;
       }
       ## To avoid CORS issue, use Nginx to proxy myems-api to path /api 
-      ## Add another location /api in 'server' and replace demo address http://127.0.0.1:8000/ with actual url
+      ## Add another location /api in 'server'
+      ## NOTE: replace dafulat address http://127.0.0.1:8000/ with actual IP or URL
       location /api {
           proxy_pass http://127.0.0.1:8000/;
           proxy_connect_timeout 75;
@@ -336,7 +333,6 @@ sudo systemctl restart nginx
 
 * 安装 MyEMS Web UI:
 
-
 安装NodeJS:
 ```
 sudo su
@@ -346,7 +342,7 @@ sudo apt-get install -y nodejs
 
 如有必要，检查并更改配置文件：
 ```bash
-cd myems/myems-web
+cd ~/myems/myems-web
 sudo nano src/config.js
 ```
 

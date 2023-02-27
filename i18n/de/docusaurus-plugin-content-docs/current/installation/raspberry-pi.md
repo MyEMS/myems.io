@@ -4,14 +4,14 @@ sidebar_position: 7
 
 # Raspberry Pi
 
-In this guide, you will deploy MyEMS onto Raspberry Pi.
+In diesem Handbuch stellen Sie MyEMS auf Raspberry Pi bereit.
 
-## Prerequisites
+## Voraussetzungen
 
 * Raspberry Pi 4 Model B (4GB RAM)
 * Raspberry Pi OS Lite (64 bit)
 
-## Clone Source Code
+## Quellcode klonen
 
 ```
 sudo apt install git
@@ -21,17 +21,17 @@ cd ~
 git clone https://github.com/myems/myems
 ```
 
-## Step 1 Database
+## Schritt 1 Datenbank
 
-* Setup MySQL Server
+* MySQL-Server einrichten
 
 ```
 sudo apt update
 sudo apt upgrade
 sudo apt install mariadb-server
 ```
-By default, MySQL is installed without any password set up meaning you can access the MySQL server without any authentication.
-Run the following command to begin the MySQL securing process.
+Standardmäßig wird MySQL ohne Passwort installiert, was bedeutet, dass Sie ohne Authentifizierung auf den MySQL-Server zugreifen können.
+Führen Sie den folgenden Befehl aus, um den MySQL-Sicherungsprozess zu starten.
 
 ```
 sudo mysql_secure_installation
@@ -46,30 +46,27 @@ Disallow root login remotely? [Y/n] n
 Remove test database and access to it? [Y/n] Y
 Reload privilege tables now? [Y/n] Y
 
-* Install database schema and scripts for MyEMS.
+* Datenbankschema und Skripte für MyEMS installieren.
 
-See [Database](./database.md)
+Sehen [Database](./database.md)
 
 
 
-## Step 2 myems-api
+## Schritt 2 myems-api
 
-* Copy source code to a production Ubuntu Server and then install tools
-```bash
-cd ~/myems/myems-api
-sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
-```
-
-* Install myems-api service:
+* Installieren Sie den myems-api-Dienst:
 ```bash
 sudo cp -r ~/myems/myems-api /myems-api
+cd /myems-api
+sudo pip install -r requirements.txt 
 ```
-Create .env file based on example.env and edit the .env file if needed:
+
+Erstellen Sie eine .env-Datei basierend auf example.env und bearbeiten Sie die .env-Datei bei Bedarf:
 ```bash
 sudo cp /myems-api/example.env /myems-api/.env
 sudo nano /myems-api/.env
 ```
-Check or change the listening port (default is 8000) in myems-api.service and myems-api.socket:
+Überprüfen oder ändern Sie den Überwachungsport (Standard ist 8000) in myems-api.service und myems-api.socket:
 ```bash
 sudo nano /myems-api/myems-api.service
 ```
@@ -82,32 +79,32 @@ sudo nano /myems-api/myems-api.socket
 ```bash
 ListenStream=0.0.0.0:8000
 ```
-Add port to firewall:
+Port zur Firewall hinzufügen:
 ```bash
 sudo ufw allow 8000
 ```
-Setup systemd configure files:
+Systemd-Konfigurationsdateien einrichten:
 ```bash
 sudo cp /myems-api/myems-api.service /lib/systemd/system/
 sudo cp /myems-api/myems-api.socket /lib/systemd/system/
 sudo cp /myems-api/myems-api.conf /usr/lib/tmpfiles.d/
 ```
-Next enable the services so that they autostart at boot:
+Als nächstes aktivieren Sie die Dienste, damit sie beim Booten automatisch starten:
 ```bash
 sudo systemctl enable myems-api.socket
 sudo systemctl enable myems-api.service
 ```
-Start the services :
+Starten Sie die Dienste:
 ```bash
 sudo systemctl start myems-api.socket
 sudo systemctl start myems-api.service
 ```
 
-## Step 3 myems-admin
+## Schritt 3 myems-admin
 
-* Install NGINX Server
+* NGINX-Server installieren
 
-refer to http://nginx.org/en/linux_packages.html#Debian
+beziehen auf http://nginx.org/en/linux_packages.html#Debian
 ```
 sudo apt install curl gnupg2 ca-certificates lsb-release debian-archive-keyring
 
@@ -124,11 +121,11 @@ sudo apt install nginx
 
 ```
 
-* Configure NGINX
+* Konfigurieren Sie NGINX
 ```bash
 sudo nano /etc/nginx/nginx.conf
 ```
-In the 'http' section, add some directives:
+Fügen Sie im Abschnitt „http“ einige Anweisungen hinzu:
 ```
 http {
     client_header_timeout 600;
@@ -144,7 +141,7 @@ http {
 }
 ```
 
-Add a new 'server' section with directives as below:
+Fügen Sie einen neuen Abschnitt „Server“ mit den folgenden Anweisungen hinzu:
 ```
   server {
       listen                 8001;
@@ -164,30 +161,30 @@ Add a new 'server' section with directives as below:
   }
 ```
 
-* Install myems-admin :
+* myems-admin installieren:
 
 ```bash
 sudo mkdir /var/www
 sudo cp -r ~/myems/myems-admin  /var/www/myems-admin
 sudo chmod 0755 -R /var/www/myems-admin
 ```
-  Check the config file and change it if necessary:
+  Überprüfen Sie die Konfigurationsdatei und ändern Sie sie gegebenenfalls:
 ```bash
 sudo nano /var/www/myems-admin/app/api.js
 ```
 
 :::caution
 
-The 'upload' folder is for user uploaded files. DO NOT delete/move/overwrite the 'upload' folder when you upgraded myems-admin.
+Der Ordner „Upload“ ist für vom Benutzer hochgeladene Dateien. Löschen/verschieben/überschreiben Sie den Ordner „Upload“ NICHT, wenn Sie myems-admin aktualisiert haben.
 ```bash
  /var/www/myems-admin/upload
 ```
 
 :::
 
-## Step 4 myems-modbus-tcp
+## Schritt 4 myems-modbus-tcp
 
-In this step, you will install myems-modbus-tcp service.
+In diesem Schritt installieren Sie den Dienst myems-modbus-tcp.
 
 ```bash
 sudo cp -r ~/myems/myems-modbus-tcp /myems-modbus-tcp
@@ -195,35 +192,35 @@ cd /myems-modbus-tcp
 sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 ```
 
-Copy exmaple.env file to .env and modify the .env file:
+Kopieren Sie die Datei exmaple.env nach .env und ändern Sie die .env-Datei:
 ```bash
 sudo cp /myems-modbus-tcp/example.env /myems-modbus-tcp/.env
 sudo nano /myems-modbus-tcp/.env
 ```
-Setup systemd service:
+systemd-Dienst einrichten:
 ```bash
 sudo cp myems-modbus-tcp.service /lib/systemd/system/
 ```
-Enable the service:
+Aktivieren Sie den Dienst:
 ```bash
 sudo systemctl enable myems-modbus-tcp.service
 ```
-Start the service:
+Starten Sie den Dienst:
 ```bash
 sudo systemctl start myems-modbus-tcp.service
 ```
-Monitor the service:
+Überwachen Sie den Dienst:
 ```bash
 sudo systemctl status myems-modbus-tcp.service
 ```
-View the log:
+Protokoll anzeigen:
 ```bash
 cat /myems-modbus-tcp.log
 ```
 
-## Step 5 myems-cleaning
+## Schritt 5 myems-cleaning
 
-In this step, you will install myems-cleaning service.
+In diesem Schritt installieren Sie den myems-cleaning service.
 
 ```bash
 sudo cp -r ~/myems/myems-cleaning /myems-cleaning
@@ -231,35 +228,35 @@ cd /myems-cleaning
 sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 ```
 
-Copy exmaple.env file to .env and modify the .env file:
+Kopieren Sie die Datei exmaple.env nach .env und ändern Sie die .env-Datei:
 ```bash
 sudo cp /myems-cleaning/example.env /myems-cleaning/.env
 nano /myems-cleaning/.env
 ```
-Setup systemd service:
+systemd-Dienst einrichten:
 ```bash
 sudo cp /myems-cleaning/myems-cleaning.service /lib/systemd/system/
 ```
-Enable the service:
+Aktivieren Sie den Dienst:
 ```bash
 sudo systemctl enable myems-cleaning.service
 ```
-Start the service:
+Starten Sie den Dienst:
 ```bash
 sudo systemctl start myems-cleaning.service
 ```
-Monitor the service:
+Überwachen Sie den Dienst:
 ```bash
 sudo systemctl status myems-cleaning.service
 ```
-View the log:
+Protokoll anzeigen:
 ```bash
 cat /myems-cleaning.log
 ```
 
-## Step 6 myems-normalization
+## Schritt 6 myems-normalization
 
-In this step, you will install myems-normalization service.
+In diesem Schritt installieren Sie den Dienst myems-normalization.
 
 ```bash
 sudo cp -r ~/myems/myems-normalization /myems-normalization
@@ -267,80 +264,80 @@ cd /myems-normalization
 sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 ```
 
-Copy exmaple.env file to .env and modify the .env file:
+Kopieren Sie die Datei exmaple.env nach .env und ändern Sie die .env-Datei:
 ```bash
 sudo cp /myems-normalization/example.env /myems-normalization/.env
 nano /myems-normalization/.env
 ```
-Setup systemd service:
+systemd-Dienst einrichten:
 ```bash
 sudo cp /myems-normalization/myems-normalization.service /lib/systemd/system/
 ```
-Enable the service:
+Aktivieren Sie den Dienst:
 ```bash
 sudo systemctl enable myems-normalization.service
 ```
-Start the service:
+Starten Sie den Dienst:
 ```bash
 sudo systemctl start myems-normalization.service
 ```
-Monitor the service:
+Überwachen Sie den Dienst:
 ```bash
 sudo systemctl status myems-normalization.service
 ```
-View the log:
+Protokoll anzeigen:
 ```bash
 cat /myems-normalization.log
 ```
 
-## Step 7 myems-aggregation
+## Schritt 7 myems-aggregation
 
-In this step, you will install myems-aggregation service.
+In diesem Schritt installieren Sie den myems-aggregation service.
 
 ```bash
 sudo cp -r ~/myems/myems-aggregation /myems-aggregation
 cd /myems-aggregation
 sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 ```
-Copy exmaple.env file to .env and modify the .env file:
+Kopieren Sie die Datei exmaple.env nach .env und ändern Sie die .env-Datei:
 ```bash
 sudo cp /myems-aggregation/example.env /myems-aggregation/.env
 sudo nano /myems-aggregation/.env
 ```
-Setup systemd service:
+systemd-Dienst einrichten:
 ```bash
 sudo cp /myems-aggregation/myems-aggregation.service /lib/systemd/system/
 ```
-Enable the service:
+Aktivieren Sie den Dienst:
 ```bash
 sudo systemctl enable myems-aggregation.service
 ```
-Start the service:
+Starten Sie den Dienst:
 ```bash
 sudo systemctl start myems-aggregation.service
 ```
-Monitor the service:
+Überwachen Sie den Dienst:
 ```bash
 sudo systemctl status myems-aggregation.service
 ```
-View the log:
+Protokoll anzeigen:
 ```bash
 cat /myems-aggregation.log
 ```
 
 
-## Step 8 myems-web
+## Schritt 8 myems-web
 
-In this step, you will install myems-web UI service.
+In diesem Schritt installieren Sie den UI-Dienst myems-web.
 
-*   Install NGINX  Server
+*   NGINX-Server installieren
 refer to http://nginx.org/en/docs/install.html
 
-*   Configure NGINX
+*   Konfigurieren Sie NGINX
 ```bash
 sudo nano /etc/nginx/nginx.conf
 ```
-In the 'http' section, add some directives:
+Fügen Sie im Abschnitt „http“ einige Anweisungen hinzu:
 ```
 http {
     client_header_timeout 600;
@@ -356,7 +353,7 @@ http {
 }
 ```
 
-Delete the default 'server' section in /etc/nginx/nginx.conf or in /etc/nginx/conf.d/default.conf and add a new 'server' section with directives as below:
+Löschen Sie den Standardabschnitt „server“ in /etc/nginx/nginx.conf oder in /etc/nginx/conf.d/default.conf und fügen Sie einen neuen Abschnitt „server“ mit den folgenden Anweisungen hinzu:
 ```
   server {
       listen                 80;
@@ -378,41 +375,41 @@ Delete the default 'server' section in /etc/nginx/nginx.conf or in /etc/nginx/co
       }
   }
 ```
-Restart NGINX
+Starten Sie NGINX neu:
 ```bash
 sudo systemctl restart nginx
 ```
 
-* Install MyEMS Web UI:
+* Installieren Sie die MyEMS Web UI:
 
-Install NodeJS
+Installieren Sie NodeJS:
 ```
-sudo su
-curl -fsSL https://deb.nodesource.com/setup_19.x | bash - && sudo apt install -y nodejs
+curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
 ```
 
-Check and change the config file if necessary:
+Überprüfen und ändern Sie gegebenenfalls die Konfigurationsdatei:
 ```bash
 cd ~/myems/myems-web
 sudo nano src/config.js
 ```
 
-Build and Compress
+Erstellen und komprimieren:
 ```bash
 sudo npm i --unsafe-perm=true --allow-root --legacy-peer-deps
 sudo npm run build
 ```
 
-Install
+Installieren:
 ```bash
-sudo mv build  /var/www/myems-web
+sudo mv build /var/www/myems-web
 ```
 
-## Post-installation
+## Nach der Installation
 
-Congratulations! You are able to login the MyEMS Admin UI and Web UI now.
+Glückwunsch! Sie können sich jetzt bei der MyEMS Admin-Benutzeroberfläche und der Web-Benutzeroberfläche anmelden.
 
-### Default Ports
+### Standardports
 
 MyEMS Web UI: 80
 
@@ -420,7 +417,7 @@ MyEMS API: 8000
 
 MyEMS Admin UI: 8001
 
-### Default Passwords
+### Standardpasswörter
 <details>
   <summary>Admin UI</summary>
 
@@ -442,4 +439,4 @@ administrator@myems.io
 </details>
 
 
-## Troubleshooting
+## Fehlerbehebung
