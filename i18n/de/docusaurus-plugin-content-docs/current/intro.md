@@ -18,6 +18,8 @@ Verwendung von Open Source, um die Ziele der CO2-Peak-Kohlenstoffneutralität zu
 
 ![MyEMS Data Flow](/img/myems-data-flow-de.svg)
 
+![MyEMS Web UI Features](/img/myems-web-ui-features-de.png)
+
 ## <a id="myems-ui-presentation" />MyEMS UI-Präsentation
 
 ![MyEMS Space EnergyCategory1](/img/myems-space-energycategory1.gif)
