@@ -18,6 +18,8 @@ MyEMS由资深专业团队开发维护，源代码基于MIT开源软件许可协
 
 ![MyEMS Data Flow](/img/myems-data-flow-zh-hans.svg)
 
+![MyEMS Web UI Features](/img/myems-web-ui-features-zh-hans.png)
+
 ## <a id="myems-ui-presentation" />MyEMS 用户界面展示
 
 ![MyEMS Space EnergyCategory1](/img/myems-space-energycategory1.gif)

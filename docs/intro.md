@@ -19,6 +19,8 @@ Using open source to help achieve carbon peak carbon neutrality goals.
 
 ![MyEMS Data Flow](/img/myems-data-flow-en.svg)
 
+![MyEMS Web UI Features](/img/myems-web-ui-features-en.png)
+
 ## <a id="myems-ui-presentation" />MyEMS UI Presentation
 
 ![MyEMS Space EnergyCategory1](/img/myems-space-energycategory1.gif)
