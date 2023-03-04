@@ -38,13 +38,19 @@ cd c:\myems-api
 cp example.env .env
 ```
 
-* 构建Docker映像
+* 从Docker Hub拉取镜像或自己动手编译镜像
 
+从[docker hub]拉取镜像(https://hub.docker.com/u/myems):
+```
+docker pull myems/myems-api
+```
+
+用源代码编译镜像:
 ```bash
 docker build -t myems/myems-api .
 ```
 
-为多个平台构建，而不仅仅是为调用构建的用户恰好运行的体系结构和操作系统构建。
+为多个平台构建，而不仅仅是为当前用户运行的体系结构和操作系统构建。
 您可以使用buildx并设置--platform标志来指定构建输出的目标平台（例如，linux/amd64、linux/arm64或darwin/amd64）。
 ```bash
 docker buildx build --platform=linux/amd64 -t myems/myems-api .
@@ -112,13 +118,19 @@ nano nginx.conf
       proxy_pass http://127.0.0.1:8000/;
 ```
 
-* 构建Docker镜像
+* 从Docker Hub拉取镜像或自己动手编译镜像
 
+从[docker hub]拉取镜像(https://hub.docker.com/u/myems):
+```
+docker pull myems/myems-admin
+```
+
+用源代码编译镜像:
 ```bash
 docker build -t myems/myems-admin .
 ```
 
-为多个平台构建，而不仅仅是为调用构建的用户恰好运行的体系结构和操作系统构建。
+为多个平台构建，而不仅仅是为当前用户运行的体系结构和操作系统构建。
 您可以使用buildx并设置--platform标志来指定构建输出的目标平台（例如，linux/amd64、linux/arm64或darwin/amd64）。
 ```bash
 docker buildx build --platform=linux/amd64 -t myems/myems-admin .
@@ -181,14 +193,19 @@ cd c:\myems-modbus-tcp
 cp example.env .env
 ```
 
+* 从Docker Hub拉取镜像或自己动手编译镜像
 
-* 构建Docker镜像
+从[docker hub]拉取镜像(https://hub.docker.com/u/myems):
+```
+docker pull myems/myems-modbus-tcp
+```
 
+用源代码编译镜像:
 ```bash
 docker build -t myems/myems-modbus-tcp .
 ```
 
-为多个平台构建，而不仅仅是为调用构建的用户恰好运行的体系结构和操作系统构建。
+为多个平台构建，而不仅仅是为当前用户运行的体系结构和操作系统构建。
 您可以使用buildx并设置--platform标志来指定构建输出的目标平台（例如，linux/amd64、linux/arm64或darwin/amd64）。
 ```bash
 docker buildx build --platform=linux/amd64 -t myems/myems-modbus-tcp .
@@ -254,13 +271,19 @@ cd c:\myems-cleaning
 cp example.env .env
 ```
 
-* 构建Docker镜像
+* 从Docker Hub拉取镜像或自己动手编译镜像
 
+从[docker hub]拉取镜像(https://hub.docker.com/u/myems):
+```
+docker pull myems/myems-cleaning
+```
+
+用源代码编译镜像:
 ```bash
 docker build -t myems/myems-cleaning .
 ```
 
-为多个平台构建，而不仅仅是为调用构建的用户恰好运行的体系结构和操作系统构建。
+为多个平台构建，而不仅仅是为当前用户运行的体系结构和操作系统构建。
 您可以使用buildx并设置--platform标志来指定构建输出的目标平台（例如，linux/amd64、linux/arm64或darwin/amd64）。
 ```bash
 docker buildx build --platform=linux/amd64 -t myems/myems-cleaning .
@@ -325,13 +348,19 @@ cd c:\myems-normalization
 cp example.env .env
 ```
 
-* 构建Docker镜像
+* 从Docker Hub拉取镜像或自己动手编译镜像
 
+从[docker hub]拉取镜像(https://hub.docker.com/u/myems):
+```
+docker pull myems/myems-normalization
+```
+
+用源代码编译镜像:
 ```bash
 docker build -t myems/myems-normalization .
 ```
 
-为多个平台构建，而不仅仅是为调用构建的用户恰好运行的体系结构和操作系统构建。
+为多个平台构建，而不仅仅是为当前用户运行的体系结构和操作系统构建。
 您可以使用buildx并设置--platform标志来指定构建输出的目标平台（例如，linux/amd64、linux/arm64或darwin/amd64）。
 ```bash
 docker buildx build --platform=linux/amd64 -t myems/myems-normalization .
@@ -397,13 +426,19 @@ cd c:\myems-aggregation
 cp example.env .env
 ```
 
-* 构建Docker镜像
+* 从Docker Hub拉取镜像或自己动手编译镜像
 
+从[docker hub]拉取镜像(https://hub.docker.com/u/myems):
+```
+docker pull myems/myems-aggregation
+```
+
+用源代码编译镜像:
 ```bash
 docker build -t myems/myems-aggregation .
 ```
 
-为多个平台构建，而不仅仅是为调用构建的用户恰好运行的体系结构和操作系统构建。
+为多个平台构建，而不仅仅是为当前用户运行的体系结构和操作系统构建。
 您可以使用buildx并设置--platform标志来指定构建输出的目标平台（例如，linux/amd64、linux/arm64或darwin/amd64）。
 ```bash
 docker buildx build --platform=linux/amd64 -t myems/myems-aggregation .
@@ -479,13 +514,19 @@ cd c:\myems-web
 
 :::
 
-* 构建Docker镜像
+* 从Docker Hub拉取镜像或自己动手编译镜像
 
+从[docker hub]拉取镜像(https://hub.docker.com/u/myems):
+```
+docker pull myems/myems-web
+```
+
+用源代码编译镜像:
 ```bash
 docker build -t myems/myems-web .
 ```
 
-为多个平台构建，而不仅仅是为调用构建的用户恰好运行的体系结构和操作系统构建。
+为多个平台构建，而不仅仅是为当前用户运行的体系结构和操作系统构建。
 您可以使用buildx并设置--platform标志来指定构建输出的目标平台（例如，linux/amd64、linux/arm64或darwin/amd64）。
 ```bash
 docker buildx build --platform=linux/amd64 -t myems/myems-web .
