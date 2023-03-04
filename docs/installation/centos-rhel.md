@@ -9,6 +9,8 @@ In this guide, you will deploy MyEMS with CentOS or RHEL server with physical or
 
 ## Prerequisites
 
+CentOS-7 (2009) 
+
 ## Step 1 Database
 
 ## Step 2 myems-api
