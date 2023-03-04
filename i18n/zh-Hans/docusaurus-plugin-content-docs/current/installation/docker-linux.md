@@ -38,8 +38,14 @@ cd /myems-api
 cp example.env .env
 ```
 
-* 构建Docker映像
+* 从Docker Hub拉取镜像或自己动手编译镜像
 
+从[docker hub]拉取镜像(https://hub.docker.com/u/myems):
+```
+docker pull myems/myems-api
+```
+
+用源代码编译镜像:
 ```bash
 docker build -t myems/myems-api .
 ```
@@ -112,8 +118,14 @@ nano nginx.conf
       proxy_pass http://127.0.0.1:8000/;
 ```
 
-* 构建Docker镜像
+* 从Docker Hub拉取镜像或自己动手编译镜像
 
+从[docker hub]拉取镜像(https://hub.docker.com/u/myems):
+```
+docker pull myems/myems-admin
+```
+
+用源代码编译镜像:
 ```bash
 docker build -t myems/myems-admin .
 ```
@@ -181,9 +193,14 @@ cd /myems-modbus-tcp
 cp example.env .env
 ```
 
+* 从Docker Hub拉取镜像或自己动手编译镜像
 
-* 构建Docker镜像
+从[docker hub]拉取镜像(https://hub.docker.com/u/myems):
+```
+docker pull myems/myems-modbus-tcp
+```
 
+用源代码编译镜像:
 ```bash
 docker build -t myems/myems-modbus-tcp .
 ```
@@ -254,8 +271,14 @@ cd /myems-cleaning
 cp example.env .env
 ```
 
-* 构建Docker镜像
+* 从Docker Hub拉取镜像或自己动手编译镜像
 
+从[docker hub]拉取镜像(https://hub.docker.com/u/myems):
+```
+docker pull myems/myems-cleaning
+```
+
+用源代码编译镜像:
 ```bash
 docker build -t myems/myems-cleaning .
 ```
@@ -325,8 +348,14 @@ cd /myems-normalization
 cp example.env .env
 ```
 
-* 构建Docker镜像
+* 从Docker Hub拉取镜像或自己动手编译镜像
 
+从[docker hub]拉取镜像(https://hub.docker.com/u/myems):
+```
+docker pull myems/myems-normalization
+```
+
+用源代码编译镜像:
 ```bash
 docker build -t myems/myems-normalization .
 ```
@@ -397,8 +426,14 @@ cd /myems-aggregation
 cp example.env .env
 ```
 
-* 构建Docker镜像
+* 从Docker Hub拉取镜像或自己动手编译镜像
 
+从[docker hub]拉取镜像(https://hub.docker.com/u/myems):
+```
+docker pull myems/myems-aggregation
+```
+
+用源代码编译镜像:
 ```bash
 docker build -t myems/myems-aggregation .
 ```
@@ -479,8 +514,14 @@ cd /myems-web
 
 :::
 
-* 构建Docker镜像
+* 从Docker Hub拉取镜像或自己动手编译镜像
 
+从[docker hub]拉取镜像(https://hub.docker.com/u/myems):
+```
+docker pull myems/myems-web
+```
+
+用源代码编译镜像:
 ```bash
 docker build -t myems/myems-web .
 ```
