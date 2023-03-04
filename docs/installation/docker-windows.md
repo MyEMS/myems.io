@@ -38,8 +38,14 @@ Manually replace ~~127.0.0.1~~ with real **HOST** IP address.
 cp example.env .env
 ```
 
-* Build a Docker image
+* Pull Image from Docker Hub or Build It Yourself
 
+Pull image from [docker hub](https://hub.docker.com/u/myems):
+```
+docker pull myems/myems-api
+```
+
+Build image from source code:
 ```bash
 docker build -t myems/myems-api .
 ```
@@ -115,8 +121,14 @@ nano nginx.conf
       proxy_pass http://127.0.0.1:8000/;
 ```
 
-* Build a Docker image
+* Pull Image from Docker Hub or Build It Yourself
 
+Pull image from [docker hub](https://hub.docker.com/u/myems):
+```
+docker pull myems/myems-admin
+```
+
+Build image from source code:
 ```bash
 docker build -t myems/myems-admin .
 ```
@@ -186,8 +198,14 @@ Manually replace ~~127.0.0.1~~ with real **HOST** IP address.
 cp example.env .env
 ```
 
-* Build a Docker image
+* Pull Image from Docker Hub or Build It Yourself
 
+Pull image from [docker hub](https://hub.docker.com/u/myems):
+```
+docker pull myems/myems-modbus-tcp
+```
+
+Build image from source code:
 ```bash
 docker build -t myems/myems-modbus-tcp .
 ```
@@ -257,8 +275,14 @@ Manually replace ~~127.0.0.1~~ with real **HOST** IP address.
 cp example.env .env
 ```
 
-* Build a Docker image
+* Pull Image from Docker Hub or Build It Yourself
 
+Pull image from [docker hub](https://hub.docker.com/u/myems):
+```
+docker pull myems/myems-cleaning
+```
+
+Build image from source code:
 ```bash
 docker build -t myems/myems-cleaning .
 ```
@@ -328,8 +352,14 @@ Manually replace ~~127.0.0.1~~ with real **HOST** IP address.
 cp example.env .env
 ```
 
-* Build a Docker image
+* Pull Image from Docker Hub or Build It Yourself
 
+Pull image from [docker hub](https://hub.docker.com/u/myems):
+```
+docker pull myems/myems-normalization
+```
+
+Build image from source code:
 ```bash
 docker build -t myems/myems-normalization .
 ```
@@ -400,8 +430,14 @@ Manually replace ~~127.0.0.1~~ with real **HOST** IP address.
 cp example.env .env
 ```
 
-* Build a Docker image
+* Pull Image from Docker Hub or Build It Yourself
 
+Pull image from [docker hub](https://hub.docker.com/u/myems):
+```
+docker pull myems/myems-aggregation
+```
+
+Build image from source code:
 ```bash
 docker build -t myems/myems-aggregation .
 ```
@@ -483,8 +519,14 @@ You can safely ignore the command 'npm run build' in this section, because it is
 
 :::
 
-* Build a Docker image
+* Pull Image from Docker Hub or Build It Yourself
 
+Pull image from [docker hub](https://hub.docker.com/u/myems):
+```
+docker pull myems/myems-web
+```
+
+Build image from source code:
 ```bash
 docker build -t myems/myems-web .
 ```
