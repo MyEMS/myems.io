@@ -26,7 +26,7 @@ Siehe [Database](./database.md)
 ```bash
 sudo cp -r ~/myems/myems-api /myems-api
 cd /myems-api
-sudo pip install -r requirements.txt -i
+sudo pip install -r requirements.txt
 ```
 Erstellen Sie eine .env basierend auf example.env und bearbeiten Sie die .env bei Bedarf:
 ```bash
