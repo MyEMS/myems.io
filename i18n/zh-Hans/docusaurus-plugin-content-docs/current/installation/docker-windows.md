@@ -40,7 +40,7 @@ cp example.env .env
 
 * 从Docker Hub拉取镜像或自己动手编译镜像
 
-从[docker hub]拉取镜像(https://hub.docker.com/u/myems):
+从https://hub.docker.com/u/myems拉取镜像:
 ```
 docker pull myems/myems-api
 ```
@@ -120,7 +120,7 @@ nano nginx.conf
 
 * 从Docker Hub拉取镜像或自己动手编译镜像
 
-从[docker hub]拉取镜像(https://hub.docker.com/u/myems):
+从https://hub.docker.com/u/myems拉取镜像:
 ```
 docker pull myems/myems-admin
 ```
@@ -195,7 +195,7 @@ cp example.env .env
 
 * 从Docker Hub拉取镜像或自己动手编译镜像
 
-从[docker hub]拉取镜像(https://hub.docker.com/u/myems):
+从https://hub.docker.com/u/myems拉取镜像:
 ```
 docker pull myems/myems-modbus-tcp
 ```
@@ -273,7 +273,7 @@ cp example.env .env
 
 * 从Docker Hub拉取镜像或自己动手编译镜像
 
-从[docker hub]拉取镜像(https://hub.docker.com/u/myems):
+从https://hub.docker.com/u/myems拉取镜像:
 ```
 docker pull myems/myems-cleaning
 ```
@@ -350,7 +350,7 @@ cp example.env .env
 
 * 从Docker Hub拉取镜像或自己动手编译镜像
 
-从[docker hub]拉取镜像(https://hub.docker.com/u/myems):
+从https://hub.docker.com/u/myems拉取镜像:
 ```
 docker pull myems/myems-normalization
 ```
@@ -428,7 +428,7 @@ cp example.env .env
 
 * 从Docker Hub拉取镜像或自己动手编译镜像
 
-从[docker hub]拉取镜像(https://hub.docker.com/u/myems):
+从https://hub.docker.com/u/myems拉取镜像:
 ```
 docker pull myems/myems-aggregation
 ```
@@ -516,7 +516,7 @@ cd c:\myems-web
 
 * 从Docker Hub拉取镜像或自己动手编译镜像
 
-从[docker hub]拉取镜像(https://hub.docker.com/u/myems):
+从https://hub.docker.com/u/myems拉取镜像:
 ```
 docker pull myems/myems-web
 ```

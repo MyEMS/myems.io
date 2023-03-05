@@ -40,7 +40,7 @@ cp example.env .env
 
 * Pull Image from Docker Hub or Build It Yourself
 
-Pull image from [docker hub](https://hub.docker.com/u/myems):
+Pull official image from https://hub.docker.com/u/myems:
 ```
 docker pull myems/myems-api
 ```
@@ -123,7 +123,7 @@ nano nginx.conf
 
 * Pull Image from Docker Hub or Build It Yourself
 
-Pull image from [docker hub](https://hub.docker.com/u/myems):
+Pull official image from https://hub.docker.com/u/myems:
 ```
 docker pull myems/myems-admin
 ```
@@ -200,7 +200,7 @@ cp example.env .env
 
 * Pull Image from Docker Hub or Build It Yourself
 
-Pull image from [docker hub](https://hub.docker.com/u/myems):
+Pull official image from https://hub.docker.com/u/myems:
 ```
 docker pull myems/myems-modbus-tcp
 ```
@@ -277,7 +277,7 @@ cp example.env .env
 
 * Pull Image from Docker Hub or Build It Yourself
 
-Pull image from [docker hub](https://hub.docker.com/u/myems):
+Pull official image from https://hub.docker.com/u/myems:
 ```
 docker pull myems/myems-cleaning
 ```
@@ -354,7 +354,7 @@ cp example.env .env
 
 * Pull Image from Docker Hub or Build It Yourself
 
-Pull image from [docker hub](https://hub.docker.com/u/myems):
+Pull official image from https://hub.docker.com/u/myems:
 ```
 docker pull myems/myems-normalization
 ```
@@ -432,7 +432,7 @@ cp example.env .env
 
 * Pull Image from Docker Hub or Build It Yourself
 
-Pull image from [docker hub](https://hub.docker.com/u/myems):
+Pull official image from https://hub.docker.com/u/myems:
 ```
 docker pull myems/myems-aggregation
 ```
@@ -521,7 +521,7 @@ You can safely ignore the command 'npm run build' in this section, because it is
 
 * Pull Image from Docker Hub or Build It Yourself
 
-Pull image from [docker hub](https://hub.docker.com/u/myems):
+Pull official image from https://hub.docker.com/u/myems:
 ```
 docker pull myems/myems-web
 ```

@@ -40,7 +40,7 @@ cp example.env .env
 
 * Ziehen Sie Image aus Docker Hub oder erstellen Sie es selbst
 
-Bild von [Docker Hub](https://hub.docker.com/u/myems) ziehen:
+Bild von https://hub.docker.com/u/myems ziehen:
 ```
 docker pull myems/myems-api
 ```
@@ -121,7 +121,7 @@ nano nginx.conf
 
 * Ziehen Sie Image aus Docker Hub oder erstellen Sie es selbst
 
-Bild von [Docker Hub](https://hub.docker.com/u/myems) ziehen:
+Bild von https://hub.docker.com/u/myems ziehen:
 ```
 docker pull myems/myems-admin
 ```
@@ -196,7 +196,7 @@ cp example.env .env
 
 * Ziehen Sie Image aus Docker Hub oder erstellen Sie es selbst
 
-Bild von [Docker Hub](https://hub.docker.com/u/myems) ziehen:
+Bild von https://hub.docker.com/u/myems ziehen:
 ```
 docker pull myems/myems-modbus-tcp
 ```
@@ -275,7 +275,7 @@ cp example.env .env
 
 * Ziehen Sie Image aus Docker Hub oder erstellen Sie es selbst
 
-Bild von [Docker Hub](https://hub.docker.com/u/myems) ziehen:
+Bild von https://hub.docker.com/u/myems ziehen:
 ```
 docker pull myems/myems-cleaning
 ```
@@ -352,7 +352,7 @@ cp example.env .env
 
 * Ziehen Sie Image aus Docker Hub oder erstellen Sie es selbst
 
-Bild von [Docker Hub](https://hub.docker.com/u/myems) ziehen:
+Bild von https://hub.docker.com/u/myems ziehen:
 ```
 docker pull myems/myems-normalization
 ```
@@ -430,7 +430,7 @@ cp example.env .env
 
 * Ziehen Sie Image aus Docker Hub oder erstellen Sie es selbst
 
-Bild von [Docker Hub](https://hub.docker.com/u/myems) ziehen:
+Bild von https://hub.docker.com/u/myems ziehen:
 ```
 docker pull myems/myems-aggregation
 ```
@@ -517,7 +517,7 @@ Sie können den Befehl „npm run build“ in diesem Abschnitt getrost ignoriere
 
 * Ziehen Sie Image aus Docker Hub oder erstellen Sie es selbst
 
-Bild von [Docker Hub](https://hub.docker.com/u/myems) ziehen:
+Bild von https://hub.docker.com/u/myems ziehen:
 ```
 docker pull myems/myems-web
 ```
