@@ -12,7 +12,7 @@ Verwendung von Open Source, um die Ziele der CO2-Peak-Kohlenstoffneutralität zu
 
 ## <a id="myems-architecture" />MyEMS Architektur
 
-![MyEMS Architecture Function View](/img/architecture-function-view.png)
+![MyEMS Architecture Function View](/img/architecture-function-view-de.png)
 
 ![MyEMS Architecture Site View](/img/architecture-site-view-de.png)
 
