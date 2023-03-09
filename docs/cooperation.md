@@ -43,10 +43,10 @@ Using open source to help achieve carbon peak carbon neutrality goals.
 
 ### Contact Us
 
-- Name: Nengyuan Zhang
-- Tel & WeChat: 13011132526
+- Name: Zhang Nengyuan
+- Tel & WeChat: +8613011132526
 - QQ: 1853444168
-- Email: 13011132526@163.com
+- Email: zny@myems.org
 
 ![WeChat: 13011132526](/img/wechat_nengyuanzhang.jpg)
 ![QQ: 1853444168](/img/qq_nengyuanzhang.jpg)
