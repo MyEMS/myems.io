@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # CentOS/RHEL
 
-在本指南中，您将在CentOS或RHEL服务器上部署带有物理或虚拟机的MyEMS。
+在本指南中，您将在CentOS或RHEL服务器上部署MyEMS。
 
 ## 前提
 

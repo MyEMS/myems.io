@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Debian/Ubuntu Server
 
-In dieser Anleitung werden Sie MyEMS auf Debian- oder Ubuntu-Server mit physischen oder virtuellen Maschinen bereitstellen.
+In dieser Anleitung werden Sie MyEMS auf Debian- oder Ubuntu-Server.
 
 ## Prerequisites
 

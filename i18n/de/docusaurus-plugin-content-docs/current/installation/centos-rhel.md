@@ -4,26 +4,26 @@ sidebar_position: 3
 
 # CentOS/RHEL
 
-In this guide, you will deploy MyEMS with CentOS or RHEL server with physical or virtual machines.
+In dieser Anleitung stellen Sie MyEMS mit CentOS- oder RHEL-Server bereit.
 
 
 ## Prerequisites
 
-This guide describes how to install MyEMS on CentOS Stream 9 / Red Hat Enterprise Linux 9 (RHEL 9). Hardware requirements depend on chosen database and amount of devices connected to the system. To run MyEMS and MySQL on a single machine you will need at least 4GB of RAM.
+Diese Anleitung beschreibt, wie Sie MyEMS auf CentOS Stream 9 und Red Hat Enterprise Linux 9 (RHEL 9) installieren. Die Hardwareanforderungen hängen von der gewählten Datenbank und der Anzahl der an das System angeschlossenen Geräte ab. Um MyEMS und MySQL auf einem einzigen Rechner laufen zu lassen, benötigen Sie mindestens 4GB RAM.
 
-Update the system and install tools
+Aktualisieren Sie das System und installieren Sie Tools:
 ```
 sudo dnf update
 sudo dnf install git
 sudo dnf install python3-pip
 ```
-Clone source code:
+Quellcode klonen:
 ```
 cd ~
 git clone https://github.com/myems/myems
 ```
 
-## Step 1 Database
+## Schritt 1 Database
 
 Siehe [Database](./database.md)
 

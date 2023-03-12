@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Debian/Ubuntu
 
-在本指南中，您将使用物理机或虚拟机将MyEMS部署到Debian或Ubuntu服务器上。
+在本指南中，您将在Debian或Ubuntu服务器上部署MyEMS。
 
 ## 前提
 

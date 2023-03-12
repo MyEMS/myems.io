@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # CentOS/RHEL
 
-In this guide, you will deploy MyEMS with CentOS or RHEL server with physical or virtual machines.
+In this guide, you will deploy MyEMS on CentOS or RHEL server.
 
 
 ## Prerequisites
