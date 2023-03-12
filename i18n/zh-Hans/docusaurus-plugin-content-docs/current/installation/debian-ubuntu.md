@@ -70,8 +70,12 @@ sudo systemctl start myems-api.service
 
 * 安装 NGINX 服务器
 
-refer to http://nginx.org/en/docs/install.html
+refer to http://nginx.org/en/linux_packages.html#Debian
 
+启用nginx服务:
+```
+sudo systemctl enable nginx.service
+```
 * 配置 NGINX
 ```bash
 sudo nano /etc/nginx/nginx.conf
@@ -92,7 +96,11 @@ http {
 }
 ```
 
-添加一个新的“server”部分，其指令如下：
+在目录 /etc/nginx/conf.d/ 下新建一个文件：
+```
+sudo nano /etc/nginx/conf.d/myems-admin.conf
+```
+编写如下指令, 如果myems-api服务运行在其它服务器上则用实际的地址替换 myems-api 默认地址 http://127.0.0.1:8000/
 ```
   server {
       listen                 8001;
@@ -102,7 +110,8 @@ http {
           index index.html index.htm;
       }
       ## To avoid CORS issue, use Nginx to proxy myems-api to path /api 
-      ## Add another location /api in 'server' and replace demo address http://127.0.0.1:8000/ with actual url
+      ## Add another location /api in 'server' 
+      ## Replace the default myems-api url http://127.0.0.1:8000/ with actual url if the myems-api servcie hosted on a different server
       location /api {
           proxy_pass http://127.0.0.1:8000/;
           proxy_connect_timeout 75;
@@ -136,6 +145,10 @@ sudo nano /var/www/myems-admin/app/api.js
 将端口添加到防火墙：
 ```bash
 sudo ufw allow 8001
+```
+重启nginx服务:
+```
+sudo systemctl restart nginx.service
 ```
 
 ## 第4步 myems-modbus-tcp
@@ -287,7 +300,7 @@ cat /myems-aggregation.log
 在此步骤中，您将安装myems-web服务。
 
 *   安装 NGINX 服务器
-refer to http://nginx.org/en/docs/install.html
+refer to http://nginx.org/en/linux_packages.html#Debian
 
 *   配置 NGINX
 ```bash
@@ -309,7 +322,11 @@ http {
 }
 ```
 
-添加一个新的“server”部分，其指令如下：
+更新nginx默认conf文件:
+```
+sudo nano /etc/nginx/conf.d/default.conf
+```
+使用如下指令编写，如果myems-api服务托管在不同的服务器上，则使用实际的地址替换默认的myems-api地址http://127.0.0.1:8000/
 ```
   server {
       listen                 80;
@@ -322,7 +339,7 @@ http {
       }
       ## To avoid CORS issue, use Nginx to proxy myems-api to path /api 
       ## Add another location /api in 'server'
-      ## NOTE: replace dafulat address http://127.0.0.1:8000/ with actual IP or URL
+      ## replace the default myems-api url http://127.0.0.1:8000/ with actual url if the myems-api servcie hosted on different server
       location /api {
           proxy_pass http://127.0.0.1:8000/;
           proxy_connect_timeout 75;
@@ -331,11 +348,6 @@ http {
       }
   }
 ```
-重启 NGINX
-```bash
-sudo systemctl restart nginx
-```
-
 * 安装 MyEMS Web UI:
 
 安装NodeJS:
@@ -370,6 +382,11 @@ sudo mv build  /var/www/myems-web
 将端口添加到防火墙：
 ```bash
 sudo ufw allow 80
+```
+
+重启 NGINX
+```bash
+sudo systemctl restart nginx
 ```
 
 ## 安装后
