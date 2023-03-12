@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Debian/Ubuntu
 
-In this guide, you will deploy MyEMS onto Debian or Ubuntu server with physical or virtual machines.
+In this guide, you will deploy MyEMS on Debian or Ubuntu server.
 
 ## Prerequisites
 
