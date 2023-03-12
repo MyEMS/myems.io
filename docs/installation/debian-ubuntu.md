@@ -71,7 +71,7 @@ sudo systemctl start myems-api.service
 
 * Install NGINX Server
 
-refer to http://nginx.org/en/docs/install.html
+refer to http://nginx.org/en/linux_packages.html#Debian
 
 * Configure NGINX
 ```bash
@@ -93,24 +93,29 @@ http{
 }
 ```
 
-Add a new 'server' section with directives as below:
+Add a new file under /etc/nginx/conf.d/
 ```
-  server {
-      listen                 8001;
-      server_name     myems-admin;
-      location / {
-          root    /var/www/myems-admin;
-          index index.html index.htm;
-      }
-      ## To avoid CORS issue, use Nginx to proxy myems-api to path /api 
-      ## Add another location /api in 'server' and replace demo address http://127.0.0.1:8000/ with actual url
-      location /api {
-          proxy_pass http://127.0.0.1:8000/;
-          proxy_connect_timeout 75;
-          proxy_read_timeout 600;
-          send_timeout 600;
-      }
-  }
+sudo nano /etc/nginx/conf.d/myems-admin.conf
+```
+Write with directives as below, replace the default myems-api url http://127.0.0.1:8000/ with actual url if the myems-api servcie hosted on a different server
+```
+server {
+    listen                 8001;
+    server_name     myems-admin;
+    location / {
+        root    /var/www/myems-admin;
+        index index.html index.htm;
+    }
+    ## To avoid CORS issue, use Nginx to proxy myems-api to path /api 
+    ## Add another location /api in 'server' 
+    ## Replace the default myems-api url http://127.0.0.1:8000/ with actual url if the myems-api servcie hosted on a different server
+    location /api {
+        proxy_pass http://127.0.0.1:8000/;
+        proxy_connect_timeout 75;
+        proxy_read_timeout 600;
+        send_timeout 600;
+    }
+}
 ```
 
 * Install myems-admin :
@@ -288,7 +293,7 @@ cat /myems-aggregation.log
 In this step, you will install myems-web UI service.
 
 *   Install NGINX  Server
-refer to http://nginx.org/en/docs/install.html
+refer to http://nginx.org/en/linux_packages.html#Debian
 
 *   Configure NGINX
 ```bash

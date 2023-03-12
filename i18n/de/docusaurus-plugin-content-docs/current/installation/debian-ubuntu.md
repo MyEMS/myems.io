@@ -71,8 +71,12 @@ sudo systemctl start myems-api.service
 
 * NGINX Server installieren
 
-beziehen sich auf http://nginx.org/en/docs/install.html
+beziehen sich auf http://nginx.org/en/linux_packages.html#Debian
 
+nginx-Dienst aktivieren:
+```
+sudo systemctl enable nginx.service
+```
 * NGINX einrichten
 ```bash
 sudo nano /etc/nginx/nginx.conf
@@ -93,24 +97,29 @@ http{
 }
 ```
 
-Fügen Sie einen neuen Abschnitt "server" mit Direktiven wie folgt hinzu:
+Fügen Sie eine neue Datei unter /etc/nginx/conf.d/
 ```
-  server {
-      listen                 8001;
-      server_name     myems-admin;
-      location / {
-          root    /var/www/myems-admin;
-          index index.html index.htm;
-      }
-      ## To avoid CORS issue, use Nginx to proxy myems-api to path /api 
-      ## Add another location /api in 'server' and replace demo address http://127.0.0.1:8000/ with actual url
-      location /api {
-          proxy_pass http://127.0.0.1:8000/;
-          proxy_connect_timeout 75;
-          proxy_read_timeout 600;
-          send_timeout 600;
-      }
-  }
+sudo nano /etc/nginx/conf.d/myems-admin.conf
+```
+Schreiben Sie mit Direktiven wie unten, ersetzen Sie die Standard-myems-api URL http://127.0.0.1:8000/ mit tatsächlicher URL, wenn die myems-ap servcie auf einem anderen Server gehostet wird
+```
+server {
+    listen                 8001;
+    server_name     myems-admin;
+    location / {
+        root    /var/www/myems-admin;
+        index index.html index.htm;
+    }
+    ## To avoid CORS issue, use Nginx to proxy myems-api to path /api 
+    ## Add another location /api in 'server' 
+    ## Replace the default myems-api url http://127.0.0.1:8000/ with actual url if the myems-api servcie hosted on different server
+    location /api {
+        proxy_pass http://127.0.0.1:8000/;
+        proxy_connect_timeout 75;
+        proxy_read_timeout 600;
+        send_timeout 600;
+    }
+}
 ```
 
 * myems-admin installieren :
@@ -138,7 +147,16 @@ Port zur Firewall hinzufügen:
 ```bash
 sudo ufw allow 8001
 ```
+Neustart des nginx-Dienstes:
+```
+sudo systemctl restart nginx.service
+```
 
+:::tip
+
+Wenn Sie auf '403 Forbidden' nginx-Fehler stoßen, können Sie ihn beheben, indem Sie den SELinx-Modus mit dem Befehl 'sudo setforce 0' ändern.
+
+:::
 ## Schritt 4 myems-modbus-tcp
 
 In diesem Schritt installieren Sie den Dienst myems-modbus-tcp.
@@ -146,7 +164,7 @@ In diesem Schritt installieren Sie den Dienst myems-modbus-tcp.
 ```bash
 sudo cp -r ~/myems/myems-modbus-tcp /myems-modbus-tcp
 cd /myems-modbus-tcp
-sudo pip install -r requirements.txt 
+sudo pip install -r requirements.txt
 ```
 
 Kopieren Sie die Datei exmaple.env in .env und ändern Sie die Datei .env:
@@ -182,7 +200,7 @@ In diesem Schritt installieren Sie den myems-cleaning Service.
 ```bash
 sudo cp -r ~/myems/myems-cleaning /myems-cleaning
 cd /myems-cleaning
-sudo pip install -r requirements.txt 
+sudo pip install -r requirements.txt
 ```
 
 Kopieren Sie die Datei exmaple.env in .env und ändern Sie die Datei .env:
@@ -218,7 +236,7 @@ In diesem Schritt installieren Sie den myems-normalization service.
 ```bash
 sudo cp -r ~/myems/myems-normalization /myems-normalization
 cd /myems-normalization
-sudo pip install -r requirements.txt 
+sudo pip install -r requirements.txt
 ```
 
 Kopieren Sie die Datei exmaple.env in .env und ändern Sie die Datei .env:
@@ -288,7 +306,7 @@ cat /myems-aggregation.log
 In diesem Schritt installieren Sie den myems-web UI Service.
 
 *   NGINX-Server installieren
-refer to http://nginx.org/en/docs/install.html
+beziehen sich auf http://nginx.org/en/linux_packages.html#Debian
 
 *   Konfigurieren Sie NGINX
 ```bash
@@ -296,7 +314,7 @@ sudo nano /etc/nginx/nginx.conf
 ```
 Fügen Sie im Abschnitt 'http' einige Anweisungen hinzu:
 ```
-http{
+http {
     client_header_timeout 600;
     client_max_body_size 512M;
     gzip on;
@@ -310,30 +328,31 @@ http{
 }
 ```
 
-Fügen Sie einen neuen Abschnitt 'server' mit den folgenden Anweisungen hinzu:
+Aktualisieren der nginx Standard-Conf-Datei:
 ```
-  server {
-      listen                 80;
-      server_name     myems-web;
-      location / {
-          root    /var/www/myems-web;
-          index index.html index.htm;
-          # add try_files directive to avoid 404 error while refreshing pages
-          try_files $uri  /index.html;
-      }
-      ## To avoid CORS issue, use Nginx to proxy myems-api to path /api 
-      ## Add another location /api in 'server' and replace demo address http://127.0.0.1:8000/ with actual url
-      location /api {
-          proxy_pass http://127.0.0.1:8000/;
-          proxy_connect_timeout 75;
-          proxy_read_timeout 600;
-          send_timeout 600;
-      }
-  }
+sudo nano /etc/nginx/conf.d/default.conf
 ```
-Starten Sie NGINX neu
-```bash
-sudo systemctl restart nginx
+Schreiben Sie mit Direktiven wie unten und ersetzen Sie die Standard-myems-api-URL http://127.0.0.1:8000/ mit tatsächlicher URL, wenn die myems-api-Servcie auf einem anderen Server gehostet wird
+```
+server {
+    listen                 80;
+    server_name     myems-web;
+    location / {
+        root    /var/www/myems-web;
+        index index.html index.htm;
+        # add try_files directive to avoid 404 error while refreshing pages
+        try_files $uri  /index.html;
+    }
+    ## To avoid CORS issue, use Nginx to proxy myems-api to path /api 
+    ## Add another location /api in 'server' 
+    ## replace the default myems-api url http://127.0.0.1:8000/ with actual url if the myems-api servcie hosted on different server
+    location /api {
+        proxy_pass http://127.0.0.1:8000/;
+        proxy_connect_timeout 75;
+        proxy_read_timeout 600;
+        send_timeout 600;
+    }
+}
 ```
 
 * MyEMS Web UI installieren:
@@ -346,7 +365,7 @@ sudo apt-get install -y nodejs
 
 Überprüfen und ändern Sie gegebenenfalls die Konfigurationsdatei:
 ```bash
-cd myems/myems-web
+cd ~/myems/myems-web
 sudo nano src/config.js
 ```
 
@@ -370,6 +389,11 @@ Port zur Firewall hinzufügen:
 ```bash
 sudo ufw allow 80
 ```
+Starten Sie NGINX neu
+```bash
+sudo systemctl restart nginx
+```
+
 
 ## Nach der Installation
 
