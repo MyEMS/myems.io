@@ -58,7 +58,7 @@ docker buildx build --platform=linux/amd64 -t myems/myems-api .
 
 * Führen Sie einen Docker-Container aus
 
-Hängen Sie auf dem Host einen freigegebenen upload Dateiordner unter /myems-upload an den Container an.
+Hängen Sie auf dem Host einen freigegebenen upload Dateiordner unter c:\myems-upload an den Container an.
   und binden Sie auch die .env an den Container:
 ```bash
 docker run -d -p 8000:8000 -v c:\myems-upload:/var/www/myems-admin/upload -v c:\myems-api\.env:/code/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-api myems/myems-api
@@ -112,7 +112,7 @@ Ersetzen Sie manuell ~~127.0.0.1:8000~~ in nginx.conf durch die tatsächliche **
 :::
 
 ```bash
-nano nginx.conf
+notepad nginx.conf
 ```
 
 ```bash
@@ -139,7 +139,7 @@ docker buildx build --platform=linux/amd64 -t myems/myems-admin .
 
 * Führen Sie einen Docker-Container aus
 
-Hängen Sie auf dem Host einen freigegebenen Upload-Dateiordner unter /myems-upload an den Container an und hängen Sie auch nginx.conf ein
+Hängen Sie auf dem Host einen freigegebenen Upload-Dateiordner unter c:\myems-upload an den Container an und hängen Sie auch nginx.conf ein
 ```bash
 docker run -d -p 8001:8001 -v c:\myems-upload:/var/www/myems-admin/upload -v c:\myems-admin/nginx.conf:/etc/nginx/nginx.conf:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-admin myems/myems-admin
 ```
@@ -490,7 +490,7 @@ In diesem Abschnitt installieren Sie myems-web auf Docker.
 
 ```bash
 cd myems/myems-web
-nano src/config.js
+notepad src/config.js
 ```
 
 :::caution
@@ -501,7 +501,7 @@ Ersetzen Sie ~~127.0.0.1:8000~~ in nginx.conf durch die echte **HOST**-IP und de
 
 ```bash
 cd myems/myems-web
-nano nginx.conf
+notepad nginx.conf
 ```
 
 * Kopieren Sie den Quellcode in das Stammverzeichnis
