@@ -58,7 +58,7 @@ docker buildx build --platform=linux/amd64 -t myems/myems-api .
 
 * 运行Docker容器
 
-在主机上，将位于c:\myemsupload的共享上传文件夹绑定到容器，并将.env绑定到容器：
+在主机上，新建文件夹c:\myems-upload， 将此文件夹绑定到容器，并将.env绑定到容器：
 ```bash
 docker run -d -p 8000:8000 -v c:\myems-upload:/var/www/myems-admin/upload -v c:\myems-api\.env:/code/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-api myems/myems-api
 ```
@@ -111,7 +111,7 @@ cd c:\myems-admin
 :::
 
 ```bash
-nano nginx.conf
+notepad nginx.conf
 ```
 
 ```bash
@@ -138,7 +138,7 @@ docker buildx build --platform=linux/amd64 -t myems/myems-admin .
 
 * 运行Docker容器
 
-在主机上，绑定挂载位于/myemsupload的共享上载文件文件夹到容器，并绑定挂载nginx.conf
+在主机上，新建文件夹c:\myems-upload， 将此文件夹绑定挂载到容器，并绑定挂载nginx.conf到容器：
 ```bash
 docker run -d -p 8001:8001 -v c:\myems-upload:/var/www/myems-admin/upload -v c:\myems-admin/nginx.conf:/etc/nginx/nginx.conf:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-admin myems/myems-admin
 ```
@@ -487,7 +487,7 @@ docker load --input .\myems-aggregation.tar
 
 ```bash
 cd myems/myems-web
-nano src/config.js
+notepad src/config.js
 ```
 
 :::caution
@@ -498,7 +498,7 @@ nano src/config.js
 
 ```bash
 cd myems/myems-web
-nano nginx.conf
+notepad nginx.conf
 ```
 
 * 将源代码复制到根目录
