@@ -17,7 +17,7 @@ sidebar_position: 5
 
 ## 第2步 myems-api
 
-在本节中，您将在Docker上安装myemsapi。
+在本节中，您将在Docker上安装myems-api。
 
 * 将源代码复制到根目录
 
@@ -106,7 +106,7 @@ cd c:\myems-admin
 
 :::caution
 
-手动将nginx.conf中的~~127.00.1:8000~~替换为实际的**HOST**ip和myemsapi端口
+手动将nginx.conf中的~~127.00.1:8000~~替换为实际的**HOST**ip和myems-api端口
 
 :::
 
