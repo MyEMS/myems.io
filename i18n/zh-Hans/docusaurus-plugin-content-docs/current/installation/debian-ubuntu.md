@@ -70,7 +70,7 @@ sudo systemctl start myems-api.service
 
 * 安装 NGINX 服务器
 
-refer to http://nginx.org/en/linux_packages.html#Debian
+参考 http://nginx.org/en/linux_packages.html#Debian
 
 启用nginx服务:
 ```
@@ -300,7 +300,7 @@ cat /myems-aggregation.log
 在此步骤中，您将安装myems-web服务。
 
 *   安装 NGINX 服务器
-refer to http://nginx.org/en/linux_packages.html#Debian
+参考 http://nginx.org/en/linux_packages.html#Debian
 
 *   配置 NGINX
 ```bash
