@@ -32,19 +32,6 @@ sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ -
 sudo cp /myems-api/example.env /myems-api/.env
 sudo nano /myems-api/.env
 ```
-检查或更改myems-api.service和myems-api.socket中的侦听端口（默认值为8000）：
-```bash
-sudo nano /myems-api/myems-api.service
-```
-```bash
-ExecStart=/usr/local/bin/gunicorn -b 0.0.0.0:8000 --pid /run/myems-api/pid --timeout 600 --workers=4 app:api
-```
-```bash
-sudo nano /myems-api/myems-api.socket
-```
-```bash
-ListenStream=0.0.0.0:8000
-```
 将端口添加到防火墙：
 ```bash
 sudo ufw allow 8000

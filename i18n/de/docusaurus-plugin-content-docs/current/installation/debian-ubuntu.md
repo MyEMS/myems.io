@@ -33,19 +33,6 @@ Erstellen Sie eine .env basierend auf example.env und bearbeiten Sie die .env be
 sudo cp /myems-api/example.env /myems-api/.env
 sudo nano /myems-api/.env
 ```
-Überprüfen oder ändern Sie den Abhörport (Standard ist 8000) in myems-api.service und myems-api.socket:
-```bash
-sudo nano /myems-api/myems-api.service
-```
-```bash
-ExecStart=/usr/local/bin/gunicorn -b 0.0.0.0:8000 --pid /run/myems-api/pid --timeout 600 --workers=4 app:api
-```
-```bash
-sudo nano /myems-api/myems-api.socket
-```
-```bash
-ListenStream=0.0.0.0:8000
-```
 Port zur Firewall hinzufügen:
 ```bash
 sudo ufw allow 8000
