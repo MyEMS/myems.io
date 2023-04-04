@@ -38,14 +38,8 @@ Ersetzen Sie ~~127.0.0.1~~ manuell durch die echte **HOST** IP Adresse.
 cp example.env .env
 ```
 
-* Ziehen Sie Image aus Docker Hub oder erstellen Sie es selbst
+* Docker-Image aus Quellcode erstellen
 
-Bild von [https://hub.docker.com/u/myems](https://hub.docker.com/u/myems) ziehen:
-```
-docker pull myems/myems-api
-```
-
-Bild aus Quellcode erstellen:
 ```bash
 docker build -t myems/myems-api .
 ```
@@ -119,14 +113,8 @@ nano nginx.conf
       proxy_pass http://127.0.0.1:8000/;
 ```
 
-* Ziehen Sie Image aus Docker Hub oder erstellen Sie es selbst
+* Docker-Image aus Quellcode erstellen
 
-Bild von [https://hub.docker.com/u/myems](https://hub.docker.com/u/myems) ziehen:
-```
-docker pull myems/myems-admin
-```
-
-Bild aus Quellcode erstellen:
 ```bash
 docker build -t myems/myems-admin .
 ```
@@ -194,14 +182,7 @@ Ersetzen Sie manuell ~~127.0.0.1~~ durch die echte **HOST**-IP-Adresse.
 cp example.env .env
 ```
 
-* Ziehen Sie Image aus Docker Hub oder erstellen Sie es selbst
-
-Bild von [https://hub.docker.com/u/myems](https://hub.docker.com/u/myems) ziehen:
-```
-docker pull myems/myems-modbus-tcp
-```
-
-Bild aus Quellcode erstellen:
+* Docker-Image aus Quellcode erstellen
 
 ```bash
 docker build -t myems/myems-modbus-tcp .
@@ -273,14 +254,8 @@ Ersetzen Sie manuell ~~127.0.0.1~~ durch die echte **HOST**-IP-Adresse.
 cp example.env .env
 ```
 
-* Ziehen Sie Image aus Docker Hub oder erstellen Sie es selbst
+* Docker-Image aus Quellcode erstellen
 
-Bild von [https://hub.docker.com/u/myems](https://hub.docker.com/u/myems) ziehen:
-```
-docker pull myems/myems-cleaning
-```
-
-Bild aus Quellcode erstellen:
 ```bash
 docker build -t myems/myems-cleaning .
 ```
@@ -350,14 +325,8 @@ Ersetzen Sie manuell ~~127.0.0.1~~ durch die echte **HOST**-IP-Adresse.
 cp example.env .env
 ```
 
-* Ziehen Sie Image aus Docker Hub oder erstellen Sie es selbst
+* Docker-Image aus Quellcode erstellen
 
-Bild von [https://hub.docker.com/u/myems](https://hub.docker.com/u/myems) ziehen:
-```
-docker pull myems/myems-normalization
-```
-
-Bild aus Quellcode erstellen:
 ```bash
 docker build -t myems/myems-normalization .
 ```
@@ -428,14 +397,8 @@ Ersetzen Sie manuell ~~127.0.0.1~~ durch die echte **HOST**-IP-Adresse.
 cp example.env .env
 ```
 
-* Ziehen Sie Image aus Docker Hub oder erstellen Sie es selbst
+* Docker-Image aus Quellcode erstellen
 
-Bild von [https://hub.docker.com/u/myems](https://hub.docker.com/u/myems) ziehen:
-```
-docker pull myems/myems-aggregation
-```
-
-Bild aus Quellcode erstellen:
 ```bash
 docker build -t myems/myems-aggregation .
 ```
@@ -515,14 +478,8 @@ cd /myems-web
 Sie können den Befehl „npm run build“ in diesem Abschnitt getrost ignorieren, da er in das Dockerfile eingebaut ist
 :::
 
-* Ziehen Sie Image aus Docker Hub oder erstellen Sie es selbst
+* Docker-Image aus Quellcode erstellen
 
-Bild von [https://hub.docker.com/u/myems](https://hub.docker.com/u/myems) ziehen:
-```
-docker pull myems/myems-web
-```
-
-Bild aus Quellcode erstellen:
 ```bash
 docker build -t myems/myems-web .
 ```
