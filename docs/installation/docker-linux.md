@@ -37,14 +37,8 @@ Manually replace ~~127.0.0.1~~ with real **HOST** IP address.
 cp example.env .env
 ```
 
-* Pull Image from Docker Hub or Build It Yourself
+* Build Image from Source Code
 
-Pull official image from [https://hub.docker.com/u/myems](https://hub.docker.com/u/myems):
-```
-docker pull myems/myems-api
-```
-
-Build image from source code:
 ```bash
 docker build -t myems/myems-api .
 ```
@@ -120,14 +114,8 @@ nano nginx.conf
       proxy_pass http://127.0.0.1:8000/;
 ```
 
-* Pull Image from Docker Hub or Build It Yourself
+* Build Image from Source Code
 
-Pull official image from [https://hub.docker.com/u/myems](https://hub.docker.com/u/myems):
-```
-docker pull myems/myems-admin
-```
-
-Build image from source code:
 ```bash
 docker build -t myems/myems-admin .
 ```
@@ -196,14 +184,8 @@ Manually replace ~~127.0.0.1~~ with real **HOST** IP address.
 cp example.env .env
 ```
 
-* Pull Image from Docker Hub or Build It Yourself
+* Build Image from Source Code
 
-Pull official image from [https://hub.docker.com/u/myems](https://hub.docker.com/u/myems):
-```
-docker pull myems/myems-modbus-tcp
-```
-
-Build image from source code:
 ```bash
 docker build -t myems/myems-modbus-tcp .
 ```
@@ -273,14 +255,8 @@ Manually replace ~~127.0.0.1~~ with real **HOST** IP address.
 cp example.env .env
 ```
 
-* Pull Image from Docker Hub or Build It Yourself
+* Build Image from Source Code
 
-Pull official image from [https://hub.docker.com/u/myems](https://hub.docker.com/u/myems):
-```
-docker pull myems/myems-cleaning
-```
-
-Build image from source code:
 ```bash
 docker build -t myems/myems-cleaning .
 ```
@@ -350,14 +326,8 @@ Manually replace ~~127.0.0.1~~ with real **HOST** IP address.
 cp example.env .env
 ```
 
-* Pull Image from Docker Hub or Build It Yourself
+* Build Image from Source Code
 
-Pull official image from [https://hub.docker.com/u/myems](https://hub.docker.com/u/myems):
-```
-docker pull myems/myems-normalization
-```
-
-Build image from source code:
 ```bash
 docker build -t myems/myems-normalization .
 ```
@@ -428,14 +398,8 @@ Manually replace ~~127.0.0.1~~ with real **HOST** IP address.
 cp example.env .env
 ```
 
-* Pull Image from Docker Hub or Build It Yourself
+* Build Image from Source Code
 
-Pull official image from [https://hub.docker.com/u/myems](https://hub.docker.com/u/myems):
-```
-docker pull myems/myems-aggregation
-```
-
-Build image from source code:
 ```bash
 docker build -t myems/myems-aggregation .
 ```
@@ -517,14 +481,8 @@ You can safely ignore the command 'npm run build' in this section, because it is
 
 :::
 
-* Pull Image from Docker Hub or Build It Yourself
+* Build Image from Source Code
 
-Pull official image from [https://hub.docker.com/u/myems](https://hub.docker.com/u/myems):
-```
-docker pull myems/myems-web
-```
-
-Build image from source code:
 ```bash
 docker build -t myems/myems-web .
 ```
