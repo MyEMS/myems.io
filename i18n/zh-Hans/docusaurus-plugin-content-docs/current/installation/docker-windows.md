@@ -38,14 +38,8 @@ cd c:\myems-api
 cp example.env .env
 ```
 
-* 从Docker Hub拉取镜像或自己动手编译镜像
+* 用源代码编译镜像
 
-从[https://hub.docker.com/u/myems](https://hub.docker.com/u/myems)拉取镜像:
-```
-docker pull myems/myems-api
-```
-
-用源代码编译镜像:
 ```bash
 docker build -t myems/myems-api .
 ```
@@ -118,14 +112,8 @@ notepad nginx.conf
       proxy_pass http://127.0.0.1:8000/;
 ```
 
-* 从Docker Hub拉取镜像或自己动手编译镜像
+* 用源代码编译镜像
 
-从[https://hub.docker.com/u/myems](https://hub.docker.com/u/myems)拉取镜像:
-```
-docker pull myems/myems-admin
-```
-
-用源代码编译镜像:
 ```bash
 docker build -t myems/myems-admin .
 ```
@@ -193,14 +181,8 @@ cd c:\myems-modbus-tcp
 cp example.env .env
 ```
 
-* 从Docker Hub拉取镜像或自己动手编译镜像
+* 用源代码编译镜像
 
-从[https://hub.docker.com/u/myems](https://hub.docker.com/u/myems)拉取镜像:
-```
-docker pull myems/myems-modbus-tcp
-```
-
-用源代码编译镜像:
 ```bash
 docker build -t myems/myems-modbus-tcp .
 ```
@@ -271,14 +253,8 @@ cd c:\myems-cleaning
 cp example.env .env
 ```
 
-* 从Docker Hub拉取镜像或自己动手编译镜像
+* 用源代码编译镜像
 
-从[https://hub.docker.com/u/myems](https://hub.docker.com/u/myems)拉取镜像:
-```
-docker pull myems/myems-cleaning
-```
-
-用源代码编译镜像:
 ```bash
 docker build -t myems/myems-cleaning .
 ```
@@ -348,14 +324,8 @@ cd c:\myems-normalization
 cp example.env .env
 ```
 
-* 从Docker Hub拉取镜像或自己动手编译镜像
+* 用源代码编译镜像
 
-从[https://hub.docker.com/u/myems](https://hub.docker.com/u/myems)拉取镜像:
-```
-docker pull myems/myems-normalization
-```
-
-用源代码编译镜像:
 ```bash
 docker build -t myems/myems-normalization .
 ```
@@ -426,14 +396,8 @@ cd c:\myems-aggregation
 cp example.env .env
 ```
 
-* 从Docker Hub拉取镜像或自己动手编译镜像
+* 用源代码编译镜像
 
-从[https://hub.docker.com/u/myems](https://hub.docker.com/u/myems)拉取镜像:
-```
-docker pull myems/myems-aggregation
-```
-
-用源代码编译镜像:
 ```bash
 docker build -t myems/myems-aggregation .
 ```
@@ -514,14 +478,8 @@ cd c:\myems-web
 
 :::
 
-* 从Docker Hub拉取镜像或自己动手编译镜像
+* 用源代码编译镜像
 
-从[https://hub.docker.com/u/myems](https://hub.docker.com/u/myems)拉取镜像:
-```
-docker pull myems/myems-web
-```
-
-用源代码编译镜像:
 ```bash
 docker build -t myems/myems-web .
 ```
