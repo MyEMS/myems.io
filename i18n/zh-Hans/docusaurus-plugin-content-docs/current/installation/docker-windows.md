@@ -8,7 +8,7 @@ sidebar_position: 5
 
 ## 前提
 - 主机上已安装docker、npm。
-- 已安装MySQL服务器，用户名为“root”，密码为“！MyEMS1’。
+- 已安装MySQL服务器，用户名为“root”，密码为“!MyEMS1’。
 - MySQL数据库可以从Docker Engine运行的主机连接。
 
 ## 第1步 数据库
