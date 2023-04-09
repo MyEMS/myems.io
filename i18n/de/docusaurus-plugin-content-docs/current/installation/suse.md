@@ -1,14 +1,14 @@
 ---
-sidebar_position: 2
+sidebar_position: 9
 ---
 
-# Debian/Ubuntu Server
+# SUSE
 
-In dieser Anleitung werden Sie MyEMS auf Debian- oder Ubuntu-Server.
+In dieser Anleitung werden Sie MyEMS auf SUSE Linux Enterprise Server.
 
 ## Prerequisites
 
-Diese Anleitung beschreibt, wie MyEMS auf Debian 10 Buster / Debian 11 Bullseye / Debian 12 Bookworm / Ubuntu 18.04 LTS / Ubuntu 20.04 LTS / Ubuntu 22.04 LTS. Die Hardwareanforderungen hängen von der gewählten Datenbank und der Anzahl der an das System angeschlossenen Geräte ab. Um MyEMS und MySQL auf einem einzigen Rechner laufen zu lassen, benötigen Sie mindestens 4GB RAM.
+Diese Anleitung beschreibt, wie MyEMS auf SUSE Linux Enterprise Server 15 installiert wird. Die Hardwareanforderungen hängen von der gewählten Datenbank und der Anzahl der an das System angeschlossenen Geräte ab. Um MyEMS und MySQL auf einem einzigen Rechner laufen zu lassen, benötigen Sie mindestens 4GB RAM.
 
 Quellcode klonen:
 ```
@@ -31,11 +31,12 @@ sudo pip install -r requirements.txt
 Erstellen Sie eine .env basierend auf example.env und bearbeiten Sie die .env bei Bedarf:
 ```bash
 sudo cp /myems-api/example.env /myems-api/.env
-sudo nano /myems-api/.env
+sudo vi /myems-api/.env
 ```
 Port zur Firewall hinzufügen:
 ```bash
-sudo ufw allow 8000
+sudo firewall-cmd --zone=public --add-port=8000/tcp --permanent
+sudo firewall-cmd --reload
 ```
 systemd einrichten und Dateien konfigurieren:
 ```bash
@@ -66,7 +67,7 @@ sudo systemctl enable nginx.service
 ```
 * NGINX einrichten
 ```bash
-sudo nano /etc/nginx/nginx.conf
+sudo vi /etc/nginx/nginx.conf
 ```
 Fügen Sie im Abschnitt "http" einige Richtlinien hinzu:
 ```
@@ -86,7 +87,7 @@ http{
 
 Fügen Sie eine neue Datei unter /etc/nginx/conf.d/
 ```
-sudo nano /etc/nginx/conf.d/myems-admin.conf
+sudo vi /etc/nginx/conf.d/myems-admin.conf
 ```
 Schreiben Sie mit Direktiven wie unten, ersetzen Sie die Standard-myems-api URL http://127.0.0.1:8000/ mit tatsächlicher URL, wenn die myems-ap servcie auf einem anderen Server gehostet wird
 ```
@@ -118,7 +119,7 @@ sudo chmod 0755 -R /var/www/myems-admin
 ```
   Überprüfen Sie die Konfigurationsdatei und ändern Sie sie bei Bedarf:
 ```bash
-sudo nano /var/www/myems-admin/app/api.js
+sudo vi /var/www/myems-admin/app/api.js
 ```
 
 :::caution
@@ -132,7 +133,8 @@ Der Ordner "upload" ist für vom Benutzer hochgeladene Dateien. Löschen/verschi
 
 Port zur Firewall hinzufügen:
 ```bash
-sudo ufw allow 8001
+sudo firewall-cmd --zone=public --add-port=8001/tcp --permanent
+sudo firewall-cmd --reload
 ```
 Neustart des nginx-Dienstes:
 ```
@@ -157,7 +159,7 @@ sudo pip install -r requirements.txt
 Kopieren Sie die Datei exmaple.env in .env und ändern Sie die Datei .env:
 ```bash
 sudo cp /myems-modbus-tcp/example.env /myems-modbus-tcp/.env
-sudo nano /myems-modbus-tcp/.env
+sudo vi /myems-modbus-tcp/.env
 ```
 systemd Dienst einrichten:
 ```bash
@@ -193,7 +195,7 @@ sudo pip install -r requirements.txt
 Kopieren Sie die Datei exmaple.env in .env und ändern Sie die Datei .env:
 ```bash
 sudo cp /myems-cleaning/example.env /myems-cleaning/.env
-sudo nano /myems-cleaning/.env
+sudo vi /myems-cleaning/.env
 ```
 systemd Dienst einrichten:
 ```bash
@@ -229,7 +231,7 @@ sudo pip install -r requirements.txt
 Kopieren Sie die Datei exmaple.env in .env und ändern Sie die Datei .env:
 ```bash
 sudo cp /myems-normalization/example.env /myems-normalization/.env
-sudo nano /myems-normalization/.env
+sudo vi /myems-normalization/.env
 ```
 systemd Dienst einrichten:
 ```bash
@@ -264,7 +266,7 @@ sudo pip install -r requirements.txt
 Kopieren Sie die Datei exmaple.env in .env und ändern Sie die Datei .env:
 ```bash
 sudo cp /myems-aggregation/example.env /myems-aggregation/.env
-sudo nano /myems-aggregation/.env
+sudo vi /myems-aggregation/.env
 ```
 systemd Dienst einrichten:
 ```bash
@@ -297,7 +299,7 @@ beziehen sich auf http://nginx.org/en/linux_packages.html#Debian
 
 *   Konfigurieren Sie NGINX
 ```bash
-sudo nano /etc/nginx/nginx.conf
+sudo vi /etc/nginx/nginx.conf
 ```
 Fügen Sie im Abschnitt 'http' einige Anweisungen hinzu:
 ```
@@ -317,7 +319,7 @@ http {
 
 Aktualisieren der nginx Standard-Conf-Datei:
 ```
-sudo nano /etc/nginx/conf.d/default.conf
+sudo vi /etc/nginx/conf.d/default.conf
 ```
 Schreiben Sie mit Direktiven wie unten und ersetzen Sie die Standard-myems-api-URL http://127.0.0.1:8000/ mit tatsächlicher URL, wenn die myems-api-Servcie auf einem anderen Server gehostet wird
 ```
@@ -346,14 +348,13 @@ server {
 
 NodeJS einrichten:
 ```
-curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
-sudo apt-get install -y nodejs
+sudo zypper install -y nodejs
 ```
 
 Überprüfen und ändern Sie gegebenenfalls die Konfigurationsdatei:
 ```bash
 cd ~/myems/myems-web
-sudo nano src/config.js
+sudo vi src/config.js
 ```
 
 Erstellen und komprimieren:
@@ -374,7 +375,8 @@ sudo mv build  /var/www/myems-web
 
 Port zur Firewall hinzufügen:
 ```bash
-sudo ufw allow 80
+sudo firewall-cmd --zone=public --add-port=80/tcp --permanent
+sudo firewall-cmd --reload
 ```
 Starten Sie NGINX neu
 ```bash

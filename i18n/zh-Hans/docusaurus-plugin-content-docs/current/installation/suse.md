@@ -1,14 +1,14 @@
 ---
-sidebar_position: 2
+sidebar_position: 9
 ---
 
-# Debian/Ubuntu
+# SUSE
 
-在本指南中，您将在Debian或Ubuntu服务器上部署MyEMS。
+在本指南中，您将在SUSE Linux Enterprise Server上部署MyEMS。
 
 ## 前提
 
-本指南介绍如何在Debian 10 Buster/Debian 11 Bullseye/Debian 12 Bookworm/Ubuntu 18.04 LTS/Ubuntu 20.04 LTS/Ubuntu 22.04 LTS上安装MyEMS。硬件需求取决于所选数据库和连接到系统的设备数量。要在一台机器上运行MyEMS和MySQL，您至少需要4GB的RAM。
+本指南介绍如何在SUSE Linux Enterprise Server 15上安装MyEMS。硬件需求取决于所选数据库和连接到系统的设备数量。要在一台机器上运行MyEMS和MySQL，您至少需要4GB的RAM。
 
 克隆源代码：
 ```
@@ -30,11 +30,12 @@ sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ -
 根据example.env创建.env文件，并根据需要编辑.env：
 ```bash
 sudo cp /myems-api/example.env /myems-api/.env
-sudo nano /myems-api/.env
+sudo vi /myems-api/.env
 ```
 将端口添加到防火墙：
 ```bash
-sudo ufw allow 8000
+sudo firewall-cmd --zone=public --add-port=8000/tcp --permanent
+sudo firewall-cmd --reload
 ```
 安装 systemd 配置文件:
 ```bash
@@ -65,7 +66,7 @@ sudo systemctl enable nginx.service
 ```
 * 配置 NGINX
 ```bash
-sudo nano /etc/nginx/nginx.conf
+sudo vi /etc/nginx/nginx.conf
 ```
 In the 'http' section, add some directives:
 ```
@@ -85,7 +86,7 @@ http {
 
 在目录 /etc/nginx/conf.d/ 下新建一个文件：
 ```
-sudo nano /etc/nginx/conf.d/myems-admin.conf
+sudo vi /etc/nginx/conf.d/myems-admin.conf
 ```
 编写如下指令, 如果myems-api服务运行在其它服务器上则用实际的地址替换 myems-api 默认地址 http://127.0.0.1:8000/
 ```
@@ -117,7 +118,7 @@ sudo chmod 0755 -R /var/www/myems-admin
 ```
 检查配置文件，必要时进行更改：
 ```bash
-sudo nano /var/www/myems-admin/app/api.js
+sudo vi /var/www/myems-admin/app/api.js
 ```
 
 :::caution
@@ -131,7 +132,8 @@ sudo nano /var/www/myems-admin/app/api.js
 
 将端口添加到防火墙：
 ```bash
-sudo ufw allow 8001
+sudo firewall-cmd --zone=public --add-port=8001/tcp --permanent
+sudo firewall-cmd --reload
 ```
 重启nginx服务:
 ```
@@ -151,7 +153,7 @@ sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ -
 将exmaple.ev文件复制到.env并修改.env文件：
 ```bash
 sudo cp /myems-modbus-tcp/example.env /myems-modbus-tcp/.env
-sudo nano /myems-modbus-tcp/.env
+sudo vi /myems-modbus-tcp/.env
 ```
 安装 systemd 服务:
 ```bash
@@ -187,7 +189,7 @@ sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ -
 将exmaple.ev文件复制到.env并修改.env文件：
 ```bash
 sudo cp /myems-cleaning/example.env /myems-cleaning/.env
-sudo nano /myems-cleaning/.env
+sudo vi /myems-cleaning/.env
 ```
 安装systemd服务：
 ```bash
@@ -223,7 +225,7 @@ sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ -
 将exmaple.ev文件复制到.env并修改.env文件：
 ```bash
 sudo cp /myems-normalization/example.env /myems-normalization/.env
-sudo nano /myems-normalization/.env
+sudo vi /myems-normalization/.env
 ```
 安装systemd服务
 ```bash
@@ -258,7 +260,7 @@ sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ -
 将exmaple.ev文件复制到.env并修改.env文件：
 ```bash
 sudo cp /myems-aggregation/example.env /myems-aggregation/.env
-sudo nano /myems-aggregation/.env
+sudo vi /myems-aggregation/.env
 ```
 安装systemd服务
 ```bash
@@ -291,7 +293,7 @@ cat /myems-aggregation.log
 
 *   配置 NGINX
 ```bash
-sudo nano /etc/nginx/nginx.conf
+sudo vi /etc/nginx/nginx.conf
 ```
 In the 'http' section, add some directives:
 ```
@@ -311,7 +313,7 @@ http {
 
 更新nginx默认conf文件:
 ```
-sudo nano /etc/nginx/conf.d/default.conf
+sudo vi /etc/nginx/conf.d/default.conf
 ```
 使用如下指令编写，如果myems-api服务托管在不同的服务器上，则使用实际的地址替换默认的myems-api地址http://127.0.0.1:8000/
 ```
@@ -339,14 +341,13 @@ sudo nano /etc/nginx/conf.d/default.conf
 
 安装NodeJS:
 ```
-curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
-sudo apt-get install -y nodejs
+sudo zypper install -y nodejs
 ```
 
 如有必要，检查并更改配置文件：
 ```bash
 cd ~/myems/myems-web
-sudo nano src/config.js
+sudo vi src/config.js
 ```
 
 编译和压缩：
@@ -367,7 +368,8 @@ sudo mv build  /var/www/myems-web
 
 将端口添加到防火墙：
 ```bash
-sudo ufw allow 80
+sudo firewall-cmd --zone=public --add-port=80/tcp --permanent
+sudo firewall-cmd --reload
 ```
 
 重启 NGINX
