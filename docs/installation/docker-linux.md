@@ -388,15 +388,15 @@ cd /myems-aggregation
 
 * Create .env file based on example.env file
 
+```bash
+cp example.env .env
+```
+
 :::caution
 
 Manually replace ~~127.0.0.1~~ with real **HOST** IP address.
 
 :::
-
-```bash
-cp example.env .env
-```
 
 * Build Image from Source Code
 

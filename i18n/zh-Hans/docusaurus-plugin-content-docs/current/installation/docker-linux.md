@@ -373,7 +373,7 @@ docker save --output myems-normalization.tar myems/myems-normalization
 docker load --input .\myems-normalization.tar
 ```
 
-## Step 7 myems-aggregation
+## 第7步 myems-aggregation
 
 在本节中，您将在Docker上安装myems-aggregation。
 
@@ -386,15 +386,16 @@ cd /myems-aggregation
 
 * 基于example.env文件创建.env
 
+
+```bash
+cp example.env .env
+```
+
 :::caution
 
 用真实的**主机**IP地址手动替换~~127.00.1~~。
 
 :::
-
-```bash
-cp example.env .env
-```
 
 * 用源代码编译镜像
 
