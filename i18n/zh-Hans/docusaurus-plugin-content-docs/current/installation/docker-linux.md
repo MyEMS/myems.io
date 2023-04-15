@@ -51,8 +51,11 @@ docker buildx build --platform=linux/amd64 -t myems/myems-api .
 ```
 
 * 运行Docker容器
-
-在主机上，将位于/myems-upload的共享上传文件夹绑定到容器，并将.env绑定到容器：
+在主机上， 创建一个共享上传文件的文件夹:
+```bash
+mkdir /myems-upload
+```
+创建一个容器，将共享上传文件夹绑定到容器，并将.env绑定到容器：
 ```bash
 docker run -d -p 8000:8000 -v /myems-upload:/var/www/myems-admin/upload -v /myems-api/.env:/code/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-api myems/myems-api
 ```
@@ -125,8 +128,12 @@ docker buildx build --platform=linux/amd64 -t myems/myems-admin .
 ```
 
 * 运行Docker容器
-
-在主机上，绑定挂载位于/myems-upload的共享上载文件文件夹到容器，并绑定挂载nginx.conf
+在主机上， 创建一个共享上传文件的文件夹:
+```bash
+mkdir /myems-upload
+```
+将共享上传文件夹绑定到容器，并将.env绑定到容器：
+创建一个容器，绑定挂载共享上传文件文件夹到容器，并绑定挂载nginx.conf
 ```bash
 docker run -d -p 8001:8001 -v /myems-upload:/var/www/myems-admin/upload -v /myems-admin/nginx.conf:/etc/nginx/nginx.conf:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-admin myems/myems-admin
 ```
