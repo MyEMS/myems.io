@@ -8,7 +8,7 @@ In diesem Leitfaden stellen Sie MyEMS mit Docker unter Linux (oder macOS) bereit
 
 ## Voraussetzungen
 - Installierter Docker, npm auf dem Host.
-- Installierter MySQL-Server mit Benutzername „root“ und Passwort „!MyEMS1“.
+- Installierter MySQL-Server.
 - Die MySQL-Datenbank kann von dem Host verbunden werden, auf dem die Docker Engine läuft.
 
 ## Schritt 1 Database
@@ -84,10 +84,12 @@ Wenn Sie die .env-Datei geändert haben, starten Sie den Container neu, damit di
 
 Wenn Sie das Image auf einen anderen Computer immigrieren möchten,
 * Exportieren Sie das Bild in eine Tarball-Datei
+
 ```bash
 docker save --output myems-api.tar myems/myems-api
 ```
 * Kopieren Sie die Tarball-Datei auf einen anderen Computer und laden Sie dann das Bild aus der Tarball-Datei
+
 ```bash
 docker load --input .\myems-api.tar
 ```
@@ -159,11 +161,13 @@ Die Option ro bewirkt, falls vorhanden, dass der Bind-Mount schreibgeschützt in
 
 Wenn Sie das Image auf einen anderen Computer immigrieren möchten,
 * Exportieren Sie das Bild in eine Tarball-Datei
+
 ```bash
 docker save --output myems-admin.tar myems/myems-admin
 ```
 
 * Kopieren Sie die Tarball-Datei auf einen anderen Computer und laden Sie dann das Bild aus der Tarball-Datei
+
 ```bash
 docker load --input .\myems-admin.tar
 ```
@@ -205,6 +209,7 @@ docker buildx build --platform=linux/amd64 -t myems/myems-modbus-tcp .
 
 
 * Führen Sie einen Docker-Container aus (run as superuser)
+
 ```bash
 docker run -d -v /myems-modbus-tcp/.env:/code/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-modbus-tcp myems/myems-modbus-tcp
 ```
@@ -232,10 +237,12 @@ Wenn Sie die .env-Datei geändert haben, starten Sie den Container neu, damit di
 
 Um den Container auf einen anderen Computer zu immigrieren,
 * Exportieren Sie das Bild in eine Tarball-Datei
+
 ```bash
 docker save --output myems-modbus-tcp.tar myems/myems-modbus-tcp
 ```
 * Kopieren Sie die Tarball-Datei auf einen anderen Computer und laden Sie dann das Bild aus der Tarball-Datei
+
 ```bash
 docker load --input .\myems-modbus-tcp.tar
 ```
@@ -347,6 +354,7 @@ docker buildx build --platform=linux/amd64 -t myems/myems-normalization .
 ```
 
 * Führen Sie einen Docker-Container aus (run as superuser)
+
 ```bash
 docker run -d -v /myems-normalization/.env:/code/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-normalization myems/myems-normalization
 ```
@@ -419,6 +427,7 @@ docker buildx build --platform=linux/amd64 -t myems/myems-aggregation .
 ```
 
 * Führen Sie einen Docker-Container aus (run as superuser)
+
 ```bash
 docker run -d -v /myems-aggregation/.env:/code/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-aggregation myems/myems-aggregation
 ```

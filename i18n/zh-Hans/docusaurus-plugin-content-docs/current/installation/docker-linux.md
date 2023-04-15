@@ -7,8 +7,9 @@ sidebar_position: 4
 在本指南中，您将在Linux（或macOS）上使用Docker部署MyEMS。
 
 ## 前提
+
 - 主机上已安装docker、npm。
-- 已安装MySQL服务器，用户名为“root”，密码为“!MyEMS1”。
+- 已安装MySQL服务器。
 - MySQL数据库可以从Docker Engine运行的主机连接。
 
 ## 第1步 数据库
@@ -51,6 +52,7 @@ docker buildx build --platform=linux/amd64 -t myems/myems-api .
 ```
 
 * 运行Docker容器
+
 在主机上， 创建一个共享上传文件的文件夹:
 ```bash
 mkdir /myems-upload
@@ -81,11 +83,13 @@ ro选项（如果存在）会导致绑定装载以只读方式装载到容器中
 如果更改了.env文件，请重新启动容器以使更改生效。
 
 如果您想将镜像迁移到另一台计算机，
+
 * 将镜像导出到tarball文件
 ```bash
 docker save --output myems-api.tar myems/myems-api
 ```
 * 将tarball文件复制到另一台计算机，然后从tarball文件加载镜像
+
 ```bash
 docker load --input .\myems-api.tar
 ```
@@ -121,13 +125,14 @@ nano nginx.conf
 docker build -t myems/myems-admin .
 ```
 
-为多个平台构建，而不仅仅是为当前用户运行的体系结构和操作系统构建。
+如果为多个平台构建，而不仅仅是为当前用户运行的体系结构和操作系统构建。
 您可以使用buildx并设置--platform标志来指定构建输出的目标平台（例如，linux/amd64、linux/arm64或darwin/amd64）。
 ```bash
 docker buildx build --platform=linux/amd64 -t myems/myems-admin .
 ```
 
 * 运行Docker容器
+
 在主机上， 创建一个共享上传文件的文件夹:
 ```bash
 mkdir /myems-upload

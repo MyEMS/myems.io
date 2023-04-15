@@ -8,7 +8,7 @@ In this guide, you will deploy MyEMS with Docker on Linux (or macOS).
 
 ## Prerequisites
 - Installed docker, npm on the host.
-- Installed MySQL server with username 'root' and password '!MyEMS1'.
+- Installed MySQL server.
 - The MySQL database can be connected from the host on which the Docker Engine runs.
 
 ## Step 1 Database
@@ -85,10 +85,12 @@ If you changed .env file, restart the container to make the change effective.
 
 If you want to immigrate the image to another computer,
 * Export image to tarball file
+
 ```bash
 docker save --output myems-api.tar myems/myems-api
 ```
 * Copy the tarball file to another computer, and then load image from tarball file
+
 ```bash
 docker load --input .\myems-api.tar
 ```
@@ -160,12 +162,14 @@ The ro option, if present, causes the bind mount to be mounted into the containe
 * --name Assign a name to the container
 
 If you want to immigrate the image to another computer,
+
 * Export image to tarball file
 ```bash
 docker save --output myems-admin.tar myems/myems-admin
 ```
 
 * Copy the tarball file to another computer, and then load image from tarball file
+
 ```bash
 docker load --input .\myems-admin.tar
 ```
@@ -206,6 +210,7 @@ docker buildx build --platform=linux/amd64 -t myems/myems-modbus-tcp .
 ```
 
 * Run a Docker container (run as superuser)
+
 ```bash
 docker run -d -v /myems-modbus-tcp/.env:/code/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-modbus-tcp myems/myems-modbus-tcp
 ```
@@ -233,10 +238,13 @@ If you changed .env file, restart the container to make the change effective.
 
 To immigrate the container to another computer,
 * Export image to tarball file
+
 ```bash
 docker save --output myems-modbus-tcp.tar myems/myems-modbus-tcp
 ```
+
 * Copy the tarball file to another computer, and then load image from tarball file
+
 ```bash
 docker load --input .\myems-modbus-tcp.tar
 ```
@@ -277,6 +285,7 @@ docker buildx build --platform=linux/amd64 -t myems/myems-cleaning .
 ```
 
 * Run a Docker container (run as superuser)
+
 ```bash
 docker run -d -v /myems-cleaning/.env:/code/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-cleaning myems/myems-cleaning
 ```
@@ -304,10 +313,12 @@ If you changed .env file, restart the container to make the change effective.
 
 To immigrate the container to another computer,
 * Export image to tarball file
+
 ```bash
 docker save --output myems-cleaning.tar myems/myems-cleaning
 ```
 * Copy the tarball file to another computer, and then load image from tarball file
+
 ```bash
 docker load --input .\myems-cleaning.tar
 ```
@@ -348,6 +359,7 @@ docker buildx build --platform=linux/amd64 -t myems/myems-normalization .
 ```
 
 * Run a Docker container (run as superuser)
+
 ```bash
 docker run -d -v /myems-normalization/.env:/code/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-normalization myems/myems-normalization
 ```
@@ -375,11 +387,13 @@ If you changed .env file, restart the container to make the change effective.
 
 To immigrate the container to another computer,
 * Export image to tarball file
+
 ```bash
 docker save --output myems-normalization.tar myems/myems-normalization
 ```
 
 * Copy the tarball file to another computer, and then load image from tarball file
+
 ```bash
 docker load --input .\myems-normalization.tar
 ```
@@ -420,6 +434,7 @@ docker buildx build --platform=linux/amd64 -t myems/myems-aggregation .
 ```
 
 * Run a Docker container (run as superuser)
+
 ```bash
 docker run -d -v /myems-aggregation/.env:/code/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-aggregation myems/myems-aggregation
 ```
