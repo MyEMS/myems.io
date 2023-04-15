@@ -51,8 +51,12 @@ docker buildx build --platform=linux/amd64 -t myems/myems-api .
 
 * Run a Docker container
 
-On host, bind-mount a share upload file folder at /myems-upload to the container,
- and also bind-mount the .env to the container:
+On host, create a share upload file folder:
+```bash
+mkdir /myems-upload
+```
+
+Create a container, bind-mount the share folder to the container, and also bind-mount the .env to the container:
 ```bash
 docker run -d -p 8000:8000 -v /myems-upload:/var/www/myems-admin/upload -v /myems-api/.env:/code/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-api myems/myems-api
 ```
@@ -128,7 +132,12 @@ docker buildx build --platform=linux/amd64 -t myems/myems-admin .
 
 * Run a Docker container
 
-On host, bind-mount a share upload file folder at /myems-upload to the container and also bind-mount nginx.conf 
+On host, create a share upload file folder:
+```bash
+mkdir /myems-upload
+```
+
+Create a container, bind-mount the share upload file folder to the container and also bind-mount nginx.conf 
 ```bash
 docker run -d -p 8001:8001 -v /myems-upload:/var/www/myems-admin/upload -v /myems-admin/nginx.conf:/etc/nginx/nginx.conf:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-admin myems/myems-admin
 ```

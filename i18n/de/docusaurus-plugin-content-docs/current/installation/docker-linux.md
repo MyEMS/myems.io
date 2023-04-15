@@ -52,8 +52,12 @@ docker buildx build --platform=linux/amd64 -t myems/myems-api .
 
 * Führen Sie einen Docker-Container aus
 
-Hängen Sie auf dem Host einen freigegebenen upload Dateiordner unter /myems-upload an den Container an.
-  und binden Sie auch die .env an den Container:
+Erstellen Sie auf dem Host einen Dateiordner für Freigabe-Uploads:
+```bash
+mkdir /myems-upload
+```
+
+Erstellen eines Containers, binden-mounten des Freigabeordners an den Container und binden-mounten der .env an den Container:
 ```bash
 docker run -d -p 8000:8000 -v /myems-upload:/var/www/myems-admin/upload -v /myems-api/.env:/code/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-api myems/myems-api
 ```
@@ -127,7 +131,12 @@ docker buildx build --platform=linux/amd64 -t myems/myems-admin .
 
 * Führen Sie einen Docker-Container aus
 
-Hängen Sie auf dem Host einen freigegebenen Upload-Dateiordner unter /myems-upload an den Container an und hängen Sie auch nginx.conf ein
+Erstellen Sie auf dem Host einen Dateiordner für Freigabe-Uploads:
+```bash
+mkdir /myems-upload
+```
+
+Erstellen Sie einen Container, binden-mounten Sie den Freigabe-Upload-Dateiordner in den Container und binden-mount nginx.conf
 ```bash
 docker run -d -p 8001:8001 -v /myems-upload:/var/www/myems-admin/upload -v /myems-admin/nginx.conf:/etc/nginx/nginx.conf:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-admin myems/myems-admin
 ```
