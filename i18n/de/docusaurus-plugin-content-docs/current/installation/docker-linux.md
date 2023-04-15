@@ -387,15 +387,15 @@ cd /myems-aggregation
 
 * Erstellen Sie eine .env-Datei basierend auf der example.env-Datei
 
+```bash
+cp example.env .env
+```
+
 :::caution
 
 Ersetzen Sie manuell ~~127.0.0.1~~ durch die echte **HOST**-IP-Adresse.
 
 :::
-
-```bash
-cp example.env .env
-```
 
 * Docker-Image aus Quellcode erstellen
 
