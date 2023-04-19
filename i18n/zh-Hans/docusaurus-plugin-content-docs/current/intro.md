@@ -150,3 +150,27 @@ MyEMS由资深专业团队开发维护，源代码基于MIT开源软件许可协
 
 [5]. [https://gitcode.net/myems/myems](https://gitcode.net/myems/myems) 
 
+
+## <a id="myems-systems"/>MyEMS 操作系统与数据库兼容性
+应用服务器操作系统:
+
+| 编号                         | 名称 | 版本 |   说明  | 
+| :---                             |      :----:       | :----:         | :----:         |
+| 1 | Ubuntu Server |22.04 LTS<br/> 20.04 LTS<br/> 18.04 LTS | X86_64<br/> X86_64<br/> X86_64 |
+| 2 | Debian |11(“bullseye”)<br/> 10(“buster”)<br/> 9(“stretch”) | amd64<br/> amd64<br/> amd64 |
+| 3 | CentOS Stream |9<br/> 8 | x86_64<br/> x86_64 |
+| 4 | CentOS Linux |7-2009 | X86_64 |
+| 5 | Red Hat Enterprise Linux |9<br/> 8<br/> 7 | x86_64<br/> x86_64<br/> x86_64 |
+| 6 | Windows Server |2022<br/> 2019<br/> 2016 | 64bit, WSL<br/> 64bit, WSL<br/> 64bit, WSL |
+| 7 | 龙蜥(Anolis) OS |8<br/> 7 | x86_64<br/> x86_64 |
+
+
+数据库: 
+
+| 编号                         | 名称 | 版本 |   说明  | 
+| :---                             |      :----:       | :----:         | :----:         |
+| 1 | MySQL |8.0<br/> 5.7 | x86, 64-bit<br/> x86, 64-bit |
+| 2 | SingleStore |8.0<br/> 7.8 | x86, 64-bit<br/> x86, 64-bit |
+| 3 | MariaDB Server |11<br/> 10 | x86_64<br/> x86_64 |
+| 4 | SQL Server(仅限MyEMS企业版) |2022<br/> 2019<br/> 2017<br/> 2016 | 64-bit<br/> 64-bit<br/> 64-bit<br/> 64-bit |
+| 5 | Oracle Database(仅限MyEMS企业版) |21c<br/> 19c<br/> 18c |  |

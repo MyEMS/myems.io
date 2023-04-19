@@ -148,3 +148,28 @@ Users of the Community Edition must retain the relevant copyright and LOGO of My
 [4]. [https://gitlab.com/myems/myems](https://gitlab.com/myems/myems)
 
 [5]. [https://gitcode.net/myems/myems](https://gitcode.net/myems/myems) 
+
+
+## <a id="myems-systems"/>MyEMS Operating Systems and Database Compatibility
+Operating Systems for Application Server:
+
+| NO.                         | Name | Version |   Description  | 
+| :---                             |      :----:       | :----:         | :----:         |
+| 1 | Ubuntu Server |22.04 LTS<br/> 20.04 LTS<br/> 18.04 LTS | X86_64<br/> X86_64<br/> X86_64 |
+| 2 | Debian |11(“bullseye”)<br/> 10(“buster”)<br/> 9(“stretch”) | amd64<br/> amd64<br/> amd64 |
+| 3 | CentOS Stream |9<br/> 8 | x86_64<br/> x86_64 |
+| 4 | CentOS Linux |7-2009 | X86_64 |
+| 5 | Red Hat Enterprise Linux |9<br/> 8<br/> 7 | x86_64<br/> x86_64<br/> x86_64 |
+| 6 | Windows Server |2022<br/> 2019<br/> 2016 | 64bit, WSL<br/> 64bit, WSL<br/> 64bit, WSL |
+| 7 | Anolis OS |8<br/> 7 | x86_64<br/> x86_64 |
+
+
+Database: 
+
+| NO.                         | Name | Version |   Description  | 
+| :---                             |      :----:       | :----:         | :----:         |
+| 1 | MySQL |8.0<br/> 5.7 | x86, 64-bit<br/> x86, 64-bit |
+| 2 | SingleStore |8.0<br/> 7.8 | x86, 64-bit<br/> x86, 64-bit |
+| 3 | MariaDB Server |11<br/> 10 | x86_64<br/> x86_64 |
+| 4 | SQL Server(MyEMS Enterprise Version Only) |2022<br/> 2019<br/> 2017<br/> 2016 | 64-bit<br/> 64-bit<br/> 64-bit<br/> 64-bit |
+| 5 | Oracle Database(MyEMS Enterprise Version Only) |21c<br/> 19c<br/> 18c |  |
