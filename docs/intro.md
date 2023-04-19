@@ -151,9 +151,9 @@ Users of the Community Edition must retain the relevant copyright and LOGO of My
 
 
 ## <a id="myems-systems"/>MyEMS Operating Systems and Database Compatibility
-Operating Systems for Application:
+Operating Systems for Application Server:
 
-| NO.                         | Name | Version |   Descriptio  | 
+| NO.                         | Name | Version |   Description  | 
 | :---                             |      :----:       | :----:         | :----:         |
 | 1 | Ubuntu Server |22.04 LTS<br/> 20.04 LTS<br/> 18.04 LTS | X86_64<br/> X86_64<br/> X86_64 |
 | 2 | Debian |11(“bullseye”)<br/> 10(“buster”)<br/> 9(“stretch”) | amd64<br/> amd64<br/> amd64 |
@@ -166,7 +166,7 @@ Operating Systems for Application:
 
 Database: 
 
-| NO.                         | Name | Version |   Descriptio  | 
+| NO.                         | Name | Version |   Description  | 
 | :---                             |      :----:       | :----:         | :----:         |
 | 1 | MySQL |8.0<br/> 5.7 | x86, 64-bit<br/> x86, 64-bit |
 | 2 | SingleStore |8.0<br/> 7.8 | x86, 64-bit<br/> x86, 64-bit |

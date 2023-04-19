@@ -172,5 +172,5 @@ MyEMS由资深专业团队开发维护，源代码基于MIT开源软件许可协
 | 1 | MySQL |8.0<br/> 5.7 | x86, 64-bit<br/> x86, 64-bit |
 | 2 | SingleStore |8.0<br/> 7.8 | x86, 64-bit<br/> x86, 64-bit |
 | 3 | MariaDB Server |11<br/> 10 | x86_64<br/> x86_64 |
-| 4 | SQL Server(MyEMS Enterprise Version Only) |2022<br/> 2019<br/> 2017<br/> 2016 | 64-bit<br/> 64-bit<br/> 64-bit<br/> 64-bit |
-| 5 | Oracle Database(MyEMS Enterprise Version Only) |21c<br/> 19c<br/> 18c |  |
+| 4 | SQL Server(仅限MyEMS企业版) |2022<br/> 2019<br/> 2017<br/> 2016 | 64-bit<br/> 64-bit<br/> 64-bit<br/> 64-bit |
+| 5 | Oracle Database(仅限MyEMS企业版) |21c<br/> 19c<br/> 18c |  |
