@@ -164,7 +164,7 @@ Operating Systems for Application:
 | 7 | Anolis OS |8<br/> 7 | x86_64<br/> x86_64 |
 
 
-Database:
+Database: 
 
 | NO.                         | Name | Version |   Descriptio  | 
 | :---                             |      :----:       | :----:         | :----:         |
