@@ -14,7 +14,7 @@ function HomepageHeader() {
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle"><Translate>Industry leading Open Source Energy Management System</Translate></p>
+        <p className="hero__subtitle"><Translate>Industry Leading Open Source Energy Management System</Translate></p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title} Energy Management System`}
-      description="Industry leading Open Source Energy Management System">
+      description="Industry Leading Open Source Energy Management System">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

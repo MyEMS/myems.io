@@ -5,7 +5,7 @@
   },
   "theme.ErrorPageContent.tryAgain": {
     "message": "Nochmal versuchen",
-    "description": "The label of the button to try again when the page crashed"
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
   },
   "theme.NotFound.title": {
     "message": "Seite nicht gefunden",
@@ -270,7 +270,7 @@
     "message": "Tags",
     "description": "The title of the tag list page"
   },
-  "Industry leading Open Source Energy Management System": {
+  "Industry Leading Open Source Energy Management System": {
     "message": "Branchenführendes Open Source Energy Management System"
   },
   "MyEMS is being developed and maintained by an experienced development team, and the system's source code is published under MIT license.": {

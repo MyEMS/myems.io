@@ -5,7 +5,7 @@
   },
   "theme.ErrorPageContent.tryAgain": {
     "message": "重试",
-    "description": "The label of the button to try again when the page crashed"
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
   },
   "theme.NotFound.title": {
     "message": "找不到页面",
@@ -270,7 +270,7 @@
     "message": "标签",
     "description": "The title of the tag list page"
   },
-  "Industry leading Open Source Energy Management System": {
+  "Industry Leading Open Source Energy Management System": {
     "message": "行业领先的开源能源管理系统"
   },
   "MyEMS is being developed and maintained by an experienced development team, and the system's source code is published under MIT license.": {
