@@ -2,7 +2,7 @@
 sidebar_position: 11
 ---
 
-# CentOS/RHEL
+# openEuler
 
 In dieser Anleitung stellen Sie MyEMS mit openEuler bereit.
 

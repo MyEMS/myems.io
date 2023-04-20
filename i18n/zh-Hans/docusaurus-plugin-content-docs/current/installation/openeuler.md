@@ -2,7 +2,7 @@
 sidebar_position: 11
 ---
 
-# CentOS/RHEL
+# openEuler
 
 在本指南中，您将在openEuler服务器上部署MyEMS。
 
