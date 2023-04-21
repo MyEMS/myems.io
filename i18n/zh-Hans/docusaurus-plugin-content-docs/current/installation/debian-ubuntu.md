@@ -349,18 +349,15 @@ cd ~/myems/myems-web
 sudo nano src/config.js
 ```
 
-编译和压缩：
+编译：
 ```bash
 sudo npm i --unsafe-perm=true --allow-root --legacy-peer-deps
 sudo npm run build
-tar czvf myems-web.tar.gz build
 ```
 
-安装:
-将myems-web.tar.gz文件上传到web服务器。
+安装：
 注意，以下路径应该与nginx.conf中配置的路径相同。
 ```bash
-tar xzf myems-web.tar.gz
 sudo rm -r /var/www/myems-web
 sudo mv build  /var/www/myems-web
 ```

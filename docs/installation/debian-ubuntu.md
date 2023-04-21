@@ -342,18 +342,15 @@ cd myems/myems-web
 sudo nano src/config.js
 ```
 
-Build and Compress
+Build
 ```bash
 sudo npm i --unsafe-perm=true --allow-root --legacy-peer-deps
 sudo npm run build
-tar czvf myems-web.tar.gz build
 ```
 
 Install
-Upload the file myems-web.tar.gz to you web server. 
 Note that the following path should be same as that was configured in nginx.conf.
 ```bash
-tar xzf myems-web.tar.gz
 sudo rm -r /var/www/myems-web
 sudo mv build  /var/www/myems-web
 ```
