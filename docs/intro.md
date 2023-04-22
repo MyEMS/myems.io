@@ -150,8 +150,7 @@ Users of the Community Edition must retain the relevant copyright and LOGO of My
 [5]. [https://gitcode.net/myems/myems](https://gitcode.net/myems/myems) 
 
 
-## <a id="myems-systems"/>MyEMS Operating Systems and Database Compatibility
-Operating Systems for Application Server:
+## <a id="myems-os-compatibility"/>Operating System Compatibility
 
 | NO.                         | Name | Version |   Description  | 
 | :---                             |      :----:       | :----:         | :----:         |
@@ -164,7 +163,7 @@ Operating Systems for Application Server:
 | 7 | Anolis OS |8<br/> 7 | x86_64<br/> x86_64 |
 
 
-Database: 
+## <a id="myems-database-compatibility"/>Database Compatibility
 
 | NO.                         | Name | Version |   Description  | 
 | :---                             |      :----:       | :----:         | :----:         |
