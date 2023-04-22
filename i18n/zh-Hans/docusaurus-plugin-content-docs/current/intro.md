@@ -151,7 +151,7 @@ MyEMS由资深专业团队开发维护，源代码基于MIT开源软件许可协
 [5]. [https://gitcode.net/myems/myems](https://gitcode.net/myems/myems) 
 
 
-## <a id="myems-systems"/>MyEMS 操作系统与数据库兼容性
+## <a id="myems-os-compatibility"/>操作系统兼容性
 应用服务器操作系统:
 
 | 编号                         | 名称 | 版本 |   说明  | 
@@ -165,7 +165,7 @@ MyEMS由资深专业团队开发维护，源代码基于MIT开源软件许可协
 | 7 | 龙蜥(Anolis) OS |8<br/> 7 | x86_64<br/> x86_64 |
 
 
-数据库: 
+## <a id="myems-database-compatibility"/>数据库兼容性
 
 | 编号                         | 名称 | 版本 |   说明  | 
 | :---                             |      :----:       | :----:         | :----:         |
