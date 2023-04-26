@@ -2,13 +2,13 @@
 sidebar_position: 3
 ---
 
-# CentOS/RHEL
+# CentOS/RHEL/Rocky/AlmaLinux/Oracle Linux
 
 在本指南中，您将在CentOS或RHEL服务器上部署MyEMS。
 
 ## 前提
 
-本指南介绍如何在CentOS Stream 9/Red Hat Enterprise Linux 9（RHEL 9）上安装MyEMS。硬件需求取决于所选数据库和连接到系统的设备数量。要在一台机器上运行MyEMS和MySQL，您至少需要4GB的RAM。
+本指南介绍如何在CentOS Stream 9/Red Hat Enterprise Linux 9（RHEL 9）/Rocky 9/AlmaLinux 9.1/Oracle Linux 9.1上安装MyEMS。硬件需求取决于所选数据库和连接到系统的设备数量。要在一台机器上运行MyEMS和MySQL，您至少需要4GB的RAM。
 
 更新系统并安装工具:
 ```
