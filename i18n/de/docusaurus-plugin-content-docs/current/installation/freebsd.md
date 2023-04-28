@@ -1,21 +1,23 @@
 ---
-sidebar_position: 3
+sidebar_position: 13
 ---
 
-# CentOS/RHEL/Rocky/AlmaLinux/Oracle Linux
+# FreeBSD
 
-In dieser Anleitung stellen Sie MyEMS mit CentOS/RHEL/Rocky/AlmaLinux/Oracle Linux bereit.
-
+In this guide, you will deploy MyEMS on FreeBSD server.
+In dieser Anleitung stellen Sie MyEMS mit FreeBSD bereit.
 
 ## Prerequisites
 
-Diese Anleitung beschreibt, wie Sie MyEMS auf CentOS Stream 9 und Red Hat Enterprise Linux 9 (RHEL 9) und  Rocky 9 und AlmaLinux 9.1 und Oracle Linux 9.1 installieren. Die Hardwareanforderungen hängen von der gewählten Datenbank und der Anzahl der an das System angeschlossenen Geräte ab. Um MyEMS und MySQL auf einem einzigen Rechner laufen zu lassen, benötigen Sie mindestens 4GB RAM.
+Diese Anleitung beschreibt, wie Sie MyEMS auf FreeBSD 13.2 installieren. Die Hardwareanforderungen hängen von der gewählten Datenbank und der Anzahl der an das System angeschlossenen Geräte ab. Um MyEMS und MySQL auf einem einzigen Rechner laufen zu lassen, benötigen Sie mindestens 4GB RAM.
 
 Aktualisieren Sie das System und installieren Sie Tools:
 ```
-sudo dnf update
-sudo dnf install git
-sudo dnf install python3-pip
+pkg install git
+pkg install python3
+pkg install py39-pip-22.3.1
+pkg install nginx
+pkg install monit
 ```
 Quellcode klonen:
 ```
@@ -31,50 +33,52 @@ Siehe [Database](./database.md)
 
 * myems-api Dienst installieren:
 ```bash
-sudo cp -r ~/myems/myems-api /myems-api
+cp -r ~/myems/myems-api /myems-api
 cd /myems-api
-sudo pip install -r requirements.txt
+pip install -r requirements.txt
 ```
+:::tip
+
+Wenn der Fehler „Failed Building Wheel for Pillow“ auftritt, müssen Sie [Kissen installieren](https://pillow.readthedocs.io/en/latest/installation.html)
+
+:::
+
 Erstellen Sie eine .env basierend auf example.env und bearbeiten Sie die .env bei Bedarf:
+
 ```bash
-sudo cp /myems-api/example.env /myems-api/.env
-sudo nano /myems-api/.env
+cp /myems-api/example.env /myems-api/.env
+nano /myems-api/.env
 ```
-Port zur Firewall hinzufügen:
+
+monit einrichten und Dateien konfigurieren:
+
 ```bash
-sudo firewall-cmd --zone=public --add-port=8000/tcp --permanent
-sudo firewall-cmd --reload
+nano /etc/monit.d/myems-api
 ```
-systemd einrichten und Dateien konfigurieren:
 ```bash
-sudo cp /myems-api/myems-api.service /lib/systemd/system/
-sudo cp /myems-api/myems-api.socket /lib/systemd/system/
-sudo cp /myems-api/myems-api.conf /usr/lib/tmpfiles.d/
-```
-Als nächstes aktivieren Sie die Dienste so, dass sie beim Booten automatisch starten:
-```bash
-sudo systemctl enable myems-api.socket
-sudo systemctl enable myems-api.service
+check process mymes-api with pidfile /var/run/myems-api/pid
+start program = "/usr/local/bin/gunicorn -b 0.0.0.0:8000 --pid /var/run/myems-api/pid --timeout 600 --workers=4 app:api &"
+stop program = "/bin/kill -s TERM $MAINPID"
+if 3 restarts within 5 cycles then unmonitor
 ```
 Starten Sie die Dienste:
 ```bash
-sudo systemctl start myems-api.socket
-sudo systemctl start myems-api.service
+monit restart
 ```
 
 ## Schritt 3 myems-admin
 
 * NGINX Server installieren
 
-beziehen sich auf http://nginx.org/en/linux_packages.html#RHEL
+beziehen sich auf http://nginx.org/en/docs/install.html
 
 Enable the nginx service:
 ```
-sudo systemctl enable nginx.service
+service nginx enable
 ```
 * NGINX einrichten
 ```bash
-sudo nano /etc/nginx/nginx.conf
+nano /etc/nginx/nginx.conf
 ```
 Fügen Sie im Abschnitt "http" einige Richtlinien hinzu:
 ```
@@ -94,9 +98,11 @@ http {
 
 Fügen Sie eine neue Datei unter /etc/nginx/conf.d/
 ```
-sudo nano /etc/nginx/conf.d/myems-admin.conf
+nano /etc/nginx/conf.d/myems-admin.conf
 ```
+
 Schreiben Sie mit Direktiven wie unten, ersetzen Sie die Standard-myems-api URL http://127.0.0.1:8000/ mit tatsächlicher URL, wenn die myems-ap servcie auf einem anderen Server gehostet wird
+
 ```
 server {
     listen                 8001;
@@ -120,16 +126,17 @@ server {
 * myems-admin installieren :
   Wenn der Server keine Verbindung zum Internet herstellen kann, komprimieren Sie bitte den Ordner myems/myems-admin und laden Sie ihn auf den Server hoch und extrahieren Sie ihn in ~/myems/myems-admin
 ```bash
-sudo mkdir /var/www
-sudo cp -r ~/myems/myems-admin  /var/www/myems-admin
-sudo chmod 0755 -R /var/www/myems-admin
+mkdir /var/www
+cp -r ~/myems/myems-admin  /var/www/myems-admin
+chmod 0755 /var/www/myems-admin
 ```
   Überprüfen Sie die Konfigurationsdatei und ändern Sie sie bei Bedarf:
 ```bash
-sudo nano /var/www/myems-admin/app/api.js
+nano /var/www/myems-admin/app/api.js
 ```
 
 :::caution
+
 
 Der Ordner "upload" ist für vom Benutzer hochgeladene Dateien. Löschen/verschieben/überschreiben Sie NICHT den 'upload' Ordner, wenn Sie myems-admin aktualisiert haben.
 ```bash
@@ -138,15 +145,9 @@ Der Ordner "upload" ist für vom Benutzer hochgeladene Dateien. Löschen/verschi
 
 :::
 
-Port zur Firewall hinzufügen:
-```bash
-sudo semanage port -a -t http_port_t  -p tcp 8001
-sudo firewall-cmd --zone=public --add-port=8001/tcp --permanent
-sudo firewall-cmd --reload
-```
 Starten Sie den nginx-Dienst neu:
 ```
-sudo systemctl restart nginx.service
+service nginx restart 
 ```
 
 :::tip
@@ -160,156 +161,140 @@ Wenn der Nginx-Fehler „403 Forbidden“ auftritt, können Sie ihn beheben, ind
 In diesem Schritt installieren Sie den Dienst myems-modbus-tcp.
 
 ```bash
-sudo cp -r ~/myems/myems-modbus-tcp /myems-modbus-tcp
+cp -r ~/myems/myems-modbus-tcp /myems-modbus-tcp
 cd /myems-modbus-tcp
-sudo pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 Kopieren Sie die Datei exmaple.env in .env und ändern Sie die Datei .env:
+
 ```bash
-sudo cp /myems-modbus-tcp/example.env /myems-modbus-tcp/.env
-sudo nano /myems-modbus-tcp/.env
+cp /myems-modbus-tcp/example.env /myems-modbus-tcp/.env
+nano /myems-modbus-tcp/.env
 ```
-systemd Dienst einrichten:
+
+monit Dienst einrichten:
+
 ```bash
-sudo cp myems-modbus-tcp.service /lib/systemd/system/
+nano /etc/monit.d/myems-modbus-tcp
 ```
-Den Dienst aktivieren:
 ```bash
-sudo systemctl enable myems-modbus-tcp.service
+check file myems-modbus-tcp path /myems-modbus-tcp/main.py
+start program = "/usr/local/bin/python3 /myems-modbus-tcp/main.py"
+stop program = "/bin/kill -s TERM $MAINPID"
+if 3 restarts within 5 cycles then unmonitor
 ```
 Starten Sie den Dienst:
 ```bash
-sudo systemctl start myems-modbus-tcp.service
+monit restart
 ```
-Überwachen Sie den Dienst:
-```bash
-sudo systemctl status myems-modbus-tcp.service
-```
-Logbuch anzeigen:
-```bash
-cat /myems-modbus-tcp.log
-```
-
 ## Schritt 5 myems-cleaning
 
 In diesem Schritt installieren Sie den myems-cleaning Service.
 
 ```bash
-sudo cp -r ~/myems/myems-cleaning /myems-cleaning
+cp -r ~/myems/myems-cleaning /myems-cleaning
 cd /myems-cleaning
-sudo pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 Kopieren Sie die Datei exmaple.env in .env und ändern Sie die Datei .env:
+
 ```bash
-sudo cp /myems-cleaning/example.env /myems-cleaning/.env
-sudo nano /myems-cleaning/.env
+cp /myems-cleaning/example.env /myems-cleaning/.env
+nano /myems-cleaning/.env
 ```
-systemd Dienst einrichten:
+
+monit Dienst einrichten:
+
 ```bash
-sudo cp myems-cleaning.service /lib/systemd/system/
+nano /etc/monit.d/myems-cleaning
 ```
-Den Dienst aktivieren:
 ```bash
-sudo systemctl enable myems-cleaning.service
+check file myems-cleaning path /myems-cleaning/main.py
+start program = "/usr/local/bin/python3 /myems-cleaning/main.py"
+stop program = "/bin/kill -s TERM $MAINPID"
+if 3 restarts within 5 cycles then unmonitor
 ```
 Starten Sie den Dienst:
 ```bash
-sudo systemctl start myems-cleaning.service
+monit restart
 ```
-Überwachen Sie den Dienst:
-```bash
-sudo systemctl status myems-cleaning.service
-```
-Logbuch anzeigen:
-```bash
-cat /myems-cleaning.log
-```
-
 ## Schritt 6 myems-normalization
 
 In diesem Schritt installieren Sie den myems-normalization service.
 
 ```bash
-sudo cp -r ~/myems/myems-normalization /myems-normalization
+cp -r ~/myems/myems-normalization /myems-normalization
 cd /myems-normalization
-sudo pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 Kopieren Sie die Datei exmaple.env in .env und ändern Sie die Datei .env:
+
 ```bash
-sudo cp /myems-normalization/example.env /myems-normalization/.env
-sudo nano /myems-normalization/.env
+cp /myems-normalization/example.env /myems-normalization/.env
+nano /myems-normalization/.env
 ```
-systemd Dienst einrichten:
+
+monit Dienst einrichten:
+
 ```bash
-sudo cp /myems-normalization/myems-normalization.service /lib/systemd/system/
+nano /etc/monit.d/myems-normalization
 ```
-Den Dienst aktivieren:
 ```bash
-sudo systemctl enable myems-normalization.service
+check file myems-normalization path /myems-normalization/main.py
+start program = "/usr/local/bin/python3 /myems-normalization/main.py"
+stop program = "/bin/kill -s TERM $MAINPID"
+if 3 restarts within 5 cycles then unmonitor
 ```
 Starten Sie den Dienst:
 ```bash
-sudo systemctl start myems-normalization.service
+monit restart
 ```
-Überwachen Sie den Dienst:
-```bash
-sudo systemctl status myems-normalization.service
-```
-Logbuch anzeigen:
-```bash
-cat /myems-normalization.log
-```
-
 ## Schritt 7 myems-aggregation
 
 In diesem Schritt installieren Sie den myems-aggregation service.
 
 ```bash
-sudo cp -r ~/myems/myems-aggregation /myems-aggregation
+cp -r ~/myems/myems-aggregation /myems-aggregation
 cd /myems-aggregation
-sudo pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 Kopieren Sie die Datei exmaple.env in .env und ändern Sie die Datei .env:
+
 ```bash
-sudo cp /myems-aggregation/example.env /myems-aggregation/.env
-sudo nano /myems-aggregation/.env
+cp /myems-aggregation/example.env /myems-aggregation/.env
+nano /myems-aggregation/.env
 ```
-systemd Dienst einrichten:
+
+monit Dienst einrichten:
+
 ```bash
-sudo cp /myems-aggregation/myems-aggregation.service /lib/systemd/system/
+nano /etc/monit.d/myems-aggregation
 ```
-Den Dienst aktivieren:
 ```bash
-sudo systemctl enable myems-aggregation.service
+check file myems-aggregation path /myems-aggregation/main.py
+start program = "/usr/local/bin/python3 /myems-aggregation/main.py"
+stop program = "/bin/kill -s TERM $MAINPID"
+if 3 restarts within 5 cycles then unmonitor
 ```
 Starten Sie den Dienst:
 ```bash
-sudo systemctl start myems-aggregation.service
-```
-Überwachen Sie den Dienst:
-```bash
-sudo systemctl status myems-aggregation.service
-```
-Logbuch anzeigen:
-```bash
-cat /myems-aggregation.log
+monit restart
 ```
 
-
-## Schritt 8 myems-web
+## Step 8 myems-web
 
 In diesem Schritt installieren Sie den myems-web UI Service.
 
 *   NGINX-Server installieren
 
-beziehen sich auf http://nginx.org/en/linux_packages.html#RHEL
+beziehen sich auf http://nginx.org/en/docs/install.html
 
 *   Konfigurieren Sie NGINX
 ```bash
-sudo nano /etc/nginx/nginx.conf
+nano /etc/nginx/nginx.conf
 ```
 Fügen Sie im Abschnitt 'http' einige Anweisungen hinzu:
 ```
@@ -329,10 +314,9 @@ http {
 
 Aktualisieren der nginx Standard-Conf-Datei:
 ```
-sudo nano /etc/nginx/conf.d/default.conf
+nano /etc/nginx/conf.d/default.conf
 ```
 Schreiben Sie mit Direktiven wie unten und ersetzen Sie die Standard-myems-api-URL http://127.0.0.1:8000/ mit tatsächlicher URL, wenn die myems-api-Servcie auf einem anderen Server gehostet wird
-```
 server {
     listen                 80;
     server_name     myems-web;
@@ -358,47 +342,36 @@ server {
 
 NodeJS einrichten:
 ```
-sudo dnf install nodejs
+pkg install node-18.16.0
 ```
 
 Überprüfen und ändern Sie gegebenenfalls die Konfigurationsdatei:
 ```bash
 cd ~/myems/myems-web
-sudo nano src/config.js
+nano src/config.js
 ```
 
 Erstellen:
 ```bash
-sudo npm i --unsafe-perm=true --allow-root --legacy-peer-deps
-sudo npm run build
+npm i --unsafe-perm=true --allow-root --legacy-peer-deps
+npm run build
 ```
 
 Installieren
 Beachten Sie, dass der folgende Pfad mit dem in nginx.conf konfigurierten identisch sein sollte.
 ```bash
-sudo rm -r /var/www/myems-web
-sudo mv build  /var/www/myems-web
+rm -r /var/www/myems-web
+mv build  /var/www/myems-web
 ```
 
-Port zur Firewall hinzufügen:
-```bash
-sudo semanage port -a -t http_port_t  -p tcp 80
-sudo firewall-cmd --zone=public --add-port=80/tcp --permanent
-sudo firewall-cmd --reload
-```
 Starten Sie NGINX neu
-```bash
-sudo systemctl restart nginx
+```
+service nginx restart 
 ```
 
 
-:::tip
 
-Wenn Sie auf '500 Internal Server Error' nginx-Fehler stoßen, können Sie ihn beheben, indem Sie den SELinx-Modus mit dem Befehl 'sudo setforce 0' ändern.
-
-:::
-
-## Nach der Installation
+## Post-installation## Nach der Installation
 
 Glückwunsch! Sie können sich jetzt bei der MyEMS Admin-Benutzeroberfläche und der Web-Benutzeroberfläche anmelden.
 

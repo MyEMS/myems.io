@@ -158,6 +158,15 @@ Nutzer der Community Edition müssen das entsprechende Urheberrecht und LOGO von
 | 5 | Red Hat Enterprise Linux |9<br/> 8<br/> 7 | x86_64<br/> x86_64<br/> x86_64 |
 | 6 | Windows Server |2022<br/> 2019<br/> 2016 | 64bit, WSL<br/> 64bit, WSL<br/> 64bit, WSL |
 | 7 | Anolis OS |8<br/> 7 | x86_64<br/> x86_64 |
+| 8 | SUSE Linux |15 | x86_64 |
+| 9 | OpenSUSE |15 | x86_64 |
+| 10 | Fedora |37 | x86_64 |
+| 11 | Fedora CoreOS |37 | x86_64 |
+| 12 | OpenEuler |23.03 | x86_64 |
+| 13 | Rocky |9 | x86_64 |
+| 14 | FreeBSD |13.2 | amd64 |
+| 15 | AlmaLinux |9.1 | x86_64 |
+| 16 | Oracle Linux |9.1 | x86_64 |
 
 
 ## <a id="myems-database-compatibility"/>Datenbankkompatibilität
