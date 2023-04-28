@@ -4,14 +4,14 @@ sidebar_position: 13
 
 # FreeBSD
 
-In this guide, you will deploy MyEMS on FreeBSD server.
+在本指南中，您将在FreeBSD服务器上部署MyEMS。
 
 
 ## Prerequisites
 
-This guide describes how to install MyEMS on FreeBSD 13.2. Hardware requirements depend on chosen database and amount of devices connected to the system. To run MyEMS and MySQL on a single machine you will need at least 4GB of RAM.
+本指南介绍如何在FreeBSD 13.2上安装MyEMS。硬件需求取决于所选数据库和连接到系统的设备数量。要在一台机器上运行MyEMS和MySQL，您至少需要4GB的RAM。
 
-Update the system and install tools
+更新系统并安装工具:
 ```
 pkg install git
 pkg install python3
@@ -19,19 +19,19 @@ pkg install py39-pip-22.3.1
 pkg install nginx
 pkg install monit
 ```
-Clone source code:
+克隆源代码：
 ```
 cd ~
 git clone https://github.com/myems/myems
 ```
 
-## Step 1 Database
+## 第1步 数据库
 
-See [Database](./database.md)
+参考 [Database](./database.md)
 
-## Step 2 myems-api
+## 第2步 myems-api
 
-* Install myems-api service:
+* 安装 myems-api 服务:
 ```bash
 cp -r ~/myems/myems-api /myems-api
 cd /myems-api
@@ -39,19 +39,18 @@ pip install -r requirements.txt
 ```
 :::tip
 
-If you encounter 'Failed building wheel for pillow' error, you need to [Installation Pillow](https://pillow.readthedocs.io/en/latest/installation.html)
+如果您遇到'Failed building wheel for pillow'错误, 您需要 [安装 Pillow](https://pillow.readthedocs.io/en/latest/installation.html)
 
 :::
 
-Create .env file based on example.env and edit the .env file if needed:
+根据example.env创建.env文件，并根据需要编辑.env：
 
 ```bash
 cp /myems-api/example.env /myems-api/.env
 nano /myems-api/.env
 ```
 
-Use the monit monitoring service and edit the monit configuration file:
-
+安装 monit 配置文件:
 ```bash
 nano /etc/monit.d/myems-api
 ```
@@ -61,22 +60,21 @@ start program = "/usr/local/bin/gunicorn -b 0.0.0.0:8000 --pid /var/run/myems-ap
 stop program = "/bin/kill -s TERM $MAINPID"
 if 3 restarts within 5 cycles then unmonitor
 ```
-Start the services :
+接下来启用这些服务，以便它们在启动时自动启动：
 ```bash
 monit restart
 ```
 
-## Step 3 myems-admin
+## 第3步 myems-admin
 
-* Install NGINX Server
+* 安装 NGINX 服务器
 
-refer to http://nginx.org/en/docs/install.html
-
-Enable the nginx service:
+参考 http://nginx.org/en/docs/install.html
+启用nginx服务:
 ```
 service nginx enable
 ```
-* Configure NGINX
+* 配置 NGINX
 ```bash
 nano /etc/nginx/nginx.conf
 ```
@@ -96,12 +94,11 @@ http {
 }
 ```
 
-Add a new file under /etc/nginx/conf.d/
+在目录 /etc/nginx/conf.d/ 下新建一个文件：
 ```
 nano /etc/nginx/conf.d/myems-admin.conf
 ```
-
-Write with directives as below, and replace the default myems-api url http://127.0.0.1:8000/ with actual url if the myems-api servcie hosted on different server
+编写如下指令, 如果myems-api服务运行在其它服务器上则用实际的地址替换 myems-api 默认地址 http://127.0.0.1:8000/
 ```
 server {
     listen                 8001;
@@ -122,35 +119,35 @@ server {
 }
 ```
 
-* Install myems-admin :
-  If the server can not connect to the internet, please compress the myems/myems-admin folder and upload it to the server and extract it to ~/myems/myems-admin
+* 安装 myems-admin :
+  如果服务器无法连接到internet，请压缩myems/myems-admin文件夹并将其上传到服务器，然后将其解压缩到~/myems/myems-admin
 ```bash
 mkdir /var/www
 cp -r ~/myems/myems-admin  /var/www/myems-admin
 chmod 0755 /var/www/myems-admin
 ```
-  Check the config file and change it if necessary:
+检查配置文件，必要时进行更改：
 ```bash
 nano /var/www/myems-admin/app/api.js
 ```
 
 :::caution
 
-The 'upload' folder is for user uploaded files. DO NOT delete/move/overwrite the 'upload' folder when you upgraded myems-admin.
+“upload”文件夹用于用户上传的文件。升级myems-admin时，请勿删除/移动/覆盖“upload”文件夹。
 ```bash
  /var/www/myems-admin/upload
 ```
 
 :::
 
-Restart the nginx service:
+重启nginx服务:
 ```
 service nginx restart 
 ```
 
-## Step 4 myems-modbus-tcp
+## 第4步 myems-modbus-tcp
 
-In this step, you will install myems-modbus-tcp service.
+在此步骤中，您将安装myems-modbus-tcp服务。
 
 ```bash
 cp -r ~/myems/myems-modbus-tcp /myems-modbus-tcp
@@ -158,14 +155,14 @@ cd /myems-modbus-tcp
 pip install -r requirements.txt
 ```
 
-Create .env file based on example.env and edit the .env file if needed:
+将exmaple.ev文件复制到.env并修改.env文件：
 
 ```bash
 cp /myems-modbus-tcp/example.env /myems-modbus-tcp/.env
 nano /myems-modbus-tcp/.env
 ```
 
-Use the monit monitoring service and edit the monit configuration file:
+安装 monit 服务:
 
 ```bash
 nano /etc/monit.d/myems-modbus-tcp
@@ -176,13 +173,13 @@ start program = "/usr/local/bin/python3 /myems-modbus-tcp/main.py"
 stop program = "/bin/kill -s TERM $MAINPID"
 if 3 restarts within 5 cycles then unmonitor
 ```
-Start the service:
+启动服务：
 ```bash
 monit restart
 ```
-## Step 5 myems-cleaning
+## 第5步 myems-cleaning
 
-In this step, you will install myems-cleaning service.
+在此步骤中，您将安装myems-cleaning服务。
 
 ```bash
 cp -r ~/myems/myems-cleaning /myems-cleaning
@@ -190,14 +187,14 @@ cd /myems-cleaning
 pip install -r requirements.txt
 ```
 
-Create .env file based on example.env and edit the .env file if needed:
+将exmaple.ev文件复制到.env并修改.env文件：
 
 ```bash
 cp /myems-cleaning/example.env /myems-cleaning/.env
 nano /myems-cleaning/.env
 ```
 
-Use the monit monitoring service and edit the monit configuration file:
+安装monit服务：
 
 ```bash
 nano /etc/monit.d/myems-cleaning
@@ -208,13 +205,14 @@ start program = "/usr/local/bin/python3 /myems-cleaning/main.py"
 stop program = "/bin/kill -s TERM $MAINPID"
 if 3 restarts within 5 cycles then unmonitor
 ```
-Start the service:
+启动服务：
 ```bash
 monit restart
 ```
-## Step 6 myems-normalization
+## 第6步 myems-normalization
 
-In this step, you will install myems-normalization service.
+
+在此步骤中，您将安装myems-normalization服务。
 
 ```bash
 cp -r ~/myems/myems-normalization /myems-normalization
@@ -222,14 +220,14 @@ cd /myems-normalization
 pip install -r requirements.txt
 ```
 
-Create .env file based on example.env and edit the .env file if needed:
+将exmaple.ev文件复制到.env并修改.env文件：
 
 ```bash
 cp /myems-normalization/example.env /myems-normalization/.env
 nano /myems-normalization/.env
 ```
 
-Use the monit monitoring service and edit the monit configuration file:
+安装monit服务
 
 ```bash
 nano /etc/monit.d/myems-normalization
@@ -240,27 +238,27 @@ start program = "/usr/local/bin/python3 /myems-normalization/main.py"
 stop program = "/bin/kill -s TERM $MAINPID"
 if 3 restarts within 5 cycles then unmonitor
 ```
-Start the service:
+启动服务：
 ```bash
 monit restart
 ```
-## Step 7 myems-aggregation
+## 第7步 myems-aggregation
 
-In this step, you will install myems-aggregation service.
+在此步骤中，您将安装myems-aggregation服务。
 
 ```bash
 cp -r ~/myems/myems-aggregation /myems-aggregation
 cd /myems-aggregation
 pip install -r requirements.txt
 ```
-Create .env file based on example.env and edit the .env file if needed:
+将exmaple.ev文件复制到.env并修改.env文件：
 
 ```bash
 cp /myems-aggregation/example.env /myems-aggregation/.env
 nano /myems-aggregation/.env
 ```
 
-Use the monit monitoring service and edit the monit configuration file:
+安装monit服务
 
 ```bash
 nano /etc/monit.d/myems-aggregation
@@ -271,20 +269,19 @@ start program = "/usr/local/bin/python3 /myems-aggregation/main.py"
 stop program = "/bin/kill -s TERM $MAINPID"
 if 3 restarts within 5 cycles then unmonitor
 ```
-Start the service:
+启动服务：
 ```bash
 monit restart
 ```
 
-## Step 8 myems-web
+## 第8步 myems-web
 
-In this step, you will install myems-web UI service.
+在此步骤中，您将安装myems-web服务。
 
-*   Install NGINX  Server
+*   安装 NGINX 服务器
+参考 http://nginx.org/en/docs/install.html
 
-refer to http://nginx.org/en/docs/install.html
-
-*   Configure NGINX
+*   配置 NGINX
 ```bash
 nano /etc/nginx/nginx.conf
 ```
@@ -304,11 +301,11 @@ http {
 }
 ```
 
-Update the nginx default conf file:
+更新nginx默认conf文件:
 ```
 nano /etc/nginx/conf.d/default.conf
 ```
-Write with directives as below, and replace the default myems-api url http://127.0.0.1:8000/ with actual url if the myems-api servcie hosted on different server
+使用如下指令编写，如果myems-api服务托管在不同的服务器上，则使用实际的地址替换默认的myems-api地址http://127.0.0.1:8000/
 ```
 server {
     listen                 80;
@@ -331,20 +328,20 @@ server {
 }
 ```
 
-* Install MyEMS Web UI:
+* 安装 MyEMS Web UI:
 
-Setup NodeJS:
+安装NodeJS:
 ```
 pkg install node-18.16.0
 ```
 
-Check and change the config file if necessary:
+如有必要，检查并更改配置文件：
 ```bash
 cd ~/myems/myems-web
 nano src/config.js
 ```
 
-Build
+编译：
 ```bash
 npm i --unsafe-perm=true --allow-root --legacy-peer-deps
 npm run build
@@ -357,16 +354,17 @@ rm -r /var/www/myems-web
 mv build  /var/www/myems-web
 ```
 
-Restart the nginx service:
+重启 NGINX
 ```
 service nginx restart 
 ```
 
-## Post-installation
 
-Congratulations! You are able to login the MyEMS Admin UI and Web UI now.
+## 安装后
 
-### Default Ports
+祝贺您现在可以登录MyEMS Admin UI和Web UI。
+
+### 默认端口
 
 MyEMS Web UI: 80
 
@@ -374,7 +372,7 @@ MyEMS API: 8000
 
 MyEMS Admin UI: 8001
 
-### Default Passwords
+### 默认密码
 <details>
   <summary>Admin UI</summary>
 
@@ -396,4 +394,5 @@ administrator@myems.io
 </details>
 
 
-## Troubleshooting
+## 故障排除
+

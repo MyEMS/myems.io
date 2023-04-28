@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # CentOS/RHEL/Rocky/AlmaLinux/Oracle Linux
 
-In dieser Anleitung stellen Sie MyEMS mit CentOS- oder RHEL-Server bereit.
+In dieser Anleitung stellen Sie MyEMS mit CentOS/RHEL/Rocky/AlmaLinux/Oracle Linux bereit.
 
 
 ## Prerequisites
@@ -144,14 +144,14 @@ sudo semanage port -a -t http_port_t  -p tcp 8001
 sudo firewall-cmd --zone=public --add-port=8001/tcp --permanent
 sudo firewall-cmd --reload
 ```
-Restart the nginx service:
+Starten Sie den nginx-Dienst neu:
 ```
 sudo systemctl restart nginx.service
 ```
 
 :::tip
 
-If you encounter '403 Forbidden' nginx error, you may fix it by changing SELinx mode with command 'sudo setenforce 0'
+Wenn der Nginx-Fehler „403 Forbidden“ auftritt, können Sie ihn beheben, indem Sie den SELinx-Modus mit dem Befehl „sudo setenforce 0“ ändern.
 
 :::
 
@@ -367,18 +367,15 @@ cd ~/myems/myems-web
 sudo nano src/config.js
 ```
 
-Erstellen und komprimieren:
+Erstellen:
 ```bash
 sudo npm i --unsafe-perm=true --allow-root --legacy-peer-deps
 sudo npm run build
-tar czvf myems-web.tar.gz build
 ```
 
 Installieren
-Laden Sie die Datei myems-web.tar.gz auf Ihren Webserver hoch.
 Beachten Sie, dass der folgende Pfad mit dem in nginx.conf konfigurierten identisch sein sollte.
 ```bash
-tar xzf myems-web.tar.gz
 sudo rm -r /var/www/myems-web
 sudo mv build  /var/www/myems-web
 ```
