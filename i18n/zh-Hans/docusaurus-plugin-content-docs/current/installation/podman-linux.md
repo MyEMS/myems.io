@@ -12,10 +12,12 @@ sidebar_position: 14
 - 已安装MySQL服务器。
 - MySQL数据库可以从Podman Engine运行的主机连接。
 
-## 注意
+:::caution
 
 - 建议使用root权限来执行podman命令。
 - 安装podman后，使用命令 `systemctl status podman-restart.service` 检查容器是否配置为自动启动和策略。如果显示 `Unit not found` 表示容器无法自动启动。 
+
+:::
 
 ## 第1步 数据库
 
