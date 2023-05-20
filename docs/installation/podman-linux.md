@@ -11,11 +11,13 @@ In this guide, you will deploy MyEMS with Podman on Linux.
 - Installed MySQL server.
 - The MySQL database can be connected from the host on which the Podman Engine runs.
 
-## Attention
+:::caution
 
 - It is recommended to use root privileges to execute podman commands.
 
 - After installing podman, use the command `systemctl status podman-restart.service` to check if the containers are configured for automatic startup and policy. If `Unit not found` is displayed, it means that the container cannot be automatic startup.
+
+:::
 
 ## Step 1 Database
 
