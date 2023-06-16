@@ -34,6 +34,9 @@ sidebar_position: 5
 | OPC UA                           |  ✔️        | https://opcfoundation.org/ |
 | OPC DA                           |  ✔️        | https://opcfoundation.org/ |
 | Siemens S7                       |  ✔️        | https://siemens.com/ |
+| IEC 61850                        |  ✔️        | IEC 61850 https://en.wikipedia.org/wiki/IEC_61850 |
+| IEC 101                          |  ✔️        | IEC 60870-5-103 https://en.wikipedia.org/wiki/IEC_60870-5 |
+| IEC 103                          |  ✔️        | IEC 60870-5-103 https://en.wikipedia.org/wiki/IEC_60870-5 |
 | IEC 104                          |  ✔️        | IEC 60870-5-104 https://en.wikipedia.org/wiki/IEC_60870-5 |
 | Johnson Controls Metasys API     |  ✔️        | https://www.johnsoncontrols.com/ |
 | Honeywell EBI                    |  ✔️        | https://www.honeywell.com/ |
