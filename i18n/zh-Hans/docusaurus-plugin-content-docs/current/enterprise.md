@@ -27,23 +27,26 @@ sidebar_position: 5
 | 组合设备数据/节能分析                | ✔️        | 按空间层级筛选、多种比较类型、多种时间尺度、报告期分类总节约(基线-实际)、报告期吨标准煤总节约(基线-实际)、报告期减少吨二氧化碳排放(基线-实际)、节约吨标准煤占比、减少吨二氧化碳排放占比、报告期分类节约趋势、相关参数、详细数据、相关设备数据、导出Excel、需要能耗预测组件 |
 | 碳足迹分析                         | ✔️        |                      |
 | 碳排放分析                         | ✔️        |                      |
-| BACnet/IP 协议                    | ✔️        | 采集数据 http://www.bacnet.org/ |
-| MQTT 订阅                         | ✔️        | 采集数据 https://mqtt.org/ |
-| Modbus RTU 协议                   | ✔️        | 采集数据 https://modbus.org/ |
-| OPC UA 协议                       | ✔️        | 采集数据 https://opcfoundation.org/ |
-| OPC DA 协议                       | ✔️        | 采集数据 https://opcfoundation.org/ |
-| Siemens S7 协议                   | ✔️        | 采集数据 https://siemens.com/ |
-| IEC 104 协议                      | ✔️        | 采集数据 IEC 60870-5-104 https://en.wikipedia.org/wiki/IEC_60870-5 |
-| Johnson Controls Metasys API     | ✔️        | 采集数据 https://www.johnsoncontrols.com/ |
-| Honeywell EBI                    | ✔️        | 采集数据 https://www.honeywell.com/ |
-| SIEMENS Desigo CC                | ✔️        |  采集数据 https://siemens.com/ |
-| QWeather API                     | ✔️        | 采集数据 https://www.qweather.com/ |
-| 从MySQL采集数据                    | ✔️        | 采集数据 https://www.mysql.com/ |
-| 从Microsoft SQL Server采集数据     | ✔️        | 采集数据 https://www.microsoft.com/en-us/sql-server/ |
-| 从PostgreSQL采集数据               | ✔️        | 采集数据 https://www.postgresql.org/ |
-| 从Oracle采集数据                   | ✔️        | 采集数据 https://www.oracle.com/database/ |
-| 从MongoDB采集数据                  | ✔️        | 采集数据 https://www.mongodb.com/ |
-| 从InfluxDB采集数据                 | ✔️        | 采集数据 https://www.influxdata.com/products/influxdb/ |
+| BACnet/IP                        | ✔️        | http://www.bacnet.org/ |
+| MQTT 订阅                         | ✔️        | https://mqtt.org/ |
+| Modbus RTU                       | ✔️        | https://modbus.org/ |
+| OPC UA                           | ✔️        | https://opcfoundation.org/ |
+| OPC DA                           | ✔️        | https://opcfoundation.org/ |
+| Siemens S7                       | ✔️        | https://siemens.com/ |
+| IEC 61850                        |  ✔️        | IEC 61850 https://en.wikipedia.org/wiki/IEC_61850 |
+| IEC 101                          |  ✔️        | IEC 60870-5-103 https://en.wikipedia.org/wiki/IEC_60870-5 |
+| IEC 103                          |  ✔️        | IEC 60870-5-103 https://en.wikipedia.org/wiki/IEC_60870-5 |
+| IEC 104                          |  ✔️        | IEC 60870-5-104 https://en.wikipedia.org/wiki/IEC_60870-5 |
+| Johnson Controls Metasys API     | ✔️        | https://www.johnsoncontrols.com/ |
+| Honeywell EBI                    | ✔️        | https://www.honeywell.com/ |
+| SIEMENS Desigo CC                | ✔️        | https://siemens.com/ |
+| QWeather API                     | ✔️        | https://www.qweather.com/ |
+| 从MySQL采集数据                    | ✔️        | https://www.mysql.com/ |
+| 从Microsoft SQL Server采集数据     | ✔️        | https://www.microsoft.com/en-us/sql-server/ |
+| 从PostgreSQL采集数据               | ✔️        | https://www.postgresql.org/ |
+| 从Oracle采集数据                   | ✔️        | https://www.oracle.com/database/ |
+| 从MongoDB采集数据                  | ✔️        | https://www.mongodb.com/ |
+| 从InfluxDB采集数据                 | ✔️        | https://www.influxdata.com/products/influxdb/ |
 | 能量积分仪                         | ✔️         | 企业版组件授权，可定制开发 |
 | 设备运行时长累计软件                 | ✔️         | 企业版组件授权，可定制开发 |
 | FDD 能效故障诊断系统                | ✔️        | 企业版组件授权，可定制开发 |
