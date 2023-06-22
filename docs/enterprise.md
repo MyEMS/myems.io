@@ -23,9 +23,10 @@ sidebar_position: 5
 | Tenant/Saving Data               |  ✔️        | Enterprise version license, or customizable development |
 | Store/Saving Data                |  ✔️        | Enterprise version license, or customizable development |
 | Shopfloor/Saving Data            |  ✔️        | Enterprise version license, or customizable development |
-| Combined Equipment/Saving Data   | ✔️        | Enterprise version license, or customizable development |
-| Carbon Footprint Analysis        | ✔️        |                      |
-| Carbon Emission Analysis         | ✔️        |                      |
+| Combined Equipment/Saving Data   |  ✔️        | Enterprise version license, or customizable development |
+| Carbon Footprint Analysis        |  ✔️        |                      |
+| Carbon Emission Analysis         |  ✔️        |                      |
+| Microgrid                        |  ✔️        |  PV, Energy Storage Battery, Load, Grid, Generator       |
 | BACnet/IP                        |  ✔️        | http://www.bacnet.org/ |
 | MQTT Subscriber                  |  ✔️        | https://mqtt.org/ |
 | Kafka Consumer                   |  ✔️        | https://kafka.apache.org/ |
