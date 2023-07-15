@@ -107,7 +107,7 @@ cd /myems-admin
 
 :::caution
 
-Ersetzen Sie manuell ~~127.0.0.1:8000~~ in nginx.conf durch die tatsächliche **HOST**-IP und den Port von myems-api
+Ersetzen Sie manuell ~~127.0.0.1:8000~~ in nginx.conf durch die tatsächliche **HOST** IP Adresse und den Port von myems-api
 
 :::
 
@@ -153,7 +153,7 @@ Die Option ro bewirkt, falls vorhanden, dass der Bind-Mount schreibgeschützt in
 
 * --log-opt max-size=2m Die maximale Größe des Protokolls, bevor es gerollt wird. Eine positive ganze Zahl plus ein Modifikator, der die Maßeinheit darstellt (k, m oder g).
 
-* --log-opt max-file=2 Die maximale Anzahl von Protokolldateien, die vorhanden sein können. Wenn beim Rollieren der Protokolle überschüssige Dateien entstehen, wird die älteste Datei entfernt. Eine positive Ganzzahl. 
+* --log-opt max-file=2 Die maximale Anzahl von Protokolldateien, die vorhanden sein können. Wenn beim Rollieren der Protokolle überschüssige Dateien entstehen, wird die älteste Datei entfernt. Eine positive Ganzzahl.
 
 * --restart Neustartrichtlinie, die angewendet werden soll, wenn ein Container beendet wird
 
@@ -222,7 +222,7 @@ Die Option ro bewirkt, falls vorhanden, dass der Bind-Mount schreibgeschützt in
 
 * --log-opt max-size=2m Die maximale Größe des Protokolls, bevor es gerollt wird. Eine positive ganze Zahl plus ein Modifikator, der die Maßeinheit darstellt (k, m oder g).
 
-* --log-opt max-file=2 Die maximale Anzahl von Protokolldateien, die vorhanden sein können. Wenn beim Rollieren der Protokolle überschüssige Dateien entstehen, wird die älteste Datei entfernt. Eine positive Ganzzahl. 
+* --log-opt max-file=2 Die maximale Anzahl von Protokolldateien, die vorhanden sein können. Wenn beim Rollieren der Protokolle überschüssige Dateien entstehen, wird die älteste Datei entfernt. Eine positive Ganzzahl.
 
 * --restart Neustartrichtlinie, die angewendet werden soll, wenn ein Container beendet wird
 
@@ -295,7 +295,7 @@ Die Option ro bewirkt, falls vorhanden, dass der Bind-Mount schreibgeschützt in
 
 * --log-opt max-size=2m Die maximale Größe des Protokolls, bevor es gerollt wird. Eine positive ganze Zahl plus ein Modifikator, der die Maßeinheit darstellt (k, m oder g).
 
-* --log-opt max-file=2 Die maximale Anzahl von Protokolldateien, die vorhanden sein können. Wenn beim Rollieren der Protokolle überschüssige Dateien entstehen, wird die älteste Datei entfernt. Eine positive Ganzzahl. 
+* --log-opt max-file=2 Die maximale Anzahl von Protokolldateien, die vorhanden sein können. Wenn beim Rollieren der Protokolle überschüssige Dateien entstehen, wird die älteste Datei entfernt. Eine positive Ganzzahl.
 
 * --restart Neustartrichtlinie, die angewendet werden soll, wenn ein Container beendet wird
 
@@ -367,7 +367,7 @@ Die Option ro bewirkt, falls vorhanden, dass der Bind-Mount schreibgeschützt in
 
 * --log-opt max-size=2m Die maximale Größe des Protokolls, bevor es gerollt wird. Eine positive ganze Zahl plus ein Modifikator, der die Maßeinheit darstellt (k, m oder g).
 
-* --log-opt max-file=2 Die maximale Anzahl von Protokolldateien, die vorhanden sein können. Wenn beim Rollieren der Protokolle überschüssige Dateien entstehen, wird die älteste Datei entfernt. Eine positive Ganzzahl. 
+* --log-opt max-file=2 Die maximale Anzahl von Protokolldateien, die vorhanden sein können. Wenn beim Rollieren der Protokolle überschüssige Dateien entstehen, wird die älteste Datei entfernt. Eine positive Ganzzahl.
 
 * --restart Neustartrichtlinie, die angewendet werden soll, wenn ein Container beendet wird
 
@@ -440,7 +440,7 @@ Die Option ro bewirkt, falls vorhanden, dass der Bind-Mount schreibgeschützt in
 
 * --log-opt max-size=2m Die maximale Größe des Protokolls, bevor es gerollt wird. Eine positive ganze Zahl plus ein Modifikator, der die Maßeinheit darstellt (k, m oder g).
 
-* --log-opt max-file=2 Die maximale Anzahl von Protokolldateien, die vorhanden sein können. Wenn beim Rollieren der Protokolle überschüssige Dateien entstehen, wird die älteste Datei entfernt. Eine positive Ganzzahl. 
+* --log-opt max-file=2 Die maximale Anzahl von Protokolldateien, die vorhanden sein können. Wenn beim Rollieren der Protokolle überschüssige Dateien entstehen, wird die älteste Datei entfernt. Eine positive Ganzzahl.
 
 * --restart Neustartrichtlinie, die angewendet werden soll, wenn ein Container beendet wird
 
@@ -525,7 +525,7 @@ Die Option ro bewirkt, falls vorhanden, dass der Bind-Mount schreibgeschützt in
 
 * --log-opt max-size=2m Die maximale Größe des Protokolls, bevor es gerollt wird. Eine positive ganze Zahl plus ein Modifikator, der die Maßeinheit darstellt (k, m oder g).
 
-* --log-opt max-file=2 Die maximale Anzahl von Protokolldateien, die vorhanden sein können. Wenn beim Rollieren der Protokolle überschüssige Dateien entstehen, wird die älteste Datei entfernt. Eine positive Ganzzahl. 
+* --log-opt max-file=2 Die maximale Anzahl von Protokolldateien, die vorhanden sein können. Wenn beim Rollieren der Protokolle überschüssige Dateien entstehen, wird die älteste Datei entfernt. Eine positive Ganzzahl.
 
 * --restart Neustartrichtlinie, die angewendet werden soll, wenn ein Container beendet wird
 
