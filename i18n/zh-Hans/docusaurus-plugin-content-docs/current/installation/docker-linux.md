@@ -107,7 +107,7 @@ cd /myems-admin
 
 :::caution
 
-手动将nginx.conf中的~~127.00.1:8000~~替换为实际的**HOST**ip和myems-api端口
+手动将nginx.conf中的~~127.00.1:8000~~替换为实际的**主机**IP地址和myems-api端口
 
 :::
 
