@@ -8,7 +8,7 @@ sidebar_position: 5
 
 ## 前提
 - 主机上已安装docker、npm。
-- 已安装MySQL服务器，用户名为“root”，密码为“!MyEMS1’。
+- 已安装MySQL服务器。
 - MySQL数据库可以从Docker Engine运行的主机连接。
 
 ## 第1步 数据库
@@ -100,7 +100,7 @@ cd c:\myems-admin
 
 :::caution
 
-手动将nginx.conf中的~~127.00.1:8000~~替换为实际的**HOST**ip和myems-api端口
+手动将nginx.conf中的~~127.00.1:8000~~替换为实际的**HOST**IP地址和myems-api端口
 
 :::
 
