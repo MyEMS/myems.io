@@ -67,7 +67,8 @@ sidebar_position: 5
 | Alipay Mini Program              |  ✔️        | Enterprise version license, or customizable development |
 | IPC Hardware Gateway (Data Acquisition and Remote Control）| ✔️ | MyEMS certified industrial computer hardware |
 | LoRa Radio Module (Data Acquisition and Remote Control）| ✔️ | MyEMS certified LoRa hardware device |
-| Protocol for Uploading to Provincial/Municipal Platform of On-line monitoring system for Key Energy-Consuming Unit | ❌ | ✔️ | Enterprise version license, or customizable development |
+| Protocol for Uploading to Provincial/Municipal Platform of On-line monitoring system for Key Energy-Consuming Unit | ✔️ | Enterprise version license, or customizable development |
+| TMall Genie Speaker voice control |  ✔️        | https://genie.tmall.com/ |
 
 ## Optional Services of MyEMS Enterprise Edition
 
