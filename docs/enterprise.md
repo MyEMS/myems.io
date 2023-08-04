@@ -15,18 +15,17 @@ sidebar_position: 5
 | Deploy on Kubernetes (K8s)       |  ✔️        | https://kubernetes.io/ |
 | Deploy on SQL Server Database    |  ✔️        | https://www.microsoft.com/en-us/sql-server |
 | Deploy on Oracle Database        |  ✔️        | https://www.oracle.com/database/ |
-| Space/Saving Data                |  ✔️        | Enterprise version license, or customizable development |
+| Space Saving Data                |  ✔️        | Enterprise version license, or customizable development |
 | Equipment/Saving Data            |  ✔️        | Enterprise version license, or customizable development |
 | Meter Saving Data                |  ✔️        | Enterprise version license, or customizable development |
 | Virtual Meter Saving Data        |  ✔️        | Enterprise version license, or customizable development |
 | Offline Meter Saving Data        |  ✔️        | Enterprise version license, or customizable development |
-| Tenant/Saving Data               |  ✔️        | Enterprise version license, or customizable development |
-| Store/Saving Data                |  ✔️        | Enterprise version license, or customizable development |
-| Shopfloor/Saving Data            |  ✔️        | Enterprise version license, or customizable development |
-| Combined Equipment/Saving Data   |  ✔️        | Enterprise version license, or customizable development |
+| Tenant Saving Data               |  ✔️        | Enterprise version license, or customizable development |
+| Store Saving Data                |  ✔️        | Enterprise version license, or customizable development |
+| Shopfloor Saving Data            |  ✔️        | Enterprise version license, or customizable development |
+| Combined Equipment Saving Data   |  ✔️        | Enterprise version license, or customizable development |
 | Carbon Footprint Analysis        |  ✔️        |                      |
 | Carbon Emission Analysis         |  ✔️        |                      |
-| Microgrid                        |  ✔️        |  PV, Energy Storage Battery, Load, Grid, Generator       |
 | BACnet/IP                        |  ✔️        | http://www.bacnet.org/ |
 | MQTT Subscriber                  |  ✔️        | https://mqtt.org/ |
 | Kafka Consumer                   |  ✔️        | https://kafka.apache.org/ |
@@ -69,6 +68,8 @@ sidebar_position: 5
 | LoRa Radio Module (Data Acquisition and Remote Control）| ✔️ | MyEMS certified LoRa hardware device |
 | Protocol for Uploading to Provincial/Municipal Platform of On-line monitoring system for Key Energy-Consuming Unit | ✔️ | Enterprise version license, or customizable development |
 | TMall Genie Speaker voice control |  ✔️        | https://genie.tmall.com/ |
+| Microgrid                        |  ✔️        |  A group of interconnected PV, Energy Storage Battery, Load, Grid, Generator |
+| Virtual Power Plant              |  ✔️        |  A connected aggregation of distributed energy resource technologies |
 
 ## Optional Services of MyEMS Enterprise Edition
 
