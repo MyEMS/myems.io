@@ -16,15 +16,15 @@ sidebar_position: 5
 | Deploy on SQL Server Database    |  ✔️        | https://www.microsoft.com/en-us/sql-server |
 | Deploy on Oracle Database        |  ✔️        | https://www.oracle.com/database/ |
 | Deploy on PostgreSQL Database    |  ✔️        | https://www.postgresql.org/ |
-| Space/Saving Data                |  ✔️        | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
-| Equipment/Saving Data            | ✔️        | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
+| Space Saving Data                |  ✔️        | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
+| Equipment Saving Data            | ✔️        | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
 | Meter Saving Data                | ✔️        | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
 | Virtual Meter Saving Data        | ✔️        | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
 | Offline Meter Saving Data        | ✔️        | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
-| Tenant/Saving Data               |  ✔️        | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
-| Store/Saving Data                |  ✔️        |                      |
-| Shopfloor/Saving Data            |  ✔️        | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
-| Combined Equipment/Saving Data   | ✔️        | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
+| Tenant Saving Data               |  ✔️        | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
+| Store Saving Data                |  ✔️        |                      |
+| Shopfloor Saving Data            |  ✔️        | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
+| Combined Equipment Saving Data   | ✔️        | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
 | Analyse des CO2-Fußabdrucks      | ✔️        |                      |
 | Analyse der Kohlenstoffemissionen| ✔️        |                      |
 | Mikrogitter                      |  ✔️       |  PV, Energiespeicherbatterie, Last, Netz, Generator      |
@@ -70,6 +70,8 @@ sidebar_position: 5
 | LoRa Radio Module (Data Acquisition and Remote Control）   | ✔️ | MyEMS-zertifiziertes LoRa-Hardwaregerät |
 | Protocol for Uploading to Provincial/Municipal Platform of On-line monitoring system for Key Energy-Consuming Unit | ✔️        |                      |
 | Tmall Genie Smart Lautsprecher Sprachsteuerung |  ✔️        | https://genie.tmall.com/ |
+| Microgrid                        |  ✔️        |  Eine Gruppe von miteinander verbundenen PV, Energiespeicherbatterie, Last, Netz, Generator |
+| Virtual Power Plant              |  ✔️        |  Eine vernetzte Aggregation verteilter Energieressourcentechnologien |
 
 ## Optionale Dienste der MyEMS Enterprise Edition
 
