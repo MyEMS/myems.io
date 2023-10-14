@@ -488,12 +488,14 @@ Sie können den Befehl „npm run build“ in diesem Abschnitt getrost ignoriere
 
 ```bash
 docker build -t myems/myems-web .
+docker image prune -f
 ```
 
 Um für mehrere Plattformen zu bauen und nicht nur für die Architektur und das Betriebssystem, die der Benutzer, der den Build aufruft, gerade ausführt.
 Sie können buildx verwenden und das Flag --platform setzen, um die Zielplattform für die Build-Ausgabe anzugeben (z. B. linux/amd64, linux/arm64 oder darwin/amd64).
 ```bash
 docker buildx build --platform=linux/amd64 -t myems/myems-web .
+docker image prune -f
 ```
 
 * Führen Sie einen Docker-Container aus
