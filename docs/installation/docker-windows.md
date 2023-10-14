@@ -486,12 +486,14 @@ You can safely ignore the command 'npm run build' in this section, because it is
 
 ```bash
 docker build -t myems/myems-web .
+docker image prune -f
 ```
 
 To build for multiple platforms and not only for the architecture and operating system that the user invoking the build happens to run.
 You can use buildx and set the --platform flag to specify the target platform for the build output, (for example, linux/amd64, linux/arm64, or darwin/amd64).
 ```bash
 docker buildx build --platform=linux/amd64 -t myems/myems-web .
+docker image prune -f
 ```
 
 * Run a Docker container

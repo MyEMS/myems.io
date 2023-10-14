@@ -495,12 +495,14 @@ cd /myems-web
 
 ```bash
 docker build -t myems/myems-web .
+docker image prune -f
 ```
 
 为多个平台构建，而不仅仅是为当前用户运行的体系结构和操作系统构建。
 您可以使用buildx并设置--platform标志来指定构建输出的目标平台（例如，linux/amd64、linux/arm64或darwin/amd64）。
 ```bash
 docker buildx build --platform=linux/amd64 -t myems/myems-web .
+docker image prune -f
 ```
 
 * 运行Docker容器
