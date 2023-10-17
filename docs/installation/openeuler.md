@@ -2,7 +2,7 @@
 sidebar_position: 11
 ---
 
-# openEuler 
+# openEuler
 
 In this guide, you will deploy MyEMS on openEuler server.
 
@@ -100,8 +100,8 @@ server {
         root    /var/www/myems-admin;
         index index.html index.htm;
     }
-    ## To avoid CORS issue, use Nginx to proxy myems-api to path /api 
-    ## Add another location /api in 'server' 
+    ## To avoid CORS issue, use Nginx to proxy myems-api to path /api
+    ## Add another location /api in 'server'
     ## Replace the default myems-api url http://127.0.0.1:8000/ with actual url if the myems-api servcie hosted on different server
     location /api {
         proxy_pass http://127.0.0.1:8000/;
@@ -336,8 +336,8 @@ server {
         # add try_files directive to avoid 404 error while refreshing pages
         try_files $uri  /index.html;
     }
-    ## To avoid CORS issue, use Nginx to proxy myems-api to path /api 
-    ## Add another location /api in 'server' 
+    ## To avoid CORS issue, use Nginx to proxy myems-api to path /api
+    ## Add another location /api in 'server'
     ## replace the default myems-api url http://127.0.0.1:8000/ with actual url if the myems-api servcie hosted on different server
     location /api {
         proxy_pass http://127.0.0.1:8000/;
@@ -365,15 +365,12 @@ Build and Compress
 ```bash
 sudo npm i --unsafe-perm=true --allow-root --legacy-peer-deps
 sudo npm run build
-tar czvf myems-web.tar.gz build
 ```
 
 Install
-Upload the file myems-web.tar.gz to you web server. 
+Upload the files to you web server.
 Note that the following path should be same as that was configured in nginx.conf.
 ```bash
-tar xzf myems-web.tar.gz
-sudo rm -r /var/www/myems-web
 sudo mv build  /var/www/myems-web
 ```
 

@@ -121,8 +121,8 @@ server {
         root    /var/www/myems-admin;
         index index.html index.htm;
     }
-    ## To avoid CORS issue, use Nginx to proxy myems-api to path /api 
-    ## Add another location /api in 'server' 
+    ## To avoid CORS issue, use Nginx to proxy myems-api to path /api
+    ## Add another location /api in 'server'
     ## Replace the default myems-api url http://127.0.0.1:8000/ with actual url if the myems-api servcie hosted on different server
     location /api {
         proxy_pass http://127.0.0.1:8000/;
@@ -357,8 +357,8 @@ server {
         # add try_files directive to avoid 404 error while refreshing pages
         try_files $uri  /index.html;
     }
-    ## To avoid CORS issue, use Nginx to proxy myems-api to path /api 
-    ## Add another location /api in 'server' 
+    ## To avoid CORS issue, use Nginx to proxy myems-api to path /api
+    ## Add another location /api in 'server'
     ## replace the default myems-api url http://127.0.0.1:8000/ with actual url if the myems-api servcie hosted on different server
     location /api {
         proxy_pass http://127.0.0.1:8000/;
@@ -384,7 +384,7 @@ cd ~/myems/myems-web
 sudo nano src/config.js
 ```
 
-如果 'node -v' 返回 'v16.xx.xx', 在package.json 文件中的start和build命令参数重删除 '--openssl-legacy-provider' 
+如果 'node -v' 返回 'v16.xx.xx', 在package.json 文件中的start和build命令参数重删除 '--openssl-legacy-provider'
 ```
 sudo nano package.json
 ```
@@ -400,15 +400,12 @@ sudo nano package.json
 ```bash
 sudo npm i --unsafe-perm=true --allow-root --legacy-peer-deps
 sudo npm run build
-tar czvf myems-web.tar.gz build
 ```
 
 安装:
-将myems-web.tar.gz文件上传到web服务器。
+将文件上传到web服务器。
 注意，以下路径应该与nginx.conf中配置的路径相同。
 ```bash
-tar xzf myems-web.tar.gz
-sudo rm -r /var/www/myems-web
 sudo mv build  /var/www/myems-web
 ```
 
