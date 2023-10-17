@@ -97,8 +97,8 @@ sudo vi /etc/nginx/conf.d/myems-admin.conf
           root    /var/www/myems-admin;
           index index.html index.htm;
       }
-      ## To avoid CORS issue, use Nginx to proxy myems-api to path /api 
-      ## Add another location /api in 'server' 
+      ## To avoid CORS issue, use Nginx to proxy myems-api to path /api
+      ## Add another location /api in 'server'
       ## Replace the default myems-api url http://127.0.0.1:8000/ with actual url if the myems-api servcie hosted on a different server
       location /api {
           proxy_pass http://127.0.0.1:8000/;
@@ -326,7 +326,7 @@ sudo vi /etc/nginx/conf.d/default.conf
           # add try_files directive to avoid 404 error while refreshing pages
           try_files $uri  /index.html;
       }
-      ## To avoid CORS issue, use Nginx to proxy myems-api to path /api 
+      ## To avoid CORS issue, use Nginx to proxy myems-api to path /api
       ## Add another location /api in 'server'
       ## replace the default myems-api url http://127.0.0.1:8000/ with actual url if the myems-api servcie hosted on different server
       location /api {
@@ -354,15 +354,12 @@ sudo vi src/config.js
 ```bash
 sudo npm i --unsafe-perm=true --allow-root --legacy-peer-deps
 sudo npm run build
-tar czvf myems-web.tar.gz build
 ```
 
 安装:
-将myems-web.tar.gz文件上传到web服务器。
+将文件上传到web服务器。
 注意，以下路径应该与nginx.conf中配置的路径相同。
 ```bash
-tar xzf myems-web.tar.gz
-sudo rm -r /var/www/myems-web
 sudo mv build  /var/www/myems-web
 ```
 
