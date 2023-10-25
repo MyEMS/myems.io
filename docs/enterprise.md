@@ -70,6 +70,9 @@ sidebar_position: 5
 | TMall Genie Speaker voice control |  ✔️        | https://genie.tmall.com/ |
 | Microgrid                        |  ✔️        |  A group of interconnected PV, Energy Storage Battery, Load, Grid, Generator |
 | Virtual Power Plant              |  ✔️        |  A connected aggregation of distributed energy resource technologies |
+| Energy Storage Power Station     |  ✔️        |  Enterprise version license, or customizable development|
+| Photovoltaic Power Station       |  ✔️        |  Enterprise version license, or customizable development |
+| Wind Farm                        |  ✔️        |  Enterprise version license, or customizable development |
 
 ## Optional Services of MyEMS Enterprise Edition
 
