@@ -72,9 +72,9 @@ sidebar_position: 5
 | Tmall Genie Smart Lautsprecher Sprachsteuerung |  ✔️        | https://genie.tmall.com/ |
 | Microgrid                        |  ✔️        |  Eine Gruppe von miteinander verbundenen PV, Energiespeicherbatterie, Last, Netz, Generator |
 | Virtual Power Plant              |  ✔️        |  Eine vernetzte Aggregation verteilter Energieressourcentechnologien |
-| Energy Storage Power Station     |  ✔️        |  Enterprise Version Lizenz oder anpassbare Entwicklung |
-| Photovoltaic Power Station       |  ✔️        |  Enterprise Version Lizenz oder anpassbare Entwicklung  |
-| Wind Farm                        |  ✔️        |  Enterprise Version Lizenz oder anpassbare Entwicklung  |
+| Energy Storage Power Station     |  ✔️        |  Überwachungs-, Betriebs- und Wartungsplattform für Energiespeichersysteme |
+| Photovoltaic Power Station       |  ✔️        |  Überwachungs-, Betriebs- und Wartungsplattform für Photovoltaik-Stromerzeugungssysteme |
+| Wind Farm                        |  ✔️        |  Überwachungs-, Betriebs- und Wartungsplattform für Windkraftanlagen |
 
 ## Optionale Dienste der MyEMS Enterprise Edition
 
