@@ -3541,6 +3541,20 @@ curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355ac
 curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/metertracking?spaceid=1&reportingperiodstartdatetime=2022-05-01T00:00:00&reportingperiodenddatetime=2022-05-31T23:59:59&&quickmode=true
 ```
 
+*   GET Microgrid Report
+```bash
+curl --location 'http://127.0.0.1:8000/reports/microgrid?microgridid=1' \
+--header 'User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4' \
+--header 'Token: d63477ddcc607bddaefd540a8aa534cacc7dcbdae39dd5838f409f96c8769083f9f76a33b02db0421c8ec174b75f7eadfa5deb6ea996b78ca6fa1ec2fd6863ed'
+```
+
+*   GET Microgrid List Report
+```bash
+curl --location 'http://127.0.0.1:8000/reports/microgridlist' \
+--header 'User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4' \
+--header 'Token: 004672e92312854fd360d7e5fbbfba1973e49bf33f9ab96cecc1fe6d37af4173821152ae436804752dfca1d51e281981dc302a2ddc83c33dd1c2d69a4e375512'
+```
+
 *   GET Offline Meter Batch Analysis Report
 
 ```bash
