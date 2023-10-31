@@ -725,6 +725,33 @@ curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-91
 curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X PUT -d '{"data":{"name":"空调用","energy_category_id":1}}' {{base_url}}/energyitems/{id}
 ```
 
+### Energy Storage Power Station
+
+*   GET All Energy Storage Power Stations
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/energystoragepowerstations
+```
+
+*   GET an Energy Storage Power Station by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/energystoragepowerstations/{id}
+```
+
+*   POST Create New Energy Storage Power Station
+```bash
+curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST -d '{"data":{"name":"Beijing Office", "address":"Wangfujing Street, Dongcheng District, Beijing", "postal_code":"100000", "latitude":39.909429, "longitude":116.416993, "capacity":600.000, "contact_id":1, "cost_center_id":1, "svg":"<svg></svg>", "description":"Classic"}}' {{base_url}}/energystoragepowerstations
+```
+
+*   PUT Update an Energy Storage Power Station
+```bash
+curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X PUT -d '{"data":{"name":"Beijing Office", "address":"Wangfujing Street, Dongcheng District, Beijing", "postal_code":"100000", "latitude":39.909429, "longitude":116.416993, "capacity":600.000, "contact_id":1, "cost_center_id":1, "svg":"<svg></svg>", "description":"Classic"}}' {{base_url}}/energystoragepowerstations/{id}
+```
+
+*   DELETE an Energy Storage Power Station by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/energystoragepowerstations/{id}
+```
+
 ### Equipment
 *   GET Equipment by ID
 ```bash
@@ -1222,11 +1249,6 @@ curl -i -H "User-UUID: 3a7acfe1-f3c3-4561-a985-8a4d23ef54d0" -H "Token: GET-TOKE
 curl -i -H "User-UUID: 3a7acfe1-f3c3-4561-a985-8a4d23ef54d0" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/microgrids/{id}/powerconversionsystems
 ```
 
-*   GET All Windturbines of Microgrid by ID
-```bash
-curl -i -H "User-UUID: 3a7acfe1-f3c3-4561-a985-8a4d23ef54d0" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/microgrids/{id}/windturbines
-```
-
 *   GET All User By Microgrid ID
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/microgrids/{id}/users
@@ -1654,6 +1676,33 @@ curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKE
 *   GET Restore an Offline Meter File by ID from database to disk
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/offlinemeterfiles/{id}/restore
+```
+
+### Photovoltaic Power Station
+
+*   GET All Photovoltaic Power Stations
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/photovoltaicpowerstations
+```
+
+*   GET a Photovoltaic Power Station by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{{base_url}}/photovoltaicpowerstations/{id}
+```
+
+*   POST Create New Photovoltaic Power Station
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/TBD" -X POST -d '{"data":{"name":"Beijing Office", "address":"Wangfujing Street, Dongcheng District, Beijing", "postal_code":"100000", "latitude":39.909429, "longitude":116.416993, "capacity":600.000, "contact_id":1, "cost_center_id":1, "svg":"<svg></svg>", "description":"Classic"}}' {{base_url}}/photovoltaicpowerstations
+```
+
+*   PUT Update a Photovoltaic Power Station
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X PUT -d '{"data":{"name":"Beijing Office", "address":"Wangfujing Street, Dongcheng District, Beijing", "postal_code":"100000", "latitude":39.909429, "longitude":116.416993, "capacity":600.000, "contact_id":1, "cost_center_id":1, "svg":"<svg></svg>", "description":"Classic"}}' {{base_url}}/photovoltaicpowerstations/{id}
+```
+
+*   DELETE a Photovoltaic Power Station by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/photovoltaicpowerstations/{id}
 ```
 
 ### Point
@@ -2931,6 +2980,40 @@ curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKE
 *   DELETE Wechat Message by ID
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/wechatmessages/{id}
+```
+
+### Wind Farm
+*   GET All Wind Farms
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/windfarms
+```
+
+*   GET a Wind Farm by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/windfarms/{id}
+```
+
+*   POST Create New Wind Farm
+```bash
+curl --location --request POST '{{base_url}}/windfarms' \
+--header 'User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4' \
+--header 'Token: GET-TOKEN-AFTER-LOGIN' \
+--header 'Content-Type: text/plain' \
+--data-raw '{"data":{"name":"Beijing Office", "address":"Wangfujing Street, Dongcheng District, Beijing", "postal_code":"100000", "latitude":39.909429, "longitude":116.416993, "capacity":600.000, "contact_id":1, "cost_center_id":1, "svg":"<svg></svg>", "description":"Classic"}}'
+```
+
+*   PUT Update a Wind Farm
+```bash
+curl --location --request PUT '{{base_url}}/windfarms/{id}' \
+--header 'User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4' \
+--header 'Token: 9bcd171e4f4169f1f45791aeadc8f90cfe8694be92f21af7bf95673f8cc910ca7a91bfd4a577d48d0720155de497eb02baab614be5c6c83891f1a856f9cf666a' \
+--header 'Content-Type: text/plain' \
+--data-raw '{"data":{"name":"Beijing Office", "address":"Wangfujing Street, Dongcheng District, Beijing", "postal_code":"100000", "latitude":39.909429, "longitude":116.416993, "capacity":600.000, "contact_id":1, "cost_center_id":1, "svg":"<svg></svg>", "description":"Classic"}}'
+```
+
+*   DELETE a Wind Farm by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/windfarms/{id}
 ```
 
 ### Working Calendar
