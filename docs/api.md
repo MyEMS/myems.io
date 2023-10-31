@@ -14,7 +14,7 @@ View in Postman: import the file MyEMS.postman_collection.json with Postman
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/advancedreports
 ```
 
-*   Get All Advanced Report Config by ID 
+*   Get All Advanced Report Config by ID
 
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/advancedreports/{id}
@@ -305,7 +305,7 @@ curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKE
 ```
 *   POST Create New Cost Center
 ```bash
-curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"动力中心", "external_id":"21829198980001"}}' {{base_url}}/costcenters 
+curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"动力中心", "external_id":"21829198980001"}}' {{base_url}}/costcenters
 ```
 *   PUT Update a Cost Center
 ```bash
@@ -551,7 +551,7 @@ curl --location --request POST '{{base_url}}/emailmessages' \
 --form 'file=@"/D:/myems/meterenergy.xlsx"' \
 --form 'req="{\"data\":{\"rule_id\":1, \"recipient_name\":\"myems\", \"recipient_email\":\"myems@163.com\", \"subject\":\"report_01_2021_12_24\", \"message\":\"report_01_2021_12_24\", \"created_datetime\":\"2021-12-24T00:00:00\", \"scheduled_datetime\":\"2021-12-24T00:00:00\"}}"'
 ```
-* GET Email Messages by Datetime Range 
+* GET Email Messages by Datetime Range
 ```bash
 curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/emailmessages?startdatetime={startdatetime}&enddatetime={enddatetime}
 ```
@@ -1264,32 +1264,6 @@ curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKE
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/microgrids/{id}/users/{id}
 ```
 
-### Microgrid Architecture Type
-
-*   GET All Architecture Types
-```bash
-curl -i -H "User-UUID: 3a7acfe1-f3c3-4561-a985-8a4d23ef54d0" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/microgridarchitecturetypes
-```
-
-*   GET an Architecture Type by ID
-```bash
-curl -i -H "User-UUID: 3a7acfe1-f3c3-4561-a985-8a4d23ef54d0" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/microgridarchitecturetypes/1
-```
-
-*   POST Create New Architecture Type
-```bash
-curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name": "Battery+PV+Load+Grid1", "description":"Battery+PV+Load+Grid", "simplified_code":"BPLG1"}}' {{base_url}}/microgridarchitecturetypes
-```
-
-*   PUT Update an Architecture Type
-```bash
-curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X PUT -d '{"data":{"name": "Battery+PV+Load+Grid2", "description":"Battery+PV+Load+Grid", "simplified_code":"BPLG2"}}' {{base_url}}/microgridarchitecturetypes/{id}
-```
-
-*   DELETE an Architecture Type by ID
-```bash
-curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/microgridarchitecturetypes/{id}
-```
 
 ### Microgrid Battery
 
@@ -1507,66 +1481,6 @@ curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-91
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/microgridpowerconversionsystems/{id}
 ```
 
-### Microgrid Owner Type
-
-*   GET All Microgrid Owner Types
-```bash
-curl -i -H "User-UUID: 3a7acfe1-f3c3-4561-a985-8a4d23ef54d0" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/microgridownertypes
-```
-
-*   GET a Microgrid Owner Type by ID
-```bash
-curl -i -H "User-UUID: 3a7acfe1-f3c3-4561-a985-8a4d23ef54d0" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/microgridownertypes/{id}
-```
-
-*   POST Create New Microgrid Owner Type
-```bash
-curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name": "New Type", "description":"New Type", "simplified_code":"NT"}}' {{base_url}}/microgridownertypes
-```
-
-*   PUT Update a Microgrid Owner Type
-```bash
-curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X PUT -d '{"data":{"name": "New Type2", "description":"New Type2", "simplified_code":"NT2"}}' {{base_url}}/microgridownertypes/{id}
-```
-
-*   DELETE a Microgrid Owner Type by ID
-```bash
-curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/microgridownertypes/{id}
-```
-
-### Microgrid Windturbine
-
-*   GET All Microgrid Windturbines
-```bash
-curl -i -H "User-UUID: 3a7acfe1-f3c3-4561-a985-8a4d23ef54d0" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/microgridwindturbines
-```
-
-*   GET a Microgrid Windturbine by ID
-```bash
-curl -i -H "User-UUID: 3a7acfe1-f3c3-4561-a985-8a4d23ef54d0" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/microgridwindturbines/{id}
-```
-
-*   POST Create new Microgrid Windturbine
-```bash
-curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"Windturbine", "microgrid_id":1, "power_point_id":1, "meter_id":1, "capacity": 30}}' {{base_url}}/microgridwindturbines
-```
-
-*   PUT Update Microgrid Windturbine by ID
-```bash
-curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X PUT -d '{"data":{"name":"Windturbine", "microgrid_id":1, "power_point_id":1, "meter_id":1, "capacity": 50}}' {{base_url}}/microgridwindturbines/{id}
-```
-
-*   DELETE a Microgrid Windturbine by ID
-```bash
-curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/microgridwindturbines/{id}
-```
-
-### Microgrid By User
-
-*   GET All Microgrids By User
-```bash
-curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/microgridbyuser
-```
 
 ### Notification
 
