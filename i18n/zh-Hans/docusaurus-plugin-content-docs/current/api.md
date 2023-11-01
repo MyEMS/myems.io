@@ -1468,12 +1468,12 @@ curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKE
 
 *   POST Create new Microgrid Power Conversion System
 ```bash
-curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"Power Conversion System", "microgrid_id":1, "capacity": 30}}' {{base_url}}/microgridpowerconversionsystems
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"Power Conversion System", "microgrid_id":1, "run_state_point_id":1, "capacity": 30}}' {{base_url}}/microgridpowerconversionsystems
 ```
 
 *   PUT Update Microgrid Power Conversion System by ID
 ```bash
-curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X PUT -d '{"data":{"name":"Power Conversion System", "microgrid_id":1, "capacity": 50}}' {{base_url}}/microgridpowerconversionsystems/{id}
+curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X PUT -d '{"data":{"name":"Power Conversion System", "microgrid_id":1, "run_state_point_id":1, "capacity": 50}}' {{base_url}}/microgridpowerconversionsystems/{id}
 ```
 
 *   DELETE a Microgrid Power Conversion System by ID
