@@ -1279,7 +1279,7 @@ curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKE
 
 *   POST Create new Microgrid Battery
 ```bash
-curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"Battery", "microgrid_id":1, "soc_point_id":1, "power_point_id":1, "charge_meter_id":1, "discharge_meter_id":2, "capacity": 30}}' {{base_url}}/microgridbatteries
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"Battery", "microgrid_id":1, "battery_state_point_id":1, "soc_point_id":2, "power_point_id":3, "charge_meter_id":1, "discharge_meter_id":2, "capacity": 30}}' {{base_url}}/microgridbatteries
 ```
 
 *   DELETE a Microgrid Battery by ID
@@ -1289,7 +1289,7 @@ curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKE
 
 *   PUT Update Microgrid Battery by ID
 ```bash
-curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X PUT -d '{"data":{"name":"Battery", "microgrid_id":1, "soc_point_id":1, "power_point_id":1, "charge_meter_id":1, "discharge_meter_id":2, "capacity": 50}}' {{base_url}}/microgridbatteries/{id}
+curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X PUT -d '{"data":{"name":"Battery", "microgrid_id":1, "battery_state_point_id":1, "soc_point_id":2, "power_point_id":3, "charge_meter_id":1, "discharge_meter_id":2, "capacity": 50}}' {{base_url}}/microgridbatteries/{id}
 ```
 
 ### Microgrid EVCharger
