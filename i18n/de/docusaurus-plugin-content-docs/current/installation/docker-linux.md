@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Docker unter Linux (oder macOS)
+# Docker unter Linux/macOS
 
 In diesem Leitfaden stellen Sie MyEMS mit Docker unter Linux (oder macOS) bereit.
 
@@ -83,12 +83,12 @@ Indem Sie .env als Bind-Mount-Parameter übergeben, können Sie die Konfiguratio
 Wenn Sie die .env-Datei geändert haben, starten Sie den Container neu, damit die Änderung wirksam wird.
 
 Wenn Sie das Image auf einen anderen Computer immigrieren möchten,
-* Exportieren Sie das Bild in eine Tarball-Datei
+* Exportieren Sie das Bild in eine tar-Datei
 
 ```bash
 docker save --output myems-api.tar myems/myems-api
 ```
-* Kopieren Sie die Tarball-Datei auf einen anderen Computer und laden Sie dann das Bild aus der Tarball-Datei
+* Kopieren Sie die tar-Datei auf einen anderen Computer und laden Sie dann das Bild aus der tar-Datei
 
 ```bash
 docker load --input .\myems-api.tar
@@ -160,13 +160,13 @@ Die Option ro bewirkt, falls vorhanden, dass der Bind-Mount schreibgeschützt in
 * --name Weisen Sie dem Behälter einen Namen zu
 
 Wenn Sie das Image auf einen anderen Computer immigrieren möchten,
-* Exportieren Sie das Bild in eine Tarball-Datei
+* Exportieren Sie das Bild in eine tar-Datei
 
 ```bash
 docker save --output myems-admin.tar myems/myems-admin
 ```
 
-* Kopieren Sie die Tarball-Datei auf einen anderen Computer und laden Sie dann das Bild aus der Tarball-Datei
+* Kopieren Sie die tar-Datei auf einen anderen Computer und laden Sie dann das Bild aus der tar-Datei
 
 ```bash
 docker load --input .\myems-admin.tar
@@ -236,12 +236,12 @@ Wenn Sie die .env-Datei geändert haben, starten Sie den Container neu, damit di
 * Immigrieren Sie den Docker-Container
 
 Um den Container auf einen anderen Computer zu immigrieren,
-* Exportieren Sie das Bild in eine Tarball-Datei
+* Exportieren Sie das Bild in eine tar-Datei
 
 ```bash
 docker save --output myems-modbus-tcp.tar myems/myems-modbus-tcp
 ```
-* Kopieren Sie die Tarball-Datei auf einen anderen Computer und laden Sie dann das Bild aus der Tarball-Datei
+* Kopieren Sie die tar-Datei auf einen anderen Computer und laden Sie dann das Bild aus der tar-Datei
 
 ```bash
 docker load --input .\myems-modbus-tcp.tar
@@ -309,11 +309,11 @@ Wenn Sie die .env-Datei geändert haben, starten Sie den Container neu, damit di
 * Immigrieren Sie den Docker-Container
 
 Um den Container auf einen anderen Computer zu immigrieren,
-* Exportieren Sie das Bild in eine Tarball-Datei
+* Exportieren Sie das Bild in eine tar-Datei
 ```bash
 docker save --output myems-cleaning.tar myems/myems-cleaning
 ```
-* Kopieren Sie die Tarball-Datei auf einen anderen Computer und laden Sie dann das Bild aus der Tarball-Datei
+* Kopieren Sie die tar-Datei auf einen anderen Computer und laden Sie dann das Bild aus der tar-Datei
 ```bash
 docker load --input .\myems-cleaning.tar
 ```
@@ -381,12 +381,12 @@ Wenn Sie die .env-Datei geändert haben, starten Sie den Container neu, damit di
 * Immigrieren Sie den Docker-Container
 
 Um den Container auf einen anderen Computer zu immigrieren,
-* Exportieren Sie das Bild in eine Tarball-Datei
+* Exportieren Sie das Bild in eine tar-Datei
 ```bash
 docker save --output myems-normalization.tar myems/myems-normalization
 ```
 
-* Kopieren Sie die Tarball-Datei auf einen anderen Computer und laden Sie dann das Bild aus der Tarball-Datei
+* Kopieren Sie die tar-Datei auf einen anderen Computer und laden Sie dann das Bild aus der tar-Datei
 ```bash
 docker load --input .\myems-normalization.tar
 ```
@@ -453,11 +453,11 @@ Wenn Sie die .env-Datei geändert haben, starten Sie den Container neu, damit di
 
 * Immigrieren Sie den Docker-Container
 
-* Exportieren Sie das Bild in eine Tarball-Datei
+* Exportieren Sie das Bild in eine tar-Datei
 ```bash
 docker save --output myems-aggregation.tar myems/myems-aggregation
 ```
-* Kopieren Sie die Tarball-Datei auf einen anderen Computer und laden Sie dann das Bild aus der Tarball-Datei
+* Kopieren Sie die tar-Datei auf einen anderen Computer und laden Sie dann das Bild aus der tar-Datei
 ```bash
 docker load --input .\myems-aggregation.tar
 ```
@@ -534,12 +534,12 @@ Die Option ro bewirkt, falls vorhanden, dass der Bind-Mount schreibgeschützt in
 * --name Weisen Sie dem Behälter einen Namen zu
 
 Wenn Sie das Image auf einen anderen Computer immigrieren möchten,
-* Exportieren Sie das Bild in eine Tarball-Datei
+* Exportieren Sie das Bild in eine tar-Datei
 ```bash
 docker save --output myems-web.tar myems/myems-web
 ```
 
-* Kopieren Sie die Tarball-Datei auf einen anderen Computer und laden Sie dann das Bild aus der Tarball-Datei
+* Kopieren Sie die tar-Datei auf einen anderen Computer und laden Sie dann das Bild aus der tar-Datei
 ```bash
 docker load --input .\myems-web.tar
 ```

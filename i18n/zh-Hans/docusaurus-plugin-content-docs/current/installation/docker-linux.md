@@ -2,9 +2,9 @@
 sidebar_position: 4
 ---
 
-# Linux(或macOS)上的Docker
+# Linux/macOS上的Docker
 
-在本指南中，您将在Linux（或macOS）上使用Docker部署MyEMS。
+在本指南中，您将在Linux/macOS上使用Docker部署MyEMS。
 
 ## 前提
 
@@ -84,11 +84,11 @@ ro选项（如果存在）会导致绑定装载以只读方式装载到容器中
 
 如果您想将镜像迁移到另一台计算机，
 
-* 将镜像导出到tarball文件
+* 将镜像导出到tar文件
 ```bash
 docker save --output myems-api.tar myems/myems-api
 ```
-* 将tarball文件复制到另一台计算机，然后从tarball文件加载镜像
+* 将tar文件复制到另一台计算机，然后从tar文件加载镜像
 
 ```bash
 docker load --input .\myems-api.tar
@@ -160,12 +160,12 @@ ro选项（如果存在）会导致绑定装载以只读方式装载到容器中
 * --name 为容器指定名称
 
 如果您想将镜像迁移到另一台计算机，
-* 将镜像导出到tarball文件
+* 将镜像导出到tar文件
 ```bash
 docker save --output myems-admin.tar myems/myems-admin
 ```
 
-* 将tarball文件复制到另一台计算机，然后从tarball文件加载镜像
+* 将tar文件复制到另一台计算机，然后从tar文件加载镜像
 ```bash
 docker load --input .\myems-admin.tar
 ```
@@ -233,11 +233,11 @@ ro选项（如果存在）会导致绑定装载以只读方式装载到容器中
 * 迁移Docker容器
 
 为了将容器迁移到另一台计算机，
-* 将镜像导出到tarball文件
+* 将镜像导出到tar文件
 ```bash
 docker save --output myems-modbus-tcp.tar myems/myems-modbus-tcp
 ```
-* 将tarball文件复制到另一台计算机，然后从tarball文件加载镜像
+* 将tar文件复制到另一台计算机，然后从tar文件加载镜像
 ```bash
 docker load --input .\myems-modbus-tcp.tar
 ```
@@ -304,11 +304,11 @@ ro选项（如果存在）会导致绑定装载以只读方式装载到容器中
 * 迁移Docker容器
 
 为了将容器迁移到另一台计算机，
-* 将镜像导出到tarball文件
+* 将镜像导出到tar文件
 ```bash
 docker save --output myems-cleaning.tar myems/myems-cleaning
 ```
-* 将tarball文件复制到另一台计算机，然后从tarball文件加载镜像
+* 将tar文件复制到另一台计算机，然后从tar文件加载镜像
 ```bash
 docker load --input .\myems-cleaning.tar
 ```
@@ -375,12 +375,12 @@ ro选项（如果存在）会导致绑定装载以只读方式装载到容器中
 * 迁移Docker容器
 
 为了将容器迁移到另一台计算机，
-* 将镜像导出到tarball文件
+* 将镜像导出到tar文件
 ```bash
 docker save --output myems-normalization.tar myems/myems-normalization
 ```
 
-* 将tarball文件复制到另一台计算机，然后从tarball文件加载镜像
+* 将tar文件复制到另一台计算机，然后从tar文件加载镜像
 ```bash
 docker load --input .\myems-normalization.tar
 ```
@@ -447,11 +447,11 @@ ro选项（如果存在）会导致绑定装载以只读方式装载到容器中
 
 * 迁移Docker容器
 
-* 将镜像导出到tarball文件
+* 将镜像导出到tar文件
 ```bash
 docker save --output myems-aggregation.tar myems/myems-aggregation
 ```
-* 将tarball文件复制到另一台计算机，然后从tarball文件加载镜像
+* 将tar文件复制到另一台计算机，然后从tar文件加载镜像
 ```bash
 docker load --input .\myems-aggregation.tar
 ```
@@ -529,12 +529,12 @@ ro选项（如果存在）会导致绑定装载以只读方式装载到容器中
 * --name 为容器指定名称
 
 如果您想将镜像迁移到另一台计算机，
-* 将镜像导出到tarball文件
+* 将镜像导出到tar文件
 ```bash
 docker save --output myems-web.tar myems/myems-web
 ```
 
-* 将tarball文件复制到另一台计算机，然后从tarball文件加载镜像
+* 将tar文件复制到另一台计算机，然后从tar文件加载镜像
 ```bash
 docker load --input .\myems-web.tar
 ```

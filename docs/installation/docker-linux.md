@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Docker on Linux (or macOS)
+# Docker on Linux/macOS
 
 In this guide, you will deploy MyEMS with Docker on Linux (or macOS).
 
@@ -84,12 +84,12 @@ By passing .env as bind-mount parameter, you can change the configuration values
 If you changed .env file, restart the container to make the change effective.
 
 If you want to immigrate the image to another computer,
-* Export image to tarball file
+* Export image to tar file
 
 ```bash
 docker save --output myems-api.tar myems/myems-api
 ```
-* Copy the tarball file to another computer, and then load image from tarball file
+* Copy the tar file to another computer, and then load image from tar file
 
 ```bash
 docker load --input .\myems-api.tar
@@ -163,12 +163,12 @@ The ro option, if present, causes the bind mount to be mounted into the containe
 
 If you want to immigrate the image to another computer,
 
-* Export image to tarball file
+* Export image to tar file
 ```bash
 docker save --output myems-admin.tar myems/myems-admin
 ```
 
-* Copy the tarball file to another computer, and then load image from tarball file
+* Copy the tar file to another computer, and then load image from tar file
 
 ```bash
 docker load --input .\myems-admin.tar
@@ -237,13 +237,13 @@ If you changed .env file, restart the container to make the change effective.
 * Immigrate the Docker container
 
 To immigrate the container to another computer,
-* Export image to tarball file
+* Export image to tar file
 
 ```bash
 docker save --output myems-modbus-tcp.tar myems/myems-modbus-tcp
 ```
 
-* Copy the tarball file to another computer, and then load image from tarball file
+* Copy the tar file to another computer, and then load image from tar file
 
 ```bash
 docker load --input .\myems-modbus-tcp.tar
@@ -312,12 +312,12 @@ If you changed .env file, restart the container to make the change effective.
 * Immigrate the Docker container
 
 To immigrate the container to another computer,
-* Export image to tarball file
+* Export image to tar file
 
 ```bash
 docker save --output myems-cleaning.tar myems/myems-cleaning
 ```
-* Copy the tarball file to another computer, and then load image from tarball file
+* Copy the tar file to another computer, and then load image from tar file
 
 ```bash
 docker load --input .\myems-cleaning.tar
@@ -386,13 +386,13 @@ If you changed .env file, restart the container to make the change effective.
 * Immigrate the Docker container
 
 To immigrate the container to another computer,
-* Export image to tarball file
+* Export image to tar file
 
 ```bash
 docker save --output myems-normalization.tar myems/myems-normalization
 ```
 
-* Copy the tarball file to another computer, and then load image from tarball file
+* Copy the tar file to another computer, and then load image from tar file
 
 ```bash
 docker load --input .\myems-normalization.tar
@@ -460,11 +460,11 @@ If you changed .env file, restart the container to make the change effective.
 
 * Immigrate the Docker container
 
-* Export image to tarball file
+* Export image to tar file
 ```bash
 docker save --output myems-aggregation.tar myems/myems-aggregation
 ```
-* Copy the tarball file to another computer, and then load image from tarball file
+* Copy the tar file to another computer, and then load image from tar file
 ```bash
 docker load --input .\myems-aggregation.tar
 ```
@@ -544,12 +544,12 @@ The ro option, if present, causes the bind mount to be mounted into the containe
 * --name Assign a name to the container
 
 If you want to immigrate the image to another computer,
-* Export image to tarball file
+* Export image to tar file
 ```bash
 docker save --output myems-web.tar myems/myems-web
 ```
 
-* Copy the tarball file to another computer, and then load image from tarball file
+* Copy the tar file to another computer, and then load image from tar file
 ```bash
 docker load --input .\myems-web.tar
 ```
