@@ -70,11 +70,12 @@ sidebar_position: 5
 | LoRa Radio Module (Data Acquisition and Remote Control）   | ✔️ | MyEMS-zertifiziertes LoRa-Hardwaregerät |
 | Protocol for Uploading to Provincial/Municipal Platform of On-line monitoring system for Key Energy-Consuming Unit | ✔️        |                      |
 | Tmall Genie Smart Lautsprecher Sprachsteuerung |  ✔️        | https://genie.tmall.com/ |
-| Microgrid                        |  ✔️        |  Eine Gruppe von miteinander verbundenen PV, Energiespeicherbatterie, Last, Netz, Generator |
-| Virtual Power Plant              |  ✔️        |  Eine vernetzte Aggregation verteilter Energieressourcentechnologien |
-| Energy Storage Power Station     |  ✔️        |  Überwachungs-, Betriebs- und Wartungsplattform für Energiespeichersysteme |
-| Photovoltaic Power Station       |  ✔️        |  Überwachungs-, Betriebs- und Wartungsplattform für Photovoltaik-Stromerzeugungssysteme |
-| Wind Farm                        |  ✔️        |  Überwachungs-, Betriebs- und Wartungsplattform für Windkraftanlagen |
+| Microgrid                        |  ✔️        | Eine Gruppe von miteinander verbundenen PV, Energiespeicherbatterie, Last, Netz, Generator |
+| Virtual Power Plant              |  ✔️        | Eine vernetzte Aggregation verteilter Energieressourcentechnologien |
+| Energy Storage Power Station     |  ✔️        | Überwachungs-, Betriebs- und Wartungsplattform für Energiespeichersysteme |
+| Photovoltaic Power Station       |  ✔️        | Überwachungs-, Betriebs- und Wartungsplattform für Photovoltaik-Stromerzeugungssysteme |
+| Wind Farm                        |  ✔️        | Überwachungs-, Betriebs- und Wartungsplattform für Windkraftanlagen |
+| Node-RED Low-code programming    |  ✔️        | https://nodered.org/ |
 
 ## Optionale Dienste der MyEMS Enterprise Edition
 

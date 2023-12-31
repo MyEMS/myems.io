@@ -73,6 +73,7 @@ sidebar_position: 5
 | Energy Storage Power Station     |  ✔️        |  Energy storage system monitoring and operation and maintenance platform |
 | Photovoltaic Power Station       |  ✔️        |  Photovoltaic power generation system monitoring and operation and maintenance platform |
 | Wind Farm                        |  ✔️        |  Wind power generation system monitoring and operation and maintenance platform |
+| Node-RED Low-code programming    |  ✔️        | https://nodered.org/ |
 
 ## Optional Services of MyEMS Enterprise Edition
 
