@@ -71,16 +71,16 @@ podman run -d -p 8000:8000 -v /myems-upload:/var/www/myems-admin/upload -v /myem
 
 * -d Run container in background and print container ID
 
-* -p Publish a container's port(s) to the host, 8000:8000 (Host:Container) binds port 8000 (right)  of the container to 
+* -p Publish a container's port(s) to the host, 8000:8000 (Host:Container) binds port 8000 (right)  of the container to
 TCP port 8000 (left) of the host machine.
 
-* -v If you use -v or --volume to bind-mount a file or directory that does not yet exist on the Podman host, 
--v creates the endpoint for you. It is always created as a directory. 
+* -v If you use -v or --volume to bind-mount a file or directory that does not yet exist on the Podman host,
+-v creates the endpoint for you. It is always created as a directory.
 The ro option, if present, causes the bind mount to be mounted into the container as read-only.
 
 * --log-opt max-size=2m The maximum size of the log before it is rolled. A positive integer plus a modifier representing the unit of measure (k, m, or g).
 
-* --log-opt max-file=2 The maximum number of log files that can be present. If rolling the logs creates excess files, the oldest file is removed. A positive integer. 
+* --log-opt max-file=2 The maximum number of log files that can be present. If rolling the logs creates excess files, the oldest file is removed. A positive integer.
 
 * --restart Restart policy to apply when a container exits
 
@@ -147,23 +147,23 @@ On host, create a share upload file folder:
 mkdir /myems-upload
 ```
 
-Create a container, bind-mount the share upload file folder to the container and also bind-mount nginx.conf 
+Create a container, bind-mount the share upload file folder to the container and also bind-mount nginx.conf
 ```bash
 podman run -d -p 8001:8001 -v /myems-upload:/var/www/myems-admin/upload -v /myems-admin/nginx.conf:/etc/nginx/nginx.conf:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-admin myems/myems-admin
 ```
 
 * -d Run container in background and print container ID
 
-* -p Publish a container's port(s) to the host, 8001:8001 (Host:Container) binds port 8001 (right)  of the container to 
+* -p Publish a container's port(s) to the host, 8001:8001 (Host:Container) binds port 8001 (right)  of the container to
 TCP port 8001 (left) of the host machine.
 
-* -v If you use -v or --volume to bind-mount a file or directory that does not yet exist on the Podman host, 
+* -v If you use -v or --volume to bind-mount a file or directory that does not yet exist on the Podman host,
 -v creates the endpoint for you. It is always created as a directory.
 The ro option, if present, causes the bind mount to be mounted into the container as read-only.
 
 * --log-opt max-size=2m The maximum size of the log before it is rolled. A positive integer plus a modifier representing the unit of measure (k, m, or g).
 
-* --log-opt max-file=2 The maximum number of log files that can be present. If rolling the logs creates excess files, the oldest file is removed. A positive integer. 
+* --log-opt max-file=2 The maximum number of log files that can be present. If rolling the logs creates excess files, the oldest file is removed. A positive integer.
 
 * --restart Restart policy to apply when a container exits
 
@@ -225,13 +225,13 @@ podman run -d -v /myems-modbus-tcp/.env:/code/.env:ro --log-opt max-size=1m --lo
 
 * -d Run container in background and print container ID
 
-* -v If you use -v or --volume to bind-mount a file or directory that does not yet exist on the Podman host, 
+* -v If you use -v or --volume to bind-mount a file or directory that does not yet exist on the Podman host,
 -v creates the endpoint for you. It is always created as a directory.
 The ro option, if present, causes the bind mount to be mounted into the container as read-only.
 
 * --log-opt max-size=2m The maximum size of the log before it is rolled. A positive integer plus a modifier representing the unit of measure (k, m, or g).
 
-* --log-opt max-file=2 The maximum number of log files that can be present. If rolling the logs creates excess files, the oldest file is removed. A positive integer. 
+* --log-opt max-file=2 The maximum number of log files that can be present. If rolling the logs creates excess files, the oldest file is removed. A positive integer.
 
 * --restart Restart policy to apply when a container exits
 
@@ -300,13 +300,13 @@ podman run -d -v /myems-cleaning/.env:/code/.env:ro --log-opt max-size=1m --log-
 
 * -d Run container in background and print container ID
 
-* -v If you use -v or --volume to bind-mount a file or directory that does not yet exist on the Podman host, 
+* -v If you use -v or --volume to bind-mount a file or directory that does not yet exist on the Podman host,
 -v creates the endpoint for you. It is always created as a directory.
 The ro option, if present, causes the bind mount to be mounted into the container as read-only.
 
 * --log-opt max-size=2m The maximum size of the log before it is rolled. A positive integer plus a modifier representing the unit of measure (k, m, or g).
 
-* --log-opt max-file=2 The maximum number of log files that can be present. If rolling the logs creates excess files, the oldest file is removed. A positive integer. 
+* --log-opt max-file=2 The maximum number of log files that can be present. If rolling the logs creates excess files, the oldest file is removed. A positive integer.
 
 * --restart Restart policy to apply when a container exits
 
@@ -374,13 +374,13 @@ podman run -d -v /myems-normalization/.env:/code/.env:ro --log-opt max-size=1m -
 
 * -d Run container in background and print container ID
 
-* -v If you use -v or --volume to bind-mount a file or directory that does not yet exist on the Podman host, 
+* -v If you use -v or --volume to bind-mount a file or directory that does not yet exist on the Podman host,
 -v creates the endpoint for you. It is always created as a directory.
 The ro option, if present, causes the bind mount to be mounted into the container as read-only.
 
 * --log-opt max-size=2m The maximum size of the log before it is rolled. A positive integer plus a modifier representing the unit of measure (k, m, or g).
 
-* --log-opt max-file=2 The maximum number of log files that can be present. If rolling the logs creates excess files, the oldest file is removed. A positive integer. 
+* --log-opt max-file=2 The maximum number of log files that can be present. If rolling the logs creates excess files, the oldest file is removed. A positive integer.
 
 * --restart Restart policy to apply when a container exits
 
@@ -449,13 +449,13 @@ podman run -d -v /myems-aggregation/.env:/code/.env:ro --log-opt max-size=1m --l
 
 * -d Run container in background and print container ID
 
-* -v If you use -v or --volume to bind-mount a file or directory that does not yet exist on the Podman host, 
+* -v If you use -v or --volume to bind-mount a file or directory that does not yet exist on the Podman host,
 -v creates the endpoint for you. It is always created as a directory.
 The ro option, if present, causes the bind mount to be mounted into the container as read-only.
 
 * --log-opt max-size=2m The maximum size of the log before it is rolled. A positive integer plus a modifier representing the unit of measure (k, m, or g).
 
-* --log-opt max-file=2 The maximum number of log files that can be present. If rolling the logs creates excess files, the oldest file is removed. A positive integer. 
+* --log-opt max-file=2 The maximum number of log files that can be present. If rolling the logs creates excess files, the oldest file is removed. A positive integer.
 
 * --restart Restart policy to apply when a container exits
 
@@ -482,7 +482,13 @@ podman load --input .\myems-aggregation.tar
 
 In this section, you will install myems-web on Podman.
 
-* Check and change the config file if necessary:
+* Modify the config.js file:
+
+:::note
+
+Get mapboxToken at https://mapbox.com and then set showOnlineMap to true. If you wnat to turn off online map feature, set showOnlineMap to false
+
+:::
 
 ```bash
 cd myems/myems-web
@@ -527,23 +533,23 @@ podman buildx build --platform=linux/amd64 -t myems/myems-web .
 
 * Run a Podman container
 
-On host, bind-mount nginx.conf 
+On host, bind-mount nginx.conf
 ```bash
 podman run -d -p 80:80 -v /myems-web/nginx.conf:/etc/nginx/nginx.conf:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-web myems/myems-web
 ```
 
 * -d Run container in background and print container ID
 
-* -p Publish a container's port(s) to the host, 80:80 (Host:Container) binds port 80 (right)  of the container to 
+* -p Publish a container's port(s) to the host, 80:80 (Host:Container) binds port 80 (right)  of the container to
 TCP port 80 (left) of the host machine.
 
-* -v If you use -v or --volume to bind-mount a file or directory that does not yet exist on the Podman host, 
+* -v If you use -v or --volume to bind-mount a file or directory that does not yet exist on the Podman host,
 -v creates the endpoint for you. It is always created as a directory.
 The ro option, if present, causes the bind mount to be mounted into the container as read-only.
 
 * --log-opt max-size=2m The maximum size of the log before it is rolled. A positive integer plus a modifier representing the unit of measure (k, m, or g).
 
-* --log-opt max-file=2 The maximum number of log files that can be present. If rolling the logs creates excess files, the oldest file is removed. A positive integer. 
+* --log-opt max-file=2 The maximum number of log files that can be present. If rolling the logs creates excess files, the oldest file is removed. A positive integer.
 
 * --restart Restart policy to apply when a container exits
 
