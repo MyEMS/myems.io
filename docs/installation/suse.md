@@ -337,7 +337,14 @@ Setup NodeJS:
 sudo zypper install -y nodejs
 ```
 
-Check and change the config file if necessary:
+* Modify the config.js file:
+
+:::note
+
+Get mapboxToken at https://mapbox.com and then set showOnlineMap to true. If you wnat to turn off online map feature, set showOnlineMap to false
+
+:::
+
 ```bash
 cd myems/myems-web
 sudo vi src/config.js

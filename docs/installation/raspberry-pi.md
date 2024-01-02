@@ -61,7 +61,7 @@ See [Database](./database.md)
 ```bash
 sudo cp -r ~/myems/myems-api /myems-api
 cd /myems-api
-sudo pip install -r requirements.txt 
+sudo pip install -r requirements.txt
 ```
 Create .env file based on example.env and edit the .env file if needed:
 ```bash
@@ -152,7 +152,7 @@ Add a new 'server' section with directives as below:
           root    /var/www/myems-admin;
           index index.html index.htm;
       }
-      ## To avoid CORS issue, use Nginx to proxy myems-api to path /api 
+      ## To avoid CORS issue, use Nginx to proxy myems-api to path /api
       ## Add another location /api in 'server' and replace demo address http://127.0.0.1:8000/ with actual url
       location /api {
           proxy_pass http://127.0.0.1:8000/;
@@ -196,7 +196,7 @@ In this step, you will install myems-modbus-tcp service.
 ```bash
 sudo cp -r ~/myems/myems-modbus-tcp /myems-modbus-tcp
 cd /myems-modbus-tcp
-sudo pip install -r requirements.txt 
+sudo pip install -r requirements.txt
 ```
 
 Copy exmaple.env file to .env and modify the .env file:
@@ -232,7 +232,7 @@ In this step, you will install myems-cleaning service.
 ```bash
 sudo cp -r ~/myems/myems-cleaning /myems-cleaning
 cd /myems-cleaning
-sudo pip install -r requirements.txt 
+sudo pip install -r requirements.txt
 ```
 
 Copy exmaple.env file to .env and modify the .env file:
@@ -268,7 +268,7 @@ In this step, you will install myems-normalization service.
 ```bash
 sudo cp -r ~/myems/myems-normalization /myems-normalization
 cd /myems-normalization
-sudo pip install -r requirements.txt 
+sudo pip install -r requirements.txt
 ```
 
 Copy exmaple.env file to .env and modify the .env file:
@@ -304,7 +304,7 @@ In this step, you will install myems-aggregation service.
 ```bash
 sudo cp -r ~/myems/myems-aggregation /myems-aggregation
 cd /myems-aggregation
-sudo pip install -r requirements.txt 
+sudo pip install -r requirements.txt
 ```
 Copy exmaple.env file to .env and modify the .env file:
 ```bash
@@ -371,7 +371,7 @@ Delete the default 'server' section in /etc/nginx/nginx.conf or in /etc/nginx/co
           # add try_files directive to avoid 404 error while refreshing pages
           try_files $uri  /index.html;
       }
-      ## To avoid CORS issue, use Nginx to proxy myems-api to path /api 
+      ## To avoid CORS issue, use Nginx to proxy myems-api to path /api
       ## Add another location /api in 'server'
       ## NOTE: replace dafulat address http://127.0.0.1:8000/ with actual IP or URL
       location /api {
@@ -395,7 +395,14 @@ curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
 sudo apt-get install -y nodejs
 ```
 
-Check and change the config file if necessary:
+Modify the config.js file:
+
+:::note
+
+Get mapboxToken at https://mapbox.com and then set showOnlineMap to true. If you wnat to turn off online map feature, set showOnlineMap to false
+
+:::
+
 ```bash
 cd ~/myems/myems-web
 sudo nano src/config.js

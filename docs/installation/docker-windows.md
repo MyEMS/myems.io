@@ -451,7 +451,13 @@ docker load --input .\myems-aggregation.tar
 
 In this section, you will install myems-web on Docker.
 
-* Check and change the config file if necessary:
+* Modify the config.js file:
+
+:::note
+
+Get mapboxToken at https://mapbox.com and then set showOnlineMap to true. If you wnat to turn off online map feature, set showOnlineMap to false
+
+:::
 
 ```bash
 cd myems/myems-web

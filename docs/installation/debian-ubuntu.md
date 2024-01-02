@@ -93,8 +93,8 @@ server {
         root    /var/www/myems-admin;
         index index.html index.htm;
     }
-    ## To avoid CORS issue, use Nginx to proxy myems-api to path /api 
-    ## Add another location /api in 'server' 
+    ## To avoid CORS issue, use Nginx to proxy myems-api to path /api
+    ## Add another location /api in 'server'
     ## Replace the default myems-api url http://127.0.0.1:8000/ with actual url if the myems-api servcie hosted on a different server
     location /api {
         proxy_pass http://127.0.0.1:8000/;
@@ -313,7 +313,7 @@ Add a new 'server' section with directives as below:
           # add try_files directive to avoid 404 error while refreshing pages
           try_files $uri  /index.html;
       }
-      ## To avoid CORS issue, use Nginx to proxy myems-api to path /api 
+      ## To avoid CORS issue, use Nginx to proxy myems-api to path /api
       ## Add another location /api in 'server' and replace demo address http://127.0.0.1:8000/ with actual url
       location /api {
           proxy_pass http://127.0.0.1:8000/;
@@ -336,7 +336,14 @@ curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
 sudo apt-get install -y nodejs
 ```
 
-Check and change the config file if necessary:
+* Modify the config.js file:
+
+:::note
+
+Get mapboxToken at https://mapbox.com and then set showOnlineMap to true. If you wnat to turn off online map feature, set showOnlineMap to false
+
+:::
+
 ```bash
 cd myems/myems-web
 sudo nano src/config.js
