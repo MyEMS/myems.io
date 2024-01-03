@@ -37,7 +37,7 @@
   },
   "link.item.label.DEMO": {
     "message": "DEMO",
-    "description": "The label of footer link with label=DEMO linking to http://106.14.32.24/"
+    "description": "The label of footer link with label=DEMO linking to https://myems.cloud"
   },
   "link.item.label.Introduction": {
     "message": "Introduction",

@@ -94,7 +94,7 @@ const config = {
             href: '/docs/enterprise',
           },
           {
-            href: 'http://106.14.32.24/',
+            href: 'https://myems.cloud',
             label: 'DEMO',
             position: 'left',
           },
@@ -138,7 +138,7 @@ const config = {
               },
               {
                 label: 'DEMO',
-                href: 'http://106.14.32.24/',
+                href: 'https://myems.cloud',
               },
             ],
           },
