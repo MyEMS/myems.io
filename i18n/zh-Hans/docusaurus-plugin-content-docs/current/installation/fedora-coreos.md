@@ -377,7 +377,15 @@ server {
 sudo dnf install nodejs
 ```
 
-如有必要，检查并更改配置文件：
+
+修改配置文件：
+
+:::note
+
+从 https://mapbox.com 获取 mapboxToken 然后设置 showOnlineMap 为 true. 如果要关闭在线地图功能，设置 showOnlineMap 为 false
+
+:::
+
 ```bash
 cd ~/myems/myems-web
 sudo nano src/config.js

@@ -96,8 +96,8 @@ sudo nano /etc/nginx/conf.d/myems-admin.conf
           root    /var/www/myems-admin;
           index index.html index.htm;
       }
-      ## To avoid CORS issue, use Nginx to proxy myems-api to path /api 
-      ## Add another location /api in 'server' 
+      ## To avoid CORS issue, use Nginx to proxy myems-api to path /api
+      ## Add another location /api in 'server'
       ## Replace the default myems-api url http://127.0.0.1:8000/ with actual url if the myems-api servcie hosted on a different server
       location /api {
           proxy_pass http://127.0.0.1:8000/;
@@ -324,7 +324,7 @@ sudo nano /etc/nginx/conf.d/default.conf
           # add try_files directive to avoid 404 error while refreshing pages
           try_files $uri  /index.html;
       }
-      ## To avoid CORS issue, use Nginx to proxy myems-api to path /api 
+      ## To avoid CORS issue, use Nginx to proxy myems-api to path /api
       ## Add another location /api in 'server'
       ## replace the default myems-api url http://127.0.0.1:8000/ with actual url if the myems-api servcie hosted on different server
       location /api {
@@ -343,7 +343,14 @@ curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
 sudo apt-get install -y nodejs
 ```
 
-如有必要，检查并更改配置文件：
+修改配置文件：
+
+:::note
+
+从 https://mapbox.com 获取 mapboxToken 然后设置 showOnlineMap 为 true. 如果要关闭在线地图功能，设置 showOnlineMap 为 false
+
+:::
+
 ```bash
 cd ~/myems/myems-web
 sudo nano src/config.js

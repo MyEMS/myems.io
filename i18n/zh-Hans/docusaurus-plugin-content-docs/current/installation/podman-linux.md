@@ -15,7 +15,7 @@ sidebar_position: 14
 :::caution
 
 - 建议使用root权限来执行podman命令。
-- 安装podman后，使用命令 `systemctl status podman-restart.service` 检查容器是否配置为自动启动和策略。如果显示 `Unit not found` 表示容器无法自动启动。 
+- 安装podman后，使用命令 `systemctl status podman-restart.service` 检查容器是否配置为自动启动和策略。如果显示 `Unit not found` 表示容器无法自动启动。
 
 :::
 
@@ -467,7 +467,13 @@ podman load --input .\myems-aggregation.tar
 
 在本节中，您将在Podman上安装myems-web。
 
-* 如有必要，检查并更改配置文件：
+* 修改配置文件：
+
+:::note
+
+从 https://mapbox.com 获取 mapboxToken 然后设置 showOnlineMap 为 true. 如果要关闭在线地图功能，设置 showOnlineMap 为 false
+
+:::
 
 ```bash
 cd myems/myems-web

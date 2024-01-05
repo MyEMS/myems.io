@@ -161,7 +161,7 @@ Die Option ro bewirkt, falls vorhanden, dass der Bind-Mount schreibgeschützt in
 
 * --log-opt max-size=2m Die maximale Größe des Protokolls, bevor es gerollt wird. Eine positive ganze Zahl plus ein Modifikator, der die Maßeinheit darstellt (k, m oder g).
 
-* --log-opt max-file=2 Die maximale Anzahl von Protokolldateien, die vorhanden sein können. Wenn beim Rollieren der Protokolle überschüssige Dateien entstehen, wird die älteste Datei entfernt. Eine positive Ganzzahl. 
+* --log-opt max-file=2 Die maximale Anzahl von Protokolldateien, die vorhanden sein können. Wenn beim Rollieren der Protokolle überschüssige Dateien entstehen, wird die älteste Datei entfernt. Eine positive Ganzzahl.
 
 * --restart Neustartrichtlinie, die angewendet werden soll, wenn ein Container beendet wird
 
@@ -230,7 +230,7 @@ Die Option ro bewirkt, falls vorhanden, dass der Bind-Mount schreibgeschützt in
 
 * --log-opt max-size=2m Die maximale Größe des Protokolls, bevor es gerollt wird. Eine positive ganze Zahl plus ein Modifikator, der die Maßeinheit darstellt (k, m oder g).
 
-* --log-opt max-file=2 Die maximale Anzahl von Protokolldateien, die vorhanden sein können. Wenn beim Rollieren der Protokolle überschüssige Dateien entstehen, wird die älteste Datei entfernt. Eine positive Ganzzahl. 
+* --log-opt max-file=2 Die maximale Anzahl von Protokolldateien, die vorhanden sein können. Wenn beim Rollieren der Protokolle überschüssige Dateien entstehen, wird die älteste Datei entfernt. Eine positive Ganzzahl.
 
 * --restart Neustartrichtlinie, die angewendet werden soll, wenn ein Container beendet wird
 
@@ -303,7 +303,7 @@ Die Option ro bewirkt, falls vorhanden, dass der Bind-Mount schreibgeschützt in
 
 * --log-opt max-size=2m Die maximale Größe des Protokolls, bevor es gerollt wird. Eine positive ganze Zahl plus ein Modifikator, der die Maßeinheit darstellt (k, m oder g).
 
-* --log-opt max-file=2 Die maximale Anzahl von Protokolldateien, die vorhanden sein können. Wenn beim Rollieren der Protokolle überschüssige Dateien entstehen, wird die älteste Datei entfernt. Eine positive Ganzzahl. 
+* --log-opt max-file=2 Die maximale Anzahl von Protokolldateien, die vorhanden sein können. Wenn beim Rollieren der Protokolle überschüssige Dateien entstehen, wird die älteste Datei entfernt. Eine positive Ganzzahl.
 
 * --restart Neustartrichtlinie, die angewendet werden soll, wenn ein Container beendet wird
 
@@ -375,7 +375,7 @@ Die Option ro bewirkt, falls vorhanden, dass der Bind-Mount schreibgeschützt in
 
 * --log-opt max-size=2m Die maximale Größe des Protokolls, bevor es gerollt wird. Eine positive ganze Zahl plus ein Modifikator, der die Maßeinheit darstellt (k, m oder g).
 
-* --log-opt max-file=2 Die maximale Anzahl von Protokolldateien, die vorhanden sein können. Wenn beim Rollieren der Protokolle überschüssige Dateien entstehen, wird die älteste Datei entfernt. Eine positive Ganzzahl. 
+* --log-opt max-file=2 Die maximale Anzahl von Protokolldateien, die vorhanden sein können. Wenn beim Rollieren der Protokolle überschüssige Dateien entstehen, wird die älteste Datei entfernt. Eine positive Ganzzahl.
 
 * --restart Neustartrichtlinie, die angewendet werden soll, wenn ein Container beendet wird
 
@@ -448,7 +448,7 @@ Die Option ro bewirkt, falls vorhanden, dass der Bind-Mount schreibgeschützt in
 
 * --log-opt max-size=2m Die maximale Größe des Protokolls, bevor es gerollt wird. Eine positive ganze Zahl plus ein Modifikator, der die Maßeinheit darstellt (k, m oder g).
 
-* --log-opt max-file=2 Die maximale Anzahl von Protokolldateien, die vorhanden sein können. Wenn beim Rollieren der Protokolle überschüssige Dateien entstehen, wird die älteste Datei entfernt. Eine positive Ganzzahl. 
+* --log-opt max-file=2 Die maximale Anzahl von Protokolldateien, die vorhanden sein können. Wenn beim Rollieren der Protokolle überschüssige Dateien entstehen, wird die älteste Datei entfernt. Eine positive Ganzzahl.
 
 * --restart Neustartrichtlinie, die angewendet werden soll, wenn ein Container beendet wird
 
@@ -475,7 +475,13 @@ podman load --input .\myems-aggregation.tar
 
 In diesem Abschnitt installieren Sie myems-web auf Podman.
 
-* Überprüfen und ändern Sie gegebenenfalls die Konfigurationsdatei:
+* Konfigurationsdateien ändern：
+
+:::note
+
+Von https://mapbox.com Holen Sie sich das mapboxToken und setzen Sie showOnlineMap auf true Wenn Sie die Online-Kartenfunktion deaktivieren möchten, setzen Sie showOnlineMap auf false
+
+:::
 
 ```bash
 cd myems/myems-web
@@ -533,7 +539,7 @@ Die Option ro bewirkt, falls vorhanden, dass der Bind-Mount schreibgeschützt in
 
 * --log-opt max-size=2m Die maximale Größe des Protokolls, bevor es gerollt wird. Eine positive ganze Zahl plus ein Modifikator, der die Maßeinheit darstellt (k, m oder g).
 
-* --log-opt max-file=2 Die maximale Anzahl von Protokolldateien, die vorhanden sein können. Wenn beim Rollieren der Protokolle überschüssige Dateien entstehen, wird die älteste Datei entfernt. Eine positive Ganzzahl. 
+* --log-opt max-file=2 Die maximale Anzahl von Protokolldateien, die vorhanden sein können. Wenn beim Rollieren der Protokolle überschüssige Dateien entstehen, wird die älteste Datei entfernt. Eine positive Ganzzahl.
 
 * --restart Neustartrichtlinie, die angewendet werden soll, wenn ein Container beendet wird
 
