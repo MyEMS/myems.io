@@ -447,7 +447,13 @@ docker load --input .\myems-aggregation.tar
 
 在本节中，您将在Docker上安装myems-web。
 
-* 如有必要，检查并更改配置文件：
+修改配置文件：
+
+:::note
+
+从 https://mapbox.com 获取 mapboxToken 然后设置 showOnlineMap 为 true. 如果要关闭在线地图功能，设置 showOnlineMap 为 false
+
+:::
 
 ```bash
 cd myems/myems-web
@@ -456,7 +462,7 @@ notepad src/config.js
 
 :::caution
 
-将nginx.conf中的~~127.00.1:8000~~替换为真正的**HOST** IP和myems-api端口
+将nginx.conf中的~~127.00.1:8000~~替换为实际的**HOST** IP和myems-api端口
 
 :::
 

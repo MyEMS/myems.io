@@ -60,7 +60,7 @@ Reload privilege tables now? [Y/n] Y
 ```bash
 sudo cp -r ~/myems/myems-api /myems-api
 cd /myems-api
-sudo pip install -r requirements.txt 
+sudo pip install -r requirements.txt
 ```
 
 根据example.env创建.env文件，并根据需要编辑.env：
@@ -152,7 +152,7 @@ http {
           root    /var/www/myems-admin;
           index index.html index.htm;
       }
-      ## To avoid CORS issue, use Nginx to proxy myems-api to path /api 
+      ## To avoid CORS issue, use Nginx to proxy myems-api to path /api
       ## Add another location /api in 'server' and replace demo address http://127.0.0.1:8000/ with actual url
       location /api {
           proxy_pass http://127.0.0.1:8000/;
@@ -371,7 +371,7 @@ http {
           # add try_files directive to avoid 404 error while refreshing pages
           try_files $uri  /index.html;
       }
-      ## To avoid CORS issue, use Nginx to proxy myems-api to path /api 
+      ## To avoid CORS issue, use Nginx to proxy myems-api to path /api
       ## Add another location /api in 'server'
       ## NOTE: replace dafulat address http://127.0.0.1:8000/ with actual IP or URL
       location /api {
@@ -395,7 +395,14 @@ curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
 sudo apt-get install -y nodejs
 ```
 
-如有必要，检查并更改配置文件：
+修改配置文件：
+
+:::note
+
+从 https://mapbox.com 获取 mapboxToken 然后设置 showOnlineMap 为 true. 如果要关闭在线地图功能，设置 showOnlineMap 为 false
+
+:::
+
 ```bash
 cd ~/myems/myems-web
 sudo nano src/config.js

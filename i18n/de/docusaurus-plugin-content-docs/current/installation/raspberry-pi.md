@@ -60,7 +60,7 @@ Sehen [Database](./database.md)
 ```bash
 sudo cp -r ~/myems/myems-api /myems-api
 cd /myems-api
-sudo pip install -r requirements.txt 
+sudo pip install -r requirements.txt
 ```
 
 Erstellen Sie eine .env-Datei basierend auf example.env und bearbeiten Sie die .env-Datei bei Bedarf:
@@ -152,7 +152,7 @@ Fügen Sie einen neuen Abschnitt „Server“ mit den folgenden Anweisungen hinz
           root    /var/www/myems-admin;
           index index.html index.htm;
       }
-      ## To avoid CORS issue, use Nginx to proxy myems-api to path /api 
+      ## To avoid CORS issue, use Nginx to proxy myems-api to path /api
       ## Add another location /api in 'server' and replace demo address http://127.0.0.1:8000/ with actual url
       location /api {
           proxy_pass http://127.0.0.1:8000/;
@@ -371,7 +371,7 @@ Löschen Sie den Standardabschnitt „server“ in /etc/nginx/nginx.conf oder in
           # add try_files directive to avoid 404 error while refreshing pages
           try_files $uri  /index.html;
       }
-      ## To avoid CORS issue, use Nginx to proxy myems-api to path /api 
+      ## To avoid CORS issue, use Nginx to proxy myems-api to path /api
       ## Add another location /api in 'server'
       ## NOTE: replace dafulat address http://127.0.0.1:8000/ with actual IP or URL
       location /api {
@@ -395,7 +395,14 @@ curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
 sudo apt-get install -y nodejs
 ```
 
-Überprüfen und ändern Sie gegebenenfalls die Konfigurationsdatei:
+Konfigurationsdateien ändern：
+
+:::note
+
+Von https://mapbox.com Holen Sie sich das mapboxToken und setzen Sie showOnlineMap auf true Wenn Sie die Online-Kartenfunktion deaktivieren möchten, setzen Sie showOnlineMap auf false
+
+:::
+
 ```bash
 cd ~/myems/myems-web
 sudo nano src/config.js

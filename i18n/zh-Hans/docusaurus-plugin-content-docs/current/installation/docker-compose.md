@@ -31,7 +31,7 @@ sidebar_position: 6
 
 1.  克隆仓库
 ```
-git clone https://gitee.com/myems/myems.git 
+git clone https://gitee.com/myems/myems.git
 ```
 
 2.  导入数据库结构
@@ -81,7 +81,7 @@ nano myems-cleaning/.env
 cp myems-modbus-tcp/example.env myems-modbus-tcp/.env
 nano myems-modbus-tcp/.env
 cp myems-normalization/example.env myems-normalization/.env
-nano myems-normalization/.env 
+nano myems-normalization/.env
 ```
 
 3.3 修改docker-compose.yml中upload文件夹路径
@@ -91,6 +91,20 @@ nano myems-normalization/.env
 
 4.  编译Web UI
 
+修改配置文件：
+
+:::note
+
+从 https://mapbox.com 获取 mapboxToken 然后设置 showOnlineMap 为 true. 如果要关闭在线地图功能，设置 showOnlineMap 为 false
+
+:::
+
+```bash
+cd myems/myems-web
+sudo nano src/config.js
+```
+
+编译：
 ```
 cd myems/myems-web
 npm i --unsafe-perm=true --allow-root --legacy-peer-deps
@@ -102,14 +116,14 @@ npm run build
 On Windows Host:
 ```
 cd myems
-docker-compose -f docker-compose-on-windows.yml up -d 
+docker-compose -f docker-compose-on-windows.yml up -d
 ```
 
 On Linux Host:
 
 ```
 cd myems
-docker-compose -f docker-compose-on-linux.yml up -d 
+docker-compose -f docker-compose-on-linux.yml up -d
 ```
 
 6. 验证
