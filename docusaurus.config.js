@@ -1,8 +1,9 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const themes = require('prism-react-renderer').themes;
+const lightCodeTheme = themes.github;
+const darkCodeTheme = themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -37,7 +38,7 @@ const config = {
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
+    defaultLocale: 'zh-Hans',
     locales: ['en', 'zh-Hans', 'de'],
   },
 
@@ -85,6 +86,11 @@ const config = {
           },
           {
             position: 'left',
+            label: 'Tutorial',
+            href: '/docs/category/tutorial',
+          },
+          {
+            position: 'left',
             label: 'API',
             href: '/docs/api',
           },
@@ -127,6 +133,10 @@ const config = {
               {
                 label: 'Installation',
                 to: '/docs/category/installation',
+              },
+              {
+                label: 'Tutorial',
+                href: '/docs/category/tutorial',
               },
               {
                 label: 'API',

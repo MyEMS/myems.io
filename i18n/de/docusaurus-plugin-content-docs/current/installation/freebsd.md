@@ -317,6 +317,7 @@ Aktualisieren der nginx Standard-Conf-Datei:
 nano /etc/nginx/conf.d/default.conf
 ```
 Schreiben Sie mit Direktiven wie unten und ersetzen Sie die Standard-myems-api-URL http://127.0.0.1:8000/ mit tatsächlicher URL, wenn die myems-api-Servcie auf einem anderen Server gehostet wird
+```
 server {
     listen                 80;
     server_name     myems-web;

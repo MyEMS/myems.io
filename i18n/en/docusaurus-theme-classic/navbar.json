@@ -23,6 +23,10 @@
     "message": "Installation",
     "description": "Navbar item with label Installation"
   },
+  "item.label.Tutorial": {
+    "message": "Tutorial",
+    "description": "Navbar item with label Tutorial"
+  },
   "item.label.API": {
     "message": "API",
     "description": "Navbar item with label API"
