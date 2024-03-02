@@ -14,15 +14,6 @@ cd myems.io
 sudo npm i --unsafe-perm=true --allow-root --legacy-peer-deps
 ```
 
-### Running the development server
-
-To preview your changes as you edit the files, you can run a local development server that will serve your website and reflect the latest changes.
-```
-cd myems.io
-sudo npm run start
-```
-By default, a browser window will open at http://localhost:3000.
-
 ### Build
 
 Docusaurus is a modern static website generator so we need to build the website into a directory of static contents and put it on a web server so that it can be viewed. To build the website:
@@ -31,6 +22,15 @@ sudo npm run build
 ```
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+
+### Running the development server
+
+To preview your changes as you edit the files, you can run a local development server that will serve your website and reflect the latest changes.
+```
+cd myems.io
+sudo npm run serve
+```
+By default, a browser window will open at http://localhost:3000.
 
 ### Deployment with Azure Static Web Apps CI/CD
 
