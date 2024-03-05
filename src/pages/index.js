@@ -31,8 +31,8 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`${siteConfig.title} Energy Management System`}
-      description="Industry Leading Open Source Energy Management System">
+      title={`${siteConfig.title} 能源管理系统 Energy Management System`}
+      description="行业领先的开源能源管理系统 Industry Leading Open Source Energy Management System">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

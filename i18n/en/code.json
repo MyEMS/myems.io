@@ -270,6 +270,9 @@
     "message": "Tags",
     "description": "The title of the tag list page"
   },
+  "Energy Management System": {
+    "message": "Energy Management System"
+  },
   "Industry leading Open Source Energy Management System": {
     "message": "Industry leading Open Source Energy Management System"
   },

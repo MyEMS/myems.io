@@ -270,6 +270,9 @@
     "message": "标签",
     "description": "The title of the tag list page"
   },
+  "Energy Management System": {
+    "message": "能源管理系统"
+  },
   "Industry Leading Open Source Energy Management System": {
     "message": "行业领先的开源能源管理系统"
   },
