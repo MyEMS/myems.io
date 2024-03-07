@@ -40,9 +40,7 @@ MyEMS是行业领先的开源能源管理系统，用于建筑、工厂、商场
 ## 联系我们
 
 - 姓名: 张能远
-- 电话微信: +8613011132526
-- QQ: 1853444168
+- 电话微信: (+86) 13011132526
 - Email: zny@myems.org
 
 ![WeChat: 13011132526](/img/wechat_nengyuanzhang.jpg)
-![QQ: 1853444168](/img/qq_nengyuanzhang.jpg)
