@@ -44,8 +44,6 @@ Kubernetes集群，现场安装一台数据采集器用于数据采集和上传
 
 - 姓名: 张能远
 - 电话微信: (+86) 13011132526
-- QQ: 1853444168
 - Email: zny@myems.org
 
 ![WeChat: 13011132526](/img/wechat_nengyuanzhang.jpg)
-![QQ: 1853444168](/img/qq_nengyuanzhang.jpg)
