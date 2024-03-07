@@ -43,11 +43,7 @@ Verwendung von Open Source, um die Ziele der CO2-Peak-Kohlenstoffneutralität zu
 ### Kontaktieren Sie uns
 
 - Name: Nengyuan Zhang
-- Tel & WeChat: +8613011132526
-- QQ: 1853444168
+- Tel & WeChat: (+86) 13011132526
 - Email: zny@myems.org
 
 ![WeChat: 13011132526](/img/wechat_nengyuanzhang.jpg)
-![QQ: 1853444168](/img/qq_nengyuanzhang.jpg)
-
-
