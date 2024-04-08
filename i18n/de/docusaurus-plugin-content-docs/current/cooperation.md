@@ -46,4 +46,4 @@ Verwendung von Open Source, um die Ziele der CO2-Peak-Kohlenstoffneutralität zu
 - Tel & WeChat: (+86) 13011132526
 - Email: zny@myems.org
 
-![WeChat: 13011132526](/img/wechat_nengyuanzhang.jpg)
+![WeChat: 13011132526](/img/wechat_nengyuanzhang.png)

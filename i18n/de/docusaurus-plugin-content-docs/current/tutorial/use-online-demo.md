@@ -46,4 +46,4 @@ Kubernetes集群，现场安装一台数据采集器用于数据采集和上传
 - 电话微信: (+86) 13011132526
 - Email: zny@myems.org
 
-![WeChat: 13011132526](/img/wechat_nengyuanzhang.jpg)
+![WeChat: 13011132526](/img/wechat_nengyuanzhang.png)
