@@ -43,4 +43,4 @@ MyEMS是行业领先的开源能源管理系统，用于建筑、工厂、商场
 - 电话微信: (+86) 13011132526
 - Email: zny@myems.org
 
-![WeChat: 13011132526](/img/wechat_nengyuanzhang.jpg)
+![WeChat: 13011132526](/img/wechat_nengyuanzhang.png)

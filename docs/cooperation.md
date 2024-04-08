@@ -47,4 +47,4 @@ Using open source to help achieve carbon peak carbon neutrality goals.
 - Tel & WeChat: (+86) 13011132526
 - Email: zny@myems.org
 
-![WeChat: 13011132526](/img/wechat_nengyuanzhang.jpg)\
+![WeChat: 13011132526](/img/wechat_nengyuanzhang.png)\
