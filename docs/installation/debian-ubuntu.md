@@ -26,6 +26,7 @@ See [Database](./database.md)
 ```bash
 sudo cp -r ~/myems/myems-api /myems-api
 cd /myems-api
+sudo apt install python3-pip
 sudo pip install -r requirements.txt
 ```
 Create .env file based on example.env and edit the .env file if needed:

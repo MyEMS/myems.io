@@ -25,7 +25,8 @@ git clone https://gitee.com/myems/myems
 ```bash
 sudo cp -r ~/myems/myems-api /myems-api
 cd /myems-api
-sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+sudo apt install python3-pip
+sudo pip install -r requirements.txt
 ```
 根据example.env创建.env文件，并根据需要编辑.env：
 ```bash

@@ -74,6 +74,7 @@ sidebar_position: 5
 | 光伏电站                          |  ✔️        |  光伏发电系统监控运维平台  |
 | 风电场                            |  ✔️        |  风力发电系统监控运维平台  |
 | Node-RED 低代码编程                |  ✔️        | https://nodered.org/ |
+| DTU 数据透传软件                   |  ✔️        | 数据透传客户端和服务器端软件，支持Modbus RTU和Modbus TCP从现场到云端数据透传 |
 
 ## MyEMS企业版可选服务
 

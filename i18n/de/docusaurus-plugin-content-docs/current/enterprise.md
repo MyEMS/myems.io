@@ -76,6 +76,7 @@ sidebar_position: 5
 | Photovoltaic Power Station       |  ✔️        | Überwachungs-, Betriebs- und Wartungsplattform für Photovoltaik-Stromerzeugungssysteme |
 | Wind Farm                        |  ✔️        | Überwachungs-, Betriebs- und Wartungsplattform für Windkraftanlagen |
 | Node-RED Low-code programming    |  ✔️        | https://nodered.org/ |
+| DTU Softwares                    |  ✔️        | Data Transfer Unit client and server softwares for Modbus RTU and Modbus TCP  |
 
 ## Optionale Dienste der MyEMS Enterprise Edition
 
