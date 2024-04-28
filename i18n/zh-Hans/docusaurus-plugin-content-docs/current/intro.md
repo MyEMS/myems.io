@@ -156,7 +156,7 @@ MyEMS由资深专业团队开发维护，源代码基于MIT开源软件许可协
 
 | 编号                         | 名称 | 版本 |   说明  |
 | :---                             |      :----:       | :----:         | :----:         |
-| 1 | Ubuntu Server |24.04 LTS<br/> 22.04 LTS<br/> 20.04 LTS<br/> 18.04 LTS | X86_64<br/> X86_64<br/> X86_64 |
+| 1 | Ubuntu Server |24.04 LTS<br/> 22.04 LTS<br/> 20.04 LTS<br/> 18.04 LTS | X86_64<br/> X86_64<br/> X86_64<br/> X86_64 |
 | 2 | Debian |11(“bullseye”)<br/> 10(“buster”)<br/> 9(“stretch”) | amd64<br/> amd64<br/> amd64 |
 | 3 | CentOS Stream |9<br/> 8 | x86_64<br/> x86_64 |
 | 4 | CentOS Linux |7-2009 | X86_64 |
