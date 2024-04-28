@@ -8,7 +8,7 @@ In dieser Anleitung werden Sie MyEMS auf Debian- oder Ubuntu-Server.
 
 ## Prerequisites
 
-Diese Anleitung beschreibt, wie MyEMS auf Debian 10 Buster / Debian 11 Bullseye / Debian 12 Bookworm / Ubuntu 18.04 LTS / Ubuntu 20.04 LTS / Ubuntu 22.04 LTS. Die Hardwareanforderungen hängen von der gewählten Datenbank und der Anzahl der an das System angeschlossenen Geräte ab. Um MyEMS und MySQL auf einem einzigen Rechner laufen zu lassen, benötigen Sie mindestens 4GB RAM.
+Diese Anleitung beschreibt, wie MyEMS auf Ubuntu 24.04 LTS / Ubuntu 22.04 LTS / Ubuntu 20.04 LTS / Ubuntu 18.04 LTS / Debian 12 Bookworm / Debian 11 Bullseye / Debian 10 Buster. Die Hardwareanforderungen hängen von der gewählten Datenbank und der Anzahl der an das System angeschlossenen Geräte ab. Um MyEMS und MySQL auf einem einzigen Rechner laufen zu lassen, benötigen Sie mindestens 4GB RAM.
 
 Quellcode klonen:
 ```

@@ -8,7 +8,7 @@ sidebar_position: 2
 
 ## 前提
 
-本指南介绍如何在Debian 10 Buster/Debian 11 Bullseye/Debian 12 Bookworm/Ubuntu 18.04 LTS/Ubuntu 20.04 LTS/Ubuntu 22.04 LTS上安装MyEMS。硬件需求取决于所选数据库和连接到系统的设备数量。要在一台机器上运行MyEMS和MySQL，您至少需要4GB的RAM。
+本指南介绍如何在 Ubuntu 24.04 LTS / Ubuntu 22.04 LTS / Ubuntu 20.04 LTS / Ubuntu 18.04 LTS / Debian 12 Bookworm / Debian 11 Bullseye / Debian 10 Buster 上安装MyEMS。硬件需求取决于所选数据库和连接到系统的设备数量。要在一台机器上运行MyEMS和MySQL，您至少需要4GB的RAM。
 
 克隆源代码：
 ```
