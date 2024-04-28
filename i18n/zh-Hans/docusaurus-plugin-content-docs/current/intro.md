@@ -142,21 +142,21 @@ MyEMS由资深专业团队开发维护，源代码基于MIT开源软件许可协
 
 [1]. [https://github.com/myems/myems](https://github.com/myems/myems)
 
-[2]. [https://gitee.com/myems/myems](https://gitee.com/myems/myems) 
+[2]. [https://gitee.com/myems/myems](https://gitee.com/myems/myems)
 
-[3]. [https://bitbucket.org/myems/myems](https://bitbucket.org/myems/myems) 
+[3]. [https://bitbucket.org/myems/myems](https://bitbucket.org/myems/myems)
 
 [4]. [https://gitlab.com/myems/myems](https://gitlab.com/myems/myems)
 
-[5]. [https://gitcode.net/myems/myems](https://gitcode.net/myems/myems) 
+[5]. [https://gitcode.net/myems/myems](https://gitcode.net/myems/myems)
 
 
 ## <a id="myems-os-compatibility"/>操作系统兼容性
 应用服务器操作系统:
 
-| 编号                         | 名称 | 版本 |   说明  | 
+| 编号                         | 名称 | 版本 |   说明  |
 | :---                             |      :----:       | :----:         | :----:         |
-| 1 | Ubuntu Server |22.04 LTS<br/> 20.04 LTS<br/> 18.04 LTS | X86_64<br/> X86_64<br/> X86_64 |
+| 1 | Ubuntu Server |24.04 LTS<br/> 22.04 LTS<br/> 20.04 LTS<br/> 18.04 LTS | X86_64<br/> X86_64<br/> X86_64 |
 | 2 | Debian |11(“bullseye”)<br/> 10(“buster”)<br/> 9(“stretch”) | amd64<br/> amd64<br/> amd64 |
 | 3 | CentOS Stream |9<br/> 8 | x86_64<br/> x86_64 |
 | 4 | CentOS Linux |7-2009 | X86_64 |
@@ -176,7 +176,7 @@ MyEMS由资深专业团队开发维护，源代码基于MIT开源软件许可协
 
 ## <a id="myems-database-compatibility"/>数据库兼容性
 
-| 编号                         | 名称 | 版本 |   说明  | 
+| 编号                         | 名称 | 版本 |   说明  |
 | :---                             |      :----:       | :----:         | :----:         |
 | 1 | MySQL |8.0<br/> 5.7 | x86, 64-bit<br/> x86, 64-bit |
 | 2 | SingleStore |8.0<br/> 7.8 | x86, 64-bit<br/> x86, 64-bit |

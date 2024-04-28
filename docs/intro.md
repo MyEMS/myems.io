@@ -6,7 +6,7 @@ sidebar_position: 1
 
 MyEMS is an industry-leading open source energy management system and is based on Python and React.
 It is used for collecting, processing, analyzing, reporting and displaying energy data of buildings, factories, shopping malls, data centers and enterprise zones.
-MyEMS can be used for device management, data collection, processing, analysis, visualization and reporting for your EMS projects. 
+MyEMS can be used for device management, data collection, processing, analysis, visualization and reporting for your EMS projects.
 MyEMS is being developed and maintained by an experienced development team, and the system's source code is published under MIT license.
 Using open source to help achieve carbon peak carbon neutrality goals.
 
@@ -141,20 +141,20 @@ Users of the Community Edition must retain the relevant copyright and LOGO of My
 
 [1]. [https://github.com/myems/myems](https://github.com/myems/myems)
 
-[2]. [https://gitee.com/myems/myems](https://gitee.com/myems/myems) 
+[2]. [https://gitee.com/myems/myems](https://gitee.com/myems/myems)
 
-[3]. [https://bitbucket.org/myems/myems](https://bitbucket.org/myems/myems) 
+[3]. [https://bitbucket.org/myems/myems](https://bitbucket.org/myems/myems)
 
 [4]. [https://gitlab.com/myems/myems](https://gitlab.com/myems/myems)
 
-[5]. [https://gitcode.net/myems/myems](https://gitcode.net/myems/myems) 
+[5]. [https://gitcode.net/myems/myems](https://gitcode.net/myems/myems)
 
 
 ## <a id="myems-os-compatibility"/>Operating System Compatibility
 
-| NO.                         | Name | Version |   Description  | 
+| NO.                         | Name | Version |   Description  |
 | :---                             |      :----:       | :----:         | :----:         |
-| 1 | Ubuntu Server |22.04 LTS<br/> 20.04 LTS<br/> 18.04 LTS | X86_64<br/> X86_64<br/> X86_64 |
+| 1 | Ubuntu Server |24.04 LTS<br/> 22.04 LTS<br/> 20.04 LTS<br/> 18.04 LTS | X86_64<br/> X86_64<br/> X86_64 |
 | 2 | Debian |11(“bullseye”)<br/> 10(“buster”)<br/> 9(“stretch”) | amd64<br/> amd64<br/> amd64 |
 | 3 | CentOS Stream |9<br/> 8 | x86_64<br/> x86_64 |
 | 4 | CentOS Linux |7-2009 | X86_64 |
@@ -175,7 +175,7 @@ Users of the Community Edition must retain the relevant copyright and LOGO of My
 
 ## <a id="myems-database-compatibility"/>Database Compatibility
 
-| NO.                         | Name | Version |   Description  | 
+| NO.                         | Name | Version |   Description  |
 | :---                             |      :----:       | :----:         | :----:         |
 | 1 | MySQL |8.0<br/> 5.7 | x86, 64-bit<br/> x86, 64-bit |
 | 2 | SingleStore |8.0<br/> 7.8 | x86, 64-bit<br/> x86, 64-bit |
