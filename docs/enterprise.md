@@ -16,7 +16,7 @@ sidebar_position: 5
 | Deploy on SQL Server Database    |  ✔️        | https://www.microsoft.com/en-us/sql-server |
 | Deploy on Oracle Database        |  ✔️        | https://www.oracle.com/database/ |
 | Space Saving Data                |  ✔️        | Enterprise version license, or customizable development |
-| Equipment/Saving Data            |  ✔️        | Enterprise version license, or customizable development |
+| Equipment Saving Data            |  ✔️        | Enterprise version license, or customizable development |
 | Meter Saving Data                |  ✔️        | Enterprise version license, or customizable development |
 | Virtual Meter Saving Data        |  ✔️        | Enterprise version license, or customizable development |
 | Offline Meter Saving Data        |  ✔️        | Enterprise version license, or customizable development |
@@ -24,6 +24,15 @@ sidebar_position: 5
 | Store Saving Data                |  ✔️        | Enterprise version license, or customizable development |
 | Shopfloor Saving Data            |  ✔️        | Enterprise version license, or customizable development |
 | Combined Equipment Saving Data   |  ✔️        | Enterprise version license, or customizable development |
+| Space Energy Plan Data           |  ✔️        | Enterprise version license, or customizable development |
+| Equipment Energy Plan Data       |  ✔️        | Enterprise version license, or customizable development |
+| Meter Energy Plan Data           |  ✔️        | Enterprise version license, or customizable development |
+| Virtual Meter Energy Plan Data   |  ✔️        | Enterprise version license, or customizable development |
+| Offline Meter Energy Plan Data   |  ✔️        | Enterprise version license, or customizable development |
+| Tenant Energy Plan Data          |  ✔️        | Enterprise version license, or customizable development |
+| Store Energy Plan Data           |  ✔️        | Enterprise version license, or customizable development |
+| Shopfloor Energy Plan Data       |  ✔️        | Enterprise version license, or customizable development |
+| Combined Equipment Energy Plan Data |  ✔️        | Enterprise version license, or customizable development |
 | Carbon Footprint Analysis        |  ✔️        |                      |
 | Carbon Emission Analysis         |  ✔️        |                      |
 | BACnet/IP                        |  ✔️        | http://www.bacnet.org/ |
