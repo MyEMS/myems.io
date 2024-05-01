@@ -17,14 +17,23 @@ sidebar_position: 5
 | Deploy on Oracle Database        |  ✔️        | https://www.oracle.com/database/ |
 | Deploy on PostgreSQL Database    |  ✔️        | https://www.postgresql.org/ |
 | Space Saving Data                |  ✔️        | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
-| Equipment Saving Data            | ✔️        | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
-| Meter Saving Data                | ✔️        | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
-| Virtual Meter Saving Data        | ✔️        | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
-| Offline Meter Saving Data        | ✔️        | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
+| Equipment Saving Data            |  ✔️        | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
+| Meter Saving Data                |  ✔️        | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
+| Virtual Meter Saving Data        |  ✔️        | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
+| Offline Meter Saving Data        |  ✔️        | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
 | Tenant Saving Data               |  ✔️        | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
-| Store Saving Data                |  ✔️        |                      |
+| Store Saving Data                |  ✔️        | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
 | Shopfloor Saving Data            |  ✔️        | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
-| Combined Equipment Saving Data   | ✔️        | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
+| Combined Equipment Saving Data   |  ✔️        | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
+| Space Energy Plan Data                |  ✔️   | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
+| Equipment Energy Plan Data            |  ✔️   | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
+| Meter Energy Plan Data                |  ✔️   | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
+| Virtual Meter Energy Plan Data        |  ✔️   | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
+| Offline Meter Energy Plan Data        |  ✔️   | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
+| Tenant Energy Plan Data               |  ✔️   | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
+| Store Energy Plan Data                |  ✔️   | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
+| Shopfloor Energy Plan Data            |  ✔️   | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
+| Combined Equipment Energy Plan Data   |  ✔️   | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
 | Analyse des CO2-Fußabdrucks      | ✔️        |                      |
 | Analyse der Kohlenstoffemissionen| ✔️        |                      |
 | Mikrogitter                      |  ✔️       |  PV, Energiespeicherbatterie, Last, Netz, Generator      |
