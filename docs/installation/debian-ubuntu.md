@@ -32,7 +32,7 @@ sudo pip install -r requirements.txt
 
 :::note
 
-(ubantu24.04)If the code does not work, you can use the following code: sudo pip install -r requirements.txt --break-system-packages
+(ubantu24.04 LTS)If the code does not work, you can use the following code: sudo pip install -r requirements.txt --break-system-packages
 
 :::
 
