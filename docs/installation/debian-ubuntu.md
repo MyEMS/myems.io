@@ -32,7 +32,7 @@ sudo pip install -r requirements.txt
 
 :::note
 
-(Ubantu 24.04 LTS)If the code does not work, you can use the following code: sudo pip install -r requirements.txt --break-system-packages
+(Ubuntu 24.04 LTS)If the code does not work, you can use the following code: sudo pip install -r requirements.txt --break-system-packages
 
 :::
 
