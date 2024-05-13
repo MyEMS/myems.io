@@ -28,6 +28,13 @@ cd /myems-api
 sudo apt install python3-pip
 sudo pip install -r requirements.txt
 ```
+
+:::note
+
+(ubantu24.04)如果代码无法运行，可用如下代码: sudo pip install -r requirements.txt --break-system-packages
+
+:::
+
 根据example.env创建.env文件，并根据需要编辑.env：
 ```bash
 sudo cp /myems-api/example.env /myems-api/.env

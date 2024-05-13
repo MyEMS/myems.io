@@ -29,6 +29,13 @@ cd /myems-api
 sudo apt install python3-pip
 sudo pip install -r requirements.txt
 ```
+
+:::note
+
+(ubantu24.04)Wenn der Code nicht funktioniert, können Sie den folgenden Code verwenden: sudo pip install -r requirements.txt --break-system-packages
+
+:::
+
 Erstellen Sie eine .env basierend auf example.env und bearbeiten Sie die .env bei Bedarf:
 ```bash
 sudo cp /myems-api/example.env /myems-api/.env
