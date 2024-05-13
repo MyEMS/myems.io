@@ -31,7 +31,7 @@ sudo pip install -r requirements.txt
 
 :::note
 
-(ubantu24.04 LTS)如果代码无法运行，可用如下代码: sudo pip install -r requirements.txt --break-system-packages
+(Ubantu 24.04 LTS)如果代码无法运行，可用如下代码: sudo pip install -r requirements.txt --break-system-packages
 
 :::
 
