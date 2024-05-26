@@ -44,7 +44,12 @@ Kubernetes集群，现场安装一台数据采集器用于数据采集和上传
 
 - 姓名: 张能远
 - 电话微信: (+86) 13011132526
-- LINE ID: myems
 - Email: zny@myems.org
+- LINE ID: myems
+- WhatsApp: https://wa.me/message/6HB55A46RVAJP1
 
 ![WeChat: 13011132526](/img/wechat_nengyuanzhang.png)
+
+![LINE: MyEMS](/img/line_myems.jpg)
+
+![WhatsAPP: MyEMS](/img/whatsapp_myems.png)
