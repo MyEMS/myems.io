@@ -43,7 +43,23 @@ cd myems/database/demo-en
 mysql -u root -p < myems_system_db.sql
 ```
 
-#### Change COLLATE for MySQL server before version 8.0
+:::tip How to fix MySQL error 'access denied for user'
+
+Add Remote Access User
+
+```bash
+sudo mysql -u root -p
+```
+
+```bash
+mysql> CREATE USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '!MyEMS1';
+mysql> GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
+mysql> FLUSH PRIVILEGES;
+mysql> ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '!MyEMS1';
+```
+:::
+
+:::tip How to change COLLATE for MySQL server before version 8.0
 ```bash
 sudo nano /etc/mysql/my.cnf
 ```
@@ -58,10 +74,9 @@ character-set-client-handshake = FALSE
 character-set-server = utf8mb4
 collation-server = utf8mb4_unicode_ci
 ```
+:::
 
-:::tip How to Fix MySQL Error
-
-If you got "a packet bigger than 'max_allowed_packet' bytes"
+:::tip How to fix MySQL error "a packet bigger than 'max_allowed_packet' bytes"
 
 Change the my.cnf or my.ini file (usually found in /etc/mysql/) under the mysqld section and set:
 ```
@@ -74,7 +89,7 @@ set global max_allowed_packet=1000000000;
 ```
 
 :::
-#### 
+####
 
 :::caution
 

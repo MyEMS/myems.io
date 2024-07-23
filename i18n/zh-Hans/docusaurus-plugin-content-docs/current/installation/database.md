@@ -43,8 +43,24 @@ mysql -u root -p < myems_user_db.sql
 cd myems/database/demo-cn
 mysql -u root -p < myems_system_db.sql
 ```
+:::tip 如何修复MySQL错误“用户拒绝访问”
 
-#### 更改MySQL服务器8.0版之前的COLLATE
+添加远程访问用户
+
+```bash
+sudo mysql -u root -p
+```
+
+```bash
+mysql> CREATE USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '!MyEMS1';
+mysql> GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
+mysql> FLUSH PRIVILEGES;
+mysql> ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '!MyEMS1';
+```
+
+:::
+
+:::tip 如何更改MySQL服务器8.0版之前的COLLATE
 
 ```bash
 sudo nano /etc/mysql/my.cnf
@@ -60,10 +76,9 @@ character-set-client-handshake = FALSE
 character-set-server = utf8mb4
 collation-server = utf8mb4_unicode_ci
 ```
+:::
 
-:::tip 如何修复MySQL错误
-
-如果您收到错误消息 “一个大于'max_allowed_packet'字节的数据包”
+:::tip 如何修复MySQL错误“一个大于'max_allowed_packet'字节的数据包”
 
 更改mysqld部分下的my.cnf或my.ini文件（通常在/etc/mysql/中找到），并设置：
 
