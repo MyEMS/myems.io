@@ -44,7 +44,23 @@ cd myems/database/demo-de
 mysql -u root -p < myems_system_db.sql
 ```
 
-#### Ändern Sie COLLATE für MySQL Server vor Version 8.0
+:::tip So beheben Sie den MySQL-Fehler 'Zugriff verweigert für Benutzer'
+
+Remote Access Benutzer hinzufügen
+
+```bash
+sudo mysql -u root -p
+```
+
+```bash
+mysql> CREATE USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '!MyEMS1';
+mysql> GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
+mysql> FLUSH PRIVILEGES;
+mysql> ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '!MyEMS1';
+```
+:::
+
+:::tip Ändern Sie COLLATE für MySQL Server vor Version 8.0
 ```bash
 sudo nano /etc/mysql/my.cnf
 ```
@@ -59,6 +75,7 @@ character-set-client-handshake = FALSE
 character-set-server = utf8mb4
 collation-server = utf8mb4_unicode_ci
 ```
+:::
 
 :::tip So beheben Sie MySQL Fehler
 
