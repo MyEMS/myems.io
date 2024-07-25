@@ -29,7 +29,7 @@ Using open source to help achieve carbon peak carbon neutrality goals.
 4. The product has the opportunity to write into MyEMS industry solutions
 5. The product has the opportunity to get comprehensive recommendation from MyEMS
 
-### Procedures
+## Procedures
 
 1. Mail the product to MyEMS development laboratory
 2. MyEMS team builds test environment
@@ -41,7 +41,7 @@ Using open source to help achieve carbon peak carbon neutrality goals.
 8. Submit test report and integration instruction document
 9. Grant MyEMS authentication certificate
 
-### Contact Us
+## Contact Us
 
 - Name: Zhang Nengyuan
 - Tel & WeChat: (+86) 13011132526

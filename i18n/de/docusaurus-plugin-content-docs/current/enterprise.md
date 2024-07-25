@@ -2,10 +2,10 @@
 sidebar_position: 5
 ---
 
-## Enterprise Edition
+# Enterprise Edition
 
 
-### Optionale Funktionen der MyEMS Enterprise Edition
+## Optionale Funktionen der MyEMS Enterprise Edition
 
 | Eigenschaften                    | Enterprise Edition | Erläuterung   |
 | :---                             |  :----:            |  :----:       |
@@ -87,7 +87,7 @@ sidebar_position: 5
 | Node-RED Low-code programming    |  ✔️        | https://nodered.org/ |
 | DTU Softwares                    |  ✔️        | Data Transfer Unit client and server softwares for Modbus RTU and Modbus TCP  |
 
-### Optionale Dienste der MyEMS Enterprise Edition
+## Optionale Dienste der MyEMS Enterprise Edition
 
 | Eigenschaften                    | Enterprise Edition | Erläuterung   |
 | :---                             |  :----:            |  :----:       |
@@ -104,7 +104,7 @@ sidebar_position: 5
 | Bidding Support Service          |  ✔️        |                      |
 | Customize Support Service        |  ✔️        |                      |
 
-### Kontaktieren Sie uns
+## Kontaktieren Sie uns
 
 - Name: Nengyuan Zhang
 - Tel & WeChat: (+86) 13011132526
