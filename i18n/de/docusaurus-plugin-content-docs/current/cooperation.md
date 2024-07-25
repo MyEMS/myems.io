@@ -28,7 +28,7 @@ Verwendung von Open Source, um die Ziele der CO2-Peak-Kohlenstoffneutralität zu
 4. Das Produkt hat die Möglichkeit, in MyEMS Industrielösungen zu schreiben
 5. Das Produkt hat die Möglichkeit, umfassende Empfehlung von MyEMS zu erhalten
 
-### Verfahren
+## Verfahren
 
 1. Senden Sie das Produkt an MyEMS Entwicklungslabor
 2. MyEMS Team baut Testumgebung
@@ -40,7 +40,7 @@ Verwendung von Open Source, um die Ziele der CO2-Peak-Kohlenstoffneutralität zu
 8. Testbericht und Integrationsanweisungsdokument einreichen
 9. MyEMS-Authentifizierungszertifikat erteilen
 
-### Kontaktieren Sie uns
+## Kontaktieren Sie uns
 
 - Name: Nengyuan Zhang
 - Tel & WeChat: (+86) 13011132526
