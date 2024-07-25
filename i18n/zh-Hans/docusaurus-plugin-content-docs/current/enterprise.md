@@ -2,10 +2,10 @@
 sidebar_position: 5
 ---
 
-# 企业版
+## 企业版
 
 
-## MyEMS企业版可选功能
+### MyEMS企业版可选功能
 
 | 功能                              |企业版        |       说明                 |
 | :---                             |  :----:     |  :----:                    |
@@ -85,7 +85,7 @@ sidebar_position: 5
 | Node-RED 低代码编程                |  ✔️        | https://nodered.org/ |
 | DTU 数据透传软件                   |  ✔️        | 数据透传客户端和服务器端软件，支持Modbus RTU和Modbus TCP从现场到云端数据透传 |
 
-## MyEMS企业版可选服务
+### MyEMS企业版可选服务
 
 | 功能                              |企业版        |       说明                 |
 | :---                             |  :----:     |  :----:                    |
@@ -101,3 +101,17 @@ sidebar_position: 5
 | 投标技术支持服务                   | ✔️        |                      |
 | 二次开发技术支持服务               | ✔️        |                      |
 | 现场技术支持服务                   | ✔️        |                      |
+
+### 联系我们
+
+- 姓名: 张能远
+- 电话微信: (+86) 13011132526
+- Email: zny@myems.org
+- LINE ID: myems
+- WhatsApp: https://wa.me/message/6HB55A46RVAJP1
+
+![WeChat: 13011132526](/img/wechat_nengyuanzhang.png)
+
+![LINE: MyEMS](/img/line_myems.jpg)
+
+![WhatsAPP: MyEMS](/img/whatsapp_myems.png)
