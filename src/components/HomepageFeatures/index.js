@@ -23,7 +23,7 @@ const FeatureList = [
     ),
   },
   {
-    title: <Translate>Powered by Python</Translate>,
+    title: <Translate>Powered by Top Tech Stacks</Translate>,
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
