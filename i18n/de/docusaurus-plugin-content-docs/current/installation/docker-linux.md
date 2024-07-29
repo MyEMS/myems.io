@@ -59,7 +59,7 @@ mkdir /myems-upload
 
 Erstellen eines Containers, binden-mounten des Freigabeordners an den Container und binden-mounten der .env an den Container:
 ```bash
-docker run -d -p 8000:8000 -v /myems-upload:/var/www/myems-admin/upload -v /myems-api/.env:/code/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-api myems/myems-api
+docker run -d -p 8000:8000 -v /myems-upload:/var/www/myems-admin/upload -v /myems-api/.env:/app/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-api myems/myems-api
 ```
 
 * -d Container im Hintergrund ausführen und Container-ID drucken
@@ -211,7 +211,7 @@ docker buildx build --platform=linux/amd64 -t myems/myems-modbus-tcp .
 * Führen Sie einen Docker-Container aus (run as superuser)
 
 ```bash
-docker run -d -v /myems-modbus-tcp/.env:/code/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-modbus-tcp myems/myems-modbus-tcp
+docker run -d -v /myems-modbus-tcp/.env:/app/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-modbus-tcp myems/myems-modbus-tcp
 ```
 
 * -d Container im Hintergrund ausführen und Container-ID drucken
@@ -284,7 +284,7 @@ docker buildx build --platform=linux/amd64 -t myems/myems-cleaning .
 
 * Führen Sie einen Docker-Container aus (run as superuser)
 ```bash
-docker run -d -v /myems-cleaning/.env:/code/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-cleaning myems/myems-cleaning
+docker run -d -v /myems-cleaning/.env:/app/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-cleaning myems/myems-cleaning
 ```
 
 * -d Container im Hintergrund ausführen und Container-ID drucken
@@ -356,7 +356,7 @@ docker buildx build --platform=linux/amd64 -t myems/myems-normalization .
 * Führen Sie einen Docker-Container aus (run as superuser)
 
 ```bash
-docker run -d -v /myems-normalization/.env:/code/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-normalization myems/myems-normalization
+docker run -d -v /myems-normalization/.env:/app/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-normalization myems/myems-normalization
 ```
 
 * -d Container im Hintergrund ausführen und Container-ID drucken
@@ -429,7 +429,7 @@ docker buildx build --platform=linux/amd64 -t myems/myems-aggregation .
 * Führen Sie einen Docker-Container aus (run as superuser)
 
 ```bash
-docker run -d -v /myems-aggregation/.env:/code/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-aggregation myems/myems-aggregation
+docker run -d -v /myems-aggregation/.env:/app/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-aggregation myems/myems-aggregation
 ```
 
 * -d Container im Hintergrund ausführen und Container-ID drucken

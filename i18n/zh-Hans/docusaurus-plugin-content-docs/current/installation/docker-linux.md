@@ -59,7 +59,7 @@ mkdir /myems-upload
 ```
 创建一个容器，将共享上传文件夹绑定到容器，并将.env绑定到容器：
 ```bash
-docker run -d -p 8000:8000 -v /myems-upload:/var/www/myems-admin/upload -v /myems-api/.env:/code/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-api myems/myems-api
+docker run -d -p 8000:8000 -v /myems-upload:/var/www/myems-admin/upload -v /myems-api/.env:/app/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-api myems/myems-api
 ```
 
 * -d 在后台运行容器并打印容器ID
@@ -208,7 +208,7 @@ docker buildx build --platform=linux/amd64 -t myems/myems-modbus-tcp .
 
 * 运行Docker容器 (以超级用户运行)
 ```bash
-docker run -d -v /myems-modbus-tcp/.env:/code/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-modbus-tcp myems/myems-modbus-tcp
+docker run -d -v /myems-modbus-tcp/.env:/app/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-modbus-tcp myems/myems-modbus-tcp
 ```
 
 * -d 在后台运行容器并打印容器ID
@@ -279,7 +279,7 @@ docker buildx build --platform=linux/amd64 -t myems/myems-cleaning .
 
 * 运行Docker容器 (以超级用户运行)
 ```bash
-docker run -d -v /myems-cleaning/.env:/code/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-cleaning myems/myems-cleaning
+docker run -d -v /myems-cleaning/.env:/app/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-cleaning myems/myems-cleaning
 ```
 
 * -d 在后台运行容器并打印容器ID
@@ -350,7 +350,7 @@ docker buildx build --platform=linux/amd64 -t myems/myems-normalization .
 
 * 运行Docker容器 (以超级用户运行)
 ```bash
-docker run -d -v /myems-normalization/.env:/code/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-normalization myems/myems-normalization
+docker run -d -v /myems-normalization/.env:/app/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-normalization myems/myems-normalization
 ```
 
 * -d 在后台运行容器并打印容器ID
@@ -423,7 +423,7 @@ docker buildx build --platform=linux/amd64 -t myems/myems-aggregation .
 
 * 运行Docker容器 (以超级用户运行)
 ```bash
-docker run -d -v /myems-aggregation/.env:/code/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-aggregation myems/myems-aggregation
+docker run -d -v /myems-aggregation/.env:/app/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-aggregation myems/myems-aggregation
 ```
 
 * -d 在后台运行容器并打印容器ID
