@@ -58,7 +58,7 @@ mkdir /myems-upload
 
 Create a container, bind-mount the share folder to the container, and also bind-mount the .env to the container:
 ```bash
-docker run -d -p 8000:8000 -v /myems-upload:/var/www/myems-admin/upload -v /myems-api/.env:/code/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-api myems/myems-api
+docker run -d -p 8000:8000 -v /myems-upload:/var/www/myems-admin/upload -v /myems-api/.env:/app/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-api myems/myems-api
 ```
 
 * -d Run container in background and print container ID
@@ -212,7 +212,7 @@ docker buildx build --platform=linux/amd64 -t myems/myems-modbus-tcp .
 * Run a Docker container (run as superuser)
 
 ```bash
-docker run -d -v /myems-modbus-tcp/.env:/code/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-modbus-tcp myems/myems-modbus-tcp
+docker run -d -v /myems-modbus-tcp/.env:/app/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-modbus-tcp myems/myems-modbus-tcp
 ```
 
 * -d Run container in background and print container ID
@@ -287,7 +287,7 @@ docker buildx build --platform=linux/amd64 -t myems/myems-cleaning .
 * Run a Docker container (run as superuser)
 
 ```bash
-docker run -d -v /myems-cleaning/.env:/code/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-cleaning myems/myems-cleaning
+docker run -d -v /myems-cleaning/.env:/app/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-cleaning myems/myems-cleaning
 ```
 
 * -d Run container in background and print container ID
@@ -361,7 +361,7 @@ docker buildx build --platform=linux/amd64 -t myems/myems-normalization .
 * Run a Docker container (run as superuser)
 
 ```bash
-docker run -d -v /myems-normalization/.env:/code/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-normalization myems/myems-normalization
+docker run -d -v /myems-normalization/.env:/app/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-normalization myems/myems-normalization
 ```
 
 * -d Run container in background and print container ID
@@ -436,7 +436,7 @@ docker buildx build --platform=linux/amd64 -t myems/myems-aggregation .
 * Run a Docker container (run as superuser)
 
 ```bash
-docker run -d -v /myems-aggregation/.env:/code/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-aggregation myems/myems-aggregation
+docker run -d -v /myems-aggregation/.env:/app/.env:ro --log-opt max-size=1m --log-opt max-file=2 --restart always --name myems-aggregation myems/myems-aggregation
 ```
 
 * -d Run container in background and print container ID
