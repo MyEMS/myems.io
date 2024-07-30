@@ -75,6 +75,7 @@ podman run -d -p 8000:8000 -v /myems-upload:/var/www/myems-admin/upload -v /myem
 
 * -v 如果使用-v或--volume绑定装载Podman主机上尚不存在的文件或目录，-v将为您创建端点。它始终创建为目录。
 ro选项（如果存在）会导致绑定装载以只读方式装载到容器中。
+对于 v4.7.0 或更早的版本, 用 '/code/.env' 而不是 '/app/.env'。
 
 * --log-opt max-size=2m 滚动前日志的最大大小。正整数加上表示度量单位（k、m或g）的修饰符。
 
@@ -157,6 +158,7 @@ podman run -d -p 8001:8001 -v /myems-upload:/var/www/myems-admin/upload -v /myem
 * -v 如果使用-v或--volume绑定装载Podman主机上尚不存在的文件或目录，
 -v为您创建端点。它始终创建为目录。
 ro选项（如果存在）会导致绑定装载以只读方式装载到容器中。
+对于 v4.7.0 或更早的版本, 用 '/code/.env' 而不是 '/app/.env'。
 
 * --log-opt max-size=2m 滚动前日志的最大大小。正整数加上表示度量单位（k、m或g）的修饰符。
 
@@ -223,6 +225,7 @@ podman run -d -v /myems-modbus-tcp/.env:/app/.env:ro --log-opt max-size=1m --log
 * -v 如果使用-v或--volume绑定装载Podman主机上尚不存在的文件或目录，
 -v为您创建端点。它始终创建为目录。
 ro选项（如果存在）会导致绑定装载以只读方式装载到容器中。
+对于 v4.7.0 或更早的版本, 用 '/code/.env' 而不是 '/app/.env'。
 
 * --log-opt max-size=2m 滚动前日志的最大大小。正整数加上表示度量单位（k、m或g）的修饰符。
 
@@ -294,6 +297,7 @@ podman run -d -v /myems-cleaning/.env:/app/.env:ro --log-opt max-size=1m --log-o
 * -v 如果使用-v或--volume绑定装载Podman主机上尚不存在的文件或目录，
 -v为您创建端点。它始终创建为目录。
 ro选项（如果存在）会导致绑定装载以只读方式装载到容器中。
+对于 v4.7.0 或更早的版本, 用 '/code/.env' 而不是 '/app/.env'。
 
 * --log-opt max-size=2m 滚动前日志的最大大小。正整数加上表示度量单位（k、m或g）的修饰符。
 
@@ -365,6 +369,7 @@ podman run -d -v /myems-normalization/.env:/app/.env:ro --log-opt max-size=1m --
 * -v 如果使用-v或--volume绑定装载Podman主机上尚不存在的文件或目录，
 -v为您创建端点。它始终创建为目录。
 ro选项（如果存在）会导致绑定装载以只读方式装载到容器中。
+对于 v4.7.0 或更早的版本, 用 '/code/.env' 而不是 '/app/.env'。
 
 * --log-opt max-size=2m 滚动前日志的最大大小。正整数加上表示度量单位（k、m或g）的修饰符。
 
@@ -438,6 +443,7 @@ podman run -d -v /myems-aggregation/.env:/app/.env:ro --log-opt max-size=1m --lo
 * -v 如果使用-v或--volume绑定装载Podman主机上尚不存在的文件或目录，
 -v为您创建端点。它始终创建为目录。
 ro选项（如果存在）会导致绑定装载以只读方式装载到容器中。
+对于 v4.7.0 或更早的版本, 用 '/code/.env' 而不是 '/app/.env'。
 
 * --log-opt max-size=2m 滚动前日志的最大大小。正整数加上表示度量单位（k、m或g）的修饰符。
 
@@ -530,6 +536,7 @@ podman run -d -p 80:80 -v /myems-web/nginx.conf:/etc/nginx/nginx.conf:ro --log-o
 * -v 如果使用-v或--volume绑定装载Podman主机上尚不存在的文件或目录，
 -v为您创建端点。它始终创建为目录。
 ro选项（如果存在）会导致绑定装载以只读方式装载到容器中。
+对于 v4.7.0 或更早的版本, 用 '/code/.env' 而不是 '/app/.env'。
 
 * --log-opt max-size=2m 滚动前日志的最大大小。正整数加上表示度量单位（k、m或g）的修饰符。
 

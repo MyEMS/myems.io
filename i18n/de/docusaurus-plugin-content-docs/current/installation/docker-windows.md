@@ -70,6 +70,7 @@ docker run -d -p 8000:8000 -v c:\myems-upload:/var/www/myems-admin/upload -v c:\
 
 * -v Wenn Sie -v oder --volume verwenden, um eine Datei oder ein Verzeichnis per Bind-Mount bereitzustellen, das noch nicht auf dem Docker-Host vorhanden ist, erstellt -v den Endpunkt für Sie. Es wird immer als Verzeichnis angelegt.
 Die Option ro bewirkt, falls vorhanden, dass der Bind-Mount schreibgeschützt in den Container gemountet wird.
+Verwenden Sie für v4.7.0 oder frühere Versionen '/code/.env' anstelle von '/app/.env'.
 
 * --log-opt max-size=2m Die maximale Größe des Protokolls, bevor es gerollt wird. Eine positive ganze Zahl plus ein Modifikator, der die Maßeinheit darstellt (k, m oder g).
 
@@ -145,6 +146,7 @@ docker run -d -p 8001:8001 -v c:\myems-upload:/var/www/myems-admin/upload -v c:\
 * -v Wenn Sie -v oder --volume verwenden, um eine Datei oder ein Verzeichnis per Bind-Mount bereitzustellen, das noch nicht auf dem Docker-Host vorhanden ist,
 -v erstellt den Endpunkt für Sie. Es wird immer als Verzeichnis angelegt.
 Die Option ro bewirkt, falls vorhanden, dass der Bind-Mount schreibgeschützt in den Container gemountet wird.
+Verwenden Sie für v4.7.0 oder frühere Versionen '/code/.env' anstelle von '/app/.env'.
 
 * --log-opt max-size=2m Die maximale Größe des Protokolls, bevor es gerollt wird. Eine positive ganze Zahl plus ein Modifikator, der die Maßeinheit darstellt (k, m oder g).
 
@@ -211,6 +213,7 @@ docker run -d -v c:\myems-modbus-tcp\.env:/app/.env:ro --log-opt max-size=1m --l
 * -v Wenn Sie -v oder --volume verwenden, um eine Datei oder ein Verzeichnis per Bind-Mount bereitzustellen, das noch nicht auf dem Docker-Host vorhanden ist,
 -v erstellt den Endpunkt für Sie. Es wird immer als Verzeichnis angelegt.
 Die Option ro bewirkt, falls vorhanden, dass der Bind-Mount schreibgeschützt in den Container gemountet wird.
+Verwenden Sie für v4.7.0 oder frühere Versionen '/code/.env' anstelle von '/app/.env'.
 
 * --log-opt max-size=2m Die maximale Größe des Protokolls, bevor es gerollt wird. Eine positive ganze Zahl plus ein Modifikator, der die Maßeinheit darstellt (k, m oder g).
 
@@ -282,6 +285,7 @@ docker run -d -v c:\myems-cleaning\.env:/app/.env:ro --log-opt max-size=1m --log
 * -v Wenn Sie -v oder --volume verwenden, um eine Datei oder ein Verzeichnis per Bind-Mount bereitzustellen, das noch nicht auf dem Docker-Host vorhanden ist,
 -v erstellt den Endpunkt für Sie. Es wird immer als Verzeichnis angelegt.
 Die Option ro bewirkt, falls vorhanden, dass der Bind-Mount schreibgeschützt in den Container gemountet wird.
+Verwenden Sie für v4.7.0 oder frühere Versionen '/code/.env' anstelle von '/app/.env'.
 
 * --log-opt max-size=2m Die maximale Größe des Protokolls, bevor es gerollt wird. Eine positive ganze Zahl plus ein Modifikator, der die Maßeinheit darstellt (k, m oder g).
 
@@ -425,6 +429,7 @@ docker run -d -v /myems-aggregation/.env:/app/.env:ro --log-opt max-size=1m --lo
 * -v Wenn Sie -v oder --volume verwenden, um eine Datei oder ein Verzeichnis per Bind-Mount bereitzustellen, das noch nicht auf dem Docker-Host vorhanden ist,
 -v erstellt den Endpunkt für Sie. Es wird immer als Verzeichnis angelegt.
 Die Option ro bewirkt, falls vorhanden, dass der Bind-Mount schreibgeschützt in den Container gemountet wird.
+Verwenden Sie für v4.7.0 oder frühere Versionen '/code/.env' anstelle von '/app/.env'.
 
 * --log-opt max-size=2m Die maximale Größe des Protokolls, bevor es gerollt wird. Eine positive ganze Zahl plus ein Modifikator, der die Maßeinheit darstellt (k, m oder g).
 
@@ -517,6 +522,7 @@ docker run -d -p 80:80 -v c:\myems-web/nginx.conf:/etc/nginx/nginx.conf:ro --log
 * -v Wenn Sie -v oder --volume verwenden, um eine Datei oder ein Verzeichnis per Bind-Mount bereitzustellen, das noch nicht auf dem Docker-Host vorhanden ist,
 -v erstellt den Endpunkt für Sie. Es wird immer als Verzeichnis angelegt.
 Die Option ro bewirkt, falls vorhanden, dass der Bind-Mount schreibgeschützt in den Container gemountet wird.
+Verwenden Sie für v4.7.0 oder frühere Versionen '/code/.env' anstelle von '/app/.env'.
 
 * --log-opt max-size=2m Die maximale Größe des Protokolls, bevor es gerollt wird. Eine positive ganze Zahl plus ein Modifikator, der die Maßeinheit darstellt (k, m oder g).
 
