@@ -69,6 +69,7 @@ TCP port 8000 (left) of the host machine.
 * -v If you use -v or --volume to bind-mount a file or directory that does not yet exist on the Docker host,
 -v creates the endpoint for you. It is always created as a directory.
 The ro option, if present, causes the bind mount to be mounted into the container as read-only.
+For v4.7.0 or earlier versions, use '/code/.env' instead of '/app/.env'.
 
 * --log-opt max-size=2m The maximum size of the log before it is rolled. A positive integer plus a modifier representing the unit of measure (k, m, or g).
 
@@ -152,6 +153,7 @@ TCP port 8001 (left) of the host machine.
 * -v If you use -v or --volume to bind-mount a file or directory that does not yet exist on the Docker host,
 -v creates the endpoint for you. It is always created as a directory.
 The ro option, if present, causes the bind mount to be mounted into the container as read-only.
+For v4.7.0 or earlier versions, use '/code/.env' instead of '/app/.env'.
 
 * --log-opt max-size=2m The maximum size of the log before it is rolled. A positive integer plus a modifier representing the unit of measure (k, m, or g).
 
@@ -220,6 +222,7 @@ docker run -d -v /myems-modbus-tcp/.env:/app/.env:ro --log-opt max-size=1m --log
 * -v If you use -v or --volume to bind-mount a file or directory that does not yet exist on the Docker host,
 -v creates the endpoint for you. It is always created as a directory.
 The ro option, if present, causes the bind mount to be mounted into the container as read-only.
+For v4.7.0 or earlier versions, use '/code/.env' instead of '/app/.env'.
 
 * --log-opt max-size=2m The maximum size of the log before it is rolled. A positive integer plus a modifier representing the unit of measure (k, m, or g).
 
@@ -295,6 +298,7 @@ docker run -d -v /myems-cleaning/.env:/app/.env:ro --log-opt max-size=1m --log-o
 * -v If you use -v or --volume to bind-mount a file or directory that does not yet exist on the Docker host,
 -v creates the endpoint for you. It is always created as a directory.
 The ro option, if present, causes the bind mount to be mounted into the container as read-only.
+For v4.7.0 or earlier versions, use '/code/.env' instead of '/app/.env'.
 
 * --log-opt max-size=2m The maximum size of the log before it is rolled. A positive integer plus a modifier representing the unit of measure (k, m, or g).
 
@@ -369,6 +373,7 @@ docker run -d -v /myems-normalization/.env:/app/.env:ro --log-opt max-size=1m --
 * -v If you use -v or --volume to bind-mount a file or directory that does not yet exist on the Docker host,
 -v creates the endpoint for you. It is always created as a directory.
 The ro option, if present, causes the bind mount to be mounted into the container as read-only.
+For v4.7.0 or earlier versions, use '/code/.env' instead of '/app/.env'.
 
 * --log-opt max-size=2m The maximum size of the log before it is rolled. A positive integer plus a modifier representing the unit of measure (k, m, or g).
 
@@ -444,6 +449,7 @@ docker run -d -v /myems-aggregation/.env:/app/.env:ro --log-opt max-size=1m --lo
 * -v If you use -v or --volume to bind-mount a file or directory that does not yet exist on the Docker host,
 -v creates the endpoint for you. It is always created as a directory.
 The ro option, if present, causes the bind mount to be mounted into the container as read-only.
+For v4.7.0 or earlier versions, use '/code/.env' instead of '/app/.env'.
 
 * --log-opt max-size=2m The maximum size of the log before it is rolled. A positive integer plus a modifier representing the unit of measure (k, m, or g).
 
@@ -542,6 +548,7 @@ TCP port 80 (left) of the host machine.
 * -v If you use -v or --volume to bind-mount a file or directory that does not yet exist on the Docker host,
 -v creates the endpoint for you. It is always created as a directory.
 The ro option, if present, causes the bind mount to be mounted into the container as read-only.
+For v4.7.0 or earlier versions, use '/code/.env' instead of '/app/.env'.
 
 * --log-opt max-size=2m The maximum size of the log before it is rolled. A positive integer plus a modifier representing the unit of measure (k, m, or g).
 
