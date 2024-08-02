@@ -165,11 +165,11 @@ const config = {
               },
               {
                 label: 'WeChat Group',
-                href: 'https://y20.8if.cn/kb7JDw',
+                href: '/img/qrcode_wechat_group.jpg',
               },
               {
                 label: 'QQ Group',
-                href: 'https://y20.8if.cn/bfveDX',
+                href: '/img/qrcode_qq_group.jpg',
               },
             ],
           },
