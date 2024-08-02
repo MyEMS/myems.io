@@ -135,7 +135,7 @@ MyEMS由资深专业团队开发维护，源代码基于MIT开源软件许可协
 | RESTful API                      | ✔️             | 基于Python开发，提供系统配置、能源报告、Excel导出接口 |
 | Web UI                           | ✔️             | 基于ReactJS开发，用于能源数据分析 |
 | Admin UI                         | ✔️             | 基于AngularJS (version 1.x)开发，用于系统配置管理 |
-| 在线社区技术支持                    | ✔️             |  QQ群号: 792528967                            |
+| 在线社区技术支持                    | ✔️             |  QQ群号: 792528967  微信群 https://y20.8if.cn/kb7JDw                          |
 
 
 ## <a id="myems-downloads" />MyEMS下载(社区版)
