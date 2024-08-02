@@ -164,6 +164,10 @@ const config = {
                 href: 'https://github.com/MyEMS/myems/issues',
               },
               {
+                label: 'WeChat Group',
+                href: 'https://y20.8if.cn/kb7JDw',
+              },
+              {
                 label: 'QQ Group (792528967)',
                 href: 'https://jq.qq.com/?_wv=1027&k=pPKr2e0u',
               },

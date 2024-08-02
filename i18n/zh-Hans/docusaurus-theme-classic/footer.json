@@ -19,6 +19,10 @@
     "message": "Github Issues",
     "description": "The label of footer link with label=Github Issues linking to https://github.com/MyEMS/myems/issues"
   },
+  "link.item.label.WeChat Group": {
+    "message": "微信群",
+    "description": "The label of footer link with label=WeChat Group linking to https://y20.8if.cn/kb7JDw"
+  },
   "link.item.label.QQ Group (792528967)": {
     "message": "QQ群 (792528967)",
     "description": "The label of footer link with label=QQ Group (792528967) linking to https://jq.qq.com/?_wv=1027&k=pPKr2e0u"
