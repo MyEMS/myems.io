@@ -277,7 +277,7 @@
     "message": "行业领先的开源能源管理系统, Gitee推荐项目"
   },
   "MyEMS is being developed and maintained by an experienced development team, and the system's source code is published under MIT license.": {
-    "message": "MyEMS由资深专业团队开发维护, 源代码基于MIT开源软件许可协议发布。"
+    "message": "MyEMS由资深专业团队开发维护, 源代码基于MIT开源软件许可协议发布。社区版使用者必须保留MyEMS相关版权标识及LOGO。"
   },
   "MyEMS is used for collecting, processing, analyzing, reporting and displaying energy data of buildings, factories, shopping malls, data centers and enterprise zones.": {
     "message": "MyEMS开源能源管理系统适用于建筑、工厂、商场、医院、园区的电、水、气等能源数据采集、分析、报表，还有光伏、储能、充电桩、微电网、设备控制、故障诊断、工单管理、人工智能优化等可选功能。"
