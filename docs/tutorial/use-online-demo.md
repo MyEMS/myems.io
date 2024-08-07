@@ -2,48 +2,48 @@
 sidebar_position: 1
 ---
 
-# 使用在线演示
+# Use online demos
 
-## 项目概要
+## Project summary
 
-建筑面积100万平方米，计量表179个，数据点284个，各种业态子系统18个，部署在阿里云容器服务
-Kubernetes集群，现场安装一台数据采集器用于数据采集和上传
+The construction area is 1 million square meters, with 179 meters, 284 data points, and 18 subsystems of various business formats, which are deployed in Alibaba Cloud Container Service
+In a Kubernetes cluster, a data collector is installed on-site for data collection and upload
 
-## 参考手册
+## Reference manual
 
-| 我想看                             |怎么看                        |
+| I want to see                             |how to see                        |
 | :---                              |      :-----                 |
-| 能源管理平台地址                     | https://myems.cloud         |
-| 能源管理平台数据大屏地址              | 请咨询销售人员                 |
-| 空间能耗数据                        | 空间数据>能耗分类分析           |
-| 空间成本数据                        | 空间数据>能耗成本分析           |
-| 空间数据能耗分项分析                 |  空间数据>能耗分项分析，空间选择‘一度城/办公楼’          |
-| 各种业态数据演示方法                 | 空间数据>能耗分类分析，空间选择‘一度城/ABC’,ABC指各种业态空间名称：市政府、办公楼、商场、酒店、博物馆、工厂、全国连锁门店、住宅小区、医院、大学、机场、火车站、养殖场、公寓、地铁站、体育场、公用动力、数据中心           |
-| 租户数据                          |  租户数据>能耗分类分析,空间选择‘一度城/商场/租区’<br/>租户数据>租户账单，空间选择‘一度城/商场/租区’，点击‘提交’和‘导出’<br/>租户数据>批量分析，空间选择‘一度城/商场/租区’，点‘提交’和‘导出’          |
-| 单个计量表趋势数据                  | 计量表数据>计量表趋势分析，空间选择‘一度城/调试空间’           |
-| 总分表平衡分析                     |  计量表数据>总分表平衡分析，空间选择‘一度城/调试空间’，搜索‘ahb01’          |
-|  碳排放数据分析                    |  计量表数据>计量表碳排放分析，空间选择‘一度城/调试空间’          |
-|  制冷站效率                        |  组合设备数据>效率分析，空间选择‘一度城/公用动力/制冷站’          |
-|  数据中心效率                      | 组合设备数据>效率分析，空间选择‘一度城/数据中心’           |
-|  车间能耗数据                      | 车间数据>能耗分类分析，空间选择‘一度城/工厂/生产区’           |
-|  能耗排名演示方法                  | 空间数据>能耗分类分析，空间选择‘一度城’，点击‘提交’后，在‘子空间数据’表格中点击‘电’‘自来水’等排序           |
-|  能耗占比、碳排放等演示方法          | 空间数据>能耗分类分析，空间选择‘一度城’，点击‘提交’后，在结果第二行显示‘子空间分类占比’包含‘电’‘自来水’‘中水’等，鼠标停放到饼状图上显示数值           |
-|  报表导出演示方法                  |  空间数据>能耗分类分析 ，空间选择‘一度城’，点击‘提交’待结果出现后，点击‘导出’，使用Office软件打开下载的文件          |
-| 配电系统实时数据                  | 辅助系统>配电系统           |
-| 能流图                          | 辅助系统>能流图           |
-| 高级报表                        | 菜单：高级报表（TBD)，可结合高级报表邮件演示           |
-| 故障检测与诊断FDD                 | 菜单：故障检测与诊断（TBD)，可结合报警邮件演示           |
-| 连锁门店演示方法                   |  门店数据>能耗分类分析，空间选择‘一度城/连锁门店/东区’          |
-| 制冷站设备能耗数据                 | 设备数据>能耗分类分析，空间选择‘一度城/公用动力/制冷站’           |
-|  多级用户权限演示方法              | 使用连锁门店专用账号登录，空间数据>能耗分类分析，空间选择‘连锁门店’，其它业态空间不可见           |
-|  调试空间                        | 不参与能耗计算，已绑定所有系统中的对象，用于快速查看和故障分析           |
-| 能源管理平台管理员登录地址          | 请咨询销售人员           |
+| Energy platform management address                 | https://myems.cloud         |
+| Energy management platform data large screen address              | Please consult with the salesperson.                 |
+| Space energy consumption data                        | Spatial data>Categorical analysis of energy consumption           |
+| Space cost data                     | Spatial data>Energy consumption cost analysis           |
+| Itemized analysis of energy consumption of spatial data                 |  Spatial data>Itemized analysis of energy consumption，Space selection‘once a city/office building’          |
+| Various business data presentation methods                 | Spatial data>Categorical analysis of energy consumption，Space selection‘Once a city/ABC’,ABC refers to the name of various business spaces：Municipal government、Office building、Mall、Hotel、Museum、Factory、National chain stores、Residential complex、Hospital、University、Aerodrome、Railway station、Farms、Apartment、Subway station、Stadium、Utility power、Data Centers           |
+| Tenant data                          |  Tenant data>Categorical analysis of energy consumption,Space selection‘Once a city/Mall/Rental area’<br/>Tenant data>Tenant bills，Space selection‘/Mall/Rental area’，click‘submit’and‘export’<br/>Tenant data>Batch analysis，Space selection‘Once a city/Mall/Rental area’，click‘submit’and‘export’          |
+| Trend data for individual meters                  | Meter data>Meter trend analysis，Space selection‘Once a city/Debugging space’           |
+| Total score balance analysis                     |  Meter data>Total score balance analysis，Space selection‘Once a city/Debugging space’，search‘ahb01’          |
+|  Carbon emissions data analysis                    |  Meter data>Meter carbon emissions analysis，Space selection‘Once a city/Debugging space’          |
+|  Refrigeration plant efficiency                        |  Combine device data>Efficiency analysis，Space selection‘Once a city/Utility power/Refrigeration stations’          |
+|  Data center efficiency                      | Combine device data>Efficiency analysis，Space selection‘Once a city/Data Centers’           |
+|  Shop floor energy consumption data                      | Shop floor data>Categorical analysis of energy consumption，Space selection‘Once a city/Factory/Production area’           |
+|  Energy Consumption Ranking Presentation Method                  | Spatial data>Categorical analysis of energy consumption，Space selection‘Once a city’，click‘submit’after，at‘Subspace data’click on the form‘electricity’‘tap water’and so on           |
+|  Demonstration methods such as energy consumption proportion and carbon emissions          | Spatial data>Categorical analysis of energy consumption，Space selection‘Once a city’，click‘submit’after，it is displayed in the second line of the result‘Proportion of subspace classification’contain‘electricity’‘tap water’‘Medium water’etc，hover over the pie chart to display the values           |
+|  Report export demo method                  |  Spatial data>Categorical analysis of energy consumption ，Space selection‘Once a city’，click‘submit’wait for the results to appear，click‘export’，use Office software to open the downloaded file          |
+| Real-time data of the power distribution system                  | Assistance systems>Power distribution system           |
+| Energy flow diagram                          | Assistance systems>Energy flow diagram           |
+| Advanced reports                        | menu：Advanced reports（TBD)，it can be combined with advanced report email presentations           |
+| Fault Detection and Diagnostics FDD                 | menu：Fault detection and diagnosis（TBD)，It can be demonstrated in conjunction with alarm emails           |
+| Chain store demonstration method                   |  Store data>Categorical analysis of energy consumption，Space selection‘Once a city/Chain stores/Eastern’          |
+| Refrigeration station equipment energy consumption data                 | Device Data>Categorical analysis of energy consumption，Space selection‘Once a city/Utility power/Refrigeration stations’           |
+|  Multi-level user rights demonstration method              | Log in with a dedicated store account for chain stores，Spatial data>Categorical analysis of energy consumption，Space selection‘Chain stores’，other business spaces are not visible           |
+|  Debugging space                        | Do not participate in the energy consumption calculation，objects in all systems have been bound，for quick viewing and failure analysis           |
+| The login address of the administrator of the energy management platform          | Please ask your sales representative           |
 
 
-## 申请账号
+## Apply for an account
 
-- 姓名: 张能远
-- 电话微信: (+86) 13011132526
+- Name: Zhang Nengyuan
+- Telephone WeChat: (+86) 13011132526
 - Email: zny@myems.org
 - LINE ID: myems
 - WhatsApp: https://wa.me/message/6HB55A46RVAJP1
@@ -53,3 +53,5 @@ Kubernetes集群，现场安装一台数据采集器用于数据采集和上传
 ![LINE: MyEMS](/img/line_myems.jpg)
 
 ![WhatsAPP: MyEMS](/img/whatsapp_myems.png)
+  
+      
