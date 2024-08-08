@@ -1,52 +1,52 @@
 ---
-sidebar_position: 1
+seitenleiste_position: 1
 ---
 
-# Use online demos
+# Nutzen Sie die Online-Demo
 
-## Project summary
+## Zusammenfassung des Projekts
 
-The construction area is 1 million square meters, with 179 meters, 284 data points, and 18 subsystems of various business formats, which are deployed in Alibaba Cloud Container Service
-In a Kubernetes cluster, a data collector is installed on-site for data collection and upload
+Die bebaute Fläche beträgt 1 Million Quadratmeter, 179 Meter, 284 Datenpunkte, es gibt 18 Subsysteme in verschiedenen Formaten,bereitgestellt auf dem Alibaba Cloud Container Service
+In einem Kubernetes-Cluster, Für die Datenerfassung und den Upload wird vor Ort ein Datensammler installiert
 
-## Reference manual
+## Referenzhandbuch
 
-| I want to see                             |how to see                        |
+| Ich möchte es sehen                             |Wie man schaut                        |
 | :---                              |      :-----                 |
-| Energy platform management address                 | https://myems.cloud         |
-| Energy management platform data large screen address              | Please consult with the salesperson.                 |
-| Space energy consumption data                        | Spatial data>Categorical analysis of energy consumption           |
-| Space cost data                     | Spatial data>Energy consumption cost analysis           |
-| Itemized analysis of energy consumption of spatial data                 |  Spatial data>Itemized analysis of energy consumption，Space selection‘once a city/office building’          |
-| Various business data presentation methods                 | Spatial data>Categorical analysis of energy consumption，Space selection‘Once a city/ABC’,ABC refers to the name of various business spaces：Municipal government、Office building、Mall、Hotel、Museum、Factory、National chain stores、Residential complex、Hospital、University、Aerodrome、Railway station、Farms、Apartment、Subway station、Stadium、Utility power、Data Centers           |
-| Tenant data                          |  Tenant data>Categorical analysis of energy consumption,Space selection‘Once a city/Mall/Rental area’<br/>Tenant data>Tenant bills，Space selection‘/Mall/Rental area’，click‘submit’and‘export’<br/>Tenant data>Batch analysis，Space selection‘Once a city/Mall/Rental area’，click‘submit’and‘export’          |
-| Trend data for individual meters                  | Meter data>Meter trend analysis，Space selection‘Once a city/Debugging space’           |
-| Total score balance analysis                     |  Meter data>Total score balance analysis，Space selection‘Once a city/Debugging space’，search‘ahb01’          |
-|  Carbon emissions data analysis                    |  Meter data>Meter carbon emissions analysis，Space selection‘Once a city/Debugging space’          |
-|  Refrigeration plant efficiency                        |  Combine device data>Efficiency analysis，Space selection‘Once a city/Utility power/Refrigeration stations’          |
-|  Data center efficiency                      | Combine device data>Efficiency analysis，Space selection‘Once a city/Data Centers’           |
-|  Shop floor energy consumption data                      | Shop floor data>Categorical analysis of energy consumption，Space selection‘Once a city/Factory/Production area’           |
-|  Energy Consumption Ranking Presentation Method                  | Spatial data>Categorical analysis of energy consumption，Space selection‘Once a city’，click‘submit’after，at‘Subspace data’click on the form‘electricity’‘tap water’and so on           |
-|  Demonstration methods such as energy consumption proportion and carbon emissions          | Spatial data>Categorical analysis of energy consumption，Space selection‘Once a city’，click‘submit’after，it is displayed in the second line of the result‘Proportion of subspace classification’contain‘electricity’‘tap water’‘Medium water’etc，hover over the pie chart to display the values           |
-|  Report export demo method                  |  Spatial data>Categorical analysis of energy consumption ，Space selection‘Once a city’，click‘submit’wait for the results to appear，click‘export’，use Office software to open the downloaded file          |
-| Real-time data of the power distribution system                  | Assistance systems>Power distribution system           |
-| Energy flow diagram                          | Assistance systems>Energy flow diagram           |
-| Advanced reports                        | menu：Advanced reports（TBD)，it can be combined with advanced report email presentations           |
-| Fault Detection and Diagnostics FDD                 | menu：Fault detection and diagnosis（TBD)，It can be demonstrated in conjunction with alarm emails           |
-| Chain store demonstration method                   |  Store data>Categorical analysis of energy consumption，Space selection‘Once a city/Chain stores/Eastern’          |
-| Refrigeration station equipment energy consumption data                 | Device Data>Categorical analysis of energy consumption，Space selection‘Once a city/Utility power/Refrigeration stations’           |
-|  Multi-level user rights demonstration method              | Log in with a dedicated store account for chain stores，Spatial data>Categorical analysis of energy consumption，Space selection‘Chain stores’，other business spaces are not visible           |
-|  Debugging space                        | Do not participate in the energy consumption calculation，objects in all systems have been bound，for quick viewing and failure analysis           |
-| The login address of the administrator of the energy management platform          | Please ask your sales representative           |
+| Die Adresse der Energiemanagement-Plattform                 | https://myems.cloud         |
+| Die Adresse des großen Bildschirms der Energiemanagement-Plattform              | Bitte fragen Sie Ihren Vertriebsmitarbeiter                 |
+| Daten zum Energieverbrauch im Weltraum                        | Räumliche Daten>Kategorische Analyse des Energieverbrauchs           |
+| Daten zu den Flächenkosten                     | Räumliche Daten>Analyse der Energieverbrauchskosten           |
+| Detaillierte Analyse des Energieverbrauchs von Geodaten                 |  Räumliche Daten>Detaillierte Analyse des Energieverbrauchs，auswahl der Flächen‘Einst eine Stadt/Bürohaus’          |
+| Verschiedene Methoden zur Darstellung von Geschäftsdaten                 | Räumliche Daten>Kategorische Analyse des Energieverbrauchs，auswahl der Flächen‘Einst eine Stadt/ABC’,ABC bezeichnet die Bezeichnung verschiedener Geschäftsräume：Stadtregierung、Bürohaus、Einkaufszentrum、Hotel、Museum、Fabrik、Nationale Filialisten、Wohnanlage、Krankenhaus、Krankenhaus、Flugplatz、Bahnhof、Bauernhöfe、Wohnung、U-Bahnhof、Stadion、Netzstrom、Rechenzentren           |
+| Mieter-Daten                          |  Mieter-Daten>Kategorische Analyse des Energieverbrauchs,auswahl der Flächen‘Einst eine Stadt/Einkaufszentrum/Mietbereich’<br/>Mieter-Daten>Rechnungen der Mieter，auswahl der Flächen‘/Einkaufszentrum/Mietbereich’，klicken‘Senden’und‘exportieren’<br/>Mieter-Daten>Batch-Analyse，auswahl der Flächen‘Einst eine Stadt/Einkaufszentrum/Mietbereich’，klicken‘Senden’und‘exportieren’          |
+| Trenddaten für einzelne Zähler                  | Zähler-Daten>Trendanalyse des Messgeräts，auswahl der Flächen‘Einst eine Stadt/Debuggen von Speicherplatz’           |
+| Analyse der Gesamtpunktzahl                     |  Zähler-Daten>Analyse der Gesamtpunktzahl，auswahl der Flächen‘Einst eine Stadt/Debuggen von Speicherplatz’，suchen‘ahb01’          |
+|  Datenanalyse der Kohlenstoffemissionen                    |  Zähler-Daten>Analyse der Kohlenstoffemissionen von Messgeräten，auswahl der Flächen‘Einst eine Stadt/Debuggen von Speicherplatz’          |
+|  Effizienz von Kälteanlagen                        |  Kombinieren von Gerätedaten>Analyse der Effizienz，auswahl der Flächen‘Einst eine Stadt/Netzstrom/Kälteanlagen’          |
+|  Effizienz im Rechenzentrum                      | Kombinieren von Gerätedaten>Analyse der Effizienz，auswahl der Flächen‘Einst eine Stadt/Rechenzentren’           |
+|  Daten zum Energieverbrauch in der Fertigung                      | Shopfloor-Daten>Kategorische Analyse des Energieverbrauchs，auswahl der Flächen‘Einst eine Stadt/Fabrik/Produktionsbereich’           |
+|  Energieverbrauchs-Ranking-Präsentationsmethode                  | Räumliche Daten>Kategorische Analyse des Energieverbrauchs，auswahl der Flächen‘Einst eine Stadt’，klicken‘Senden’nach，bei‘Subraum-Daten’Klicken Sie auf das Formular‘Elektrizität’‘Leitungswasser’und so weiter           |
+|  Demonstrationsmethoden wie Energieverbrauch, Anteil und CO2-Emissionen          | Räumliche Daten>Kategorische Analyse des Energieverbrauchs，auswahl der Flächen‘Einst eine Stadt’，klicken‘Senden’nach，es wird in der zweiten Zeile des Ergebnisses angezeigt‘Anteil der Teilraumklassifizierung’enthalten‘Elektrizität’‘Leitungswasser’‘Mittleres Wasser’etc，bewegen Sie den Mauszeiger über das Kreisdiagramm, um die Werte anzuzeigen           |
+|  Demomethode zum Exportieren von Berichten                  |  Räumliche Daten>Kategorische Analyse des Energieverbrauchs ，auswahl der Flächen‘Einst eine Stadt’，klicken‘Senden’Warten Sie, bis die Ergebnisse angezeigt werden，klicken‘exportieren’，verwenden Sie die Office-Software, um die heruntergeladene Datei zu öffnen          |
+| Echtzeitdaten des Energieverteilungssystems                  | Assistenzsysteme>Stromverteilungssystem           |
+| Energieflussdiagramm                          | Assistenzsysteme>Energieflussdiagramm           |
+| Erweiterte Berichte                        | Menü：Erweiterte Berichte（TBD)，es kann mit erweiterten Berichts-E-Mail-Präsentationen kombiniert werden           |
+| Fehlererkennung und -diagnose FDD                 | Menü：Fehlererkennung und -diagnose（TBD)，es kann in Verbindung mit Alarm-E-Mails demonstriert werden           |
+| Demonstrationsmethode für Filialen                   |  Speichern von Daten>Kategorische Analyse des Energieverbrauchs，auswahl der Flächen‘Einst eine Stadt/Filialisten/Östlich’          |
+| Daten zum Energieverbrauch der Kühlstationsausrüstung                 | Gerätedaten>Kategorische Analyse des Energieverbrauchs，auswahl der Flächen‘Einst eine Stadt/Netzstrom/Kälteanlagen’           |
+|  Mehrstufige Demonstrationsmethode für Benutzerrechte              | Melden Sie sich mit einem dedizierten Filialkonto für Filialisten an，Räumliche Daten>Kategorische Analyse des Energieverbrauchs，auswahl der Flächen‘Filialisten’，andere Geschäftsräume sind nicht sichtbar           |
+|  Debuggen von Speicherplatz                        | Beteiligen Sie sich nicht an der Berechnung des Energieverbrauchs，objekte in allen Systemen wurden für eine schnelle Anzeige und Fehleranalyse gebunden           |
+| Die Login-Adresse des Administrators der Energiemanagement-Plattform          | Bitte fragen Sie Ihren Vertriebsmitarbeiter           |
 
 
-## Apply for an account
+## Beantragen Sie ein Konto
 
 - Name: Zhang Nengyuan
-- Telephone WeChat: (+86) 13011132526
-- Email: zny@myems.org
-- LINE ID: myems
-- WhatsApp: https://wa.me/message/6HB55A46RVAJP1
+- Telefon WeChat: (+86) 13011132526
+- E-Mail: zny@myems.org
+- LINIEN-ID: myems
+- WhatsApp (Englisch): https://wa.me/message/6HB55A46RVAJP1
 
 ![WeChat: 13011132526](/img/wechat_nengyuanzhang.png)
 
