@@ -1,55 +1,56 @@
 ---
-sidebar_position: 1
+seitenleiste_position: 1
 ---
 
-# 使用在线演示
+# Nutzen Sie die Online-Demo
 
-## 项目概要
+## Zusammenfassung des Projekts
 
-建筑面积100万平方米，计量表179个，数据点284个，各种业态子系统18个，部署在阿里云容器服务
-Kubernetes集群，现场安装一台数据采集器用于数据采集和上传
+Die bebaute Fläche beträgt 1 Million Quadratmeter, 179 Meter, 284 Datenpunkte, es gibt 18 Subsysteme in verschiedenen Formaten,bereitgestellt auf dem Alibaba Cloud Container Service
+In einem Kubernetes-Cluster, Für die Datenerfassung und den Upload wird vor Ort ein Datensammler installiert
 
-## 参考手册
+## Referenzhandbuch
 
-| 我想看                             |怎么看                        |
+| Ich möchte es sehen                             |Wie man schaut                        |
 | :---                              |      :-----                 |
-| 能源管理平台地址                     | https://myems.cloud         |
-| 能源管理平台数据大屏地址              | 请咨询销售人员                 |
-| 空间能耗数据                        | 空间数据>能耗分类分析           |
-| 空间成本数据                        | 空间数据>能耗成本分析           |
-| 空间数据能耗分项分析                 |  空间数据>能耗分项分析，空间选择‘一度城/办公楼’          |
-| 各种业态数据演示方法                 | 空间数据>能耗分类分析，空间选择‘一度城/ABC’,ABC指各种业态空间名称：市政府、办公楼、商场、酒店、博物馆、工厂、全国连锁门店、住宅小区、医院、大学、机场、火车站、养殖场、公寓、地铁站、体育场、公用动力、数据中心           |
-| 租户数据                          |  租户数据>能耗分类分析,空间选择‘一度城/商场/租区’<br/>租户数据>租户账单，空间选择‘一度城/商场/租区’，点击‘提交’和‘导出’<br/>租户数据>批量分析，空间选择‘一度城/商场/租区’，点‘提交’和‘导出’          |
-| 单个计量表趋势数据                  | 计量表数据>计量表趋势分析，空间选择‘一度城/调试空间’           |
-| 总分表平衡分析                     |  计量表数据>总分表平衡分析，空间选择‘一度城/调试空间’，搜索‘ahb01’          |
-|  碳排放数据分析                    |  计量表数据>计量表碳排放分析，空间选择‘一度城/调试空间’          |
-|  制冷站效率                        |  组合设备数据>效率分析，空间选择‘一度城/公用动力/制冷站’          |
-|  数据中心效率                      | 组合设备数据>效率分析，空间选择‘一度城/数据中心’           |
-|  车间能耗数据                      | 车间数据>能耗分类分析，空间选择‘一度城/工厂/生产区’           |
-|  能耗排名演示方法                  | 空间数据>能耗分类分析，空间选择‘一度城’，点击‘提交’后，在‘子空间数据’表格中点击‘电’‘自来水’等排序           |
-|  能耗占比、碳排放等演示方法          | 空间数据>能耗分类分析，空间选择‘一度城’，点击‘提交’后，在结果第二行显示‘子空间分类占比’包含‘电’‘自来水’‘中水’等，鼠标停放到饼状图上显示数值           |
-|  报表导出演示方法                  |  空间数据>能耗分类分析 ，空间选择‘一度城’，点击‘提交’待结果出现后，点击‘导出’，使用Office软件打开下载的文件          |
-| 配电系统实时数据                  | 辅助系统>配电系统           |
-| 能流图                          | 辅助系统>能流图           |
-| 高级报表                        | 菜单：高级报表（TBD)，可结合高级报表邮件演示           |
-| 故障检测与诊断FDD                 | 菜单：故障检测与诊断（TBD)，可结合报警邮件演示           |
-| 连锁门店演示方法                   |  门店数据>能耗分类分析，空间选择‘一度城/连锁门店/东区’          |
-| 制冷站设备能耗数据                 | 设备数据>能耗分类分析，空间选择‘一度城/公用动力/制冷站’           |
-|  多级用户权限演示方法              | 使用连锁门店专用账号登录，空间数据>能耗分类分析，空间选择‘连锁门店’，其它业态空间不可见           |
-|  调试空间                        | 不参与能耗计算，已绑定所有系统中的对象，用于快速查看和故障分析           |
-| 能源管理平台管理员登录地址          | 请咨询销售人员           |
+| Die Adresse der Energiemanagement-Plattform                 | https://myems.cloud         |
+| Die Adresse des großen Bildschirms der Energiemanagement-Plattform              | Bitte fragen Sie Ihren Vertriebsmitarbeiter                 |
+| Daten zum Energieverbrauch im Weltraum                        | Räumliche Daten>Kategorische Analyse des Energieverbrauchs           |
+| Daten zu den Flächenkosten                     | Räumliche Daten>Analyse der Energieverbrauchskosten           |
+| Detaillierte Analyse des Energieverbrauchs von Geodaten                 |  Räumliche Daten>Detaillierte Analyse des Energieverbrauchs，auswahl der Flächen‘Einst eine Stadt/Bürohaus’          |
+| Verschiedene Methoden zur Darstellung von Geschäftsdaten                 | Räumliche Daten>Kategorische Analyse des Energieverbrauchs，auswahl der Flächen‘Einst eine Stadt/ABC’,ABC bezeichnet die Bezeichnung verschiedener Geschäftsräume：Stadtregierung、Bürohaus、Einkaufszentrum、Hotel、Museum、Fabrik、Nationale Filialisten、Wohnanlage、Krankenhaus、Krankenhaus、Flugplatz、Bahnhof、Bauernhöfe、Wohnung、U-Bahnhof、Stadion、Netzstrom、Rechenzentren           |
+| Mieter-Daten                          |  Mieter-Daten>Kategorische Analyse des Energieverbrauchs,auswahl der Flächen‘Einst eine Stadt/Einkaufszentrum/Mietbereich’<br/>Mieter-Daten>Rechnungen der Mieter，auswahl der Flächen‘/Einkaufszentrum/Mietbereich’，klicken‘Senden’und‘exportieren’<br/>Mieter-Daten>Batch-Analyse，auswahl der Flächen‘Einst eine Stadt/Einkaufszentrum/Mietbereich’，klicken‘Senden’und‘exportieren’          |
+| Trenddaten für einzelne Zähler                  | Zähler-Daten>Trendanalyse des Messgeräts，auswahl der Flächen‘Einst eine Stadt/Debuggen von Speicherplatz’           |
+| Analyse der Gesamtpunktzahl                     |  Zähler-Daten>Analyse der Gesamtpunktzahl，auswahl der Flächen‘Einst eine Stadt/Debuggen von Speicherplatz’，suchen‘ahb01’          |
+|  Datenanalyse der Kohlenstoffemissionen                    |  Zähler-Daten>Analyse der Kohlenstoffemissionen von Messgeräten，auswahl der Flächen‘Einst eine Stadt/Debuggen von Speicherplatz’          |
+|  Effizienz von Kälteanlagen                        |  Kombinieren von Gerätedaten>Analyse der Effizienz，auswahl der Flächen‘Einst eine Stadt/Netzstrom/Kälteanlagen’          |
+|  Effizienz im Rechenzentrum                      | Kombinieren von Gerätedaten>Analyse der Effizienz，auswahl der Flächen‘Einst eine Stadt/Rechenzentren’           |
+|  Daten zum Energieverbrauch in der Fertigung                      | Shopfloor-Daten>Kategorische Analyse des Energieverbrauchs，auswahl der Flächen‘Einst eine Stadt/Fabrik/Produktionsbereich’           |
+|  Energieverbrauchs-Ranking-Präsentationsmethode                  | Räumliche Daten>Kategorische Analyse des Energieverbrauchs，auswahl der Flächen‘Einst eine Stadt’，klicken‘Senden’nach，bei‘Subraum-Daten’Klicken Sie auf das Formular‘Elektrizität’‘Leitungswasser’und so weiter           |
+|  Demonstrationsmethoden wie Energieverbrauch, Anteil und CO2-Emissionen          | Räumliche Daten>Kategorische Analyse des Energieverbrauchs，auswahl der Flächen‘Einst eine Stadt’，klicken‘Senden’nach，es wird in der zweiten Zeile des Ergebnisses angezeigt‘Anteil der Teilraumklassifizierung’enthalten‘Elektrizität’‘Leitungswasser’‘Mittleres Wasser’etc，bewegen Sie den Mauszeiger über das Kreisdiagramm, um die Werte anzuzeigen           |
+|  Demomethode zum Exportieren von Berichten                  |  Räumliche Daten>Kategorische Analyse des Energieverbrauchs ，auswahl der Flächen‘Einst eine Stadt’，klicken‘Senden’Warten Sie, bis die Ergebnisse angezeigt werden，klicken‘exportieren’，verwenden Sie die Office-Software, um die heruntergeladene Datei zu öffnen          |
+| Echtzeitdaten des Energieverteilungssystems                  | Assistenzsysteme>Stromverteilungssystem           |
+| Energieflussdiagramm                          | Assistenzsysteme>Energieflussdiagramm           |
+| Erweiterte Berichte                        | Menü：Erweiterte Berichte（TBD)，es kann mit erweiterten Berichts-E-Mail-Präsentationen kombiniert werden           |
+| Fehlererkennung und -diagnose FDD                 | Menü：Fehlererkennung und -diagnose（TBD)，es kann in Verbindung mit Alarm-E-Mails demonstriert werden           |
+| Demonstrationsmethode für Filialen                   |  Speichern von Daten>Kategorische Analyse des Energieverbrauchs，auswahl der Flächen‘Einst eine Stadt/Filialisten/Östlich’          |
+| Daten zum Energieverbrauch der Kühlstationsausrüstung                 | Gerätedaten>Kategorische Analyse des Energieverbrauchs，auswahl der Flächen‘Einst eine Stadt/Netzstrom/Kälteanlagen’           |
+|  Mehrstufige Demonstrationsmethode für Benutzerrechte              | Melden Sie sich mit einem dedizierten Filialkonto für Filialisten an，Räumliche Daten>Kategorische Analyse des Energieverbrauchs，auswahl der Flächen‘Filialisten’，andere Geschäftsräume sind nicht sichtbar           |
+|  Debuggen von Speicherplatz                        | Beteiligen Sie sich nicht an der Berechnung des Energieverbrauchs，objekte in allen Systemen wurden für eine schnelle Anzeige und Fehleranalyse gebunden           |
+| Die Login-Adresse des Administrators der Energiemanagement-Plattform          | Bitte fragen Sie Ihren Vertriebsmitarbeiter           |
 
 
-## 申请账号
+## Beantragen Sie ein Konto
 
-- 姓名: 张能远
-- 电话微信: (+86) 13011132526
-- Email: zny@myems.org
-- LINE ID: myems
-- WhatsApp: https://wa.me/message/6HB55A46RVAJP1
+- Name: Zhang Nengyuan
+- Telefon WeChat: (+86) 13011132526
+- E-Mail: zny@myems.org
+- LINIEN-ID: myems
+- WhatsApp (Englisch): https://wa.me/message/6HB55A46RVAJP1
 
 ![WeChat: 13011132526](/img/wechat_nengyuanzhang.png)
 
 ![LINE: MyEMS](/img/line_myems.jpg)
 
 ![WhatsAPP: MyEMS](/img/whatsapp_myems.png)
+  
