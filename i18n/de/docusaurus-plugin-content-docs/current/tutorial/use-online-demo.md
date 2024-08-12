@@ -1,5 +1,5 @@
 ---
-seitenleiste_position: 1
+sidebar_position: 1
 ---
 
 # Nutzen Sie die Online-Demo
