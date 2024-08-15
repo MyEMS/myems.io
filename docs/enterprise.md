@@ -34,7 +34,6 @@ sidebar_position: 5
 | Shopfloor Energy Plan Data       |  ✔️        | Enterprise version license, or customizable development |
 | Combined Equipment Energy Plan Data |  ✔️        | Enterprise version license, or customizable development |
 | Carbon Footprint Analysis        |  ✔️        |                      |
-| Carbon Emission Analysis         |  ✔️        |                      |
 | BACnet/IP                        |  ✔️        | http://www.bacnet.org/ |
 | MQTT Subscriber                  |  ✔️        | https://mqtt.org/ |
 | Kafka Consumer                   |  ✔️        | https://kafka.apache.org/ |
