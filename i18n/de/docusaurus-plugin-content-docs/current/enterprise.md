@@ -35,7 +35,6 @@ sidebar_position: 5
 | Shopfloor Energy Plan Data            |  ✔️   | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
 | Combined Equipment Energy Plan Data   |  ✔️   | Erfordert eine Komponente zur Vorhersage des Energieverbrauchs |
 | Analyse des CO2-Fußabdrucks      | ✔️        |                      |
-| Analyse der Kohlenstoffemissionen| ✔️        |                      |
 | Mikrogitter                      |  ✔️       |  PV, Energiespeicherbatterie, Last, Netz, Generator      |
 | BACnet/IP                        | ✔️        | http://www.bacnet.org/ |
 | MQTT Subscriber                  |  ✔️        | https://mqtt.org/ |
