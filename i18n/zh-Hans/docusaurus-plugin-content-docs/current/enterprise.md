@@ -55,6 +55,7 @@ sidebar_position: 5
 | 从Oracle采集数据                   | ✔️        | https://www.oracle.com/database/ |
 | 从MongoDB采集数据                  | ✔️        | https://www.mongodb.com/ |
 | 从InfluxDB采集数据                 | ✔️        | https://www.influxdata.com/products/influxdb/ |
+| 从TDengine采集数据                 | ✔️        | https://www.taosdata.com/ |
 | 能量积分仪                         | ✔️         | 企业版组件授权，可定制开发 |
 | 设备运行时长累计软件                 | ✔️         | 企业版组件授权，可定制开发 |
 | FDD 能效故障诊断系统                | ✔️        | 企业版组件授权，可定制开发 |

@@ -57,6 +57,7 @@ sidebar_position: 5
 | Ingest from Oracle               |  ✔️        | https://www.oracle.com/database/ |
 | Ingest from MongoDB              |  ✔️        | https://www.mongodb.com/ |
 | Ingest from InfluxDB             |  ✔️        | https://www.influxdata.com/products/influxdb/ |
+| Ingest from TDengine             |  ✔️        | https://www.taosdata.com/ |
 | Energy integrator                |  ✔️        | Enterprise Version Lizenz oder anpassbare Entwicklung |
 | Equipment Runtime Totalization   |  ✔️        | Enterprise Version Lizenz oder anpassbare Entwicklung |
 | FDD Rule Engine                  |  ✔️        | Enterprise Version Lizenz oder anpassbare Entwicklung |
