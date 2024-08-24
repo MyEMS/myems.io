@@ -24,8 +24,14 @@ git clone https://gitee.com/myems/myems
 * 安装 myems-api 服务:
 ```bash
 sudo cp -r ~/myems/myems-api /myems-api
+```
+```bash
 cd /myems-api
+```
+```bash
 sudo apt install python3-pip
+```
+```bash
 sudo pip install -r requirements.txt
 ```
 
@@ -38,6 +44,8 @@ sudo pip install -r requirements.txt
 根据example.env创建.env文件，并根据需要编辑.env：
 ```bash
 sudo cp /myems-api/example.env /myems-api/.env
+```
+```bash
 sudo nano /myems-api/.env
 ```
 将端口添加到防火墙：
@@ -47,17 +55,25 @@ sudo ufw allow 8000
 安装 systemd 配置文件:
 ```bash
 sudo cp /myems-api/myems-api.service /lib/systemd/system/
+```
+```bash
 sudo cp /myems-api/myems-api.socket /lib/systemd/system/
+```
+```bash
 sudo cp /myems-api/myems-api.conf /usr/lib/tmpfiles.d/
 ```
 接下来启用这些服务，以便它们在启动时自动启动：
 ```bash
 sudo systemctl enable myems-api.socket
+```
+```bash
 sudo systemctl enable myems-api.service
 ```
 启动服务：
 ```bash
 sudo systemctl start myems-api.socket
+```
+```bash
 sudo systemctl start myems-api.service
 ```
 
@@ -120,7 +136,11 @@ sudo nano /etc/nginx/conf.d/myems-admin.conf
   如果服务器无法连接到internet，请压缩myems/myems-admin文件夹并将其上传到服务器，然后将其解压缩到~/myems/myems-admin
 ```bash
 sudo mkdir /var/www
+```
+```bash
 sudo cp -r ~/myems/myems-admin  /var/www/myems-admin
+```
+```bash
 sudo chmod 0755 -R /var/www/myems-admin
 ```
 检查配置文件，必要时进行更改：
@@ -152,13 +172,19 @@ sudo systemctl restart nginx.service
 
 ```bash
 sudo cp -r ~/myems/myems-modbus-tcp /myems-modbus-tcp
+```
+```bash
 cd /myems-modbus-tcp
+```
+```bash
 sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 ```
 
 将exmaple.ev文件复制到.env并修改.env文件：
 ```bash
 sudo cp /myems-modbus-tcp/example.env /myems-modbus-tcp/.env
+```
+```bash
 sudo nano /myems-modbus-tcp/.env
 ```
 安装 systemd 服务:
@@ -188,13 +214,19 @@ cat /myems-modbus-tcp.log
 
 ```bash
 sudo cp -r ~/myems/myems-cleaning /myems-cleaning
+```
+```bash
 cd /myems-cleaning
+```
+```bash
 sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 ```
 
 将exmaple.ev文件复制到.env并修改.env文件：
 ```bash
 sudo cp /myems-cleaning/example.env /myems-cleaning/.env
+```
+```bash
 sudo nano /myems-cleaning/.env
 ```
 安装systemd服务：
@@ -224,13 +256,19 @@ cat /myems-cleaning.log
 
 ```bash
 sudo cp -r ~/myems/myems-normalization /myems-normalization
+```
+```bash
 cd /myems-normalization
+```
+```bash
 sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 ```
 
 将exmaple.ev文件复制到.env并修改.env文件：
 ```bash
 sudo cp /myems-normalization/example.env /myems-normalization/.env
+```
+```bash
 sudo nano /myems-normalization/.env
 ```
 安装systemd服务
@@ -260,12 +298,18 @@ cat /myems-normalization.log
 
 ```bash
 sudo cp -r ~/myems/myems-aggregation /myems-aggregation
+```
+```bash
 cd /myems-aggregation
+```
+```bash
 sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 ```
 将exmaple.ev文件复制到.env并修改.env文件：
 ```bash
 sudo cp /myems-aggregation/example.env /myems-aggregation/.env
+```
+```bash
 sudo nano /myems-aggregation/.env
 ```
 安装systemd服务
@@ -361,12 +405,16 @@ sudo apt-get install -y nodejs
 
 ```bash
 cd ~/myems/myems-web
+```
+```bash
 sudo nano src/config.js
 ```
 
 编译：
 ```bash
 sudo npm i --unsafe-perm=true --allow-root --legacy-peer-deps
+```
+```bash
 sudo npm run build
 ```
 
@@ -374,6 +422,8 @@ sudo npm run build
 注意，以下路径应该与nginx.conf中配置的路径相同。
 ```bash
 sudo rm -r /var/www/myems-web
+```
+```bash
 sudo mv build  /var/www/myems-web
 ```
 
