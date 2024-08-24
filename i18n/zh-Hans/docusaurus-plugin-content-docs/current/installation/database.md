@@ -23,17 +23,41 @@ MyEMS可以运行在以下MySQL兼容的数据库服务器。
 
 ```bash
 cd myems/database/install
+```
+```bash
 mysql -u root -p < myems_billing_baseline_db.sql
+```
+```bash
 mysql -u root -p < myems_billing_db.sql
+```
+```bash
 mysql -u root -p < myems_carbon_db.sql
+```
+```bash
 mysql -u root -p < myems_energy_baseline_db.sql
+```
+```bash
 mysql -u root -p < myems_energy_db.sql
+```
+```bash
 mysql -u root -p < myems_energy_model_db.sql
+```
+```bash
 mysql -u root -p < myems_fdd_db.sql
+```
+```bash
 mysql -u root -p < myems_historical_db.sql
+```
+```bash
 mysql -u root -p < myems_production_db.sql
+```
+```bash
 mysql -u root -p < myems_reporting_db.sql
+```
+```bash
 mysql -u root -p < myems_system_db.sql
+```
+```bash
 mysql -u root -p < myems_user_db.sql
 ```
 
@@ -41,6 +65,8 @@ mysql -u root -p < myems_user_db.sql
 
 ```bash
 cd myems/database/demo-cn
+```
+```bash
 mysql -u root -p < myems_system_db.sql
 ```
 :::tip 如何修复MySQL错误“用户拒绝访问”
@@ -53,8 +79,14 @@ sudo mysql -u root -p
 
 ```bash
 mysql> CREATE USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '!MyEMS1';
+```
+```bash
 mysql> GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
+```
+```bash
 mysql> FLUSH PRIVILEGES;
+```
+```bash
 mysql> ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '!MyEMS1';
 ```
 
