@@ -23,17 +23,41 @@ Führen Sie die folgenden Skripte in der MySQL-Kommandozeile aus oder führen Si
 
 ```bash
 cd myems/database/install
+```
+```bash
 mysql -u root -p < myems_billing_baseline_db.sql
+```
+```bash
 mysql -u root -p < myems_billing_db.sql
+```
+```bash
 mysql -u root -p < myems_carbon_db.sql
+```
+```bash
 mysql -u root -p < myems_energy_baseline_db.sql
+```
+```bash
 mysql -u root -p < myems_energy_db.sql
+```
+```bash
 mysql -u root -p < myems_energy_model_db.sql
+```
+```bash
 mysql -u root -p < myems_fdd_db.sql
+```
+```bash
 mysql -u root -p < myems_historical_db.sql
+```
+```bash
 mysql -u root -p < myems_production_db.sql
+```
+```bash
 mysql -u root -p < myems_reporting_db.sql
+```
+```bash
 mysql -u root -p < myems_system_db.sql
+```
+```bash
 mysql -u root -p < myems_user_db.sql
 ```
 
@@ -41,6 +65,8 @@ Die Demodaten sind optional. Um Demodaten einzufügen, führen Sie folgende Skri
 
 ```bash
 cd myems/database/demo-de
+```
+```bash
 mysql -u root -p < myems_system_db.sql
 ```
 
@@ -54,8 +80,14 @@ sudo mysql -u root -p
 
 ```bash
 mysql> CREATE USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '!MyEMS1';
+```
+```bash
 mysql> GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
+```
+```bash
 mysql> FLUSH PRIVILEGES;
+```
+```bash
 mysql> ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '!MyEMS1';
 ```
 :::

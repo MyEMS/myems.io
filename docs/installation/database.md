@@ -22,17 +22,41 @@ MyEMS works with the following MySQL-compatible database servers.
 Execute the following scripts in MySQL commandline, or execute in other MySQL client tools such as MySQL Workbench, Navicat, DBaver, phpMyAdmin, etc.
 ```bash
 cd myems/database/install
+```
+```bash
 mysql -u root -p < myems_billing_baseline_db.sql
+```
+```bash
 mysql -u root -p < myems_billing_db.sql
+```
+```bash
 mysql -u root -p < myems_carbon_db.sql
+```
+```bash
 mysql -u root -p < myems_energy_baseline_db.sql
+```
+```bash
 mysql -u root -p < myems_energy_db.sql
+```
+```bash
 mysql -u root -p < myems_energy_model_db.sql
+```
+```bash
 mysql -u root -p < myems_fdd_db.sql
+```
+```bash
 mysql -u root -p < myems_historical_db.sql
+```
+```bash
 mysql -u root -p < myems_production_db.sql
+```
+```bash
 mysql -u root -p < myems_reporting_db.sql
+```
+```bash
 mysql -u root -p < myems_system_db.sql
+```
+```bash
 mysql -u root -p < myems_user_db.sql
 ```
 
@@ -40,6 +64,8 @@ The demo data is optional. To insert demo data execute the following scripts,
 
 ```bash
 cd myems/database/demo-en
+```
+```bash
 mysql -u root -p < myems_system_db.sql
 ```
 
@@ -53,8 +79,14 @@ sudo mysql -u root -p
 
 ```bash
 mysql> CREATE USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '!MyEMS1';
+```
+```bash
 mysql> GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
+```
+```bash
 mysql> FLUSH PRIVILEGES;
+```
+```bash
 mysql> ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '!MyEMS1';
 ```
 :::
