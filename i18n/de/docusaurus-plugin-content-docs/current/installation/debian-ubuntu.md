@@ -25,8 +25,14 @@ Siehe [Database](./database.md)
 * myems-api Dienst installieren:
 ```bash
 sudo cp -r ~/myems/myems-api /myems-api
+```
+```bash
 cd /myems-api
+```
+```bash
 sudo apt install python3-pip
+```
+```bash
 sudo pip install -r requirements.txt
 ```
 
@@ -39,6 +45,8 @@ sudo pip install -r requirements.txt
 Erstellen Sie eine .env basierend auf example.env und bearbeiten Sie die .env bei Bedarf:
 ```bash
 sudo cp /myems-api/example.env /myems-api/.env
+```
+```bash
 sudo nano /myems-api/.env
 ```
 Port zur Firewall hinzufügen:
@@ -48,17 +56,25 @@ sudo ufw allow 8000
 systemd einrichten und Dateien konfigurieren:
 ```bash
 sudo cp /myems-api/myems-api.service /lib/systemd/system/
+```
+```bash
 sudo cp /myems-api/myems-api.socket /lib/systemd/system/
+```
+```bash
 sudo cp /myems-api/myems-api.conf /usr/lib/tmpfiles.d/
 ```
 Als nächstes aktivieren Sie die Dienste so, dass sie beim Booten automatisch starten:
 ```bash
 sudo systemctl enable myems-api.socket
+```
+```bash
 sudo systemctl enable myems-api.service
 ```
 Starten Sie die Dienste:
 ```bash
 sudo systemctl start myems-api.socket
+```
+```bash
 sudo systemctl start myems-api.service
 ```
 
@@ -121,7 +137,11 @@ server {
   Wenn der Server keine Verbindung zum Internet herstellen kann, komprimieren Sie bitte den Ordner myems/myems-admin und laden Sie ihn auf den Server hoch und extrahieren Sie ihn in ~/myems/myems-admin
 ```bash
 sudo mkdir /var/www
+```
+```bash
 sudo cp -r ~/myems/myems-admin  /var/www/myems-admin
+```
+```bash
 sudo chmod 0755 -R /var/www/myems-admin
 ```
   Überprüfen Sie die Konfigurationsdatei und ändern Sie sie bei Bedarf:
@@ -158,13 +178,19 @@ In diesem Schritt installieren Sie den Dienst myems-modbus-tcp.
 
 ```bash
 sudo cp -r ~/myems/myems-modbus-tcp /myems-modbus-tcp
+```
+```bash
 cd /myems-modbus-tcp
+```
+```bash
 sudo pip install -r requirements.txt
 ```
 
 Kopieren Sie die Datei exmaple.env in .env und ändern Sie die Datei .env:
 ```bash
 sudo cp /myems-modbus-tcp/example.env /myems-modbus-tcp/.env
+```
+```bash
 sudo nano /myems-modbus-tcp/.env
 ```
 systemd Dienst einrichten:
@@ -194,13 +220,19 @@ In diesem Schritt installieren Sie den myems-cleaning Service.
 
 ```bash
 sudo cp -r ~/myems/myems-cleaning /myems-cleaning
+```
+```bash
 cd /myems-cleaning
+```
+```bash
 sudo pip install -r requirements.txt
 ```
 
 Kopieren Sie die Datei exmaple.env in .env und ändern Sie die Datei .env:
 ```bash
 sudo cp /myems-cleaning/example.env /myems-cleaning/.env
+```
+```bash
 sudo nano /myems-cleaning/.env
 ```
 systemd Dienst einrichten:
@@ -230,13 +262,19 @@ In diesem Schritt installieren Sie den myems-normalization service.
 
 ```bash
 sudo cp -r ~/myems/myems-normalization /myems-normalization
+```
+```bash
 cd /myems-normalization
+```
+```bash
 sudo pip install -r requirements.txt
 ```
 
 Kopieren Sie die Datei exmaple.env in .env und ändern Sie die Datei .env:
 ```bash
 sudo cp /myems-normalization/example.env /myems-normalization/.env
+```
+```bash
 sudo nano /myems-normalization/.env
 ```
 systemd Dienst einrichten:
@@ -266,12 +304,18 @@ In diesem Schritt installieren Sie den myems-aggregation service.
 
 ```bash
 sudo cp -r ~/myems/myems-aggregation /myems-aggregation
+```
+```bash
 cd /myems-aggregation
+```
+```bash
 sudo pip install -r requirements.txt
 ```
 Kopieren Sie die Datei exmaple.env in .env und ändern Sie die Datei .env:
 ```bash
 sudo cp /myems-aggregation/example.env /myems-aggregation/.env
+```
+```bash
 sudo nano /myems-aggregation/.env
 ```
 systemd Dienst einrichten:
@@ -368,12 +412,16 @@ Von https://mapbox.com Holen Sie sich das mapboxToken und setzen Sie showOnlineM
 
 ```bash
 cd ~/myems/myems-web
+```
+```bash
 sudo nano src/config.js
 ```
 
 Erstellen:
 ```bash
 sudo npm i --unsafe-perm=true --allow-root --legacy-peer-deps
+```
+```bash
 sudo npm run build
 ```
 
@@ -381,6 +429,8 @@ Installieren
 Beachten Sie, dass der folgende Pfad mit dem in nginx.conf konfigurierten identisch sein sollte.
 ```bash
 sudo rm -r /var/www/myems-web
+```
+```bash
 sudo mv build  /var/www/myems-web
 ```
 
