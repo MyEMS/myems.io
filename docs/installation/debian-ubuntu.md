@@ -11,7 +11,7 @@ In this guide, you will deploy MyEMS on Debian or Ubuntu server.
 This guide describes how to install MyEMS on Ubuntu 24.04 LTS / Ubuntu 22.04 LTS / Ubuntu 20.04 LTS / Ubuntu 18.04 LTS / Debian 12 Bookworm / Debian 11 Bullseye / Debian 10 Buster. Hardware requirements depend on chosen database and amount of devices connected to the system. To run MyEMS and MySQL on a single machine you will need at least 4GB of RAM.
 
 Clone source code:
-```
+```bash
 cd ~
 git clone https://github.com/myems/myems
 ```
@@ -105,7 +105,7 @@ http{
 ```
 
 Add a new file under /etc/nginx/conf.d/
-```
+```bash
 sudo nano /etc/nginx/conf.d/myems-admin.conf
 ```
 Write with directives as below, replace the default myems-api url http://127.0.0.1:8000/ with actual url if the myems-api servcie hosted on a different server
@@ -383,7 +383,7 @@ sudo systemctl restart nginx
 * Install MyEMS Web UI:
 
 Setup NodeJS:
-```
+```bash
 curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
 sudo apt-get install -y nodejs
 ```
