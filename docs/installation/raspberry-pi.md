@@ -13,10 +13,16 @@ In this guide, you will deploy MyEMS onto Raspberry Pi.
 
 ## Clone Source Code
 
-```
+```bash
 sudo apt install git
+```
+```bash
 sudo apt install pip
+```
+```bash
 sudo apt install ufw
+```
+```bash
 cd ~
 git clone https://github.com/myems/myems
 ```
@@ -25,19 +31,23 @@ git clone https://github.com/myems/myems
 
 * Setup MySQL Server
 
-```
+```bash
 sudo apt update
+```
+```bash
 sudo apt upgrade
+```
+```bash
 sudo apt install mariadb-server
 ```
 By default, MySQL is installed without any password set up meaning you can access the MySQL server without any authentication.
 Run the following command to begin the MySQL securing process.
 
-```
+```bash
 sudo mysql_secure_installation
 ```
 
-```
+```bash
 Enter current password for root (enter for none): [Enter key or return key]
 Switch to unix_socket authentication [Y/n] Y
 Change the root password? [Y/n] Y
@@ -60,12 +70,18 @@ See [Database](./database.md)
 * Install myems-api service:
 ```bash
 sudo cp -r ~/myems/myems-api /myems-api
+```
+```bash
 cd /myems-api
+```
+```bash
 sudo pip install -r requirements.txt
 ```
 Create .env file based on example.env and edit the .env file if needed:
 ```bash
 sudo cp /myems-api/example.env /myems-api/.env
+```
+```bash
 sudo nano /myems-api/.env
 ```
 Check or change the listening port (default is 8000) in myems-api.service and myems-api.socket:
@@ -88,17 +104,25 @@ sudo ufw allow 8000
 Setup systemd configure files:
 ```bash
 sudo cp /myems-api/myems-api.service /lib/systemd/system/
+```
+```bash
 sudo cp /myems-api/myems-api.socket /lib/systemd/system/
+```
+```bash
 sudo cp /myems-api/myems-api.conf /usr/lib/tmpfiles.d/
 ```
 Next enable the services so that they autostart at boot:
 ```bash
 sudo systemctl enable myems-api.socket
+```
+```bash
 sudo systemctl enable myems-api.service
 ```
 Start the services :
 ```bash
 sudo systemctl start myems-api.socket
+```
+```bash
 sudo systemctl start myems-api.service
 ```
 
@@ -107,18 +131,25 @@ sudo systemctl start myems-api.service
 * Install NGINX Server
 
 refer to http://nginx.org/en/linux_packages.html#Debian
-```
+```bash
 sudo apt install curl gnupg2 ca-certificates lsb-release debian-archive-keyring
-
+```
+```bash
 curl https://nginx.org/keys/nginx_signing.key | gpg --dearmor | sudo tee /usr/share/keyrings/nginx-archive-keyring.gpg >/dev/null
-
+```
+```bash
 gpg --dry-run --quiet --no-keyring --import --import-options import-show /usr/share/keyrings/nginx-archive-keyring.gpg
-
+```
+```bash
 echo "deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] http://nginx.org/packages/debian `lsb_release -cs` nginx" | sudo tee /etc/apt/sources.list.d/nginx.list
-
+```
+```bash
 echo -e "Package: *\nPin: origin nginx.org\nPin: release o=nginx\nPin-Priority: 900\n" | sudo tee /etc/apt/preferences.d/99nginx
-
+```
+```bash
 sudo apt update
+```
+```bash
 sudo apt install nginx
 
 ```
@@ -167,7 +198,11 @@ Add a new 'server' section with directives as below:
 
 ```bash
 sudo mkdir /var/www
+```
+```bash
 sudo cp -r ~/myems/myems-admin  /var/www/myems-admin
+```
+```bash
 sudo chmod 0755 -R /var/www/myems-admin
 ```
   Check the config file and change it if necessary:
@@ -195,13 +230,19 @@ In this step, you will install myems-modbus-tcp service.
 
 ```bash
 sudo cp -r ~/myems/myems-modbus-tcp /myems-modbus-tcp
+```
+```bash
 cd /myems-modbus-tcp
+```
+```bash
 sudo pip install -r requirements.txt
 ```
 
 Copy exmaple.env file to .env and modify the .env file:
 ```bash
 sudo cp /myems-modbus-tcp/example.env /myems-modbus-tcp/.env
+```
+```bash
 sudo nano /myems-modbus-tcp/.env
 ```
 Setup systemd service:
@@ -231,13 +272,19 @@ In this step, you will install myems-cleaning service.
 
 ```bash
 sudo cp -r ~/myems/myems-cleaning /myems-cleaning
+```
+```bash
 cd /myems-cleaning
+```
+```bash
 sudo pip install -r requirements.txt
 ```
 
 Copy exmaple.env file to .env and modify the .env file:
 ```bash
 sudo cp /myems-cleaning/example.env /myems-cleaning/.env
+```
+```bash
 nano /myems-cleaning/.env
 ```
 Setup systemd service:
@@ -267,13 +314,19 @@ In this step, you will install myems-normalization service.
 
 ```bash
 sudo cp -r ~/myems/myems-normalization /myems-normalization
+```
+```bash
 cd /myems-normalization
+```
+```bash
 sudo pip install -r requirements.txt
 ```
 
 Copy exmaple.env file to .env and modify the .env file:
 ```bash
 sudo cp /myems-normalization/example.env /myems-normalization/.env
+```
+```bash
 nano /myems-normalization/.env
 ```
 Setup systemd service:
@@ -303,12 +356,18 @@ In this step, you will install myems-aggregation service.
 
 ```bash
 sudo cp -r ~/myems/myems-aggregation /myems-aggregation
+```
+```bash
 cd /myems-aggregation
+```
+```bash
 sudo pip install -r requirements.txt
 ```
 Copy exmaple.env file to .env and modify the .env file:
 ```bash
 sudo cp /myems-aggregation/example.env /myems-aggregation/.env
+```
+```bash
 sudo nano /myems-aggregation/.env
 ```
 Setup systemd service:
@@ -390,8 +449,10 @@ sudo systemctl restart nginx
 * Install MyEMS Web UI:
 
 Install NodeJS:
-```
+```bash
 curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
+```
+```bash
 sudo apt-get install -y nodejs
 ```
 
@@ -405,12 +466,16 @@ Get mapboxToken at https://mapbox.com and then set showOnlineMap to true. If you
 
 ```bash
 cd ~/myems/myems-web
+```
+```bash
 sudo nano src/config.js
 ```
 
 Build and Compress:
 ```bash
 sudo npm i --unsafe-perm=true --allow-root --legacy-peer-deps
+```
+```bash
 sudo npm run build
 ```
 
