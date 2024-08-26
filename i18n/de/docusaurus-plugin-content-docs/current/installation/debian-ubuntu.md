@@ -11,7 +11,7 @@ In dieser Anleitung werden Sie MyEMS auf Debian- oder Ubuntu-Server.
 Diese Anleitung beschreibt, wie MyEMS auf Ubuntu 24.04 LTS / Ubuntu 22.04 LTS / Ubuntu 20.04 LTS / Ubuntu 18.04 LTS / Debian 12 Bookworm / Debian 11 Bullseye / Debian 10 Buster. Die Hardwareanforderungen hängen von der gewählten Datenbank und der Anzahl der an das System angeschlossenen Geräte ab. Um MyEMS und MySQL auf einem einzigen Rechner laufen zu lassen, benötigen Sie mindestens 4GB RAM.
 
 Quellcode klonen:
-```
+```bash
 cd ~
 git clone https://github.com/myems/myems
 ```
@@ -85,7 +85,7 @@ sudo systemctl start myems-api.service
 beziehen sich auf http://nginx.org/en/linux_packages.html#Debian
 
 nginx-Dienst aktivieren:
-```
+```bash
 sudo systemctl enable nginx.service
 ```
 * NGINX einrichten
@@ -108,8 +108,8 @@ http{
 }
 ```
 
-Fügen Sie eine neue Datei unter /etc/nginx/conf.d/
-```
+Fügen Sie eine neue Datei unter /etc/nginx/conf.d/:
+```bash
 sudo nano /etc/nginx/conf.d/myems-admin.conf
 ```
 Schreiben Sie mit Direktiven wie unten, ersetzen Sie die Standard-myems-api URL http://127.0.0.1:8000/ mit tatsächlicher URL, wenn die myems-ap servcie auf einem anderen Server gehostet wird
@@ -163,7 +163,7 @@ Port zur Firewall hinzufügen:
 sudo ufw allow 8001
 ```
 Neustart des nginx-Dienstes:
-```
+```bash
 sudo systemctl restart nginx.service
 ```
 
@@ -368,7 +368,7 @@ http {
 ```
 
 Aktualisieren der nginx Standard-Conf-Datei:
-```
+```bash
 sudo nano /etc/nginx/conf.d/default.conf
 ```
 Schreiben Sie mit Direktiven wie unten und ersetzen Sie die Standard-myems-api-URL http://127.0.0.1:8000/ mit tatsächlicher URL, wenn die myems-api-Servcie auf einem anderen Server gehostet wird
@@ -397,8 +397,10 @@ server {
 * MyEMS Web UI installieren:
 
 NodeJS einrichten:
-```
+```bash
 curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
+```
+```bash
 sudo apt-get install -y nodejs
 ```
 
