@@ -23,6 +23,8 @@ In diesem Abschnitt installieren Sie myems-api auf Docker.
 
 ```bash
 cp -r myems/myems-api c:\
+```
+```bash
 cd c:\myems-api
 ```
 
@@ -41,7 +43,7 @@ cp example.env .env
 * Ziehen Sie Image aus Docker Hub oder erstellen Sie es selbst
 
 Bild von [https://hub.docker.com/u/myems](https://hub.docker.com/u/myems) ziehen:
-```
+```bash
 docker pull myems/myems-api
 ```
 
@@ -103,6 +105,8 @@ In diesem Abschnitt installieren Sie myems-admin auf Docker.
 
 ```bash
 cp -r myems/myems-admin c:\
+```
+```bash
 cd c:\myems-admin
 ```
 
@@ -175,6 +179,8 @@ In diesem Abschnitt installieren Sie myems-modbus-tcp auf Docker.
 
 ```bash
 cp -r myems/myems-modbus-tcp c:\
+```
+```bash
 cd c:\myems-modbus-tcp
 ```
 
@@ -248,6 +254,8 @@ In diesem Abschnitt installieren Sie myems-cleaning auf Docker.
 
 ```bash
 cp -r myems/myems-cleaning c:\
+```
+```bash
 cd c:\myems-cleaning
 ```
 
@@ -320,6 +328,8 @@ In diesem Abschnitt installieren Sie myems-normalization auf Docker.
 
 ```bash
 cp -r myems/myems-normalization c:\
+```
+```bash
 cd c:\myems-normalization
 ```
 
@@ -392,6 +402,8 @@ In diesem Abschnitt installieren Sie myems-aggregation auf Docker.
 
 ```bash
 cp -r myems/myems-aggregation c:\
+```
+```bash
 cd c:\myems-aggregation
 ```
 
@@ -469,6 +481,8 @@ Von https://mapbox.com Holen Sie sich das mapboxToken und setzen Sie showOnlineM
 :::
 ```bash
 cd myems/myems-web
+```
+```bash
 notepad src/config.js
 ```
 
@@ -480,6 +494,8 @@ Ersetzen Sie ~~127.0.0.1:8000~~ in nginx.conf durch die echte **HOST**-IP und de
 
 ```bash
 cd myems/myems-web
+```
+```bash
 notepad nginx.conf
 ```
 
@@ -487,6 +503,8 @@ notepad nginx.conf
 
 ```bash
 cp -r myems/myems-web c:\
+```
+```bash
 cd c:\myems-web
 ```
 
@@ -498,6 +516,8 @@ Sie können den Befehl „npm run build“ in diesem Abschnitt getrost ignoriere
 
 ```bash
 docker build -t myems/myems-web .
+```
+```bash
 docker image prune -f
 ```
 
@@ -505,6 +525,8 @@ Um für mehrere Plattformen zu bauen und nicht nur für die Architektur und das 
 Sie können buildx verwenden und das Flag --platform setzen, um die Zielplattform für die Build-Ausgabe anzugeben (z. B. linux/amd64, linux/arm64 oder darwin/amd64).
 ```bash
 docker buildx build --platform=linux/amd64 -t myems/myems-web .
+```
+```bash
 docker image prune -f
 ```
 
