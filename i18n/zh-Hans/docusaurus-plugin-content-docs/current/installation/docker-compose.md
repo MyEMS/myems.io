@@ -30,25 +30,49 @@ sidebar_position: 6
 ### 安装
 
 1.  克隆仓库
-```
+```bash
 git clone https://gitee.com/myems/myems.git
 ```
 
 2.  导入数据库结构
 
-```
+```bash
 cd myems/database/install
+```
+```bash
 mysql -u root -p < myems_billing_baseline_db.sql
+```
+```bash
 mysql -u root -p < myems_billing_db.sql
+```
+```bash
 mysql -u root -p < myems_carbon_db.sql
+```
+```bash
 mysql -u root -p < myems_energy_baseline_db.sql
+```
+```bash
 mysql -u root -p < myems_energy_db.sql
+```
+```bash
 mysql -u root -p < myems_energy_model_db.sql
+```
+```bash
 mysql -u root -p < myems_fdd_db.sql
+```
+```bash
 mysql -u root -p < myems_historical_db.sql
+```
+```bash
 mysql -u root -p < myems_production_db.sql
+```
+```bash
 mysql -u root -p < myems_reporting_db.sql
+```
+```bash
 mysql -u root -p < myems_system_db.sql
+```
+```bash
 mysql -u root -p < myems_user_db.sql
 ```
 注： 详情可查看[database](./database.md)
@@ -63,24 +87,48 @@ mysql -u root -p < myems_user_db.sql
 :::
 
 3.1  修改nginx.conf里的API配置
-```
+```bash
 cd myems
+```
+```bash
 nano myems-admin/nginx.conf
+```
+```bash
 nano myems-web/nginx.conf
 ```
 
 3.2  分别复制下列目录中的example.env为.env并修改.env里的数据库IP，账号，密码
-```
+```bash
 cd myems
+```
+```bash
 cp myems-aggregation/example.env myems-aggregation/.env
+```
+```bash
 nano myems-aggregation/.env
+```
+```bash
 cp myems-api/example.env myems-api/.env
+```
+```bash
 nano myems-api/.env
+```
+```bash
 cp myems-cleaning/example.env myems-cleaning/.env
+```
+```bash
 nano myems-cleaning/.env
+```
+```bash
 cp myems-modbus-tcp/example.env myems-modbus-tcp/.env
+```
+```bash
 nano myems-modbus-tcp/.env
+```
+```bash
 cp myems-normalization/example.env myems-normalization/.env
+```
+```bash
 nano myems-normalization/.env
 ```
 
@@ -101,28 +149,38 @@ nano myems-normalization/.env
 
 ```bash
 cd myems/myems-web
+```
+```bash
 sudo nano src/config.js
 ```
 
 编译：
-```
+```bash
 cd myems/myems-web
+```
+```bash
 npm i --unsafe-perm=true --allow-root --legacy-peer-deps
+```
+```bash
 npm run build
 ```
 
 5. 运行docker-compose命令
 
 On Windows Host:
-```
+```bash
 cd myems
+```
+```bash
 docker-compose -f docker-compose-on-windows.yml up -d
 ```
 
 On Linux Host:
 
-```
+```bash
 cd myems
+```
+```bash
 docker-compose -f docker-compose-on-linux.yml up -d
 ```
 
@@ -138,7 +196,7 @@ docker-compose -f docker-compose-on-linux.yml up -d
 
 如果api报错，请确认.env里的数据库IP，数据库账号，数据库密码是否正确，如果不正确，请修改后执行：
 
-```
+```bash
 docker-compose up --build -d
 ```
 
