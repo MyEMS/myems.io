@@ -11,13 +11,17 @@ sidebar_position: 3
 本指南介绍如何在CentOS Stream 9/Red Hat Enterprise Linux 9（RHEL 9）/Rocky 9/AlmaLinux 9.1/Oracle Linux 9.1上安装MyEMS。硬件需求取决于所选数据库和连接到系统的设备数量。要在一台机器上运行MyEMS和MySQL，您至少需要4GB的RAM。
 
 更新系统并安装工具:
-```
+```bash
 sudo dnf update
+```
+```bash
 sudo dnf install git
+```
+```bash
 sudo dnf install python3-pip
 ```
 克隆源代码：
-```
+```bash
 cd ~
 git clone https://github.com/myems/myems
 ```
@@ -30,33 +34,49 @@ git clone https://github.com/myems/myems
 * 安装 myems-api 服务:
 ```bash
 sudo cp -r ~/myems/myems-api /myems-api
+```
+```bash
 cd /myems-api
+```
+```bash
 sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 ```
 根据example.env创建.env文件，并根据需要编辑.env：
 ```bash
 sudo cp /myems-api/example.env /myems-api/.env
+```
+```bash
 sudo nano /myems-api/.env
 ```
 将端口添加到防火墙：
 ```bash
 sudo firewall-cmd --zone=public --add-port=8000/tcp --permanent
+```
+```bash
 sudo firewall-cmd --reload
 ```
 安装 systemd 配置文件:
 ```bash
 sudo cp /myems-api/myems-api.service /lib/systemd/system/
+```
+```bash
 sudo cp /myems-api/myems-api.socket /lib/systemd/system/
+```
+```bash
 sudo cp /myems-api/myems-api.conf /usr/lib/tmpfiles.d/
 ```
 接下来启用这些服务，以便它们在启动时自动启动：
 ```bash
 sudo systemctl enable myems-api.socket
+```
+```bash
 sudo systemctl enable myems-api.service
 ```
 启动服务：
 ```bash
 sudo systemctl start myems-api.socket
+```
+```bash
 sudo systemctl start myems-api.service
 ```
 
@@ -67,7 +87,7 @@ sudo systemctl start myems-api.service
 参考 http://nginx.org/en/linux_packages.html#RHEL
 
 启用nginx服务:
-```
+```bash
 sudo systemctl enable nginx.service
 ```
 * 配置 NGINX
@@ -91,7 +111,7 @@ http {
 ```
 
 在目录 /etc/nginx/conf.d/ 下新建一个文件：
-```
+```bash
 sudo nano /etc/nginx/conf.d/myems-admin.conf
 ```
 编写如下指令, 如果myems-api服务运行在其它服务器上则用实际的地址替换 myems-api 默认地址 http://127.0.0.1:8000/
@@ -119,7 +139,11 @@ server {
   如果服务器无法连接到internet，请压缩myems/myems-admin文件夹并将其上传到服务器，然后将其解压缩到~/myems/myems-admin
 ```bash
 sudo mkdir /var/www
+```
+```bash
 sudo cp -r ~/myems/myems-admin  /var/www/myems-admin
+```
+```bash
 sudo chmod 0755 -R /var/www/myems-admin
 ```
 检查配置文件，必要时进行更改：
@@ -139,11 +163,15 @@ sudo nano /var/www/myems-admin/app/api.js
 将端口添加到防火墙：
 ```bash
 sudo semanage port -a -t http_port_t  -p tcp 8001
+```
+```bash
 sudo firewall-cmd --zone=public --add-port=8001/tcp --permanent
+```
+```bash
 sudo firewall-cmd --reload
 ```
 重启nginx服务:
-```
+```bash
 sudo systemctl restart nginx.service
 ```
 
@@ -159,13 +187,19 @@ sudo systemctl restart nginx.service
 
 ```bash
 sudo cp -r ~/myems/myems-modbus-tcp /myems-modbus-tcp
+```
+```bash
 cd /myems-modbus-tcp
+```
+```bash
 sudo pip install -r requirements.txt
 ```
 
 将exmaple.ev文件复制到.env并修改.env文件：
 ```bash
 sudo cp /myems-modbus-tcp/example.env /myems-modbus-tcp/.env
+```
+```bash
 sudo nano /myems-modbus-tcp/.env
 ```
 安装 systemd 服务:
@@ -195,13 +229,19 @@ cat /myems-modbus-tcp.log
 
 ```bash
 sudo cp -r ~/myems/myems-cleaning /myems-cleaning
+```
+```bash
 cd /myems-cleaning
+```
+```bash
 sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 ```
 
 将exmaple.ev文件复制到.env并修改.env文件：
 ```bash
 sudo cp /myems-cleaning/example.env /myems-cleaning/.env
+```
+```bash
 sudo nano /myems-cleaning/.env
 ```
 安装systemd服务：
@@ -231,13 +271,19 @@ cat /myems-cleaning.log
 
 ```bash
 sudo cp -r ~/myems/myems-normalization /myems-normalization
+```
+```bash
 cd /myems-normalization
+```
+```bash
 sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 ```
 
 将exmaple.ev文件复制到.env并修改.env文件：
 ```bash
 sudo cp /myems-normalization/example.env /myems-normalization/.env
+```
+```bash
 sudo nano /myems-normalization/.env
 ```
 安装systemd服务
@@ -267,12 +313,18 @@ cat /myems-normalization.log
 
 ```bash
 sudo cp -r ~/myems/myems-aggregation /myems-aggregation
+```
+```bash
 cd /myems-aggregation
+```
+```bash
 sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 ```
 将exmaple.ev文件复制到.env并修改.env文件：
 ```bash
 sudo cp /myems-aggregation/example.env /myems-aggregation/.env
+```
+```bash
 sudo nano /myems-aggregation/.env
 ```
 安装systemd服务
@@ -325,7 +377,7 @@ http {
 ```
 
 更新nginx默认conf文件:
-```
+```bash
 sudo nano /etc/nginx/conf.d/default.conf
 ```
 使用如下指令编写，如果myems-api服务托管在不同的服务器上，则使用实际的地址替换默认的myems-api地址http://127.0.0.1:8000/
@@ -354,7 +406,7 @@ server {
 * 安装 MyEMS Web UI:
 
 安装NodeJS:
-```
+```bash
 sudo dnf install nodejs
 ```
 
@@ -368,12 +420,16 @@ sudo dnf install nodejs
 
 ```bash
 cd ~/myems/myems-web
+```
+```bash
 sudo nano src/config.js
 ```
 
 编译：
 ```bash
 sudo npm i --unsafe-perm=true --allow-root --legacy-peer-deps
+```
+```bash
 sudo npm run build
 ```
 
@@ -381,14 +437,22 @@ sudo npm run build
 注意，以下路径应该与nginx.conf中配置的路径相同。
 ```bash
 tar xzf myems-web.tar.gz
+```
+```bash
 sudo rm -r /var/www/myems-web
+```
+```bash
 sudo mv build  /var/www/myems-web
 ```
 
 将端口添加到防火墙：
 ```bash
 sudo semanage port -a -t http_port_t  -p tcp 80
+```
+```bash
 sudo firewall-cmd --zone=public --add-port=80/tcp --permanent
+```
+```bash
 sudo firewall-cmd --reload
 ```
 
