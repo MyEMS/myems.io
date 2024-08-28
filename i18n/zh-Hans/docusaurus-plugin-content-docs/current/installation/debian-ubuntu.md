@@ -11,7 +11,7 @@ sidebar_position: 2
 本指南介绍如何在 Ubuntu 24.04 LTS / Ubuntu 22.04 LTS / Ubuntu 20.04 LTS / Ubuntu 18.04 LTS / Debian 12 Bookworm / Debian 11 Bullseye / Debian 10 Buster 上安装MyEMS。硬件需求取决于所选数据库和连接到系统的设备数量。要在一台机器上运行MyEMS和MySQL，您至少需要4GB的RAM。
 
 克隆源代码：
-```
+```bash
 cd ~
 git clone https://gitee.com/myems/myems
 ```
@@ -84,7 +84,7 @@ sudo systemctl start myems-api.service
 参考 http://nginx.org/en/linux_packages.html#Debian
 
 启用nginx服务:
-```
+```bash
 sudo systemctl enable nginx.service
 ```
 * 配置 NGINX
@@ -108,7 +108,7 @@ http {
 ```
 
 在目录 /etc/nginx/conf.d/ 下新建一个文件：
-```
+```bash
 sudo nano /etc/nginx/conf.d/myems-admin.conf
 ```
 编写如下指令, 如果myems-api服务运行在其它服务器上则用实际的地址替换 myems-api 默认地址 http://127.0.0.1:8000/
@@ -162,7 +162,7 @@ sudo nano /var/www/myems-admin/app/api.js
 sudo ufw allow 8001
 ```
 重启nginx服务:
-```
+```bash
 sudo systemctl restart nginx.service
 ```
 
@@ -362,7 +362,7 @@ http {
 ```
 
 更新nginx默认conf文件:
-```
+```bash
 sudo nano /etc/nginx/conf.d/default.conf
 ```
 使用如下指令编写，如果myems-api服务托管在不同的服务器上，则使用实际的地址替换默认的myems-api地址http://127.0.0.1:8000/
@@ -390,8 +390,10 @@ sudo nano /etc/nginx/conf.d/default.conf
 * 安装 MyEMS Web UI:
 
 安装NodeJS:
-```
+```bash
 curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
+```
+```bash
 sudo apt-get install -y nodejs
 ```
 
