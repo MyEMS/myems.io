@@ -31,6 +31,8 @@ sidebar_position: 14
 
 ```bash
 cp -r myems/myems-api /
+```
+```bash
 cd /myems-api
 ```
 
@@ -110,6 +112,8 @@ podman load --input .\myems-api.tar
 
 ```bash
 cp -r myems/myems-admin /
+```
+```bash
 cd /myems-admin
 ```
 
@@ -187,6 +191,8 @@ podman load --input .\myems-admin.tar
 
 ```bash
 cp -r myems/myems-modbus-tcp /
+```
+```bash
 cd /myems-modbus-tcp
 ```
 
@@ -260,6 +266,8 @@ podman load --input .\myems-modbus-tcp.tar
 
 ```bash
 cp -r myems/myems-cleaning /
+```
+```bash
 cd /myems-cleaning
 ```
 
@@ -332,6 +340,8 @@ podman load --input .\myems-cleaning.tar
 
 ```bash
 cp -r myems/myems-normalization /
+```
+```bash
 cd /myems-normalization
 ```
 
@@ -405,6 +415,8 @@ podman load --input .\myems-normalization.tar
 
 ```bash
 cp -r myems/myems-aggregation /
+```
+```bash
 cd /myems-aggregation
 ```
 
@@ -483,6 +495,8 @@ podman load --input .\myems-aggregation.tar
 
 ```bash
 cd myems/myems-web
+```
+```bash
 nano src/config.js
 ```
 
@@ -494,6 +508,8 @@ nano src/config.js
 
 ```bash
 cd myems/myems-web
+```
+```bash
 nano nginx.conf
 ```
 
@@ -501,6 +517,8 @@ nano nginx.conf
 
 ```bash
 cp -r myems/myems-web /
+```
+```bash
 cd /myems-web
 ```
 
