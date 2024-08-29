@@ -23,6 +23,8 @@ sidebar_position: 5
 
 ```bash
 cp -r myems/myems-api c:\
+```
+```bash
 cd c:\myems-api
 ```
 
@@ -96,6 +98,8 @@ docker load --input .\myems-api.tar
 
 ```bash
 cp -r myems/myems-admin c:\
+```
+```bash
 cd c:\myems-admin
 ```
 
@@ -168,6 +172,8 @@ docker load --input .\myems-admin.tar
 
 ```bash
 cp -r myems/myems-modbus-tcp c:\
+```
+```bash
 cd c:\myems-modbus-tcp
 ```
 
@@ -241,6 +247,8 @@ docker load --input .\myems-modbus-tcp.tar
 
 ```bash
 cp -r myems/myems-cleaning c:\
+```
+```bash
 cd c:\myems-cleaning
 ```
 
@@ -313,6 +321,8 @@ docker load --input .\myems-cleaning.tar
 
 ```bash
 cp -r myems/myems-normalization c:\
+```
+```bash
 cd c:\myems-normalization
 ```
 
@@ -386,6 +396,8 @@ docker load --input .\myems-normalization.tar
 
 ```bash
 cp -r myems/myems-aggregation c:\
+```
+```bash
 cd c:\myems-aggregation
 ```
 
@@ -463,6 +475,8 @@ docker load --input .\myems-aggregation.tar
 
 ```bash
 cd myems/myems-web
+```
+```bash
 notepad src/config.js
 ```
 
@@ -474,6 +488,8 @@ notepad src/config.js
 
 ```bash
 cd myems/myems-web
+```
+```bash
 notepad nginx.conf
 ```
 
@@ -481,6 +497,8 @@ notepad nginx.conf
 
 ```bash
 cp -r myems/myems-web c:\
+```
+```bash
 cd c:\myems-web
 ```
 
@@ -494,6 +512,8 @@ cd c:\myems-web
 
 ```bash
 docker build -t myems/myems-web .
+```
+```bash
 docker image prune -f
 ```
 
@@ -501,6 +521,8 @@ docker image prune -f
 您可以使用buildx并设置--platform标志来指定构建输出的目标平台（例如，linux/amd64、linux/arm64或darwin/amd64）。
 ```bash
 docker buildx build --platform=linux/amd64 -t myems/myems-web .
+```
+```bash
 docker image prune -f
 ```
 

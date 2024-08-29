@@ -12,14 +12,20 @@ In dieser Anleitung stellen Sie MyEMS mit Fedora CoreOS bereit.
 Diese Anleitung beschreibt, wie Sie MyEMS auf Fedora CoreOS 37 installieren. Die Hardwareanforderungen hängen von der gewählten Datenbank und der Anzahl der an das System angeschlossenen Geräte ab. Um MyEMS und MySQL auf einem einzigen Rechner laufen zu lassen, benötigen Sie mindestens 4GB RAM.
 
 Aktualisieren Sie das System und installieren Sie Tools:
-```
+```bash
 rpm-ostree install git
+```
+```bash
 rpm-ostree install python3
+```
+```bash
 rpm-ostree install python3-pip
+```
+```bash
 rpm-ostree install nginx
 ```
 Quellcode klonen:
-```
+```bash
 cd ~
 git clone https://github.com/myems/myems
 ```
@@ -33,34 +39,52 @@ Siehe [Database](./database.md)
 * myems-api Dienst installieren:
 ```bash
 sudo cp -r ~/myems/myems-api /var/myems-api
+```
+```bash
 cd /var/myems-api
+```
+```bash
 sudo pip install -r requirements.txt
 ```
 Erstellen Sie eine .env basierend auf example.env und bearbeiten Sie die .env bei Bedarf:
 ```bash
 sudo cp /var/myems-api/example.env /var/myems-api/.env
+```
+```bash
 sudo nano /var/myems-api/.env
 ```
 Port zur Firewall hinzufügen:
 ```bash
 sudo firewall-cmd --add-service=http --permanent
+```
+```bash
 sudo firewall-cmd --add-port=8000/tcp --permanent
+```
+```bash
 sudo firewall-cmd --reload
 ```
 systemd einrichten und Dateien konfigurieren:
 ```bash
 sudo cp /var/myems-api/myems-api.service /etc/systemd/system/
+```
+```bash
 sudo cp /var/myems-api/myems-api.socket /etc/systemd/system/
+```
+```bash
 sudo cp /var/myems-api/myems-api.conf /usr/lib/tmpfiles.d/
 ```
 Als nächstes aktivieren Sie die Dienste so, dass sie beim Booten automatisch starten:
 ```bash
 sudo systemctl enable myems-api.socket
+```
+```bash
 sudo systemctl enable myems-api.service
 ```
 Starten Sie die Dienste:
 ```bash
 sudo systemctl start myems-api.socket
+```
+```bash
 sudo systemctl start myems-api.service
 ```
 
@@ -71,7 +95,7 @@ sudo systemctl start myems-api.service
 beziehen sich auf http://nginx.org/en/linux_packages.html#RHEL
 
 Enable the nginx service:
-```
+```bash
 sudo systemctl enable nginx.service
 ```
 * NGINX einrichten
@@ -94,8 +118,8 @@ http {
 }
 ```
 
-Fügen Sie eine neue Datei unter /etc/nginx/conf.d/
-```
+Fügen Sie eine neue Datei unter /etc/nginx/conf.d/:
+```bash
 sudo nano /etc/nginx/conf.d/myems-admin.conf
 ```
 Schreiben Sie mit Direktiven wie unten, ersetzen Sie die Standard-myems-api URL http://127.0.0.1:8000/ mit tatsächlicher URL, wenn die myems-ap servcie auf einem anderen Server gehostet wird
@@ -123,7 +147,11 @@ server {
   Wenn der Server keine Verbindung zum Internet herstellen kann, komprimieren Sie bitte den Ordner myems/myems-admin und laden Sie ihn auf den Server hoch und extrahieren Sie ihn in ~/myems/myems-admin
 ```bash
 sudo mkdir /var/www
+```
+```bash
 sudo cp -r ~/myems/myems-admin  /var/www/myems-admin
+```
+```bash
 sudo chmod 0755 -R /var/www/myems-admin
 ```
   Überprüfen Sie die Konfigurationsdatei und ändern Sie sie bei Bedarf:
@@ -143,11 +171,15 @@ Der Ordner "upload" ist für vom Benutzer hochgeladene Dateien. Löschen/verschi
 Port zur Firewall hinzufügen:
 ```bash
 sudo firewall-cmd --add-service=http --permanent
+```
+```bash
 sudo firewall-cmd --add-port=8001/tcp --permanent
+```
+```bash
 sudo firewall-cmd --reload
 ```
 Restart the nginx service:
-```
+```bash
 sudo systemctl restart nginx.service
 ```
 
@@ -163,13 +195,19 @@ In diesem Schritt installieren Sie den Dienst myems-modbus-tcp.
 
 ```bash
 sudo cp -r ~/myems/myems-modbus-tcp /var/myems-modbus-tcp
+```
+```bash
 cd /var/myems-modbus-tcp
+```
+```bash
 sudo pip install -r requirements.txt
 ```
 
 Kopieren Sie die Datei exmaple.env in .env und ändern Sie die Datei .env:
 ```bash
 sudo cp /var/myems-modbus-tcp/example.env /var/myems-modbus-tcp/.env
+```
+```bash
 sudo nano /var/myems-modbus-tcp/.env
 ```
 Datei main.py ändern
@@ -203,13 +241,19 @@ In diesem Schritt installieren Sie den myems-cleaning Service.
 
 ```bash
 sudo cp -r ~/myems/myems-cleaning /var/myems-cleaning
+```
+```bash
 cd /var/myems-cleaning
+```
+```bash
 sudo pip install -r requirements.txt
 ```
 
 Kopieren Sie die Datei exmaple.env in .env und ändern Sie die Datei .env:
 ```bash
 sudo cp /var/myems-cleaning/example.env /var/myems-cleaning/.env
+```
+```bash
 sudo nano /var/myems-cleaning/.env
 ```
 Datei main.py ändern:
@@ -244,13 +288,19 @@ In diesem Schritt installieren Sie den myems-normalization service.
 
 ```bash
 sudo cp -r ~/myems/myems-normalization /var/myems-normalization
+```
+```bash
 cd /var/myems-normalization
+```
+```bash
 sudo pip install -r requirements.txt
 ```
 
 Kopieren Sie die Datei exmaple.env in .env und ändern Sie die Datei .env:
 ```bash
 sudo cp /var/myems-normalization/example.env /var/myems-normalization/.env
+```
+```bash
 sudo nano /var/myems-normalization/.env
 ```
 Datei main.py ändern:
@@ -285,12 +335,18 @@ In diesem Schritt installieren Sie den myems-aggregation service.
 
 ```bash
 sudo cp -r ~/myems/myems-aggregation /var/myems-aggregation
+```
+```bash
 cd /var/myems-aggregation
+```
+```bash
 sudo pip install -r requirements.txt
 ```
 Kopieren Sie die Datei exmaple.env in .env und ändern Sie die Datei .env:
 ```bash
 sudo cp /var/myems-aggregation/example.env /var/myems-aggregation/.env
+```
+```bash
 nano /var/myems-aggregation/.env
 ```
 Datei main.py ändern:
@@ -348,7 +404,7 @@ http {
 ```
 
 Aktualisieren der nginx Standard-Conf-Datei:
-```
+```bash
 sudo nano /etc/nginx/conf.d/default.conf
 ```
 Schreiben Sie mit Direktiven wie unten und ersetzen Sie die Standard-myems-api-URL http://127.0.0.1:8000/ mit tatsächlicher URL, wenn die myems-api-Servcie auf einem anderen Server gehostet wird
@@ -377,7 +433,7 @@ server {
 * MyEMS Web UI installieren:
 
 NodeJS einrichten:
-```
+```bash
 sudo dnf install nodejs
 ```
 
@@ -391,12 +447,16 @@ Von https://mapbox.com Holen Sie sich das mapboxToken und setzen Sie showOnlineM
 
 ```bash
 cd ~/myems/myems-web
+```
+```bash
 sudo nano src/config.js
 ```
 
 Erstellen und komprimieren:
 ```bash
 sudo npm i --unsafe-perm=true --allow-root --legacy-peer-deps
+```
+```bash
 sudo npm run build
 ```
 
@@ -410,7 +470,11 @@ sudo mv build  /var/www/myems-web
 Port zur Firewall hinzufügen:
 ```bash
 sudo firewall-cmd --add-service=http --permanent
+```
+```bash
 sudo firewall-cmd --add-port=80/tcp --permanent
+```
+```bash
 sudo firewall-cmd --reload
 ```
 Starten Sie NGINX neu

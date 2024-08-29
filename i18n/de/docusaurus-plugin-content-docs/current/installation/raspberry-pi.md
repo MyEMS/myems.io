@@ -13,10 +13,16 @@ In diesem Handbuch stellen Sie MyEMS auf Raspberry Pi bereit.
 
 ## Quellcode klonen
 
-```
+```bash
 sudo apt install git
+```
+```bash
 sudo apt install pip
+```
+```bash
 sudo apt install ufw
+```
+```bash
 cd ~
 git clone https://github.com/myems/myems
 ```
@@ -25,18 +31,22 @@ git clone https://github.com/myems/myems
 
 * MySQL-Server einrichten
 
-```
+```bash
 sudo apt update
+```
+```bash
 sudo apt upgrade
+```
+```bash
 sudo apt install mariadb-server
 ```
 Standardmäßig wird MySQL ohne Passwort installiert, was bedeutet, dass Sie ohne Authentifizierung auf den MySQL-Server zugreifen können.
 Führen Sie den folgenden Befehl aus, um den MySQL-Sicherungsprozess zu starten.
 
-```
+```bash
 sudo mysql_secure_installation
 ```
-```
+```bash
 Enter current password for root (enter for none): [Enter key or return key]
 Switch to unix_socket authentication [Y/n] Y
 Change the root password? [Y/n] Y
@@ -59,13 +69,19 @@ Sehen [Database](./database.md)
 * Installieren Sie den myems-api-Dienst:
 ```bash
 sudo cp -r ~/myems/myems-api /myems-api
+```
+```bash
 cd /myems-api
+```
+```bash
 sudo pip install -r requirements.txt
 ```
 
 Erstellen Sie eine .env-Datei basierend auf example.env und bearbeiten Sie die .env-Datei bei Bedarf:
 ```bash
 sudo cp /myems-api/example.env /myems-api/.env
+```
+```bash
 sudo nano /myems-api/.env
 ```
 Überprüfen oder ändern Sie den Überwachungsport (Standard ist 8000) in myems-api.service und myems-api.socket:
@@ -88,17 +104,25 @@ sudo ufw allow 8000
 Systemd-Konfigurationsdateien einrichten:
 ```bash
 sudo cp /myems-api/myems-api.service /lib/systemd/system/
+```
+```bash
 sudo cp /myems-api/myems-api.socket /lib/systemd/system/
+```
+```bash
 sudo cp /myems-api/myems-api.conf /usr/lib/tmpfiles.d/
 ```
 Als nächstes aktivieren Sie die Dienste, damit sie beim Booten automatisch starten:
 ```bash
 sudo systemctl enable myems-api.socket
+```
+```bash
 sudo systemctl enable myems-api.service
 ```
 Starten Sie die Dienste:
 ```bash
 sudo systemctl start myems-api.socket
+```
+```bash
 sudo systemctl start myems-api.service
 ```
 
@@ -107,18 +131,25 @@ sudo systemctl start myems-api.service
 * NGINX-Server installieren
 
 beziehen auf http://nginx.org/en/linux_packages.html#Debian
-```
+```bash
 sudo apt install curl gnupg2 ca-certificates lsb-release debian-archive-keyring
-
+```
+```bash
 curl https://nginx.org/keys/nginx_signing.key | gpg --dearmor | sudo tee /usr/share/keyrings/nginx-archive-keyring.gpg >/dev/null
-
+```
+```bash
 gpg --dry-run --quiet --no-keyring --import --import-options import-show /usr/share/keyrings/nginx-archive-keyring.gpg
-
+```
+```bash
 echo "deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] http://nginx.org/packages/debian `lsb_release -cs` nginx" | sudo tee /etc/apt/sources.list.d/nginx.list
-
+```
+```bash
 echo -e "Package: *\nPin: origin nginx.org\nPin: release o=nginx\nPin-Priority: 900\n" | sudo tee /etc/apt/preferences.d/99nginx
-
+```
+```bash
 sudo apt update
+```
+```bash
 sudo apt install nginx
 
 ```
@@ -167,7 +198,11 @@ Fügen Sie einen neuen Abschnitt „Server“ mit den folgenden Anweisungen hinz
 
 ```bash
 sudo mkdir /var/www
+```
+```bash
 sudo cp -r ~/myems/myems-admin  /var/www/myems-admin
+```
+```bash
 sudo chmod 0755 -R /var/www/myems-admin
 ```
   Überprüfen Sie die Konfigurationsdatei und ändern Sie sie gegebenenfalls:
@@ -195,13 +230,19 @@ In diesem Schritt installieren Sie den Dienst myems-modbus-tcp.
 
 ```bash
 sudo cp -r ~/myems/myems-modbus-tcp /myems-modbus-tcp
+```
+```bash
 cd /myems-modbus-tcp
+```
+```bash
 sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 ```
 
 Kopieren Sie die Datei exmaple.env nach .env und ändern Sie die .env-Datei:
 ```bash
 sudo cp /myems-modbus-tcp/example.env /myems-modbus-tcp/.env
+```
+```bash
 sudo nano /myems-modbus-tcp/.env
 ```
 systemd-Dienst einrichten:
@@ -231,13 +272,19 @@ In diesem Schritt installieren Sie den myems-cleaning service.
 
 ```bash
 sudo cp -r ~/myems/myems-cleaning /myems-cleaning
+```
+```bash
 cd /myems-cleaning
+```
+```bash
 sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 ```
 
 Kopieren Sie die Datei exmaple.env nach .env und ändern Sie die .env-Datei:
 ```bash
 sudo cp /myems-cleaning/example.env /myems-cleaning/.env
+```
+```bash
 nano /myems-cleaning/.env
 ```
 systemd-Dienst einrichten:
@@ -267,13 +314,19 @@ In diesem Schritt installieren Sie den Dienst myems-normalization.
 
 ```bash
 sudo cp -r ~/myems/myems-normalization /myems-normalization
+```
+```bash
 cd /myems-normalization
+```
+```bash
 sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 ```
 
 Kopieren Sie die Datei exmaple.env nach .env und ändern Sie die .env-Datei:
 ```bash
 sudo cp /myems-normalization/example.env /myems-normalization/.env
+```
+```bash
 nano /myems-normalization/.env
 ```
 systemd-Dienst einrichten:
@@ -303,12 +356,18 @@ In diesem Schritt installieren Sie den myems-aggregation service.
 
 ```bash
 sudo cp -r ~/myems/myems-aggregation /myems-aggregation
+```
+```bash
 cd /myems-aggregation
+```
+```bash
 sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 ```
 Kopieren Sie die Datei exmaple.env nach .env und ändern Sie die .env-Datei:
 ```bash
 sudo cp /myems-aggregation/example.env /myems-aggregation/.env
+```
+```bash
 sudo nano /myems-aggregation/.env
 ```
 systemd-Dienst einrichten:
@@ -390,8 +449,10 @@ sudo systemctl restart nginx
 * Installieren Sie die MyEMS Web UI:
 
 Installieren Sie NodeJS:
-```
+```bash
 curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
+```
+```bash
 sudo apt-get install -y nodejs
 ```
 
@@ -405,12 +466,16 @@ Von https://mapbox.com Holen Sie sich das mapboxToken und setzen Sie showOnlineM
 
 ```bash
 cd ~/myems/myems-web
+```
+```bash
 sudo nano src/config.js
 ```
 
 Erstellen und komprimieren:
 ```bash
 sudo npm i --unsafe-perm=true --allow-root --legacy-peer-deps
+```
+```bash
 sudo npm run build
 ```
 

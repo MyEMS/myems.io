@@ -11,7 +11,7 @@ In this guide, you will deploy MyEMS on Debian or Ubuntu server.
 This guide describes how to install MyEMS on Ubuntu 24.04 LTS / Ubuntu 22.04 LTS / Ubuntu 20.04 LTS / Ubuntu 18.04 LTS / Debian 12 Bookworm / Debian 11 Bullseye / Debian 10 Buster. Hardware requirements depend on chosen database and amount of devices connected to the system. To run MyEMS and MySQL on a single machine you will need at least 4GB of RAM.
 
 Clone source code:
-```
+```bash
 cd ~
 git clone https://github.com/myems/myems
 ```
@@ -25,8 +25,14 @@ See [Database](./database.md)
 * Install myems-api service:
 ```bash
 sudo cp -r ~/myems/myems-api /myems-api
+```
+```bash
 cd /myems-api
+```
+```bash
 sudo apt install python3-pip
+```
+```bash
 sudo pip install -r requirements.txt
 ```
 
@@ -39,6 +45,8 @@ sudo pip install -r requirements.txt
 Create .env file based on example.env and edit the .env file if needed:
 ```bash
 sudo cp /myems-api/example.env /myems-api/.env
+```
+```bash
 sudo nano /myems-api/.env
 ```
 Add port to firewall:
@@ -48,17 +56,25 @@ sudo ufw allow 8000
 Setup systemd configure files:
 ```bash
 sudo cp /myems-api/myems-api.service /lib/systemd/system/
+```
+```bash
 sudo cp /myems-api/myems-api.socket /lib/systemd/system/
+```
+```bash
 sudo cp /myems-api/myems-api.conf /usr/lib/tmpfiles.d/
 ```
 Next enable the services so that they autostart at boot:
 ```bash
 sudo systemctl enable myems-api.socket
+```
+```bash
 sudo systemctl enable myems-api.service
 ```
 Start the services :
 ```bash
 sudo systemctl start myems-api.socket
+```
+```bash
 sudo systemctl start myems-api.service
 ```
 
@@ -89,7 +105,7 @@ http{
 ```
 
 Add a new file under /etc/nginx/conf.d/
-```
+```bash
 sudo nano /etc/nginx/conf.d/myems-admin.conf
 ```
 Write with directives as below, replace the default myems-api url http://127.0.0.1:8000/ with actual url if the myems-api servcie hosted on a different server
@@ -117,7 +133,11 @@ server {
   If the server can not connect to the internet, please compress the myems/myems-admin folder and upload it to the server and extract it to ~/myems/myems-admin
 ```bash
 sudo mkdir /var/www
+```
+```bash
 sudo cp -r ~/myems/myems-admin  /var/www/myems-admin
+```
+```bash
 sudo chmod 0755 -R /var/www/myems-admin
 ```
   Check the config file and change it if necessary:
@@ -145,13 +165,19 @@ In this step, you will install myems-modbus-tcp service.
 
 ```bash
 sudo cp -r ~/myems/myems-modbus-tcp /myems-modbus-tcp
+```
+```bash
 cd /myems-modbus-tcp
+```
+```bash
 sudo pip install -r requirements.txt
 ```
 
 Copy exmaple.env file to .env and modify the .env file:
 ```bash
 sudo cp /myems-modbus-tcp/example.env /myems-modbus-tcp/.env
+```
+```bash
 sudo nano /myems-modbus-tcp/.env
 ```
 Setup systemd service:
@@ -181,13 +207,19 @@ In this step, you will install myems-cleaning service.
 
 ```bash
 sudo cp -r ~/myems/myems-cleaning /myems-cleaning
+```
+```bash
 cd /myems-cleaning
+```
+```bash
 sudo pip install -r requirements.txt
 ```
 
 Copy exmaple.env file to .env and modify the .env file:
 ```bash
 sudo cp /myems-cleaning/example.env /myems-cleaning/.env
+```
+```bash
 sudo nano /myems-cleaning/.env
 ```
 Setup systemd service:
@@ -217,13 +249,19 @@ In this step, you will install myems-normalization service.
 
 ```bash
 sudo cp -r ~/myems/myems-normalization /myems-normalization
+```
+```bash
 cd /myems-normalization
+```
+```bash
 sudo pip install -r requirements.txt
 ```
 
 Copy exmaple.env file to .env and modify the .env file:
 ```bash
 sudo cp /myems-normalization/example.env /myems-normalization/.env
+```
+```bash
 sudo nano /myems-normalization/.env
 ```
 Setup systemd service:
@@ -253,12 +291,18 @@ In this step, you will install myems-aggregation service.
 
 ```bash
 sudo cp -r ~/myems/myems-aggregation /myems-aggregation
+```
+```bash
 cd /myems-aggregation
+```
+```bash
 pip install -r requirements.txt
 ```
 Copy exmaple.env file to .env and modify the .env file:
 ```bash
 sudo cp /myems-aggregation/example.env /myems-aggregation/.env
+```
+```bash
 nano /myems-aggregation/.env
 ```
 Setup systemd service:
@@ -339,7 +383,7 @@ sudo systemctl restart nginx
 * Install MyEMS Web UI:
 
 Setup NodeJS:
-```
+```bash
 curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
 sudo apt-get install -y nodejs
 ```
@@ -354,12 +398,16 @@ Get mapboxToken at https://mapbox.com and then set showOnlineMap to true. If you
 
 ```bash
 cd myems/myems-web
+```
+```bash
 sudo nano src/config.js
 ```
 
 Build
 ```bash
 sudo npm i --unsafe-perm=true --allow-root --legacy-peer-deps
+```
+```bash
 sudo npm run build
 ```
 
@@ -367,6 +415,8 @@ Install
 Note that the following path should be same as that was configured in nginx.conf.
 ```bash
 sudo rm -r /var/www/myems-web
+```
+```bash
 sudo mv build  /var/www/myems-web
 ```
 

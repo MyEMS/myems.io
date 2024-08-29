@@ -12,7 +12,7 @@ In this guide, you will deploy MyEMS on openEuler server.
 This guide describes how to install MyEMS on openEuler 23.03. Hardware requirements depend on chosen database and amount of devices connected to the system. To run MyEMS and MySQL on a single machine you will need at least 4GB of RAM.
 
 Clone source code:
-```
+```bash
 cd ~
 git clone https://github.com/myems/myems
 ```
@@ -26,33 +26,49 @@ See [Database](./database.md)
 * Install myems-api service:
 ```bash
 sudo cp -r ~/myems/myems-api /myems-api
+```
+```bash
 cd /myems-api
+```
+```bash
 sudo pip install -r requirements.txt
 ```
 Create .env file based on example.env and edit the .env file if needed:
 ```bash
 sudo cp /myems-api/example.env /myems-api/.env
+```
+```bash
 sudo nano /myems-api/.env
 ```
 Add port to firewall:
 ```bash
 sudo firewall-cmd --zone=public --add-port=8000/tcp --permanent
+```
+```bash
 sudo firewall-cmd --reload
 ```
 Setup systemd configure files:
 ```bash
 sudo cp /myems-api/myems-api.service /lib/systemd/system/
+```
+```bash
 sudo cp /myems-api/myems-api.socket /lib/systemd/system/
+```
+```bash
 sudo cp /myems-api/myems-api.conf /usr/lib/tmpfiles.d/
 ```
 Next enable the services so that they autostart at boot:
 ```bash
 sudo systemctl enable myems-api.socket
+```
+```bash
 sudo systemctl enable myems-api.service
 ```
 Start the services :
 ```bash
 sudo systemctl start myems-api.socket
+```
+```bash
 sudo systemctl start myems-api.service
 ```
 
@@ -63,7 +79,7 @@ sudo systemctl start myems-api.service
 refer to http://nginx.org/en/linux_packages.html#RHEL
 
 Enable the nginx service:
-```
+```bash
 sudo systemctl enable nginx.service
 ```
 * Configure NGINX
@@ -86,8 +102,8 @@ http {
 }
 ```
 
-Add a new file under /etc/nginx/conf.d/
-```
+Add a new file under /etc/nginx/conf.d/:
+```bash
 sudo nano /etc/nginx/conf.d/myems-admin.conf
 ```
 
@@ -112,11 +128,15 @@ server {
 }
 ```
 
-* Install myems-admin :
+* Install myems-admin:
   If the server can not connect to the internet, please compress the myems/myems-admin folder and upload it to the server and extract it to ~/myems/myems-admin
 ```bash
 sudo mkdir /var/www
+```
+```bash
 sudo cp -r ~/myems/myems-admin  /var/www/myems-admin
+```
+```bash
 sudo chmod 0755 -R /var/www/myems-admin
 ```
   Check the config file and change it if necessary:
@@ -136,10 +156,12 @@ The 'upload' folder is for user uploaded files. DO NOT delete/move/overwrite the
 Unlock the port and add the port to firewall:
 ```bash
 sudo firewall-cmd --zone=public --add-port=8001/tcp --permanent
+```
+```bash
 sudo firewall-cmd --reload
 ```
 Restart the nginx service:
-```
+```bash
 sudo systemctl restart nginx.service
 ```
 
@@ -155,13 +177,19 @@ In this step, you will install myems-modbus-tcp service.
 
 ```bash
 sudo cp -r ~/myems/myems-modbus-tcp /myems-modbus-tcp
+```
+```bash
 cd /myems-modbus-tcp
+```
+```bash
 sudo pip install -r requirements.txt
 ```
 
 Copy exmaple.env file to .env and modify the .env file:
 ```bash
 sudo cp /myems-modbus-tcp/example.env /myems-modbus-tcp/.env
+```
+```bash
 sudo nano /myems-modbus-tcp/.env
 ```
 Setup systemd service:
@@ -191,13 +219,19 @@ In this step, you will install myems-cleaning service.
 
 ```bash
 sudo cp -r ~/myems/myems-cleaning /myems-cleaning
+```
+```bash
 cd /myems-cleaning
+```
+```bash
 sudo pip install -r requirements.txt
 ```
 
 Copy exmaple.env file to .env and modify the .env file:
 ```bash
 sudo cp /myems-cleaning/example.env /myems-cleaning/.env
+```
+```bash
 sudo nano /myems-cleaning/.env
 ```
 Setup systemd service:
@@ -227,13 +261,19 @@ In this step, you will install myems-normalization service.
 
 ```bash
 sudo cp -r ~/myems/myems-normalization /myems-normalization
+```
+```bash
 cd /myems-normalization
+```
+```bash
 sudo pip install -r requirements.txt
 ```
 
 Copy exmaple.env file to .env and modify the .env file:
 ```bash
 sudo cp /myems-normalization/example.env /myems-normalization/.env
+```
+```bash
 sudo nano /myems-normalization/.env
 ```
 Setup systemd service:
@@ -263,12 +303,18 @@ In this step, you will install myems-aggregation service.
 
 ```bash
 sudo cp -r ~/myems/myems-aggregation /myems-aggregation
+```
+```bash
 cd /myems-aggregation
+```
+```bash
 sudo pip install -r requirements.txt
 ```
 Copy exmaple.env file to .env and modify the .env file:
 ```bash
 sudo cp /myems-aggregation/example.env /myems-aggregation/.env
+```
+```bash
 nano /myems-aggregation/.env
 ```
 Setup systemd service:
@@ -322,7 +368,7 @@ http {
 ```
 
 Update the nginx default conf file:
-```
+```bash
 sudo nano /etc/nginx/conf.d/default.conf
 ```
 Write with directives as below, and replace the default myems-api url http://127.0.0.1:8000/ with actual url if the myems-api servcie hosted on different server
@@ -351,7 +397,7 @@ server {
 * Install MyEMS Web UI:
 
 Setup NodeJS:
-```
+```bash
 sudo dnf install nodejs
 ```
 
@@ -365,12 +411,16 @@ Get mapboxToken at https://mapbox.com and then set showOnlineMap to true. If you
 
 ```bash
 cd ~/myems/myems-web
+```
+```bash
 sudo nano src/config.js
 ```
 
 Build and Compress
 ```bash
 sudo npm i --unsafe-perm=true --allow-root --legacy-peer-deps
+```
+```bash
 sudo npm run build
 ```
 
@@ -384,10 +434,12 @@ sudo mv build  /var/www/myems-web
 Unlock the port and add the port to firewall:
 ```bash
 sudo firewall-cmd --zone=public --add-port=80/tcp --permanent
+```
+```bash
 sudo firewall-cmd --reload
 ```
 Restart the nginx service:
-```
+```bash
 sudo systemctl restart nginx.service
 ```
 

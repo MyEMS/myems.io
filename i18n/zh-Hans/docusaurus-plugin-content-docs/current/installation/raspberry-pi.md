@@ -13,10 +13,16 @@ sidebar_position: 7
 
 ## 克隆源代码
 
-```
+```bash
 sudo apt install git
+```
+```bash
 sudo apt install pip
+```
+```bash
 sudo apt install ufw
+```
+```bash
 cd ~
 git clone https://github.com/myems/myems
 ```
@@ -25,18 +31,22 @@ git clone https://github.com/myems/myems
 
 * 设置 MySQL 服务器
 
-```
+```bash
 sudo apt update
+```
+```bash
 sudo apt upgrade
+```
+```bash
 sudo apt install mariadb-server
 ```
 默认情况下，MySQL 安装时没有设置任何密码，这意味着您无需任何身份验证即可访问 MySQL 服务器。
 运行以下命令以开始 MySQL 保护过程。
 
-```
+```bash
 sudo mysql_secure_installation
 ```
-```
+```bash
 Enter current password for root (enter for none): [Enter key or return key]
 Switch to unix_socket authentication [Y/n] Y
 Change the root password? [Y/n] Y
@@ -59,13 +69,19 @@ Reload privilege tables now? [Y/n] Y
 * 安装 myems-api 服务:
 ```bash
 sudo cp -r ~/myems/myems-api /myems-api
+```
+```bash
 cd /myems-api
+```
+```bash
 sudo pip install -r requirements.txt
 ```
 
 根据example.env创建.env文件，并根据需要编辑.env：
 ```bash
 sudo cp /myems-api/example.env /myems-api/.env
+```
+```bash
 sudo nano /myems-api/.env
 ```
 检查或更改myems-api.service和myems-api.socket中的侦听端口（默认值为8000）：
@@ -88,17 +104,25 @@ sudo ufw allow 8000
 安装 systemd 配置文件:
 ```bash
 sudo cp /myems-api/myems-api.service /lib/systemd/system/
+```
+```bash
 sudo cp /myems-api/myems-api.socket /lib/systemd/system/
+```
+```bash
 sudo cp /myems-api/myems-api.conf /usr/lib/tmpfiles.d/
 ```
 接下来启用这些服务，以便它们在启动时自动启动：
 ```bash
 sudo systemctl enable myems-api.socket
+```
+```bash
 sudo systemctl enable myems-api.service
 ```
 启动服务：
 ```bash
 sudo systemctl start myems-api.socket
+```
+```bash
 sudo systemctl start myems-api.service
 ```
 
@@ -107,18 +131,25 @@ sudo systemctl start myems-api.service
 * 安装 NGINX 服务器
 
 参考 http://nginx.org/en/linux_packages.html#Debian
-```
+```bash
 sudo apt install curl gnupg2 ca-certificates lsb-release debian-archive-keyring
-
+```
+```bash
 curl https://nginx.org/keys/nginx_signing.key | gpg --dearmor | sudo tee /usr/share/keyrings/nginx-archive-keyring.gpg >/dev/null
-
+```
+```bash
 gpg --dry-run --quiet --no-keyring --import --import-options import-show /usr/share/keyrings/nginx-archive-keyring.gpg
-
+```
+```bash
 echo "deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] http://nginx.org/packages/debian `lsb_release -cs` nginx" | sudo tee /etc/apt/sources.list.d/nginx.list
-
+```
+```bash
 echo -e "Package: *\nPin: origin nginx.org\nPin: release o=nginx\nPin-Priority: 900\n" | sudo tee /etc/apt/preferences.d/99nginx
-
+```
+```bash
 sudo apt update
+```
+```bash
 sudo apt install nginx
 
 ```
@@ -167,7 +198,11 @@ http {
 
 ```bash
 sudo mkdir /var/www
+```
+```bash
 sudo cp -r ~/myems/myems-admin  /var/www/myems-admin
+```
+```bash
 sudo chmod 0755 -R /var/www/myems-admin
 ```
 检查配置文件，必要时进行更改：
@@ -195,13 +230,19 @@ sudo ufw allow 8001
 
 ```bash
 sudo cp -r ~/myems/myems-modbus-tcp /myems-modbus-tcp
+```
+```bash
 cd /myems-modbus-tcp
+```
+```bash
 sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 ```
 
 将exmaple.ev文件复制到.env并修改.env文件：
 ```bash
 sudo cp /myems-modbus-tcp/example.env /myems-modbus-tcp/.env
+```
+```bash
 sudo nano /myems-modbus-tcp/.env
 ```
 安装 systemd 服务:
@@ -231,13 +272,19 @@ cat /myems-modbus-tcp.log
 
 ```bash
 sudo cp -r ~/myems/myems-cleaning /myems-cleaning
+```
+```bash
 cd /myems-cleaning
+```
+```bash
 sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 ```
 
 将exmaple.ev文件复制到.env并修改.env文件：
 ```bash
 sudo cp /myems-cleaning/example.env /myems-cleaning/.env
+```
+```bash
 sudo nano /myems-cleaning/.env
 ```
 安装systemd服务：
@@ -267,13 +314,19 @@ cat /myems-cleaning.log
 
 ```bash
 sudo cp -r ~/myems/myems-normalization /myems-normalization
+```
+```bash
 cd /myems-normalization
+```
+```bash
 sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 ```
 
 将exmaple.ev文件复制到.env并修改.env文件：
 ```bash
 sudo cp /myems-normalization/example.env /myems-normalization/.env
+```
+```bash
 sudo nano /myems-normalization/.env
 ```
 安装systemd服务
@@ -303,12 +356,18 @@ cat /myems-normalization.log
 
 ```bash
 sudo cp -r ~/myems/myems-aggregation /myems-aggregation
+```
+```bash
 cd /myems-aggregation
+```
+```bash
 sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 ```
 将exmaple.ev文件复制到.env并修改.env文件：
 ```bash
 sudo cp /myems-aggregation/example.env /myems-aggregation/.env
+```
+```bash
 sudo nano /myems-aggregation/.env
 ```
 安装systemd服务
@@ -390,8 +449,10 @@ sudo systemctl restart nginx
 * 安装 MyEMS Web UI:
 
 安装NodeJS:
-```
+```bash
 curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
+```
+```bash
 sudo apt-get install -y nodejs
 ```
 
@@ -405,12 +466,16 @@ sudo apt-get install -y nodejs
 
 ```bash
 cd ~/myems/myems-web
+```
+```bash
 sudo nano src/config.js
 ```
 
 编译和压缩：
 ```bash
 sudo npm i --unsafe-perm=true --allow-root --legacy-peer-deps
+```
+```bash
 sudo npm run build
 ```
 
