@@ -31,6 +31,8 @@ In diesem Abschnitt installieren Sie myems-api auf Podman.
 
 ```bash
 cp -r myems/myems-api /
+```
+```bash
 cd /myems-api
 ```
 
@@ -111,6 +113,8 @@ In diesem Abschnitt installieren Sie myems-admin auf Podman.
 
 ```bash
 cp -r myems/myems-admin /
+```
+```bash
 cd /myems-admin
 ```
 
@@ -190,6 +194,8 @@ In diesem Abschnitt installieren Sie myems-modbus-tcp auf Podman.
 
 ```bash
 cp -r myems/myems-modbus-tcp /
+```
+```bash
 cd /myems-modbus-tcp
 ```
 
@@ -266,6 +272,8 @@ In diesem Abschnitt installieren Sie myems-cleaning auf Podman.
 
 ```bash
 cp -r myems/myems-cleaning /
+```
+```bash
 cd /myems-cleaning
 ```
 
@@ -338,6 +346,8 @@ In diesem Abschnitt installieren Sie myems-normalization auf Podman.
 
 ```bash
 cp -r myems/myems-normalization /
+```
+```bash
 cd /myems-normalization
 ```
 
@@ -412,6 +422,8 @@ In diesem Abschnitt installieren Sie myems-aggregation auf Podman.
 
 ```bash
 cp -r myems/myems-aggregation /
+```
+```bash
 cd /myems-aggregation
 ```
 
@@ -491,6 +503,8 @@ Von https://mapbox.com Holen Sie sich das mapboxToken und setzen Sie showOnlineM
 
 ```bash
 cd myems/myems-web
+```
+```bash
 nano src/config.js
 ```
 
@@ -502,6 +516,8 @@ Ersetzen Sie ~~127.0.0.1:8000~~ in nginx.conf durch die echte **HOST**-IP und de
 
 ```bash
 cd myems/myems-web
+```
+```bash
 nano nginx.conf
 ```
 
@@ -509,6 +525,8 @@ nano nginx.conf
 
 ```bash
 cp -r myems/myems-web /
+```
+```bash
 cd /myems-web
 ```
 

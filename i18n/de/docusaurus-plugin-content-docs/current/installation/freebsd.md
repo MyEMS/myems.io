@@ -12,15 +12,23 @@ In dieser Anleitung stellen Sie MyEMS mit FreeBSD bereit.
 Diese Anleitung beschreibt, wie Sie MyEMS auf FreeBSD 13.2 installieren. Die Hardwareanforderungen hängen von der gewählten Datenbank und der Anzahl der an das System angeschlossenen Geräte ab. Um MyEMS und MySQL auf einem einzigen Rechner laufen zu lassen, benötigen Sie mindestens 4GB RAM.
 
 Aktualisieren Sie das System und installieren Sie Tools:
-```
+```bash
 pkg install git
+```
+```bash
 pkg install python3
+```
+```bash
 pkg install py39-pip-22.3.1
+```
+```bash
 pkg install nginx
+```
+```bash
 pkg install monit
 ```
 Quellcode klonen:
-```
+```bash
 cd ~
 git clone https://github.com/myems/myems
 ```
@@ -34,7 +42,11 @@ Siehe [Database](./database.md)
 * myems-api Dienst installieren:
 ```bash
 cp -r ~/myems/myems-api /myems-api
+```
+```bash
 cd /myems-api
+```
+```bash
 pip install -r requirements.txt
 ```
 :::tip
@@ -47,6 +59,8 @@ Erstellen Sie eine .env basierend auf example.env und bearbeiten Sie die .env be
 
 ```bash
 cp /myems-api/example.env /myems-api/.env
+```
+```bash
 nano /myems-api/.env
 ```
 
@@ -54,8 +68,6 @@ monit einrichten und Dateien konfigurieren:
 
 ```bash
 nano /etc/monit.d/myems-api
-```
-```bash
 check process mymes-api with pidfile /var/run/myems-api/pid
 start program = "/usr/local/bin/gunicorn -b 0.0.0.0:8000 --pid /var/run/myems-api/pid --timeout 600 --workers=4 app:api &"
 stop program = "/bin/kill -s TERM $MAINPID"
@@ -73,7 +85,7 @@ monit restart
 beziehen sich auf http://nginx.org/en/docs/install.html
 
 Enable the nginx service:
-```
+```bash
 service nginx enable
 ```
 * NGINX einrichten
@@ -96,8 +108,8 @@ http {
 }
 ```
 
-Fügen Sie eine neue Datei unter /etc/nginx/conf.d/
-```
+Fügen Sie eine neue Datei unter /etc/nginx/conf.d/:
+```bash
 nano /etc/nginx/conf.d/myems-admin.conf
 ```
 
@@ -127,7 +139,11 @@ server {
   Wenn der Server keine Verbindung zum Internet herstellen kann, komprimieren Sie bitte den Ordner myems/myems-admin und laden Sie ihn auf den Server hoch und extrahieren Sie ihn in ~/myems/myems-admin
 ```bash
 mkdir /var/www
+```
+```bash
 cp -r ~/myems/myems-admin  /var/www/myems-admin
+```
+```bash
 chmod 0755 /var/www/myems-admin
 ```
   Überprüfen Sie die Konfigurationsdatei und ändern Sie sie bei Bedarf:
@@ -146,7 +162,7 @@ Der Ordner "upload" ist für vom Benutzer hochgeladene Dateien. Löschen/verschi
 :::
 
 Starten Sie den nginx-Dienst neu:
-```
+```bash
 service nginx restart
 ```
 
@@ -162,7 +178,11 @@ In diesem Schritt installieren Sie den Dienst myems-modbus-tcp.
 
 ```bash
 cp -r ~/myems/myems-modbus-tcp /myems-modbus-tcp
+```
+```bash
 cd /myems-modbus-tcp
+```
+```bash
 pip install -r requirements.txt
 ```
 
@@ -170,6 +190,8 @@ Kopieren Sie die Datei exmaple.env in .env und ändern Sie die Datei .env:
 
 ```bash
 cp /myems-modbus-tcp/example.env /myems-modbus-tcp/.env
+```
+```bash
 nano /myems-modbus-tcp/.env
 ```
 
@@ -177,8 +199,6 @@ monit Dienst einrichten:
 
 ```bash
 nano /etc/monit.d/myems-modbus-tcp
-```
-```bash
 check file myems-modbus-tcp path /myems-modbus-tcp/main.py
 start program = "/usr/local/bin/python3 /myems-modbus-tcp/main.py"
 stop program = "/bin/kill -s TERM $MAINPID"
@@ -194,7 +214,11 @@ In diesem Schritt installieren Sie den myems-cleaning Service.
 
 ```bash
 cp -r ~/myems/myems-cleaning /myems-cleaning
+```
+```bash
 cd /myems-cleaning
+```
+```bash
 pip install -r requirements.txt
 ```
 
@@ -202,6 +226,8 @@ Kopieren Sie die Datei exmaple.env in .env und ändern Sie die Datei .env:
 
 ```bash
 cp /myems-cleaning/example.env /myems-cleaning/.env
+```
+```bash
 nano /myems-cleaning/.env
 ```
 
@@ -209,8 +235,6 @@ monit Dienst einrichten:
 
 ```bash
 nano /etc/monit.d/myems-cleaning
-```
-```bash
 check file myems-cleaning path /myems-cleaning/main.py
 start program = "/usr/local/bin/python3 /myems-cleaning/main.py"
 stop program = "/bin/kill -s TERM $MAINPID"
@@ -226,7 +250,11 @@ In diesem Schritt installieren Sie den myems-normalization service.
 
 ```bash
 cp -r ~/myems/myems-normalization /myems-normalization
+```
+```bash
 cd /myems-normalization
+```
+```bash
 pip install -r requirements.txt
 ```
 
@@ -234,6 +262,8 @@ Kopieren Sie die Datei exmaple.env in .env und ändern Sie die Datei .env:
 
 ```bash
 cp /myems-normalization/example.env /myems-normalization/.env
+```
+```bash
 nano /myems-normalization/.env
 ```
 
@@ -241,8 +271,6 @@ monit Dienst einrichten:
 
 ```bash
 nano /etc/monit.d/myems-normalization
-```
-```bash
 check file myems-normalization path /myems-normalization/main.py
 start program = "/usr/local/bin/python3 /myems-normalization/main.py"
 stop program = "/bin/kill -s TERM $MAINPID"
@@ -258,13 +286,19 @@ In diesem Schritt installieren Sie den myems-aggregation service.
 
 ```bash
 cp -r ~/myems/myems-aggregation /myems-aggregation
+```
+```bash
 cd /myems-aggregation
+```
+```bash
 pip install -r requirements.txt
 ```
 Kopieren Sie die Datei exmaple.env in .env und ändern Sie die Datei .env:
 
 ```bash
 cp /myems-aggregation/example.env /myems-aggregation/.env
+```
+```bash
 nano /myems-aggregation/.env
 ```
 
@@ -272,8 +306,6 @@ monit Dienst einrichten:
 
 ```bash
 nano /etc/monit.d/myems-aggregation
-```
-```bash
 check file myems-aggregation path /myems-aggregation/main.py
 start program = "/usr/local/bin/python3 /myems-aggregation/main.py"
 stop program = "/bin/kill -s TERM $MAINPID"
@@ -313,7 +345,7 @@ http {
 ```
 
 Aktualisieren der nginx Standard-Conf-Datei:
-```
+```bash
 nano /etc/nginx/conf.d/default.conf
 ```
 Schreiben Sie mit Direktiven wie unten und ersetzen Sie die Standard-myems-api-URL http://127.0.0.1:8000/ mit tatsächlicher URL, wenn die myems-api-Servcie auf einem anderen Server gehostet wird
@@ -342,7 +374,7 @@ server {
 * MyEMS Web UI installieren:
 
 NodeJS einrichten:
-```
+```bash
 pkg install node-18.16.0
 ```
 
@@ -356,12 +388,16 @@ Von https://mapbox.com Holen Sie sich das mapboxToken und setzen Sie showOnlineM
 
 ```bash
 cd ~/myems/myems-web
+```
+```bash
 nano src/config.js
 ```
 
 Erstellen:
 ```bash
 npm i --unsafe-perm=true --allow-root --legacy-peer-deps
+```
+```bash
 npm run build
 ```
 
@@ -369,11 +405,13 @@ Installieren
 Beachten Sie, dass der folgende Pfad mit dem in nginx.conf konfigurierten identisch sein sollte.
 ```bash
 rm -r /var/www/myems-web
+```
+```bash
 mv build  /var/www/myems-web
 ```
 
 Starten Sie NGINX neu
-```
+```bash
 service nginx restart
 ```
 

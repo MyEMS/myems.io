@@ -30,25 +30,49 @@ Der Host bezieht sich auf den Server, auf dem Docker-Engine läuft. Bitte änder
 ### Installation
 
 1.  Repository klonen
-```
+```bash
 git clone https://github.com/myems/myems.git 
 ```
 
 2.  Datenbankschema importieren
 
-```
+```bash
 cd myems/database/install
+```
+```bash
 mysql -u root -p < myems_billing_baseline_db.sql
+```
+```bash
 mysql -u root -p < myems_billing_db.sql
+```
+```bash
 mysql -u root -p < myems_carbon_db.sql
+```
+```bash
 mysql -u root -p < myems_energy_baseline_db.sql
+```
+```bash
 mysql -u root -p < myems_energy_db.sql
+```
+```bash
 mysql -u root -p < myems_energy_model_db.sql
+```
+```bash
 mysql -u root -p < myems_fdd_db.sql
+```
+```bash
 mysql -u root -p < myems_historical_db.sql
+```
+```bash
 mysql -u root -p < myems_production_db.sql
+```
+```bash
 mysql -u root -p < myems_reporting_db.sql
+```
+```bash
 mysql -u root -p < myems_system_db.sql
+```
+```bash
 mysql -u root -p < myems_user_db.sql
 ```
 Anmerkung: Siehe unter [database](./database.md)
@@ -63,24 +87,48 @@ Die angenommene Host-IP ist 192.168.0.1, die Datenbank-IP ist 192.168.0.2, das D
 :::
 
 3.1  API-Adresse ändern in nginx.conf
-```
+```bash
 cd myems
+```
+```bash
 nano myems-admin/nginx.conf
+```
+```bash
 nano myems-web/nginx.conf
 ```
 
 3.2 Kopieren Sie das folgende Beispiel in das Verzeichnis bzw. Env ist Env und modifizieren Datenbank IP, Kontonummer und Passwort in Env
-```
+```bash
 cd myems
+```
+```bash
 cp myems-aggregation/example.env myems-aggregation/.env
+```
+```bash
 nano myems-aggregation/.env
+```
+```bash
 cp myems-api/example.env myems-api/.env
+```
+```bash
 nano myems-api/.env
+```
+```bash
 cp myems-cleaning/example.env myems-cleaning/.env
+```
+```bash
 nano myems-cleaning/.env
+```
+```bash
 cp myems-modbus-tcp/example.env myems-modbus-tcp/.env
+```
+```bash
 nano myems-modbus-tcp/.env
+```
+```bash
 cp myems-normalization/example.env myems-normalization/.env
+```
+```bash
 nano myems-normalization/.env 
 ```
 
@@ -91,24 +139,32 @@ Make sure the upload folders in api and admin are same folder on host.
 
 4.  Web UI erstellen
 
-```
+```bash
 cd myems/myems-web
+```
+```bash
 npm i --unsafe-perm=true --allow-root --legacy-peer-deps
+```
+```bash
 npm run build
 ```
 
 5. Befehl Docker-compose ausführen
 
 On Windows Host:
-```
+```bash
 cd myems
+```
+```bash
 docker-compose -f docker-compose-on-windows.yml up -d 
 ```
 
 On Linux Host:
 
-```
+```bash
 cd myems
+```
+```bash
 docker-compose -f docker-compose-on-linux.yml up -d 
 ```
 
@@ -123,7 +179,7 @@ docker-compose -f docker-compose-on-linux.yml up -d
 :::info
 
 Wenn die API einen Fehler meldet, bestätigen Sie bitte, ob die Datenbank-IP, das Datenbankkonto und das Datenbankkennwort in .env sind korrekt. Wenn nicht, ändern Sie sie bitte und führen Sie：
-```
+```bash
 docker-compose up --build -d
 ```
 

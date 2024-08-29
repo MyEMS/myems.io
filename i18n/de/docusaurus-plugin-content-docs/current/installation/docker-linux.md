@@ -23,6 +23,8 @@ In diesem Abschnitt installieren Sie myems-api auf Docker.
 
 ```bash
 cp -r myems/myems-api /
+```
+```bash
 cd /myems-api
 ```
 
@@ -104,6 +106,8 @@ In diesem Abschnitt installieren Sie myems-admin auf Docker.
 
 ```bash
 cp -r myems/myems-admin /
+```
+```bash
 cd /myems-admin
 ```
 
@@ -183,6 +187,8 @@ In diesem Abschnitt installieren Sie myems-modbus-tcp auf Docker.
 
 ```bash
 cp -r myems/myems-modbus-tcp /
+```
+```bash
 cd /myems-modbus-tcp
 ```
 
@@ -259,6 +265,8 @@ In diesem Abschnitt installieren Sie myems-cleaning auf Docker.
 
 ```bash
 cp -r myems/myems-cleaning /
+```
+```bash
 cd /myems-cleaning
 ```
 
@@ -331,6 +339,8 @@ In diesem Abschnitt installieren Sie myems-normalization auf Docker.
 
 ```bash
 cp -r myems/myems-normalization /
+```
+```bash
 cd /myems-normalization
 ```
 
@@ -405,6 +415,8 @@ In diesem Abschnitt installieren Sie myems-aggregation auf Docker.
 
 ```bash
 cp -r myems/myems-aggregation /
+```
+```bash
 cd /myems-aggregation
 ```
 
@@ -483,6 +495,8 @@ Von https://mapbox.com Holen Sie sich das mapboxToken und setzen Sie showOnlineM
 :::
 ```bash
 cd myems/myems-web
+```
+```bash
 nano src/config.js
 ```
 
@@ -494,6 +508,8 @@ Ersetzen Sie ~~127.0.0.1:8000~~ in nginx.conf durch die echte **HOST**-IP und de
 
 ```bash
 cd myems/myems-web
+```
+```bash
 nano nginx.conf
 ```
 
@@ -501,6 +517,8 @@ nano nginx.conf
 
 ```bash
 cp -r myems/myems-web /
+```
+```bash
 cd /myems-web
 ```
 
@@ -512,6 +530,8 @@ Sie können den Befehl „npm run build“ in diesem Abschnitt getrost ignoriere
 
 ```bash
 docker build -t myems/myems-web .
+```
+```bash
 docker image prune -f
 ```
 
@@ -519,6 +539,8 @@ Um für mehrere Plattformen zu bauen und nicht nur für die Architektur und das 
 Sie können buildx verwenden und das Flag --platform setzen, um die Zielplattform für die Build-Ausgabe anzugeben (z. B. linux/amd64, linux/arm64 oder darwin/amd64).
 ```bash
 docker buildx build --platform=linux/amd64 -t myems/myems-web .
+```
+```bash
 docker image prune -f
 ```
 
