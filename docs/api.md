@@ -20,10 +20,34 @@ curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKE
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/advancedreports/{id}
 ```
 
+*   GET Export an Advanced Report Config by ID to JSON
+
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/advancedreports/{id}/export
+```
+
 *   POST Create an Advanced Report Config
 
 ```bash
 curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST -d '{"data":{"name":"Space Daily Report1", "expression":"{\"space_id\":1}",  "is_enabled":true, "next_run_datetime": "2023-09-06T20:00:00", "is_run_immediately": false}}' {{base_url}}/advancedreports
+```
+
+*   POST Import an Advanced Report Config from JSON
+
+```bash
+curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST -d '{"data":{"name":"Space Daily Report1", "expression":"{\"space_id\":1}",  "is_enabled":true, "next_run_datetime": "2023-09-06T20:00:00", "is_run_immediately": false}}' {{base_url}}/advancedreports/import
+```
+
+*   POST Clone an Advanced Report Config by ID 
+
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST {{base_url}}/advancedreports/clone
+```
+
+*   PUT Run an Advanced Report by ID
+
+```bash
+curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X PUT -d '{"data":{"name":"Space Monthly Report", "expression":"{\"space_id\":1}",  "is_enabled":true, "next_run_datetime":"2023-09-01T00:00:00", "is_run_immediately": false}}' {{base_url}}/advancedreports/{id}/run
 ```
 
 *   PUT Update an Advanced Report Config
@@ -62,7 +86,7 @@ Result
 | description       | string    | Combined Equipment description                               |
 | qrcode            | string    | QRCode in String                                             |
 
-*   GET All Equipments
+*   GET All Combined Equipments
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/combinedequipments
 ```
@@ -74,15 +98,23 @@ curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKE
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"MyEMS Chiller Plant", "is_input_counted":true, "is_output_counted":false, "cost_center_id":1, "svg":"<svg></svg>", "camera_url":"http://XXX", "description":"equipment description"}}' {{base_url}}/combinedequipments
 ```
-*   PUT Update a Combined Equipment
+*   PUT Update a Combined Equipment by ID
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X PUT -d '{"data":{"name":"MyEMS Combined Chiller Plant", "is_input_counted":true, "is_output_counted":true, "cost_center_id":1, "svg":"<svg></svg>", "camera_url":"http://XXXs", "description":"equipment description"}}' {{base_url}}/combinedequipments/{id}
 ```
-*   POST Clone a Combined Equipment
+*   GET Export a Combined Equipment by ID to JSON
 ```bash
-curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X PUT -d '{"data":{}}' {{base_url}}/combinedequipments/{id}
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X GET -d '{"data":{}}' {{base_url}}/combinedequipments/{id}/export
 ```
-*   GET All Equipments of a Combined Equipment by ID
+*   POST Import a Combined Equipment from JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X PUT -d '{"data":{}}' {{base_url}}/combinedequipments/{id}/import
+```
+*   POST Clone a Combined Equipment by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{}}' {{base_url}}/combinedequipments/{id}/clone
+```
+*   GET All Equipments of a Combined Equipment
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/combinedequipments/{id}/equipments
 ```
@@ -94,7 +126,7 @@ curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKE
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/combinedequipments/{id}/equipments/{eid}
 ```
-*   GET All Meters of a Combined Equipment by ID
+*   GET All Meters of a Combined Equipment
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/combinedequipments/{id}/meters
 ```
@@ -106,7 +138,7 @@ curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKE
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/combinedequipments/{id}/meters/{mid}
 ```
-*   GET All Parameters of a Combined Equipment by ID
+*   GET All Parameters of a Combined Equipment
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/combinedequipments/{id}/parameters
 ```
@@ -138,6 +170,16 @@ curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKE
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X PUT -d '{"data":{"name":"test parameter1", "parameter_type":"constant", "constant":"test constant1", "point_id":null, "numerator_meter_uuid":null, "denominator_meter_uuid":null}}' {{base_url}}/combinedequipments/{id}/parameters/{id}
 ```
 
+*   POST Create a fraction Parameter for a Combined Equipment
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"test constant parameter", "parameter_type":"fraction", "constant":"null", "point_id":null, "numerator_meter_uuid":8449878f-b368-4ad9-a41c-e2c49189297a, "denominator_meter_uuid":3f8a66c4-8fbe-4e6d-8b40-15dee5290afd}}' {{base_url}}/combinedequipments/{id}/parameters
+```
+*   PUT Update a fraction Parameter for a Combined Equipment
+
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X PUT -d '{"data":{"name":"test parameter1", "parameter_type":"fraction", "constant":"null", "point_id":null, "numerator_meter_uuid":8449878f-b368-4ad9-a41c-e2c49189297a, "denominator_meter_uuid":3f8a66c4-8fbe-4e6d-8b40-15dee5290afd}}' {{base_url}}/combinedequipments/{id}/parameters/{id}
+```
+
 *   POST Create a point Parameter for a Combined Equipment
 
 ```bash
@@ -157,7 +199,7 @@ curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKE
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/combinedequipments/{id}/parameters/{pid}
 ```
-*   GET All Offline Meters of a Combined Equipment by ID
+*   GET All Offline Meters of a Combined Equipment
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/combinedequipments/{id}/offlinemeters
 ```
@@ -169,15 +211,15 @@ curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKE
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/combinedequipments/{id}/offlinemeters/{mid}
 ```
-*   GET All Virtual Meters of a Combined Equipment by ID
+*   GET All Virtual Meters of a Combined Equipment
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/combinedequipments/{id}/virtualmeters
 ```
-*   POST Bind Virtual Meter to a Combined Equipment
+*   POST Bind a Virtual Meter to a Combined Equipment
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"virtual_meter_id":1, "is_output":false}}' {{base_url}}/combinedequipments/{id}/virtualmeters
 ```
-*   DELETE an Virtual Meter from a Combined Equipment
+*   DELETE a Virtual Meter from a Combined Equipment
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/combinedequipments/{id}/virtualmeters/{mid}
 ```
@@ -217,7 +259,7 @@ curl -i -H "User-UUID: 3a7acfe1-f3c3-4561-a985-8a4d23ef54d0" -H "Token: GET-TOKE
 ```bash
 curl -i -H "User-UUID: 3a7acfe1-f3c3-4561-a985-8a4d23ef54d0" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/contacts
 ```
-*   DELETE Contact by ID
+*   DELETE a Contact by ID
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/contacts/{id}
 ```
@@ -280,8 +322,23 @@ curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKE
 curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X PUT -d '{"data":{"set_value": 2.0}}' {{base_url}}/commands/{id}/send
 ```
 
+*   GET Export a Command by ID to JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET -d {{base_url}}/commands/{id}/export
+```
+
+*   POST Import a Command from JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{}}' {{base_url}}/commands/{id}/import
+```
+
+*   POST Clone a Command by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST -d {{base_url}}/commands/{id}/clone
+```
+
 ### Cost Center
-*   GET Cost Center by ID
+*   GET a Cost Center by ID
 
 ```bash
 curl -i -H "User-UUID: 3a7acfe1-f3c3-4561-a985-8a4d23ef54d0" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/costcenters/{id}
@@ -299,7 +356,7 @@ Result in JSON
 ```bash
 curl -i -H "User-UUID: 3a7acfe1-f3c3-4561-a985-8a4d23ef54d0" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/costcenters
 ```
-*   DELETE Cost Center by ID
+*   DELETE a Cost Center by ID
 ```bash
 curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/costcenters/{id}
 ```
@@ -311,15 +368,15 @@ curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKE
 ```bash
 curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X PUT -d '{"data":{"name":"动力中心2", "external_id":"21829198980002"}}' {{base_url}}/costcenters/{id}
 ```
-*   GET All Tariffs associated with Cost Center ID
+*   GET All Tariffs associated with Cost Center by ID
 ```bash
 curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/costcenters/{id}/tariffs
 ```
-*   POST Create a Cost Center and Tariff Relation
+*   POST Bind Tariff to Cost Center
 ```bash
 curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"tariff_id":"3"}}' {{base_url}}/costcenters/{id}/tariffs
 ```
-*   DELETE a Cost Center and Tariff Relation by tid
+*   DEL Unbind Tariff from Cost Center
 ```bash
 curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/costcenters/{id}/tariffs/{tid}
 ```
@@ -392,15 +449,30 @@ curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKE
 ```
 *   PUT Update Data Source by ID
 ```bash
-curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X PUT -d '{"data":{"name":"Modbus1", "gateway_id":1, "protocol":"modbus-tcp", "connection":"{\"host\":\"10.1.2.99\", \"port\":502}", "description":"Modbus1"}}' {{base_url}}/datasources/{id}
+curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X PUT -d '{"data":{"name":"Modbus1", "gateway_id": 1, "protocol":"modbus-tcp", "connection":"{\"host\":\"10.1.2.99\", \"port\":502}", "description":"Modbus1"}}' {{base_url}}/datasources/{id}
 ```
 *   GET all points of the Data Source by ID
 ```bash
 curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/datasources/{id}/points
 ```
 
+*   GET Export Data Source by ID to JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/datasources/{id}/export
+```
+
+*   POST Import Data Source from JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"data":{"name":"Modbus1", "gateway_id": 1, "protocol":"modbus-tcp", "connection":"{\"host\":\"10.1.2.99\", \"port\":502}", "description":"Modbus1"}}' {{base_url}}/datasources/{id}/import
+```
+
+*   POST Clone Data Source 
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST {{base_url}}/datasources/{id}/clone
+```
+
 ### Distribution Circuit
-*   GET Distribution Circuit by ID
+*   GET a Distribution Circuit by ID
 
 ```bash
 curl -i -H "User-UUID: 3a7acfe1-f3c3-4561-a985-8a4d23ef54d0" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/distributioncircuits/{id}
@@ -516,9 +588,24 @@ curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKE
 ```bash
 curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X PUT -d '{"data":{"name":"示例配电系统1", "svg":"<?xml version=\"1.0\" encoding=\"UTF-8\"?><svg width=\"5cm\" height=\"4cm\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><desc>Four separate rectangles</desc><rect x=\".5cm\" y=\".5cm\" width=\"2cm\" height=\"1cm\"/></svg>", "description":"demo description"}}' {{base_url}}/distributionsystems/{id}
 ```
-*   GET All Distribution Circuits associated with Distribution Circuit
+*   GET All Distribution Circuits of Distribution System
 ```bash
 curl -i -H "User-UUID: 3a7acfe1-f3c3-4561-a985-8a4d23ef54d0" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/distributionsystems/{id}/distributioncircuits
+```
+
+*   GET Export a Distribution System by ID to JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/distributionsystems/{id}/export
+```
+
+*   POST Import a Distribution System from JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"data":{"name":"示例配电系统1", "svg":"<?xml version=\"1.0\" encoding=\"UTF-8\"?><svg width=\"5cm\" height=\"4cm\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><desc>Four separate rectangles</desc><rect x=\".5cm\" y=\".5cm\" width=\"2cm\" height=\"1cm\"/></svg>", "description":"demo description"}}' {{base_url}}/distributionsystems/{id}/import
+```
+
+*   POST Clone a Distribution System by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST {{base_url}}/distributionsystems/{id}/clone
 ```
 
 ### Email Message
@@ -554,6 +641,14 @@ curl --location --request POST '{{base_url}}/emailmessages' \
 * GET Email Messages by Datetime Range
 ```bash
 curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/emailmessages?startdatetime={startdatetime}&enddatetime={enddatetime}
+```
+* PUT Update an Email Message
+```bash
+curl --location --request PUT '{{base_url}}/emailmessages' \
+--header 'User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4' \
+--header 'Token: GET-TOKEN-AFTER-LOGIN' \
+--form 'file=@"/D:/myems/meterenergy.xlsx"' \
+--form 'req="{\"data\":{\"rule_id\":1, \"recipient_name\":\"myems\", \"recipient_email\":\"myems@163.com\", \"subject\":\"report_01_2021_12_24\", \"message\":\"report_01_2021_12_24\", \"created_datetime\":\"2021-12-24T00:00:00\", \"scheduled_datetime\":\"2021-12-24T00:00:00\"}}"'
 ```
 *   DELETE an Email Message by ID
 ```bash
@@ -692,6 +787,21 @@ curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-91
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/energyflowdiagrams/{id}/links/{lid}
 ```
 
+*   GET Export an Energy Flow Diagram by ID to JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/energyflowdiagrams/{id}/export
+```
+
+*   POST Import an Energy Flow Diagram from JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"source_node_id":1000000, "target_node_id":1000009, "meter_uuid":"eb78f7f9-f26f-463b-92fa-d9daf5b3651c"}}' {{base_url}}/energyflowdiagrams/{id}/import
+```
+
+*   POST Clone an Energy Flow Diagram by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST {{base_url}}/energyflowdiagrams/{id}/clone
+```
+
 ### Energy Item
 *   GET an Energy Item by ID
 
@@ -725,6 +835,188 @@ curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-91
 curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X PUT -d '{"data":{"name":"空调用","energy_category_id":1}}' {{base_url}}/energyitems/{id}
 ```
 
+### Energy Storage Container
+
+*   GET All Energy Storage Containers
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/energystoragecontainers
+```
+
+*   GET an Energy Storage Container by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/energystoragecontainers/{id}
+```
+
+*   POST Create New Energy Storage Container
+```bash
+curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST -d '{"data":{"name":"Beijing Office", "rated_capacity":600.000, "rated_power":200.000, "contact_id":1, "cost_center_id":1, "svg_id":"1", "description":"Classic"}}' {{base_url}}/energystoragecontainers
+```
+
+*   PUT Update an Energy Storage Container
+```bash
+curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X PUT -d '{"data":{"name":"Beijing Office", "rated_capacity":600.000, "rated_power":200.000, "contact_id":1, "cost_center_id":1, "svg_id":"1", "description":"Classic"}}' {{base_url}}/energystoragecontainers/{id}
+```
+
+*   DELETE an Energy Storage Container by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/energystoragecontainers/{id}
+```
+
+*   GET All Sensors of an Energy Storage Container
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/energystoragecontainers/{id}/sensors
+```
+
+*   POST Bind a Sensor to an Energy Storage Container
+```bash
+curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"energy_storage_container_id":1}}' {{base_url}}/energystoragecontainers/{id}/sensors
+```
+
+*   DELETE a Sensor from an Energy Storage Container
+```bash
+curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/energystoragecontainers/{id}/sensors/{sid}
+```
+
+*   GET All Batteries of an Energy Storage Container
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/energystoragecontainers/{id}/batteries
+```
+
+*   GET an Energy Storage Container Battery
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/energystoragecontainers/{id}/batteries
+```
+
+*   POST Create New Energy Storage Container Battery
+```bash
+curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST -d '{"data":{"name":"Battery", "battery_state_point_id":1, "soc_point_id":2, "power_point_id":3, "charge_meter_id":1, "discharge_meter_id":2, "rated_capacity": 300, "rated_power": 100, "nominal_voltage": 48}}' {{base_url}}/energystoragecontainers/{id}/batteries
+```
+
+*   PUT Update an Energy Storage Container Battery
+```bash
+curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X PUT -d '{"data":{"name":"Battery", "battery_state_point_id":1, "soc_point_id":2, "power_point_id":3, "charge_meter_id":1, "discharge_meter_id":2, "rated_capacity": 300, "rated_power": 100, "nominal_voltage": 48}}' {{base_url}}/energystoragecontainers/{id}/batteries/{bid}
+```
+
+*   DELETE an Energy Storage Container Battery
+```bash
+curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/energystoragecontainers/{id}/batteries/{bid}
+```
+
+*   GET All Grids of an Energy Storage Container
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/energystoragecontainers/{id}/grids
+```
+
+*   GET an Energy Storage Container Grid
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/energystoragecontainers/{id}/grids
+```
+
+*   POST Create New Energy Storage Container Grid
+```bash
+curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST -d '{"data":{"name":"Grid", "power_point_id":1, "buy_meter_id":1, "sell_meter_id":2, "capacity": 30}}' {{base_url}}/energystoragecontainers/{id}/grids
+```
+
+*   PUT Update an Energy Storage Container Grid
+```bash
+curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X PUT -d '{"data":{"name":"Grid", "power_point_id":1, "buy_meter_id":1, "sell_meter_id":2, "capacity": 30}}' {{base_url}}/energystoragecontainers/{id}/grids/{gid}
+```
+
+*   DELETE an Energy Storage Container Grid
+```bash
+curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/energystoragecontainers/{id}/grids/{gid}
+```
+
+*   GET All Loads of an Energy Storage Container
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/energystoragecontainers/{id}/loads
+```
+
+*   GET an Energy Storage Container Load
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/energystoragecontainers/{id}/loads
+```
+
+*   POST Create New Energy Storage Container Load
+```bash
+curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST -d '{"data":{"name":"Load", "power_point_id":1, "meter_id":1, "rated_input_power": 30}}' {{base_url}}/energystoragecontainers/{id}/loads
+```
+
+*   PUT Update an Energy Storage Container Load
+```bash
+curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X PUT -d '{"data":{"name":"Load", "power_point_id":1, "meter_id":1, "rated_input_power": 30}}' {{base_url}}/energystoragecontainers/{id}/loads/{lid}
+```
+
+*   DELETE an Energy Storage Container Load
+```bash
+curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/energystoragecontainers/{id}/loads/{lid}
+```
+
+*   GET All Power Conversion Systems of an Energy Storage Container
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/energystoragecontainers/{id}/powerconversionsystems
+```
+
+*   GET an Energy Storage Container Power Conversion System
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/energystoragecontainers/{id}/powerconversionsystems
+```
+
+*   POST Create New Energy Storage Container Power Conversion System
+```bash
+curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST -d '{"data":{"name":"Power Conversion System1", "run_state_point_id":1, "rated_output_power": 30, "today_charge_energy_point_id":2, "today_discharge_energy_point_id":3, "total_charge_energy_point_id":4, "total_discharge_energy_point_id":5}}' {{base_url}}/energystoragecontainers/{id}/powerconversionsystems
+```
+
+*   PUT Update an Energy Storage Container Power Conversion System
+```bash
+curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X PUT -d '{"data":{"name":"Power Conversion System1", "run_state_point_id":1, "rated_output_power": 30, "today_charge_energy_point_id":2, "today_discharge_energy_point_id":3, "total_charge_energy_point_id":4, "total_discharge_energy_point_id":5}}' {{base_url}}/energystoragecontainers/{id}/powerconversionsystems/{pid}
+```
+
+*   DELETE an Energy Storage Container Power Conversion System
+```bash
+curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/energystoragecontainers/{id}/powerconversionsystems/{pid}
+```
+
+*   GET All Schedules of an Energy Storage Container
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/energystoragecontainers/{id}/schedules
+```
+
+*   GET an Energy Storage Container Schedule
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/energystoragecontainers/{id}/schedules
+```
+
+*   POST Create New Energy Storage Container Schedule
+```bash
+curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST -d '{"data":{"start_time_of_day":"00:00:00", "end_time_of_day":"07:00:00", "peak_type":"offpeak",  "power": 60}}' {{base_url}}/energystoragecontainers/{id}/schedules
+```
+
+*   PUT Update an Energy Storage Container Schedule
+```bash
+curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X PUT -d '{"data":{"start_time_of_day":"00:00:00", "end_time_of_day":"07:00:00", "peak_type":"offpeak",  "power": 60}}' {{base_url}}/energystoragecontainers/{id}/schedules/{sid}
+```
+
+*   DELETE an Energy Storage Container Schedule
+```bash
+curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/energystoragecontainers/{id}/schedules/{sid}
+```
+
+*   GET Export an Energy Storage Container by ID to JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/energystoragecontainers/{id}/export
+```
+
+*   POST Import an Energy Storage Container from JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"Beijing Office", "rated_capacity":600.000, "rated_power":200.000, "contact_id":1, "cost_center_id":1, "svg_id":"1", "description":"Classic"}}' {{base_url}}/energystoragecontainers/{id}/import
+```
+
+*   POST Clone an Energy Storage Container
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST {{base_url}}/energystoragecontainers/{id}/clone
+```
+
 ### Energy Storage Power Station
 
 *   GET All Energy Storage Power Stations
@@ -750,6 +1042,51 @@ curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-91
 *   DELETE an Energy Storage Power Station by ID
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/energystoragepowerstations/{id}
+```
+
+*   GET All Energy Storage Containers of an Energy Storage Power Station
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/energystoragepowerstations/{id}/containers
+```
+
+*   POST Bind an Energy Storage Container to an Energy Storage Power Station
+```bash
+curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"energy_storage_container_id":1}}' {{base_url}}/energystoragepowerstations/{id}/containers
+```
+
+*   DELETE an Energy Storage from an Energy Storage Container
+```bash
+curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/energystoragepowerstations/{id}/containers/{cid}
+```
+
+*   GET All Users of an Energy Storage Power Station
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/energystoragepowerstations/{id}/containers
+```
+
+*   POST Bind an Energy Storage Container to an Energy Storage Power Station
+```bash
+curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"user_id":1}}' {{base_url}}/energystoragepowerstations/{id}/users
+```
+
+*   DELETE an Energy Storage from an Energy Storage Container
+```bash
+curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/energystoragepowerstations/{id}/users/{uid}
+```
+
+*   GET Export an Energy Storage Power Station by ID to JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/energystoragepowerstations/{id}/export
+```
+
+*   POST Import an Energy Storage Power Station from JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"Beijing Office", "address":"Wangfujing Street, Dongcheng District, Beijing", "postal_code":"100000", "latitude":39.909429, "longitude":116.416993, "capacity":600.000, "contact_id":1, "cost_center_id":1, "svg":"<svg></svg>", "description":"Classic"}}' {{base_url}}/energystoragepowerstations/{id}/import
+```
+
+*   POST Clone an Energy Storage Power Station
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST {{base_url}}/energystoragepowerstations/{id}/clone
 ```
 
 ### Equipment
@@ -828,13 +1165,29 @@ Result
 ```bash
 curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"test parameter", "parameter_type":"constant", "constant":"test constant", "point_id":null, "numerator_meter_uuid":null, "denominator_meter_uuid":null}}' {{base_url}}/equipments/{id}/parameters
 ```
+*   PUT Update a constant Parameter for an Equipment
+```bash
+curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X PUT -d '{"data":{"name":"test parameter", "parameter_type":"constant", "constant":"test constant", "point_id":null, "numerator_meter_uuid":null, "denominator_meter_uuid":null}}' {{base_url}}/equipments/{id}/parameters/{pid}
+```
 *   POST Create a point Parameter for an Equipment
 ```bash
 curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"test parameter", "parameter_type":"point", "constant":null, "point_id":1, "numerator_meter_uuid":null, "denominator_meter_uuid":null}}' {{base_url}}/equipments/{id}/parameters
 ```
+*   PUT Update a point Parameter for an Equipment
+```bash
+curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X PUT -d '{"data":{"name":"test parameter", "parameter_type":"point", "constant":null, "point_id":3, "numerator_meter_uuid":null, "denominator_meter_uuid":null}}' {{base_url}}/equipments/{id}/parameters/{pid}
+```
 *   POST Create a meter Parameter for an Equipment
 ```bash
 curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"test parameter", "parameter_type":"fraction", "constant":null, "point_id":null, "numerator_meter_uuid":"89ff5118-d0c2-4dd8-8098-a8698189b2ea", "denominator_meter_uuid":"5ca62d2a-908e-40c5-a6b5-a8e436d60db4"}}' {{base_url}}/equipments/{id}/parameters
+```
+*   POST Create a fraction Parameter for an Equipment
+```bash
+curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"test parameter", "parameter_type":"fraction", "constant":null, "point_id":null, "numerator_meter_uuid":"89ff5118-d0c2-4dd8-8098-a8698189b2ea", "denominator_meter_uuid":"5ca62d2a-908e-40c5-a6b5-a8e436d60db4"}}' {{base_url}}/equipments/{id}/parameters
+```
+*   PUT Update a fraction Parameter for an Equipment
+```bash
+curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X PUT -d '{"data":{"name":"test parameter", "parameter_type":"fraction", "constant":null, "point_id":null, "numerator_meter_uuid":"89ff5118-d0c2-4dd8-8098-a8698189b2ea", "denominator_meter_uuid":"5ca62d2a-908e-40c5-a6b5-a8e436d60db4"}}' {{base_url}}/equipments/{id}/parameters/{pid}
 ```
 *   DELETE a Parameter from an Equipment
 ```bash
@@ -860,134 +1213,33 @@ curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKE
 ```bash
 curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"virtual_meter_id":1, "is_output":false}}' {{base_url}}/equipments/{id}/virtualmeters
 ```
-*   DELETE an Virtual Meter from an Equipment
+*   DELETE a Virtual Meter from an Equipment
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/equipments/{id}/virtualmeters/{mid}
 ```
-
-### Combined Equipment
-*   GET a Combined Equipment by ID
+*   GET All Commands associated with Equipment ID
 ```bash
-curl -i -X GET {{base_url}}/combinedequipments/{id}
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/equipments/{id}/commands
 ```
-Result
-
-| Name              | Data Type | Description                                                  |
-| ----------------- | --------- | ------------------------------------------------------------ |
-| id                | integer   | Combined Equipment ID                                        |
-| name              | string    | Combined Equipment name                                      |
-| uuid              | string    | Combined Equipment UUID                                      |
-| is_input_counted  | boolean   | Indicates if the combined equipment's energy input is counted for aggregating |
-| is_output_counted | boolean   | Indicates if the combined equipment's energy output is counted for aggregating |
-| cost_center       | Object    | Cost Center Object                                           |
-| description       | string    | Combined Equipment description                               |
-| qrcode            | string    | QRCode in String                                             |
-
-*   GET All Equipments
+*   POST Bind Command to Equipment
 ```bash
-curl -i -X GET {{base_url}}/combinedequipments
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"command_id":3}}' {{base_url}}/equipments/{id}/commands
 ```
-*   DELETE a Combined Equipment by ID
+*   DEL Unbind Command from Equipment
 ```bash
-curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/combinedequipments/{id}
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/equipments/{id}/commands/{cid}
 ```
-*   POST Create a Combined Equipment
+*   GET Export an Equipment by ID to JSON
 ```bash
-curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"MyEMS Chiller Plant", "is_input_counted":true, "is_output_counted":false, "cost_center_id":1, "description":"equipment description"}}' {{base_url}}/combinedequipments
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/equipments/{id}/export
 ```
-*   PUT Update a Combined Equipment
+*   POST Import an Equipment from JSON
 ```bash
-curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X PUT -d '{"data":{"name":"MyEMS Chiller Plant", "is_input_counted":true, "is_output_counted":true, "cost_center_id":1, "description":"equipment description"}}' {{base_url}}/combinedequipments/{id}
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"设备1", "is_input_counted": true, "is_output_counted": false, "contact_id":1, "cost_center_id":1, "svg":"<svg></svg>", "description":"description"}}' {{base_url}}/equipments/{id}/import
 ```
-*   POST Clone a Combined Equipment
+*   POST Clone an Equipment by ID
 ```bash
-curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X PUT -d '{"data":{}}' {{base_url}}/combinedequipments/{id}
-```
-*   GET All Equipments of a Combined Equipment by ID
-```bash
-curl -i -X GET {{base_url}}/combinedequipments/{id}/equipments
-```
-*   POST Bind an Equipment to a Combined Equipment
-```bash
-curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"equipment_id":1}}' {{base_url}}/combinedequipments/{id}/equipments
-```
-*   DELETE an Equipment from a Combined Equipment
-```bash
-curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/combinedequipments/{id}/equipments/{eid}
-```
-*   GET All Meters of a Combined Equipment by ID
-```bash
-curl -i -X GET {{base_url}}/combinedequipments/{id}/meters
-```
-*   POST Bind a Meter to a Combined Equipment
-```bash
-curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"meter_id":1}}' {{base_url}}/combinedequipments/{id}/meters
-```
-*   DELETE a Meter from a Combined Equipment
-```bash
-curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/combinedequipments/{id}/meters/{mid}
-```
-*   GET All Parameters of a Combined Equipment by ID
-```bash
-curl -i -X GET {{base_url}}/combinedequipments/{id}/parameters
-```
-*   GET a Parameter of a Combined Equipment by ID
-```bash
-curl -i -X GET {{base_url}}/combinedequipments/{id}/parameters/{pid}
-```
-Result
-
-| Name              | Data Type | Description                                                  |
-| ----------------- | --------- | ------------------------------------------------------------ |
-| id                | integer   | Parameter ID                                                 |
-| name              | string    | Parameter name                                               |
-| parameter_type    | string    | Parameter Type: constant, point, meter                       |
-| is_input_counted  | boolean   | Indicates if the Combined Equipment's energy input is counted for aggregating |
-| is_output_counted | boolean   | Indicates if the Combined Equipment's energy output is counted for aggregating |
-| constant          | string    | Parameter constant value                                     |
-| point             | object    | Parameter point object                                       |
-| numerator_meter   | object    | Parameter numerator meter object                             |
-| denominator_meter | object    | Parameter numerator meter object                             |
-
-*   POST Create a constant Parameter for a Combined Equipment
-```bash
-curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"test parameter", "parameter_type":"constant", "constant":"test constant", "point_id":null, "numerator_meter_uuid":null, "denominator_meter_uuid":null}}' {{base_url}}/combinedequipments/{id}/parameters
-```
-*   POST Create a point Parameter for a Combined Equipment
-```bash
-curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"test parameter", "parameter_type":"point", "constant":null, "point_id":1, "numerator_meter_uuid":null, "denominator_meter_uuid":null}}' {{base_url}}/combinedequipments/{id}/parameters
-```
-*   POST Create a meter Parameter for a Combined Equipment
-```bash
-curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"test parameter", "parameter_type":"fraction", "constant":null, "point_id":null, "numerator_meter_uuid":"89ff5118-d0c2-4dd8-8098-a8698189b2ea", "denominator_meter_uuid":"5ca62d2a-908e-40c5-a6b5-a8e436d60db4"}}' {{base_url}}/combinedequipments/{id}/parameters
-```
-*   DELETE a Parameter from a Combined Equipment
-```bash
-curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/combinedequipments/{id}/parameters/{pid}
-```
-*   GET All Offline Meters of a Combined Equipment by ID
-```bash
-curl -i -X GET {{base_url}}/combinedequipments/{id}/offlinemeters
-```
-*   POST Bind an Offline Meter to a Combined Equipment
-```bash
-curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"offline_meter_id":1}}' {{base_url}}/combinedequipments/{id}/offlinemeters
-```
-*   DELETE an Offline Meter from a Combined Equipment
-```bash
-curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/combinedequipments/{id}/offlinemeters/{mid}
-```
-*   GET All Virtual Meters of a Combined Equipment by ID
-```bash
-curl -i -X GET {{base_url}}/combinedequipments/{id}/virtualmeters
-```
-*   POST Bind Virtual Meter to a Combined Equipment
-```bash
-curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"virtual_meter_id":1}}' {{base_url}}/combinedequipments/{id}/virtualmeters
-```
-*   DELETE an Virtual Meter from a Combined Equipment
-```bash
-curl -i -H "User-UUID: 793f1bb4-6e25-4242-8cdc-2f662b25484f" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/combinedequipments/{id}/virtualmeters/{mid}
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST {{base_url}}/equipments/{id}/clone
 ```
 
 ### Gateway
@@ -1015,17 +1267,29 @@ curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKE
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/gateways/{id}
 ```
-*   POST Gateway
+*   POST Create Gateway
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"MyEMS Gateway 3", "description":"Gateway 3"}}' {{base_url}}/gateways
 ```
-*   PUT Gateway
+*   PUT Update Gateway by ID
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X PUT -d '{"data":{"name":"MyEMS Gateway #3", "description":"Gateway #3"}}' {{base_url}}/gateways/{id}
 ```
 *   GET all data sources of the Gateway by ID
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/gateways/{id}/datasources
+```
+*   GET Export a Gateway by ID to JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/gateways/{id}/export
+```
+*   POST Import a Gateway from JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name": "Gateway10", "description": null}}' {{base_url}}/gateways/{id}/import
+```
+*   POST Clone a Gateway by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST {{base_url}}/gateways/{id}/clone
 ```
 
 ### Knowledge File
@@ -1165,6 +1429,21 @@ curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKE
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{{base_url}}/meters/{id}/commands/{id}
 ```
 
+*   GET Export a Meter by ID to JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/meters/{id}/export
+```
+
+*   POST Import a Meter from JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"PM20", "energy_category_id":1, "hourly_low_limit":0.000, "hourly_high_limit":999.99, "is_counted":true, "cost_center_id":1, "energy_item_id":1, "master_meter_id":1, "description":"空调用电"}}' {{base_url}}/meters/{id}/import
+```
+
+*   POST Clone a Meter by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST {{base_url}}/meters/{id}/clone
+```
+
 ### Microgrid
 
 *   GET All Microgrids
@@ -1187,6 +1466,21 @@ curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKE
 
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X PUT -d '{"data":{"name":"Beijing Office", "address":"Wangfujing Street, Dongcheng District, Beijing", "postal_code":"100000", "latitude":39.909429, "longitude":116.416993, "capacity":600.000, "architecture_type_id":1, "owner_type_id":1, "contact_id":1, "cost_center_id":1, "svg":"<svg></svg>", "description":"Classic"}}' {{base_url}}/microgrids/{id}
+```
+
+*   GET Export a Microgrid by ID to JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/microgrids/{id}/export
+```
+
+*   POST Import a Microgrid from JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"Beijing Office", "address":"Wangfujing Street, Dongcheng District, Beijing", "postal_code":"100000", "latitude":39.909429, "longitude":116.416993, "capacity":600.000, "architecture_type_id":1, "owner_type_id":1, "contact_id":1, "cost_center_id":1, "svg":"<svg></svg>", "description":"Classic"}}' {{base_url}}/microgrids/{id}/import
+```
+
+*   POST Clone a Microgrid by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST {{base_url}}/microgrids/{id}/clone
 ```
 
 *   DELETE a Microgrid by ID
@@ -1294,27 +1588,27 @@ curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-91
 
 ### Microgrid EVCharger
 
-*   GET All Microgrid Batteries
+*   GET All EVChargers of Microgrid
 ```bash
 curl -i -H "User-UUID: 3a7acfe1-f3c3-4561-a985-8a4d23ef54d0" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/microgridevchargers
 ```
 
-*   GET a Microgrid Battery by ID
+*   GET a Microgrid EVCharger by ID
 ```bash
 curl -i -H "User-UUID: 3a7acfe1-f3c3-4561-a985-8a4d23ef54d0" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/microgridevchargers/{id}
 ```
 
-*   POST Create new Microgrid Battery
+*   POST Create new Microgrid EVCharger
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"EVCharger", "microgrid_id":1, "power_point_id":1, "meter_id":1, "capacity": 30}}' {{base_url}}/microgridevchargers
 ```
 
-*   PUT Update Microgrid Battery by ID
+*   PUT Update Microgrid EVCharger by ID
 ```bash
 curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X PUT -d '{"data":{"name":"EVCharger", "microgrid_id":1, "power_point_id":1, "meter_id":1, "capacity": 50}}' {{base_url}}/microgridevchargers/{id}
 ```
 
-*   DELETE a Microgrid Battery by ID
+*   DELETE a Microgrid EVCharger by ID
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/microgridevchargers/{id}
 ```
@@ -1481,6 +1775,33 @@ curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-91
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/microgridpowerconversionsystems/{id}
 ```
 
+### Microgrid Schedules
+
+*   GET All Microgrid Schedules
+```bash
+curl -i -H "User-UUID: 3a7acfe1-f3c3-4561-a985-8a4d23ef54d0" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/microgridschedules
+```
+
+*   GET a Microgrid Schedule by ID
+```bash
+curl -i -H "User-UUID: 3a7acfe1-f3c3-4561-a985-8a4d23ef54d0" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/microgridschedules/{id}
+```
+
+*   POST Create new Microgrid Schedule
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"start_time_of_day":"00:00:00", "end_time_of_day":"07:00:00", "peak_type":"offpeak",  "power": 60}}' {{base_url}}/microgridschedules
+```
+
+*   PUT Update Microgrid Schedule by ID
+```bash
+curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X PUT -d '{"data":{"start_time_of_day":"00:00:00", "end_time_of_day":"07:00:00", "peak_type":"offpeak",  "power": 60}}' {{base_url}}/microgridschedules/{id}
+```
+
+*   DELETE a Microgrid Schedule by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/microgridheatpumps/{id}
+```
+
 
 ### Notification
 
@@ -1513,10 +1834,6 @@ curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKE
 *   PUT Update a Notification
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X PUT -d '{"data":{"status":"read"}}' {{base_url}}/notifications/{id}
-```
-*   DELETE Notification
-```bash
-curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/notifications/{id}
 ```
 
 ### Offline Meter
@@ -1556,6 +1873,18 @@ curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKE
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X PUT -d '{"data":{"name":"OfflinePM201", "energy_category_id":1, "hourly_low_limit":0.000, "hourly_high_limit":999.99, "is_counted":true, "cost_center_id":1, "energy_item_id":1, "description":"空调用电"}}' {{base_url}}/offlinemeters/{id}
 ```
+*   GET Export Offline Meter by ID to JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/offlinemeters/{id}/export
+```
+*   POST Import Offline Meter from JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"OfflinePM201", "energy_category_id":1, "hourly_low_limit":0.000, "hourly_high_limit":999.99, "is_counted":true, "cost_center_id":1, "energy_item_id":1, "description":"空调用电"}}' {{base_url}}/offlinemeters/{id}/import
+```
+*   POST Clone Offline Meter by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST {{base_url}}/offlinemeters/{id}/clone
+```
 
 ### Offline Meter File
 *   GET an Offline Meter File by ID
@@ -1592,6 +1921,29 @@ curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKE
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/offlinemeterfiles/{id}/restore
 ```
 
+### Energy Plan File
+
+*   GET an Energy Plan File by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/energyplanfiles/{id}
+```
+*   GET All Energy Plan Files
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/energyplanfiles
+```
+*   DELETE an Energy Plan File by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/energyplanfiles/{id}
+```
+*   POST Upload an Energy Plan File
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/TBD" -X POST -d 'file: (binary)' {{base_url}}/energyplanfiles
+```
+*   GET Restore an Energy Plan File by ID from database to disk
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/energyplanfiles/{id}/restore
+```
+
 ### Photovoltaic Power Station
 
 *   GET All Photovoltaic Power Stations
@@ -1617,6 +1969,21 @@ curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKE
 *   DELETE a Photovoltaic Power Station by ID
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/photovoltaicpowerstations/{id}
+```
+
+*   GET Export a Photovoltaic Power Station by ID to JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/photovoltaicpowerstations/{id}/export
+```
+
+*   POST Import a Photovoltaic Power Station from JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"Beijing Office", "address":"Wangfujing Street, Dongcheng District, Beijing", "postal_code":"100000", "latitude":39.909429, "longitude":116.416993, "capacity":600.000, "contact_id":1, "cost_center_id":1, "svg":"<svg></svg>", "description":"Classic"}}' {{base_url}}/photovoltaicpowerstations/{id}/import
+```
+
+*   POST Clone a Photovoltaic Power Station by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST {{base_url}}/photovoltaicpowerstations/{id}/clone
 ```
 
 ### Point
@@ -1673,6 +2040,22 @@ curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKE
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X PUT -d '{"data":{"name":"ModbusPoint1", "data_source_id":1, "object_type": "ENERGY_VALUE", "units":"kWh", "high_limit":999999999, "low_limit":0, "higher_limit":1099999998.9, "lower_limit":0, "ratio":100, "is_trend":true, "is_virtual":false, "address":"{\"slave_id\":1, \"function_code\":3, \"offset\":1, \"number_of_registers\":2, \"data_format\":\"float\"}", "description":null}}' {{base_url}}/points/{id}
 ```
+*   PUT Update Point Limits
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X PUT -d '{"data":{"name":"ModbusPoint1", "data_source_id":1, "object_type": "ENERGY_VALUE", "units":"kWh", "high_limit":999999999, "low_limit":0, "higher_limit":1099999998.9, "lower_limit":0, "ratio":100, "is_trend":true, "is_virtual":false, "address":"{\"slave_id\":1, \"function_code\":3, \"offset\":1, \"number_of_registers\":2, \"data_format\":\"float\"}", "description":null}}' {{base_url}}/pointlimits/{id}
+```
+*   GET Export Point by ID to JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/points/{id}/export
+```
+*   POST Import Point from JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"ModbusPoint1", "data_source_id":1, "object_type": "ENERGY_VALUE", "units":"kWh", "high_limit":999999999, "low_limit":0, "higher_limit":1099999998.9, "lower_limit":0, "ratio":100, "is_trend":true, "is_virtual":false, "address":"{\"slave_id\":1, \"function_code\":3, \"offset\":1, \"number_of_registers\":2, \"data_format\":\"float\"}", "description":null}}' {{base_url}}/points/{id}/import
+```
+*   POST Clone Point by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST {{base_url}}/points/{id}/clone
+```
 
 ### Privilege
 *   GET All Privileges
@@ -1690,6 +2073,41 @@ curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-91
 *   PUT Update Privilege
 ```bash
 curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X PUT -d '{"data":{"name":"privilege 1", "data":"{\"spaces\":[1, 3]}"}}' {{base_url}}/privileges/{id}
+```
+
+### Protocol
+
+*   GET Protocol by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/protocols/{id}
+```
+*   GET all Protocols
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/protocols
+```
+*   DELETE Protocol by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN"  -X DELETE {{base_url}}/protocols/{id}
+```
+*   POST Create Protocol
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"modbus-tcp", "code":"modbus-tcp"}}' {{base_url}}/protocols
+```
+*   PUT Update Protocol
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X PUT -d '{"data":{"name":"modbus-tcp", "code":"modbus-tcp"}}' {{base_url}}/protocols/{id}
+```
+*   GET Export Protocol by ID to JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/protocols/{id}/export
+```
+*   POST Import Protocol from JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"modbus-tcp", "code":"modbus-tcp"}}' {{base_url}}/protocols/{id}/import
+```
+*   POST Clone Protocol by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST {{base_url}}/protocols/{id}/clone
 ```
 
 ### Rule
@@ -1731,6 +2149,22 @@ curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKE
 *   PUT Update a Rule
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X PUT -d '{"data":{"name":"Space Energy Consumption Over Limit", "fdd_code":"SPACE01", "category":"SPACE", "priority":"HIGH", "channel":"WEB", "expression":"{\"space_id\":1, \"high_limit\":1000.000}", "message_template":"%s截止到目前电耗%s，超标%s。", "is_enabled":true, "is_run_immediately":true}}' {{base_url}}/rules/{id}
+```
+*   PUT Run a Rule by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X PUT -d '{"data":{"name":"Space Energy Consumption Over Limit", "fdd_code":"SPACE01", "category":"SPACE", "priority":"HIGH", "channel":"WEB", "expression":"{\"space_id\":1, \"high_limit\":1000.000}", "message_template":"%s截止到目前电耗%s，超标%s。", "is_enabled":true, "is_run_immediately":true}}' {{base_url}}/rules/{id}/run
+```
+*   GET Export a Rule by ID to JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/rules/{id}/export
+```
+*   POST Import a Rule from JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"Space Energy Consumption Over Limit", "fdd_code":"SPACE01", "category":"SPACE", "priority":"HIGH", "channel":"WEB", "expression":"{\"space_id\":1, \"high_limit\":1000.000}", "message_template":"%s截止到目前电耗%s，超标%s。", "is_enabled":true, "is_run_immediately":true}}' {{base_url}}/rules/{id}/import
+```
+*   POST Clone a Rule by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST {{base_url}}/rules/{id}/clone
 ```
 
 ### Sensor
@@ -1775,6 +2209,18 @@ curl -i -H "User-UUID: 3a7acfe1-f3c3-4561-a985-8a4d23ef54d0" -H "Token: GET-TOKE
 *   DELETE Unbind Point from Sensor
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/sensors/{id}/points/{pid}
+```
+*   GET Export a Sensor by ID to JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/sensors/{id}/export
+```
+*   POST Import a Sensor from JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"Sensor10", "description":"sensor description"}}' {{base_url}}/sensors/{id}/import
+```
+*   POST Clone a Sensor by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST {{base_url}}/sensors/{id}/clone
 ```
 
 ### Shopfloor
@@ -1915,6 +2361,21 @@ curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKE
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/shopfloors/{id}/commands/{id}
 ```
 
+*   GET Export a Shopfloor by ID to JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/shopfloors/{id}/export
+```
+
+*   POST Import a Shopfloor from JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"MyEMS Shopfloor2", "area":999.99, "is_input_counted":true, "contact_id":1, "cost_center_id":1, "description":"Shopfloor description"}}' {{base_url}}/shopfloors/{id}/import
+```
+
+*   POST Clone a Shopfloor by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST {{base_url}}/shopfloors/{id}/clone
+```
+
 ### Space
 *   GET Space by ID
 ```bash
@@ -1969,6 +2430,18 @@ curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKE
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/spaces/{id}/combinedequipments/{eid}
 ```
+*   GET All Energy Storage Power Stations of a Space
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/spaces/{id}/energystoragepowerstations
+```
+*   POST Bind Energy Storage Power Station to a Space
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"energy_storage_power_station_id":1}}' {{base_url}}/spaces/{id}/energystoragepowerstations
+```
+*   DELETE Energy Storage Power Station from Space
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/spaces/{id}/energystoragepowerstations/{eid}
+```
 *   GET All Equipments of Space by ID
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/spaces/{id}/equipments
@@ -1992,6 +2465,18 @@ curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKE
 *   DELETE a Meter from Space
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/spaces/{id}/meters/{mid}
+```
+*   GET All Microgrids of a Space
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/spaces/{id}/microgrids
+```
+*   POST Bind a Microgrid to a Space
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"microgrid_id":1}}' {{base_url}}/spaces/{id}/microgrids
+```
+*   DELETE a Microgrid from Space
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/spaces/{id}/microgrids/{mid}
 ```
 *   GET All Offline Meters of Space by ID
 ```bash
@@ -2119,6 +2604,21 @@ curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKE
 *   DELETE Unbind a Command from Space
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/spaces/{id}/commands/{mid}
+```
+
+*   GET Export a Space by ID to JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/spaces/{id}/export
+```
+
+*   POST Import a Space from JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"MyEMSSpace", "parent_space_id":2, "area":999.99, "timezone_id":56, "is_input_counted":true, "is_output_counted":true, "contact_id":1, "cost_center_id":1, "latitude":39.909429, "longitude":116.416993, "description":"Space description"}}' {{base_url}}/spaces/{id}/import
+```
+
+*   POST Clone a Space by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST {{base_url}}/spaces/{id}/clone
 ```
 
 ### Store
@@ -2251,6 +2751,20 @@ curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKE
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/stores/{id}/commands/{id}
 ```
 
+*   GET Export a Store by ID to JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/stores/{id}/export
+```
+
+*   POST Import a Store from JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"麦当劳(新王府井店)", "address":"北京市东城区王府井大街200号工美大厦1层010-65120499", "latitude":39.909429, "longitude":116.416993, "area":600.000, "store_type_id":1, "is_input_counted":true, "contact_id":1, "cost_center_id":1, "description":"Classic, long-running fast-food chain known for its burgers, fries & shakes."}}' {{base_url}}/stores/{id}/import
+```
+
+*   POST Clone a Store by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST {{base_url}}/stores/{id}/clone
+```
 ### Store Type
 *   GET a Store Type by ID
 
@@ -2284,6 +2798,39 @@ curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKE
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/storetypes/{id}
 ```
 
+### SVG
+*   GET a SVG by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/svgs/{id}
+```
+*   GET All SVGs
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/svgs
+```
+*   POST Create New SVGs
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"示例SVG图形1", "svg":"<?xml version=\"1.0\" encoding=\"UTF-8\"?><svg width=\"5cm\" height=\"4cm\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><desc>Four separate rectangles</desc><rect x=\".5cm\" y=\".5cm\" width=\"2cm\" height=\"1cm\"/></svg>", "description":"demo description"}}' {{base_url}}/svgs
+```
+*   PUT Update a SVGs
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X PUT -d '{"data":{"name":"示例SVG图形1", "svg":"<?xml version=\"1.0\" encoding=\"UTF-8\"?><svg width=\"5cm\" height=\"4cm\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><desc>Four separate rectangles</desc><rect x=\".5cm\" y=\".5cm\" width=\"2cm\" height=\"1cm\"/></svg>", "description":"demo description"}}' {{base_url}}/svgs/{id}
+```
+*   DELETE a SVGs by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/svgs/{id}
+```
+*   GET Export a SVG by ID to JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/svgs/{id}/export
+```
+*   POST Import a SVG from JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"示例SVG图形1", "svg":"<?xml version=\"1.0\" encoding=\"UTF-8\"?><svg width=\"5cm\" height=\"4cm\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><desc>Four separate rectangles</desc><rect x=\".5cm\" y=\".5cm\" width=\"2cm\" height=\"1cm\"/></svg>", "description":"demo description"}}' {{base_url}}/svgs/{id}/import
+```
+*   POST Clone a SVG by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST {{base_url}}/svgs/{id}/clone
+```
 
 ### Tariff
 *   GET Tariff by id
@@ -2331,6 +2878,18 @@ curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKE
 To POST a time of use tariff:
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"2020分时电价1-6","energy_category_id":1, "tariff_type":"timeofuse", "unit_of_price":"元/千瓦时", "valid_from":"2020-01-01T00:00:00", "valid_through":"2020-07-01T00:00:00", "timeofuse":[{"start_time_of_day":"00:00:00", "end_time_of_day":"05:59:59", "peak_type":"offpeak", "price":0.345}, {"start_time_of_day":"06:00:00", "end_time_of_day":"07:59:59", "peak_type":"midpeak", "price":0.708}, {"start_time_of_day":"08:00:00", "end_time_of_day":"10:59:59", "peak_type":"onpeak", "price":1.159}, {"start_time_of_day":"11:00:00", "end_time_of_day":"17:59:59", "peak_type":"midpeak", "price":0.708}, {"start_time_of_day":"18:00:00", "end_time_of_day":"20:59:59", "peak_type":"onpeak", "price":1.159}, {"start_time_of_day":"21:00:00", "end_time_of_day":"21:59:59", "peak_type":"midpeak", "price":0.708}, {"start_time_of_day":"22:00:00", "end_time_of_day":"23:59:59", "peak_type":"offpeak", "price":0.345}]}}' {{base_url}}/tariffs
+```
+*   GET Export a Tariff by ID to JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/tariffs/{id}/export
+```
+*   POST Import a Tariff from JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"阶梯电价","energy_category_id":1, "tariff_type":"block", "unit_of_price":"元/千瓦时", "valid_from":"2020-01-01T00:00:00", "valid_through":"2021-01-01T00:00:00", "block":[{"start_amount":"0", "end_amount":"10000", "price":"0.567"}, {"start_amount":"10000", "end_amount":"30000", "price":"0.678"}, {"start_amount":"30000", "end_amount":"100000", "price":"0.789"}]}}' {{base_url}}/tariffs/{id}/import
+```
+*   POST Clone a Tariff by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST {{base_url}}/tariffs/{id}/clone
 ```
 
 *   PUT Update a Tariff
@@ -2479,6 +3038,22 @@ curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKE
 *   DELETE Unbind a Command from Tenant
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/tenants/{id}/workingcalendars/{id}
+```
+
+*   GET Export a Tenant by ID to JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/tenants/{id}/export
+```
+
+*   POST Import a Tenant from JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"Starbucks", "buildings":"Building #1", "floors":"L1 L2 L3", "rooms":"1201b+2247+3F", "area":418.8, "tenant_type_id":9, "is_input_counted":true, "is_key_tenant":true,
+"lease_number":"6b0da806",  "lease_start_datetime":"2021-01-01T00:00:00", "lease_end_datetime":"2022-01-01T00:00:00", "is_in_lease":true, "contact_id":1, "cost_center_id":1, "description":"my description"}}' {{base_url}}/tenants/{id}/import
+```
+
+*   POST Clone a Tenant by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST {{base_url}}/tenants/{id}/clone
 ```
 
 ### Tenant Type
@@ -2717,6 +3292,21 @@ curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKE
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/virtualpowerplants/{id}/microgrids/{mid}
 ```
 
+*   GET Export a Virtual Power Plant by ID to JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/virtualpowerplants/{id}/export
+```
+
+*   POST Import a Virtual Power Plant from JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"Beijing VPP", "cost_center_id":1, "balancing_price_point_id":1, "svg":"<svg></svg>", "description":"Classic"}}' {{base_url}}/virtualpowerplants/{id}/import
+```
+
+*   POST Clone a Virtual Power Plant by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST {{base_url}}/virtualpowerplants/{id}/clone
+```
+
 ### Virtual Meter
 *   GET a Virtual Meter by ID
 
@@ -2761,6 +3351,18 @@ curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKE
 *   PUT Update a Virtual Meter by ID
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X PUT -d '{"data":{"name":"VM11", "energy_category_id":1, "is_counted": true, "cost_center_id":1, "energy_item_id":1, "description":"virtual description", "expression": {"equation":"x1+x2-x3", "variables":[{"name":"x1", "meter_type":"meter", "meter_id":1},{"name":"x2", "meter_type":"meter", "meter_id":2},{"name":"x3", "meter_type":"meter", "meter_id":3}] } }}' {{base_url}}/virtualmeters/{id}
+```
+*   GET Export a Virtual Meter by ID to JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/virtualmeters/{id}/export
+```
+*   POST Import a Virtual Meter from JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"name":"VM10", "energy_category_id":1, "is_counted": true, "cost_center_id":1, "energy_item_id":1, "description":"virtual description", "expression": {"equation":"x1+x2-x3", "variables":[{"name":"x1", "meter_type":"meter", "meter_id":1},{"name":"x2", "meter_type":"meter", "meter_id":2},{"name":"x3", "meter_type":"meter", "meter_id":3}] }}}' {{base_url}}/virtualmeters/{id}/import
+```
+*   POST Clone a Virtual Meter by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST {{base_url}}/virtualmeters/{id}/clone
 ```
 
 ### Web Message
@@ -2819,6 +3421,13 @@ curl --location --request PUT '{{base_url}}/webmessagesnew' \
 --header 'Token: 9bcd171e4f4169f1f45791aeadc8f90cfe8694be92f21af7bf95673f8cc910ca7a91bfd4a577d48d0720155de497eb02baab614be5c6c83891f1a856f9cf666a' \
 --header 'Content-Type: text/plain' \
 --data-raw '{"data":{"status":"read"}}'
+```
+
+* POST Create New Web Message TODO
+```bash
+curl --location --request POST '{{base_url}}/webmessagesnew' \
+--header 'User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4' \
+--header 'Token: 9bcd171e4f4169f1f45791aeadc8f90cfe8694be92f21af7bf95673f8cc910ca7a91bfd4a577d48d0720155de497eb02baab614be5c6c83891f1a856f9cf666a'
 ```
 
 * PUT Update All New Web Messages (Acknowledge All)
@@ -2930,6 +3539,25 @@ curl --location --request PUT '{{base_url}}/windfarms/{id}' \
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/windfarms/{id}
 ```
 
+*   GET Export a Wind Farm by ID to JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/windfarms/{id}/export
+```
+
+*   POST Import a Wind Farm from JSON
+```bash
+curl --location --request POST '{{base_url}}/windfarms/{id}' \
+--header 'User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4' \
+--header 'Token: 9bcd171e4f4169f1f45791aeadc8f90cfe8694be92f21af7bf95673f8cc910ca7a91bfd4a577d48d0720155de497eb02baab614be5c6c83891f1a856f9cf666a' \
+--header 'Content-Type: text/plain' \
+--data-raw '{"data":{"name":"Beijing Office", "address":"Wangfujing Street, Dongcheng District, Beijing", "postal_code":"100000", "latitude":39.909429, "longitude":116.416993, "capacity":600.000, "contact_id":1, "cost_center_id":1, "svg":"<svg></svg>", "description":"Classic"}}'
+```
+
+*   POST Clone a Wind Farm by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST {{base_url}}/windfarms/{id}/clone
+```
+
 ### Working Calendar
 *   GET All Working Calendars
 ```bash
@@ -2972,6 +3600,30 @@ curl --location --request PUT '{{base_url}}/workingcalendars/{id}' \
 *  DELETE a Working Calendar by ID
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X DELETE {{base_url}}/workingcalendars/{id}
+```
+
+*   GET Export a Working Calendar by ID to JSON
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X GET {{base_url}}/workingcalendars/{id}/export
+```
+
+*   POST Import a Working Calendar from JSON
+```bash
+curl --location --request POST '{{base_url}}/workingcalendars/{id}' \
+--header 'User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4' \
+--header 'Token: 9bcd171e4f4169f1f45791aeadc8f90cfe8694be92f21af7bf95673f8cc910ca7a91bfd4a577d48d0720155de497eb02baab614be5c6c83891f1a856f9cf666a' \
+--header 'Content-Type: text/plain' \
+--data-raw '{
+    "data": {
+        "name": "测试日历",
+        "description":"test_update"
+    }
+}'
+```
+
+*   POST Clone a Working Calendar by ID
+```bash
+curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST {{base_url}}/workingcalendars/{id}/clone
 ```
 
 ### Non Working Day
@@ -3217,6 +3869,13 @@ curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355ac
 ```bash
 curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/combinedequipmentsaving?combinedequipmentid=1&periodtype=daily&baseperiodstartdatetime=2020-08-01T00:00:00&baseperiodenddatetime=2020-09-01T00:00:00&reportingperiodstartdatetime=2020-09-01T00:00:00&reportingperiodenddatetime=2020-10-01T00:00:00&quickmode=true
 ```
+*   GET Combined Equipment Plan Report
+
+(parameter combinedequipmentid can be replaced with combinedequipmentuuid)
+
+```bash
+curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/combinedequipmentplan?combinedequipmentid=1&periodtype=daily&baseperiodstartdatetime=2020-08-01T00:00:00&baseperiodenddatetime=2020-09-01T00:00:00&reportingperiodstartdatetime=2020-09-01T00:00:00&reportingperiodenddatetime=2020-10-01T00:00:00
+```
 *   GET Combined Equipment Statistics Report
 
 (parameter combinedequipmentid can be replaced with combinedequipmentuuid)
@@ -3244,6 +3903,36 @@ curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355ac
 ```bash
 curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/energyflowdiagram?energyflowdiagramid=1&reportingperiodstartdatetime={reportingperiodstartdatetime}&reportingperiodenddatetime={reportingperiodenddatetime}
 ```
+*   GET Energy Storage Power Station Dashboard
+```bash
+curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/energystoragepowerstationdashboard?useruuid=dcdb67d1-6116-4987-916f-6fc6cf2bc0e4&periodtype=daily&baseperiodstartdatetime=2020-08-01T00%3A00%3A00&baseperiodenddatetime=2020-09-01T00%3A00%3A00&reportingperiodstartdatetime=2020-09-01T00%3A00%3A00&reportingperiodenddatetime=2020-10-01T00%3A00%3A00
+```
+*   GET Energy Storage Power Station Details Report
+```bash
+curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/energystoragepowerstationdetails?energystoragepowerstationdetailsid=1&reportingperiodstartdatetime={reportingperiodstartdatetime}&reportingperiodenddatetime={reportingperiodenddatetime}
+```
+*   GET Energy Storage Power Station List Report 
+```bash
+curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/energystoragepowerstationlist?energystoragepowerstationlistid=1&reportingperiodstartdatetime={reportingperiodstartdatetime}&reportingperiodenddatetime={reportingperiodenddatetime}
+```
+*   GET Energy Storage Power Stations Energy Report 
+```bash
+curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/microgridsenergy?useruuid=dcdb67d1-6116-4987-916f-6fc6cf2bc0e4' \
+--header 'User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4' \
+--header 'Token: c5f872b51ed40ccf55f1c1d6dbd8cb86eefba5d1010e23b2386bd82be431f3eafc0e3360dee18a5327d9e9852e3cf7caad3b81e252f9f311790c22f7a62a90e1'
+```
+*   GET Energy Storage Power Stations Billing Report 
+```bash
+curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/microgridsbilling?useruuid=dcdb67d1-6116-4987-916f-6fc6cf2bc0e4' \
+--header 'User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4' \
+--header 'Token: c5f872b51ed40ccf55f1c1d6dbd8cb86eefba5d1010e23b2386bd82be431f3eafc0e3360dee18a5327d9e9852e3cf7caad3b81e252f9f311790c22f7a62a90e1'
+```
+*   GET Energy Storage Power Stations Carbon Report 
+```bash
+curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/energystoragepowerstationscarbon?useruuid=dcdb67d1-6116-4987-916f-6fc6cf2bc0e4' \
+--header 'User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4' \
+--header 'Token: c5f872b51ed40ccf55f1c1d6dbd8cb86eefba5d1010e23b2386bd82be431f3eafc0e3360dee18a5327d9e9852e3cf7caad3b81e252f9f311790c22f7a62a90e1'
+```
 *   GET Equipment Batch Analysis Report
 ```bash
 curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/equipmentbatch?spaceid=1&reportingperiodstartdatetime=2021-05-01T00:00:00&reportingperiodenddatetime=2021-05-20T11:41:09
@@ -3252,21 +3941,6 @@ curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355ac
 (It does not return parameters and Excel file in quick mode)
 ```bash
 curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/equipmentbatch?spaceid=1&reportingperiodstartdatetime=2021-05-01T00:00:00&reportingperiodenddatetime=2021-05-20T11:41:09&quickmode=true
-```
-*   GET Equipment Carbon Dioxide Emission Report           删
-
-(parameter equipmentid can be replaced with equipmentuuid)
-
-```bash
-curl -i -X GET {{base_url}}/reports/equipmentcarbon?equipmentid=1&periodtype=daily&baseperiodstartdatetime=2020-08-01T00:00:00&baseperiodenddatetime=2020-09-01T00:00:00&reportingperiodstartdatetime=2020-09-01T00:00:00&reportingperiodenddatetime=2020-10-01T00:00:00
-```
-*   GET Equipment Carbon Dioxide Emission Report (Quick Mode)            删
-
-(parameter equipmentid can be replaced with equipmentuuid)
-(It does not return parameters and Excel file in quick mode)
-
-```bash
-curl -i -X GET {{base_url}}/reports/equipmentcarbon?equipmentid=1&periodtype=daily&baseperiodstartdatetime=2020-08-01T00:00:00&baseperiodenddatetime=2020-09-01T00:00:00&reportingperiodstartdatetime=2020-09-01T00:00:00&reportingperiodenddatetime=2020-10-01T00:00:00&quickmode=true
 ```
 *   GET Equipment Cost Report
 
@@ -3386,6 +4060,13 @@ curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355ac
 ```bash
 curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/equipmentsaving?equipmentid=1&periodtype=daily&baseperiodstartdatetime=2020-08-01T00:00:00&baseperiodenddatetime=2020-09-01T00:00:00&reportingperiodstartdatetime=2020-09-01T00:00:00&reportingperiodenddatetime=2020-10-01T00:00:00&quickmode=true
 ```
+*   GET Equipment Plan Report
+
+(parameter equipmentid can be replaced with equipmentuuid)
+
+```bash
+curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/equipmentplan?equipmentid=1&periodtype=daily&baseperiodstartdatetime=2020-08-01T00:00:00&baseperiodenddatetime=2020-09-01T00:00:00&reportingperiodstartdatetime=2020-09-01T00:00:00&reportingperiodenddatetime=2020-10-01T00:00:00
+```
 *   GET Equipment Statistics Report
 
 (parameter equipmentid can be replaced with equipmentuuid)
@@ -3470,6 +4151,14 @@ curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355ac
 curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/meterenergy?meterid=1&periodtype=daily&baseperiodstartdatetime=2020-08-01T00:00:00&baseperiodenddatetime=2020-09-01T00:00:00&reportingperiodstartdatetime=2020-09-01T00:00:00&reportingperiodenddatetime=2020-10-01T00:00:00&quickmode=true
 ```
 
+* GET Meter Plan Report
+
+(parameter meterid can be replaced with meteruuid)
+
+```bash
+curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/meterplan?meterid=1
+```
+
 * GET Meter Realtime Report
 
 (parameter meterid can be replaced with meteruuid)
@@ -3541,11 +4230,35 @@ curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355ac
 curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/metertracking?spaceid=1&reportingperiodstartdatetime=2022-05-01T00:00:00&reportingperiodenddatetime=2022-05-31T23:59:59&&quickmode=true
 ```
 
-*   GET Microgrid Report
+*   GET Microgrid Dashboard
 ```bash
-curl --location 'http://127.0.0.1:8000/reports/microgrid?microgridid=1' \
+curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/microgriddashboard?useruuid=dcdb67d1-6116-4987-916f-6fc6cf2bc0e4&periodtype=daily&baseperiodstartdatetime=2020-08-01T00%3A00%3A00&baseperiodenddatetime=2020-09-01T00%3A00%3A00&reportingperiodstartdatetime=2020-09-01T00%3A00%3A00&reportingperiodenddatetime=2020-10-01T00%3A00%3A00
+```
+
+*   GET Microgrid Details Report
+```bash
+curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/microgriddetails?microgriddetailsid=1&reportingperiodstartdatetime={reportingperiodstartdatetime}&reportingperiodenddatetime={reportingperiodenddatetime}
+```
+
+*   GET Microgrids Energy Report 
+```bash
+curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/microgridsenergy?useruuid=dcdb67d1-6116-4987-916f-6fc6cf2bc0e4' \
 --header 'User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4' \
---header 'Token: d63477ddcc607bddaefd540a8aa534cacc7dcbdae39dd5838f409f96c8769083f9f76a33b02db0421c8ec174b75f7eadfa5deb6ea996b78ca6fa1ec2fd6863ed'
+--header 'Token: c5f872b51ed40ccf55f1c1d6dbd8cb86eefba5d1010e23b2386bd82be431f3eafc0e3360dee18a5327d9e9852e3cf7caad3b81e252f9f311790c22f7a62a90e1'
+```
+
+*   GET Microgrids Billing Report 
+```bash
+curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/microgridsbilling?useruuid=dcdb67d1-6116-4987-916f-6fc6cf2bc0e4' \
+--header 'User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4' \
+--header 'Token: c5f872b51ed40ccf55f1c1d6dbd8cb86eefba5d1010e23b2386bd82be431f3eafc0e3360dee18a5327d9e9852e3cf7caad3b81e252f9f311790c22f7a62a90e1'
+```
+
+*   GET Microgrids Carbon Report 
+```bash
+curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/microgridscarbon?useruuid=dcdb67d1-6116-4987-916f-6fc6cf2bc0e4' \
+--header 'User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4' \
+--header 'Token: c5f872b51ed40ccf55f1c1d6dbd8cb86eefba5d1010e23b2386bd82be431f3eafc0e3360dee18a5327d9e9852e3cf7caad3b81e252f9f311790c22f7a62a90e1'
 ```
 
 *   GET Microgrid List Report
@@ -3602,6 +4315,14 @@ curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355ac
 ```bash
 curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/offlinemetersaving?offlinemeterid=1&periodtype=daily&baseperiodstartdatetime=2020-08-01T00:00:00&baseperiodenddatetime=2020-09-01T00:00:00&reportingperiodstartdatetime=2020-09-01T00:00:00&reportingperiodenddatetime=2020-10-01T00:00:00&quickmode=true
 ```
+*   GET Offline Meter Plan Report
+```bash
+curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/offlinemeterplan?offlinemeterid=1&periodtype=daily&baseperiodstartdatetime=2020-08-01T00:00:00&baseperiodenddatetime=2020-09-01T00:00:00&reportingperiodstartdatetime=2020-09-01T00:00:00&reportingperiodenddatetime=2020-10-01T00:00:00
+```
+*   GET Point Realtime Report
+```bash
+curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/pointrealtime?pointid=1&periodtype=daily&baseperiodstartdatetime=2020-08-01T00:00:00&baseperiodenddatetime=2020-09-01T00:00:00&reportingperiodstartdatetime=2020-09-01T00:00:00&reportingperiodenddatetime=2020-10-01T00:00:00
+```
 *   GET Shopfloor Batch Analysis Report
 ```bash
 curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/shopfloorbatch?spaceid=1&reportingperiodstartdatetime=2020-10-01T00:00:00&reportingperiodenddatetime=2020-11-01T00:00:00
@@ -3611,20 +4332,7 @@ curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355ac
 ```bash
 curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/shopfloorbatch?spaceid=1&reportingperiodstartdatetime=2020-10-01T00:00:00&reportingperiodenddatetime=2020-11-01T00:00:00&quickmode=true
 ```
-* GET Shopfloor Carbon Dioxide Emission Report        删？
 
-(parameter shopfloorid can be replaced with shopflooruuid)
-
-```bash
-curl -i -X GET {{base_url}}/reports/shopfloorcarbon?shopfloorid=1&periodtype=daily&baseperiodstartdatetime=2020-08-01T00:00:00&baseperiodenddatetime=2020-09-01T00:00:00&reportingperiodstartdatetime=2020-09-01T00:00:00&reportingperiodenddatetime=2020-10-01T00:00:00
-```
-* GET Shopfloor Carbon Dioxide Emission Report (Quick Mode)      删？
-
-(parameter shopfloorid can be replaced with shopflooruuid)
-(It does not return parameters and Excel file in quick mode)
-```bash
-curl -i -X GET {{base_url}}/reports/shopfloorcarbon?shopfloorid=1&periodtype=daily&baseperiodstartdatetime=2020-08-01T00:00:00&baseperiodenddatetime=2020-09-01T00:00:00&reportingperiodstartdatetime=2020-09-01T00:00:00&reportingperiodenddatetime=2020-10-01T00:00:00&quickmode=true
-```
 * GET Shopfloor Cost Report
 
 (parameter shopfloorid can be replaced with shopflooruuid)
@@ -3698,6 +4406,11 @@ curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355ac
 ```bash
 curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/shopfloorsaving?shopfloorid=1&periodtype=daily&baseperiodstartdatetime=2020-08-01T00:00:00&baseperiodenddatetime=2020-09-01T00:00:00&reportingperiodstartdatetime=2020-09-01T00:00:00&reportingperiodenddatetime=2020-10-01T00:00:00&quickmode=true
 ```
+*   GET Shopfloor Plan Report
+
+```bash
+curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/shopfloorplan?shopfloorid=1&periodtype=daily&baseperiodstartdatetime=2020-08-01T00:00:00&baseperiodenddatetime=2020-09-01T00:00:00&reportingperiodstartdatetime=2020-09-01T00:00:00&reportingperiodenddatetime=2020-10-01T00:00:00
+```
 *   GET Shopfloor Statistics Report
 
 (parameter shopfloorid can be replaced with shopflooruuid)
@@ -3712,21 +4425,7 @@ curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355ac
 ```bash
 curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/shopfloorstatistics?shopfloorid=1&periodtype=daily&baseperiodstartdatetime=2020-08-01T00:00:00&baseperiodenddatetime=2020-09-01T00:00:00&reportingperiodstartdatetime=2020-09-01T00:00:00&reportingperiodenddatetime=2020-10-01T00:00:00&quickmode=true
 ```
-*   GET Space Carbon Dioxide Emission Report         删？
 
-(parameter spaceid can be replaced with spaceuuid)
-
-```bash
-curl -i -X GET {{base_url}}/reports/spacecarbon?spaceid=1&periodtype=daily&baseperiodstartdatetime=2020-08-01T00:00:00&baseperiodenddatetime=2020-09-01T00:00:00&reportingperiodstartdatetime=2020-09-01T00:00:00&reportingperiodenddatetime=2020-10-01T00:00:00
-```
-*   GET Space Carbon Dioxide Emission Report (Quick Mode)  删？
-
-(parameter spaceid can be replaced with spaceuuid)
-(It does not return parameters and Excel file in quick mode)
-
-```bash
-curl -i -X GET {{base_url}}/reports/spacecarbon?spaceid=1&periodtype=daily&baseperiodstartdatetime=2020-08-01T00:00:00&baseperiodenddatetime=2020-09-01T00:00:00&reportingperiodstartdatetime=2020-09-01T00:00:00&reportingperiodenddatetime=2020-10-01T00:00:00&quickmode=true
-```
 *   GET Space Cost Report
 
 (parameter spaceid can be replaced with spaceuuid)
@@ -3842,6 +4541,11 @@ curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355ac
 ```bash
 curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/spacesaving?spaceid=1&periodtype=daily&baseperiodstartdatetime=2020-08-01T00:00:00&baseperiodenddatetime=2020-09-01T00:00:00&reportingperiodstartdatetime=2020-09-01T00:00:00&reportingperiodenddatetime=2020-10-01T00:00:00&quickmode=true
 ```
+*   GET Space Plan Report
+
+```bash
+curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/spaceplan?spaceid=1&periodtype=daily&baseperiodstartdatetime=2020-08-01T00:00:00&baseperiodenddatetime=2020-09-01T00:00:00&reportingperiodstartdatetime=2020-09-01T00:00:00&reportingperiodenddatetime=2020-10-01T00:00:00
+```
 *   GET Space Statistics Report
 
 (parameter spaceid can be replaced with spaceuuid)
@@ -3865,20 +4569,7 @@ curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355ac
 ```bash
 curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/storebatch?spaceid=1&reportingperiodstartdatetime=2020-10-01T00:00:00&reportingperiodenddatetime=2020-11-01T00:00:00&quickmode=true
 ```
-*   GET Store Carbon Dioxide Emission Report           删？
 
-(parameter storeid can be replaced with storeuuid)
-
-```bash
-curl -i -X GET {{base_url}}/reports/storetcarbon?storeid=1&periodtype=daily&baseperiodstartdatetime=2020-08-01T00:00:00&baseperiodenddatetime=2020-09-01T00:00:00&reportingperiodstartdatetime=2020-09-01T00:00:00&reportingperiodenddatetime=2020-10-01T00:00:00
-```
-*   GET Store Carbon Dioxide Emission Report (Quick Mode)     删？
-
-(parameter storeid can be replaced with storeuuid)
-(It does not return parameters and Excel file in quick mode)
-```bash
-curl -i -X GET {{base_url}}/reports/storetcarbon?storeid=1&periodtype=daily&baseperiodstartdatetime=2020-08-01T00:00:00&baseperiodenddatetime=2020-09-01T00:00:00&reportingperiodstartdatetime=2020-09-01T00:00:00&reportingperiodenddatetime=2020-10-01T00:00:00&quickmode=true
-```
 *   GET Store Cost Report
 
 (parameter storeid can be replaced with storeuuid)
@@ -3892,6 +4583,11 @@ curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355ac
 (It does not return parameters and Excel file in quick mode)
 ```bash
 curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/storetcost?storeid=1&periodtype=daily&baseperiodstartdatetime=2020-08-01T00:00:00&baseperiodenddatetime=2020-09-01T00:00:00&reportingperiodstartdatetime=2020-09-01T00:00:00&reportingperiodenddatetime=2020-10-01T00:00:00&quickmode=true
+```
+*   GET Store Dashboard
+
+```bash
+curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/storetcost?storeid=1&periodtype=daily&baseperiodstartdatetime=2020-08-01T00:00:00&baseperiodenddatetime=2020-09-01T00:00:00&reportingperiodstartdatetime=2020-09-01T00:00:00&reportingperiodenddatetime=2020-10-01T00:00:00
 ```
 *   GET Store Energy Category Report
 
@@ -3951,6 +4647,11 @@ curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355ac
 ```bash
 curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/storesaving?storeid=1&periodtype=daily&baseperiodstartdatetime=2020-08-01T00:00:00&baseperiodenddatetime=2020-09-01T00:00:00&reportingperiodstartdatetime=2020-09-01T00:00:00&reportingperiodenddatetime=2020-10-01T00:00:00&quickmode=true
 ```
+*   GET Store Plan Report
+
+```bash
+curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/storeplan?storeid=1&periodtype=daily&baseperiodstartdatetime=2020-08-01T00:00:00&baseperiodenddatetime=2020-09-01T00:00:00&reportingperiodstartdatetime=2020-09-01T00:00:00&reportingperiodenddatetime=2020-10-01T00:00:00
+```
 *   GET Store Statistics Report
 
 (parameter storeid can be replaced with storeuuid)
@@ -3981,21 +4682,7 @@ curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355ac
 ```bash
 curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/tenantbill?tenantid=1&reportingperiodstartdatetime=2020-10-01T00:00:00&reportingperiodenddatetime=2020-11-01T00:00:00
 ```
-*   GET Tenant Carbon Dioxide Emission Report
 
-(parameter tenantid can be replaced with tenantuuid)
-
-```bash
-curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/tenantcarbon?tenantid=1&periodtype=daily&baseperiodstartdatetime=2020-08-01T00:00:00&baseperiodenddatetime=2020-09-01T00:00:00&reportingperiodstartdatetime=2020-09-01T00:00:00&reportingperiodenddatetime=2020-10-01T00:00:00
-```
-*   GET Tenant Carbon Dioxide Emission Report (Quick Mode)
-
-(parameter tenantid can be replaced with tenantuuid)
-(It does not return parameters and Excel file in quick mode)
-
-```bash
-curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/tenantcarbon?tenantid=1&periodtype=daily&baseperiodstartdatetime=2020-08-01T00:00:00&baseperiodenddatetime=2020-09-01T00:00:00&reportingperiodstartdatetime=2020-09-01T00:00:00&reportingperiodenddatetime=2020-10-01T00:00:00&quickmode=true
-```
 *   GET Tenant Cost Report
 
 (parameter tenantid can be replaced with tenantuuid)
@@ -4010,6 +4697,13 @@ curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355ac
 
 ```bash
 curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/tenantcost?tenantid=1&periodtype=daily&baseperiodstartdatetime=2020-08-01T00:00:00&baseperiodenddatetime=2020-09-01T00:00:00&reportingperiodstartdatetime=2020-09-01T00:00:00&reportingperiodenddatetime=2020-10-01T00:00:00&quickmode=true
+```
+*   GET Tenant Dashboard
+
+(parameter tenantid can be replaced with tenantuuid)
+
+```bash
+curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/tenantdashboard?tenantid=1&periodtype=daily&baseperiodstartdatetime=2020-08-01T00:00:00&baseperiodenddatetime=2020-09-01T00:00:00&reportingperiodstartdatetime=2020-09-01T00:00:00&reportingperiodenddatetime=2020-10-01T00:00:00
 ```
 *   GET Tenant Energy Category Report
 
@@ -4067,6 +4761,13 @@ curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355ac
 (It does not return parameters and Excel file in quick mode)
 ```bash
 curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/tenantsaving?tenantid=1&periodtype=daily&baseperiodstartdatetime=2020-08-01T00:00:00&baseperiodenddatetime=2020-09-01T00:00:00&reportingperiodstartdatetime=2020-09-01T00:00:00&reportingperiodenddatetime=2020-10-01T00:00:00&quickmode=true
+```
+*   GET Tenant Plan Report
+
+(parameter tenantid can be replaced with tenantuuid)
+
+```bash
+curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/tenantplan?tenantid=1&periodtype=daily&baseperiodstartdatetime=2020-08-01T00:00:00&baseperiodenddatetime=2020-09-01T00:00:00&reportingperiodstartdatetime=2020-09-01T00:00:00&reportingperiodenddatetime=2020-10-01T00:00:00
 ```
 *   GET Tenant Statistics Report
 
@@ -4128,6 +4829,11 @@ curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355ac
 
 ```bash
 curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/virtualmetersaving?virtualmeterid=1&periodtype=daily&baseperiodstartdatetime=2020-08-01T00:00:00&baseperiodenddatetime=2020-09-01T00:00:00&reportingperiodstartdatetime=2020-09-01T00:00:00&reportingperiodenddatetime=2020-10-01T00:00:00&quickmode=true
+```
+
+*   GET Virtual Meter Plan Report
+```bash
+curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/virtualmeterplan?virtualmeterid=1&periodtype=daily&baseperiodstartdatetime=2020-08-01T00:00:00&baseperiodenddatetime=2020-09-01T00:00:00&reportingperiodstartdatetime=2020-09-01T00:00:00&reportingperiodenddatetime=2020-10-01T00:00:00
 ```
 
 *   POST Offline Meter Modify Value
