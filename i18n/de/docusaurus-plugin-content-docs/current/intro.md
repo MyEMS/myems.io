@@ -131,7 +131,7 @@ Nutzer der Community Edition müssen das entsprechende Urheberrecht und LOGO von
 | RESTful API                         | ✔️          | Based on Python. Providing interfaces of system configuration, energy report and excel exporter |
 | Web UI                           | ✔️             | Based on ReactJS. Providing energy data virtualization. |
 | Admin UI                         | ✔️             | Based on AngularJS (version 1.x). Providing system configuration. |
-| Online Community Customer Support| ✔️             |                      |
+| Online Community Customer Support| ✔️          |  [QQ Group](/img/qrcode_qq_group.jpg)  [WeChat Group](/img/qr_code_wechat_group.png) |
 
 
 ## <a id="myems-downloads" />MyEMS Downloads (Community Edition)
