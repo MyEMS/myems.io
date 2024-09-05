@@ -6,22 +6,22 @@ sidebar_position: 2
 
 ## Upgrade from v4.7.0 to v4.8.0 - 2024-08-13
 ### Warning
-- **MUST** replace '/code/.env' with '/app/.env' in the 'docker run' commands because WORKDIR in Dockerfile was changed from '/code' to '/app'
+- **MUST** ersetzen '/code/.env' mit '/app/.env' im 'docker run' Befehle, da WORKDIR in Dockerfile von '/code' an '/app'
 ### database
-- Run upgrade script in myems/database/upgrade/upgrade4.8.0.sql
+- Führen Sie das Upgrade-Skript in myems/database/upgrade/upgrade4.8.0.sql
 ### myems-admin
-- Must be reinstalled because there are new features
+- Muss neu installiert werden, da es neue Funktionen gibt
 ### myems-aggregation
-- Optional be reinstalled since only version.txt was changed
+- Optional kann neu installiert werden, da nur version.txt geändert wurde
 ### myems-api
-- Must be reinstalled because there are new features
+- Muss neu installiert werden, da es neue Funktionen gibt
 ### myems-cleaning
-- Optional be reinstalled since only version.txt was changed
+- Optional kann neu installiert werden, da nur version.txt geändert wurde
 ### myems-modbus-tcp
-- Optional be reinstalled since only version.txt was changed
+- Optional kann neu installiert werden, da nur version.txt geändert wurde
 ### myems-normalization
-- Optional be reinstalled since only version.txt was changed
+- Optional kann neu installiert werden, da nur version.txt geändert wurde
 ### myems-web
-- Must be reinstalled because there are new features
+- Muss neu installiert werden, da es neue Funktionen gibt
 
 
