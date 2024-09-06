@@ -4,9 +4,9 @@ sidebar_position: 2
 
 # Upgrade
 
-## Upgrade from v4.7.0 to v4.8.0 - 2024-08-13
-### Warning
-- **MUST** ersetzen '/code/.env' mit '/app/.env' im 'docker run' Befehle, da WORKDIR in Dockerfile von '/code' an '/app'
+## Upgrade von v4.7.0 auf v4.8.0 - 13.08.2024
+### Warnung
+- **MUSS** ersetzen '/code/.env' mit '/app/.env' im 'docker run' Befehle, da WORKDIR in Dockerfile von '/code' an '/app'
 ### database
 - Führen Sie das Upgrade-Skript in myems/database/upgrade/upgrade4.8.0.sql
 ### myems-admin
