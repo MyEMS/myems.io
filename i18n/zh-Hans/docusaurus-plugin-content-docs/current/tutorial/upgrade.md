@@ -2,26 +2,26 @@
 sidebar_position: 2
 ---
 
-# Upgrade
+# 升级
 
-## Upgrade from v4.7.0 to v4.8.0 - 2024-08-13
-### Warning
-- **MUST** replace '/code/.env' with '/app/.env' in the 'docker run' commands because WORKDIR in Dockerfile was changed from '/code' to '/app'
+## 从v4.7.0 升级到 v4.8.0 - 2024-08-13
+### 警告
+- **必须** 将 '/code/.env' 替换成'/app/.env' 在 'docker run' 命令，因为 Dockerfile 中的 WORKDIR 从 '/code' 更改为 '/app'
 ### database
-- Run upgrade script in myems/database/upgrade/upgrade4.8.0.sql
+- 在 myems/database/upgrade/upgrade4.8.0.sql
 ### myems-admin
-- Must be reinstalled because there are new features
+- 必须重新安装，因为有新功能
 ### myems-aggregation
-- Optional be reinstalled since only version.txt was changed
+- 可选重新安装，因为仅更改了 version.txt
 ### myems-api
-- Must be reinstalled because there are new features
+- 必须重新安装，因为有新功能
 ### myems-cleaning
-- Optional be reinstalled since only version.txt was changed
+- 可选重新安装，因为仅更改了 version.txt
 ### myems-modbus-tcp
-- Optional be reinstalled since only version.txt was changed
+- 可选重新安装，因为仅更改了 version.txt
 ### myems-normalization
-- Optional be reinstalled since only version.txt was changed
+- 可选重新安装，因为仅更改了 version.txt
 ### myems-web
-- Must be reinstalled because there are new features
+- 必须重新安装，因为有新功能
 
 
