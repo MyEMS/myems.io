@@ -2,11 +2,11 @@
 sidebar_position: 2
 ---
 
-# Upgrade
+# 升级
 
-## Upgrade from v4.7.0 to v4.8.0 - 2024-08-13
-### Warning
-- **MUST** 将 '/code/.env' 替换成'/app/.env' 在 'docker run' 命令，因为 Dockerfile 中的 WORKDIR 从 '/code' 更改为 '/app'
+## 从v4.7.0 升级到 v4.8.0 - 2024-08-13
+### 警告
+- **必须** 将 '/code/.env' 替换成'/app/.env' 在 'docker run' 命令，因为 Dockerfile 中的 WORKDIR 从 '/code' 更改为 '/app'
 ### database
 - 在 myems/database/upgrade/upgrade4.8.0.sql
 ### myems-admin
