@@ -38,7 +38,7 @@ curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-91
 curl -i -H "Content-Type: application/json" -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST -d '{"data":{"name":"Space Daily Report1", "expression":"{\"space_id\":1}",  "is_enabled":true, "next_run_datetime": "2023-09-06T20:00:00", "is_run_immediately": false}}' {{base_url}}/advancedreports/import
 ```
 
-*   POST Clone an Advanced Report Config by ID 
+*   POST Clone an Advanced Report Config by ID
 
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST {{base_url}}/advancedreports/clone
@@ -466,7 +466,7 @@ curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKE
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" -X POST -d '{"data":{"data":{"name":"Modbus1", "gateway_id": 1, "protocol":"modbus-tcp", "connection":"{\"host\":\"10.1.2.99\", \"port\":502}", "description":"Modbus1"}}' {{base_url}}/datasources/{id}/import
 ```
 
-*   POST Clone Data Source 
+*   POST Clone Data Source
 ```bash
 curl -i -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -X POST {{base_url}}/datasources/{id}/clone
 ```
@@ -3911,23 +3911,23 @@ curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355ac
 ```bash
 curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/energystoragepowerstationdetails?energystoragepowerstationdetailsid=1&reportingperiodstartdatetime={reportingperiodstartdatetime}&reportingperiodenddatetime={reportingperiodenddatetime}
 ```
-*   GET Energy Storage Power Station List Report 
+*   GET Energy Storage Power Station List Report
 ```bash
 curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/energystoragepowerstationlist?energystoragepowerstationlistid=1&reportingperiodstartdatetime={reportingperiodstartdatetime}&reportingperiodenddatetime={reportingperiodenddatetime}
 ```
-*   GET Energy Storage Power Stations Energy Report 
+*   GET Energy Storage Power Stations Energy Report
 ```bash
 curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/microgridsenergy?useruuid=dcdb67d1-6116-4987-916f-6fc6cf2bc0e4' \
 --header 'User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4' \
 --header 'Token: c5f872b51ed40ccf55f1c1d6dbd8cb86eefba5d1010e23b2386bd82be431f3eafc0e3360dee18a5327d9e9852e3cf7caad3b81e252f9f311790c22f7a62a90e1'
 ```
-*   GET Energy Storage Power Stations Billing Report 
+*   GET Energy Storage Power Stations Billing Report
 ```bash
 curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/microgridsbilling?useruuid=dcdb67d1-6116-4987-916f-6fc6cf2bc0e4' \
 --header 'User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4' \
 --header 'Token: c5f872b51ed40ccf55f1c1d6dbd8cb86eefba5d1010e23b2386bd82be431f3eafc0e3360dee18a5327d9e9852e3cf7caad3b81e252f9f311790c22f7a62a90e1'
 ```
-*   GET Energy Storage Power Stations Carbon Report 
+*   GET Energy Storage Power Stations Carbon Report
 ```bash
 curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/energystoragepowerstationscarbon?useruuid=dcdb67d1-6116-4987-916f-6fc6cf2bc0e4' \
 --header 'User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4' \
@@ -4240,21 +4240,21 @@ curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355ac
 curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/microgriddetails?microgriddetailsid=1&reportingperiodstartdatetime={reportingperiodstartdatetime}&reportingperiodenddatetime={reportingperiodenddatetime}
 ```
 
-*   GET Microgrids Energy Report 
+*   GET Microgrids Energy Report
 ```bash
 curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/microgridsenergy?useruuid=dcdb67d1-6116-4987-916f-6fc6cf2bc0e4' \
 --header 'User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4' \
 --header 'Token: c5f872b51ed40ccf55f1c1d6dbd8cb86eefba5d1010e23b2386bd82be431f3eafc0e3360dee18a5327d9e9852e3cf7caad3b81e252f9f311790c22f7a62a90e1'
 ```
 
-*   GET Microgrids Billing Report 
+*   GET Microgrids Billing Report
 ```bash
 curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/microgridsbilling?useruuid=dcdb67d1-6116-4987-916f-6fc6cf2bc0e4' \
 --header 'User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4' \
 --header 'Token: c5f872b51ed40ccf55f1c1d6dbd8cb86eefba5d1010e23b2386bd82be431f3eafc0e3360dee18a5327d9e9852e3cf7caad3b81e252f9f311790c22f7a62a90e1'
 ```
 
-*   GET Microgrids Carbon Report 
+*   GET Microgrids Carbon Report
 ```bash
 curl -i -H "API-Key: 0196ef3251ad46301f9831f41e1ee96f443ed7d20e0e7ddb82ccc0355acbe0e76352104191d337c2bce53da5fa454b73b19ca614f45d68b4aabd7335daf91882" -X GET {{base_url}}/reports/microgridscarbon?useruuid=dcdb67d1-6116-4987-916f-6fc6cf2bc0e4' \
 --header 'User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4' \
