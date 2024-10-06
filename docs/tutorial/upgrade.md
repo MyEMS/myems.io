@@ -3,12 +3,9 @@ sidebar_position: 2
 ---
 
 # Upgrade
-
-## Upgrade from v4.7.0 to v4.8.0 - 2024-08-13
-### Warning
-- **MUST** replace '/code/.env' with '/app/.env' in the 'docker run' commands because WORKDIR in Dockerfile was changed from '/code' to '/app'
+## Upgrade from v4.9.0 to v4.9.1 - 2024-10-5
 ### database
-- Run upgrade script in myems/database/upgrade/upgrade4.8.0.sql
+- Run upgrade script in myems/database/upgrade/upgrade4.9.1.sql
 ### myems-admin
 - Must be reinstalled because there are new features
 ### myems-aggregation
@@ -18,7 +15,7 @@ sidebar_position: 2
 ### myems-cleaning
 - Optional be reinstalled since only version.txt was changed
 ### myems-modbus-tcp
-- Optional be reinstalled since only version.txt was changed
+- Must be reinstalled because there are new features
 ### myems-normalization
 - Optional be reinstalled since only version.txt was changed
 ### myems-web
@@ -42,9 +39,11 @@ sidebar_position: 2
 ### myems-web
 - Must be reinstalled because there are new features
 
-## Upgrade from v4.9.0 to v4.9.1 - 2024-10-7
+## Upgrade from v4.7.0 to v4.8.0 - 2024-08-13
+### Warning
+- **MUST** replace '/code/.env' with '/app/.env' in the 'docker run' commands because WORKDIR in Dockerfile was changed from '/code' to '/app'
 ### database
-- Run upgrade script in myems/database/upgrade/upgrade4.9.1.sql
+- Run upgrade script in myems/database/upgrade/upgrade4.8.0.sql
 ### myems-admin
 - Must be reinstalled because there are new features
 ### myems-aggregation
@@ -54,7 +53,7 @@ sidebar_position: 2
 ### myems-cleaning
 - Optional be reinstalled since only version.txt was changed
 ### myems-modbus-tcp
-- Must be reinstalled because there are new features
+- Optional be reinstalled since only version.txt was changed
 ### myems-normalization
 - Optional be reinstalled since only version.txt was changed
 ### myems-web
