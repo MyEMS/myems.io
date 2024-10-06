@@ -24,4 +24,38 @@ sidebar_position: 2
 ### myems-web
 - Must be reinstalled because there are new features
 
+## Upgrade from v4.8.0 to v4.9.0 - 2024-09-29
+### database
+- Run upgrade script in myems/database/upgrade/upgrade4.9.0.sql
+### myems-admin
+- Must be reinstalled because there are new features
+### myems-aggregation
+- Must be reinstalled because there are new features
+### myems-api
+- Must be reinstalled because there are new features
+### myems-cleaning
+- Optional be reinstalled since only version.txt was changed
+### myems-modbus-tcp
+- Optional be reinstalled since only version.txt was changed
+### myems-normalization
+- Must be reinstalled because there are new features
+### myems-web
+- Must be reinstalled because there are new features
 
+## Upgrade from v4.9.0 to v4.9.1 - 2024-10-7
+### database
+- Run upgrade script in myems/database/upgrade/upgrade4.9.1.sql
+### myems-admin
+- Must be reinstalled because there are new features
+### myems-aggregation
+- Optional be reinstalled since only version.txt was changed
+### myems-api
+- Must be reinstalled because there are new features
+### myems-cleaning
+- Optional be reinstalled since only version.txt was changed
+### myems-modbus-tcp
+- Must be reinstalled because there are new features
+### myems-normalization
+- Optional be reinstalled since only version.txt was changed
+### myems-web
+- Must be reinstalled because there are new features
