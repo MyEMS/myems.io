@@ -23,5 +23,37 @@ sidebar_position: 2
 - 可选重新安装，因为仅更改了 version.txt
 ### myems-web
 - 必须重新安装，因为有新功能
-
-
+## 从v4.8.0 升级到 v4.9.0 - 2024-09-29
+### database
+- 在 myems/database/upgrade/upgrade4.9.0.sql
+### myems-admin
+- 必须重新安装，因为有新功能
+### myems-aggregation
+- 必须重新安装，因为有新功能
+### myems-api
+- 必须重新安装，因为有新功能
+### myems-cleaning
+- 可选重新安装，因为仅更改了 version.txt
+### myems-modbus-tcp
+- 可选重新安装，因为仅更改了 version.txt
+### myems-normalization
+- 必须重新安装，因为有新功能
+### myems-web
+- 必须重新安装，因为有新功能
+## 从v4.9.0 升级到 v4.9.1 - 2024-10-7
+### database
+- 在 myems/database/upgrade/upgrade4.9.1.sql
+### myems-admin
+- 必须重新安装，因为有新功能
+### myems-aggregation
+- 可选重新安装，因为仅更改了 version.txt
+### myems-api
+- 必须重新安装，因为有新功能
+### myems-cleaning
+- 可选重新安装，因为仅更改了 version.txt
+### myems-modbus-tcp
+- 必须重新安装，因为有新功能
+### myems-normalization
+- 可选重新安装，因为仅更改了 version.txt
+### myems-web
+- 必须重新安装，因为有新功能
