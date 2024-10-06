@@ -5,7 +5,7 @@ sidebar_position: 2
 # Upgrade
 ## Upgrade from v4.9.0 to v4.9.1 - 2024-10-5
 ### database
-- Run upgrade script in myems/database/upgrade/upgrade4.9.1.sql
+- Execute myems/database/upgrade/upgrade4.9.1.sql
 ### myems-admin
 - Must be reinstalled because there are new features
 ### myems-aggregation
@@ -23,7 +23,7 @@ sidebar_position: 2
 
 ## Upgrade from v4.8.0 to v4.9.0 - 2024-09-29
 ### database
-- Run upgrade script in myems/database/upgrade/upgrade4.9.0.sql
+- Execute myems/database/upgrade/upgrade4.9.0.sql
 ### myems-admin
 - Must be reinstalled because there are new features
 ### myems-aggregation
@@ -43,7 +43,7 @@ sidebar_position: 2
 ### Warning
 - **MUST** replace '/code/.env' with '/app/.env' in the 'docker run' commands because WORKDIR in Dockerfile was changed from '/code' to '/app'
 ### database
-- Run upgrade script in myems/database/upgrade/upgrade4.8.0.sql
+- Execute myems/database/upgrade/upgrade4.8.0.sql
 ### myems-admin
 - Must be reinstalled because there are new features
 ### myems-aggregation
