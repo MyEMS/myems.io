@@ -45,7 +45,7 @@ mysql -u root -p < myems_energy_model_db.sql
 mysql -u root -p < myems_fdd_db.sql
 ```
 ```bash
-mysql> -u root -p < myems_historical_db.sql
+mysql -u root -p < myems_historical_db.sql
 ```
 ```bash
 mysql -u root -p < myems_production_db.sql
