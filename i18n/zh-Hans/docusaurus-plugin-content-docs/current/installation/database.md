@@ -25,40 +25,40 @@ MyEMS可以运行在以下MySQL兼容的数据库服务器。
 cd myems/database/install
 ```
 ```bash
-mysql -u root -p < myems_billing_baseline_db.sql
+mysql> -u root -p < myems_billing_baseline_db.sql
 ```
 ```bash
-mysql -u root -p < myems_billing_db.sql
+mysql> -u root -p < myems_billing_db.sql
 ```
 ```bash
-mysql -u root -p < myems_carbon_db.sql
+mysql> -u root -p < myems_carbon_db.sql
 ```
 ```bash
-mysql -u root -p < myems_energy_baseline_db.sql
+mysql> -u root -p < myems_energy_baseline_db.sql
 ```
 ```bash
-mysql -u root -p < myems_energy_db.sql
+mysql> -u root -p < myems_energy_db.sql
 ```
 ```bash
-mysql -u root -p < myems_energy_model_db.sql
+mysql> -u root -p < myems_energy_model_db.sql
 ```
 ```bash
-mysql -u root -p < myems_fdd_db.sql
+mysql> -u root -p < myems_fdd_db.sql
 ```
 ```bash
-mysql -u root -p < myems_historical_db.sql
+mysql> -u root -p < myems_historical_db.sql
 ```
 ```bash
-mysql -u root -p < myems_production_db.sql
+mysql> -u root -p < myems_production_db.sql
 ```
 ```bash
-mysql -u root -p < myems_reporting_db.sql
+mysql> -u root -p < myems_reporting_db.sql
 ```
 ```bash
-mysql -u root -p < myems_system_db.sql
+mysql> -u root -p < myems_system_db.sql
 ```
 ```bash
-mysql -u root -p < myems_user_db.sql
+mysql> -u root -p < myems_user_db.sql
 ```
 
 演示数据是可选的。要插入演示数据，请执行以下脚本：
@@ -67,7 +67,7 @@ mysql -u root -p < myems_user_db.sql
 cd myems/database/demo-cn
 ```
 ```bash
-mysql -u root -p < myems_system_db.sql
+mysql> -u root -p < myems_system_db.sql
 ```
 :::tip 如何修复MySQL错误“用户拒绝访问”
 
