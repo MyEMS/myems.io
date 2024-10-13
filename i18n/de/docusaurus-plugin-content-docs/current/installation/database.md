@@ -25,40 +25,40 @@ Führen Sie die folgenden Skripte in der MySQL-Kommandozeile aus oder führen Si
 cd myems/database/install
 ```
 ```bash
-mysql> -u root -p < myems_billing_baseline_db.sql
+mysql -u root -p < myems_billing_baseline_db.sql
 ```
 ```bash
-mysql> -u root -p < myems_billing_db.sql
+mysql -u root -p < myems_billing_db.sql
 ```
 ```bash
-mysql> -u root -p < myems_carbon_db.sql
+mysql -u root -p < myems_carbon_db.sql
 ```
 ```bash
-mysql> -u root -p < myems_energy_baseline_db.sql
+mysql -u root -p < myems_energy_baseline_db.sql
 ```
 ```bash
-mysql> -u root -p < myems_energy_db.sql
+mysql -u root -p < myems_energy_db.sql
 ```
 ```bash
-mysql> -u root -p < myems_energy_model_db.sql
+mysql -u root -p < myems_energy_model_db.sql
 ```
 ```bash
-mysql> -u root -p < myems_fdd_db.sql
+mysql -u root -p < myems_fdd_db.sql
 ```
 ```bash
 mysql> -u root -p < myems_historical_db.sql
 ```
 ```bash
-mysql> -u root -p < myems_production_db.sql
+mysql -u root -p < myems_production_db.sql
 ```
 ```bash
-mysql> -u root -p < myems_reporting_db.sql
+mysql -u root -p < myems_reporting_db.sql
 ```
 ```bash
-mysql> -u root -p < myems_system_db.sql
+mysql -u root -p < myems_system_db.sql
 ```
 ```bash
-mysql> -u root -p < myems_user_db.sql
+mysql -u root -p < myems_user_db.sql
 ```
 
 Die Demodaten sind optional. Um Demodaten einzufügen, führen Sie folgende Skripte aus:
@@ -67,7 +67,7 @@ Die Demodaten sind optional. Um Demodaten einzufügen, führen Sie folgende Skri
 cd myems/database/demo-de
 ```
 ```bash
-mysql> -u root -p < myems_system_db.sql
+mysql -u root -p < myems_system_db.sql
 ```
 
 :::tip So beheben Sie den MySQL-Fehler 'Zugriff verweigert für Benutzer'
@@ -78,17 +78,21 @@ Remote Access Benutzer hinzufügen
 sudo mysql -u root -p
 ```
 
+mysql>
 ```bash
-mysql> CREATE USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '!MyEMS1';
+CREATE USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '!MyEMS1';
 ```
+mysql>
 ```bash
-mysql> GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
 ```
+mysql>
 ```bash
-mysql> FLUSH PRIVILEGES;
+FLUSH PRIVILEGES;
 ```
+mysql>
 ```bash
-mysql> ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '!MyEMS1';
+ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '!MyEMS1';
 ```
 :::
 

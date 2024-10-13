@@ -24,40 +24,40 @@ Execute the following scripts in MySQL commandline, or execute in other MySQL cl
 cd myems/database/install
 ```
 ```bash
-mysql> -u root -p < myems_billing_baseline_db.sql
+mysql -u root -p < myems_billing_baseline_db.sql
 ```
 ```bash
-mysql> -u root -p < myems_billing_db.sql
+mysql -u root -p < myems_billing_db.sql
 ```
 ```bash
-mysql> -u root -p < myems_carbon_db.sql
+mysql -u root -p < myems_carbon_db.sql
 ```
 ```bash
-mysql> -u root -p < myems_energy_baseline_db.sql
+mysql -u root -p < myems_energy_baseline_db.sql
 ```
 ```bash
-mysql> -u root -p < myems_energy_db.sql
+mysql -u root -p < myems_energy_db.sql
 ```
 ```bash
-mysql> -u root -p < myems_energy_model_db.sql
+mysql -u root -p < myems_energy_model_db.sql
 ```
 ```bash
-mysql> -u root -p < myems_fdd_db.sql
+mysql -u root -p < myems_fdd_db.sql
 ```
 ```bash
-mysql> -u root -p < myems_historical_db.sql
+mysql -u root -p < myems_historical_db.sql
 ```
 ```bash
-mysql> -u root -p < myems_production_db.sql
+mysql -u root -p < myems_production_db.sql
 ```
 ```bash
-mysql> -u root -p < myems_reporting_db.sql
+mysql -u root -p < myems_reporting_db.sql
 ```
 ```bash
-mysql> -u root -p < myems_system_db.sql
+mysql -u root -p < myems_system_db.sql
 ```
 ```bash
-mysql> -u root -p < myems_user_db.sql
+mysql -u root -p < myems_user_db.sql
 ```
 
 The demo data is optional. To insert demo data execute the following scripts,
@@ -66,7 +66,7 @@ The demo data is optional. To insert demo data execute the following scripts,
 cd myems/database/demo-en
 ```
 ```bash
-mysql> -u root -p < myems_system_db.sql
+mysql -u root -p < myems_system_db.sql
 ```
 
 :::tip How to fix MySQL error 'access denied for user'
@@ -77,17 +77,21 @@ Add Remote Access User
 sudo mysql -u root -p
 ```
 
+mysql>
 ```bash
-mysql> CREATE USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '!MyEMS1';
+CREATE USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '!MyEMS1';
 ```
+mysql>
 ```bash
-mysql> GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
 ```
+mysql>
 ```bash
-mysql> FLUSH PRIVILEGES;
+FLUSH PRIVILEGES;
 ```
+mysql>
 ```bash
-mysql> ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '!MyEMS1';
+ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '!MyEMS1';
 ```
 :::
 
