@@ -77,17 +77,21 @@ Add Remote Access User
 sudo mysql -u root -p
 ```
 
+mysql>
 ```bash
-mysql> CREATE USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '!MyEMS1';
+CREATE USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '!MyEMS1';
 ```
+mysql>
 ```bash
-mysql> GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
 ```
+mysql>
 ```bash
-mysql> FLUSH PRIVILEGES;
+FLUSH PRIVILEGES;
 ```
+mysql>
 ```bash
-mysql> ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '!MyEMS1';
+ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '!MyEMS1';
 ```
 :::
 
