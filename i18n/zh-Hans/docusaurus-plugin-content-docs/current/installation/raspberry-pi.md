@@ -9,7 +9,7 @@ sidebar_position: 7
 ## 先决条件
 
 * Raspberry Pi 4 Model B (4GB RAM)
-* Raspberry Pi OS Lite (64 bit)
+* Raspberry Pi OS (64 bit)
 
 ## 克隆源代码
 
@@ -73,6 +73,16 @@ sudo cp -r ~/myems/myems-api /myems-api
 ```bash
 cd /myems-api
 ```
+
+为了避免 'error: externally-managed-environment', 创建一个虚拟环境配置目录:
+```bash
+sudo python -m venv venv
+```
+开始使用虚拟环境
+```
+source venv/bin/activate
+```
+安装依赖库
 ```bash
 sudo pip install -r requirements.txt
 ```
@@ -151,7 +161,6 @@ sudo apt update
 ```
 ```bash
 sudo apt install nginx
-
 ```
 
 * 配置 NGINX
@@ -169,8 +178,8 @@ http {
     gzip_types *;
     gzip_vary on;
     proxy_buffering off;
-    ...
 
+    ...
 }
 ```
 
@@ -219,6 +228,10 @@ sudo nano /var/www/myems-admin/app/api.js
 
 :::
 
+启动 Nginx:
+```bash
+sudo systemctl start nginx
+```
 将端口添加到防火墙：
 ```bash
 sudo ufw allow 8001
@@ -234,8 +247,18 @@ sudo cp -r ~/myems/myems-modbus-tcp /myems-modbus-tcp
 ```bash
 cd /myems-modbus-tcp
 ```
+
+为了避免 'error: externally-managed-environment', 创建一个虚拟环境配置目录:
 ```bash
-sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+sudo python -m venv venv
+```
+开始使用虚拟环境
+```
+source venv/bin/activate
+```
+安装依赖库
+```bash
+sudo pip install -r requirements.txt
 ```
 
 将exmaple.ev文件复制到.env并修改.env文件：
@@ -276,8 +299,18 @@ sudo cp -r ~/myems/myems-cleaning /myems-cleaning
 ```bash
 cd /myems-cleaning
 ```
+
+为了避免 'error: externally-managed-environment', 创建一个虚拟环境配置目录:
 ```bash
-sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+sudo python -m venv venv
+```
+开始使用虚拟环境
+```
+source venv/bin/activate
+```
+安装依赖库
+```bash
+sudo pip install -r requirements.txt
 ```
 
 将exmaple.ev文件复制到.env并修改.env文件：
@@ -318,8 +351,18 @@ sudo cp -r ~/myems/myems-normalization /myems-normalization
 ```bash
 cd /myems-normalization
 ```
+
+为了避免 'error: externally-managed-environment', 创建一个虚拟环境配置目录:
 ```bash
-sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+sudo python -m venv venv
+```
+开始使用虚拟环境
+```
+source venv/bin/activate
+```
+安装依赖库
+```bash
+sudo pip install -r requirements.txt
 ```
 
 将exmaple.ev文件复制到.env并修改.env文件：
@@ -360,9 +403,20 @@ sudo cp -r ~/myems/myems-aggregation /myems-aggregation
 ```bash
 cd /myems-aggregation
 ```
+
+为了避免 'error: externally-managed-environment', 创建一个虚拟环境配置目录:
 ```bash
-sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+sudo python -m venv venv
 ```
+开始使用虚拟环境
+```
+source venv/bin/activate
+```
+安装依赖库
+```bash
+sudo pip install -r requirements.txt
+```
+
 将exmaple.ev文件复制到.env并修改.env文件：
 ```bash
 sudo cp /myems-aggregation/example.env /myems-aggregation/.env
@@ -396,10 +450,10 @@ cat /myems-aggregation.log
 
 在此步骤中，您将安装myems-web服务。
 
-*   安装 NGINX 服务器
+*   安装 NGINX 服务器 (如在myems-admin中已安装，可以忽略)
 参考 http://nginx.org/en/docs/install.html
 
-*   配置 NGINX
+*   配置 NGINX (如在myems-admin中已配置，可以忽略)
 ```bash
 sudo nano /etc/nginx/nginx.conf
 ```
@@ -432,7 +486,7 @@ http {
       }
       ## To avoid CORS issue, use Nginx to proxy myems-api to path /api
       ## Add another location /api in 'server'
-      ## NOTE: replace dafulat address http://127.0.0.1:8000/ with actual IP or URL
+      ## NOTE: replace dafault address http://127.0.0.1:8000/ with actual IP or URL
       location /api {
           proxy_pass http://127.0.0.1:8000/;
           proxy_connect_timeout 75;
@@ -441,16 +495,12 @@ http {
       }
   }
 ```
-重启 NGINX
-```bash
-sudo systemctl restart nginx
-```
 
 * 安装 MyEMS Web UI:
 
 安装NodeJS:
 ```bash
-curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo bash -
 ```
 ```bash
 sudo apt-get install -y nodejs
@@ -484,6 +534,11 @@ sudo npm run build
 sudo mv build  /var/www/myems-web
 ```
 
+重启 NGINX
+```bash
+sudo systemctl restart nginx
+```
+
 将端口添加到防火墙：
 ```bash
 sudo ufw allow 80
@@ -507,7 +562,8 @@ MyEMS Admin UI: 8001
 
 ```
 administrator
-
+```
+```
 !MyEMS1
 ```
 </details>
@@ -517,7 +573,8 @@ administrator
 
 ```
 administrator@myems.io
-
+```
+```
 !MyEMS1
 ```
 </details>
