@@ -22,7 +22,7 @@ MyEMS arbeitet mit den folgenden MySQL-kompatiblen Datenbankservern.
 Führen Sie die folgenden Skripte in der MySQL-Kommandozeile aus oder führen Sie sie in anderen MySQL-Client-Tools wie MySQL Workbench, Navicat, DBaver, phpMyAdmin usw. aus.
 
 ```bash
-cd myems/database/install
+cd ~/myems/database/install
 ```
 ```bash
 mysql -u root -p < myems_billing_baseline_db.sql
@@ -64,7 +64,7 @@ mysql -u root -p < myems_user_db.sql
 Die Demodaten sind optional. Um Demodaten einzufügen, führen Sie folgende Skripte aus:
 
 ```bash
-cd myems/database/demo-de
+cd ~/myems/database/demo-de
 ```
 ```bash
 mysql -u root -p < myems_system_db.sql

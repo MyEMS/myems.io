@@ -9,7 +9,7 @@ In diesem Handbuch stellen Sie MyEMS auf Raspberry Pi bereit.
 ## Voraussetzungen
 
 * Raspberry Pi 4 Model B (4GB RAM)
-* Raspberry Pi OS Lite (64 bit)
+* Raspberry Pi OS (64 bit)
 
 ## Quellcode klonen
 
@@ -73,6 +73,16 @@ sudo cp -r ~/myems/myems-api /myems-api
 ```bash
 cd /myems-api
 ```
+
+Um 'error: external-managed-environment' zu verhindern, erstellen Sie einen Konfigurationsordner für virtuelle Umgebungen:
+```bash
+sudo python -m venv venv
+```
+Starten Sie die virtuelle Umgebung
+```
+source venv/bin/activate
+```
+Installation der Anforderungen
 ```bash
 sudo pip install -r requirements.txt
 ```
@@ -151,7 +161,6 @@ sudo apt update
 ```
 ```bash
 sudo apt install nginx
-
 ```
 
 * Konfigurieren Sie NGINX
@@ -169,8 +178,8 @@ http {
     gzip_types *;
     gzip_vary on;
     proxy_buffering off;
-    ...
 
+    ...
 }
 ```
 
@@ -219,6 +228,10 @@ Der Ordner „Upload“ ist für vom Benutzer hochgeladene Dateien. Löschen/ver
 
 :::
 
+Starten Sie die Nginx:
+```bash
+sudo systemctl start nginx
+```
 Port zur Firewall hinzufügen:
 ```bash
 sudo ufw allow 8001
@@ -234,8 +247,18 @@ sudo cp -r ~/myems/myems-modbus-tcp /myems-modbus-tcp
 ```bash
 cd /myems-modbus-tcp
 ```
+
+Um 'error: external-managed-environment' zu verhindern, erstellen Sie einen Konfigurationsordner für virtuelle Umgebungen:
 ```bash
-sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+sudo python -m venv venv
+```
+Starten Sie die virtuelle Umgebung
+```
+source venv/bin/activate
+```
+Installation der Anforderungen
+```bash
+sudo pip install -r requirements.txt
 ```
 
 Kopieren Sie die Datei exmaple.env nach .env und ändern Sie die .env-Datei:
@@ -276,8 +299,18 @@ sudo cp -r ~/myems/myems-cleaning /myems-cleaning
 ```bash
 cd /myems-cleaning
 ```
+
+Um 'error: external-managed-environment' zu verhindern, erstellen Sie einen Konfigurationsordner für virtuelle Umgebungen:
 ```bash
-sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+sudo python -m venv venv
+```
+Starten Sie die virtuelle Umgebung
+```
+source venv/bin/activate
+```
+Installation der Anforderungen
+```bash
+sudo pip install -r requirements.txt
 ```
 
 Kopieren Sie die Datei exmaple.env nach .env und ändern Sie die .env-Datei:
@@ -318,8 +351,18 @@ sudo cp -r ~/myems/myems-normalization /myems-normalization
 ```bash
 cd /myems-normalization
 ```
+
+Um 'error: external-managed-environment' zu verhindern, erstellen Sie einen Konfigurationsordner für virtuelle Umgebungen:
 ```bash
-sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+sudo python -m venv venv
+```
+Starten Sie die virtuelle Umgebung
+```
+source venv/bin/activate
+```
+Installation der Anforderungen
+```bash
+sudo pip install -r requirements.txt
 ```
 
 Kopieren Sie die Datei exmaple.env nach .env und ändern Sie die .env-Datei:
@@ -360,9 +403,20 @@ sudo cp -r ~/myems/myems-aggregation /myems-aggregation
 ```bash
 cd /myems-aggregation
 ```
+
+Um 'error: external-managed-environment' zu verhindern, erstellen Sie einen Konfigurationsordner für virtuelle Umgebungen:
 ```bash
-sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+sudo python -m venv venv
 ```
+Starten Sie die virtuelle Umgebung
+```
+source venv/bin/activate
+```
+Installation der Anforderungen
+```bash
+sudo pip install -r requirements.txt
+```
+
 Kopieren Sie die Datei exmaple.env nach .env und ändern Sie die .env-Datei:
 ```bash
 sudo cp /myems-aggregation/example.env /myems-aggregation/.env
@@ -396,10 +450,10 @@ cat /myems-aggregation.log
 
 In diesem Schritt installieren Sie den UI-Dienst myems-web.
 
-*   NGINX-Server installieren
+*   NGINX-Server installieren (Falls bereits in myems-admin installiert, kann ignoriert werden)
 refer to http://nginx.org/en/docs/install.html
 
-*   Konfigurieren Sie NGINX
+*   Konfigurieren Sie NGINX (Falls bereits in myems-admin konfiguriert, kann ignoriert werden)
 ```bash
 sudo nano /etc/nginx/nginx.conf
 ```
@@ -432,7 +486,7 @@ Löschen Sie den Standardabschnitt „server“ in /etc/nginx/nginx.conf oder in
       }
       ## To avoid CORS issue, use Nginx to proxy myems-api to path /api
       ## Add another location /api in 'server'
-      ## NOTE: replace dafulat address http://127.0.0.1:8000/ with actual IP or URL
+      ## NOTE: replace dafault address http://127.0.0.1:8000/ with actual IP or URL
       location /api {
           proxy_pass http://127.0.0.1:8000/;
           proxy_connect_timeout 75;
@@ -441,16 +495,12 @@ Löschen Sie den Standardabschnitt „server“ in /etc/nginx/nginx.conf oder in
       }
   }
 ```
-Starten Sie NGINX neu:
-```bash
-sudo systemctl restart nginx
-```
 
 * Installieren Sie die MyEMS Web UI:
 
 Installieren Sie NodeJS:
 ```bash
-curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo bash -
 ```
 ```bash
 sudo apt-get install -y nodejs
@@ -484,6 +534,11 @@ Installieren:
 sudo mv build /var/www/myems-web
 ```
 
+Starten Sie NGINX neu:
+```bash
+sudo systemctl restart nginx
+```
+
 Port zur Firewall hinzufügen:
 ```bash
 sudo ufw allow 80
@@ -507,7 +562,8 @@ MyEMS Admin UI: 8001
 
 ```
 administrator
-
+```
+```
 !MyEMS1
 ```
 </details>
@@ -517,7 +573,8 @@ administrator
 
 ```
 administrator@myems.io
-
+```
+```
 !MyEMS1
 ```
 </details>

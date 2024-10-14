@@ -22,7 +22,7 @@ MyEMS可以运行在以下MySQL兼容的数据库服务器。
 在MySQL命令行中执行以下脚本，或在其他MySQL客户端工具中执行，如MySQL Workbench、Navicat、DBaver、phpMyAdmin等。
 
 ```bash
-cd myems/database/install
+cd ~/myems/database/install
 ```
 ```bash
 mysql -u root -p < myems_billing_baseline_db.sql
@@ -64,7 +64,7 @@ mysql -u root -p < myems_user_db.sql
 演示数据是可选的。要插入演示数据，请执行以下脚本：
 
 ```bash
-cd myems/database/demo-cn
+cd ~/myems/database/demo-cn
 ```
 ```bash
 mysql -u root -p < myems_system_db.sql
