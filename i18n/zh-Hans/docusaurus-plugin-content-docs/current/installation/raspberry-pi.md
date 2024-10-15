@@ -86,6 +86,10 @@ source venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
+关闭虚拟环境
+```
+deactivate
+```
 
 根据example.env创建.env文件，并根据需要编辑.env：
 ```bash
@@ -260,6 +264,10 @@ source venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
+关闭虚拟环境
+```
+deactivate
+```
 
 将exmaple.ev文件复制到.env并修改.env文件：
 ```bash
@@ -311,6 +319,10 @@ source venv/bin/activate
 安装依赖库
 ```bash
 pip install -r requirements.txt
+```
+关闭虚拟环境
+```
+deactivate
 ```
 
 将exmaple.ev文件复制到.env并修改.env文件：
@@ -364,6 +376,10 @@ source venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
+关闭虚拟环境
+```
+deactivate
+```
 
 将exmaple.ev文件复制到.env并修改.env文件：
 ```bash
@@ -415,6 +431,10 @@ source venv/bin/activate
 安装依赖库
 ```bash
 pip install -r requirements.txt
+```
+关闭虚拟环境
+```
+deactivate
 ```
 
 将exmaple.ev文件复制到.env并修改.env文件：

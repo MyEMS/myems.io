@@ -86,6 +86,10 @@ Installation der Anforderungen
 ```bash
 pip install -r requirements.txt
 ```
+Deaktivieren der virtuellen Umgebung
+```
+deactivate
+```
 
 Erstellen Sie eine .env-Datei basierend auf example.env und bearbeiten Sie die .env-Datei bei Bedarf:
 ```bash
@@ -260,6 +264,10 @@ Installation der Anforderungen
 ```bash
 pip install -r requirements.txt
 ```
+Deaktivieren der virtuellen Umgebung
+```
+deactivate
+```
 
 Kopieren Sie die Datei exmaple.env nach .env und ändern Sie die .env-Datei:
 ```bash
@@ -311,6 +319,10 @@ source venv/bin/activate
 Installation der Anforderungen
 ```bash
 pip install -r requirements.txt
+```
+Deaktivieren der virtuellen Umgebung
+```
+deactivate
 ```
 
 Kopieren Sie die Datei exmaple.env nach .env und ändern Sie die .env-Datei:
@@ -364,6 +376,10 @@ Installation der Anforderungen
 ```bash
 pip install -r requirements.txt
 ```
+Deaktivieren der virtuellen Umgebung
+```
+deactivate
+```
 
 Kopieren Sie die Datei exmaple.env nach .env und ändern Sie die .env-Datei:
 ```bash
@@ -415,6 +431,10 @@ source venv/bin/activate
 Installation der Anforderungen
 ```bash
 pip install -r requirements.txt
+```
+Deaktivieren der virtuellen Umgebung
+```
+deactivate
 ```
 
 Kopieren Sie die Datei exmaple.env nach .env und ändern Sie die .env-Datei:
