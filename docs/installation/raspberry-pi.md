@@ -87,6 +87,10 @@ Install the requirements
 ```bash
 pip install -r requirements.txt
 ```
+Deactive the virtual environment
+```
+deactivate
+```
 
 Create .env file based on example.env and edit the .env file if needed:
 ```bash
@@ -261,6 +265,10 @@ Install the requirements
 ```bash
 pip install -r requirements.txt
 ```
+Deactive the virtual environment
+```
+deactivate
+```
 
 Copy exmaple.env file to .env and modify the .env file:
 ```bash
@@ -313,7 +321,7 @@ Install the requirements
 ```bash
 pip install -r requirements.txt
 ```
-Leave the virtual environment
+Deactive the virtual environment
 ```
 deactivate
 ```
@@ -369,7 +377,7 @@ Install the requirements
 ```bash
 pip install -r requirements.txt
 ```
-Leave the virtual environment
+Deactive the virtual environment
 ```
 deactivate
 ```
@@ -425,7 +433,7 @@ Install the requirements
 ```bash
 pip install -r requirements.txt
 ```
-Leave the virtual environment
+Deactive the virtual environment
 ```
 deactivate
 ```
