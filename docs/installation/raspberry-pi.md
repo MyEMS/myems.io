@@ -85,7 +85,7 @@ source venv/bin/activate
 ```
 Install the requirements
 ```bash
-sudo pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 Create .env file based on example.env and edit the .env file if needed:
@@ -259,7 +259,7 @@ source venv/bin/activate
 ```
 Install the requirements
 ```bash
-sudo pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 Copy exmaple.env file to .env and modify the .env file:
@@ -311,7 +311,7 @@ source venv/bin/activate
 ```
 Install the requirements
 ```bash
-sudo pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 Leave the virtual environment
 ```
@@ -367,7 +367,7 @@ source venv/bin/activate
 ```
 Install the requirements
 ```bash
-sudo pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 Leave the virtual environment
 ```
@@ -423,7 +423,7 @@ source venv/bin/activate
 ```
 Install the requirements
 ```bash
-sudo pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 Leave the virtual environment
 ```
