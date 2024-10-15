@@ -84,7 +84,7 @@ source venv/bin/activate
 ```
 Installation der Anforderungen
 ```bash
-sudo pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 Erstellen Sie eine .env-Datei basierend auf example.env und bearbeiten Sie die .env-Datei bei Bedarf:
@@ -258,7 +258,7 @@ source venv/bin/activate
 ```
 Installation der Anforderungen
 ```bash
-sudo pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 Kopieren Sie die Datei exmaple.env nach .env und ändern Sie die .env-Datei:
@@ -310,7 +310,7 @@ source venv/bin/activate
 ```
 Installation der Anforderungen
 ```bash
-sudo pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 Kopieren Sie die Datei exmaple.env nach .env und ändern Sie die .env-Datei:
@@ -362,7 +362,7 @@ source venv/bin/activate
 ```
 Installation der Anforderungen
 ```bash
-sudo pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 Kopieren Sie die Datei exmaple.env nach .env und ändern Sie die .env-Datei:
@@ -414,7 +414,7 @@ source venv/bin/activate
 ```
 Installation der Anforderungen
 ```bash
-sudo pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 Kopieren Sie die Datei exmaple.env nach .env und ändern Sie die .env-Datei:

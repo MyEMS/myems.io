@@ -84,7 +84,7 @@ source venv/bin/activate
 ```
 安装依赖库
 ```bash
-sudo pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 根据example.env创建.env文件，并根据需要编辑.env：
@@ -258,7 +258,7 @@ source venv/bin/activate
 ```
 安装依赖库
 ```bash
-sudo pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 将exmaple.ev文件复制到.env并修改.env文件：
@@ -310,7 +310,7 @@ source venv/bin/activate
 ```
 安装依赖库
 ```bash
-sudo pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 将exmaple.ev文件复制到.env并修改.env文件：
@@ -362,7 +362,7 @@ source venv/bin/activate
 ```
 安装依赖库
 ```bash
-sudo pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 将exmaple.ev文件复制到.env并修改.env文件：
@@ -414,7 +414,7 @@ source venv/bin/activate
 ```
 安装依赖库
 ```bash
-sudo pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 将exmaple.ev文件复制到.env并修改.env文件：
