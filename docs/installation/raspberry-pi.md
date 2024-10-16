@@ -8,8 +8,8 @@ In this guide, you will deploy MyEMS onto Raspberry Pi.
 
 ## Prerequisites
 
-* Raspberry Pi 4 Model B (4GB RAM)
-* Raspberry Pi OS (64 bit)
+* Raspberry Pi 5 or Raspberry Pi 4 Model B
+* Raspberry Pi OS (64-bit) A port of Debian Bookworm with the Raspberry Pi Desktop Released:2024-07-04
 
 ## Clone Source Code
 
@@ -23,8 +23,7 @@ sudo apt install pip
 sudo apt install ufw
 ```
 ```bash
-cd ~
-git clone https://github.com/myems/myems
+cd ~ && git clone https://github.com/myems/myems
 ```
 
 ## Step 1 Database
@@ -85,7 +84,7 @@ source venv/bin/activate
 ```
 Install the requirements
 ```bash
-pip install -r requirements.txt
+sudo venv/bin/pip install -r requirements.txt
 ```
 Deactive the virtual environment
 ```
@@ -99,19 +98,30 @@ sudo cp /myems-api/example.env /myems-api/.env
 ```bash
 sudo nano /myems-api/.env
 ```
-Check or change the listening port (default is 8000) in myems-api.service and myems-api.socket:
+Change the gunicorn path in myems-api.service:
 ```bash
 sudo nano /myems-api/myems-api.service
 ```
 ```bash
-ExecStart=/usr/local/bin/gunicorn -b 0.0.0.0:8000 --pid /run/myems-api/pid --timeout 600 --workers=4 app:api
+[Unit]
+Description=myems-api daemon
+Requires=myems-api.socket
+After=network.target
+
+[Service]
+PIDFile=/run/myems-api/pid
+User=root
+Group=root
+WorkingDirectory=/myems-api
+ExecStart=/myems-api/venv/bin/gunicorn -b 0.0.0.0:8000 --pid /run/myems-api/pid --timeout 600 --workers=4 app:api
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
 ```
-```bash
-sudo nano /myems-api/myems-api.socket
-```
-```bash
-ListenStream=0.0.0.0:8000
-```
+
 Add port to firewall:
 ```bash
 sudo ufw allow 8000
@@ -188,7 +198,7 @@ http {
 }
 ```
 
-Add a new 'server' section with directives as below:
+In the 'http' section, add a new 'server' section with directives as below:
 ```
   server {
       listen                 8001;
@@ -263,7 +273,7 @@ source venv/bin/activate
 ```
 Install the requirements
 ```bash
-pip install -r requirements.txt
+sudo venv/bin/pip install -r requirements.txt
 ```
 Deactive the virtual environment
 ```
@@ -276,6 +286,27 @@ sudo cp /myems-modbus-tcp/example.env /myems-modbus-tcp/.env
 ```
 ```bash
 sudo nano /myems-modbus-tcp/.env
+```
+Change python path in myems-modbus-tcp.service
+```
+sudo nano myems-modbus-tcp.service
+```
+```
+[Unit]
+Description=myems-modbus-tcp daemon
+After=network.target
+
+[Service]
+User=root
+Group=root
+ExecStart=/myems-modbus-tcp/venv/bin/python3 /myems-modbus-tcp/main.py
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+PrivateTmp=true
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
 ```
 Setup systemd service:
 ```bash
@@ -319,7 +350,7 @@ source venv/bin/activate
 ```
 Install the requirements
 ```bash
-pip install -r requirements.txt
+sudo venv/bin/pip install -r requirements.txt
 ```
 Deactive the virtual environment
 ```
@@ -332,6 +363,27 @@ sudo cp /myems-cleaning/example.env /myems-cleaning/.env
 ```
 ```bash
 nano /myems-cleaning/.env
+```
+Change python path in myems-cleaning.service
+```bash
+sudo nano myems-cleaning.service
+```
+```
+[Unit]
+Description=myems-cleaning daemon
+After=network.target
+
+[Service]
+User=root
+Group=root
+ExecStart=/myems-cleaning/venv/bin/python3 /myems-cleaning/main.py
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+PrivateTmp=true
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
 ```
 Setup systemd service:
 ```bash
@@ -375,7 +427,7 @@ source venv/bin/activate
 ```
 Install the requirements
 ```bash
-pip install -r requirements.txt
+sudo venv/bin/pip install -r requirements.txt
 ```
 Deactive the virtual environment
 ```
@@ -387,8 +439,31 @@ Copy exmaple.env file to .env and modify the .env file:
 sudo cp /myems-normalization/example.env /myems-normalization/.env
 ```
 ```bash
-nano /myems-normalization/.env
+sudo nano /myems-normalization/.env
 ```
+Change python path in myems-normalization.service
+```bash
+sudo nano myems-normalization.service
+```
+```
+[Unit]
+Description=myems-normalization daemon
+After=network.target
+
+[Service]
+User=root
+Group=root
+ExecStart=/myems-normalization/venv/bin/python3 /myems-normalization/main.py
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+PrivateTmp=true
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
+```
+
 Setup systemd service:
 ```bash
 sudo cp /myems-normalization/myems-normalization.service /lib/systemd/system/
@@ -431,7 +506,7 @@ source venv/bin/activate
 ```
 Install the requirements
 ```bash
-pip install -r requirements.txt
+sudo venv/bin/pip install -r requirements.txt
 ```
 Deactive the virtual environment
 ```
@@ -444,6 +519,27 @@ sudo cp /myems-aggregation/example.env /myems-aggregation/.env
 ```
 ```bash
 sudo nano /myems-aggregation/.env
+```
+Change python path in myems-aggregation.service
+```bash
+sudo nano myems-aggregation.service
+```
+```
+[Unit]
+Description=myems-aggregation daemon
+After=network.target
+
+[Service]
+User=root
+Group=root
+ExecStart=/myems-aggregation/venv/bin/python3 /myems-aggregation/main.py
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+PrivateTmp=true
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
 ```
 Setup systemd service:
 ```bash
@@ -474,11 +570,12 @@ In this step, you will install myems-web UI service.
 *   Install NGINX Server (If already installed in myems-admin, it can be ignored)
 refer to http://nginx.org/en/docs/install.html
 
-*   Configure NGINX (If already configured in myems-admin, it can be ignored)
+*   Configure NGINX
 ```bash
 sudo nano /etc/nginx/nginx.conf
 ```
-In the 'http' section, add some directives:
+In the 'http' section, add some directives (If already configured in myems-admin, it can be ignored)
+
 ```
 http {
     client_header_timeout 600;
@@ -493,7 +590,7 @@ http {
     ...
 }
 ```
-Add a new 'server' section with directives as below:
+In the 'http' section, add a new 'server' section with directives as below:
 ```
   server {
       listen                 80;
@@ -579,24 +676,22 @@ MyEMS Admin UI: 8001
 ### Default Passwords
 <details>
   <summary>Admin UI</summary>
-
-```
-administrator
-```
-```
-!MyEMS1
-```
+  ```
+  administrator
+  ```
+  ```
+  !MyEMS1
+  ```
 </details>
 
 <details>
   <summary>Web UI</summary>
-
-```
-administrator@myems.io
-```
-```
-!MyEMS1
-```
+  ```
+  administrator@myems.io
+  ```
+  ```
+  !MyEMS1
+  ```
 </details>
 
 

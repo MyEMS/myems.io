@@ -8,8 +8,8 @@ In diesem Handbuch stellen Sie MyEMS auf Raspberry Pi bereit.
 
 ## Voraussetzungen
 
-* Raspberry Pi 4 Model B (4GB RAM)
-* Raspberry Pi OS (64 bit)
+* Raspberry Pi 5 or Raspberry Pi 4 Model B
+* Raspberry Pi OS (64-bit) A port of Debian Bookworm with the Raspberry Pi Desktop Released:2024-07-04
 
 ## Quellcode klonen
 
@@ -23,8 +23,7 @@ sudo apt install pip
 sudo apt install ufw
 ```
 ```bash
-cd ~
-git clone https://github.com/myems/myems
+cd ~ && git clone https://github.com/myems/myems
 ```
 
 ## Schritt 1 Datenbank
@@ -46,6 +45,7 @@ Führen Sie den folgenden Befehl aus, um den MySQL-Sicherungsprozess zu starten.
 ```bash
 sudo mysql_secure_installation
 ```
+
 ```bash
 Enter current password for root (enter for none): [Enter key or return key]
 Switch to unix_socket authentication [Y/n] Y
@@ -84,7 +84,7 @@ source venv/bin/activate
 ```
 Installation der Anforderungen
 ```bash
-pip install -r requirements.txt
+sudo venv/bin/pip install -r requirements.txt
 ```
 Deaktivieren der virtuellen Umgebung
 ```
@@ -98,19 +98,30 @@ sudo cp /myems-api/example.env /myems-api/.env
 ```bash
 sudo nano /myems-api/.env
 ```
-Überprüfen oder ändern Sie den Überwachungsport (Standard ist 8000) in myems-api.service und myems-api.socket:
+Ändern Sie den gunicorn Pfad in myems-api.service:
 ```bash
 sudo nano /myems-api/myems-api.service
 ```
 ```bash
-ExecStart=/usr/local/bin/gunicorn -b 0.0.0.0:8000 --pid /run/myems-api/pid --timeout 600 --workers=4 app:api
+[Unit]
+Description=myems-api daemon
+Requires=myems-api.socket
+After=network.target
+
+[Service]
+PIDFile=/run/myems-api/pid
+User=root
+Group=root
+WorkingDirectory=/myems-api
+ExecStart=/myems-api/venv/bin/gunicorn -b 0.0.0.0:8000 --pid /run/myems-api/pid --timeout 600 --workers=4 app:api
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
 ```
-```bash
-sudo nano /myems-api/myems-api.socket
-```
-```bash
-ListenStream=0.0.0.0:8000
-```
+
 Port zur Firewall hinzufügen:
 ```bash
 sudo ufw allow 8000
@@ -171,7 +182,7 @@ sudo apt install nginx
 ```bash
 sudo nano /etc/nginx/nginx.conf
 ```
-Fügen Sie im Abschnitt „http“ einige Anweisungen hinzu:
+Fügen Sie im Abschnitt "http" einige Richtlinien hinzu:
 ```
 http {
     client_header_timeout 600;
@@ -236,6 +247,7 @@ Starten Sie die Nginx:
 ```bash
 sudo systemctl start nginx
 ```
+
 Port zur Firewall hinzufügen:
 ```bash
 sudo ufw allow 8001
@@ -262,7 +274,7 @@ source venv/bin/activate
 ```
 Installation der Anforderungen
 ```bash
-pip install -r requirements.txt
+sudo venv/bin/pip install -r requirements.txt
 ```
 Deaktivieren der virtuellen Umgebung
 ```
@@ -275,6 +287,27 @@ sudo cp /myems-modbus-tcp/example.env /myems-modbus-tcp/.env
 ```
 ```bash
 sudo nano /myems-modbus-tcp/.env
+```
+Python-Pfad in myems-modbus-tcp.service ändern
+```
+sudo nano myems-modbus-tcp.service
+```
+```
+[Unit]
+Description=myems-modbus-tcp daemon
+After=network.target
+
+[Service]
+User=root
+Group=root
+ExecStart=/myems-modbus-tcp/venv/bin/python3 /myems-modbus-tcp/main.py
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+PrivateTmp=true
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
 ```
 systemd-Dienst einrichten:
 ```bash
@@ -318,7 +351,7 @@ source venv/bin/activate
 ```
 Installation der Anforderungen
 ```bash
-pip install -r requirements.txt
+sudo venv/bin/pip install -r requirements.txt
 ```
 Deaktivieren der virtuellen Umgebung
 ```
@@ -331,6 +364,27 @@ sudo cp /myems-cleaning/example.env /myems-cleaning/.env
 ```
 ```bash
 nano /myems-cleaning/.env
+```
+Python-Pfad in myems-cleaning.service ändern
+```bash
+sudo nano myems-cleaning.service
+```
+```
+[Unit]
+Description=myems-cleaning daemon
+After=network.target
+
+[Service]
+User=root
+Group=root
+ExecStart=/myems-cleaning/venv/bin/python3 /myems-cleaning/main.py
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+PrivateTmp=true
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
 ```
 systemd-Dienst einrichten:
 ```bash
@@ -374,7 +428,7 @@ source venv/bin/activate
 ```
 Installation der Anforderungen
 ```bash
-pip install -r requirements.txt
+sudo venv/bin/pip install -r requirements.txt
 ```
 Deaktivieren der virtuellen Umgebung
 ```
@@ -386,8 +440,31 @@ Kopieren Sie die Datei exmaple.env nach .env und ändern Sie die .env-Datei:
 sudo cp /myems-normalization/example.env /myems-normalization/.env
 ```
 ```bash
-nano /myems-normalization/.env
+sudo nano /myems-normalization/.env
 ```
+Python-Pfad in myems-normalization.service ändern
+```bash
+sudo nano myems-normalization.service
+```
+```
+[Unit]
+Description=myems-normalization daemon
+After=network.target
+
+[Service]
+User=root
+Group=root
+ExecStart=/myems-normalization/venv/bin/python3 /myems-normalization/main.py
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+PrivateTmp=true
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
+```
+
 systemd-Dienst einrichten:
 ```bash
 sudo cp /myems-normalization/myems-normalization.service /lib/systemd/system/
@@ -430,7 +507,7 @@ source venv/bin/activate
 ```
 Installation der Anforderungen
 ```bash
-pip install -r requirements.txt
+sudo venv/bin/pip install -r requirements.txt
 ```
 Deaktivieren der virtuellen Umgebung
 ```
@@ -443,6 +520,27 @@ sudo cp /myems-aggregation/example.env /myems-aggregation/.env
 ```
 ```bash
 sudo nano /myems-aggregation/.env
+```
+Python-Pfad in myems-aggregation.service ändern
+```bash
+sudo nano myems-aggregation.service
+```
+```
+[Unit]
+Description=myems-aggregation daemon
+After=network.target
+
+[Service]
+User=root
+Group=root
+ExecStart=/myems-aggregation/venv/bin/python3 /myems-aggregation/main.py
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+PrivateTmp=true
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
 ```
 systemd-Dienst einrichten:
 ```bash
@@ -477,7 +575,7 @@ refer to http://nginx.org/en/docs/install.html
 ```bash
 sudo nano /etc/nginx/nginx.conf
 ```
-Fügen Sie im Abschnitt „http“ einige Anweisungen hinzu:
+Fügen Sie im Abschnitt 'http' einige Direktiven hinzu (falls bereits in myems-admin konfiguriert, kann diese ignoriert werden)
 ```
 http {
     client_header_timeout 600;
@@ -488,8 +586,8 @@ http {
     gzip_types *;
     gzip_vary on;
     proxy_buffering off;
-    ...
 
+    ...
 }
 ```
 
@@ -579,24 +677,22 @@ MyEMS Admin UI: 8001
 ### Standardpasswörter
 <details>
   <summary>Admin UI</summary>
-
-```
-administrator
-```
-```
-!MyEMS1
-```
+  ```
+  administrator
+  ```
+  ```
+  !MyEMS1
+  ```
 </details>
 
 <details>
   <summary>Web UI</summary>
-
-```
-administrator@myems.io
-```
-```
-!MyEMS1
-```
+  ```
+  administrator@myems.io
+  ```
+  ```
+  !MyEMS1
+  ```
 </details>
 
 
