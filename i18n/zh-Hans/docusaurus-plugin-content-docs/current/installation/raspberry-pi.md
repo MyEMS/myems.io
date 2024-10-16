@@ -8,8 +8,8 @@ sidebar_position: 7
 
 ## 先决条件
 
-* Raspberry Pi 4 Model B (4GB RAM)
-* Raspberry Pi OS (64 bit)
+* Raspberry Pi 5 or Raspberry Pi 4 Model B
+* Raspberry Pi OS (64-bit) A port of Debian Bookworm with the Raspberry Pi Desktop Released:2024-07-04
 
 ## 克隆源代码
 
@@ -23,8 +23,7 @@ sudo apt install pip
 sudo apt install ufw
 ```
 ```bash
-cd ~
-git clone https://github.com/myems/myems
+cd ~ && git clone https://github.com/myems/myems
 ```
 
 ## 第1步 数据库
@@ -67,6 +66,7 @@ Reload privilege tables now? [Y/n] Y
 ## 第2步 myems-api
 
 * 安装 myems-api 服务:
+
 ```bash
 sudo cp -r ~/myems/myems-api /myems-api
 ```
@@ -78,13 +78,15 @@ cd /myems-api
 ```bash
 sudo python -m venv venv
 ```
+
 开始使用虚拟环境
 ```
 source venv/bin/activate
 ```
+
 安装依赖库
 ```bash
-pip install -r requirements.txt
+sudo venv/bin/pip install -r requirements.txt
 ```
 关闭虚拟环境
 ```
@@ -98,19 +100,14 @@ sudo cp /myems-api/example.env /myems-api/.env
 ```bash
 sudo nano /myems-api/.env
 ```
-检查或更改myems-api.service和myems-api.socket中的侦听端口（默认值为8000）：
+更改myems-api.service中的gunicorn路径为/myems-api/venv/bin/gunicorn
 ```bash
 sudo nano /myems-api/myems-api.service
 ```
 ```bash
-ExecStart=/usr/local/bin/gunicorn -b 0.0.0.0:8000 --pid /run/myems-api/pid --timeout 600 --workers=4 app:api
+ExecStart=/myems-api/venv/bin/gunicorn -b 0.0.0.0:8000 --pid /run/myems-api/pid --timeout 600 --workers=4 app:api
 ```
-```bash
-sudo nano /myems-api/myems-api.socket
-```
-```bash
-ListenStream=0.0.0.0:8000
-```
+
 将端口添加到防火墙：
 ```bash
 sudo ufw allow 8000
@@ -171,7 +168,7 @@ sudo apt install nginx
 ```bash
 sudo nano /etc/nginx/nginx.conf
 ```
-In the 'http' section, add some directives:
+在'http'段添加一些指令:
 ```
 http {
     client_header_timeout 600;
@@ -262,7 +259,7 @@ source venv/bin/activate
 ```
 安装依赖库
 ```bash
-pip install -r requirements.txt
+sudo venv/bin/pip install -r requirements.txt
 ```
 关闭虚拟环境
 ```
@@ -276,6 +273,28 @@ sudo cp /myems-modbus-tcp/example.env /myems-modbus-tcp/.env
 ```bash
 sudo nano /myems-modbus-tcp/.env
 ```
+修改myems-modbus-tcp.service中的python路径
+```
+sudo nano /myems-modbus-tcp/myems-modbus-tcp.service
+```
+```
+[Unit]
+Description=myems-modbus-tcp daemon
+After=network.target
+
+[Service]
+User=root
+Group=root
+ExecStart=/myems-modbus-tcp/venv/bin/python3 /myems-modbus-tcp/main.py
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+PrivateTmp=true
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+```
+
 安装 systemd 服务:
 ```bash
 sudo cp myems-modbus-tcp.service /lib/systemd/system/
@@ -318,7 +337,7 @@ source venv/bin/activate
 ```
 安装依赖库
 ```bash
-pip install -r requirements.txt
+sudo venv/bin/pip install -r requirements.txt
 ```
 关闭虚拟环境
 ```
@@ -331,6 +350,27 @@ sudo cp /myems-cleaning/example.env /myems-cleaning/.env
 ```
 ```bash
 sudo nano /myems-cleaning/.env
+```
+修改myems-cleaning.service中的python路径
+```
+sudo nano /myems-cleaning/myems-cleaning.service
+```
+```
+[Unit]
+Description=myems-cleaning daemon
+After=network.target
+
+[Service]
+User=root
+Group=root
+ExecStart=/myems-modbus-tcp/venv/bin/python3 /myems-cleaning/main.py
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+PrivateTmp=true
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
 ```
 安装systemd服务：
 ```bash
@@ -374,7 +414,7 @@ source venv/bin/activate
 ```
 安装依赖库
 ```bash
-pip install -r requirements.txt
+sudo venv/bin/pip install -r requirements.txt
 ```
 关闭虚拟环境
 ```
@@ -388,6 +428,28 @@ sudo cp /myems-normalization/example.env /myems-normalization/.env
 ```bash
 sudo nano /myems-normalization/.env
 ```
+修改myems-normalization.service中的python路径
+```
+sudo nano myems-normalization.service
+```
+```
+[Unit]
+Description=myems-normalization daemon
+After=network.target
+
+[Service]
+User=root
+Group=root
+ExecStart=/myems-normalization/venv/bin/python3 /myems-normalization/main.py
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+PrivateTmp=true
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+```
+
 安装systemd服务
 ```bash
 sudo cp /myems-normalization/myems-normalization.service /lib/systemd/system/
@@ -430,7 +492,7 @@ source venv/bin/activate
 ```
 安装依赖库
 ```bash
-pip install -r requirements.txt
+sudo venv/bing/pip install -r requirements.txt
 ```
 关闭虚拟环境
 ```
@@ -443,6 +505,27 @@ sudo cp /myems-aggregation/example.env /myems-aggregation/.env
 ```
 ```bash
 sudo nano /myems-aggregation/.env
+```
+修改myems-aggregation.service中的python路径
+```
+sudo nano myems-aggregation.service
+```
+```
+[Unit]
+Description=myems-aggregation daemon
+After=network.target
+
+[Service]
+User=root
+Group=root
+ExecStart=/myems-aggregation/venu/bin/python3 /myems-aggregation/main.py
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+PrivateTmp=true
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
 ```
 安装systemd服务
 ```bash
@@ -473,11 +556,11 @@ cat /myems-aggregation.log
 *   安装 NGINX 服务器 (如在myems-admin中已安装，可以忽略)
 参考 http://nginx.org/en/docs/install.html
 
-*   配置 NGINX (如在myems-admin中已配置，可以忽略)
+*   配置 NGINX
 ```bash
 sudo nano /etc/nginx/nginx.conf
 ```
-In the 'http' section, add some directives:
+在 'http' 结构中添加一些指令 (如在myems-admin中已配置，可以忽略)
 ```
 http {
     client_header_timeout 600;
@@ -493,7 +576,7 @@ http {
 }
 ```
 
-添加一个新的“server”部分，其指令如下：
+在 'http' 结构中添加一个新的 'server' 结构，其指令如下：
 ```
   server {
       listen                 80;
