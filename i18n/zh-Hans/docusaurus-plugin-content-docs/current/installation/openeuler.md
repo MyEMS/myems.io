@@ -13,7 +13,7 @@ sidebar_position: 11
 克隆源代码：
 ```bash
 cd ~
-git clone https://github.com/myems/myems
+git clone https://gitee.com/myems/myems
 ```
 ## 第1步 数据库
 

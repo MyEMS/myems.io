@@ -23,7 +23,7 @@ sudo apt install pip
 sudo apt install ufw
 ```
 ```bash
-cd ~ && git clone https://github.com/myems/myems
+cd ~ && git clone https://gitee.com/myems/myems
 ```
 
 ## 第1步 数据库
