@@ -24,7 +24,7 @@ sidebar_position: 2
 
 ## 从v4.9.0 升级到 v4.9.1 - 2024-10-5
 ### database
-- 执行 myems/database/upgrade/upgrade4.9.0.sql
+- 执行 myems/database/upgrade/upgrade4.9.1.sql
 ### myems-admin
 - 必须重新安装，因为有新功能
 ### myems-aggregation
