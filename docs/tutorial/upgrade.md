@@ -3,6 +3,25 @@ sidebar_position: 2
 ---
 
 # Upgrade
+
+## Upgrade from v4.9.1 to v4.10.0 - 2024-10-26
+### database
+- Execute myems/database/upgrade/upgrade4.10.0.sql
+### myems-admin
+- Must be reinstalled because there are new features
+### myems-aggregation
+- Optional reinstall, as only the version.txt and Dockerfile have been changed
+### myems-api
+- Must be reinstalled because there are new features
+### myems-cleaning
+- Optional reinstall, as only the version.txt and Dockerfile have been changed
+### myems-modbus-tcp
+- Optional reinstall, as only the version.txt and Dockerfile have been changed
+### myems-normalization
+- Optional reinstall, as only the version.txt and Dockerfile have been changed
+### myems-web
+- Must be reinstalled because there are new features
+
 ## Upgrade from v4.9.0 to v4.9.1 - 2024-10-5
 ### database
 - Execute myems/database/upgrade/upgrade4.9.1.sql
@@ -47,6 +66,7 @@ sidebar_position: 2
 ### myems-admin
 - Must be reinstalled because there are new features
 ### myems-aggregation
+
 - Optional be reinstalled since only version.txt was changed
 ### myems-api
 - Must be reinstalled because there are new features
