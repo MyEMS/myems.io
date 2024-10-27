@@ -4,6 +4,24 @@ sidebar_position: 2
 
 # Upgrade
 
+## Upgrade von v4.9.1 auf v4.10.0 - 26.10.2024
+### database
+- Ausführen myems/database/upgrade/upgrade4.10.0.sql
+### myems-admin
+- Muss neu installiert werden, da es neue Funktionen gibt
+### myems-aggregation
+- Optionale Neuinstallation, da nur die version.txt und die Dockerfile geändert wurden
+### myems-api
+- Muss neu installiert werden, da es neue Funktionen gibt
+### myems-cleaning
+- Optionale Neuinstallation, da nur die version.txt und die Dockerfile geändert wurden
+### myems-modbus-tcp
+- Optionale Neuinstallation, da nur die version.txt und die Dockerfile geändert wurden
+### myems-normalization
+- Optionale Neuinstallation, da nur die version.txt und die Dockerfile geändert wurden
+### myems-web
+- Muss neu installiert werden, da es neue Funktionen gibt
+
 ## Upgrade von v4.9.0 auf v4.9.1 - 5.10.2024
 ### database
 - Ausführen myems/database/upgrade/upgrade4.9.1.sql
