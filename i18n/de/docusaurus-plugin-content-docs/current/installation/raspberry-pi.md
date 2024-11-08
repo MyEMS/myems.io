@@ -572,46 +572,38 @@ In diesem Schritt installieren Sie den UI-Dienst myems-web.
 refer to http://nginx.org/en/docs/install.html
 
 *   Konfigurieren Sie NGINX (Falls bereits in myems-admin konfiguriert, kann ignoriert werden)
+Standarddateien entfernen
 ```bash
-sudo nano /etc/nginx/nginx.conf
+sudo rm /etc/nginx/sites-enabled/default
+sudo rm /etc/nginx/conf.d/default.conf
 ```
-Fügen Sie im Abschnitt 'http' einige Direktiven hinzu (falls bereits in myems-admin konfiguriert, kann diese ignoriert werden)
-```
-http {
-    client_header_timeout 600;
-    client_max_body_size 512M;
-    gzip on;
-    gzip_min_length 512;
-    gzip_proxied any;
-    gzip_types *;
-    gzip_vary on;
-    proxy_buffering off;
 
-    ...
+Fügen Sie eine neue Datei unter /etc/nginx/conf.d/
+```bash
+sudo nano /etc/nginx/conf.d/myems-web.conf
+```
+
+Schreiben Sie mit Direktiven wie unten und ersetzen Sie die Standard-myems-api-URL http://127.0.0.1:8000/ mit tatsächlicher URL, wenn die myems-api-Servcie auf einem anderen Server gehostet wird
+```
+server {
+    listen                 80;
+    server_name     myems-web;
+    location / {
+        root    /var/www/myems-web;
+        index index.html index.htm;
+        # add try_files directive to avoid 404 error while refreshing pages
+        try_files $uri  /index.html;
+    }
+    ## To avoid CORS issue, use Nginx to proxy myems-api to path /api
+    ## Add another location /api in 'server'
+    ## NOTE: replace dafault address http://127.0.0.1:8000/ with actual IP or URL
+    location /api {
+        proxy_pass http://127.0.0.1:8000/;
+        proxy_connect_timeout 75;
+        proxy_read_timeout 600;
+        send_timeout 600;
+    }
 }
-```
-
-Löschen Sie den Standardabschnitt „server“ in /etc/nginx/nginx.conf oder in /etc/nginx/conf.d/default.conf und fügen Sie einen neuen Abschnitt „server“ mit den folgenden Anweisungen hinzu:
-```
-  server {
-      listen                 80;
-      server_name     myems-web;
-      location / {
-          root    /var/www/myems-web;
-          index index.html index.htm;
-          # add try_files directive to avoid 404 error while refreshing pages
-          try_files $uri  /index.html;
-      }
-      ## To avoid CORS issue, use Nginx to proxy myems-api to path /api
-      ## Add another location /api in 'server'
-      ## NOTE: replace dafault address http://127.0.0.1:8000/ with actual IP or URL
-      location /api {
-          proxy_pass http://127.0.0.1:8000/;
-          proxy_connect_timeout 75;
-          proxy_read_timeout 600;
-          send_timeout 600;
-      }
-  }
 ```
 
 * Installieren Sie die MyEMS Web UI:
