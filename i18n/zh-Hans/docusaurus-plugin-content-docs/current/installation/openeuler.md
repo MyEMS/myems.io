@@ -344,29 +344,17 @@ cat /myems-aggregation.log
 参考 http://nginx.org/en/linux_packages.html#Debian
 
 *   配置 NGINX
+删除默认文件
 ```bash
-sudo nano /etc/nginx/nginx.conf
-```
-In the 'http' section, add some directives:
-```
-http {
-    client_header_timeout 600;
-    client_max_body_size 512M;
-    gzip on;
-    gzip_min_length 512;
-    gzip_proxied any;
-    gzip_types *;
-    gzip_vary on;
-    proxy_buffering off;
-    ...
-
-}
+sudo rm /etc/nginx/sites-enabled/default
+sudo rm /etc/nginx/conf.d/default.conf
 ```
 
-更新nginx默认conf文件:
+在目录 /etc/nginx/conf.d/ 下添加一个新文件
 ```bash
-sudo nano /etc/nginx/conf.d/default.conf
+sudo nano /etc/nginx/conf.d/myems-web.conf
 ```
+
 使用如下指令编写，如果myems-api服务托管在不同的服务器上，则使用实际的地址替换默认的myems-api地址http://127.0.0.1:8000/
 ```
 server {

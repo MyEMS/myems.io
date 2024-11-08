@@ -361,30 +361,18 @@ In this step, you will install myems-web UI service.
 refer to http://nginx.org/en/linux_packages.html#RHEL
 
 *   Configure NGINX
-```bash
-sudo nano /etc/nginx/nginx.conf
-```
-In the 'http' section, add some directives:
-```
-http {
-    client_header_timeout 600;
-    client_max_body_size 512M;
-    gzip on;
-    gzip_min_length 512;
-    gzip_proxied any;
-    gzip_types *;
-    gzip_vary on;
-    proxy_buffering off;
-    ...
 
-}
+Remove default files
+```bash
+sudo rm /etc/nginx/sites-enabled/default
+sudo rm /etc/nginx/conf.d/default.conf
 ```
 
-Update the nginx default conf file:
+Add a new file under /etc/nginx/conf.d/
 ```bash
-sudo nano /etc/nginx/conf.d/default.conf
+sudo nano /etc/nginx/conf.d/myems-web.conf
 ```
-Write with directives as below, and replace the default myems-api url http://127.0.0.1:8000/ with actual url if the myems-api servcie hosted on different server
+Add a new 'server' section with directives as below:
 ```
 server {
     listen                 80;

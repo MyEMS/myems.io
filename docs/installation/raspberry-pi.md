@@ -571,46 +571,38 @@ In this step, you will install myems-web UI service.
 refer to http://nginx.org/en/docs/install.html
 
 *   Configure NGINX
+
+Remove default files
 ```bash
-sudo nano /etc/nginx/nginx.conf
+sudo rm /etc/nginx/sites-enabled/default
+sudo rm /etc/nginx/conf.d/default.conf
 ```
-In the 'http' section, add some directives (If already configured in myems-admin, it can be ignored)
 
+Add a new file under /etc/nginx/conf.d/
+```bash
+sudo nano /etc/nginx/conf.d/myems-web.conf
 ```
-http {
-    client_header_timeout 600;
-    client_max_body_size 512M;
-    gzip on;
-    gzip_min_length 512;
-    gzip_proxied any;
-    gzip_types *;
-    gzip_vary on;
-    proxy_buffering off;
-
-    ...
+Add a new 'server' section with directives as below:
+```
+server {
+    listen                 80;
+    server_name     myems-web;
+    location / {
+        root    /var/www/myems-web;
+        index index.html index.htm;
+        # add try_files directive to avoid 404 error while refreshing pages
+        try_files $uri  /index.html;
+    }
+    ## To avoid CORS issue, use Nginx to proxy myems-api to path /api
+    ## Add another location /api in 'server'
+    ## NOTE: replace dafault address http://127.0.0.1:8000/ with actual IP or URL
+    location /api {
+        proxy_pass http://127.0.0.1:8000/;
+        proxy_connect_timeout 75;
+        proxy_read_timeout 600;
+        send_timeout 600;
+    }
 }
-```
-In the 'http' section, add a new 'server' section with directives as below:
-```
-  server {
-      listen                 80;
-      server_name     myems-web;
-      location / {
-          root    /var/www/myems-web;
-          index index.html index.htm;
-          # add try_files directive to avoid 404 error while refreshing pages
-          try_files $uri  /index.html;
-      }
-      ## To avoid CORS issue, use Nginx to proxy myems-api to path /api
-      ## Add another location /api in 'server'
-      ## NOTE: replace dafault address http://127.0.0.1:8000/ with actual IP or URL
-      location /api {
-          proxy_pass http://127.0.0.1:8000/;
-          proxy_connect_timeout 75;
-          proxy_read_timeout 600;
-          send_timeout 600;
-      }
-  }
 ```
 
 * Install MyEMS Web UI:

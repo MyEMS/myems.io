@@ -557,46 +557,38 @@ cat /myems-aggregation.log
 参考 http://nginx.org/en/docs/install.html
 
 *   配置 NGINX
+删除默认文件
 ```bash
-sudo nano /etc/nginx/nginx.conf
+sudo rm /etc/nginx/sites-enabled/default
+sudo rm /etc/nginx/conf.d/default.conf
 ```
-在 'http' 结构中添加一些指令 (如在myems-admin中已配置，可以忽略)
-```
-http {
-    client_header_timeout 600;
-    client_max_body_size 512M;
-    gzip on;
-    gzip_min_length 512;
-    gzip_proxied any;
-    gzip_types *;
-    gzip_vary on;
-    proxy_buffering off;
-    ...
 
+在目录 /etc/nginx/conf.d/ 下添加一个新文件
+```bash
+sudo nano /etc/nginx/conf.d/myems-web.conf
+```
+
+使用如下指令编写，如果myems-api服务托管在不同的服务器上，则使用实际的地址替换默认的myems-api地址http://127.0.0.1:8000/
+```
+server {
+    listen                 80;
+    server_name     myems-web;
+    location / {
+        root    /var/www/myems-web;
+        index index.html index.htm;
+        # add try_files directive to avoid 404 error while refreshing pages
+        try_files $uri  /index.html;
+    }
+    ## To avoid CORS issue, use Nginx to proxy myems-api to path /api
+    ## Add another location /api in 'server'
+    ## NOTE: replace dafault address http://127.0.0.1:8000/ with actual IP or URL
+    location /api {
+        proxy_pass http://127.0.0.1:8000/;
+        proxy_connect_timeout 75;
+        proxy_read_timeout 600;
+        send_timeout 600;
+    }
 }
-```
-
-在 'http' 结构中添加一个新的 'server' 结构，其指令如下：
-```
-  server {
-      listen                 80;
-      server_name     myems-web;
-      location / {
-          root    /var/www/myems-web;
-          index index.html index.htm;
-          # add try_files directive to avoid 404 error while refreshing pages
-          try_files $uri  /index.html;
-      }
-      ## To avoid CORS issue, use Nginx to proxy myems-api to path /api
-      ## Add another location /api in 'server'
-      ## NOTE: replace dafault address http://127.0.0.1:8000/ with actual IP or URL
-      location /api {
-          proxy_pass http://127.0.0.1:8000/;
-          proxy_connect_timeout 75;
-          proxy_read_timeout 600;
-          send_timeout 600;
-      }
-  }
 ```
 
 * 安装 MyEMS Web UI:
