@@ -50,7 +50,4 @@ In einem Kubernetes-Cluster, Für die Datenerfassung und den Upload wird vor Ort
 
 ![WeChat: 13011132526](/img/wechat_nengyuanzhang.png)
 
-![LINE: MyEMS](/img/line_myems.jpg)
-
 ![WhatsAPP: MyEMS](/img/whatsapp_myems.png)
-  

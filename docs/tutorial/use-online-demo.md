@@ -50,8 +50,6 @@ In a Kubernetes cluster, a data collector is installed on-site for data collecti
 
 ![WeChat: 13011132526](/img/wechat_nengyuanzhang.png)
 
-![LINE: MyEMS](/img/line_myems.jpg)
-
 ![WhatsAPP: MyEMS](/img/whatsapp_myems.png)
-  
-      
+
+

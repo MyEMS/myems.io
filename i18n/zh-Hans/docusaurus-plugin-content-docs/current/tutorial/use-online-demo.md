@@ -50,6 +50,4 @@ Kubernetes集群，现场安装一台数据采集器用于数据采集和上传
 
 ![WeChat: 13011132526](/img/wechat_nengyuanzhang.png)
 
-![LINE: MyEMS](/img/line_myems.jpg)
-
 ![WhatsAPP: MyEMS](/img/whatsapp_myems.png)
