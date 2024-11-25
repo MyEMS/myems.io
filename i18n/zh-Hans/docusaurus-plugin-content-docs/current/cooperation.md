@@ -47,6 +47,4 @@ MyEMS是行业领先的开源能源管理系统，用于建筑、工厂、商场
 
 ![WeChat: 13011132526](/img/wechat_nengyuanzhang.png)
 
-![LINE: MyEMS](/img/line_myems.jpg)
-
 ![WhatsAPP: MyEMS](/img/whatsapp_myems.png)
