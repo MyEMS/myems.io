@@ -4,6 +4,24 @@ sidebar_position: 2
 
 # 升级
 
+## 从v4.10.0 升级到 v4.11.0 - 2024-11-23
+### database
+- 执行 myems/database/upgrade/upgrade4.11.0.sql
+### myems-admin
+- 必须重新安装，因为有新功能
+### myems-aggregation
+- 必须重新安装，因为有新功能
+### myems-api
+- 必须重新安装，因为有新功能
+### myems-cleaning
+- 可选重新安装，因为仅更改了 version.txt
+### myems-modbus-tcp
+- 必须重新安装，因为有新功能
+### myems-normalization
+- 可选重新安装，因为仅更改了 version.txt
+### myems-web
+- 必须重新安装，因为有新功能
+
 ## 从v4.9.1 升级到 v4.10.0 - 2024-10-26
 ### database
 - 执行 myems/database/upgrade/upgrade4.10.0.sql

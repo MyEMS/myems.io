@@ -4,6 +4,24 @@ sidebar_position: 2
 
 # Upgrade
 
+## Upgrade von v4.10.0 auf v4.11.0 - 23.11.2024
+### database
+- Ausführen myems/database/upgrade/upgrade4.11.0.sql
+### myems-admin
+- Muss neu installiert werden, da es neue Funktionen gibt
+### myems-aggregation
+- Muss neu installiert werden, da es neue Funktionen gibt
+### myems-api
+- Muss neu installiert werden, da es neue Funktionen gibt
+### myems-cleaning
+- Optional kann neu installiert werden, da nur version.txt geändert wurde
+### myems-modbus-tcp
+- Muss neu installiert werden, da es neue Funktionen gibt
+### myems-normalization
+- Optional kann neu installiert werden, da nur version.txt geändert wurde
+### myems-web
+- Muss neu installiert werden, da es neue Funktionen gibt
+
 ## Upgrade von v4.9.1 auf v4.10.0 - 26.10.2024
 ### database
 - Ausführen myems/database/upgrade/upgrade4.10.0.sql
