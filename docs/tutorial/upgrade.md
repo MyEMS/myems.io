@@ -4,6 +4,24 @@ sidebar_position: 2
 
 # Upgrade
 
+## Upgrade from v4.10.0 to v4.11.0 - 2024-11-23
+### database
+- Execute myems/database/upgrade/upgrade4.11.0.sql
+### myems-admin
+- Must be reinstalled because there are new features
+### myems-aggregation
+- Must be reinstalled because there are new features
+### myems-api
+- Must be reinstalled because there are new features
+### myems-cleaning
+- Optional be reinstalled since only version.txt was changed
+### myems-modbus-tcp
+- Must be reinstalled because there are new features
+### myems-normalization
+- Optional be reinstalled since only version.txt was changed
+### myems-web
+- Must be reinstalled because there are new features
+
 ## Upgrade from v4.9.1 to v4.10.0 - 2024-10-26
 ### database
 - Execute myems/database/upgrade/upgrade4.10.0.sql
