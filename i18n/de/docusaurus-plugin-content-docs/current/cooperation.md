@@ -50,6 +50,4 @@ Verwendung von Open Source, um die Ziele der CO2-Peak-Kohlenstoffneutralität zu
 
 ![WeChat: 13011132526](/img/wechat_nengyuanzhang.png)
 
-![LINE: MyEMS](/img/line_myems.jpg)
-
 ![WhatsAPP: MyEMS](/img/whatsapp_myems.png)
