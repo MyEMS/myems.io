@@ -423,9 +423,7 @@ sudo npm run build
 
 安装:
 注意，以下路径应该与nginx.conf中配置的路径相同。
-```bash
-tar xzf myems-web.tar.gz
-```
+
 ```bash
 sudo rm -r /var/www/myems-web
 ```
