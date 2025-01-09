@@ -25,9 +25,6 @@ MyEMS可以运行在以下MySQL兼容的数据库服务器。
 cd ~/myems/database/install
 ```
 ```bash
-mysql -u root -p < myems_billing_baseline_db.sql
-```
-```bash
 mysql -u root -p < myems_billing_db.sql
 ```
 ```bash
@@ -41,6 +38,12 @@ mysql -u root -p < myems_energy_db.sql
 ```
 ```bash
 mysql -u root -p < myems_energy_model_db.sql
+```
+```bash
+mysql -u root -p < myems_energy_plan_db.sql
+```
+```bash
+mysql -u root -p < myems_energy_prediction_db.sql
 ```
 ```bash
 mysql -u root -p < myems_fdd_db.sql
@@ -143,8 +146,6 @@ set global max_allowed_packet=1000000000;
 
 :::
 
-#### myems_billing_baseline_db
-
 #### myems_billing_db
 
 #### myems_carbon_db
@@ -154,6 +155,10 @@ set global max_allowed_packet=1000000000;
 #### myems_energy_db
 
 #### myems_energy_model_db
+
+#### myems_energy_plan_db
+
+#### myems_energy_prediction_db
 
 #### myems_fdd_db
 

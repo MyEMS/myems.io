@@ -31,16 +31,13 @@ The host refers to the server on which the docker engine runs. The IP and accoun
 
 1.  Clone repository
 ```bash
-git clone https://github.com/myems/myems.git 
+git clone https://github.com/myems/myems.git
 ```
 
 2.  Import database schema
 
 ```bash
 cd myems/database/install
-```
-```bash
-mysql -u root -p < myems_billing_baseline_db.sql
 ```
 ```bash
 mysql -u root -p < myems_billing_db.sql
@@ -56,6 +53,12 @@ mysql -u root -p < myems_energy_db.sql
 ```
 ```bash
 mysql -u root -p < myems_energy_model_db.sql
+```
+```bash
+mysql -u root -p < myems_energy_plan_db.sql
+```
+```bash
+mysql -u root -p < myems_energy_prediction_db.sql
 ```
 ```bash
 mysql -u root -p < myems_fdd_db.sql
@@ -129,7 +132,7 @@ nano myems-modbus-tcp/.env
 cp myems-normalization/example.env myems-normalization/.env
 ```
 ```bash
-nano myems-normalization/.env 
+nano myems-normalization/.env
 ```
 
 3.3 Modify upload folder in docker-compose.yml
@@ -156,7 +159,7 @@ On Windows Host:
 cd myems
 ```
 ```bash
-docker-compose -f docker-compose-on-windows.yml up -d 
+docker-compose -f docker-compose-on-windows.yml up -d
 ```
 
 On Linux Host:
@@ -165,7 +168,7 @@ On Linux Host:
 cd myems
 ```
 ```bash
-docker-compose -f docker-compose-on-linux.yml up -d 
+docker-compose -f docker-compose-on-linux.yml up -d
 ```
 
 6. Verification

@@ -40,9 +40,6 @@ git clone https://gitee.com/myems/myems.git
 cd myems/database/install
 ```
 ```bash
-mysql -u root -p < myems_billing_baseline_db.sql
-```
-```bash
 mysql -u root -p < myems_billing_db.sql
 ```
 ```bash
@@ -56,6 +53,12 @@ mysql -u root -p < myems_energy_db.sql
 ```
 ```bash
 mysql -u root -p < myems_energy_model_db.sql
+```
+```bash
+mysql -u root -p < myems_energy_plan_db.sql
+```
+```bash
+mysql -u root -p < myems_energy_prediction_db.sql
 ```
 ```bash
 mysql -u root -p < myems_fdd_db.sql
