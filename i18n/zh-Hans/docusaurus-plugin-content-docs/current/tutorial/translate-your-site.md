@@ -16,7 +16,7 @@ module.exports = {
     defaultLocale: 'en',
     locales: ['en', 'fr'],
   },
-};.
+};
 ```
 
 ## Translate a doc
