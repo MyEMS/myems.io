@@ -24,9 +24,6 @@ Execute the following scripts in MySQL commandline, or execute in other MySQL cl
 cd ~/myems/database/install
 ```
 ```bash
-mysql -u root -p < myems_billing_baseline_db.sql
-```
-```bash
 mysql -u root -p < myems_billing_db.sql
 ```
 ```bash
@@ -40,6 +37,12 @@ mysql -u root -p < myems_energy_db.sql
 ```
 ```bash
 mysql -u root -p < myems_energy_model_db.sql
+```
+```bash
+mysql -u root -p < myems_energy_plan_db.sql
+```
+```bash
+mysql -u root -p < myems_energy_prediction_db.sql
 ```
 ```bash
 mysql -u root -p < myems_fdd_db.sql
@@ -141,8 +144,6 @@ The detail database definition is available with the enterprise edition.
 
 :::
 
-#### myems_billing_baseline_db
-
 #### myems_billing_db
 
 #### myems_carbon_db
@@ -152,6 +153,10 @@ The detail database definition is available with the enterprise edition.
 #### myems_energy_db
 
 #### myems_energy_model_db
+
+#### myems_energy_plan_db
+
+#### myems_energy_prediction_db
 
 #### myems_fdd_db
 
