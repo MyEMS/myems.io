@@ -14,7 +14,7 @@ sidebar_position: 2
 ### myems-api
 - 必须重新安装，因为有新功能
 ### myems-cleaning
-- 可选重新安装，因为仅更改了 version.txt和Dockerfile.
+- 可选重新安装，因为仅更改了 version.txt和Dockerfile
 ### myems-modbus-tcp
 - 可选重新安装，因为仅更改了 version.txt和Dockerfile
 ### myems-normalization
