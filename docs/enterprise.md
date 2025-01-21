@@ -104,7 +104,8 @@ sidebar_position: 5
 
 ## Contact Us
 
-- Name: Zhang Nengyuan
+- Company: Haishi Software
+- Contact: Zhang Nengyuan
 - Tel & WeChat: (+86) 13011132526
 - Email: zny@myems.org
 - LINE ID: myems

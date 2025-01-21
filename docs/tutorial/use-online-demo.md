@@ -42,7 +42,8 @@ In a Kubernetes cluster, a data collector is installed on-site for data collecti
 
 ## Apply for an account
 
-- Name: Zhang Nengyuan
+- Company: Haishi Software
+- Contact: Zhang Nengyuan
 - Telephone WeChat: (+86) 13011132526
 - Email: zny@myems.org
 - LINE ID: myems

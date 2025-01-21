@@ -104,7 +104,8 @@ sidebar_position: 5
 
 ## 联系我们
 
-- 姓名: 张能远
+- 公司: 海识软件
+- 联系人: 张能远
 - 电话微信: (+86) 13011132526
 - Email: zny@myems.org
 - LINE ID: myems
