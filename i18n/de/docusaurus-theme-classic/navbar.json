@@ -35,6 +35,10 @@
     "message": "Enterprise Edition",
     "description": "Navbar item with label Enterprise Edition"
   },
+  "item.label.Cooperation": {
+    "message": "Zusammenarbeit",
+    "description": "Navbar item with label Cooperation"
+  },
   "logo.alt": {
     "message": "MyEMS Logo",
     "description": "The alt text of navbar logo"
