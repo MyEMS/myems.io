@@ -100,6 +100,11 @@ const config = {
             href: '/docs/enterprise',
           },
           {
+            position: 'left',
+            label: 'Cooperation',
+            href: '/docs/cooperation',
+          },
+          {
             href: 'https://myems.cloud',
             label: 'DEMO',
             position: 'left',
@@ -145,6 +150,10 @@ const config = {
               {
                 label: 'Enterprise Edition',
                 to: '/docs/enterprise',
+              },
+              {
+                label: 'Cooperation',
+                to: '/docs/cooperation',
               },
               {
                 label: 'DEMO',

@@ -2,7 +2,7 @@
 sidebar_position: 6
 ---
 
-# 合作计划
+# 合作
 
 ## MyEMS介绍
 
