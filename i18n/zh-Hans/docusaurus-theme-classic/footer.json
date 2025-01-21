@@ -62,5 +62,9 @@
   "link.item.label.Enterprise Edition": {
     "message": "企业版",
     "description": "The label of footer link with label=Enterprise Edition linking to /docs/enterprise"
+  },
+  "link.item.label.Cooperation": {
+    "message": "合作",
+    "description": "The label of footer link with label=Cooperation linking to /docs/cooperation"
   }
 }
