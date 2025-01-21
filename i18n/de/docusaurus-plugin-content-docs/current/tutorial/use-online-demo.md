@@ -42,7 +42,8 @@ In einem Kubernetes-Cluster, Für die Datenerfassung und den Upload wird vor Ort
 
 ## Beantragen Sie ein Konto
 
-- Name: Zhang Nengyuan
+- Company: Haishi Software
+- Contact: Zhang Nengyuan
 - Telefon WeChat: (+86) 13011132526
 - E-Mail: zny@myems.org
 - LINIEN-ID: myems

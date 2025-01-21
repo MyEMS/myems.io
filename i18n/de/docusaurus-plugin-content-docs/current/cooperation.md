@@ -42,7 +42,8 @@ Verwendung von Open Source, um die Ziele der CO2-Peak-Kohlenstoffneutralität zu
 
 ## Kontaktieren Sie uns
 
-- Name: Nengyuan Zhang
+- Company: Haishi Software
+- Contact: Zhang Nengyuan
 - Tel & WeChat: (+86) 13011132526
 - Email: zny@myems.org
 - LINE ID: myems
