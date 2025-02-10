@@ -134,12 +134,12 @@ Users of the Community Edition must retain the relevant copyright and LOGO of My
 | RESTful API                      | ✔️             | Base on Python. Providing interfaces of system configuration, energy report and excel exporter |
 | Web UI                           | ✔️             | Based on ReactJS. Providing energy data virtualization. |
 | Admin UI                         | ✔️             | Based on AngularJS (version 1.x). Providing system configuration. |
-| Online Community Customer Support| ✔️          |  [QQ Group](/img/qrcode_qq_group.jpg)  [WeChat Group](/img/qr_code_wechat_group.png) |
+| Online Community Customer Support| ✔️          |  [QQ Group](/img/qr_code_qq_group.png)  [WeChat Group](/img/qr_code_wechat_group.png) |
 
 
 ## <a id="myems-downloads" />MyEMS Downloads (Community Edition)
 
-[1]. [https://github.com/myems/myems](https://github.com/myems/myems)
+[1]. [https://github.com/myems/myems](https://github.com/myems/myems) (recommended)
 
 [2]. [https://gitee.com/myems/myems](https://gitee.com/myems/myems)
 
@@ -148,6 +148,16 @@ Users of the Community Edition must retain the relevant copyright and LOGO of My
 [4]. [https://gitlab.com/myems/myems](https://gitlab.com/myems/myems)
 
 [5]. [https://gitcode.net/myems/myems](https://gitcode.net/myems/myems)
+
+[6]. [https://gitlink.org.cn/myems/myems](https://gitlink.org.cn/myems/myems)
+
+[7]. [https://atomgit.com/myems/myems](https://atomgit.com/myems/myems)
+
+[8]. [https://gitea.com/myems/myems](https://gitea.com/myems/myems)
+
+[9]. [https://codeberg.org/myems/myems](https://codeberg.org/myems/myems)
+
+[10]. [https://git.launchpad.net/myems](https://git.launchpad.net/myems)
 
 
 ## <a id="myems-os-compatibility"/>Operating System Compatibility

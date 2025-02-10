@@ -46,6 +46,8 @@ MyEMS是行业领先的开源能源管理系统，用于建筑、工厂、商场
 - LINE ID: myems
 - WhatsApp: https://wa.me/message/6HB55A46RVAJP1
 
-![WeChat: 13011132526](/img/wechat_nengyuanzhang.png)
+![WeChat: 13011132526](/img/qr_code_wechat.png)
 
-![WhatsAPP: MyEMS](/img/whatsapp_myems.png)
+![Line: MyEMS](/img/qr_code_line.png)
+
+![WhatsAPP: MyEMS](/img/qr_code_whatsapp.png)

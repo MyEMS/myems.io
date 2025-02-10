@@ -135,19 +135,29 @@ MyEMS由资深专业团队开发维护，源代码基于MIT开源软件许可协
 | RESTful API                      | ✔️             | 基于Python开发，提供系统配置、能源报告、Excel导出接口 |
 | Web UI                           | ✔️             | 基于ReactJS开发，用于能源数据分析 |
 | Admin UI                         | ✔️             | 基于AngularJS (version 1.x)开发，用于系统配置管理 |
-| 在线社区技术支持                    | ✔️             |  [QQ群](/img/qrcode_qq_group.jpg)  [微信群](/img/qr_code_wechat_group.png) |
+| 在线社区技术支持                    | ✔️             |  [QQ群](/img/qr_code_qq_group.png)  [微信群](/img/qr_code_wechat_group.png) |
 
 ## <a id="myems-downloads" />MyEMS下载(社区版)
 
-[1]. [https://github.com/myems/myems](https://github.com/myems/myems)
+[1]. [https://gitee.com/myems/myems](https://gitee.com/myems/myems) (推荐)
 
-[2]. [https://gitee.com/myems/myems](https://gitee.com/myems/myems)
+[2]. [https://github.com/myems/myems](https://github.com/myems/myems)
 
 [3]. [https://bitbucket.org/myems/myems](https://bitbucket.org/myems/myems)
 
 [4]. [https://gitlab.com/myems/myems](https://gitlab.com/myems/myems)
 
 [5]. [https://gitcode.net/myems/myems](https://gitcode.net/myems/myems)
+
+[6]. [https://gitlink.org.cn/myems/myems](https://gitlink.org.cn/myems/myems)
+
+[7]. [https://atomgit.com/myems/myems](https://atomgit.com/myems/myems)
+
+[8]. [https://gitea.com/myems/myems](https://gitea.com/myems/myems)
+
+[9]. [https://codeberg.org/myems/myems](https://codeberg.org/myems/myems)
+
+[10]. [https://git.launchpad.net/myems](https://git.launchpad.net/myems)
 
 
 ## <a id="myems-os-compatibility"/>操作系统兼容性

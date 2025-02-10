@@ -50,6 +50,8 @@ Using open source to help achieve carbon peak carbon neutrality goals.
 - LINE ID: myems
 - WhatsApp: https://wa.me/message/6HB55A46RVAJP1
 
-![WeChat: 13011132526](/img/wechat_nengyuanzhang.png)
+![WeChat: 13011132526](/img/qr_code_wechat.png)
 
-![WhatsAPP: MyEMS](/img/whatsapp_myems.png)
+![Line: MyEMS](/img/qr_code_line.png)
+
+![WhatsAPP: MyEMS](/img/qr_code_whatsapp.png)
