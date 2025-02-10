@@ -9,7 +9,6 @@ sidebar_position: 5
 
 | Features                         | Enterprise Edition | Explanation    |
 | :---                             |  :----:            | :----:         |
-| Open Source                      | ❌       |                      |
 | Pricing                          | Pay per Project | Licensed per project, lifetime valid, custom development |
 | Change Name and Logo             |  ✔️        | Licensed per project, lifetime valid, custom development  |
 | Deploy on Kubernetes (K8s)       |  ✔️        | https://kubernetes.io/ |
@@ -111,6 +110,8 @@ sidebar_position: 5
 - LINE ID: myems
 - WhatsApp: https://wa.me/message/6HB55A46RVAJP1
 
-![WeChat: 13011132526](/img/wechat_nengyuanzhang.png)
+![WeChat: 13011132526](/img/qr_code_wechat.png)
 
-![WhatsAPP: MyEMS](/img/whatsapp_myems.png)
+![Line: MyEMS](/img/qr_code_line.png)
+
+![WhatsAPP: MyEMS](/img/qr_code_whatsapp.png)

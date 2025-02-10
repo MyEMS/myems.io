@@ -9,7 +9,6 @@ sidebar_position: 5
 
 | 功能                              |企业版        |       说明                 |
 | :---                             |  :----:     |  :----:                    |
-| 开源                              | ❌          | 代码加密                     |
 | 价格                              | 按项目收费     | 按项目授权，终身有效，定制开发 |
 | 更换品牌名称与标志LOGO               | ✔️        | 按项目授权，终身有效，定制开发 |
 | 在Kubernetes (K8s)上部署           | ✔️        | https://kubernetes.io/       |
@@ -111,6 +110,8 @@ sidebar_position: 5
 - LINE ID: myems
 - WhatsApp: https://wa.me/message/6HB55A46RVAJP1
 
-![WeChat: 13011132526](/img/wechat_nengyuanzhang.png)
+![WeChat: 13011132526](/img/qr_code_wechat.png)
 
-![WhatsAPP: MyEMS](/img/whatsapp_myems.png)
+![Line: MyEMS](/img/qr_code_line.png)
+
+![WhatsAPP: MyEMS](/img/qr_code_whatsapp.png)

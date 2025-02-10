@@ -9,7 +9,6 @@ sidebar_position: 5
 
 | Eigenschaften                    | Enterprise Edition | Erläuterung   |
 | :---                             |  :----:            |  :----:       |
-| Open Source                      | ❌      |  Codeverschlüsselung    |
 | Pricing                          | Pay per Project | Lizenziert pro Projekt, Lebenszeit gültig, kundenspezifische Entwicklung  |
 | Change Name and Logo             | ✔️        |  Lizenziert pro Projekt, Lebenszeit gültig, kundenspezifische Entwicklung |
 | Deploy on Kubernetes (K8s)       |  ✔️        | https://kubernetes.io/ |
