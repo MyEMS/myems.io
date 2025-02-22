@@ -274,7 +274,16 @@
     "message": "Energy Management System"
   },
   "Industry Leading Open Source Energy Management System": {
-    "message": "Branchenführendes Open Source Energy Management System, Empfohlen von Gitee"
+    "message": "Branchenführendes Open Source Energy Management System"
+  },
+  "Commitment to permanent open source": {
+    "message": "Engagement für dauerhafte Open Source"
+  },
+  "Free technical support within QQ and WeChat groups": {
+    "message": "Kostenloser technischer Support innerhalb von QQ- und WeChat-Gruppen"
+  },
+  "Keep updated, 1 minor version per month, 1 major version per year": {
+    "message": "Bleiben Sie auf dem Laufenden, 1 Nebenversion pro Monat, 1 Hauptversion pro Jahr"
   },
   "MyEMS is being developed and maintained by an experienced development team, and the system's source code is published under MIT license.": {
     "message": "MyEMS wird von einem erfahrenen Entwicklungsteam entwickelt und gewartet, und der Quellcode des Systems wird unter MIT-Lizenz veröffentlicht. Benutzer der Community-Version müssen MyEMS-bezogene Urheberrechtsinformationen und -logo beibehalten."

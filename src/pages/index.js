@@ -15,6 +15,9 @@ function HomepageHeader() {
       <div className="container">
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle"><Translate>Industry Leading Open Source Energy Management System</Translate></p>
+        <h3><Translate>Commitment to permanent open source</Translate></h3>
+        <h3><Translate>Free technical support within QQ and WeChat groups</Translate></h3>
+        <h3><Translate>Keep updated, 1 minor version per month, 1 major version per year</Translate></h3>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
