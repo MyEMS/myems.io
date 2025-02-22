@@ -42,7 +42,7 @@ sudo cp -r ~/myems/myems-api /var/myems-api
 cd /var/myems-api
 ```
 ```bash
-sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+sudo pip install -r requirements.txt
 ```
 根据example.env创建.env文件，并根据需要编辑.env：
 ```bash
@@ -198,7 +198,7 @@ sudo cp -r ~/myems/myems-modbus-tcp /var/myems-modbus-tcp
 cd /var/myems-modbus-tcp
 ```
 ```bash
-sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+sudo pip install -r requirements.txt
 ```
 
 将exmaple.ev文件复制到.env并修改.env文件：
@@ -244,7 +244,7 @@ sudo cp -r ~/myems/myems-cleaning /var/myems-cleaning
 cd /var/myems-cleaning
 ```
 ```bash
-sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+sudo pip install -r requirements.txt
 ```
 
 将exmaple.ev文件复制到.env并修改.env文件：
@@ -291,7 +291,7 @@ sudo cp -r ~/myems/myems-normalization /var/myems-normalization
 cd /var/myems-normalization
 ```
 ```bash
-sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+sudo pip install -r requirements.txt
 ```
 
 将exmaple.ev文件复制到.env并修改.env文件：
@@ -337,7 +337,7 @@ sudo cp -r ~/myems/myems-aggregation /var/myems-aggregation
 cd /var/myems-aggregation
 ```
 ```bash
-sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+sudo pip install -r requirements.txt
 ```
 将exmaple.ev文件复制到.env并修改.env文件：
 ```bash
