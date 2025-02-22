@@ -186,6 +186,12 @@ cd /myems-modbus-tcp
 sudo pip install -r requirements.txt
 ```
 
+:::note
+
+(Ubuntu 24.04 LTS)Wenn der Code nicht funktioniert, können Sie den folgenden Code verwenden: sudo pip install -r requirements.txt --break-system-packages
+
+:::
+
 Kopieren Sie die Datei exmaple.env in .env und ändern Sie die Datei .env:
 ```bash
 sudo cp /myems-modbus-tcp/example.env /myems-modbus-tcp/.env
@@ -227,6 +233,12 @@ cd /myems-cleaning
 ```bash
 sudo pip install -r requirements.txt
 ```
+
+:::note
+
+(Ubuntu 24.04 LTS)Wenn der Code nicht funktioniert, können Sie den folgenden Code verwenden: sudo pip install -r requirements.txt --break-system-packages
+
+:::
 
 Kopieren Sie die Datei exmaple.env in .env und ändern Sie die Datei .env:
 ```bash
@@ -270,6 +282,12 @@ cd /myems-normalization
 sudo pip install -r requirements.txt
 ```
 
+:::note
+
+(Ubuntu 24.04 LTS)Wenn der Code nicht funktioniert, können Sie den folgenden Code verwenden: sudo pip install -r requirements.txt --break-system-packages
+
+:::
+
 Kopieren Sie die Datei exmaple.env in .env und ändern Sie die Datei .env:
 ```bash
 sudo cp /myems-normalization/example.env /myems-normalization/.env
@@ -311,6 +329,13 @@ cd /myems-aggregation
 ```bash
 sudo pip install -r requirements.txt
 ```
+
+:::note
+
+(Ubuntu 24.04 LTS)Wenn der Code nicht funktioniert, können Sie den folgenden Code verwenden: sudo pip install -r requirements.txt --break-system-packages
+
+:::
+
 Kopieren Sie die Datei exmaple.env in .env und ändern Sie die Datei .env:
 ```bash
 sudo cp /myems-aggregation/example.env /myems-aggregation/.env
@@ -387,7 +412,7 @@ server {
 
 NodeJS einrichten:
 ```bash
-curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo bash -
 ```
 ```bash
 sudo apt-get install -y nodejs

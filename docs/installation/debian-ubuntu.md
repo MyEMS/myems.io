@@ -173,6 +173,12 @@ cd /myems-modbus-tcp
 sudo pip install -r requirements.txt
 ```
 
+:::note
+
+(Ubuntu 24.04 LTS)If the code does not work, you can use the following code: sudo pip install -r requirements.txt --break-system-packages
+
+:::
+
 Copy exmaple.env file to .env and modify the .env file:
 ```bash
 sudo cp /myems-modbus-tcp/example.env /myems-modbus-tcp/.env
@@ -215,6 +221,12 @@ cd /myems-cleaning
 sudo pip install -r requirements.txt
 ```
 
+:::note
+
+(Ubuntu 24.04 LTS)If the code does not work, you can use the following code: sudo pip install -r requirements.txt --break-system-packages
+
+:::
+
 Copy exmaple.env file to .env and modify the .env file:
 ```bash
 sudo cp /myems-cleaning/example.env /myems-cleaning/.env
@@ -256,6 +268,12 @@ cd /myems-normalization
 ```bash
 sudo pip install -r requirements.txt
 ```
+
+:::note
+
+(Ubuntu 24.04 LTS)If the code does not work, you can use the following code: sudo pip install -r requirements.txt --break-system-packages
+
+:::
 
 Copy exmaple.env file to .env and modify the .env file:
 ```bash
@@ -376,7 +394,9 @@ sudo systemctl restart nginx
 
 Setup NodeJS:
 ```bash
-curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo bash -
+```
+```bash
 sudo apt-get install -y nodejs
 ```
 

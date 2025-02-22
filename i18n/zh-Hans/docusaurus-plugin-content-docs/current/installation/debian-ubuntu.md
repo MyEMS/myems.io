@@ -177,8 +177,14 @@ sudo cp -r ~/myems/myems-modbus-tcp /myems-modbus-tcp
 cd /myems-modbus-tcp
 ```
 ```bash
-sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+sudo pip install -r requirements.txt
 ```
+
+:::note
+
+(Ubuntu 24.04 LTS)如果代码无法运行，可用如下代码: sudo pip install -r requirements.txt --break-system-packages
+
+:::
 
 将exmaple.ev文件复制到.env并修改.env文件：
 ```bash
@@ -219,8 +225,14 @@ sudo cp -r ~/myems/myems-cleaning /myems-cleaning
 cd /myems-cleaning
 ```
 ```bash
-sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+sudo pip install -r requirements.txt
 ```
+
+:::note
+
+(Ubuntu 24.04 LTS)如果代码无法运行，可用如下代码: sudo pip install -r requirements.txt --break-system-packages
+
+:::
 
 将exmaple.ev文件复制到.env并修改.env文件：
 ```bash
@@ -261,8 +273,14 @@ sudo cp -r ~/myems/myems-normalization /myems-normalization
 cd /myems-normalization
 ```
 ```bash
-sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+sudo pip install -r requirements.txt
 ```
+
+:::note
+
+(Ubuntu 24.04 LTS)如果代码无法运行，可用如下代码: sudo pip install -r requirements.txt --break-system-packages
+
+:::
 
 将exmaple.ev文件复制到.env并修改.env文件：
 ```bash
@@ -303,8 +321,15 @@ sudo cp -r ~/myems/myems-aggregation /myems-aggregation
 cd /myems-aggregation
 ```
 ```bash
-sudo pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+sudo pip install -r requirements.txt
 ```
+
+:::note
+
+(Ubuntu 24.04 LTS)如果代码无法运行，可用如下代码: sudo pip install -r requirements.txt --break-system-packages
+
+:::
+
 将exmaple.ev文件复制到.env并修改.env文件：
 ```bash
 sudo cp /myems-aggregation/example.env /myems-aggregation/.env
@@ -379,7 +404,7 @@ server {
 
 安装NodeJS:
 ```bash
-curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo bash -
 ```
 ```bash
 sudo apt-get install -y nodejs
