@@ -4,6 +4,24 @@ sidebar_position: 2
 
 # Upgrade
 
+## Upgrade from v5.1.0 to v5.2.0 - 2025-2-25
+### database
+- Execute myems/database/upgrade/upgrade5.2.0.sql
+### myems-admin
+- Must be reinstalled because there are new features
+### myems-aggregation
+- Optional reinstall, as only the version.txt and Dockerfile have been changed
+### myems-api
+- Must be reinstalled because there are new features
+### myems-cleaning
+- Optional reinstall, as only the version.txt and Dockerfile have been changed
+### myems-modbus-tcp
+- Optional reinstall, as only the version.txt and Dockerfile have been changed
+### myems-normalization
+- Must be reinstalled because there are new features
+### myems-web
+- Must be reinstalled because there are new features
+
 ## Upgrade from v4.12.0 to v5.1.0 - 2025-1-20
 ### database
 - Execute myems/database/upgrade/upgrade5.1.0.sql
