@@ -4,6 +4,24 @@ sidebar_position: 2
 
 # 升级
 
+## 从v5.1.0 升级到 v5.2.0 - 2025-2-25
+### database
+- 执行 myems/database/upgrade/upgrade5.2.0.sql
+### myems-admin
+- 必须重新安装，因为有新功能
+### myems-aggregation
+- 可选重新安装，因为仅更改了 version.txt和Dockerfile
+### myems-api
+- 必须重新安装，因为有新功能
+### myems-cleaning
+- 可选重新安装，因为仅更改了 version.txt和Dockerfile
+### myems-modbus-tcp
+- 可选重新安装，因为仅更改了 version.txt和Dockerfile
+### myems-normalization
+- 必须重新安装，因为有新功能
+### myems-web
+- 必须重新安装，因为有新功能
+
 ## 从v4.12.0 升级到 v5.1.0 - 2025-1-20
 ### database
 - 执行 myems/database/upgrade/upgrade5.1.0.sql
