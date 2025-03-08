@@ -27,6 +27,10 @@
     "message": "QQ群",
     "description": "The label of footer link with label=QQ Group"
   },
+  "link.item.label.Discord": {
+    "message": "Discord",
+    "description": "The label of footer link with label=Discord"
+  },
   "link.item.label.Bilibili": {
     "message": "哔哩哔哩",
     "description": "The label of footer link with label=Bilibili linking to https://space.bilibili.com/539108162"
