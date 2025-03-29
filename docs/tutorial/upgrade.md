@@ -4,6 +4,24 @@ sidebar_position: 2
 
 # Upgrade
 
+## Upgrade from v5.2.0 to v5.3.0 - 2025-3-28
+### database
+- Execute myems/database/upgrade/upgrade5.3.0.sql
+### myems-admin
+- Must be reinstalled because there are new features
+### myems-aggregation
+- Optional reinstall, as only the version.txt, .env and config.py has been changed
+### myems-api
+- Must be reinstalled because there are new features
+### myems-cleaning
+- Optional reinstall, as only the version.txt has been changed
+### myems-modbus-tcp
+- Optional reinstall, as only the version.txt has been changed
+### myems-normalization
+- Optional reinstall, as only the version.txt has been changed
+### myems-web
+- Must be reinstalled because there are new features
+
 ## Upgrade from v5.1.0 to v5.2.0 - 2025-2-25
 ### database
 - Execute myems/database/upgrade/upgrade5.2.0.sql
