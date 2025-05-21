@@ -4,6 +4,42 @@ sidebar_position: 2
 
 # Upgrade
 
+## Upgrade von v5.3.0 auf v5.4.0 - 30.4.2025
+### database
+- Ausführen myems/database/upgrade/upgrade5.4.0.sql
+### myems-admin
+- Muss neu installiert werden, da es neue Funktionen gibt
+### myems-aggregation
+- Optionale Neuinstallation, da nur die version.txt geändert wurde
+### myems-api
+- Muss neu installiert werden, da es neue Funktionen gibt und Sie die .env-Datei ändern müssen
+### myems-cleaning
+- Optionale Neuinstallation, da nur die version.txt geändert wurde
+### myems-modbus-tcp
+- Optionale Neuinstallation, da nur die version.txt geändert wurde
+### myems-normalization
+- Optionale Neuinstallation, da nur die version.txt geändert wurde
+### myems-web
+- Muss neu installiert werden, da es neue Funktionen gibt
+
+## Upgrade von v5.2.0 auf v5.3.0 - 28.3.2025
+### database
+- Ausführen myems/database/upgrade/upgrade5.3.0.sql
+### myems-admin
+- Muss neu installiert werden, da es neue Funktionen gibt
+### myems-aggregation
+- Optionale Neuinstallation, da nur die version.txt und die config.py geändert wurden
+### myems-api
+- Muss neu installiert werden, da es neue Funktionen gibt
+### myems-cleaning
+- Optionale Neuinstallation, da nur die version.txt geändert wurde
+### myems-modbus-tcp
+- Optionale Neuinstallation, da nur die version.txt geändert wurde
+### myems-normalization
+- Optionale Neuinstallation, da nur die version.txt geändert wurde
+### myems-web
+- Muss neu installiert werden, da es neue Funktionen gibt
+
 ## Upgrade von v5.1.0 auf v5.2.0 - 25.2.2025
 ### database
 - Ausführen myems/database/upgrade/upgrade5.2.0.sql
