@@ -180,6 +180,10 @@ const config = {
                 label: 'QQ Group',
                 href: 'https://qr61.cn/o8TwX4/qZLVV0P',
               },
+              {
+                label: 'Discord',
+                href: 'https://discord.gg/rmGeJ5Znbr',
+              },
             ],
           },
           {
