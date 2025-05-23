@@ -28,7 +28,7 @@ sidebar_position: 2
 ### myems-admin
 - 必须重新安装，因为有新功能
 ### myems-aggregation
-- 可选重新安装，因为仅更改了 version.txt和config.py
+- 可选重新安装，因为仅更改了 version.txt, .env和config.py
 ### myems-api
 - 必须重新安装，因为有新功能
 ### myems-cleaning
