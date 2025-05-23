@@ -4,7 +4,6 @@ sidebar_position: 2
 
 # Upgrade
 
-<<<<<<< HEAD
 ## Upgrade von v5.3.0 auf v5.4.0 - 30.4.2025
 ### database
 - Ausführen myems/database/upgrade/upgrade5.4.0.sql
