@@ -40,25 +40,6 @@ sidebar_position: 2
 - Optionale Neuinstallation, da nur die version.txt geändert wurde
 ### myems-web
 - Muss neu installiert werden, da es neue Funktionen gibt
-=======
-## Upgrade von v5.2.0 auf v5.3.0.2025-3-28
-## Datenbank
-– myems/database/upgrade/upgrade5.3.0.sql ausführen
-## myems-admin
-– Muss neu installiert werden, da es neue Funktionen gibt
-## myems-aggregation
-– Optionale Neuinstallation, da nur die version.txt, .env und config.py geändert wurden
-## myems-api
-– Muss neu installiert werden, da es neue Funktionen gibt
-## myems-cleaning
-– Optionale Neuinstallation, da nur die version.txt geändert wurde
-## myems-modbus-tcp
-– Optionale Neuinstallation, da nur die version.txt geändert wurde
-## Myems-Normalisierung
-– Optionale Neuinstallation, da nur die version.txt geändert wurde
-## myems-web
-– Muss neu installiert werden, da es neue Funktionen gibt
->>>>>>> 70d5f6ce9c8bb618b467b2041e7b490f04fbf194
 
 ## Upgrade von v5.1.0 auf v5.2.0 - 25.2.2025
 ### database
