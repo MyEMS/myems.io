@@ -487,27 +487,23 @@ administrator@myems.io
 
 
 ## 故障排除
-    当系统为 Ubuntu 20.04 LTS (Focal Fossa) 及更高版本时，默认启用 PEP 668 系统 Python 环境保护机制，直接执行 pip install 会触发以下错误：
 
-    如果出现 error: externally-managed-environment
-    
-    原因：Ubuntu 20.04+ 使用 apt 作为系统 Python 包的唯一管理工具，禁止 pip 直接修改系统环境，以防止依赖冲突。
-    
-    解决方案：使用 虚拟环境（Virtual Environment） 隔离项目依赖：
-    
-    ```bash
-    # 1. 安装虚拟环境工具（若未安装）
-    sudo apt install python3.12-venv
-    
-    # 2. 创建虚拟环境（myenv 为自定义名称）
-    python3 -m venv myenv
-    
-    # 3. 激活虚拟环境
-    source myenv/bin/activate  # 激活后命令提示符前缀变为 (myenv)
-    
-    # 4. 在虚拟环境中安装依赖（无需 sudo）
-    pip install -r requirements.txt
-    
-    # 5. 使用完毕后退出虚拟环境
-    deactivate
-    ```
+:::tip 如果在执行'sudo pip install -r requirements.txt'时出现'error: externally-managed-environment'
+
+创建一个虚拟环境配置目录:
+```bash
+sudo python -m venv venv
+```
+开始使用虚拟环境
+```
+source venv/bin/activate
+```
+安装依赖库
+```bash
+sudo venv/bin/pip install -r requirements.txt
+```
+关闭虚拟环境
+```
+deactivate
+```
+:::
