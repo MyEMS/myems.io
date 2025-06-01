@@ -495,3 +495,25 @@ administrator@myems.io
 
 
 ## Fehlerbehebung
+
+
+:::tip Wenn beim Ausführen von 'sudo pip install -r requirements.txt' Fehler: 'error: externally managed environment'
+
+Erstellen Sie einen Konfigurationsordner für virtuelle Umgebungen:
+```bash
+sudo python -m venv venv
+```
+Starten Sie die virtuelle Umgebung
+```
+source venv/bin/activate
+```
+Installation der Anforderungen
+```bash
+sudo venv/bin/pip install -r requirements.txt
+```
+Deaktivieren der virtuellen Umgebung
+```
+deactivate
+```
+
+:::
