@@ -48,6 +48,32 @@ MyEMS开源能源管理系统参考ISO 50001能源管理体系标准(GB/T 23331-
 ![MyEMS Web 28](/img/myems_web_28.png)
 ![MyEMS Web 29](/img/myems_web_29.png)
 
+## <a id="myems-admin-presentation" />MyEMS Admin界面展示
+
+![MyEMS Admin 0](/img/myems_admin_0.png)
+![MyEMS Admin 1](/img/myems_admin_1.png)
+![MyEMS Admin 2](/img/myems_admin_2.png)
+![MyEMS Admin 3](/img/myems_admin_3.png)
+![MyEMS Admin 4](/img/myems_admin_4.png)
+![MyEMS Admin 5](/img/myems_admin_5.png)
+![MyEMS Admin 6](/img/myems_admin_6.png)
+![MyEMS Admin 7](/img/myems_admin_7.png)
+![MyEMS Admin 8](/img/myems_admin_8.png)
+![MyEMS Admin 9](/img/myems_admin_9.png)
+![MyEMS Admin 10](/img/myems_admin_10.png)
+![MyEMS Admin 11](/img/myems_admin_11.png)
+![MyEMS Admin 12](/img/myems_admin_12.png)
+![MyEMS Admin 13](/img/myems_admin_13.png)
+![MyEMS Admin 14](/img/myems_admin_14.png)
+![MyEMS Admin 15](/img/myems_admin_15.png)
+![MyEMS Admin 16](/img/myems_admin_16.png)
+
+## <a id="myems-Dashboard-presentation" />MyEMS Dashboard 界面展示
+
+![MyEMS Large Screen Dashboard](/img/myems-large-screen-dashboard.gif)
+
+![MyEMS Dashboard GCC](/img/myems-dashboard-gcc.png)
+
 ## <a id="myems-features" />MyEMS功能(社区版)
 
 社区版使用者必须保留MyEMS相关版权标识及LOGO，禁止对其进行修改和删除。如果违反，将保留对侵权者追究责任的权利。
