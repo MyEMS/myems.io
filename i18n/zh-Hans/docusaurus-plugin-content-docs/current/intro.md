@@ -48,7 +48,7 @@ MyEMS开源能源管理系统参考ISO 50001能源管理体系标准(GB/T 23331-
 ![MyEMS Web 28](/img/myems_web_28.png)
 ![MyEMS Web 29](/img/myems_web_29.png)
 
-## <a id="myems-admin-presentation" />MyEMS Admin界面展示
+## <a id="myems-admin-presentation" />MyEMS 管理员界面展示
 
 ![MyEMS Admin 0](/img/myems_admin_0.png)
 ![MyEMS Admin 1](/img/myems_admin_1.png)
@@ -68,7 +68,7 @@ MyEMS开源能源管理系统参考ISO 50001能源管理体系标准(GB/T 23331-
 ![MyEMS Admin 15](/img/myems_admin_15.png)
 ![MyEMS Admin 16](/img/myems_admin_16.png)
 
-## <a id="myems-Dashboard-presentation" />MyEMS Dashboard 界面展示
+## <a id="myems-Dashboard-presentation" />MyEMS 仪表盘界面展示
 
 ![MyEMS Large Screen Dashboard](/img/myems-large-screen-dashboard.gif)
 
