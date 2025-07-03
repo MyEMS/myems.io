@@ -492,7 +492,7 @@ source venv/bin/activate
 ```
 安装依赖库
 ```bash
-sudo venv/bing/pip install -r requirements.txt
+sudo venv/bin/pip install -r requirements.txt
 ```
 关闭虚拟环境
 ```
