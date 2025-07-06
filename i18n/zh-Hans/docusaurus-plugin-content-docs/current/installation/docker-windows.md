@@ -32,7 +32,7 @@ cd c:\myems-api
 
 :::caution
 
-用真实的**主机**IP地址手动替换~~127.00.1~~。
+用真实的**主机**IP地址手动替换~~127.0.0.1~~。
 
 :::
 
@@ -105,7 +105,7 @@ cd c:\myems-admin
 
 :::caution
 
-手动将nginx.conf中的~~127.00.1:8000~~替换为实际的**HOST**IP地址和myems-api端口
+手动将nginx.conf中的~~127.0.0.1:8000~~替换为实际的**HOST**IP地址和myems-api端口
 
 :::
 
@@ -181,7 +181,7 @@ cd c:\myems-modbus-tcp
 
 :::caution
 
-用真实的**主机**IP地址手动替换~~127.00.1~~。
+用真实的**主机**IP地址手动替换~~127.0.0.1~~。
 
 :::
 
@@ -256,7 +256,7 @@ cd c:\myems-cleaning
 
 :::caution
 
-用真实的**主机**IP地址手动替换~~127.00.1~~。
+用真实的**主机**IP地址手动替换~~127.0.0.1~~。
 
 :::
 
@@ -330,7 +330,7 @@ cd c:\myems-normalization
 
 :::caution
 
-用真实的**主机**IP地址手动替换~~127.00.1~~。
+用真实的**主机**IP地址手动替换~~127.0.0.1~~。
 
 :::
 
@@ -405,7 +405,7 @@ cd c:\myems-aggregation
 
 :::caution
 
-用真实的**主机**IP地址手动替换~~127.00.1~~。
+用真实的**主机**IP地址手动替换~~127.0.0.1~~。
 
 :::
 
@@ -482,7 +482,7 @@ notepad src/config.js
 
 :::caution
 
-将nginx.conf中的~~127.00.1:8000~~替换为实际的**HOST** IP和myems-api端口
+将nginx.conf中的~~127.0.0.1:8000~~替换为实际的**HOST** IP和myems-api端口
 
 :::
 
