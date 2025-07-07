@@ -10,6 +10,13 @@ In diesem Leitfaden stellen Sie MyEMS mit Docker unter Linux (oder macOS) bereit
 - Installierter Docker, npm auf dem Host.
 - Installierter MySQL-Server.
 - Die MySQL-Datenbank kann von dem Host verbunden werden, auf dem die Docker Engine läuft.
+- Hardware-Anforderungen: Mindestens 4 GB RAM und 20 GB Speicher (Datenbank und Docker-Container).
+
+Quellcode klonen:
+```bash
+cd ~
+git clone https://github.com/myems/myems
+```
 
 ## Schritt 1 Database
 

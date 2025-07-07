@@ -11,6 +11,13 @@ sidebar_position: 4
 - 主机上已安装docker、npm。
 - 已安装MySQL服务器。
 - MySQL数据库可以从Docker Engine运行的主机连接。
+- 硬件需求：至少 4GB RAM，20GB 存储空间（数据库和 Docker 容器）。
+
+克隆源代码：
+```bash
+cd ~
+git clone https://gitee.com/myems/myems
+```
 
 ## 第1步 数据库
 
