@@ -19,7 +19,7 @@ headingLevel: 2
 generator: "@tarslib/widdershins v4.0.30"
 
 ---
-View in Postman: import the file MyEMS.postman_collection.json with Postman
+Ansicht in Postman: importieren Sie die Datei MyEMS.postman_collection.json mit Postman
 
 ### Core/Advanced Report Config Ⓔ
 *   GET Get All Advanced Report Configs
