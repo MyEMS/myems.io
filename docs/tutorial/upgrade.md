@@ -4,8 +4,26 @@ sidebar_position: 2
 
 # Upgrade
 
+## Upgrade from v5.6.0 to v5.7.0 - 2025-7-30
+### Datenbank
+- Execute myems/database/upgrade/upgrade5.7.0.sql
+### myems-admin
+- Must be reinstalled because there are new features
+### myems-aggregation
+- Optional be reinstalled since only version.txt was changed
+### myems-api
+- Must be reinstalled because there are new features
+### myems-cleaning
+- Optional be reinstalled since only version.txt was changed
+### myems-modbus-tcp
+- Optional be reinstalled since only version.txt was changed
+### myems-normalization
+- Optional be reinstalled since only version.txt was changed
+### myems-web
+- Must be reinstalled because there are new features
+
 ## Upgrade from v5.5.0 to v5.6.0 - 2025-6-22
-### database
+### Datenbank
 - Execute myems/database/upgrade/upgrade5.6.0.sql
 ### myems-admin
 - Must be reinstalled because there are new features
