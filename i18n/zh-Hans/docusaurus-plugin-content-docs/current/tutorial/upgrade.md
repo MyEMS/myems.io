@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # 升级
 
-## 从v5.7.0 升级到 v5.8.0 - 2025-8-28
+## 从v5.7.1 升级到 v5.8.0 - 2025-8-28
 ### database
 - 执行 myems/database/upgrade/upgrade5.8.0.sql
 ### myems-admin
@@ -22,9 +22,9 @@ sidebar_position: 2
 ### myems-web
 - 必须重新安装，因为有新功能
 
-## 从v5.6.0 升级到 v5.7.0 - 2025-7-30
+## 从v5.6.0 升级到 v5.7.1 - 2025-7-30
 ### database
-- 执行 myems/database/upgrade/upgrade5.7.0.sql
+- 执行 myems/database/upgrade/upgrade5.7.1.sql
 ### myems-admin
 - 必须重新安装，因为有新功能
 ### myems-aggregation

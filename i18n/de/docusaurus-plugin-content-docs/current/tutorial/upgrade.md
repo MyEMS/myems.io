@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Upgrade
 
-## Upgrade von v5.7.0 auf v5.8.0 - 28.8.2025
+## Upgrade von v5.7.1 auf v5.8.0 - 28.8.2025
 ### database
 - Ausführen myems/database/upgrade/upgrade5.8.0.sql
 ### myems-admin
@@ -22,9 +22,9 @@ sidebar_position: 2
 ### myems-web
 - Muss neu installiert werden, da es neue Funktionen gibt
 
-## Upgrade von v5.6.0 auf v5.7.0 - 30.7.2025
+## Upgrade von v5.6.0 auf v5.7.1 - 30.7.2025
 ### database
-- Ausführen myems/database/upgrade/upgrade5.7.0.sql
+- Ausführen myems/database/upgrade/upgrade5.7.1.sql
 ### myems-admin
 - Muss neu installiert werden, da es neue Funktionen gibt
 ### myems-aggregation
