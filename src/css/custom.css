@@ -1,0 +1,398 @@
+/**
+ * RocketMQ 官网风格 - 全面优化
+ * 保持所有内容不变，仅调整样式
+ * 已移除 Tailwind 引入
+ */
+
+/* ===== 基础变量 ===== */
+:root {
+  /* 主色调 - RocketMQ蓝 */
+  --ifm-color-primary: #1890ff;
+  --ifm-color-primary-dark: #0077e6;
+  --ifm-color-primary-darker: #0066cc;
+  --ifm-color-primary-darkest: #0055b3;
+  --ifm-color-primary-light: #40a9ff;
+  --ifm-color-primary-lighter: #69c0ff;
+  --ifm-color-primary-lightest: #91d5ff;
+  
+  /* 深色主题色 - 更深的科技蓝 */
+  --ifm-color-dark: #020d18;
+  
+  /* 文字和背景 */
+  --ifm-font-color-base: #333;
+  --ifm-background-color: #f5f7fa;
+  
+  /* 功能区卡片 */
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  
+  /* 导航栏高度 */
+  --navbar-height: 70px;
+  
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* ===== 深色模式 ===== */
+[data-theme='dark'] {
+  --ifm-color-primary: #40a9ff;
+  --ifm-color-primary-dark: #1890ff;
+  --ifm-color-primary-darker: #0077e6;
+  --ifm-color-primary-darkest: #0055b3;
+  --ifm-color-primary-light: #69c0ff;
+  --ifm-color-primary-lighter: #91d5ff;
+  --ifm-color-primary-lightest: #bae7ff;
+  
+  --ifm-color-dark: #020d18;
+  --ifm-font-color-base: #e6f7ff;
+  --ifm-background-color: #051A35;
+  
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --card-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== 全局样式 ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--ifm-font-color-base);
+  background-color: var(--ifm-background-color);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* ===== 导航栏样式优化 ===== */
+.navbar {
+  background: linear-gradient(135deg, #020d18, #051A35) !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
+  padding: 0.75rem 1rem;
+  height: 70px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar__logo {
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.navbar__logo:hover {
+  transform: scale(1.05);
+}
+
+.navbar__title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white !important;
+}
+
+.navbar__items {
+  align-items: center;
+}
+
+.navbar__item {
+  color: rgba(255, 255, 255, 0.85) !important;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.navbar__item:hover {
+  color: white !important;
+  background-color: rgba(24, 144, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.navbar__link--active {
+  color: white !important;
+  background-color: rgba(24, 144, 255, 0.3) !important;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(24, 144, 255, 0.3);
+}
+
+.navbar__link--active::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 3px;
+  background: #69c0ff;
+  border-radius: 2px;
+}
+
+/* 搜索框样式优化 */
+.DocSearch-Button {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.2s ease;
+}
+
+.DocSearch-Button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+/* 移动端菜单样式 */
+.navbar-sidebar {
+  background-color: #020d18;
+}
+
+.navbar-sidebar__back {
+  color: white;
+}
+
+.menu {
+  background-color: #051A35;
+}
+
+.menu__link {
+  color: rgba(255, 255, 255, 0.85);
+  transition: all 0.2s ease;
+}
+
+.menu__link:hover {
+  color: white;
+  background-color: rgba(24, 144, 255, 0.2);
+  transform: translateX(5px);
+}
+
+.menu__link--active {
+  color: white;
+  background-color: rgba(24, 144, 255, 0.3);
+  box-shadow: 0 2px 8px rgba(24, 144, 255, 0.2);
+}
+
+/* 按钮样式微调 */
+.button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.button--primary {
+  background: linear-gradient(90deg, #1890ff, #0077e6);
+  color: white;
+  border: none;
+  box-shadow: 0 5px 15px rgba(24, 144, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.button--primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(24, 144, 255, 0.6);
+  color: white;
+  background: linear-gradient(90deg, #40a9ff, #1890ff);
+}
+
+.button--outline {
+  background: transparent;
+  border: 2px solid #1890ff;
+  color: #1890ff;
+  transition: all 0.3s ease;
+}
+
+.button--outline:hover {
+  background: rgba(24, 144, 255, 0.1);
+  color: #40a9ff;
+  transform: translateY(-4px);
+  box-shadow: 0 5px 15px rgba(24, 144, 255, 0.2);
+}
+
+/* 页脚样式优化 */
+.footer {
+  background: linear-gradient(135deg, #020d18, #051A35);
+  color: rgba(255, 255, 255, 0.85);
+  padding: 3rem 0;
+  border-top: 1px solid rgba(64, 169, 255, 0.2);
+}
+
+.footer__logo {
+  margin-bottom: 1.5rem;
+  height: 40px;
+}
+
+.footer__title {
+  color: white;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.footer__link-item {
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 0.75rem;
+  display: block;
+  transition: all 0.2s ease;
+}
+
+.footer__link-item:hover {
+  color: #69c0ff;
+  transform: translateX(5px);
+  text-decoration: none;
+  text-shadow: 0 0 8px rgba(105, 192, 255, 0.5);
+}
+
+.footer__copyright {
+  margin-top: 2rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* 功能区卡片样式 */
+.row .col {
+  padding: 1rem;
+}
+
+.feature-card {
+  background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  padding: 2rem;
+  height: 100%;
+  border: 1px solid rgba(64, 169, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+[data-theme='dark'] .feature-card {
+  background: linear-gradient(145deg, rgba(5,26,53,0.7), rgba(2,13,24,0.7));
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(24, 144, 255, 0.2);
+  border-color: rgba(64, 169, 255, 0.3);
+}
+
+.feature-card:hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--ifm-color-primary), var(--ifm-color-primary-light));
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: var(--ifm-color-primary);
+  transition: transform 0.3s ease;
+  text-align: center;
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(24,144,255,0.3));
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.1);
+  filter: drop-shadow(0 4px 8px rgba(24,144,255,0.5));
+}
+
+.feature-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--ifm-color-primary);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.feature-description {
+  color: var(--ifm-font-color-base);
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ===== 代码块样式 ===== */
+.prism-code {
+  border-radius: 8px !important;
+  border: 1px solid rgba(64, 169, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== 响应式调整 ===== */
+@media (max-width: 996px) {
+  .navbar__items {
+    background-color: #020d18;
+    padding: 1rem;
+  }
+  
+  .navbar__toggle {
+    color: white;
+  }
+  
+  .button--outline {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+  
+  .feature-card {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* ===== 内容区域 ===== */
+.container {
+  padding: 2rem 0;
+}
+
+/* ===== 侧边栏 ===== */
+.menu__list-item-collapsible {
+  border-left: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.menu__list-item-collapsible:hover {
+  border-left-color: var(--ifm-color-primary);
+}
+
+.menu__link--sublist:after {
+  background: var(--ifm-menu-link-sublist-icon) 50% / 1.5rem 1.5rem;
+  filter: invert(1);
+}
+
+/* ===== 表格样式 ===== */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+th {
+  background: linear-gradient(to bottom, #f0f7ff, #e1f0ff);
+  color: #1890ff;
+  font-weight: 600;
+  text-align: left;
+  padding: 12px 15px;
+}
+
+[data-theme='dark'] th {
+  background: linear-gradient(to bottom, #001a33, #002b4d);
+}
+
+td {
+  padding: 10px 15px;
+  border-bottom: 1px solid rgba(24, 144, 255, 0.1);
+}
+
+tr:hover td {
+  background-color: rgba(24, 144, 255, 0.05);
+}
