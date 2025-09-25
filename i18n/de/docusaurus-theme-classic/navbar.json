@@ -1,0 +1,46 @@
+{
+  "title": {
+    "message": "MyEMS",
+    "description": "The title in the navbar"
+  },
+  "item.label.DEMO": {
+    "message": "DEMO",
+    "description": "Navbar item with label DEMO"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  },
+  "item.label.Gitee": {
+    "message": "Gitee",
+    "description": "Navbar item with label Gitee"
+  },
+  "item.label.Introduction": {
+    "message": "Einführung",
+    "description": "Navbar item with label Introduction"
+  },
+  "item.label.Installation": {
+    "message": "Installation",
+    "description": "Navbar item with label Installation"
+  },
+  "item.label.Tutorial": {
+    "message": "Tutorial",
+    "description": "Navbar item with label Tutorial"
+  },
+  "item.label.API": {
+    "message": "API",
+    "description": "Navbar item with label API"
+  },
+  "item.label.Enterprise Edition": {
+    "message": "Enterprise Edition",
+    "description": "Navbar item with label Enterprise Edition"
+  },
+  "item.label.Cooperation": {
+    "message": "Zusammenarbeit",
+    "description": "Navbar item with label Cooperation"
+  },
+  "logo.alt": {
+    "message": "MyEMS Logo",
+    "description": "The alt text of navbar logo"
+  }
+}

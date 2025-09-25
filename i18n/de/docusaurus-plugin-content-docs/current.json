@@ -1,0 +1,18 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Tutorial": {
+    "message": "Tutorial",
+    "description": "The label for category Tutorial in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Installation": {
+    "message": "Installation",
+    "description": "The label for category Installation in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Installation.link.generated-index.description": {
+    "message": "In diesem Abschnitt erfahren Sie, wie Sie MyEMS installieren.",
+    "description": "The generated-index page description for category Installation in sidebar tutorialSidebar"
+  }
+}
