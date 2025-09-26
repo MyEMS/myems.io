@@ -1,11 +1,12 @@
 import React, { useCallback } from 'react';
-import Particles from 'react-tsparticles';
-import tsparticles from 'tsparticles';
+import Particles from '@tsparticles/react'; // 改为新包名
+import { loadFull } from 'tsparticles'; // 导入方式改变
 import styles from './styles.module.css';
 
 export default function ParticleBackground() {
+  // 初始化函数使用 loadFull
   const particlesInit = useCallback(async (engine) => {
-    await tsparticles.loadFull(engine);
+    await loadFull(engine); // 使用新方法
   }, []);
 
   return (
@@ -22,7 +23,7 @@ export default function ParticleBackground() {
         fpsLimit: 60,
         particles: {
           color: {
-            value: "#1890ff", 
+            value: "#ff0000", // 临时改为红色（确保可见）
           },
           links: {
             color: "#69c0ff",
@@ -47,7 +48,7 @@ export default function ParticleBackground() {
             },
           },
           opacity: {
-            value: 0.6,
+            value: 1, // 临时改为完全不透明
             random: true,
           },
           shape: {
