@@ -4,6 +4,24 @@ sidebar_position: 2
 
 # Upgrade
 
+## Upgrade von v5.8.0 auf v5.9.0 - 28.9.2025
+### database
+- Ausführen myems/database/upgrade/upgrade5.9.0.sql
+### myems-admin
+- Muss neu installiert werden, da es neue Funktionen gibt
+### myems-aggregation
+- Optionale Neuinstallation, da nur die version.txt geändert wurde
+### myems-api
+- Muss neu installiert werden, da es neue Funktionen gibt
+### myems-cleaning
+- Optionale Neuinstallation, da nur die version.txt geändert wurde
+### myems-modbus-tcp
+- Optionale Neuinstallation, da nur die version.txt geändert wurde
+### myems-normalization
+- Optionale Neuinstallation, da nur die version.txt geändert wurde
+### myems-web
+- Muss neu installiert werden, da es neue Funktionen gibt
+
 ## Upgrade von v5.7.1 auf v5.8.0 - 28.8.2025
 ### database
 - Ausführen myems/database/upgrade/upgrade5.8.0.sql
