@@ -4,6 +4,24 @@ sidebar_position: 2
 
 # 升级
 
+## 从v5.8.0 升级到 v5.9.0 - 2025-9-28
+### database
+- 执行 myems/database/upgrade/upgrade5.9.0.sql
+### myems-admin
+- 必须重新安装，因为有新功能
+### myems-aggregation
+- 可选重新安装，因为仅更改了 version.txt
+### myems-api
+- 必须重新安装，因为有新功能
+### myems-cleaning
+- 可选重新安装，因为仅更改了 version.txt
+### myems-modbus-tcp
+- 可选重新安装，因为仅更改了 version.txt
+### myems-normalization
+- 可选重新安装，因为仅更改了 version.txt
+### myems-web
+- 必须重新安装，因为有新功能
+
 ## 从v5.7.1 升级到 v5.8.0 - 2025-8-28
 ### database
 - 执行 myems/database/upgrade/upgrade5.8.0.sql
