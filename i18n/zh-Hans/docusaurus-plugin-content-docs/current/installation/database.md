@@ -10,11 +10,11 @@ sidebar_position: 1
 
 MyEMS可以运行在以下MySQL兼容的数据库服务器。
 
-[MySQL 8.0 (64bit) or later](https://www.mysql.com/)
+[MySQL 8.0 (64bit) 及以上版本](https://www.mysql.com/)
 
-[MariaDB 10.5 (64bit) or later](https://mariadb.org/)
+[MariaDB 10.5 (64bit) 及以上版本](https://mariadb.org/)
 
-[SingleStore 7.0 or later](https://www.singlestore.com/)
+[SingleStore 7.0 及以上版本](https://www.singlestore.com/)
 
 
 ### 部署

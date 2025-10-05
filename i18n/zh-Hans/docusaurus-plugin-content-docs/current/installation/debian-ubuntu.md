@@ -8,7 +8,7 @@ sidebar_position: 2
 
 ## 前提
 
-本指南介绍如何在 Ubuntu 24.04 LTS / Ubuntu 22.04 LTS / Ubuntu 20.04 LTS / Ubuntu 18.04 LTS / Debian 12 Bookworm / Debian 11 Bullseye / Debian 10 Buster 上安装MyEMS。硬件需求取决于所选数据库和连接到系统的设备数量。要在一台机器上运行MyEMS和MySQL，您至少需要4GB的RAM。
+本指南介绍如何在 Ubuntu 24.04 LTS / Ubuntu 22.04 LTS / Ubuntu 20.04 LTS / Ubuntu 18.04 LTS / Debian 12 Bookworm / Debian 11 Bullseye / Debian 10 Buster 上安装MyEMS。硬件需求取决于所选数据库和连接到系统的设备数量。要在一台电脑上运行MyEMS和MySQL，您至少需要4GB的内存。
 
 克隆源代码：
 ```bash
@@ -133,7 +133,7 @@ sudo nano /etc/nginx/conf.d/myems-admin.conf
 ```
 
 * 安装 myems-admin :
-  如果服务器无法连接到internet，请压缩myems/myems-admin文件夹并将其上传到服务器，然后将其解压缩到~/myems/myems-admin
+  如果服务器无法连接到互联网，请压缩myems/myems-admin文件夹并将其上传到服务器，然后将其解压缩到~/myems/myems-admin
 ```bash
 sudo mkdir /var/www
 ```
@@ -464,27 +464,35 @@ MyEMS API: 8000
 
 MyEMS Admin UI: 8001
 
-### 默认密码
-<details>
-  <summary>Admin UI</summary>
+假设服务器地址是 192.168.1.8 （替换为服务器真实地址）
+访问MyEMS Web UI地址是 http://192.168.1.8 (80可以忽略)
+访问MyEMS Admin UI地址是 http://192.168.1.8:8001
 
+### 默认密码
+
+MyEMS Admin UI
+
+用户名：
 ```
 administrator
-
+```
+密码：
+```
 !MyEMS1
 ```
-</details>
 
-<details>
-  <summary>Web UI</summary>
 
+MyEMS Web UI
+
+用户名：
 ```
 administrator@myems.io
+```
 
+密码：
+```
 !MyEMS1
 ```
-</details>
-
 
 ## 故障排除
 
