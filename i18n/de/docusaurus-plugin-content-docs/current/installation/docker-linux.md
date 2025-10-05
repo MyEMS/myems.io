@@ -598,26 +598,39 @@ MyEMS API: 8000
 
 MyEMS Admin UI: 8001
 
-### Standardpasswörter
-<details>
-  <summary>Admin UI</summary>
+Angenommen, die Serveradresse ist 192.168.1.8 (ersetzen Sie durch die tatsächliche Serveradresse)
+Zugriff auf MyEMS Web UI unter http://192.168.1.8 (80 kann weggelassen werden)
+Zugriff auf MyEMS Admin UI unter http://192.168.1.8:8001
 
+### Standardpasswörter
+
+MyEMS Admin UI
+
+Benutzername:
 ```
 administrator
-
+```
+Passwort:
+```
 !MyEMS1
 ```
-</details>
 
-<details>
-  <summary>Web UI</summary>
 
+MyEMS Web UI
+
+Benutzername:
 ```
 administrator@myems.io
+```
 
+Passwort:
+```
 !MyEMS1
 ```
-</details>
 
 
 ## Fehlerbehebung
+
+:::tip So lösen Sie das Problem mit dem langsamen Image-Pull
+Aufgrund von ISP-Netzwerkproblemen kann das Image-Pull langsam sein. Sie können Drittanbieter-Beschleunigungsdienste verwenden.
+:::

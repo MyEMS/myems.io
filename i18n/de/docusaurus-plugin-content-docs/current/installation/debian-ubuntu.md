@@ -472,48 +472,79 @@ MyEMS API: 8000
 
 MyEMS Admin UI: 8001
 
-### Standardpasswörter
-<details>
-  <summary>Admin UI</summary>
+Angenommen, die Serveradresse ist 192.168.1.8 (ersetzen Sie durch die tatsächliche Serveradresse)
+Zugriff auf MyEMS Web UI unter http://192.168.1.8 (80 kann weggelassen werden)
+Zugriff auf MyEMS Admin UI unter http://192.168.1.8:8001
 
+### Standardpasswörter
+
+MyEMS Admin UI
+
+Benutzername:
 ```
 administrator
-
+```
+Passwort:
+```
 !MyEMS1
 ```
-</details>
 
-<details>
-  <summary>Web UI</summary>
 
+MyEMS Web UI
+
+Benutzername:
 ```
 administrator@myems.io
+```
 
+Passwort:
+```
 !MyEMS1
 ```
-</details>
 
 
 ## Fehlerbehebung
 
+:::tip Wenn beim Ausführen von 'sudo pip install -r requirements.txt' der Fehler 'error: externally-managed-environment' auftritt
 
-:::tip Wenn beim Ausführen von 'sudo pip install -r requirements.txt' Fehler: 'error: externally managed environment'
+Erstellen Sie eine virtuelle Umgebung:
 
-Erstellen Sie einen Konfigurationsordner für virtuelle Umgebungen:
 ```bash
-sudo python -m venv venv
+cd /myems-api
 ```
-Starten Sie die virtuelle Umgebung
-```
-source venv/bin/activate
-```
-Installation der Anforderungen
 ```bash
-sudo venv/bin/pip install -r requirements.txt
+sudo apt install python3-venv
 ```
-Deaktivieren der virtuellen Umgebung
+```bash
+sudo python3 -m venv venv
 ```
-deactivate
+```bash
+sudo ./venv/bin/pip install -r requirements.txt
+```
+
+Ändern Sie die systemd-Service-Datei:
+
+```bash
+sudo nano /lib/systemd/system/myems-api.service
+```
+
+Ändern Sie die ExecStart-Zeile von:
+```
+ExecStart=/usr/bin/python3 /myems-api/app.py
+```
+
+zu:
+```
+ExecStart=/myems-api/venv/bin/python /myems-api/app.py
+```
+
+Starten Sie den Service neu:
+
+```bash
+sudo systemctl daemon-reload
+```
+```bash
+sudo systemctl restart myems-api.service
 ```
 
 :::

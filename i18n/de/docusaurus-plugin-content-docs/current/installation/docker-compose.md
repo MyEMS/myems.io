@@ -142,6 +142,22 @@ Make sure the upload folders in api and admin are same folder on host.
 
 4.  Web UI erstellen
 
+Konfigurationsdatei ändern:
+
+:::note
+
+Holen Sie sich mapboxToken von https://mapbox.com und setzen Sie dann showOnlineMap auf true. Wenn Sie die Online-Kartenfunktion deaktivieren möchten, setzen Sie showOnlineMap auf false
+
+:::
+
+```bash
+cd myems/myems-web
+```
+```bash
+sudo nano src/config.js
+```
+
+Erstellen:
 ```bash
 cd myems/myems-web
 ```
@@ -186,4 +202,8 @@ Wenn die API einen Fehler meldet, bestätigen Sie bitte, ob die Datenbank-IP, da
 docker-compose up --build -d
 ```
 
+:::
+
+:::tip So lösen Sie das Problem mit dem langsamen Image-Pull
+Aufgrund von ISP-Netzwerkproblemen kann das Image-Pull langsam sein. Sie können Drittanbieter-Beschleunigungsdienste verwenden.
 :::

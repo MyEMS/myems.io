@@ -480,7 +480,7 @@ In this section, you will install myems-web on Docker.
 
 :::note
 
-Get mapboxToken at https://mapbox.com and then set showOnlineMap to true. If you wnat to turn off online map feature, set showOnlineMap to false
+Get mapboxToken at https://mapbox.com and then set showOnlineMap to true. If you want to turn off online map feature, set showOnlineMap to false
 
 :::
 
@@ -585,27 +585,38 @@ MyEMS API: 8000
 
 MyEMS Admin UI: 8001
 
-### Default Passwords
-<details>
-  <summary>Admin UI</summary>
+Assuming the server address is 192.168.1.8 (replace with the actual server address)
+Access MyEMS Web UI at http://192.168.1.8 (80 can be omitted)
+Access MyEMS Admin UI at http://192.168.1.8:8001
 
+### Default Passwords
+
+MyEMS Admin UI
+
+Username:
 ```
 administrator
-
+```
+Password:
+```
 !MyEMS1
 ```
-</details>
 
-<details>
-  <summary>Web UI</summary>
 
+MyEMS Web UI
+
+Username:
 ```
 administrator@myems.io
+```
 
+Password:
+```
 !MyEMS1
 ```
-</details>
 
 
 ## Troubleshooting
-
+:::tip How to solve image pull timeout issues
+Due to ISP network issues, you may experience slow image pulling. You can use third-party acceleration services.
+:::

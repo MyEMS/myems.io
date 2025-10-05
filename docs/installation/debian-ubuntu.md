@@ -84,6 +84,10 @@ sudo systemctl start myems-api.service
 
 refer to http://nginx.org/en/linux_packages.html#Debian
 
+Enable nginx service:
+```bash
+sudo systemctl enable nginx.service
+```
 * Configure NGINX
 ```bash
 sudo nano /etc/nginx/nginx.conf
@@ -157,6 +161,10 @@ The 'upload' folder is for user uploaded files. DO NOT delete/move/overwrite the
 Add port to firewall:
 ```bash
 sudo ufw allow 8001
+```
+Restart nginx service:
+```bash
+sudo systemctl restart nginx.service
 ```
 
 ## Step 4 myems-modbus-tcp
@@ -314,14 +322,20 @@ sudo cp -r ~/myems/myems-aggregation /myems-aggregation
 cd /myems-aggregation
 ```
 ```bash
-pip install -r requirements.txt
+sudo pip install -r requirements.txt
 ```
+
+:::note
+
+(Ubuntu 24.04 LTS)If the code does not work, you can use the following code: sudo pip install -r requirements.txt --break-system-packages
+
+:::
 Copy exmaple.env file to .env and modify the .env file:
 ```bash
 sudo cp /myems-aggregation/example.env /myems-aggregation/.env
 ```
 ```bash
-nano /myems-aggregation/.env
+sudo nano /myems-aggregation/.env
 ```
 Setup systemd service:
 ```bash
@@ -437,6 +451,11 @@ Add port to firewall:
 sudo ufw allow 80
 ```
 
+Restart NGINX
+```bash
+sudo systemctl restart nginx
+```
+
 ## Post-installation
 
 Congratulations! You are able to login the MyEMS Admin UI and Web UI now.
@@ -449,34 +468,43 @@ MyEMS API: 8000
 
 MyEMS Admin UI: 8001
 
-### Default Passwords
-<details>
-  <summary>Admin UI</summary>
+Assuming the server address is 192.168.1.8 (replace with the actual server address)
+Access MyEMS Web UI at http://192.168.1.8 (80 can be omitted)
+Access MyEMS Admin UI at http://192.168.1.8:8001
 
+### Default Passwords
+
+MyEMS Admin UI
+
+Username:
 ```
 administrator
-
+```
+Password:
+```
 !MyEMS1
 ```
-</details>
 
-<details>
-  <summary>Web UI</summary>
 
+MyEMS Web UI
+
+Username:
 ```
 administrator@myems.io
+```
 
+Password:
+```
 !MyEMS1
 ```
-</details>
 
 
 ## Troubleshooting
 
 
-:::tip If 'error: externally managed environment' occurs when executing 'sudo pip install - r requirements. txt'
+:::tip If 'error: externally-managed-environment' occurs when executing 'sudo pip install -r requirements.txt'
 
-Create a virtual environment configuration folder:
+Create a virtual environment configuration directory:
 ```bash
 sudo python -m venv venv
 ```
@@ -488,9 +516,8 @@ Install the requirements
 ```bash
 sudo venv/bin/pip install -r requirements.txt
 ```
-Deactive the virtual environment
+Deactivate the virtual environment
 ```
 deactivate
 ```
-
 :::

@@ -43,6 +43,13 @@ cd /myems-api
 ```bash
 sudo pip install -r requirements.txt
 ```
+
+:::note
+
+(CentOS Stream 9/RHEL 9/Rocky 9/AlmaLinux 9.1/Oracle Linux 9.1)If the code does not work, you can use the following code: sudo pip install -r requirements.txt --break-system-packages
+
+:::
+
 Create .env file based on example.env and edit the .env file if needed:
 ```bash
 sudo cp /myems-api/example.env /myems-api/.env
@@ -198,6 +205,12 @@ cd /myems-modbus-tcp
 sudo pip install -r requirements.txt
 ```
 
+:::note
+
+(CentOS Stream 9/RHEL 9/Rocky 9/AlmaLinux 9.1/Oracle Linux 9.1)If the code does not work, you can use the following code: sudo pip install -r requirements.txt --break-system-packages
+
+:::
+
 Copy exmaple.env file to .env and modify the .env file:
 ```bash
 sudo cp /myems-modbus-tcp/example.env /myems-modbus-tcp/.env
@@ -239,6 +252,12 @@ cd /myems-cleaning
 ```bash
 sudo pip install -r requirements.txt
 ```
+
+:::note
+
+(CentOS Stream 9/RHEL 9/Rocky 9/AlmaLinux 9.1/Oracle Linux 9.1)If the code does not work, you can use the following code: sudo pip install -r requirements.txt --break-system-packages
+
+:::
 
 Copy exmaple.env file to .env and modify the .env file:
 ```bash
@@ -282,6 +301,12 @@ cd /myems-normalization
 sudo pip install -r requirements.txt
 ```
 
+:::note
+
+(CentOS Stream 9/RHEL 9/Rocky 9/AlmaLinux 9.1/Oracle Linux 9.1)If the code does not work, you can use the following code: sudo pip install -r requirements.txt --break-system-packages
+
+:::
+
 Copy exmaple.env file to .env and modify the .env file:
 ```bash
 sudo cp /myems-normalization/example.env /myems-normalization/.env
@@ -323,12 +348,19 @@ cd /myems-aggregation
 ```bash
 sudo pip install -r requirements.txt
 ```
+
+:::note
+
+(CentOS Stream 9/RHEL 9/Rocky 9/AlmaLinux 9.1/Oracle Linux 9.1)If the code does not work, you can use the following code: sudo pip install -r requirements.txt --break-system-packages
+
+:::
+
 Copy exmaple.env file to .env and modify the .env file:
 ```bash
 sudo cp /myems-aggregation/example.env /myems-aggregation/.env
 ```
 ```bash
-nano /myems-aggregation/.env
+sudo nano /myems-aggregation/.env
 ```
 Setup systemd service:
 ```bash
