@@ -142,6 +142,22 @@ Make sure the upload folders in api and admin are same folder on host.
 
 4.  Build Web UI
 
+Modify configuration file:
+
+:::note
+
+Get mapboxToken from https://mapbox.com and then set showOnlineMap to true. If you want to turn off online map feature, set showOnlineMap to false
+
+:::
+
+```bash
+cd myems/myems-web
+```
+```bash
+sudo nano src/config.js
+```
+
+Build:
 ```bash
 cd myems/myems-web
 ```
@@ -187,4 +203,8 @@ If the API reports an error, please confirm Whether the database IP, database ac
 docker-compose up --build -d
 ```
 
+:::
+
+:::tip How to solve image pull timeout issues
+Due to ISP network issues, you may experience slow image pulling. You can use third-party acceleration services.
 :::

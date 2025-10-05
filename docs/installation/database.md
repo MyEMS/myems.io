@@ -66,7 +66,7 @@ mysql -u root -p < myems_user_db.sql
 The demo data is optional. To insert demo data execute the following scripts,
 
 ```bash
-cd ~/myems/database/demo-en
+cd ~/myems/database/demo-cn
 ```
 ```bash
 mysql -u root -p < myems_system_db.sql

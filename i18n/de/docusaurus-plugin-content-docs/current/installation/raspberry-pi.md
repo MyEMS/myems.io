@@ -666,26 +666,35 @@ MyEMS API: 8000
 
 MyEMS Admin UI: 8001
 
-### Standardpasswörter
-<details>
-  <summary>Admin UI</summary>
-  ```
-  administrator
-  ```
-  ```
-  !MyEMS1
-  ```
-</details>
+Angenommen, die Serveradresse ist 192.168.1.8 (ersetzen Sie durch die tatsächliche Serveradresse)
+Zugriff auf MyEMS Web UI unter http://192.168.1.8 (80 kann weggelassen werden)
+Zugriff auf MyEMS Admin UI unter http://192.168.1.8:8001
 
-<details>
-  <summary>Web UI</summary>
-  ```
-  administrator@myems.io
-  ```
-  ```
-  !MyEMS1
-  ```
-</details>
+### Standardpasswörter
+
+MyEMS Admin UI
+
+Benutzername:
+```
+administrator
+```
+Passwort:
+```
+!MyEMS1
+```
+
+
+MyEMS Web UI
+
+Benutzername:
+```
+administrator@myems.io
+```
+
+Passwort:
+```
+!MyEMS1
+```
 
 
 ## Fehlerbehebung
