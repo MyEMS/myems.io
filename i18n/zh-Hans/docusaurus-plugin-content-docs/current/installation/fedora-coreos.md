@@ -94,7 +94,7 @@ sudo systemctl start myems-api.service
 
 启用nginx服务:
 ```bash
-sudo systemctl enable nginx.service
+sudo systemctl start nginx.service
 ```
 * 配置 NGINX
 ```bash
