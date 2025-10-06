@@ -79,7 +79,7 @@ refer to http://nginx.org/en/linux_packages.html#Debian
 
 Enable the nginx service:
 ```bash
-sudo systemctl enable nginx.service
+sudo systemctl start nginx.service
 ```
 
 * Configure NGINX
