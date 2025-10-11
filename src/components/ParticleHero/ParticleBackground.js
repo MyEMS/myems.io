@@ -1,12 +1,11 @@
 import React, { useCallback } from 'react';
-import Particles from '@tsparticles/react'; // 改为新包名
-import { loadFull } from 'tsparticles'; // 导入方式改变
+import Particles from '@tsparticles/react';
+import { loadFull } from 'tsparticles';
 import styles from './styles.module.css';
 
 export default function ParticleBackground() {
-  // 初始化函数使用 loadFull
   const particlesInit = useCallback(async (engine) => {
-    await loadFull(engine); // 使用新方法
+    await loadFull(engine);
   }, []);
 
   return (
@@ -15,76 +14,76 @@ export default function ParticleBackground() {
       init={particlesInit}
       className={styles.particleBackground}
       options={{
-        background: {
-          color: {
-            value: "transparent",
+        background: { 
+          color: { 
+            value: "transparent" 
           },
         },
         fpsLimit: 60,
         particles: {
-          color: {
-            value: "#ff0000", // 临时改为红色（确保可见）
+          color: { 
+            value: "#e0e0e0" 
           },
           links: {
-            color: "#69c0ff",
-            distance: 150,
             enable: true,
+            color: "#69c0ff",
+            distance: 120, 
             opacity: 0.4,
-            width: 1.2,
+            width: 1, 
           },
           move: {
             enable: true,
-            speed: 1.5,
-            direction: "none",
+            speed: 0.6, 
+            direction: 'none',
             random: true,
-            straight: false,
-            outMode: "out",
+            outMode: 'out',
           },
           number: {
-            value: 70,
+            value: 200, 
             density: {
               enable: true,
-              area: 800,
+              area: 700, 
             },
           },
           opacity: {
-            value: 1, // 临时改为完全不透明
+            value: 0.7, 
             random: true,
           },
           shape: {
             type: "circle",
           },
           size: {
-            value: { min: 1.5, max: 3.5 },
+            value: { min: 1.5, max: 3.5 }, 
             random: true,
           },
         },
-        detectRetina: true,
         interactivity: {
-          detectsOn: "window",
+          detectsOn: 'element', 
+          element: '#myems-title', 
           events: {
             onHover: {
               enable: true,
-              mode: "grab",
+              mode: "grab", 
             },
             onClick: {
               enable: true,
-              mode: "push",
+              mode: "push", 
             },
             resize: true,
           },
           modes: {
             grab: {
-              distance: 140,
+              distance: 150, 
               links: {
                 opacity: 0.6,
               },
             },
             push: {
-              quantity: 3,
+              quantity: 3, 
             },
           },
         },
+        detectRetina: true,
       }}
     />
   );

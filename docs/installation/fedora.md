@@ -43,7 +43,7 @@ sudo nano /myems-api/.env
 Add port to firewall:
 ```bash
 sudo firewall-cmd --add-service=http --permanent
-sudo firewall-cmd --add-port=8000/tcp --permanent
+sudo firewall-cmd --zone=public --add-port=8000/tcp --permanent
 sudo firewall-cmd --reload
 ```
 Setup systemd configure files:
@@ -71,7 +71,7 @@ refer to http://nginx.org/en/linux_packages.html#RHEL
 
 Enable the nginx service:
 ```
-sudo systemctl enable nginx.service
+sudo systemctl start nginx.service
 ```
 * Configure NGINX
 ```bash
@@ -143,7 +143,7 @@ The 'upload' folder is for user uploaded files. DO NOT delete/move/overwrite the
 Unlock the port and add the port to firewall:
 ```bash
 sudo firewall-cmd --add-service=http --permanent
-sudo firewall-cmd --add-port=8001/tcp --permanent
+sudo firewall-cmd --zone=public --add-port=8001/tcp --permanent
 sudo firewall-cmd --reload
 ```
 Restart the nginx service:
@@ -355,7 +355,7 @@ Modify the config.js file:
 
 :::note
 
-Get mapboxToken at https://mapbox.com and then set showOnlineMap to true. If you wnat to turn off online map feature, set showOnlineMap to false
+Get mapboxToken at https://mapbox.com and then set showOnlineMap to true. If you want to turn off online map feature, set showOnlineMap to false
 
 :::
 
@@ -406,26 +406,35 @@ MyEMS API: 8000
 
 MyEMS Admin UI: 8001
 
-### Default Passwords
-<details>
-  <summary>Admin UI</summary>
+Assuming the server address is 192.168.1.8 (replace with the actual server address)
+Access MyEMS Web UI at http://192.168.1.8 (80 can be omitted)
+Access MyEMS Admin UI at http://192.168.1.8:8001
 
+### Default Passwords
+
+MyEMS Admin UI
+
+Username:
 ```
 administrator
-
+```
+Password:
+```
 !MyEMS1
 ```
-</details>
 
-<details>
-  <summary>Web UI</summary>
 
+MyEMS Web UI
+
+Username:
 ```
 administrator@myems.io
+```
 
+Password:
+```
 !MyEMS1
 ```
-</details>
 
 
 ## Troubleshooting

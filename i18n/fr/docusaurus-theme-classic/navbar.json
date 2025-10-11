@@ -1,0 +1,46 @@
+{
+  "title": {
+    "message": "MyEMS",
+    "description": "Le titre dans la barre de navigation"
+  },
+  "item.label.DEMO": {
+    "message": "DÉMO",
+    "description": "Élément de barre de navigation avec l'étiquette DÉMO"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Élément de barre de navigation avec l'étiquette GitHub"
+  },
+  "item.label.Gitee": {
+    "message": "Gitee",
+    "description": "Élément de barre de navigation avec l'étiquette Gitee"
+  },
+  "item.label.Introduction": {
+    "message": "Introduction",
+    "description": "Élément de barre de navigation avec l'étiquette Introduction"
+  },
+  "item.label.Installation": {
+    "message": "Installation",
+    "description": "Élément de barre de navigation avec l'étiquette Installation"
+  },
+  "item.label.Tutorial": {
+    "message": "Tutoriel",
+    "description": "Élément de barre de navigation avec l'étiquette Tutoriel"
+  },
+  "item.label.API": {
+    "message": "API",
+    "description": "Élément de barre de navigation avec l'étiquette API"
+  },
+  "item.label.Enterprise Edition": {
+    "message": "Édition Entreprise",
+    "description": "Élément de barre de navigation avec l'étiquette Édition Entreprise"
+  },
+  "item.label.Cooperation": {
+    "message": "Coopération",
+    "description": "Élément de barre de navigation avec l'étiquette Coopération"
+  },
+  "logo.alt": {
+    "message": "Logo MyEMS",
+    "description": "Le texte alternatif du logo de la barre de navigation"
+  }
+}

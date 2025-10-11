@@ -9,7 +9,6 @@
   justify-content: center;
 }
 
-/* 覆盖容器 */
 .particleBackground {
   position: absolute;
   top: 0;
@@ -20,7 +19,6 @@
   opacity: 0.7;
 }
 
-/* Hero粒子背景之上 */
 .heroContent {
   position: relative;
   z-index: 1;
@@ -30,7 +28,6 @@
   padding: 0 20px;
 }
 
-/* 标题样式 */
 .heroTitle {
   font-size: 4.2rem;
   font-weight: 800;
@@ -44,7 +41,6 @@
   letter-spacing: -0.5px;
 }
 
-/* 副标题样式 */
 .heroSubtitle {
   font-size: 1.8rem;
   color: #d7ecff;
@@ -57,7 +53,6 @@
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* 按钮容器 */
 .heroButtons {
   display: flex;
   justify-content: center;
@@ -65,7 +60,6 @@
   flex-wrap: wrap;
 }
 
-/* 主按钮样式 */
 .primaryBtn {
   background: linear-gradient(90deg, #1890ff, #0077e6);
   border: none;
@@ -85,7 +79,6 @@
   background: linear-gradient(90deg, #40a9ff, #1890ff);
 }
 
-/* 按钮 */
 .secondaryBtn {
   border: 2px solid #1890ff;
   color: #1890ff !important;
@@ -105,7 +98,120 @@
   box-shadow: 0 6px 16px rgba(24, 144, 255, 0.2);
 }
 
-/* 响应式 */
+.usersBackground {
+  width: 100%;
+  background: linear-gradient(135deg, #e6f7ff 0%, #bae7ff 100%); 
+}
+
+[data-theme='dark'] .usersBackground {
+  background: linear-gradient(135deg, #001a33 0%, #0d1a29 100%); 
+}
+
+.usersSection {
+  padding: 5rem 0; 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 5rem 20px; 
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 3rem; 
+  color: #1890ff;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: #40a9ff;
+  border-radius: 2px;
+}
+
+[data-theme='dark'] .sectionTitle {
+  color: #40a9ff;
+}
+
+.userLogos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); 
+  gap: 3rem; 
+  justify-content: center;
+  align-items: center;
+}
+
+.userLogo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem; 
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.95); 
+  box-shadow: 0 8px 24px rgba(24, 144, 255, 0.15); 
+  transition: all 0.3s ease;
+  height: 100%;
+  min-height: 180px;
+}
+
+[data-theme='dark'] .userLogo {
+  background: rgba(10, 25, 47, 0.95);
+  box-shadow: 0 8px 24px rgba(0, 82, 204, 0.25);
+  border: 1px solid rgba(64, 169, 255, 0.15);
+}
+
+.logoIcon {
+  font-size: 3.5rem; 
+  color: #1890ff;
+  margin-bottom: 1.5rem; 
+  transition: transform 0.3s ease;
+}
+
+[data-theme='dark'] .logoIcon {
+  color: #40a9ff;
+}
+
+.userLogo span {
+  font-size: 1.25rem; 
+  font-weight: 600;
+  color: #1890ff;
+  text-align: center;
+}
+
+[data-theme='dark'] .userLogo span {
+  color: #40a9ff;
+}
+
+.userLogo:hover {
+  transform: translateY(-8px); 
+  box-shadow: 0 12px 30px rgba(24, 144, 255, 0.25);
+}
+
+[data-theme='dark'] .userLogo:hover {
+  box-shadow: 0 12px 30px rgba(0, 82, 204, 0.35);
+}
+
+.userLogo:hover .logoIcon {
+  transform: scale(1.1);
+}
+
+@media (max-width: 1200px) {
+  .usersSection {
+    padding: 5rem 30px; 
+  }
+  
+  .userLogos {
+    gap: 2.5rem; 
+  }
+}
+
 @media (max-width: 996px) {
   .heroContainer {
     height: auto;
@@ -131,6 +237,19 @@
   .secondaryBtn {
     padding: 0.9rem 1.8rem;
     font-size: 1.05rem;
+  }
+  
+  .usersSection {
+    padding: 4rem 20px; 
+  }
+  
+  .userLogos {
+    gap: 2rem; 
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+  
+  .userLogo {
+    padding: 2rem;
   }
 }
 
@@ -160,6 +279,29 @@
     max-width: 300px;
     padding: 0.9rem;
   }
+  
+  .usersSection {
+    padding: 3rem 15px; 
+  }
+  
+  .userLogos {
+    grid-template-columns: 1fr; 
+    gap: 1.5rem; 
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .userLogo {
+    padding: 1.8rem;
+  }
+  
+  .logoIcon {
+    font-size: 3rem;
+  }
+  
+  .userLogo span {
+    font-size: 1.2rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -175,5 +317,13 @@
   .heroSubtitle {
     font-size: 1.1rem;
     line-height: 1.5;
+  }
+  
+  .usersSection {
+    padding: 2.5rem 15px;
+  }
+  
+  .userLogo {
+    padding: 1.5rem;
   }
 }

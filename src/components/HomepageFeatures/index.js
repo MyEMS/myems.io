@@ -51,7 +51,14 @@ export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
       <div className="container">
-        <div className="row">
+        {/* 新增：核心特性与优势标题 */}
+        <div className={styles.featuresHeader}>
+          <h2 className={styles.featuresTitle}>
+            <Translate>Core Features and Advantages</Translate>
+          </h2>
+        </div>
+        
+        <div className={clsx('row', styles.featuresRow)}>
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}

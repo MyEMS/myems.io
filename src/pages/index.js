@@ -22,10 +22,10 @@ export default function Home() {
             <p><Translate>Keep updated, 1 minor version per month, 1 major version per year</Translate></p>
           </div>
         )}
-        primaryButtonText={<Translate>MyEMS Introduction in 5min  ⏱️</Translate>}
+        primaryButtonText={<Translate>MyEMS Introduction in 5min   ️</Translate>}
         primaryButtonLink="/docs/intro"
         secondaryButtonText={<Translate>Get Started</Translate>}
-        secondaryButtonLink="/docs/category/installation" // 链接
+        secondaryButtonLink="/docs/category/installation"
       />
       
       <main>

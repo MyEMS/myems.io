@@ -3,14 +3,17 @@
   height: 100vh;
   min-height: 650px;
   overflow: hidden;
-  background: linear-gradient(135deg, rgba(0, 21, 41, 0.95) 0%, rgba(0, 33, 64, 0.95) 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
 }
 
 [data-theme='dark'] .container {
-  background: linear-gradient(135deg, rgba(0, 21, 41, 0.95) 0%, rgba(0, 33, 64, 0.95) 100%);
+  background: linear-gradient(135deg, #001529 0%, #001e3c 100%);
 }
 
-/* 粒子背景 */
 .particleBackground {
   position: absolute;
   top: 0;
@@ -18,9 +21,13 @@
   width: 100%;
   height: 100%;
   z-index: 0;
+  opacity: 0.1;
 }
 
-/* 区域内容 */
+[data-theme='dark'] .particleBackground {
+  opacity: 0.8;
+}
+
 .heroContent {
   position: relative;
   z-index: 1;
@@ -35,40 +42,90 @@
   height: 100%;
 }
 
-/* 标题 */
 .title {
-  font-size: 4rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 1.5rem;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  font-size: 5.5rem;
+  font-weight: 900;
   line-height: 1.1;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 3px 15px rgba(94, 129, 255, 0.15);
+  cursor: default;
+  animation: gradientSlide 8s infinite linear;
+  background: linear-gradient(135deg, #5e81ff 0%, #a5b4fc 100%);
+  background-size: 200% auto; 
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: -0.5px;
+  position: relative; 
+}
+
+.title::before {
+  content: attr(data-text); 
+  position: absolute;
+  top: 4px; 
+  left: 4px; 
+  z-index: -1; 
+  background: linear-gradient(135deg, #5e81ff 0%, #a5b4fc 100%); 
+  background-size: 200% auto; 
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0.3; 
+  animation: gradientSlide 8s infinite linear; 
+}
+
+@keyframes gradientSlide {
+  0% {
+    background-position: 0% 50%; 
+  }
+  100% {
+    background-position: 200% 50%; 
+  }
+}
+
+.title:hover {
+  animation: gradientSlide 2s infinite linear;
+  text-shadow: 0 5px 20px rgba(94, 129, 255, 0.3);
+}
+
+.title:hover::before {
+  animation: gradientSlide 2s infinite linear; 
+  opacity: 0.4; 
 }
 
 [data-theme='dark'] .title {
-  color: white;
+  background: linear-gradient(135deg, #5e81ff 0%, #a5b4fc 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* 副标题 */
+[data-theme='dark'] .title::before {
+  background: linear-gradient(135deg, #5e81ff 0%, #a5b4fc 100%);
+  opacity: 0.2; 
+}
+
 .subtitle {
-  font-size: 1.5rem;
-  color: rgba(255, 255, 255, 0.85);
-  margin-bottom: 2.5rem;
+  font-size: 1.8rem;
+  color: #e2e8f0;
+  margin-bottom: 3rem;
   line-height: 1.6;
   font-weight: 400;
   max-width: 800px;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .subtitle p {
-  margin: 0.6rem 0;
+  margin: 0.8rem 0;
 }
 
 [data-theme='dark'] .subtitle {
   color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-/* 按钮容器 */
 .buttons {
   display: flex;
   justify-content: center;
@@ -76,48 +133,54 @@
   margin-top: 1.5rem;
 }
 
-/* 主按钮 */
 .primaryButton {
-  background: linear-gradient(90deg, #1890ff, #096dd9);
+  background: linear-gradient(135deg, #5e81ff 0%, #6a5af9 100%);
   border: none;
   font-weight: 600;
-  padding: 1rem 2.5rem;
-  border-radius: 4px;
-  box-shadow: 0 4px 12px rgba(24, 144, 255, 0.3);
+  padding: 1.2rem 2.8rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(94, 129, 255, 0.3);
   transition: all 0.3s ease;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: white;
   z-index: 2;
   display: inline-block;
 }
 
 .primaryButton:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 18px rgba(24, 144, 255, 0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(94, 129, 255, 0.4);
   text-decoration: none;
 }
 
-/* 按钮 */
 .secondaryButton {
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: white;
+  border: 2px solid #5e81ff;
+  color: #5e81ff;
   font-weight: 600;
-  padding: 1rem 2.5rem;
-  border-radius: 4px;
+  padding: 1.2rem 2.8rem;
+  border-radius: 12px;
   background-color: transparent;
   transition: all 0.3s ease;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   z-index: 2;
   display: inline-block;
 }
 
 .secondaryButton:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  transform: translateY(-3px);
+  background-color: rgba(94, 129, 255, 0.1);
+  transform: translateY(-5px);
   text-decoration: none;
 }
 
-/* 响应 */
+[data-theme='dark'] .secondaryButton {
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: white;
+}
+
+[data-theme='dark'] .secondaryButton:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
 @media (max-width: 996px) {
   .container {
     height: auto;
@@ -126,23 +189,23 @@
   }
   
   .title {
-    font-size: 3.2rem;
-    margin-bottom: 1.2rem;
+    font-size: 4.2rem;
+    margin-bottom: 1.5rem;
   }
   
   .subtitle {
-    font-size: 1.3rem;
-    margin-bottom: 2rem;
+    font-size: 1.6rem;
+    margin-bottom: 2.5rem;
   }
   
   .buttons {
-    gap: 1.2rem;
+    gap: 1.5rem;
   }
   
   .primaryButton,
   .secondaryButton {
-    padding: 0.9rem 2rem;
-    font-size: 1.05rem;
+    padding: 1.1rem 2.4rem;
+    font-size: 1.15rem;
   }
 }
 
@@ -153,25 +216,26 @@
   }
   
   .title {
-    font-size: 2.8rem;
+    font-size: 3.5rem;
   }
   
   .subtitle {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
   
   .buttons {
     flex-direction: column;
     align-items: center;
-    gap: 1.2rem;
+    gap: 1.5rem;
     padding: 10px;
   }
   
   .primaryButton,
   .secondaryButton {
     width: 100%;
-    max-width: 280px;
-    padding: 0.9rem;
+    max-width: 300px;
+    padding: 1rem;
+    font-size: 1.1rem;
   }
 }
 
@@ -181,11 +245,19 @@
   }
   
   .title {
-    font-size: 2.4rem;
+    font-size: 2.8rem;
   }
   
   .subtitle {
-    font-size: 1.1rem;
-    line-height: 1.5;
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  
+  .buttons {
+    gap: 1.2rem;
+  }
+  
+  .subtitle p {
+    margin: 0.7rem 0;
   }
 }

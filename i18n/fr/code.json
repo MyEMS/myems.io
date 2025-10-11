@@ -1,0 +1,303 @@
+{
+  "theme.ErrorPageContent.title": {
+    "message": "Cette page a planté.",
+    "description": "Le titre de la page de secours lorsque la page a planté"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "Réessayer",
+    "description": "L'étiquette du bouton pour réessayer lorsque la page a planté"
+  },
+  "theme.NotFound.title": {
+    "message": "Page Non Trouvée",
+    "description": "Le titre de la page 404"
+  },
+  "theme.NotFound.p1": {
+    "message": "Nous n'avons pas pu trouver ce que vous cherchiez.",
+    "description": "Le premier paragraphe de la page 404"
+  },
+  "theme.NotFound.p2": {
+    "message": "Veuillez contacter le propriétaire du site qui vous a dirigé vers l'URL originale et lui faire savoir que son lien est cassé.",
+    "description": "Le 2ème paragraphe de la page 404"
+  },
+  "theme.admonition.note": {
+    "message": "note",
+    "description": "L'étiquette par défaut utilisée pour l'admonition Note (:::note)"
+  },
+  "theme.admonition.tip": {
+    "message": "conseil",
+    "description": "L'étiquette par défaut utilisée pour l'admonition Conseil (:::tip)"
+  },
+  "theme.admonition.danger": {
+    "message": "danger",
+    "description": "L'étiquette par défaut utilisée pour l'admonition Danger (:::danger)"
+  },
+  "theme.admonition.info": {
+    "message": "info",
+    "description": "L'étiquette par défaut utilisée pour l'admonition Info (:::info)"
+  },
+  "theme.admonition.caution": {
+    "message": "attention",
+    "description": "L'étiquette par défaut utilisée pour l'admonition Attention (:::caution)"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "Retour en haut",
+    "description": "L'étiquette ARIA pour le bouton de retour en haut"
+  },
+  "theme.blog.archive.title": {
+    "message": "Archives",
+    "description": "Le titre de la page et du héros de la page d'archives du blog"
+  },
+  "theme.blog.archive.description": {
+    "message": "Archives",
+    "description": "La description de la page et du héros de la page d'archives du blog"
+  },
+  "theme.blog.paginator.navAriaLabel": {
+    "message": "Navigation des pages de liste du blog",
+    "description": "L'étiquette ARIA pour la pagination du blog"
+  },
+  "theme.blog.paginator.newerEntries": {
+    "message": "Entrées Plus Récentes",
+    "description": "L'étiquette utilisée pour naviguer vers la page des articles de blog plus récents (page précédente)"
+  },
+  "theme.blog.paginator.olderEntries": {
+    "message": "Entrées Plus Anciennes",
+    "description": "L'étiquette utilisée pour naviguer vers la page des articles de blog plus anciens (page suivante)"
+  },
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "Navigation des pages d'articles de blog",
+    "description": "L'étiquette ARIA pour la pagination des articles de blog"
+  },
+  "theme.blog.post.paginator.newerPost": {
+    "message": "Article Plus Récent",
+    "description": "L'étiquette du bouton d'article de blog pour naviguer vers l'article plus récent/précédent"
+  },
+  "theme.blog.post.paginator.olderPost": {
+    "message": "Article Plus Ancien",
+    "description": "L'étiquette du bouton d'article de blog pour naviguer vers l'article plus ancien/suivant"
+  },
+  "theme.blog.post.plurals": {
+    "message": "Un article|{count} articles",
+    "description": "Étiquette pluralisée pour \"{count} articles\". Utilisez autant de formes plurielles (séparées par \"|\") que votre langue supporte"
+  },
+  "theme.blog.tagTitle": {
+    "message": "{nPosts} étiquetés avec \"{tagName}\"",
+    "description": "Le titre de la page pour une étiquette de blog"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "Voir Toutes les Étiquettes",
+    "description": "L'étiquette du lien ciblant la page de liste des étiquettes"
+  },
+  "theme.colorToggle.ariaLabel": {
+    "message": "Basculer entre le mode sombre et clair (actuellement {mode})",
+    "description": "L'étiquette ARIA pour le basculeur de mode couleur de la barre de navigation"
+  },
+  "theme.colorToggle.ariaLabel.mode.dark": {
+    "message": "mode sombre",
+    "description": "Le nom pour le mode couleur sombre"
+  },
+  "theme.colorToggle.ariaLabel.mode.light": {
+    "message": "mode clair",
+    "description": "Le nom pour le mode couleur clair"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "Fil d'Ariane",
+    "description": "L'étiquette ARIA pour le fil d'Ariane"
+  },
+  "theme.docs.DocCard.categoryDescription": {
+    "message": "{count} éléments",
+    "description": "La description par défaut pour une carte de catégorie dans l'index généré sur le nombre d'éléments que cette catégorie inclut"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "Navigation des pages de documentation",
+    "description": "L'étiquette ARIA pour la pagination de la documentation"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "Précédent",
+    "description": "L'étiquette utilisée pour naviguer vers le document précédent"
+  },
+  "theme.docs.paginator.next": {
+    "message": "Suivant",
+    "description": "L'étiquette utilisée pour naviguer vers le document suivant"
+  },
+  "theme.docs.tagDocListPageTitle.nDocsTagged": {
+    "message": "Un document étiqueté|{count} documents étiquetés",
+    "description": "Étiquette pluralisée pour \"{count} documents étiquetés\". Utilisez autant de formes plurielles (séparées par \"|\") que votre langue supporte"
+  },
+  "theme.docs.tagDocListPageTitle": {
+    "message": "{nDocsTagged} avec \"{tagName}\"",
+    "description": "Le titre de la page pour une étiquette de documentation"
+  },
+  "theme.docs.versionBadge.label": {
+    "message": "Version : {versionLabel}"
+  },
+  "theme.common.editThisPage": {
+    "message": "Modifier cette page",
+    "description": "L'étiquette du lien pour modifier la page actuelle"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "Ceci est une documentation non publiée pour {siteTitle} version {versionLabel}.",
+    "description": "L'étiquette utilisée pour dire à l'utilisateur qu'il navigue dans une version de documentation non publiée"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "Ceci est la documentation pour {siteTitle} {versionLabel}, qui n'est plus activement maintenue.",
+    "description": "L'étiquette utilisée pour dire à l'utilisateur qu'il navigue dans une version de documentation non maintenue"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "Pour une documentation à jour, consultez la {latestVersionLink} ({versionLabel}).",
+    "description": "L'étiquette utilisée pour dire à l'utilisateur de vérifier la dernière version"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "dernière version",
+    "description": "L'étiquette utilisée pour l'étiquette du lien de suggestion de la dernière version"
+  },
+  "theme.common.headingLinkTitle": {
+    "message": "Lien direct vers {heading}",
+    "description": "Titre pour le lien vers le titre"
+  },
+  "theme.lastUpdated.atDate": {
+    "message": " le {date}",
+    "description": "Les mots utilisés pour décrire à quelle date une page a été mise à jour pour la dernière fois"
+  },
+  "theme.lastUpdated.byUser": {
+    "message": " par {user}",
+    "description": "Les mots utilisés pour décrire par qui la page a été mise à jour pour la dernière fois"
+  },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+    "message": "Dernière mise à jour{atDate}{byUser}",
+    "description": "La phrase utilisée pour afficher quand une page a été mise à jour pour la dernière fois, et par qui"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "Versions",
+    "description": "L'étiquette pour le menu déroulant des versions de la barre de navigation sur la vue mobile"
+  },
+  "theme.tags.tagsListLabel": {
+    "message": "Étiquettes :",
+    "description": "L'étiquette à côté d'une liste d'étiquettes"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "Fermer",
+    "description": "L'étiquette ARIA pour le bouton de fermeture de la barre d'annonces"
+  },
+  "theme.blog.sidebar.navAriaLabel": {
+    "message": "Navigation des articles récents du blog",
+    "description": "L'étiquette ARIA pour les articles récents dans la barre latérale du blog"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "Copié",
+    "description": "L'étiquette du bouton copié sur les blocs de code"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "Copier le code dans le presse-papiers",
+    "description": "L'étiquette ARIA pour le bouton de copie des blocs de code"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "Copier",
+    "description": "L'étiquette du bouton de copie sur les blocs de code"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Basculer le retour à la ligne",
+    "description": "L'attribut title pour le bouton de basculement du retour à la ligne des lignes de bloc de code"
+  },
+  "theme.DocSidebarItem.toggleCollapsedCategoryAriaLabel": {
+    "message": "Basculer la catégorie de barre latérale pliable '{label}'",
+    "description": "L'étiquette ARIA pour basculer la catégorie de barre latérale pliable"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "Principal",
+    "description": "L'étiquette ARIA pour la navigation principale"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "Langues",
+    "description": "L'étiquette pour le menu déroulant de sélection de langue mobile"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "Sur cette page",
+    "description": "L'étiquette utilisée par le bouton sur le composant TOC pliable"
+  },
+  "theme.blog.post.readMore": {
+    "message": "Lire Plus",
+    "description": "L'étiquette utilisée dans les extraits d'articles de blog pour lier aux articles de blog complets"
+  },
+  "theme.blog.post.readMoreLabel": {
+    "message": "Lire plus sur {title}",
+    "description": "L'étiquette ARIA pour le lien vers les articles de blog complets depuis les extraits"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "Une minute de lecture|{readingTime} minutes de lecture",
+    "description": "Étiquette pluralisée pour \"{readingTime} min de lecture\". Utilisez autant de formes plurielles (séparées par \"|\") que votre langue supporte"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "Page d'accueil",
+    "description": "L'étiquette ARIA pour la page d'accueil dans le fil d'Ariane"
+  },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "Barre latérale de documentation",
+    "description": "L'étiquette ARIA pour la navigation de la barre latérale"
+  },
+  "theme.docs.sidebar.collapseButtonTitle": {
+    "message": "Réduire la barre latérale",
+    "description": "L'attribut title pour le bouton de réduction de la barre latérale de documentation"
+  },
+  "theme.docs.sidebar.collapseButtonAriaLabel": {
+    "message": "Réduire la barre latérale",
+    "description": "L'attribut title pour le bouton de réduction de la barre latérale de documentation"
+  },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+    "message": "Fermer la barre de navigation",
+    "description": "L'étiquette ARIA pour le bouton de fermeture de la barre latérale mobile"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "Basculer la barre de navigation",
+    "description": "L'étiquette ARIA pour le bouton du menu hamburger de la navigation mobile"
+  },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+    "message": "← Retour au menu principal",
+    "description": "L'étiquette du bouton de retour pour revenir au menu principal, à l'intérieur du menu secondaire de la barre latérale de la barre de navigation mobile"
+  },
+  "theme.docs.sidebar.expandButtonTitle": {
+    "message": "Développer la barre latérale",
+    "description": "L'étiquette ARIA et l'attribut title pour le bouton de développement de la barre latérale de documentation"
+  },
+  "theme.docs.sidebar.expandButtonAriaLabel": {
+    "message": "Développer la barre latérale",
+    "description": "L'étiquette ARIA et l'attribut title pour le bouton de développement de la barre latérale de documentation"
+  },
+  "theme.common.skipToMainContent": {
+    "message": "Aller au contenu principal",
+    "description": "L'étiquette d'aller au contenu utilisée pour l'accessibilité, permettant de naviguer rapidement vers le contenu principal avec la navigation clavier tab/entrée"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "Étiquettes",
+    "description": "Le titre de la page de liste des étiquettes"
+  },
+  "Energy Management System": {
+    "message": "Système de Gestion de l'Énergie"
+  },
+  "Industry leading Open Source Energy Management System": {
+    "message": "Système de Gestion de l'Énergie Open Source de Premier Plan dans l'Industrie, Recommandé par Gitee"
+  },
+  "MyEMS is being developed and maintained by an experienced development team, and the system's source code is published under MIT license.": {
+    "message": "MyEMS est développé et maintenu par une équipe de développement expérimentée, et le code source du système est publié sous licence MIT. Les utilisateurs de la version communautaire doivent conserver les informations de copyright et le logo liés à MyEMS."
+  },
+  "MyEMS is used for collecting, processing, analyzing, reporting and displaying energy data of buildings, factories, shopping malls, data centers and enterprise zones.": {
+    "message": "MyEMS est utilisé pour collecter, traiter, analyser, rapporter et afficher les données énergétiques des bâtiments, usines, centres commerciaux, centres de données et zones d'entreprise."
+  },
+  "MyEMS is based on Python and ReactJS. Using open source to help achieve carbon peak carbon neutrality goals.": {
+    "message": "MyEMS est basé sur Python et ReactJS. Utiliser l'open source pour aider à atteindre les objectifs de pic de carbone et de neutralité carbone."
+  },
+  "Easy to Use": {
+    "message": "Facile à Utiliser"
+  },
+  "Focus on Energy": {
+    "message": "Se Concentrer sur l'Énergie"
+  },
+  "Powered by Top Tech Stacks": {
+    "message": "Alimenté par les Meilleures Piles Technologiques"
+  },
+  "Core Features and Advantages": {
+    "message": "Caractéristiques et avantages"
+  },
+  "MyEMS Introduction in 5min ⏱️": {
+    "message": "Introduction à MyEMS en 5min ⏱️"
+  }
+}

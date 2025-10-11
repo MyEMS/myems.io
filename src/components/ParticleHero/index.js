@@ -15,7 +15,7 @@ export default function ParticleHero({
     <div className={styles.container}>
       <ParticleBackground />
       <div className={styles.heroContent}>
-        <h1 className={styles.title}>{title}</h1>
+        <h1 id="myems-title" className={styles.title}>{title}</h1>
         <div className={styles.subtitle}>{subtitle}</div>
         <div className={styles.buttons}>
           {primaryButtonText && primaryButtonLink && (

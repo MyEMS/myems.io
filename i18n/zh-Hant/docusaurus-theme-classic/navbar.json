@@ -1,0 +1,46 @@
+{
+  "title": {
+    "message": "MyEMS",
+    "description": "The title in the navbar"
+  },
+  "item.label.DEMO": {
+    "message": "演示",
+    "description": "Navbar item with label DEMO"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  },
+  "item.label.Gitee": {
+    "message": "Gitee",
+    "description": "Navbar item with label Gitee"
+  },
+  "item.label.Introduction": {
+    "message": "介紹",
+    "description": "Navbar item with label Introduction"
+  },
+  "item.label.Installation": {
+    "message": "安裝",
+    "description": "Navbar item with label Installation"
+  },
+  "item.label.Tutorial": {
+    "message": "教程",
+    "description": "Navbar item with label Tutorial"
+  },
+  "item.label.API": {
+    "message": "API",
+    "description": "Navbar item with label API"
+  },
+  "item.label.Enterprise Edition": {
+    "message": "企業版",
+    "description": "Navbar item with label Enterprise Edition"
+  },
+  "item.label.Cooperation": {
+    "message": "合作",
+    "description": "Navbar item with label Cooperation"
+  },
+  "logo.alt": {
+    "message": "MyEMS Logo",
+    "description": "The alt text of navbar logo"
+  }
+}
