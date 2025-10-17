@@ -78,6 +78,25 @@ mysql -u root -p < myems_system_db.sql
 ```bash
 mysql -u root -p < myems_user_db.sql
 ```
+
+On Windows MySQL: 
+```powershell
+# Import database schema on Window PowerShell
+Get-Content myems_billing_db.sql | mysql -u root -p!MyEMS1
+Get-Content myems_carbon_db.sql | mysql -u root -p!MyEMS1
+Get-Content myems_energy_baseline_db.sql | mysql -u root -p!MyEMS1
+Get-Content myems_energy_db.sql | mysql -u root -p!MyEMS1
+Get-Content myems_energy_model_db.sql | mysql -u root -p!MyEMS1
+Get-Content myems_energy_plan_db.sql | mysql -u root -p!MyEMS1
+Get-Content myems_energy_prediction_db.sql | mysql -u root -p!MyEMS1
+Get-Content myems_fdd_db.sql | mysql -u root -p!MyEMS1
+Get-Content myems_historical_db.sql | mysql -u root -p!MyEMS1
+Get-Content myems_production_db.sql | mysql -u root -p!MyEMS1
+Get-Content myems_reporting_db.sql | mysql -u root -p!MyEMS1
+Get-Content myems_system_db.sql | mysql -u root -p!MyEMS1
+Get-Content myems_user_db.sql | mysql -u root -p!MyEMS1
+```
+
 Note: Refer to [database](./database.md)
 
 
