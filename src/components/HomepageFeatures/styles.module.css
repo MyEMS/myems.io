@@ -1,6 +1,6 @@
 .featuresHeader {
   text-align: center;
-  margin-bottom: 3.5rem; 
+  margin-bottom: 3.5rem;
 }
 
 .featuresTitle {
@@ -28,19 +28,19 @@
   color: #40a9ff;
 }
 
+/* 关键修改：父容器启用Flex布局，统一卡片高度 */
 .featuresRow {
-  gap: 3rem; 
+  display: flex;
+  gap: 3rem;
   justify-content: center;
+  align-items: stretch; /* 让卡片拉伸到相同高度（核心） */
+  flex-wrap: wrap; /* 防止溢出 */
+  margin: 0 auto; /* 水平居中 */
+  max-width: 1200px; /* 限制最大宽度（可选） */
 }
 
 .features {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: stretch;
   padding: 5rem 1.5rem;
-  width: 100%;
-  margin: 0 auto;
   background: linear-gradient(135deg, #e6f7ff 0%, #bae7ff 100%);
 }
 
@@ -48,38 +48,31 @@
   background: linear-gradient(135deg, #001a33 0%, #0d1a29 100%);
 }
 
-.features > .container {
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 20px; 
-}
-
+/* 关键修改：卡片容器设置Flex垂直布局，统一宽度 */
 .featureCard {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* 垂直排列内部元素（核心） */
   align-items: center;
-  padding: 30px; 
+  padding: 30px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.95); 
-  box-shadow: 0 8px 24px rgba(24, 144, 255, 0.15); 
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8px 24px rgba(24, 144, 255, 0.15);
   transition: all 0.3s ease;
-  height: 100%;
-  border: 1px solid rgba(24, 144, 255, 0.1); 
-  flex: 1 1 calc(33.333% - 4rem); 
-  min-width: 320px;
-  max-width: 380px;
+  flex: 1 1 calc(33.333% - 2rem); /* 占1/3宽度（减去间距）（核心） */
+  min-width: 320px; /* 最小宽度（防止过小） */
+  max-width: 380px; /* 最大宽度（保持一致性） */
+  margin-bottom: 2rem; /* 小屏幕堆叠时的间距 */
 }
 
 .featureCard:hover {
-  transform: translateY(-8px); 
+  transform: translateY(-8px);
   box-shadow: 0 12px 30px rgba(24, 144, 255, 0.25);
 }
 
 [data-theme='dark'] .featureCard {
   background: rgba(10, 25, 47, 0.95);
   border: 1px solid rgba(64, 169, 255, 0.15);
-  box-shadow: 0极简修复方案 24px rgba(0, 82, 204, 0.25);
+  box-shadow: 0 8px 24px rgba(0, 82, 204, 0.25);
 }
 
 .featureSvgContainer {
@@ -89,7 +82,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 1.5rem;
-  background: rgba(230, 247, 255, 0.3); 
+  background: rgba(230, 247, 255, 0.3);
   border-radius: 50%;
   padding: 20px;
 }
@@ -113,13 +106,16 @@
 [data-theme='dark'] .featureSvg {
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
 }
-[data-theme='dark'] .featureCard:hover .featureSvg {
-  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
+
+/* 关键修改：内容区填充剩余空间，让描述推到底部 */
+.featureContent {
+  flex: 1; /* 填充卡片剩余高度（核心） */
+  text-align: center;
 }
 
 .featureTitle {
   color: #1890ff;
-  font-size: 1.5rem; 
+  font-size: 1.5rem;
   font-weight: 600;
   text-align: center;
   margin-bottom: 1rem;
@@ -140,25 +136,28 @@
 }
 
 [data-theme='dark'] .featureTitle {
-  color: #40a9ff; 
+  color: #40a9ff;
 }
 
+/* 关键修改：去掉描述底部margin，避免额外间距 */
 .featureDescription {
   color: #333;
-  font-size: 1.05rem; 
-  line-height: 1.7; 
+  font-size: 1.05rem;
+  line-height: 1.7;
   text-align: center;
-  padding: 0 10px; 
+  padding: 0 10px;
+  margin-bottom: 0; /* 去掉底部margin（核心） */
 }
 
 [data-theme='dark'] .featureDescription {
   color: rgba(255, 255, 255, 0.85);
 }
 
+/* 响应式调整（保持原有逻辑，优化布局） */
 @media (max-width: 1200px) {
-  .features > .container {
+  .featuresRow {
     max-width: 100%;
-    padding: 0 30px; 
+    padding: 0 30px;
   }
 }
 
@@ -168,11 +167,11 @@
   }
   
   .featuresRow {
-    gap: 2rem; 
+    gap: 2rem;
   }
   
   .featureCard {
-    flex: 1 1 calc(50% - 1.5rem); 
+    flex: 1 1 calc(50% - 1rem); /* 两列布局（各占1/2宽度） */
     min-width: 280px;
     padding: 25px;
   }
@@ -192,13 +191,13 @@
   }
   
   .featuresRow {
-    flex-direction: column;
+    flex-direction: column; /* 垂直堆叠 */
     align-items: center;
     gap: 2rem;
   }
   
   .featureCard {
-    flex: 1 1 90%;
+    flex: 1 1 90%; /* 占满屏幕宽度 */
     min-width: auto;
     padding: 20px;
   }

@@ -309,7 +309,25 @@
   "Core Features and Advantages": {
     "message": "核心特性与优势"
   },
-  "MyEMS Introduction in 5min ⏱️": {
-    "message": "MyEMS五分钟介绍 ⏱️"
+  "MyEMS Introduction in 5min ⏱️": {  
+    "message": "MyEMS五分钟介绍 ⏱️"   
+  },
+  "Who's Using MyEMS": {
+    "message": "谁在使用MyEMS"
+  },
+  "Industrial Park": {
+    "message": "工业园区"
+  },
+  "Commercial Building": {
+    "message": "商业建筑"
+  },
+  "Manufacturing": {
+    "message": "制造业"
+  },
+  "Hospital": {
+    "message": "医院"
+  },
+  "Get Started": {
+    "message": "开始使用"
   }
-}
+  }

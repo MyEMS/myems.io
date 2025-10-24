@@ -33,9 +33,10 @@ const FeatureList = [
   },
 ];
 
-function Feature({Svg, title, description}) {
+// 关键修改：移除col col--4类，只用自定义featureCard类
+function Feature({ Svg, title, description }) {
   return (
-    <div className={clsx('col col--4', styles.featureCard)}>
+    <div className={styles.featureCard}>
       <div className={styles.featureSvgContainer}>
         <Svg className={styles.featureSvg} role="img" />
       </div>
@@ -47,18 +48,18 @@ function Feature({Svg, title, description}) {
   );
 }
 
+// 关键修改：移除row类，只用自定义featuresRow类
 export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
       <div className="container">
-        {/* 新增：核心特性与优势标题 */}
         <div className={styles.featuresHeader}>
           <h2 className={styles.featuresTitle}>
             <Translate>Core Features and Advantages</Translate>
           </h2>
         </div>
         
-        <div className={clsx('row', styles.featuresRow)}>
+        <div className={styles.featuresRow}>
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}

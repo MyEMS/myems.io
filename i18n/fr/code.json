@@ -298,6 +298,24 @@
     "message": "Caractéristiques et avantages"
   },
   "MyEMS Introduction in 5min ⏱️": {
-    "message": "Introduction à MyEMS en 5min ⏱️"
+    "message": "Introduction à MyEMS en 5min⏱️"
+  },
+  "Who's Using MyEMS": {
+    "message": "Wer nutzt MyEMS"
+  },
+  "Industrial Park": {
+    "message": "Industriepark"
+  },
+  "Commercial Building": {
+    "message": "Gewerbegebäude"
+  },
+  "Manufacturing": {
+    "message": "Herstellung"
+  },
+  "Hospital": {
+    "message": "Krankenhaus"
+  },
+  "Get Started": {
+    "message": "Starten Sie"
   }
-}
+  }
