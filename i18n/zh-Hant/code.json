@@ -306,28 +306,49 @@
   "Powered by Top Tech Stacks": {
     "message": "基於主流科技棧"
   },
-  "Core Features and Advantages": {
-    "message": "覈心特性與優勢"
+  "Advantages of MyEMS": {
+    "message": "MyEMS的優勢"
   },
   "MyEMS Introduction in 5min ⏱️": {
     "message": "MyEMS五分鐘介紹 ⏱️"
   },
-  "Who's Using MyEMS": {
-    "message": "誰在使用MyEMS"
+  "Core Features": {
+    "message": "覈心特性"
   },
-  "Industrial Park": {
-    "message": "工業園區"
+  "Cloud Native": {
+    "message": "雲原生"
   },
-  "Commercial Building": {
-    "message": "商業建築"
+  "Supports K8s deployment and seamless integration with cloud environments": {
+    "message": "生於雲，長於雲，無限彈性擴縮，K8s友好"
   },
-  "Manufacturing": {
-    "message": "製造業"
+  "High Throughput": {
+    "message": "高吞吐"
   },
-  "Hospital": {
-    "message": "醫院"
+  "Trillion-level throughput guarantee to meet both microservice and big data scenarios": {
+    "message": "萬億級吞吐保證，同時滿足微服務與大數據場景"
   },
-  "Get Started": {
-    "message": "開始使用"
+  "Stream Processing": {
+    "message": "流處理"
+  },
+  "Provide a lightweight, highly scalable, high-performance, and feature rich streaming computing engine": {
+    "message": "提供輕量、高擴展、高性能和豐富功能的流計算引擎"
+  },
+  "Financial Grade Security": {
+    "message": "金融級"
+  },
+  "Financial-grade stability, widely used in transaction core links": {
+    "message": "金融級的穩定性，廣泛用於交易覈心連結"
+  },
+  "Lightweight Model": {
+    "message": "架構極簡"
+  },
+  "Zero external dependencies, Shared-nothing architecture": {
+    "message": "零外部依賴，Shared-nothing架構"
+  },
+  "Eco Friendly": {
+    "message": "生態友好"
+  },
+  "Seamlessly connects to microservices, real-time computing, data lake and other surrounding ecologies": {
+    "message": "無縫對接微服務、實时計算、數據湖等周邊生態"
   }
   }

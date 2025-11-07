@@ -294,28 +294,49 @@
   "Powered by Top Tech Stacks": {
     "message": "Powered by Top Tech Stacks"
   },
-  "Core Features and Advantages": {
-    "message": "Core Features and Advantages"
+  "Advantages of MyEMS": {
+    "message": "Advantages of MyEMS"
   },
   "MyEMS Introduction in 5min ⏱️": {
     "message": "MyEMS Introduction in 5min⏱️"
   },
-  "Who's Using MyEMS": {
-    "message": "Who's Using MyEMS"
+  "Core Features": {
+    "message": "Core Features"
   },
-  "Industrial Park": {
-    "message": "Industrial Park"
+  "Cloud Native": {
+    "message": "Cloud Native"
   },
-  "Commercial Building": {
-    "message": "Commercial Building"
+  "Supports K8s deployment and seamless integration with cloud environments": {
+    "message": "Supports K8s deployment and seamless integration with cloud environments"
   },
-  "Manufacturing": {
-    "message": "Manufacturing"
+  "High Throughput": {
+    "message": "High Throughput"
   },
-  "Hospital": {
-    "message": "Hospital"
+  "Trillion-level throughput guarantee to meet both microservice and big data scenarios": {
+    "message": "Trillion-level throughput guarantee to meet both microservice and big data scenarios"
   },
-  "Get Started": {
-    "message": "Get Started"
+  "Stream Processing": {
+    "message": "Stream Processing"
+  },
+  "Provide a lightweight, highly scalable, high-performance, and feature rich streaming computing engine": {
+    "message": "Provide a lightweight, highly scalable, high-performance, and feature rich streaming computing engine"
+  },
+  "Financial Grade Security": {
+    "message": "Financial Grade Security"
+  },
+  "Financial-grade stability, widely used in transaction core links": {
+    "message": "Financial-grade stability, widely used in transaction core links"
+  },
+  "Lightweight Model": {
+    "message": "Lightweight Model"
+  },
+  "Zero external dependencies, Shared-nothing architecture": {
+    "message": "Zero external dependencies, Shared-nothing architecture"
+  },
+  "Eco Friendly": {
+    "message": "Eco Friendly"
+  },
+  "Seamlessly connects to microservices, real-time computing, data lake and other surrounding ecologies": {
+    "message": "Seamlessly connects to microservices, real-time computing, data lake and other surrounding ecologies"
   }
   }

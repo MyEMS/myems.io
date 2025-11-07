@@ -98,117 +98,172 @@
   box-shadow: 0 6px 16px rgba(24, 144, 255, 0.2);
 }
 
-.usersBackground {
-  width: 100%;
-  background: linear-gradient(135deg, #e6f7ff 0%, #bae7ff 100%); 
+/* ==================== RocketMQ风格核心特性部分 ==================== */
+.featuresSection {
+  padding: 5rem 0;
+  background-color: #f8f9fa;
+  position: relative;
+  overflow: hidden;
 }
 
-[data-theme='dark'] .usersBackground {
-  background: linear-gradient(135deg, #001a33 0%, #0d1a29 100%); 
-}
-
-.usersSection {
-  padding: 5rem 0; 
-  max-width: 1200px; 
-  margin: 0 auto; 
-  padding: 5rem 20px; 
+[data-theme='dark'] .featuresSection {
+  background-color: #0d2538;
 }
 
 .sectionTitle {
-  text-align: center;
-  font-size: 2.2rem;
+  font-size: 2.6rem;
   font-weight: 700;
-  margin-bottom: 3rem; 
-  color: #1890ff;
+  color: #333;
+  text-align: center;
+  margin-bottom: 4rem;
   position: relative;
-  padding-bottom: 15px;
-}
-
-.sectionTitle::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: #40a9ff;
-  border-radius: 2px;
 }
 
 [data-theme='dark'] .sectionTitle {
-  color: #40a9ff;
+  color: #e6f7ff;
 }
 
-.userLogos {
+.sectionTitle::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #1890ff, #0077e6);
+  border-radius: 2px;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.featuresContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); 
-  gap: 3rem; 
-  justify-content: center;
-  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
-.userLogo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2.5rem; 
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.95); 
-  box-shadow: 0 8px 24px rgba(24, 144, 255, 0.15); 
-  transition: all 0.3s ease;
-  height: 100%;
-  min-height: 180px;
-}
-
-[data-theme='dark'] .userLogo {
-  background: rgba(10, 25, 47, 0.95);
-  box-shadow: 0 8px 24px rgba(0, 82, 204, 0.25);
-  border: 1px solid rgba(64, 169, 255, 0.15);
-}
-
-.logoIcon {
-  font-size: 3.5rem; 
-  color: #1890ff;
-  margin-bottom: 1.5rem; 
-  transition: transform 0.3s ease;
-}
-
-[data-theme='dark'] .logoIcon {
-  color: #40a9ff;
-}
-
-.userLogo span {
-  font-size: 1.25rem; 
-  font-weight: 600;
-  color: #1890ff;
+.featureCard {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  padding: 2.8rem 2rem;
   text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 
-[data-theme='dark'] .userLogo span {
+[data-theme='dark'] .featureCard {
+  background-color: #051A35;
+  box-shadow: 0 8px 32px rgba(0, 82, 204, 0.25);
+}
+
+.featureCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #1890ff, #0077e6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.featureCard:hover::before {
+  opacity: 1;
+}
+
+.featureCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 32px rgba(24, 144, 255, 0.2);
+}
+
+[data-theme='dark'] .featureCard:hover {
+  box-shadow: 0 16px 32px rgba(0, 82, 204, 0.35);
+}
+
+.featureIcon {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e6f7ff, #bae7ff);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+[data-theme='dark'] .featureIcon {
+  background: linear-gradient(135deg, #001a33, #0d1a29);
+}
+
+.featureCard:hover .featureIcon {
+  transform: scale(1.15);
+  background: linear-gradient(135deg, #1890ff, #0077e6);
+}
+
+[data-theme='dark'] .featureCard:hover .featureIcon {
+  background: linear-gradient(135deg, #0077e6, #0059b3);
+}
+
+.svgIcon {
+  width: 48px;
+  height: 48px;
+  fill: #1890ff;
+  transition: fill 0.3s ease;
+}
+
+.featureCard:hover .svgIcon {
+  fill: white;
+}
+
+[data-theme='dark'] .svgIcon {
+  fill: #40a9ff;
+}
+
+.featureTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1890ff;
+  margin-bottom: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+[data-theme='dark'] .featureTitle {
   color: #40a9ff;
 }
 
-.userLogo:hover {
-  transform: translateY(-8px); 
-  box-shadow: 0 12px 30px rgba(24, 144, 255, 0.25);
+.featureCard:hover .featureTitle {
+  color: #0077e6;
 }
 
-[data-theme='dark'] .userLogo:hover {
-  box-shadow: 0 12px 30px rgba(0, 82, 204, 0.35);
+.featureDesc {
+  font-size: 1.05rem;
+  color: #666;
+  line-height: 1.7;
+  max-width: 320px;
+  margin: 0 auto;
 }
 
-.userLogo:hover .logoIcon {
-  transform: scale(1.1);
+[data-theme='dark'] .featureDesc {
+  color: #a3c6e9;
 }
 
+/* ==================== 响应式设计 ==================== */
 @media (max-width: 1200px) {
-  .usersSection {
-    padding: 5rem 30px; 
+  .featuresContainer {
+    gap: 2rem;
+    padding: 0 1.5rem;
   }
   
-  .userLogos {
-    gap: 2.5rem; 
+  .featureCard {
+    padding: 2.2rem 1.5rem;
   }
 }
 
@@ -239,17 +294,29 @@
     font-size: 1.05rem;
   }
   
-  .usersSection {
-    padding: 4rem 20px; 
+  .featuresContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
   }
   
-  .userLogos {
-    gap: 2rem; 
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  .sectionTitle {
+    font-size: 2.2rem;
+    margin-bottom: 3.5rem;
   }
   
-  .userLogo {
-    padding: 2rem;
+  .featureIcon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .svgIcon {
+    width: 42px;
+    height: 42px;
+  }
+  
+  .featureTitle {
+    font-size: 1.3rem;
   }
 }
 
@@ -280,27 +347,24 @@
     padding: 0.9rem;
   }
   
-  .usersSection {
-    padding: 3rem 15px; 
+  .featuresSection {
+    padding: 4rem 0;
   }
   
-  .userLogos {
-    grid-template-columns: 1fr; 
-    gap: 1.5rem; 
+  .featuresContainer {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
     max-width: 600px;
     margin: 0 auto;
   }
   
-  .userLogo {
-    padding: 1.8rem;
+  .featureCard {
+    padding: 2.2rem;
   }
   
-  .logoIcon {
-    font-size: 3rem;
-  }
-  
-  .userLogo span {
-    font-size: 1.2rem;
+  .sectionTitle {
+    font-size: 2rem;
+    margin-bottom: 3rem;
   }
 }
 
@@ -319,11 +383,33 @@
     line-height: 1.5;
   }
   
-  .usersSection {
-    padding: 2.5rem 15px;
+  .featuresSection {
+    padding: 3rem 0;
   }
   
-  .userLogo {
-    padding: 1.5rem;
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+  
+  .featureCard {
+    padding: 2rem 1.5rem;
+  }
+  
+  .featureIcon {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .svgIcon {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .featureTitle {
+    font-size: 1.2rem;
+  }
+  
+  .featureDesc {
+    font-size: 1rem;
   }
 }

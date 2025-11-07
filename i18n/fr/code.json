@@ -294,28 +294,49 @@
   "Powered by Top Tech Stacks": {
     "message": "Alimenté par les Meilleures Piles Technologiques"
   },
-  "Core Features and Advantages": {
-    "message": "Caractéristiques et avantages"
+  "Advantages of MyEMS": {
+    "message": "Vorteile von MyEMS"
   },
   "MyEMS Introduction in 5min ⏱️": {
     "message": "Introduction à MyEMS en 5min⏱️"
   },
-  "Who's Using MyEMS": {
-    "message": "Wer nutzt MyEMS"
+  "Core Features": {
+    "message": "Hauptmerkmale"
   },
-  "Industrial Park": {
-    "message": "Industriepark"
+  "Cloud Native": {
+    "message": "Cloud nativ"
   },
-  "Commercial Building": {
-    "message": "Gewerbegebäude"
+  "Supports K8s deployment and seamless integration with cloud environments": {
+    "message": "Geboren in der Cloud, länger als die Cloud, unbegrenzte Skalierbarkeit, K8s-freundlich"
   },
-  "Manufacturing": {
-    "message": "Herstellung"
+  "High Throughput": {
+    "message": "Hoher Durchsatz"
   },
-  "Hospital": {
-    "message": "Krankenhaus"
+  "Trillion-level throughput guarantee to meet both microservice and big data scenarios": {
+    "message": "Milliarden-Durchsatz garantiert, während Mikro- und Big-Data-Szenarien gerecht werden"
   },
-  "Get Started": {
-    "message": "Starten Sie"
+  "Stream Processing": {
+    "message": "Stream-Bearbeitung"
+  },
+  "Provide a lightweight, highly scalable, high-performance, and feature rich streaming computing engine": {
+    "message": "Eine leichte, skalierbare, leistungsstarke und funktionsreiche Stream-Computing-Engine"
+  },
+  "Financial Grade Security": {
+    "message": "Finanzniveau"
+  },
+  "Financial-grade stability, widely used in transaction core links": {
+    "message": "Stabilität auf finanzieller Ebene, weit verbreitet für Kernlinks im Handel"
+  },
+  "Lightweight Model": {
+    "message": "minimale Architektur"
+  },
+  "Zero external dependencies, Shared-nothing architecture": {
+    "message": "Null externe Abhängigkeit, Shared-Nothing-Architektur"
+  },
+  "Eco Friendly": {
+    "message": "Umweltfreundlich"
+  },
+  "Seamlessly connects to microservices, real-time computing, data lake and other surrounding ecologies": {
+    "message": "Nahtlose Mikrodienstleistungen, Echtzeit-Computing, Datensees und andere Umgebungen"
   }
   }

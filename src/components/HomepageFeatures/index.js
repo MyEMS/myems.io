@@ -48,14 +48,13 @@ function Feature({ Svg, title, description }) {
   );
 }
 
-// 关键修改：移除row类，只用自定义featuresRow类
 export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
       <div className="container">
         <div className={styles.featuresHeader}>
           <h2 className={styles.featuresTitle}>
-            <Translate>Core Features and Advantages</Translate>
+            <Translate>Advantages of MyEMS</Translate>
           </h2>
         </div>
         

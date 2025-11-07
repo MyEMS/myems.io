@@ -1,3 +1,5 @@
+/* custom.css */
+/* 根变量（默认light模式） */
 :root {
   --ifm-color-primary: #1890ff;
   --ifm-color-primary-dark: #0077e6;
@@ -8,18 +10,43 @@
   --ifm-color-primary-lightest: #91d5ff;
   
   --ifm-color-dark: #020d18;
-  
   --ifm-font-color-base: #333;
-  --ifm-background-color: #f5f7fa;
+  --ifm-background-color: #568ee0; /* 原蓝色背景（仅默认light模式使用，会被[data-theme='light']覆盖） */
   
   --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  
   --navbar-height: 70px;
   
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  
+  /* 粒子效果变量 */
+  --particle-gradient-primary: #91d5ff;
+  --particle-gradient-secondary: #0077e6;
+  --particle-opacity: 0.5;
+  --dark-particle-color: #2d3748;
+  
+  /* 标题文字阴影 */
+  --title-text-shadow: 0 3px 15px rgba(24, 144, 255, 0.15);
 }
 
+/* 明亮模式（light）变量覆盖（关键修改：修正全局背景色） */
+[data-theme='light'] {
+  --ifm-background-color: #f0f2f5 !important; /* 全局背景色改为浅灰色（解决蓝色背景的核心） */
+  --ifm-font-color-base: #333;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  
+  /* 粒子效果变量 */
+  --particle-gradient-primary: #91d5ff;
+  --particle-gradient-secondary: #0077e6;
+  --particle-opacity: 0.5;
+  --dark-particle-color: #2d3748;
+  
+  /* 标题文字阴影 */
+  --title-text-shadow: 0 3px 15px rgba(24, 144, 255, 0.15);
+}
+
+/* 黑暗模式（dark）变量覆盖 */
 [data-theme='dark'] {
   --ifm-color-primary: #40a9ff;
   --ifm-color-primary-dark: #1890ff;
@@ -29,30 +56,41 @@
   --ifm-color-primary-lighter: #91d5ff;
   --ifm-color-primary-lightest: #bae7ff;
   
-  --ifm-color-dark: #020d18;
   --ifm-font-color-base: #e6f7ff;
-  --ifm-background-color: #051A35;
+  --ifm-background-color: #081d3b; /* 黑暗模式背景色（无需修改） */
   
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --card-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  
+  /* 粒子效果变量 */
+  --particle-gradient-primary: #69c0ff;
+  --particle-gradient-secondary: #40a9ff;
+  --particle-opacity: 0.6;
+  --dark-particle-color: #e2e8f0;
+  
+  /* 标题文字阴影 */
+  --title-text-shadow: 0 2px 6px rgba(139, 194, 255, 0.15);
 }
 
+/* 全局滚动行为 */
 html {
   scroll-behavior: smooth;
 }
 
+/* 页面基础样式（继承全局背景色） */
 body {
   color: var(--ifm-font-color-base);
-  background-color: var(--ifm-background-color);
+  background-color: var(--ifm-background-color); /* 继承全局背景色（light模式下为浅灰色） */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   line-height: 1.6;
 }
 
+/* 导航栏样式 */
 .navbar {
   background: linear-gradient(135deg, #020d18, #051A35) !important;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
   padding: 0.75rem 1rem;
-  height: 70px;
+  height: var(--navbar-height);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -111,6 +149,7 @@ body {
   border-radius: 2px;
 }
 
+/* 搜索按钮样式 */
 .DocSearch-Button {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 4px;
@@ -123,73 +162,63 @@ body {
   transform: translateY(-1px);
 }
 
-.navbar-sidebar {
-  background-color: #020d18;
+/* 左侧 Sidebar（明亮模式）：增强分隔线 */
+[data-theme='light'] .menu {
+  background-color: #e3e5e6 !important;
+  border-right: 2px solid #d0d0d0 !important; /* 加粗边框（2px）+ 加深颜色（#d0d0d0） */
 }
 
-.navbar-sidebar__back {
-  color: white;
+[data-theme='light'] .menu__link {
+  color: #222 !important;
+  padding: 8px 16px;
 }
 
-.menu {
+[data-theme='light'] .menu__link:hover {
+  background-color: #e9ecef !important;
+  color: #0055b3 !important;
+  transform: translateX(3px);
+}
+
+[data-theme='light'] .menu__link--active {
+  background-color: #e6f0ff !important;
+  color: #0055b3 !important;
+  box-shadow: 0 2px 8px rgba(24, 144, 255, 0.1);
+}
+
+[data-theme='light'] .menu__title {
+  color: #222 !important;
+  font-weight: 600;
+  padding: 12px 16px;
+}
+
+[data-theme='light'] .navbar-sidebar {
+  background-color: #f0f2f5 !important;
+}
+
+/* 左侧 Sidebar（黑暗模式）：增强分隔线 */
+[data-theme='dark'] .menu {
   background-color: #051A35;
+  border-right: 2px solid #2d3748 !important; /* 黑暗模式下的深灰色边框 */
 }
 
-.menu__link {
+[data-theme='dark'] .menu__link {
   color: rgba(255, 255, 255, 0.85);
   transition: all 0.2s ease;
 }
 
-.menu__link:hover {
+[data-theme='dark'] .menu__link:hover {
   color: white;
   background-color: rgba(24, 144, 255, 0.2);
   transform: translateX(5px);
 }
 
-.menu__link--active {
+[data-theme='dark'] .menu__link--active {
   color: white;
   background-color: rgba(24, 144, 255, 0.3);
   box-shadow: 0 2px 8px rgba(24, 144, 255, 0.2);
 }
 
-.button {
-  display: inline-block;
-  padding: 0.8rem 1.5rem;
-  border-radius: 6px;
-  font-weight: 600;
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
-.button--primary {
-  background: linear-gradient(90deg, #1890ff, #0077e6);
-  color: white;
-  border: none;
-  box-shadow: 0 5px 15px rgba(24, 144, 255, 0.4);
-  transition: all 0.3s ease;
-}
-
-.button--primary:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(24, 144, 255, 0.6);
-  color: white;
-  background: linear-gradient(90deg, #40a9ff, #1890ff);
-}
-
-.button--outline {
-  background: transparent;
-  border: 2px solid #1890ff;
-  color: #1890ff;
-  transition: all 0.3s ease;
-}
-
-.button--outline:hover {
-  background: rgba(24, 144, 255, 0.1);
-  color: #40a9ff;
-  transform: translateY(-4px);
-  box-shadow: 0 5px 15px rgba(24, 144, 255, 0.2);
-}
-
+/* 页脚样式 */
 .footer {
   background: linear-gradient(135deg, #020d18, #051A35);
   color: rgba(255, 255, 255, 0.85);
@@ -207,7 +236,7 @@ body {
   font-size: 1.25rem;
   margin-bottom: 1rem;
   font-weight: 600;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .footer__link-item {
@@ -231,12 +260,9 @@ body {
   text-align: center;
 }
 
-.row .col {
-  padding: 1rem;
-}
-
+/* 功能卡片样式 */
 .feature-card {
-  background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
   border-radius: 8px;
   box-shadow: var(--card-shadow);
   padding: 2rem;
@@ -249,7 +275,7 @@ body {
 }
 
 [data-theme='dark'] .feature-card {
-  background: linear-gradient(145deg, rgba(5,26,53,0.7), rgba(2,13,24,0.7));
+  background: linear-gradient(145deg, rgba(5, 26, 53, 0.7), rgba(2, 13, 24, 0.7));
 }
 
 .feature-card:hover {
@@ -275,12 +301,12 @@ body {
   transition: transform 0.3s ease;
   text-align: center;
   display: block;
-  filter: drop-shadow(0 2px 4px rgba(24,144,255,0.3));
+  filter: drop-shadow(0 2px 4px rgba(24, 144, 255, 0.3));
 }
 
 .feature-card:hover .feature-icon {
   transform: scale(1.1);
-  filter: drop-shadow(0 4px 8px rgba(24,144,255,0.5));
+  filter: drop-shadow(0 4px 8px rgba(24, 144, 255, 0.5));
 }
 
 .feature-title {
@@ -289,7 +315,7 @@ body {
   margin-bottom: 1rem;
   text-align: center;
   color: var(--ifm-color-primary);
-  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  text-shadow: var(--title-text-shadow);
 }
 
 .feature-description {
@@ -299,12 +325,19 @@ body {
   text-align: center;
 }
 
+/* 代码块样式 */
 .prism-code {
   border-radius: 8px !important;
   border: 1px solid rgba(64, 169, 255, 0.2);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* 粒子效果优化 */
+.particleBackground circle {
+  will-change: transform, opacity;
+}
+
+/* 响应式样式（移动端适配）：隐藏分隔线+调整间距 */
 @media (max-width: 996px) {
   .navbar__items {
     background-color: #020d18;
@@ -323,10 +356,34 @@ body {
   .feature-card {
     margin-bottom: 1.5rem;
   }
+  
+  /* 隐藏左侧 Sidebar 分隔线（移动端） */
+  [data-theme='light'] .menu,
+  [data-theme='dark'] .menu {
+    border-right: none !important;
+  }
+  
+  /* 调整中间内容区域间距（移动端） */
+  [data-theme='light'] .main-content,
+  [data-theme='dark'] .main-content {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    margin: 0.5rem !important;
+    padding: 1rem !important;
+  }
+  
+  /* 调整右侧目录栏间距（移动端）：取消左侧 margin */
+  [data-theme='light'] .tableOfContents,
+  [data-theme='dark'] .tableOfContents {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    border-left: none !important;
+  }
 }
 
+/* 其他辅助样式 */
 .container {
-  padding: 2rem 0;
+  padding: 2rem 0; /* 保留原 padding，背景色继承全局变量（light模式下为浅灰色） */
 }
 
 .menu__list-item-collapsible {
@@ -343,12 +400,13 @@ body {
   filter: invert(1);
 }
 
+/* 表格样式 */
 table {
   border-collapse: collapse;
   width: 100%;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 th {
@@ -370,4 +428,26 @@ td {
 
 tr:hover td {
   background-color: rgba(24, 144, 255, 0.05);
+}
+
+/* 粒子背景渐变定义 */
+#bgGradient stop:first-child {
+  stop-color: var(--ifm-color-dark);
+}
+
+#bgGradient stop:last-child {
+  stop-color: var(--ifm-background-color); /* 继承全局背景色（light模式下为浅灰色） */
+}
+
+/* 桌面端（≥997px）：增加左侧Sidebar与右侧内容区的间隔 */
+@media (min-width: 997px) {
+  /* 匹配所有以`docRoot_`开头的父容器（覆盖动态哈希后缀） */
+  [class^="docRoot_"] {
+    gap: 2rem !important; /* 关键：调整间隔大小（推荐1.5rem~3rem，根据需求修改） */
+    padding: 0 1rem !important;
+     .theme-doc-sidebar-container,
+  [class^="docSidebarContainer_"] {
+    margin-left: 0 !important; /* 清除左侧外边距 */
+  }/* 可选：优化容器左右内边距，避免内容贴边 */
+  }
 }
