@@ -3517,6 +3517,11 @@ curl -i -X DELETE -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token
 curl -i -X GET -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H {base_url}/reports/combinedequipmentbatch?spaceid=1&reportingperiodstartdatetime=2020-01-01T00:00:00&reportingperiodenddatetime=2020-01-01T00:00:00&quickmode=true
 ```
 
+* GET Combined Equipment Comparison (Quick Mode)
+```bash
+curl -i -X GET -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H {base_url}/reports/combinedequipmentcomparison?combinedequipmentid1=1&combinedequipmentid2=2&reportingperiodstartdatetime=2025-10-01T00:00:00&reportingperiodenddatetime=2025-11-01T00:00:00&periodtype=hourly&quickmode=true
+```
+
 *   GET Combined Equipment Cost Report (Quick Mode)
 ```bash
 curl -i -X GET -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H {base_url}/reports/combinedequipmentcost?combinedequipmentid=1&periodtype=daily&baseperiodstartdatetime=2020-01-01T00:00:00&baseperiodenddatetime=2020-01-01T00:00:00&reportingperiodstartdatetime=2020-01-01T00:00:00&reportingperiodenddatetime=2020-01-01T00:00:00&combinedequipmentuuid=1&quickmode=true
@@ -3620,6 +3625,11 @@ curl -i -X GET -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: G
 *   GET Equipment Batch Analysis Report (Quick Mode)
 ```bash
 curl -i -X GET -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H {base_url}/reports/equipmentbatch?spaceid=1&reportingperiodstartdatetime=2020-01-01T00:00:00&reportingperiodenddatetime=2020-01-01T00:00:00&quickmode=true
+```
+
+* GET Equipment Comparison (Quick Mode)
+```bash
+curl -i -X GET -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H {base_url}/reports/equipmentcomparison?equipmentid1=1&equipmentid2=2&reportingperiodstartdatetime=2025-10-01T00:00:00&reportingperiodenddatetime=2025-11-01T00:00:00&periodtype=hourly&quickmode=true
 ```
 
 *   GET Equipment Cost Report (Quick Mode)
@@ -3787,6 +3797,11 @@ curl -i -X GET -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: G
 curl -i -X GET -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H {base_url}/reports/shopfloorbatch?spaceid=1&reportingperiodstartdatetime=2020-01-01T00:00:00&reportingperiodenddatetime=2020-01-01T00:00:00&quickmode=true
 ```
 
+* GET Shopfloor Comparison (Quick Mode)
+```bash
+curl -i -X GET -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H {base_url}/reports/shopfloorcomparison?shopfloorid1=1&shopfloorid2=2&quickmode=true&periodtype=hourly&reportingperiodstartdatetime=2025-10-01T00:00:00&reportingperiodenddatetime=2025-11-01T00:00:00
+```
+
 *   GET Shopfloor Cost Report (Quick Mode)
 ```bash
 curl -i -X GET -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H {base_url}/reports/shopfloorcost?shopfloorid=1&periodtype=daily&baseperiodstartdatetime=2020-01-01T00:00:00&baseperiodenddatetime=2020-01-01T00:00:00&reportingperiodstartdatetime=2020-01-01T00:00:00&reportingperiodenddatetime=2020-01-01T00:00:00&quickmode=true&shopflooruuid=1
@@ -3882,6 +3897,12 @@ curl -i -X GET -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: G
 curl -i -X GET -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H {base_url}/reports/storebatch?spaceid=1&reportingperiodstartdatetime=2020-01-01T00:00:00&reportingperiodenddatetime=2020-01-01T00:00:00&quickmode=true
 ```
 
+* GET Store Comparison (Quick Mode)
+```bash
+curl -i -X GET -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H
+{base_url}/reports/storecomparison?storeid1=1&storeid2=2&quickmode=true&periodtype=hourly&reportingperiodstartdatetime=2025-10-01T00:00:00&reportingperiodenddatetime=2025-11-01T00:00:00
+```
+
 *   GET Store Cost Report (Quick Mode)
 ```bash
 curl -i -X GET -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H {base_url}/reports/storecost?storeid=1&periodtype=daily&baseperiodstartdatetime=2020-01-01T00:00:00&baseperiodenddatetime=2020-01-01T00:00:00&reportingperiodstartdatetime=2020-01-01T00:00:00&reportingperiodenddatetime=2020-01-01T00:00:00&quickmode=true&storeuuid=1
@@ -3932,6 +3953,12 @@ curl -i -X GET -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: G
 curl -i -X GET -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H {base_url}/reports/tenantbill?tenantid=1&tenantuuid=1&reportingperiodstartdatetime=2020-01-01T00:00:00&reportingperiodenddatetime=2020-01-01T00:00:00
 ```
 
+* GET Tenant Comparison (Quick Mode)
+```bash
+curl -i -X GET -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H
+{base_url}/reports/tenantcomparison?tenantid1=1&tenantid2=2&quickmode=true&periodtype=hourly&reportingperiodstartdatetime=2025-10-01T00:00:00&reportingperiodenddatetime=2025-11-01T00:00:00
+```
+
 *   GET Tenant Cost Report (Quick Mode)
 ```bash
 curl -i -X GET -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H {base_url}/reports/tenantcost?tenantid=1&periodtype=daily&baseperiodstartdatetime=2020-01-01T00:00:00&baseperiodenddatetime=2020-01-01T00:00:00&reportingperiodstartdatetime=2020-01-01T00:00:00&reportingperiodenddatetime=2020-01-01T00:00:00&tenantuuid=1&quickmode=true
@@ -3980,6 +4007,12 @@ curl -i -X GET -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: G
 *   GET Virtual Meter Carbon Dioxide Emission Report (Quick Mode)
 ```bash
 curl -i -X GET -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H {base_url}/reports/virtualmetercarbon?virtualmeterid=1&periodtype=daily&baseperiodstartdatetime=2020-01-01T00:00:00&baseperiodenddatetime=2020-01-01T00:00:00&reportingperiodstartdatetime=2020-01-01T00:00:00&reportingperiodenddatetime=2020-01-01T00:00:00&quickmode=true
+```
+
+* GET Virtual Meter Comparison (Quick Mode)
+```bash
+curl -i -X GET -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H
+{base_url}/reports/virtualmetercomparison?virtualmeterid1=1&virtualmeterid2=2&quickmode=true&periodtype=hourly&reportingperiodstartdatetime=2025-10-01T00:00:00&reportingperiodenddatetime=2025-11-01T00:00:00
 ```
 
 *   GET Virtual Meter Cost Report (Quick Mode)
