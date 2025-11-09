@@ -28,15 +28,14 @@
   color: #40a9ff;
 }
 
-/* 关键修改：父容器启用Flex布局，统一卡片高度 */
 .featuresRow {
   display: flex;
   gap: 3rem;
   justify-content: center;
-  align-items: stretch; /* 让卡片拉伸到相同高度（核心） */
-  flex-wrap: wrap; /* 防止溢出 */
-  margin: 0 auto; /* 水平居中 */
-  max-width: 1200px; /* 限制最大宽度（可选） */
+  align-items: stretch; 
+  flex-wrap: wrap; 
+  margin: 0 auto; 
+  max-width: 1200px; 
 }
 
 .features {
@@ -48,20 +47,19 @@
   background: linear-gradient(135deg, #001a33 0%, #0d1a29 100%);
 }
 
-/* 关键修改：卡片容器设置Flex垂直布局，统一宽度 */
 .featureCard {
   display: flex;
-  flex-direction: column; /* 垂直排列内部元素（核心） */
+  flex-direction: column; 
   align-items: center;
   padding: 30px;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.95);
   box-shadow: 0 8px 24px rgba(24, 144, 255, 0.15);
   transition: all 0.3s ease;
-  flex: 1 1 calc(33.333% - 2rem); /* 占1/3宽度（减去间距）（核心） */
-  min-width: 320px; /* 最小宽度（防止过小） */
-  max-width: 380px; /* 最大宽度（保持一致性） */
-  margin-bottom: 2rem; /* 小屏幕堆叠时的间距 */
+  flex: 1 1 calc(33.333% - 2rem); 
+  min-width: 320px;
+  max-width: 380px; 
+  margin-bottom: 2rem; 
 }
 
 .featureCard:hover {
@@ -107,9 +105,8 @@
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
 }
 
-/* 关键修改：内容区填充剩余空间，让描述推到底部 */
 .featureContent {
-  flex: 1; /* 填充卡片剩余高度（核心） */
+  flex: 1; 
   text-align: center;
 }
 
@@ -139,21 +136,19 @@
   color: #40a9ff;
 }
 
-/* 关键修改：去掉描述底部margin，避免额外间距 */
 .featureDescription {
   color: #333;
   font-size: 1.05rem;
   line-height: 1.7;
   text-align: center;
   padding: 0 10px;
-  margin-bottom: 0; /* 去掉底部margin（核心） */
+  margin-bottom: 0; 
 }
 
 [data-theme='dark'] .featureDescription {
   color: rgba(255, 255, 255, 0.85);
 }
 
-/* 响应式调整（保持原有逻辑，优化布局） */
 @media (max-width: 1200px) {
   .featuresRow {
     max-width: 100%;
@@ -171,7 +166,7 @@
   }
   
   .featureCard {
-    flex: 1 1 calc(50% - 1rem); /* 两列布局（各占1/2宽度） */
+    flex: 1 1 calc(50% - 1rem); 
     min-width: 280px;
     padding: 25px;
   }
@@ -191,13 +186,13 @@
   }
   
   .featuresRow {
-    flex-direction: column; /* 垂直堆叠 */
+    flex-direction: column; 
     align-items: center;
     gap: 2rem;
   }
   
   .featureCard {
-    flex: 1 1 90%; /* 占满屏幕宽度 */
+    flex: 1 1 90%; 
     min-width: auto;
     padding: 20px;
   }

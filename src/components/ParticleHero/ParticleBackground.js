@@ -33,8 +33,6 @@ export default function ParticleBackground() {
       circle.setAttribute('opacity', opacity);
       circle.classList.add(isDark ? styles.darkParticle : styles.particle);
       circle.style.filter = isDark ? 'blur(0.5px)' : 'blur(0.3px)';
-
-      // 添加动画
       const translateAnimate = document.createElementNS('http://www.w3.org/2000/svg', 'animateTransform');
       translateAnimate.setAttribute('attributeName', 'transform');
       translateAnimate.setAttribute('type', 'translate');
@@ -83,9 +81,7 @@ export default function ParticleBackground() {
     connectionsGroup.innerHTML = '';
 
     const particles = particlesRef.current;
-    // 增加最大连接距离以生成更多连接线
     const maxDistance = 180;
-    // 增加最大连接数量以生成更多连接线
     const maxConnectionsPerParticle = 6;
 
     for (let i = 0; i < particles.length; i++) {
@@ -109,9 +105,7 @@ export default function ParticleBackground() {
           line.setAttribute('x2', p2.x);
           line.setAttribute('y2', p2.y);
           line.setAttribute('stroke', 'url(#connectionGradient)');
-          // 增加线条基本宽度
           line.setAttribute('stroke-width', Math.max(0.5, 1.2 - distance / maxDistance));
-          // 增加线条基本透明度
           line.setAttribute('stroke-opacity', Math.max(0.3, 0.7 - distance / (maxDistance * 2)));
           line.setAttribute('stroke-linecap', 'round');
           line.classList.add(styles.connectionLine);

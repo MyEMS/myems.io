@@ -98,7 +98,6 @@
   box-shadow: 0 6px 16px rgba(24, 144, 255, 0.2);
 }
 
-/* ==================== RocketMQ风格核心特性部分 ==================== */
 .featuresSection {
   padding: 5rem 0;
   background-color: #f8f9fa;
@@ -255,7 +254,6 @@
   color: #a3c6e9;
 }
 
-/* ==================== 响应式设计 ==================== */
 @media (max-width: 1200px) {
   .featuresContainer {
     gap: 2rem;

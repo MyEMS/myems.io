@@ -1,4 +1,3 @@
-/* ParticleHero/styles.module.css */
 .container {
   position: relative;
   height: 100vh;
@@ -10,6 +9,8 @@
   padding: 0 20px;
   width: 100%; 
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
 [data-theme='dark'] .container {
@@ -45,114 +46,144 @@
   height: 100%;
 }
 
-/* ================ 标题效果优化（核心修复：文字内部效果） ================ */
+.titleContainer {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
 .title {
-  /* 强制文字透明（必须，覆盖所有冲突样式） */
   color: transparent !important;
   -webkit-text-fill-color: transparent !important;
   background-color: transparent !important;
   
-  /* 基础样式 */
   font-size: 5.5rem;
   font-weight: 900;
   line-height: 1.1;
-  margin-bottom: 1.5rem;
   cursor: default;
   letter-spacing: -0.5px;
   position: relative;
-  display: inline-block; /* 保持文字inline特性，避免多余宽度 */
+  display: inline-block;
   
-  /* 核心：文字内部彩色渐变（强制裁剪） */
   background: linear-gradient(
     45deg,
     #1890ff 0%, 
     #6610f2 50%, 
     #ff6b6b 100% 
   );
-  -webkit-background-clip: text !important; /* webkit内核强制裁剪 */
-  background-clip: text !important; /* 标准属性强制裁剪 */
-  background-size: 200% 100%; /* 渐变动画基础 */
-  transition: background-position 0.5s ease;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  background-size: 200% 100%; 
+  background-position: 0% 0%; 
+  transition: background-position 0.5s ease, transform 0.3s ease;
   
-  /* 兜底：消除所有可能的“框”效果 */
   border: none !important;
   outline: none !important;
   box-shadow: none !important;
-  padding: 0 !important; /* 彻底移除padding，避免背景溢出 */
+  padding: 0 !important;
+  
+  -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.1);
+  text-stroke: 1.5px rgba(0, 0, 0, 0.1);
 }
 
-/* 鼠标滑过：渐变滑动动画（保留） */
 .title:hover {
-  background-position: 100% 0; /* 渐变向右滑动 */
-  transform: scale(1.02); /* 轻微放大 */
+  background-position: 100% 0; 
+  transform: scale(1.02); 
 }
 
-/* 黑暗模式：高对比度文字内部渐变（关键调整） */
+
 [data-theme='dark'] .title {
   background: linear-gradient(
     45deg,
-    #64b5f6 0%, /* 浅蓝（与深背景对比强烈） */
-    #ba68c8 35%, /* 浅紫（提升层次感） */
-    #ff8a65 85% /* 浅橙（增加活力） */
-  );
+    #64b5f6 0%,
+    #ba68c8 35%,
+    #ff8a65 85%
+  ) !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
-  background-position: 10% 0;
-  filter: brightness(1.2) !important; /* 提升渐变亮度，解决“被覆盖”问题 */
-  text-shadow: 0 0 1px rgba(255, 255, 255, 0.2) !important; /* 极淡阴影，提升可读性 */
+  background-size: 200% 100% !important; 
+  background-position: 10% 0 !important; 
+  filter: brightness(1.2) !important;
+  
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.2) !important;
+  text-stroke: 1.5px rgba(255, 255, 255, 0.2) !important;
+  transition: background-position 0.5s ease, transform 0.3s ease !important;
 }
 
-/* ================ RocketMQ风格图案滑过效果（修复：仅文字内部显示） ================ */
-.title::after {
+
+[data-theme='dark'] .title:hover {
+  background-position: 100% 0 !important; 
+  transform: scale(1.02); 
+}
+
+.titleContainer::before {
   content: '';
   position: absolute;
-  top: 0; /* 对齐文字顶部 */
-  left: 0; /* 对齐文字左侧 */
-  width: 100%; /* 宽度等于文字宽度 */
-  height: 100%; /* 高度等于文字高度 */
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0 L24 12 L0 12 Z" fill="#1890ff"/><path d="M0 12 L24 12 L0 24 Z" fill="#6610f2"/></svg>') repeat;
-  background-size: 32px 32px; /* 图案尺寸（与间隙匹配） */
-  transform: rotate(15deg); /* 保持原旋转角度 */
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24"><path d="M0 0 L12 12 L0 12 Z" fill="%231890ff" opacity="0.7"/><path d="M12 0 L24 12 L12 12 Z" fill="%236610f2" opacity="0.7"/><path d="M24 0 L36 12 L24 12 Z" fill="%23ff6b6b" opacity="0.7"/></svg>') repeat;
+  background-size: 36px 24px; 
+  transform: rotate(15deg) translateX(-100%);
   opacity: 0;
-  transition: opacity 0.3s ease;
-  
-  /* 关键：图案严格限制在文字内部（强制mask） */
-  -webkit-mask: text !important; /* webkit内核强制mask */
-  mask: text !important; /* 标准属性强制mask */
-  
-  /* 优化：图案与文字融合 */
-  mix-blend-mode: overlay; /* 叠加模式，避免图案过浓 */
-  filter: blur(0.5px); /* 轻微模糊，消除贴图感 */
+  mask: linear-gradient(#fff, #fff) text;
+  -webkit-mask: linear-gradient(#fff, #fff) text;
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+  mix-blend-mode: overlay; 
+  filter: blur(0.5px); 
+  pointer-events: none;
 }
 
-/* 鼠标悬停：图案滑动动画（保留） */
-.title:hover::after {
+.titleContainer:hover::before {
   animation: patternSweep 1.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }
 
-/* 图案滑动动画（优化：避免溢出） */
 @keyframes patternSweep {
   0% {
-    transform: translateX(-100%) rotate(15deg) scale(0.9); /* 初始位置：左侧以外 */
-    opacity: 0; /* 初始透明 */
+    transform: rotate(15deg) translateX(-100%);
+    opacity: 0;
   }
-  50% {
-    opacity: 0.7; /* 中间透明度 */
+  30% {
+    opacity: 0.8;
+  }
+  70% {
+    opacity: 0.8;
   }
   100% {
-    transform: translateX(100%) rotate(15deg) scale(1); /* 结束位置：右侧以外 */
-    opacity: 0.7; /* 保持透明度 */
+    transform: rotate(15deg) translateX(100%);
+    opacity: 0;
   }
 }
 
-/* 黑暗模式：图案颜色适配（与标题渐变呼应） */
-[data-theme='dark'] .title::after {
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0 L24 12 L0 12 Z" fill="#64b5f6"/><path d="M0 12 L24 12 L0 24 Z" fill="#ba68c8"/></svg>') repeat;
-  background-size: 32px 32px;
-  filter: blur(0.8px); /* 增强模糊，适配深背景 */
+[data-theme='dark'] .titleContainer::before {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24"><path d="M0 0 L12 12 L0 12 Z" fill="%2364b5f6" opacity="0.8"/><path d="M12 0 L24 12 L12 12 Z" fill="%23ba68c8" opacity="0.8"/><path d="M24 0 L36 12 L24 12 Z" fill="%23ff8a65" opacity="0.8"/></svg>') repeat !important;
+  background-size: 36px 24px !important; 
+  filter: blur(0.8px); 
 }
 
-/* ================ 副标题和按钮样式（优化黑暗模式协调性） ================ */
+[data-theme='dark'] .titleContainer:hover::before {
+  animation: darkPatternSweep 2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@keyframes darkPatternSweep {
+  0% {
+    transform: rotate(15deg) translateX(-100%);
+    opacity: 0; 
+  }
+  30% {
+    opacity: 0.9; 
+  }
+  70% {
+    opacity: 0.9; 
+  }
+  100% {
+    transform: rotate(15deg) translateX(100%);
+    opacity: 0; 
+  }
+}
+
 .subtitle {
   font-size: 1.8rem;
   color: #e2e8f0;
@@ -160,11 +191,12 @@
   line-height: 1.6;
   font-weight: 400;
   max-width: 800px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 [data-theme='dark'] .subtitle {
-  color: rgba(255, 255, 255, 0.9); /* 提升副标题亮度，与标题呼应 */
-  text-shadow: 0 0 1px rgba(255, 255, 255, 0.1); /* 极淡阴影，提升可读性 */
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .buttons {
@@ -186,12 +218,12 @@
   color: white;
   z-index: 2;
   display: inline-block;
+  text-decoration: none;
 }
 
 .primaryButton:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(94, 129, 255, 0.4);
-  text-decoration: none;
 }
 
 .secondaryButton {
@@ -205,25 +237,23 @@
   font-size: 1.2rem;
   z-index: 2;
   display: inline-block;
+  text-decoration: none;
 }
 
 .secondaryButton:hover {
   background-color: rgba(94, 129, 255, 0.1);
   transform: translateY(-5px);
-  text-decoration: none;
 }
 
-/* 黑暗模式：按钮颜色与标题呼应 */
 [data-theme='dark'] .secondaryButton {
-  border: 2px solid #64b5f6; /* 与标题浅蓝呼应 */
-  color: #64b5f6; /* 与标题颜色一致 */
+  border: 2px solid #64b5f6;
+  color: #64b5f6;
 }
 
 [data-theme='dark'] .secondaryButton:hover {
-  background-color: rgba(100, 181, 246, 0.15); /* 浅蓝透明背景，提升交互反馈 */
+  background-color: rgba(100, 181, 246, 0.15);
 }
 
-/* ================ 响应式设计（保留，优化小屏幕显示） ================ */
 @media (max-width: 996px) {
   .container {
     height: auto;
@@ -233,7 +263,6 @@
   
   .title {
     font-size: 4.2rem;
-    margin-bottom: 1.5rem;
   }
   
   .subtitle {
@@ -299,13 +328,8 @@
   .buttons {
     gap: 1.2rem;
   }
-  
-  .subtitle p {
-    margin: 0.7rem 0;
-  }
 }
 
-/* ================ 粒子连接线样式（优化黑暗模式协调性） ================ */
 .particles {
   pointer-events: none;
 }
@@ -325,25 +349,21 @@
   mix-blend-mode: overlay;
 }
 
-/* 黑暗模式：连接线颜色与标题呼应 */
 [data-theme='dark'] .connectionLine {
-  stroke: rgba(100, 181, 246, 0.7); /* 与标题浅蓝呼应 */
-  filter: drop-shadow(0 0 3px rgba(100, 181, 246, 0.5)); /* 轻微发光，提升 visibility */
+  stroke: rgba(100, 181, 246, 0.7);
+  filter: drop-shadow(0 0 3px rgba(100, 181, 246, 0.5));
 }
 
-/* 粒子点样式（优化黑暗模式协调性） */
 .particle {
   fill: #5e81ff;
   r: 2px;
   animation: pulse 1.5s infinite alternate;
 }
 
-/* 黑暗模式：粒子颜色与标题呼应 */
 [data-theme='dark'] .particle {
-  fill: #64b5f6; /* 与标题浅蓝呼应 */
+  fill: #64b5f6;
 }
 
-/* 粒子动画（保留） */
 @keyframes pulse {
   0% {
     r: 1.5px;
@@ -355,7 +375,6 @@
   }
 }
 
-/* ================ 背景装饰元素（优化黑暗模式协调性） ================ */
 .decorative-element {
   position: absolute;
   z-index: 1;
@@ -370,9 +389,8 @@
   animation: float 15s infinite ease-in-out;
 }
 
-/* 黑暗模式：三角形装饰颜色与标题呼应 */
 [data-theme='dark'] .decorative-element.triangle {
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0 L100 100 L0 100 Z" fill="rgba(100,181,246,0.15)"/></svg>'); /* 浅蓝透明，与标题呼应 */
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0 L100 100 L0 100 Z" fill="rgba(100,181,246,0.15)"/></svg>');
 }
 
 .decorative-element.circle {
@@ -385,12 +403,10 @@
   animation: float 12s infinite ease-in-out alternate;
 }
 
-/* 黑暗模式：圆形装饰颜色与标题呼应 */
 [data-theme='dark'] .decorative-element.circle {
-  background: rgba(255, 138, 101, 0.15); /* 浅橙透明，与标题呼应 */
+  background: rgba(255, 138, 101, 0.15);
 }
 
-/* 装饰元素浮动动画（保留） */
 @keyframes float {
   0%, 100% {
     transform: translateY(0) rotate(0deg);
