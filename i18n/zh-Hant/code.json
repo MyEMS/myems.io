@@ -274,39 +274,81 @@
     "message": "能源管理系统"
   },
   "Industry Leading Open Source Energy Management System": {
-    "message": "行业领先的开源能源管理系统"
+    "message": "行業領先的開源能源管理系統"
   },
   "Nearly a thousand project cases":{
-    "message":"近千个项目案例"
+    "message":"近千個項目案例"
   },
   "Commitment to permanent open source":{
-    "message": "承诺永久开源"
+    "message": "承諾永久開源"
   },
   "Free technical support within QQ and WeChat groups": {
-    "message": "QQ群和微信群内技术支持免费"
+    "message": "QQ群和微信群內技術支援免費"
   },
   "Keep updated, 1 minor version per month, 1 major version per year": {
-    "message": "保持更新，每个月1个小版本，每年1次大版本更新"
+    "message": "保持更新，每個月1個小版本，每年1次大版本更新"
   },
   "MyEMS is being developed and maintained by an experienced development team, and the system's source code is published under MIT license.": {
-    "message": "MyEMS由资深专业团队开发维护, 源代码基于MIT开源软件许可协议发布。社区版使用者必须保留MyEMS相关版权信息及LOGO。"
+    "message": "MyEMS由資深專業團隊開發維護，原始程式碼基於MIT開源軟件授權合約發佈。 社區版使用者必須保留MyEMS相關版權資訊及LOGO。"
   },
   "MyEMS is used for collecting, processing, analyzing, reporting and displaying energy data of buildings, factories, shopping malls, data centers and enterprise zones.": {
-    "message": "MyEMS开源能源管理系统适用于建筑、工厂、商场、医院、园区的电、水、气等能源数据采集、分析、报表，还有光伏、储能、充电桩、微电网、设备控制、故障诊断、工单管理、人工智能优化等可选功能。"
+    "message": "MyEMS開源能源管理系統適用於建築、工廠、商場、醫院、園區的電、水、氣等能源資料獲取、分析、報表，還有光伏、儲能、充電樁、微電網、設備控制、故障診斷、工單管理、人工智慧優化等可選功能。"
   },
   "MyEMS is based on Python and ReactJS. Using open source to help achieve carbon peak carbon neutrality goals.": {
-    "message": "MyEMS基于Python、ReactJS开发。用开源助力实现碳达峰碳中和目标。"
+    "message": "MyEMS基於Python、ReactJS開發。 用開源助力實現碳達峰碳中和目標。"
   },
   "Easy to Use": {
-    "message": "易于应用"
+    "message": "易於應用"
   },
   "Focus on Energy": {
     "message": "聚焦能源"
   },
   "Powered by Top Tech Stacks": {
-    "message": "基于主流技术栈"
+    "message": "基於主流科技棧"
+  },
+  "Advantages of MyEMS": {
+    "message": "MyEMS的優勢"
   },
   "MyEMS Introduction in 5min ⏱️": {
-    "message": "MyEMS五分钟介绍 ⏱️"
+    "message": "MyEMS五分鐘介紹 ⏱️"
+  },
+  "Core Features": {
+    "message": "覈心特性"
+  },
+  "Cloud Native": {
+    "message": "雲原生"
+  },
+  "Supports K8s deployment and seamless integration with cloud environments": {
+    "message": "生於雲，長於雲，無限彈性擴縮，K8s友好"
+  },
+  "High Throughput": {
+    "message": "高吞吐"
+  },
+  "Trillion-level throughput guarantee to meet both microservice and big data scenarios": {
+    "message": "萬億級吞吐保證，同時滿足微服務與大數據場景"
+  },
+  "Stream Processing": {
+    "message": "流處理"
+  },
+  "Provide a lightweight, highly scalable, high-performance, and feature rich streaming computing engine": {
+    "message": "提供輕量、高擴展、高性能和豐富功能的流計算引擎"
+  },
+  "Financial Grade Security": {
+    "message": "金融級"
+  },
+  "Financial-grade stability, widely used in transaction core links": {
+    "message": "金融級的穩定性，廣泛用於交易覈心連結"
+  },
+  "Lightweight Model": {
+    "message": "架構極簡"
+  },
+  "Zero external dependencies, Shared-nothing architecture": {
+    "message": "零外部依賴，Shared-nothing架構"
+  },
+  "Eco Friendly": {
+    "message": "生態友好"
+  },
+  "Seamlessly connects to microservices, real-time computing, data lake and other surrounding ecologies": {
+    "message": "無縫對接微服務、實时計算、數據湖等周邊生態"
   }
-}
+  }

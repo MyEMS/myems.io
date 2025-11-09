@@ -294,7 +294,49 @@
   "Powered by Top Tech Stacks": {
     "message": "Alimenté par les Meilleures Piles Technologiques"
   },
+  "Advantages of MyEMS": {
+    "message": "Vorteile von MyEMS"
+  },
   "MyEMS Introduction in 5min ⏱️": {
-    "message": "Introduction à MyEMS en 5min ⏱️"
+    "message": "Introduction à MyEMS en 5min⏱️"
+  },
+  "Core Features": {
+    "message": "Hauptmerkmale"
+  },
+  "Cloud Native": {
+    "message": "Cloud nativ"
+  },
+  "Supports K8s deployment and seamless integration with cloud environments": {
+    "message": "Geboren in der Cloud, länger als die Cloud, unbegrenzte Skalierbarkeit, K8s-freundlich"
+  },
+  "High Throughput": {
+    "message": "Hoher Durchsatz"
+  },
+  "Trillion-level throughput guarantee to meet both microservice and big data scenarios": {
+    "message": "Milliarden-Durchsatz garantiert, während Mikro- und Big-Data-Szenarien gerecht werden"
+  },
+  "Stream Processing": {
+    "message": "Stream-Bearbeitung"
+  },
+  "Provide a lightweight, highly scalable, high-performance, and feature rich streaming computing engine": {
+    "message": "Eine leichte, skalierbare, leistungsstarke und funktionsreiche Stream-Computing-Engine"
+  },
+  "Financial Grade Security": {
+    "message": "Finanzniveau"
+  },
+  "Financial-grade stability, widely used in transaction core links": {
+    "message": "Stabilität auf finanzieller Ebene, weit verbreitet für Kernlinks im Handel"
+  },
+  "Lightweight Model": {
+    "message": "minimale Architektur"
+  },
+  "Zero external dependencies, Shared-nothing architecture": {
+    "message": "Null externe Abhängigkeit, Shared-Nothing-Architektur"
+  },
+  "Eco Friendly": {
+    "message": "Umweltfreundlich"
+  },
+  "Seamlessly connects to microservices, real-time computing, data lake and other surrounding ecologies": {
+    "message": "Nahtlose Mikrodienstleistungen, Echtzeit-Computing, Datensees und andere Umgebungen"
   }
-}
+  }

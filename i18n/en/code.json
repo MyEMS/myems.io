@@ -294,7 +294,49 @@
   "Powered by Top Tech Stacks": {
     "message": "Powered by Top Tech Stacks"
   },
+  "Advantages of MyEMS": {
+    "message": "Advantages of MyEMS"
+  },
   "MyEMS Introduction in 5min ⏱️": {
-    "message": "MyEMS Introduction in 5min ⏱️"
+    "message": "MyEMS Introduction in 5min⏱️"
+  },
+  "Core Features": {
+    "message": "Core Features"
+  },
+  "Cloud Native": {
+    "message": "Cloud Native"
+  },
+  "Supports K8s deployment and seamless integration with cloud environments": {
+    "message": "Supports K8s deployment and seamless integration with cloud environments"
+  },
+  "High Throughput": {
+    "message": "High Throughput"
+  },
+  "Trillion-level throughput guarantee to meet both microservice and big data scenarios": {
+    "message": "Trillion-level throughput guarantee to meet both microservice and big data scenarios"
+  },
+  "Stream Processing": {
+    "message": "Stream Processing"
+  },
+  "Provide a lightweight, highly scalable, high-performance, and feature rich streaming computing engine": {
+    "message": "Provide a lightweight, highly scalable, high-performance, and feature rich streaming computing engine"
+  },
+  "Financial Grade Security": {
+    "message": "Financial Grade Security"
+  },
+  "Financial-grade stability, widely used in transaction core links": {
+    "message": "Financial-grade stability, widely used in transaction core links"
+  },
+  "Lightweight Model": {
+    "message": "Lightweight Model"
+  },
+  "Zero external dependencies, Shared-nothing architecture": {
+    "message": "Zero external dependencies, Shared-nothing architecture"
+  },
+  "Eco Friendly": {
+    "message": "Eco Friendly"
+  },
+  "Seamlessly connects to microservices, real-time computing, data lake and other surrounding ecologies": {
+    "message": "Seamlessly connects to microservices, real-time computing, data lake and other surrounding ecologies"
   }
-}
+  }
