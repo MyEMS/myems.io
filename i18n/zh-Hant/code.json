@@ -274,39 +274,84 @@
     "message": "能源管理系统"
   },
   "Industry Leading Open Source Energy Management System": {
-    "message": "行业领先的开源能源管理系统"
+    "message": "行業領先的開源能源管理系統"
   },
   "Nearly a thousand project cases":{
-    "message":"近千个项目案例"
+    "message":"近千個項目案例"
   },
   "Commitment to permanent open source":{
-    "message": "承诺永久开源"
+    "message": "承諾永久開源"
   },
   "Free technical support within QQ and WeChat groups": {
-    "message": "QQ群和微信群内技术支持免费"
+    "message": "QQ群和微信群內技術支援免費"
   },
   "Keep updated, 1 minor version per month, 1 major version per year": {
-    "message": "保持更新，每个月1个小版本，每年1次大版本更新"
+    "message": "保持更新，每個月1個小版本，每年1次大版本更新"
   },
   "MyEMS is being developed and maintained by an experienced development team, and the system's source code is published under MIT license.": {
-    "message": "MyEMS由资深专业团队开发维护, 源代码基于MIT开源软件许可协议发布。社区版使用者必须保留MyEMS相关版权信息及LOGO。"
+    "message": "MyEMS由資深專業團隊開發維護，原始程式碼基於MIT開源軟件授權合約發佈。 社區版使用者必須保留MyEMS相關版權資訊及LOGO。"
   },
   "MyEMS is used for collecting, processing, analyzing, reporting and displaying energy data of buildings, factories, shopping malls, data centers and enterprise zones.": {
-    "message": "MyEMS开源能源管理系统适用于建筑、工厂、商场、医院、园区的电、水、气等能源数据采集、分析、报表，还有光伏、储能、充电桩、微电网、设备控制、故障诊断、工单管理、人工智能优化等可选功能。"
+    "message": "MyEMS開源能源管理系統適用於建築、工廠、商場、醫院、園區的電、水、氣等能源資料獲取、分析、報表，還有光伏、儲能、充電樁、微電網、設備控制、故障診斷、工單管理、人工智慧優化等可選功能。"
   },
   "MyEMS is based on Python and ReactJS. Using open source to help achieve carbon peak carbon neutrality goals.": {
-    "message": "MyEMS基于Python、ReactJS开发。用开源助力实现碳达峰碳中和目标。"
+    "message": "MyEMS基於Python、ReactJS開發。 用開源助力實現碳達峰碳中和目標。"
   },
   "Easy to Use": {
-    "message": "易于应用"
+    "message": "易於應用"
   },
   "Focus on Energy": {
     "message": "聚焦能源"
   },
   "Powered by Top Tech Stacks": {
-    "message": "基于主流技术栈"
+    "message": "基於主流科技棧"
+  },
+  "Advantages of MyEMS": {
+    "message": "MyEMS的優勢"
   },
   "MyEMS Introduction in 5min ⏱️": {
-    "message": "MyEMS五分钟介绍 ⏱️"
+    "message": "MyEMS五分鐘介紹 ⏱️"
+  },
+  "Get Started": {
+    "message": "快速開始"
+  },
+  "Core Features": {
+    "message": "覈心特性"
+  },
+  "Multi-Energy Data Collection": {
+    "message": "多能源資料獲取"
+  },
+  "Supports real-time data collection and analysis of electricity, water, gas, cooling, and heating energy types": {
+    "message": "支援電、水、氣、冷、熱等多種能源類型的即時資料獲取與分析"
+  },
+  "Real-Time Monitoring & Analysis": {
+    "message": "即時監測與分析"
+  },
+  "Real-time energy monitoring, historical data analysis, and comprehensive energy reports for informed decision-making": {
+    "message": "即時能源監測、歷史資料分析，提供全面的能源報表，助力科學決策"
+  },
+  "Carbon Emission Management": {
+    "message": "碳排放管理"
+  },
+  "Track and report carbon emissions, support carbon peak and carbon neutrality goals with ISO 50001 compliance": {
+    "message": "追蹤和報告碳排放，支援碳達峰碳中和目標，符合 ISO 50001 能源管理體系標準"
+  },
+  "Multi-Scenario Application": {
+    "message": "多場景適用"
+  },
+  "Suitable for buildings, factories, shopping malls, hospitals, parks, and various enterprise zones": {
+    "message": "適用於建築、工廠、商場、醫院、園區等多種企業場景"
+  },
+  "Open Source & Extensible": {
+    "message": "開源可擴展"
+  },
+  "MIT licensed open source system, supports multiple databases and cloud platforms, highly extensible architecture": {
+    "message": "MIT 開源授權，支援多種資料庫和雲平台，高度可擴展的架構設計"
+  },
+  "Intelligent Reports & Visualization": {
+    "message": "智慧報表與視覺化"
+  },
+  "Rich reporting features, data visualization dashboards, and Excel export capabilities for comprehensive energy insights": {
+    "message": "豐富的報表功能、資料視覺化大屏，支援 Excel 匯出，提供全面的能源洞察"
   }
-}
+  }
