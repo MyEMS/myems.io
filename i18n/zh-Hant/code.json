@@ -312,43 +312,46 @@
   "MyEMS Introduction in 5min ⏱️": {
     "message": "MyEMS五分鐘介紹 ⏱️"
   },
+  "Get Started": {
+    "message": "快速開始"
+  },
   "Core Features": {
     "message": "覈心特性"
   },
-  "Cloud Native": {
-    "message": "雲原生"
+  "Multi-Energy Data Collection": {
+    "message": "多能源資料獲取"
   },
-  "Supports K8s deployment and seamless integration with cloud environments": {
-    "message": "生於雲，長於雲，無限彈性擴縮，K8s友好"
+  "Supports real-time data collection and analysis of electricity, water, gas, cooling, and heating energy types": {
+    "message": "支援電、水、氣、冷、熱等多種能源類型的即時資料獲取與分析"
   },
-  "High Throughput": {
-    "message": "高吞吐"
+  "Real-Time Monitoring & Analysis": {
+    "message": "即時監測與分析"
   },
-  "Trillion-level throughput guarantee to meet both microservice and big data scenarios": {
-    "message": "萬億級吞吐保證，同時滿足微服務與大數據場景"
+  "Real-time energy monitoring, historical data analysis, and comprehensive energy reports for informed decision-making": {
+    "message": "即時能源監測、歷史資料分析，提供全面的能源報表，助力科學決策"
   },
-  "Stream Processing": {
-    "message": "流處理"
+  "Carbon Emission Management": {
+    "message": "碳排放管理"
   },
-  "Provide a lightweight, highly scalable, high-performance, and feature rich streaming computing engine": {
-    "message": "提供輕量、高擴展、高性能和豐富功能的流計算引擎"
+  "Track and report carbon emissions, support carbon peak and carbon neutrality goals with ISO 50001 compliance": {
+    "message": "追蹤和報告碳排放，支援碳達峰碳中和目標，符合 ISO 50001 能源管理體系標準"
   },
-  "Financial Grade Security": {
-    "message": "金融級"
+  "Multi-Scenario Application": {
+    "message": "多場景適用"
   },
-  "Financial-grade stability, widely used in transaction core links": {
-    "message": "金融級的穩定性，廣泛用於交易覈心連結"
+  "Suitable for buildings, factories, shopping malls, hospitals, parks, and various enterprise zones": {
+    "message": "適用於建築、工廠、商場、醫院、園區等多種企業場景"
   },
-  "Lightweight Model": {
-    "message": "架構極簡"
+  "Open Source & Extensible": {
+    "message": "開源可擴展"
   },
-  "Zero external dependencies, Shared-nothing architecture": {
-    "message": "零外部依賴，Shared-nothing架構"
+  "MIT licensed open source system, supports multiple databases and cloud platforms, highly extensible architecture": {
+    "message": "MIT 開源授權，支援多種資料庫和雲平台，高度可擴展的架構設計"
   },
-  "Eco Friendly": {
-    "message": "生態友好"
+  "Intelligent Reports & Visualization": {
+    "message": "智慧報表與視覺化"
   },
-  "Seamlessly connects to microservices, real-time computing, data lake and other surrounding ecologies": {
-    "message": "無縫對接微服務、實时計算、數據湖等周邊生態"
+  "Rich reporting features, data visualization dashboards, and Excel export capabilities for comprehensive energy insights": {
+    "message": "豐富的報表功能、資料視覺化大屏，支援 Excel 匯出，提供全面的能源洞察"
   }
   }

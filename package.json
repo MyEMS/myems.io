@@ -1,6 +1,6 @@
 {
   "name": "myems.io",
-  "version": "4.8.0",
+  "version": "5.10.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",

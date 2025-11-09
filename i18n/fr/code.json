@@ -295,48 +295,51 @@
     "message": "Alimenté par les Meilleures Piles Technologiques"
   },
   "Advantages of MyEMS": {
-    "message": "Vorteile von MyEMS"
+    "message": "Avantages de MyEMS"
   },
   "MyEMS Introduction in 5min ⏱️": {
     "message": "Introduction à MyEMS en 5min⏱️"
   },
+  "Get Started": {
+    "message": "Commencer"
+  },
   "Core Features": {
-    "message": "Hauptmerkmale"
+    "message": "Caractéristiques Principales"
   },
-  "Cloud Native": {
-    "message": "Cloud nativ"
+  "Multi-Energy Data Collection": {
+    "message": "Collecte de Données Multi-Énergies"
   },
-  "Supports K8s deployment and seamless integration with cloud environments": {
-    "message": "Geboren in der Cloud, länger als die Cloud, unbegrenzte Skalierbarkeit, K8s-freundlich"
+  "Supports real-time data collection and analysis of electricity, water, gas, cooling, and heating energy types": {
+    "message": "Prend en charge la collecte et l'analyse de données en temps réel pour l'électricité, l'eau, le gaz, le refroidissement et le chauffage"
   },
-  "High Throughput": {
-    "message": "Hoher Durchsatz"
+  "Real-Time Monitoring & Analysis": {
+    "message": "Surveillance et Analyse en Temps Réel"
   },
-  "Trillion-level throughput guarantee to meet both microservice and big data scenarios": {
-    "message": "Milliarden-Durchsatz garantiert, während Mikro- und Big-Data-Szenarien gerecht werden"
+  "Real-time energy monitoring, historical data analysis, and comprehensive energy reports for informed decision-making": {
+    "message": "Surveillance énergétique en temps réel, analyse des données historiques et rapports énergétiques complets pour une prise de décision éclairée"
   },
-  "Stream Processing": {
-    "message": "Stream-Bearbeitung"
+  "Carbon Emission Management": {
+    "message": "Gestion des Émissions de Carbone"
   },
-  "Provide a lightweight, highly scalable, high-performance, and feature rich streaming computing engine": {
-    "message": "Eine leichte, skalierbare, leistungsstarke und funktionsreiche Stream-Computing-Engine"
+  "Track and report carbon emissions, support carbon peak and carbon neutrality goals with ISO 50001 compliance": {
+    "message": "Suivre et rapporter les émissions de carbone, soutenir les objectifs de pic de carbone et de neutralité carbone, conforme à la norme ISO 50001"
   },
-  "Financial Grade Security": {
-    "message": "Finanzniveau"
+  "Multi-Scenario Application": {
+    "message": "Application Multi-Scénarios"
   },
-  "Financial-grade stability, widely used in transaction core links": {
-    "message": "Stabilität auf finanzieller Ebene, weit verbreitet für Kernlinks im Handel"
+  "Suitable for buildings, factories, shopping malls, hospitals, parks, and various enterprise zones": {
+    "message": "Adapté aux bâtiments, usines, centres commerciaux, hôpitaux, parcs et diverses zones d'entreprise"
   },
-  "Lightweight Model": {
-    "message": "minimale Architektur"
+  "Open Source & Extensible": {
+    "message": "Open Source et Extensible"
   },
-  "Zero external dependencies, Shared-nothing architecture": {
-    "message": "Null externe Abhängigkeit, Shared-Nothing-Architektur"
+  "MIT licensed open source system, supports multiple databases and cloud platforms, highly extensible architecture": {
+    "message": "Système open source sous licence MIT, prend en charge plusieurs bases de données et plateformes cloud, architecture hautement extensible"
   },
-  "Eco Friendly": {
-    "message": "Umweltfreundlich"
+  "Intelligent Reports & Visualization": {
+    "message": "Rapports Intelligents et Visualisation"
   },
-  "Seamlessly connects to microservices, real-time computing, data lake and other surrounding ecologies": {
-    "message": "Nahtlose Mikrodienstleistungen, Echtzeit-Computing, Datensees und andere Umgebungen"
+  "Rich reporting features, data visualization dashboards, and Excel export capabilities for comprehensive energy insights": {
+    "message": "Fonctionnalités de rapport riches, tableaux de bord de visualisation de données et capacités d'export Excel pour des insights énergétiques complets"
   }
   }
