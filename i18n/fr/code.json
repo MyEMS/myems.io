@@ -294,7 +294,52 @@
   "Powered by Top Tech Stacks": {
     "message": "Alimenté par les Meilleures Piles Technologiques"
   },
+  "Advantages of MyEMS": {
+    "message": "Avantages de MyEMS"
+  },
   "MyEMS Introduction in 5min ⏱️": {
-    "message": "Introduction à MyEMS en 5min ⏱️"
+    "message": "Introduction à MyEMS en 5min⏱️"
+  },
+  "Get Started": {
+    "message": "Commencer"
+  },
+  "Core Features": {
+    "message": "Caractéristiques Principales"
+  },
+  "Multi-Energy Data Collection": {
+    "message": "Collecte de Données Multi-Énergies"
+  },
+  "Supports real-time data collection and analysis of electricity, water, gas, cooling, and heating energy types": {
+    "message": "Prend en charge la collecte et l'analyse de données en temps réel pour l'électricité, l'eau, le gaz, le refroidissement et le chauffage"
+  },
+  "Real-Time Monitoring & Analysis": {
+    "message": "Surveillance et Analyse en Temps Réel"
+  },
+  "Real-time energy monitoring, historical data analysis, and comprehensive energy reports for informed decision-making": {
+    "message": "Surveillance énergétique en temps réel, analyse des données historiques et rapports énergétiques complets pour une prise de décision éclairée"
+  },
+  "Carbon Emission Management": {
+    "message": "Gestion des Émissions de Carbone"
+  },
+  "Track and report carbon emissions, support carbon peak and carbon neutrality goals with ISO 50001 compliance": {
+    "message": "Suivre et rapporter les émissions de carbone, soutenir les objectifs de pic de carbone et de neutralité carbone, conforme à la norme ISO 50001"
+  },
+  "Multi-Scenario Application": {
+    "message": "Application Multi-Scénarios"
+  },
+  "Suitable for buildings, factories, shopping malls, hospitals, parks, and various enterprise zones": {
+    "message": "Adapté aux bâtiments, usines, centres commerciaux, hôpitaux, parcs et diverses zones d'entreprise"
+  },
+  "Open Source & Extensible": {
+    "message": "Open Source et Extensible"
+  },
+  "MIT licensed open source system, supports multiple databases and cloud platforms, highly extensible architecture": {
+    "message": "Système open source sous licence MIT, prend en charge plusieurs bases de données et plateformes cloud, architecture hautement extensible"
+  },
+  "Intelligent Reports & Visualization": {
+    "message": "Rapports Intelligents et Visualisation"
+  },
+  "Rich reporting features, data visualization dashboards, and Excel export capabilities for comprehensive energy insights": {
+    "message": "Fonctionnalités de rapport riches, tableaux de bord de visualisation de données et capacités d'export Excel pour des insights énergétiques complets"
   }
-}
+  }
