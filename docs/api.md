@@ -15,7 +15,7 @@ includes: []
 search: true
 code_clipboard: true
 highlight_theme: darkula
-headingLevel: 2d:\2\myems.io\docs\api.md
+headingLevel: 2
 generator: "@tarslib/widdershins v4.0.30"
 
 ---
