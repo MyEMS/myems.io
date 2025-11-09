@@ -15,13 +15,18 @@ includes: []
 search: true
 code_clipboard: true
 highlight_theme: darkula
-headingLevel: 2
+headingLevel: 2d:\2\myems.io\docs\api.md
 generator: "@tarslib/widdershins v4.0.30"
 
 ---
 View in Postman: import the file MyEMS.postman_collection.json with Postman
 
 ### Core/Advanced Report Config Ⓔ
+*   GET Version
+```bash
+curl -i -X GET -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H "Content-Type: application/json" {base_url}/version
+```
+
 *   GET Get All Advanced Report Configs
 ```bash
 curl -i -X GET -H "User-UUID: dcdb67d1-6116-4987-916f-6fc6cf2bc0e4" -H "Token: GET-TOKEN-AFTER-LOGIN" -H {base_url}/advancedreports
