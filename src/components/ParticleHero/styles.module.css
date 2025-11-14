@@ -77,7 +77,6 @@
   background-position: 0% 0% !important;   
   transition: background-position 0.5s ease, transform 0.3s ease;  
   -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.3);  
-  text-stroke: 1.5px rgba(0, 0, 0, 0.3);
   border: none !important;
   outline: none !important;
   box-shadow: none !important;
@@ -104,7 +103,6 @@
   filter: brightness(1.2) !important;     
   
   -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.4) !important; 
-  text-stroke: 1.5px rgba(255, 255, 255, 0.4) !important;
   
   transition: background-position 0.5s ease, transform 0.3s ease !important;
 }
