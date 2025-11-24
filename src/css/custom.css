@@ -1,4 +1,5 @@
 :root {
+  /* 主题色 */
   --ifm-color-primary: #1890ff;
   --ifm-color-primary-dark: #0077e6;
   --ifm-color-primary-darker: #0066cc;
@@ -13,18 +14,48 @@
   
   --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   --navbar-height: 70px;
-  
+
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   
   --navbar-gradient-top: rgba(192, 218, 255, 0.98);
   --navbar-gradient-bottom: rgba(216, 232, 255, 0.95);
   
-  --particle-gradient-primary: #91d5ff;
-  --particle-gradient-secondary: #0077e6;
-  --particle-opacity: 0.5;
-  --dark-particle-color: #2d3748;
   --title-text-shadow: 0 3px 15px rgba(24, 144, 255, 0.15);
+  
+  /* 优化的粒子变量 - 增强可见性 */
+  --particle-size: 4px;
+  --particle-color-primary: #3a86ff;
+  --particle-color-secondary: #5e9cff;
+  --particle-line-color: rgba(58, 134, 255, 0.65);
+  --particle-line-width: 1.8px;
+  --particle-opacity: 0.95;
+  --particle-animation-duration: 20s;
+  --particle-glow-opacity: 0.7;
+
+  /* 粒子渐变 */
+  --particle-gradient-primary: #3a86ff;
+  --particle-gradient-secondary: #5e9cff;
+  --dark-particle-color: #2d5aa0;
+
+  /* 连接线渐变 */
+  --connection-gradient-start: rgba(58, 134, 255, 0.7);
+  --connection-gradient-end: rgba(94, 156, 255, 0.5);
+
+  /* 连接点效果增强 */
+  --connection-dot-size: 7px;
+  --connection-dot-color: rgba(58, 134, 255, 0.95);
+  
+  /* 背景渐变 */
+  --particle-bg-center: #e3f5ff;
+  --particle-bg-edge: #c2e3ff;
+  
+  /* 集群效果 */
+  --cluster-color: rgba(102, 163, 255, 0.3);
+  
+  /* 形状效果 */
+  --shape-line-width: 2px;
+  --shape-line-color: rgba(255, 107, 107, 0.7);
 }
 
 [data-theme='dark'] {
@@ -36,16 +67,45 @@
   --ifm-color-primary-lighter: #91d5ff;
   --ifm-color-primary-lightest: #bae7ff;
   
-  --ifm-font-color-base: #e6f7ff;
-  --ifm-background-color: #0a1a2f;
+  --ifm-font-color-base: #c5e5f4;
+  --ifm-background-color: #94c1fc;
   
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --card-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-  --particle-gradient-primary: #69c0ff;
-  --particle-gradient-secondary: #40a9ff;
-  --particle-opacity: 0.6;
-  --dark-particle-color: #e2e8f0;
   --title-text-shadow: 0 2px 6px rgba(139, 194, 255, 0.15);
+  --particle-bg-start: #0a0f1d;
+  --particle-bg-end: #131c30;
+
+  /* 深色模式粒子优化 */
+  --particle-size: 3.5px;
+  --particle-color-primary: #64b5f6;
+  --particle-color-secondary: #82c1f8;
+  --particle-line-color: rgba(100, 181, 246, 0.6);
+  --particle-line-width: 1.6px;
+  --particle-opacity: 0.95;
+  --particle-glow-opacity: 0.8;
+  --particle-gradient-primary: #64b5f6;
+  --particle-gradient-secondary: #82c1f8;
+  --dark-particle-color: #4a90c4;
+  --connection-gradient-start: rgba(100, 181, 246, 0.7);
+  --connection-gradient-end: rgba(130, 193, 248, 0.5);
+  --cluster-color: rgba(93, 156, 240, 0.35);
+  --connection-dot-size: 6px;
+  --connection-dot-color: rgba(100, 181, 246, 0.95);
+
+  .navbar__items--right .navbar__item {
+    margin: 0 4px !important;
+  }
+
+  .navbar__item--language {
+    margin-left: 1rem !important;
+  }
+  
+  .DocSearch-Button:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border-color: rgba(64, 169, 255, 0.2) !important;
+    color: white !important;
+  }
 }
 
 html {
