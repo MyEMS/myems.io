@@ -1,5 +1,4 @@
 :root {
-  /* 主题色 */
   --ifm-color-primary: #1890ff;
   --ifm-color-primary-dark: #0077e6;
   --ifm-color-primary-darker: #0066cc;
@@ -22,8 +21,7 @@
   --navbar-gradient-bottom: rgba(216, 232, 255, 0.95);
   
   --title-text-shadow: 0 3px 15px rgba(24, 144, 255, 0.15);
-  
-  /* 优化的粒子变量 - 增强可见性 */
+
   --particle-size: 4px;
   --particle-color-primary: #3a86ff;
   --particle-color-secondary: #5e9cff;
@@ -33,27 +31,21 @@
   --particle-animation-duration: 20s;
   --particle-glow-opacity: 0.7;
 
-  /* 粒子渐变 */
   --particle-gradient-primary: #3a86ff;
   --particle-gradient-secondary: #5e9cff;
   --dark-particle-color: #2d5aa0;
 
-  /* 连接线渐变 */
   --connection-gradient-start: rgba(58, 134, 255, 0.7);
   --connection-gradient-end: rgba(94, 156, 255, 0.5);
 
-  /* 连接点效果增强 */
   --connection-dot-size: 7px;
   --connection-dot-color: rgba(58, 134, 255, 0.95);
   
-  /* 背景渐变 */
   --particle-bg-center: #e3f5ff;
   --particle-bg-edge: #c2e3ff;
-  
-  /* 集群效果 */
+
   --cluster-color: rgba(102, 163, 255, 0.3);
   
-  /* 形状效果 */
   --shape-line-width: 2px;
   --shape-line-color: rgba(255, 107, 107, 0.7);
 }
@@ -76,7 +68,6 @@
   --particle-bg-start: #0a0f1d;
   --particle-bg-end: #131c30;
 
-  /* 深色模式粒子优化 */
   --particle-size: 3.5px;
   --particle-color-primary: #64b5f6;
   --particle-color-secondary: #82c1f8;

@@ -255,7 +255,6 @@
   background-color: rgba(100, 181, 246, 0.15);
 }
 
-/* =============== 优化的粒子效果 =============== */
 .particles {
   pointer-events: none;
 }
@@ -268,13 +267,10 @@
   transition: opacity 0.3s ease;
 }
 
-
-/* 粒子发光滤镜 */
 .particleBackground svg {
   filter: drop-shadow(0 0 2px rgba(77, 148, 255, 0.3));
 }
 
-/* =============== 优化的连接线效果 =============== */
 .connections {
   pointer-events: none;
 }
@@ -289,7 +285,6 @@
 }
 
 
-/* 深色模式粒子优化 */
 [data-theme='dark'] .particle {
   filter: drop-shadow(0 0 3px rgba(100, 181, 246, 0.7));
   transition: opacity 0.3s ease;
@@ -302,8 +297,6 @@
   filter: drop-shadow(0 0 2px rgba(100, 181, 246, 0.5));
 }
 
-
-/* =============== 粒子集群效果 =============== */
 .particleCluster {
   position: absolute;
   z-index: 1;
@@ -334,7 +327,6 @@
   opacity: 0.4;
 }
 
-/* 装饰元素优化 */
 .decorative-element {
   position: absolute;
   z-index: 1;
@@ -390,7 +382,6 @@
   75% { transform: translate(-10px, 14px) rotate(3deg); }
 }
 
-/* 添加微妙的纹理效果 */
 [data-theme='light'] .container::before {
   content: "";
   position: absolute;
@@ -408,7 +399,6 @@
   opacity: 0.4;
 }
 
-/* SVG 滤镜定义 */
 .particleBackground defs {
   filter: url(#svg-filters);
 }

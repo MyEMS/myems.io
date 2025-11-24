@@ -246,13 +246,11 @@ export default function ParticleBackground() {
             <stop offset="100%" stopColor="var(--ifm-background-color)" />
           </linearGradient>
           
-          {/* 高对比度连接线渐变 */}
           <linearGradient id="connectionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="var(--connection-gradient-start)" />
             <stop offset="100%" stopColor="var(--connection-gradient-end)" />
           </linearGradient>
           
-          {/* 连接线发光效果 - 增强对比度 */}
           <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
             <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur" />
             <feColorMatrix in="blur" type="matrix" 
