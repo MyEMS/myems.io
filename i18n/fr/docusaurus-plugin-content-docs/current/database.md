@@ -35,24 +35,23 @@ MyEMS 采用微服务架构，主要包含以下模块：
 
 MyEMS 采用**多数据库分离架构**，将不同类型的数据存储在不同的数据库中，以提高性能、便于维护和扩展。系统共包含 **13 个数据库**：
 
-| 数据库名称 | 用途 | 主要功能 | 数据量级 |
+||数据库名称|用途|主要功能|数据量级||
 |-----------|------|----------|---------|
-| `myems_system_db` | 系统配置数据库 | 存储系统配置、设备信息、用户权限等基础数据 | 中小型 |
-| `myems_historical_db` | 历史数据数据库 | 存储实时监测数据、历史数据、成本文件等 | **大型** |
-| `myems_energy_db` | 能耗数据库 | 存储各种设备的能耗统计数据（按小时、日、月、年） | **大型** |
-| `myems_billing_db` | 计费数据库 | 存储计费相关的能耗数据 | **大型** |
-| `myems_carbon_db` | 碳排放数据库 | 存储碳排放相关的能耗数据 | **大型** |
-| `myems_energy_baseline_db` | 能耗基线数据库 | 存储能耗基线数据，用于节能分析 | 中型 |
-| `myems_energy_model_db` | 能耗模型数据库 | 存储8760小时年度能耗模型数据 | 中型 |
-| `myems_energy_plan_db` | 能耗计划数据库 | 存储能耗计划和目标数据 | 中型 |
-| `myems_energy_prediction_db` | 能耗预测数据库 | 存储能耗预测数据 | 中型 |
-| `myems_fdd_db` | 故障诊断数据库 | 存储故障检测和诊断相关数据 | 中型 |
-| `myems_user_db` | 用户数据库 | 存储用户认证、API密钥、邮件消息等 | 小型 |
-| `myems_reporting_db` | 报告数据库 | 存储报告相关的邮件消息和附件 | 小型 |
-| `myems_production_db` | 生产数据库 | 存储生产相关的产品数据 | 小型 |
+||`myems_system_db`|系统配置数据库|存储系统配置、设备信息、用户权限等基础数据|中小型||
+||`myems_historical_db`|历史数据数据库|存储实时监测数据、历史数据、成本文件等|**大型**||
+||`myems_energy_db`|能耗数据库|存储各种设备的能耗统计数据（按小时、日、月、年）|**大型**||
+||`myems_billing_db`|计费数据库|存储计费相关的能耗数据|**大型**||
+||`myems_carbon_db`|碳排放数据库|存储碳排放相关的能耗数据|**大型**||
+||`myems_energy_baseline_db`|能耗基线数据库|存储能耗基线数据，用于节能分析|中型||
+||`myems_energy_model_db`|能耗模型数据库|存储8760小时年度能耗模型数据|中型||
+||`myems_energy_plan_db`|能耗计划数据库|存储能耗计划和目标数据|中型||
+||`myems_energy_prediction_db`|能耗预测数据库|存储能耗预测数据|中型||
+||`myems_fdd_db`|故障诊断数据库|存储故障检测和诊断相关数据|中型||
+||`myems_user_db`|用户数据库|存储用户认证、API密钥、邮件消息等|小型||
+||`myems_reporting_db`|报告数据库|存储报告相关的邮件消息和附件|小型||
+||`myems_production_db`|生产数据库|存储生产相关的产品数据|小型||
 
 ---
-
 
 ## 数据库架构部署
 
@@ -67,7 +66,6 @@ MyEMS可以运行在以下MySQL兼容的数据库服务器。
 [MariaDB 10.5 (64bit) 及以上版本](https://mariadb.org/)
 
 [SingleStore 7.0 及以上版本](https://www.singlestore.com/)
-
 
 ### 部署
 
@@ -233,33 +231,33 @@ set global max_allowed_packet=1000000000;
 
 #### 1.1 基础配置表
 
-| 表名 | 说明 | 关键字段 |
+||表名|说明|关键字段||
 |------|------|----------|
-| `tbl_energy_categories` | 能源分类（电、水、气、冷、热等） | `id`, `name`, `unit_of_measure`, `kgce`, `kgco2e` |
-| `tbl_energy_items` | 能耗分项（照明、空调、动力等） | `id`, `name`, `energy_category_id` |
-| `tbl_cost_centers` | 成本中心 | `id`, `name`, `external_id` |
-| `tbl_data_sources` | 数据源配置 | `id`, `name`, `gateway_id`, `protocol`, `connection` |
-| `tbl_protocols` | 协议配置 | `id`, `name`, `protocol_type` |
+||`tbl_energy_categories`|能源分类（电、水、气、冷、热等）|`id`, `name`, `unit_of_measure`, `kgce`, `kgco2e`||
+||`tbl_energy_items`|能耗分项（照明、空调、动力等）|`id`, `name`, `energy_category_id`||
+||`tbl_cost_centers`|成本中心|`id`, `name`, `external_id`||
+||`tbl_data_sources`|数据源配置|`id`, `name`, `gateway_id`, `protocol`, `connection`||
+||`tbl_protocols`|协议配置|`id`, `name`, `protocol_type`||
 
 #### 1.2 设备管理表
 
-| 表名 | 说明 | 关键字段 |
+||表名|说明|关键字段||
 |------|------|----------|
-| `tbl_equipments` | 设备信息 | `id`, `name`, `uuid`, `equipment_type_id`, `cost_center_id` |
-| `tbl_combined_equipments` | 组合设备（多个设备的组合） | `id`, `name`, `is_input_counted`, `is_output_counted` |
-| `tbl_meters` | 计量表信息 | `id`, `name`, `uuid`, `energy_category_id`, `is_counted` |
-| `tbl_offline_meters` | 离线计量表（手动录入） | `id`, `name`, `energy_category_id` |
-| `tbl_virtual_meters` | 虚拟计量表（计算得出） | `id`, `name`, `expression` (JSON格式) |
-| `tbl_points` | 数据点信息 | `id`, `name`, `data_source_id`, `object_type`, `object_id` |
+||`tbl_equipments`|设备信息|`id`, `name`, `uuid`, `equipment_type_id`, `cost_center_id`||
+||`tbl_combined_equipments`|组合设备（多个设备的组合）|`id`, `name`, `is_input_counted`, `is_output_counted`||
+||`tbl_meters`|计量表信息|`id`, `name`, `uuid`, `energy_category_id`, `is_counted`||
+||`tbl_offline_meters`|离线计量表（手动录入）|`id`, `name`, `energy_category_id`||
+||`tbl_virtual_meters`|虚拟计量表（计算得出）|`id`, `name`, `expression` (JSON格式)||
+||`tbl_points`|数据点信息|`id`, `name`, `data_source_id`, `object_type`, `object_id`||
 
 #### 1.3 空间组织表
 
-| 表名 | 说明 | 关键字段 |
+||表名|说明|关键字段||
 |------|------|----------|
-| `tbl_spaces` | 空间信息（房间、楼层等） | `id`, `name`, `uuid`, `parent_space_id`, `area` |
-| `tbl_stores` | 门店信息 | `id`, `name`, `uuid`, `space_id` |
-| `tbl_tenants` | 租户信息 | `id`, `name`, `uuid`, `space_id` |
-| `tbl_shopfloors` | 车间信息 | `id`, `name`, `uuid`, `space_id` |
+||`tbl_spaces`|空间信息（房间、楼层等）|`id`, `name`, `uuid`, `parent_space_id`, `area`||
+||`tbl_stores`|门店信息|`id`, `name`, `uuid`, `space_id`||
+||`tbl_tenants`|租户信息|`id`, `name`, `uuid`, `space_id`||
+||`tbl_shopfloors`|车间信息|`id`, `name`, `uuid`, `space_id`||
 
 #### 1.4 关联关系表
 
@@ -275,21 +273,21 @@ set global max_allowed_packet=1000000000;
 
 #### 1.5 新能源设备表
 
-| 表名 | 说明 | 关键字段 |
+||表名|说明|关键字段||
 |------|------|----------|
-| `tbl_photovoltaic_power_stations` | 光伏电站 | `id`, `name`, `capacity`, `contact_id` |
-| `tbl_energy_storage_containers` | 储能容器 | `id`, `name`, `rated_capacity`, `rated_power` |
-| `tbl_energy_storage_power_stations` | 储能电站 | `id`, `name`, `rated_capacity` |
-| `tbl_microgrids` | 微电网 | `id`, `name`, `address` |
-| `tbl_charging_stations` | 充电站 | `id`, `name`, `rated_capacity`, `rated_power` |
+||`tbl_photovoltaic_power_stations`|光伏电站|`id`, `name`, `capacity`, `contact_id`||
+||`tbl_energy_storage_containers`|储能容器|`id`, `name`, `rated_capacity`, `rated_power`||
+||`tbl_energy_storage_power_stations`|储能电站|`id`, `name`, `rated_capacity`||
+||`tbl_microgrids`|微电网|`id`, `name`, `address`||
+||`tbl_charging_stations`|充电站|`id`, `name`, `rated_capacity`, `rated_power`||
 
 #### 1.6 控制与调度表
 
-| 表名 | 说明 | 关键字段 |
+||表名|说明|关键字段||
 |------|------|----------|
-| `tbl_commands` | 控制命令 | `id`, `name`, `topic`, `payload` (JSON格式) |
-| `tbl_control_modes` | 控制模式 | `id`, `name`, `is_active` |
-| `tbl_control_modes_times` | 控制模式时间段 | `id`, `control_mode_id`, `start_time_of_day`, `end_time_of_day` |
+||`tbl_commands`|控制命令|`id`, `name`, `topic`, `payload` (JSON格式)||
+||`tbl_control_modes`|控制模式|`id`, `name`, `is_active`||
+||`tbl_control_modes_times`|控制模式时间段|`id`, `control_mode_id`, `start_time_of_day`, `end_time_of_day`||
 
 #### 1.7 其他配置表
 
@@ -320,25 +318,25 @@ set global max_allowed_packet=1000000000;
 
 **主要表结构**:
 
-| 表名 | 说明 | 关键字段 | 索引策略 |
+||表名|说明|关键字段|索引策略||
 |------|------|----------|----------|
-| `tbl_analog_value` | 模拟量历史数据 | `point_id`, `utc_date_time`, `actual_value`, `is_bad`, `is_published` | `(point_id, utc_date_time)`, `(utc_date_time)` |
-| `tbl_analog_value_latest` | 模拟量最新值（缓存） | `point_id`, `utc_date_time`, `actual_value` | `(point_id, utc_date_time)` |
-| `tbl_digital_value` | 数字量历史数据 | `point_id`, `utc_date_time`, `actual_value` (INT) | `(point_id, utc_date_time)`, `(utc_date_time)` |
-| `tbl_digital_value_latest` | 数字量最新值（缓存） | `point_id`, `utc_date_time`, `actual_value` | `(point_id, utc_date_time)` |
-| `tbl_energy_value` | 能耗历史数据 | `point_id`, `utc_date_time`, `actual_value`, `is_bad`, `is_published` | `(point_id, utc_date_time)`, `(utc_date_time)` |
-| `tbl_energy_value_latest` | 能耗最新值（缓存） | `point_id`, `utc_date_time`, `actual_value` | `(point_id, utc_date_time)` |
-| `tbl_text_value` | 文本量历史数据 | `point_id`, `utc_date_time`, `actual_value` (LONGTEXT) | `(point_id, utc_date_time)`, `(utc_date_time)` |
-| `tbl_text_value_latest` | 文本量最新值（缓存） | `point_id`, `utc_date_time`, `actual_value` | `(point_id, utc_date_time)` |
+||`tbl_analog_value`|模拟量历史数据|`point_id`, `utc_date_time`, `actual_value`, `is_bad`, `is_published`|`(point_id, utc_date_time)`, `(utc_date_time)`||
+||`tbl_analog_value_latest`|模拟量最新值（缓存）|`point_id`, `utc_date_time`, `actual_value`|`(point_id, utc_date_time)`||
+||`tbl_digital_value`|数字量历史数据|`point_id`, `utc_date_time`, `actual_value` (INT)|`(point_id, utc_date_time)`, `(utc_date_time)`||
+||`tbl_digital_value_latest`|数字量最新值（缓存）|`point_id`, `utc_date_time`, `actual_value`|`(point_id, utc_date_time)`||
+||`tbl_energy_value`|能耗历史数据|`point_id`, `utc_date_time`, `actual_value`, `is_bad`, `is_published`|`(point_id, utc_date_time)`, `(utc_date_time)`||
+||`tbl_energy_value_latest`|能耗最新值（缓存）|`point_id`, `utc_date_time`, `actual_value`|`(point_id, utc_date_time)`||
+||`tbl_text_value`|文本量历史数据|`point_id`, `utc_date_time`, `actual_value` (LONGTEXT)|`(point_id, utc_date_time)`, `(utc_date_time)`||
+||`tbl_text_value_latest`|文本量最新值（缓存）|`point_id`, `utc_date_time`, `actual_value`|`(point_id, utc_date_time)`||
 
 **文件存储表**:
 
-| 表名 | 说明 | 关键字段 |
+||表名|说明|关键字段||
 |------|------|----------|
-| `tbl_cost_files` | 成本文件（Excel/CSV） | `file_name`, `uuid`, `upload_datetime_utc`, `status`, `file_object` (LONGBLOB) |
-| `tbl_offline_meter_files` | 离线计量表数据文件 | `file_name`, `uuid`, `upload_datetime_utc`, `status`, `file_object` |
-| `tbl_data_repair_files` | 数据修复文件 | `file_name`, `uuid`, `upload_datetime_utc`, `status`, `file_object` |
-| `tbl_energy_plan_files` | 能耗计划文件 | `file_name`, `uuid`, `upload_datetime_utc`, `status`, `file_object` |
+||`tbl_cost_files`|成本文件（Excel/CSV）|`file_name`, `uuid`, `upload_datetime_utc`, `status`, `file_object` (LONGBLOB)||
+||`tbl_offline_meter_files`|离线计量表数据文件|`file_name`, `uuid`, `upload_datetime_utc`, `status`, `file_object`||
+||`tbl_data_repair_files`|数据修复文件|`file_name`, `uuid`, `upload_datetime_utc`, `status`, `file_object`||
+||`tbl_energy_plan_files`|能耗计划文件|`file_name`, `uuid`, `upload_datetime_utc`, `status`, `file_object`||
 
 **数据类型说明**:
 - `actual_value`: DECIMAL(21, 6) - 支持高精度数值，6位小数
@@ -374,47 +372,47 @@ set global max_allowed_packet=1000000000;
 
 #### 3.1 计量表能耗表
 
-| 表名 | 说明 | 关键字段 |
+||表名|说明|关键字段||
 |------|------|----------|
-| `tbl_meter_hourly` | 计量表小时能耗 | `meter_id`, `start_datetime_utc`, `actual_value` |
-| `tbl_meter_daily` | 计量表日能耗 | `meter_id`, `start_datetime_utc`, `actual_value` |
-| `tbl_meter_monthly` | 计量表月能耗 | `meter_id`, `start_datetime_utc`, `actual_value` |
-| `tbl_meter_yearly` | 计量表年能耗 | `meter_id`, `start_datetime_utc`, `actual_value` |
-| `tbl_offline_meter_hourly` | 离线计量表小时能耗 | `offline_meter_id`, `start_datetime_utc`, `actual_value` |
-| `tbl_virtual_meter_hourly` | 虚拟计量表小时能耗 | `virtual_meter_id`, `start_datetime_utc`, `actual_value` |
+||`tbl_meter_hourly`|计量表小时能耗|`meter_id`, `start_datetime_utc`, `actual_value`||
+||`tbl_meter_daily`|计量表日能耗|`meter_id`, `start_datetime_utc`, `actual_value`||
+||`tbl_meter_monthly`|计量表月能耗|`meter_id`, `start_datetime_utc`, `actual_value`||
+||`tbl_meter_yearly`|计量表年能耗|`meter_id`, `start_datetime_utc`, `actual_value`||
+||`tbl_offline_meter_hourly`|离线计量表小时能耗|`offline_meter_id`, `start_datetime_utc`, `actual_value`||
+||`tbl_virtual_meter_hourly`|虚拟计量表小时能耗|`virtual_meter_id`, `start_datetime_utc`, `actual_value`||
 
 #### 3.2 设备能耗表
 
-| 表名 | 说明 | 关键字段 |
+||表名|说明|关键字段||
 |------|------|----------|
-| `tbl_equipment_input_category_hourly` | 设备输入能耗（按分类） | `equipment_id`, `energy_category_id`, `start_datetime_utc`, `actual_value` |
-| `tbl_equipment_input_item_hourly` | 设备输入能耗（按分项） | `equipment_id`, `energy_item_id`, `start_datetime_utc`, `actual_value` |
-| `tbl_equipment_output_category_hourly` | 设备输出能耗（按分类） | `equipment_id`, `energy_category_id`, `start_datetime_utc`, `actual_value` |
-| `tbl_combined_equipment_input_category_hourly` | 组合设备输入能耗（按分类） | `combined_equipment_id`, `energy_category_id`, `start_datetime_utc`, `actual_value` |
-| `tbl_combined_equipment_output_category_hourly` | 组合设备输出能耗（按分类） | `combined_equipment_id`, `energy_category_id`, `start_datetime_utc`, `actual_value` |
+||`tbl_equipment_input_category_hourly`|设备输入能耗（按分类）|`equipment_id`, `energy_category_id`, `start_datetime_utc`, `actual_value`||
+||`tbl_equipment_input_item_hourly`|设备输入能耗（按分项）|`equipment_id`, `energy_item_id`, `start_datetime_utc`, `actual_value`||
+||`tbl_equipment_output_category_hourly`|设备输出能耗（按分类）|`equipment_id`, `energy_category_id`, `start_datetime_utc`, `actual_value`||
+||`tbl_combined_equipment_input_category_hourly`|组合设备输入能耗（按分类）|`combined_equipment_id`, `energy_category_id`, `start_datetime_utc`, `actual_value`||
+||`tbl_combined_equipment_output_category_hourly`|组合设备输出能耗（按分类）|`combined_equipment_id`, `energy_category_id`, `start_datetime_utc`, `actual_value`||
 
 #### 3.3 空间能耗表
 
-| 表名 | 说明 | 关键字段 |
+||表名|说明|关键字段||
 |------|------|----------|
-| `tbl_space_input_category_hourly` | 空间输入能耗（按分类） | `space_id`, `energy_category_id`, `start_datetime_utc`, `actual_value` |
-| `tbl_space_input_item_hourly` | 空间输入能耗（按分项） | `space_id`, `energy_item_id`, `start_datetime_utc`, `actual_value` |
-| `tbl_space_output_category_hourly` | 空间输出能耗（按分类） | `space_id`, `energy_category_id`, `start_datetime_utc`, `actual_value` |
-| `tbl_store_input_category_hourly` | 门店输入能耗 | `store_id`, `energy_category_id`, `start_datetime_utc`, `actual_value` |
-| `tbl_tenant_input_category_hourly` | 租户输入能耗 | `tenant_id`, `energy_category_id`, `start_datetime_utc`, `actual_value` |
-| `tbl_shopfloor_input_category_hourly` | 车间输入能耗 | `shopfloor_id`, `energy_category_id`, `start_datetime_utc`, `actual_value` |
+||`tbl_space_input_category_hourly`|空间输入能耗（按分类）|`space_id`, `energy_category_id`, `start_datetime_utc`, `actual_value`||
+||`tbl_space_input_item_hourly`|空间输入能耗（按分项）|`space_id`, `energy_item_id`, `start_datetime_utc`, `actual_value`||
+||`tbl_space_output_category_hourly`|空间输出能耗（按分类）|`space_id`, `energy_category_id`, `start_datetime_utc`, `actual_value`||
+||`tbl_store_input_category_hourly`|门店输入能耗|`store_id`, `energy_category_id`, `start_datetime_utc`, `actual_value`||
+||`tbl_tenant_input_category_hourly`|租户输入能耗|`tenant_id`, `energy_category_id`, `start_datetime_utc`, `actual_value`||
+||`tbl_shopfloor_input_category_hourly`|车间输入能耗|`shopfloor_id`, `energy_category_id`, `start_datetime_utc`, `actual_value`||
 
 #### 3.4 新能源设备能耗表
 
-| 表名 | 说明 | 关键字段 |
+||表名|说明|关键字段||
 |------|------|----------|
-| `tbl_photovoltaic_power_station_hourly` | 光伏电站小时发电量 | `photovoltaic_power_station_id`, `start_datetime_utc`, `actual_value` |
-| `tbl_energy_storage_container_charge_hourly` | 储能容器充电量 | `energy_storage_container_id`, `start_datetime_utc`, `actual_value` |
-| `tbl_energy_storage_container_discharge_hourly` | 储能容器放电量 | `energy_storage_container_id`, `start_datetime_utc`, `actual_value` |
-| `tbl_energy_storage_container_grid_buy_hourly` | 储能容器购电量 | `energy_storage_container_id`, `start_datetime_utc`, `actual_value` |
-| `tbl_energy_storage_container_grid_sell_hourly` | 储能容器售电量 | `energy_storage_container_id`, `start_datetime_utc`, `actual_value` |
-| `tbl_microgrid_charge_hourly` | 微电网充电量 | `microgrid_id`, `start_datetime_utc`, `actual_value` |
-| `tbl_microgrid_discharge_hourly` | 微电网放电量 | `microgrid_id`, `start_datetime_utc`, `actual_value` |
+||`tbl_photovoltaic_power_station_hourly`|光伏电站小时发电量|`photovoltaic_power_station_id`, `start_datetime_utc`, `actual_value`||
+||`tbl_energy_storage_container_charge_hourly`|储能容器充电量|`energy_storage_container_id`, `start_datetime_utc`, `actual_value`||
+||`tbl_energy_storage_container_discharge_hourly`|储能容器放电量|`energy_storage_container_id`, `start_datetime_utc`, `actual_value`||
+||`tbl_energy_storage_container_grid_buy_hourly`|储能容器购电量|`energy_storage_container_id`, `start_datetime_utc`, `actual_value`||
+||`tbl_energy_storage_container_grid_sell_hourly`|储能容器售电量|`energy_storage_container_id`, `start_datetime_utc`, `actual_value`||
+||`tbl_microgrid_charge_hourly`|微电网充电量|`microgrid_id`, `start_datetime_utc`, `actual_value`||
+||`tbl_microgrid_discharge_hourly`|微电网放电量|`microgrid_id`, `start_datetime_utc`, `actual_value`||
 
 **索引设计**:
 - 所有表都有复合索引: `(对象_id, 分类_id, start_datetime_utc)` 或 `(对象_id, start_datetime_utc)`
@@ -498,15 +496,15 @@ set global max_allowed_packet=1000000000;
 
 **主要表**:
 
-| 表名 | 说明 | 关键字段 |
+||表名|说明|关键字段||
 |------|------|----------|
-| `tbl_meter_8760` | 计量表 8760 小时模型 | `meter_id`, `start_datetime_utc`, `actual_value` |
-| `tbl_equipment_input_category_8760` | 设备输入能耗模型 | `equipment_id`, `energy_category_id`, `start_datetime_utc`, `actual_value` |
-| `tbl_combined_equipment_input_category_8760` | 组合设备输入能耗模型 | `combined_equipment_id`, `energy_category_id`, `start_datetime_utc`, `actual_value` |
-| `tbl_space_input_category_8760` | 空间输入能耗模型 | `space_id`, `energy_category_id`, `start_datetime_utc`, `actual_value` |
-| `tbl_shopfloor_input_category_8760` | 车间输入能耗模型 | `shopfloor_id`, `energy_category_id`, `start_datetime_utc`, `actual_value` |
-| `tbl_store_input_category_8760` | 门店输入能耗模型 | `store_id`, `energy_category_id`, `start_datetime_utc`, `actual_value` |
-| `tbl_tenant_input_category_8760` | 租户输入能耗模型 | `tenant_id`, `energy_category_id`, `start_datetime_utc`, `actual_value` |
+||`tbl_meter_8760`|计量表 8760 小时模型|`meter_id`, `start_datetime_utc`, `actual_value`||
+||`tbl_equipment_input_category_8760`|设备输入能耗模型|`equipment_id`, `energy_category_id`, `start_datetime_utc`, `actual_value`||
+||`tbl_combined_equipment_input_category_8760`|组合设备输入能耗模型|`combined_equipment_id`, `energy_category_id`, `start_datetime_utc`, `actual_value`||
+||`tbl_space_input_category_8760`|空间输入能耗模型|`space_id`, `energy_category_id`, `start_datetime_utc`, `actual_value`||
+||`tbl_shopfloor_input_category_8760`|车间输入能耗模型|`shopfloor_id`, `energy_category_id`, `start_datetime_utc`, `actual_value`||
+||`tbl_store_input_category_8760`|门店输入能耗模型|`store_id`, `energy_category_id`, `start_datetime_utc`, `actual_value`||
+||`tbl_tenant_input_category_8760`|租户输入能耗模型|`tenant_id`, `energy_category_id`, `start_datetime_utc`, `actual_value`||
 
 **开发注意事项**:
 - 8760 小时模型通常基于历史数据或标准模型生成
@@ -565,17 +563,17 @@ set global max_allowed_packet=1000000000;
 
 **主要表结构**:
 
-| 表名 | 说明 | 关键字段 |
+||表名|说明|关键字段||
 |------|------|----------|
-| `tbl_rules` | 诊断规则 | `id`, `name`, `category`, `fdd_code`, `priority`, `channel`, `expression` (JSON), `message_template`, `is_enabled` |
-| `tbl_web_messages` | Web 消息 | `id`, `rule_id`, `user_id`, `subject`, `category`, `priority`, `message`, `status`, `belong_to_object_type`, `belong_to_object_id` |
-| `tbl_email_messages` | 邮件消息 | `id`, `rule_id`, `recipient_name`, `recipient_email`, `subject`, `message`, `attachment_file_name`, `status` |
-| `tbl_text_messages_outbox` | 短信发件箱 | `id`, `rule_id`, `recipient_mobile`, `message`, `status`, `acknowledge_code` |
-| `tbl_text_messages_inbox` | 短信收件箱 | `id`, `sender_mobile`, `message`, `status` |
-| `tbl_wechat_messages_outbox` | 微信消息发件箱 | `id`, `rule_id`, `recipient_openid`, `message_template_id`, `message_data` (JSON) |
-| `tbl_wechat_messages_inbox` | 微信消息收件箱 | `id`, `sender_openid`, `message`, `status` |
-| `tbl_email_servers` | 邮件服务器配置 | `id`, `host`, `port`, `requires_authentication`, `user_name`, `password`, `from_addr` |
-| `tbl_wechat_configs` | 微信配置 | `id`, `api_server`, `app_id`, `app_secret`, `access_token`, `expires_datetime_utc` |
+||`tbl_rules`|诊断规则|`id`, `name`, `category`, `fdd_code`, `priority`, `channel`, `expression` (JSON), `message_template`, `is_enabled`||
+||`tbl_web_messages`|Web 消息|`id`, `rule_id`, `user_id`, `subject`, `category`, `priority`, `message`, `status`, `belong_to_object_type`, `belong_to_object_id`||
+||`tbl_email_messages`|邮件消息|`id`, `rule_id`, `recipient_name`, `recipient_email`, `subject`, `message`, `attachment_file_name`, `status`||
+||`tbl_text_messages_outbox`|短信发件箱|`id`, `rule_id`, `recipient_mobile`, `message`, `status`, `acknowledge_code`||
+||`tbl_text_messages_inbox`|短信收件箱|`id`, `sender_mobile`, `message`, `status`||
+||`tbl_wechat_messages_outbox`|微信消息发件箱|`id`, `rule_id`, `recipient_openid`, `message_template_id`, `message_data` (JSON)||
+||`tbl_wechat_messages_inbox`|微信消息收件箱|`id`, `sender_openid`, `message`, `status`||
+||`tbl_email_servers`|邮件服务器配置|`id`, `host`, `port`, `requires_authentication`, `user_name`, `password`, `from_addr`||
+||`tbl_wechat_configs`|微信配置|`id`, `api_server`, `app_id`, `app_secret`, `access_token`, `expires_datetime_utc`||
 
 **规则分类 (category)**:
 - `REALTIME`: 实时告警
@@ -613,18 +611,18 @@ set global max_allowed_packet=1000000000;
 
 **主要表结构**:
 
-| 表名 | 说明 | 关键字段 |
+||表名|说明|关键字段||
 |------|------|----------|
-| `tbl_users` | 用户信息 | `id`, `name`, `uuid`, `display_name`, `email`, `salt`, `password`, `is_admin`, `is_read_only`, `privilege_id`, `account_expiration_datetime_utc`, `password_expiration_datetime_utc`, `failed_login_count` |
-| `tbl_privileges` | 权限配置 | `id`, `name`, `data` (JSON格式) |
-| `tbl_sessions` | 用户会话 | `id`, `user_uuid`, `token`, `utc_expires` |
-| `tbl_api_keys` | API 密钥 | `id`, `name`, `token`, `created_datetime_utc`, `expires_datetime_utc` |
-| `tbl_email_messages` | 邮件消息 | `id`, `recipient_name`, `recipient_email`, `subject`, `message`, `attachment_file_name`, `status`, `scheduled_datetime_utc` |
-| `tbl_email_message_sessions` | 邮件会话 | `id`, `recipient_email`, `token`, `expires_datetime_utc` |
-| `tbl_logs` | 操作日志 | `id`, `user_uuid`, `request_datetime_utc`, `request_method`, `resource_type`, `resource_id`, `request_body` (JSON) |
-| `tbl_notifications` | 通知消息 | `id`, `user_id`, `created_datetime_utc`, `status`, `subject`, `message`, `url` |
-| `tbl_new_users` | 新用户（待激活） | `id`, `name`, `uuid`, `display_name`, `email`, `salt`, `password` |
-| `tbl_verification_codes` | 验证码 | `id`, `recipient_email`, `verification_code`, `created_datetime_utc`, `expires_datetime_utc` |
+||`tbl_users`|用户信息|`id`, `name`, `uuid`, `display_name`, `email`, `salt`, `password`, `is_admin`, `is_read_only`, `privilege_id`, `account_expiration_datetime_utc`, `password_expiration_datetime_utc`, `failed_login_count`||
+||`tbl_privileges`|权限配置|`id`, `name`, `data` (JSON格式)||
+||`tbl_sessions`|用户会话|`id`, `user_uuid`, `token`, `utc_expires`||
+||`tbl_api_keys`|API 密钥|`id`, `name`, `token`, `created_datetime_utc`, `expires_datetime_utc`||
+||`tbl_email_messages`|邮件消息|`id`, `recipient_name`, `recipient_email`, `subject`, `message`, `attachment_file_name`, `status`, `scheduled_datetime_utc`||
+||`tbl_email_message_sessions`|邮件会话|`id`, `recipient_email`, `token`, `expires_datetime_utc`||
+||`tbl_logs`|操作日志|`id`, `user_uuid`, `request_datetime_utc`, `request_method`, `resource_type`, `resource_id`, `request_body` (JSON)||
+||`tbl_notifications`|通知消息|`id`, `user_id`, `created_datetime_utc`, `status`, `subject`, `message`, `url`||
+||`tbl_new_users`|新用户（待激活）|`id`, `name`, `uuid`, `display_name`, `email`, `salt`, `password`||
+||`tbl_verification_codes`|验证码|`id`, `recipient_email`, `verification_code`, `created_datetime_utc`, `expires_datetime_utc`||
 
 **安全设计**:
 - 密码使用 salt + hash 存储，不存储明文
@@ -650,12 +648,12 @@ set global max_allowed_packet=1000000000;
 
 **主要表结构**:
 
-| 表名 | 说明 | 关键字段 |
+||表名|说明|关键字段||
 |------|------|----------|
-| `tbl_reports` | 报告配置 | `id`, `name`, `uuid`, `expression` (JSON), `is_enabled`, `last_run_datetime_utc`, `next_run_datetime_utc`, `is_run_immediately` |
-| `tbl_reports_files` | 报告文件 | `id`, `uuid`, `create_datetime_utc`, `file_name`, `file_type` (xlsx/pdf/docx), `file_object` (LONGBLOB) |
-| `tbl_template_files` | 报告模板文件 | `id`, `uuid`, `report_id`, `file_name`, `file_type`, `file_object` |
-| `tbl_email_messages` | 邮件消息 | `id`, `recipient_name`, `recipient_email`, `subject`, `message`, `attachment_file_name`, `attachment_file_object`, `status` |
+||`tbl_reports`|报告配置|`id`, `name`, `uuid`, `expression` (JSON), `is_enabled`, `last_run_datetime_utc`, `next_run_datetime_utc`, `is_run_immediately`||
+||`tbl_reports_files`|报告文件|`id`, `uuid`, `create_datetime_utc`, `file_name`, `file_type` (xlsx/pdf/docx), `file_object` (LONGBLOB)||
+||`tbl_template_files`|报告模板文件|`id`, `uuid`, `report_id`, `file_name`, `file_type`, `file_object`||
+||`tbl_email_messages`|邮件消息|`id`, `recipient_name`, `recipient_email`, `subject`, `message`, `attachment_file_name`, `attachment_file_object`, `status`||
 
 **开发注意事项**:
 - 报告文件支持 Excel、PDF、Word 格式
@@ -675,15 +673,15 @@ set global max_allowed_packet=1000000000;
 
 **主要表结构**:
 
-| 表名 | 说明 | 关键字段 |
+||表名|说明|关键字段||
 |------|------|----------|
-| `tbl_products` | 产品信息 | `id`, `name`, `uuid`, `unit_of_measure`, `tag`, `standard_product_coefficient` |
-| `tbl_teams` | 班组信息 | `id`, `name`, `uuid`, `description` |
-| `tbl_shifts` | 班次信息 | `id`, `shopfloor_id`, `team_id`, `product_id`, `product_count`, `start_datetime_utc`, `end_datetime_utc`, `reference_timestamp` |
-| `tbl_shopfloor_hourly` | 车间小时产量 | `id`, `shopfloor_id`, `start_datetime_utc`, `product_id`, `product_count` |
-| `tbl_space_hourly` | 空间小时产量 | `id`, `space_id`, `start_datetime_utc`, `product_id`, `product_count` |
-| `tbl_shopfloors_products` | 车间与产品关联 | `id`, `shopfloor_id`, `product_id` |
-| `tbl_shopfloors_teams` | 车间与班组关联 | `id`, `shopfloor_id`, `team_id` |
+||`tbl_products`|产品信息|`id`, `name`, `uuid`, `unit_of_measure`, `tag`, `standard_product_coefficient`||
+||`tbl_teams`|班组信息|`id`, `name`, `uuid`, `description`||
+||`tbl_shifts`|班次信息|`id`, `shopfloor_id`, `team_id`, `product_id`, `product_count`, `start_datetime_utc`, `end_datetime_utc`, `reference_timestamp`||
+||`tbl_shopfloor_hourly`|车间小时产量|`id`, `shopfloor_id`, `start_datetime_utc`, `product_id`, `product_count`||
+||`tbl_space_hourly`|空间小时产量|`id`, `space_id`, `start_datetime_utc`, `product_id`, `product_count`||
+||`tbl_shopfloors_products`|车间与产品关联|`id`, `shopfloor_id`, `product_id`||
+||`tbl_shopfloors_teams`|车间与班组关联|`id`, `shopfloor_id`, `team_id`||
 
 **开发注意事项**:
 - 生产数据用于计算单位产品能耗
@@ -752,56 +750,56 @@ myems_system_db.tbl_spaces
 
 所有表都包含以下通用字段：
 
-| 字段名 | 类型 | 说明 |
+||字段名|类型|说明||
 |--------|------|------|
-| `id` | BIGINT NOT NULL AUTO_INCREMENT | 主键，自增 |
-| `name` | VARCHAR(255) | 名称 |
-| `uuid` | CHAR(36) | UUID，用于外部系统集成 |
-| `description` | VARCHAR(255) | 描述（可选） |
+||`id`|BIGINT NOT NULL AUTO_INCREMENT|主键，自增||
+||`name`|VARCHAR(255)|名称||
+||`uuid`|CHAR(36)|UUID，用于外部系统集成||
+||`description`|VARCHAR(255)|描述（可选）||
 
 ### 时间字段
 
-| 字段名 | 类型 | 说明 |
+||字段名|类型|说明||
 |--------|------|------|
-| `utc_date_time` | DATETIME | UTC 时间（历史数据表） |
-| `start_datetime_utc` | DATETIME | 时间段开始时间（聚合数据表） |
-| `created_datetime_utc` | DATETIME | 创建时间 |
-| `updated_datetime_utc` | DATETIME | 更新时间 |
-| `last_run_datetime_utc` | DATETIME | 最后运行时间 |
-| `next_run_datetime_utc` | DATETIME | 下次运行时间 |
+||`utc_date_time`|DATETIME|UTC 时间（历史数据表）||
+||`start_datetime_utc`|DATETIME|时间段开始时间（聚合数据表）||
+||`created_datetime_utc`|DATETIME|创建时间||
+||`updated_datetime_utc`|DATETIME|更新时间||
+||`last_run_datetime_utc`|DATETIME|最后运行时间||
+||`next_run_datetime_utc`|DATETIME|下次运行时间||
 
 **注意**: 所有时间字段统一使用 UTC 时间，前端显示时转换为本地时间。
 
 ### 数值字段
 
-| 字段名 | 类型 | 说明 |
+||字段名|类型|说明||
 |--------|------|------|
-| `actual_value` | DECIMAL(21, 6) | 实际值，支持高精度（6位小数） |
-| `set_value` | DECIMAL(21, 6) | 设定值 |
-| `rated_capacity` | DECIMAL(21, 6) | 额定容量 |
-| `rated_power` | DECIMAL(21, 6) | 额定功率 |
+||`actual_value`|DECIMAL(21, 6)|实际值，支持高精度（6位小数）||
+||`set_value`|DECIMAL(21, 6)|设定值||
+||`rated_capacity`|DECIMAL(21, 6)|额定容量||
+||`rated_power`|DECIMAL(21, 6)|额定功率||
 
 ### JSON 字段
 
-| 字段名 | 类型 | 说明 |
+||字段名|类型|说明||
 |--------|------|------|
-| `connection` | LONGTEXT | 连接配置（JSON 格式） |
-| `expression` | LONGTEXT | 表达式（JSON 格式） |
-| `payload` | LONGTEXT | 负载（JSON 格式） |
-| `data` | LONGTEXT | 数据（JSON 格式） |
+||`connection`|LONGTEXT|连接配置（JSON 格式）||
+||`expression`|LONGTEXT|表达式（JSON 格式）||
+||`payload`|LONGTEXT|负载（JSON 格式）||
+||`data`|LONGTEXT|数据（JSON 格式）||
 
 **注意**: JSON 字段存储格式化的 JSON 字符串，需要解析后使用。
 
 ### 状态字段
 
-| 字段名 | 类型 | 说明 |
+||字段名|类型|说明||
 |--------|------|------|
-| `is_enabled` | BOOL | 是否启用 |
-| `is_active` | BOOL | 是否激活 |
-| `is_bad` | BOOL | 是否坏数据 |
-| `is_published` | BOOL | 是否已发布 |
-| `is_counted` | BOOL | 是否计入统计 |
-| `status` | VARCHAR(32) | 状态（如: new, sent, done, error） |
+||`is_enabled`|BOOL|是否启用||
+||`is_active`|BOOL|是否激活||
+||`is_bad`|BOOL|是否坏数据||
+||`is_published`|BOOL|是否已发布||
+||`is_counted`|BOOL|是否计入统计||
+||`status`|VARCHAR(32)|状态（如: new, sent, done, error）||
 
 ### 索引设计
 
@@ -945,29 +943,3 @@ mysql -u root -p < myems_production_db.sql
 - [MyEMS API 文档](./../myems-api/README.md)
 - [MyEMS 数据采集文档](./../myems-modbus-tcp/README.md)
 - [MyEMS 数据汇总文档](./../myems-aggregation/README.md)
-
-### Mise à jour de la base de données
-
-Les scripts de mise à jour se trouvent dans le répertoire `database/upgrade/`, nommés par version (ex. `upgrade5.10.0.sql`).
-
-Avant toute mise à jour :
-1. **Sauvegarder** : sauvegarde complète de toutes les bases obligatoire
-2. **Lire les notes** : consulter les commentaires dans le script
-3. **Valider en test** : exécuter d’abord sur environnement de test
-4. **Ordre des versions** : appliquer les scripts dans l’ordre croissant des versions
-
-### Maintenance
-
-- **Sauvegardes régulières** : quotidiennement, conservation ≥ 30 jours
-- **Purge historique** : supprimer régulièrement les données expirées pour éviter la croissance excessive des tables
-- **Optimisation** : lancer `OPTIMIZE TABLE` périodiquement
-- **Surveillance perf** : monitorer les performances et détecter les anomalies rapidement
-
----
-
-## Documentation associée
-
-- [Doc officielle MyEMS](https://myems.io/docs/installation/database)
-- [API MyEMS](./../myems-api/README.md)
-- [Acquisition de données](./../myems-modbus-tcp/README.md)
-- [Agrégation](./../myems-aggregation/README.md)
