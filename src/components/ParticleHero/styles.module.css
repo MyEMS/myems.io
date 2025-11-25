@@ -183,15 +183,17 @@
 }
 .subtitle {
   font-size: 1.8rem;
-  color: #1a237e; 
-  margin-bottom: 3rem;
-  line-height: 1.65;
+  color: #001f3f; 
+  margin-bottom: 3rem; 
+  line-height: 1.65; 
   font-weight: 550; 
-  max-width: 880px;
-  text-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.95), 
-    0 11px 22px rgba(13, 71, 161, 0.28); 
+  max-width: 880px; 
+  text-shadow: 
+    0 1px 2px rgba(255, 255, 255, 0.9), 
+    0 2px 4px rgba(0, 0, 0, 0.1); 
   letter-spacing: 0.01em; 
+  position: relative; 
+  z-index: 10; 
 }
 
 
