@@ -942,32 +942,7 @@ mysql -u root -p < myems_production_db.sql
 ## 相關文檔
 
 - [MyEMS 官方文檔](https://myems.io/docs/installation/database)
-- [MyEMS API 文檔](./../myems-api/README.md)
-- [MyEMS 數據採集文檔](./../myems-modbus-tcp/README.md)
-- [MyEMS 數據匯總文檔](./../myems-aggregation/README.md)
+- [MyEMS API 文檔](https://gitee.com/myems/myems/tree/master/myems-api/README.md)
+- [MyEMS 數據採集文檔](https://gitee.com/myems/myems/tree/master/myems-modbus-tcp/README.md)
+- [MyEMS 數據匯總文檔](https://gitee.com/myems/myems/tree/master/myems-aggregation/README.md)
 
-### Mise à jour de la base de données
-
-Les scripts de mise à jour se trouvent dans le répertoire `database/upgrade/`, nommés par version (ex. `upgrade5.10.0.sql`).
-
-Avant toute mise à jour :
-1. **Sauvegarder** : sauvegarde complète de toutes les bases obligatoire
-2. **Lire les notes** : consulter les commentaires dans le script
-3. **Valider en test** : exécuter d』abord sur environnement de test
-4. **Ordre des versions** : appliquer les scripts dans l』ordre croissant des versions
-
-### Maintenance
-
-- **Sauvegardes régulières** : quotidiennement, conservation ≥ 30 jours
-- **Purge historique** : supprimer régulièrement les données expirées pour éviter la croissance excessive des tables
-- **Optimisation** : lancer `OPTIMIZE TABLE` périodiquement
-- **Surveillance perf** : monitorer les performances et détecter les anomalies rapidement
-
----
-
-## Documentation associée
-
-- [Doc officielle MyEMS](https://myems.io/docs/installation/database)
-- [API MyEMS](./../myems-api/README.md)
-- [Acquisition de données](./../myems-modbus-tcp/README.md)
-- [Agrégation](./../myems-aggregation/README.md)

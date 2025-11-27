@@ -894,6 +894,7 @@ Recommended database installation order:
 12. **myems_reporting_db** - Reporting database
 13. **myems_production_db** - Production database
 
+
 ### Installation Commands
 
 ```bash
@@ -914,3 +915,30 @@ mysql -u root -p < myems_energy_prediction_db.sql
 mysql -u root -p < myems_fdd_db.sql
 mysql -u root -p < myems_reporting_db.sql
 mysql -u root -p < myems_production_db.sql
+```
+
+### Database upgrade
+
+The database upgrade script is located in the `database/upgrade/` directory and is named by version number (such as `upgrade5.10.0. sql`).
+
+Before upgrading, please:
+1. **Backup database**: All databases must be backed up before upgrading
+2. **View upgrade instructions**: Read the comments in the upgrade script
+3. **Testing environment validation** : First validate the upgrade script in the testing environment
+4. **Upgrade in Version Order** : Execute upgrade scripts in version number order
+
+### Database maintenance
+
+- **Regular backup** : It is recommended to backup once a day and keep it for at least 30 days
+- **Clean up historical data** : Regularly clean expired historical data to avoid tables being too large
+- **Optimize Table** : Regularly execute 'Optimize Table' to optimize the table structure
+- **Monitoring Performance** : Monitor database performance and promptly identify issues
+
+---
+
+## Related documents
+
+- [MyEMS Official Document](https://myems.io/docs/installation/database)
+- [MyEMS API Document](https://gitee.com/myems/myems/tree/master/myems-api/README.md)
+- [MyEMS Data Collection Document](https://gitee.com/myems/myems/tree/master/myems-modbus-tcp/README.md)
+- [MyEMS Data Summary Document](https://gitee.com/myems/myems/tree/master/myems-aggregation/README.md)
