@@ -515,6 +515,7 @@ The system uses a large number of association tables to establish many to many r
 
 ### Data Acquisition Flow
 
+```
 Device / Sensor
 ↓ (Modbus TCP / MQTT / HTTP)
 myems-modbus-tcp (Data Acquisition Service)
@@ -530,10 +531,12 @@ myems-aggregation (Aggregation Service)
 myems_energy_db (Energy Data)
 myems_billing_db (Billing Data)
 myems_carbon_db (Carbon Emission Data)
+```
 ---
 
 ### Data Query Flow
 
+```
 User Request
 ↓
 myems-api (API Service)
@@ -543,11 +546,12 @@ myems_historical_db (Historical Data)
 myems_energy_db (Energy Data)
 ↓ (Response)
 myems-web / myems-admin (Frontend Display)
-
+```
 ---
 
 ### Data Relationship Diagram
 
+```
 myems_system_db.tbl_points
 ↓ (point_id)
 myems_historical_db.tbl_analog_value
@@ -559,7 +563,7 @@ myems_system_db.tbl_meters
 myems_system_db.tbl_equipments
 ↓ (Link)
 myems_system_db.tbl_spaces
-
+```
 ---
 
 ## Table Structure Design Specification
