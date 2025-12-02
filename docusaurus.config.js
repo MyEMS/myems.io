@@ -14,9 +14,9 @@ const config = {
   baseUrl: '/',
   organizationName: 'myems',
   projectName: 'myems.io',
-  
+
   onBrokenLinks: 'throw',
-  
+
   // 添加类型忽略注释解决 hooks 和 mermaid 的类型问题
   markdown: {
     // @ts-ignore - Docusaurus 3.9 类型定义问题
@@ -37,14 +37,14 @@ const config = {
       },
     },
   ],
-  
+
   themes: ['@docusaurus/theme-mermaid'],
-  
+
   i18n: {
     defaultLocale: 'zh-Hans',
     locales: ['en', 'zh-Hans', 'zh-Hant', 'fr'],
   },
-  
+
   presets: [
     [
       'classic',
@@ -60,28 +60,28 @@ const config = {
       }),
     ],
   ],
-  
+
   // 修复 themeConfig 类型问题
   themeConfig: /** @type {import('@docusaurus/preset-classic').ThemeConfig} */ ({
     tableOfContents: {
       minHeadingLevel: 2,
       maxHeadingLevel: 5,
     },
-    
+
     colorMode: {
       defaultMode: 'dark',
       respectPrefersColorScheme: false,
     },
-    
+
     image: 'img/docusaurus-social-card.jpg',
-    
+
     algolia: {
-      appId: 'YOUR_ALGOLIA_APP_ID',
-      apiKey: 'YOUR_ALGOLIA_API_KEY',
-      indexName: 'YOUR_ALGOLIA_INDEX_NAME',
+      appId: 'X7YVJSQ712',
+      apiKey: '4e4f6882c30ed18221d0e02dd3a7407b',
+      indexName: 'myems.io',
       contextualSearch: true,
     },
-    
+
     navbar: {
       title: 'MyEMS',
       logo: {
@@ -142,7 +142,7 @@ const config = {
       ],
       style: 'dark',
     },
-    
+
     footer: {
       style: 'dark',
       links: [
@@ -219,7 +219,7 @@ const config = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} MyEMS`,
     },
-    
+
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
