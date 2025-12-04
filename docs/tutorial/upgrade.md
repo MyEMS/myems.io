@@ -4,6 +4,24 @@ sidebar_position: 2
 
 # Upgrade
 
+## Upgrade from v5.10.0 to v5.11.0 - 2025-11-30
+### Datenbank
+- Execute myems/database/upgrade/upgrade5.11.0.sql
+### myems-admin
+- Must be reinstalled because there are new features
+### myems-aggregation
+- Optional be reinstalled since only version.txt was changed
+### myems-api
+- Must be reinstalled because there are new features
+### myems-cleaning
+- Optional be reinstalled since only version.txt was changed
+### myems-modbus-tcp
+- Optional be reinstalled since only version.txt was changed
+### myems-normalization
+- Must be reinstalled because there are new features
+### myems-web
+- Must be reinstalled because there are new features
+
 ## Upgrade from v5.9.0 to v5.10.0 - 2025-10-27
 ### Datenbank
 - Execute myems/database/upgrade/upgrade5.10.0.sql
