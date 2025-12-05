@@ -135,37 +135,3 @@ set global max_allowed_packet=1000000000;
 Don't Install database into Docker container for production environment
 
 :::
-
-### Database Definition
-
-:::info
-
-The detail database definition is available with the enterprise edition.
-
-:::
-
-#### myems_billing_db
-
-#### myems_carbon_db
-
-#### myems_energy_baseline_db
-
-#### myems_energy_db
-
-#### myems_energy_model_db
-
-#### myems_energy_plan_db
-
-#### myems_energy_prediction_db
-
-#### myems_fdd_db
-
-#### myems_historical_db
-
-#### myems_production_db
-
-#### myems_reporting_db
-
-#### myems_system_db
-
-#### myems_user_db

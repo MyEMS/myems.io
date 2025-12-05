@@ -4,10 +4,10 @@
 
 ## Sommaire
 
-- [Architecture & design](#architecture--design)
-- [Détail des bases](#détail-des-bases)
-- [Flux de données](#flux-de-données)
-- [Normes de structure](#normes-de-structure)
+- [Conception de l'Architecture de la Base de Données](#conception-de-larchitecture-de-la-base-de-données)
+- [Description Détaillée des Bases de Données](#description-détaillée-des-bases-de-données)
+- [Relations de Flux de Données](#relations-de-flux-de-données)
+- [Normes de Conception de la Structure des Tables](#normes-de-conception-de-la-structure-des-tables)
 
 ---
 
