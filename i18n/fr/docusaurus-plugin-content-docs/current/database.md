@@ -2,24 +2,25 @@
 sidebar_position: 1
 ---
 
-# 資料庫
 
-為MyEMS安裝資料庫架構和腳本。
+## Déploiement de l'Architecture de la Base de Données
 
-### 先決條件
+Installez l'architecture et les scripts de base de données pour MyEMS.
 
-MyEMS可以運行在以下MySQL兼容的資料庫伺服器。
+### Prérequis
 
-[MySQL 8.0 (64bit) 及以上版本](https://www.mysql.com/)
+MyEMS peut fonctionner sur les serveurs de base de données compatibles MySQL suivants :
 
-[MariaDB 10.5 (64bit) 及以上版本](https://mariadb.org/)
+[MySQL 8.0 (64 bits) et versions ultérieures](https://www.mysql.com/)
 
-[SingleStore 7.0 及以上版本](https://www.singlestore.com/)
+[MariaDB 10.5 (64 bits) et versions ultérieures](https://mariadb.org/)
 
+[SingleStore 7.0 et versions ultérieures](https://www.singlestore.com/)
 
-### 部署
+### Déploiement
 
-在MySQL命令行中執行以下腳本，或在其他MySQL客戶端工具中執行，如MySQL Workbench、Navicat、DBaver、phpMyAdmin等。
+Exécutez le script suivant dans l'invite de commande MySQL ou dans d'autres outils clients MySQL tels que MySQL Workbench, Navicat, DBaver, phpMyAdmin, etc.
+
 
 ```bash
 cd ~/myems/database/install
@@ -64,7 +65,8 @@ mysql -u root -p < myems_system_db.sql
 mysql -u root -p < myems_user_db.sql
 ```
 
-演示數據是可選的。要插入演示數據，請執行以下腳本：
+Les données de présentation sont facultatives. Pour insérer des données de présentation, exécutez le script suivant:
+
 
 ```bash
 cd ~/myems/database/demo-cn
@@ -72,9 +74,9 @@ cd ~/myems/database/demo-cn
 ```bash
 mysql -u root -p < myems_system_db.sql
 ```
-:::tip 如何修復MySQL錯誤「用戶拒絕訪問」
+:::tip 如何修复MySQL错误“用户拒绝访问”
 
-添加遠程訪問用戶
+添加远程访问用户
 
 ```bash
 sudo mysql -u root -p
@@ -98,8 +100,7 @@ ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '!MyEMS1';
 ```
 
 :::
-
-:::tip 如何更改MySQL伺服器8.0版之前的COLLATE
+::: tip comment changer le COLLATE avant la version 8.0 du serveur MySQL
 
 ```bash
 sudo nano /etc/mysql/my.cnf
@@ -117,9 +118,10 @@ collation-server = utf8mb4_unicode_ci
 ```
 :::
 
-:::tip 如何修復MySQL錯誤「一個大於'max_allowed_packet'字節的數據包」
 
-更改mysqld部分下的my.cnf或my.ini文件（通常在/etc/mysql/中找到），並設置：
+::: tip comment corriger l'erreur MySQL "un paquet plus grand que 'max - allowed - Packet' octets"
+
+Changez le fichier my.cnf ou my.ini sous la section mysqld (généralement trouvé dans / etc / MySQL /) et définissez:
 
 ```
 max_allowed_packet=100M
@@ -134,20 +136,19 @@ set global max_allowed_packet=1000000000;
 
 :::caution
 
-不要在生產環境將資料庫安裝到的Docker容器中
+Ne pas installer la base de données dans un conteneur docker dans un environnement de production
 
 :::
 
----
 
+Définition de la base de données
 
-### 資料庫定義
+:::info
 
-::: info
-
-企業版提供了詳細資訊資料庫定義。
+La version Enterprise fournit une définition de base de données détaillée.
 
 :::
+
 
 #### myems_billing_db
 
