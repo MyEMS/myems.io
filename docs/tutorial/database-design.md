@@ -4,10 +4,10 @@
 
 ## Table of Contents
 
-- [Database Architecture Design](#database-architecture-design)
-- [Database Detailed Description](#database-detailed-description)
-- [Data Flow Relationships](#data-flow-relationships)
-- [Table Structure Design Specifications](#table-structure-design-specifications)
+- [Database architecture design](#database-architecture-design)
+- [Detailed database description](#detailed-database-description)
+- [Data flow relationship](#data-flow-relationship)
+- [Table Structure Design Specification](#table-structure-design-specification)
 
 ---
 
