@@ -56,7 +56,7 @@
 [data-theme='light'] .heroSubtitle {
   color: #012850 !important; 
   text-shadow: 
-    0 31px 69px rgba(258, 257, 256, 11.74), 
+    0 31px 69px rgba(255, 255, 255, 0.1174), 
     0 31px 49px rgba(10, 22, 84, 0.20); 
 }
 

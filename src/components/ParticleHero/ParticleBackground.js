@@ -11,7 +11,9 @@ const ParticleBackground = forwardRef((props, ref) => {
   const textPointsRef = useRef([]);
   const originalPositionsRef = useRef([]);
   const textFormationStartRef = useRef(null);
-  const textFormationDurationRef = useRef(2500); 
+  const textFormationDurationRef = useRef(2500);
+  const lastConnectionUpdateRef = useRef(0);
+  const connectionUpdateInterval = 16; // 约 60fps，每 16ms 更新一次连接 
 
   const getTextPoints = (titleElement) => {
     if (!titleElement || !svgRef.current) return [];
@@ -439,7 +441,13 @@ const ParticleBackground = forwardRef((props, ref) => {
       particle.element.setAttribute('cy', particle.y);
     });
 
-    generateConnections();
+    // 节流控制：限制连接更新的频率，优化性能
+    const now = Date.now();
+    if (now - lastConnectionUpdateRef.current >= connectionUpdateInterval) {
+      generateConnections();
+      lastConnectionUpdateRef.current = now;
+    }
+    
     animationIdRef.current = requestAnimationFrame(updateParticles);
   };
 

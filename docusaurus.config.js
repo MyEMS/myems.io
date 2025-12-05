@@ -14,9 +14,9 @@ const config = {
   baseUrl: '/',
   organizationName: 'myems',
   projectName: 'myems.io',
-  
+
   onBrokenLinks: 'throw',
-  
+
   markdown: {
     hooks: {
       onBrokenMarkdownLinks: 'warn'
@@ -34,14 +34,14 @@ const config = {
       },
     },
   ],
-  
+
   themes: ['@docusaurus/theme-mermaid'],
-  
+
   i18n: {
     defaultLocale: 'zh-Hans',
     locales: ['en', 'zh-Hans', 'zh-Hant', 'fr'],
   },
-  
+
   presets: [
     [
       'classic',
@@ -63,21 +63,21 @@ const config = {
       minHeadingLevel: 2,
       maxHeadingLevel: 5,
     },
-    
+
     colorMode: {
       defaultMode: 'dark',
       respectPrefersColorScheme: false,
     },
-    
+
     image: 'img/docusaurus-social-card.jpg',
-    
+
     algolia: {
-      appId: 'YOUR_ALGOLIA_APP_ID',
-      apiKey: 'YOUR_ALGOLIA_API_KEY',
-      indexName: 'YOUR_ALGOLIA_INDEX_NAME',
+      appId: 'X7YVJSQ712',
+      apiKey: '4e4f6882c30ed18221d0e02dd3a7407b',
+      indexName: 'myems.io',
       contextualSearch: true,
     },
-    
+
     navbar: {
       title: 'MyEMS',
       logo: {
@@ -145,7 +145,7 @@ const config = {
       ],
       style: 'dark',
     },
-    
+
     footer: {
       style: 'dark',
       links: [
@@ -222,7 +222,7 @@ const config = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} MyEMS`,
     },
-    
+
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
