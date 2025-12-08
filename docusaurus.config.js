@@ -92,17 +92,15 @@ const config = {
           label: 'Introduction',
         },
         {
-          type: 'doc',
-          docId: 'installation/centos-rhel',
           position: 'left',
           label: 'Installation',
+          to: '/docs/category/installation',
           activeBasePath: 'docs/category/installation',
         },
         {
-          type: 'doc',
-          docId: 'tutorial/admin-guide',
           position: 'left',
           label: 'Tutorial',
+          to: '/docs/category/tutorial',
           activeBasePath: 'docs/category/tutorial',
         },
         {
@@ -162,7 +160,7 @@ const config = {
             },
             {
               label: 'Tutorial',
-              href: '/docs/category/tutorial',
+              to: '/docs/category/tutorial',
             },
             {
               label: 'API',
