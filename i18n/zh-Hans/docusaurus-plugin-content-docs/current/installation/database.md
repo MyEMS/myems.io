@@ -137,37 +137,3 @@ set global max_allowed_packet=1000000000;
 不要在生产环境将数据库安装到的Docker容器中
 
 :::
-
-### 数据库定义
-
-:::info
-
-企业版提供了详细信息数据库定义。
-
-:::
-
-#### myems_billing_db
-
-#### myems_carbon_db
-
-#### myems_energy_baseline_db
-
-#### myems_energy_db
-
-#### myems_energy_model_db
-
-#### myems_energy_plan_db
-
-#### myems_energy_prediction_db
-
-#### myems_fdd_db
-
-#### myems_historical_db
-
-#### myems_production_db
-
-#### myems_reporting_db
-
-#### myems_system_db
-
-#### myems_user_db
