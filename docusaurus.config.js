@@ -5,7 +5,7 @@ const themes = require('prism-react-renderer').themes;
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
 
-/** @type {import('@docusaurus/types').Config} */ // 改为使用 @docusaurus/types
+/** @type {import('@docusaurus/types').Config} */ 
 const config = {
   title: 'MyEMS',
   tagline: '',
@@ -17,13 +17,10 @@ const config = {
 
   onBrokenLinks: 'throw',
 
-  // 添加类型忽略注释解决 hooks 和 mermaid 的类型问题
   markdown: {
-    // @ts-ignore - Docusaurus 3.9 类型定义问题
     hooks: {
       onBrokenMarkdownLinks: 'warn'
     },
-    // @ts-ignore - Docusaurus 3.9 类型定义问题
     mermaid: true,
     format: 'detect'
   },
@@ -60,8 +57,7 @@ const config = {
       }),
     ],
   ],
-
-  // 修复 themeConfig 类型问题
+  
   themeConfig: /** @type {import('@docusaurus/preset-classic').ThemeConfig} */ ({
     tableOfContents: {
       minHeadingLevel: 2,
@@ -98,27 +94,32 @@ const config = {
         {
           position: 'left',
           label: 'Installation',
-          href: '/docs/category/installation',
+          to: '/docs/category/installation',
+          activeBasePath: 'docs/category/installation',
         },
         {
           position: 'left',
           label: 'Tutorial',
-          href: '/docs/category/tutorial',
+          to: '/docs/category/tutorial',
+          activeBasePath: 'docs/category/tutorial',
         },
         {
+          type: 'doc',
+          docId: 'api',
           position: 'left',
           label: 'API',
-          href: '/docs/api',
         },
         {
+          type: 'doc',
+          docId: 'enterprise',
           position: 'left',
           label: 'Enterprise Edition',
-          href: '/docs/enterprise',
         },
         {
+          type: 'doc',
+          docId: 'cooperation',
           position: 'left',
           label: 'Cooperation',
-          href: '/docs/cooperation',
         },
         {
           href: 'https://myems.cloud',
@@ -159,7 +160,7 @@ const config = {
             },
             {
               label: 'Tutorial',
-              href: '/docs/category/tutorial',
+              to: '/docs/category/tutorial',
             },
             {
               label: 'API',
