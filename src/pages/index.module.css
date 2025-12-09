@@ -53,6 +53,13 @@
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
 }
 
+[data-theme='light'] .heroSubtitle {
+  color: #012850 !important; 
+  text-shadow: 
+    0 31px 69px rgba(255, 255, 255, 0.1174), 
+    0 31px 49px rgba(10, 22, 84, 0.20); 
+}
+
 .heroButtons {
   display: flex;
   justify-content: center;
