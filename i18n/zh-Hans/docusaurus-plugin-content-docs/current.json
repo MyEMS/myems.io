@@ -14,5 +14,9 @@
   "sidebar.tutorialSidebar.category.Installation.link.generated-index.description": {
     "message": "在本节中，您将学习如何安装MyEMS。",
     "description": "The generated-index page description for category Installation in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Administrator Instruction": {
+    "message": "管理员使用手册",
+    "description": "The label for category Installation in sidebar tutorialSidebar"
   }
 }
